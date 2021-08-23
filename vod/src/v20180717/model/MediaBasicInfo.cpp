@@ -51,7 +51,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_classId = value["ClassId"].GetInt64();
         m_classIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_className = string(value["ClassName"].GetString());
         m_classNameHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classPath = string(value["ClassPath"].GetString());
         m_classPathHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.MediaUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.MediaUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaUrl = string(value["MediaUrl"].GetString());
         m_mediaUrlHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.SourceInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.SourceInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sourceInfo.Deserialize(value["SourceInfo"]);
@@ -178,7 +178,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageRegion = string(value["StorageRegion"].GetString());
         m_storageRegionHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -201,7 +201,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.Vid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.Vid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vid = string(value["Vid"].GetString());
         m_vidHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Category"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.Category` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.Category` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_category = string(value["Category"].GetString());
         m_categoryHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageClass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaBasicInfo.StorageClass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.StorageClass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageClass = string(value["StorageClass"].GetString());
         m_storageClassHasBeenSet = true;

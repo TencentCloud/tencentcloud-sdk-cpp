@@ -37,7 +37,7 @@ CoreInternalOutcome AccessControlRule::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessControlRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessControlRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccessControlRule::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuleContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessControlRule.RuleContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessControlRule.RuleContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleContent = string(value["RuleContent"].GetString());
         m_ruleContentHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AccessControlRule::Deserialize(const rapidjson::Value &value
     {
         if (!value["Regex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessControlRule.Regex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessControlRule.Regex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regex = string(value["Regex"].GetString());
         m_regexHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AccessControlRule::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuleHeader"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessControlRule.RuleHeader` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessControlRule.RuleHeader` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleHeader = string(value["RuleHeader"].GetString());
         m_ruleHeaderHasBeenSet = true;

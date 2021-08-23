@@ -43,7 +43,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Template"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.Template` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.Template` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_template = value["Template"].GetUint64();
         m_templateHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MainVideoUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.MainVideoUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.MainVideoUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mainVideoUserId = string(value["MainVideoUserId"].GetString());
         m_mainVideoUserIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MainVideoStreamType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.MainVideoStreamType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.MainVideoStreamType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mainVideoStreamType = value["MainVideoStreamType"].GetUint64();
         m_mainVideoStreamTypeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SmallVideoLayoutParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.SmallVideoLayoutParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.SmallVideoLayoutParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_smallVideoLayoutParams.Deserialize(value["SmallVideoLayoutParams"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MainVideoRightAlign"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.MainVideoRightAlign` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.MainVideoRightAlign` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mainVideoRightAlign = value["MainVideoRightAlign"].GetUint64();
         m_mainVideoRightAlignHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MixVideoUids") && !value["MixVideoUids"].IsNull())
     {
         if (!value["MixVideoUids"].IsArray())
-            return CoreInternalOutcome(Error("response `LayoutParams.MixVideoUids` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.MixVideoUids` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MixVideoUids"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -112,7 +112,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PresetLayoutConfig") && !value["PresetLayoutConfig"].IsNull())
     {
         if (!value["PresetLayoutConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `LayoutParams.PresetLayoutConfig` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.PresetLayoutConfig` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PresetLayoutConfig"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -133,7 +133,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlaceHolderMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.PlaceHolderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.PlaceHolderMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_placeHolderMode = value["PlaceHolderMode"].GetUint64();
         m_placeHolderModeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PureAudioHoldPlaceMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.PureAudioHoldPlaceMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.PureAudioHoldPlaceMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pureAudioHoldPlaceMode = value["PureAudioHoldPlaceMode"].GetUint64();
         m_pureAudioHoldPlaceModeHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaterMarkParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.WaterMarkParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.WaterMarkParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_waterMarkParams.Deserialize(value["WaterMarkParams"]);

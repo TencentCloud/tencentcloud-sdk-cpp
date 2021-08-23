@@ -35,7 +35,7 @@ CoreInternalOutcome TakeMusicOffShelves::Deserialize(const rapidjson::Value &val
     {
         if (!value["MusicIds"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TakeMusicOffShelves.MusicIds` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TakeMusicOffShelves.MusicIds` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicIds = string(value["MusicIds"].GetString());
         m_musicIdsHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TakeMusicOffShelves::Deserialize(const rapidjson::Value &val
     {
         if (!value["SaleStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TakeMusicOffShelves.SaleStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TakeMusicOffShelves.SaleStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_saleStatus = string(value["SaleStatus"].GetString());
         m_saleStatusHasBeenSet = true;

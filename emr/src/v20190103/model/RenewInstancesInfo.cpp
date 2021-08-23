@@ -42,7 +42,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EmrResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.EmrResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.EmrResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emrResourceId = string(value["EmrResourceId"].GetString());
         m_emrResourceIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Flag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.Flag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.Flag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flag = value["Flag"].GetInt64();
         m_flagHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MemDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.MemDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.MemDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memDesc = string(value["MemDesc"].GetString());
         m_memDescHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CpuNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.CpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.CpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuNum = value["CpuNum"].GetInt64();
         m_cpuNumHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DiskSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.DiskSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.DiskSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = string(value["DiskSize"].GetString());
         m_diskSizeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Spec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.Spec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.Spec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spec = string(value["Spec"].GetString());
         m_specHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StorageType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RenewInstancesInfo.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageType = value["StorageType"].GetInt64();
         m_storageTypeHasBeenSet = true;

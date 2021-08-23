@@ -38,7 +38,7 @@ CoreInternalOutcome DescribeRecordStreamData::Deserialize(const rapidjson::Value
     {
         if (!value["RtspAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeRecordStreamData.RtspAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRecordStreamData.RtspAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rtspAddr = string(value["RtspAddr"].GetString());
         m_rtspAddrHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DescribeRecordStreamData::Deserialize(const rapidjson::Value
     {
         if (!value["RtmpAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeRecordStreamData.RtmpAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRecordStreamData.RtmpAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rtmpAddr = string(value["RtmpAddr"].GetString());
         m_rtmpAddrHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DescribeRecordStreamData::Deserialize(const rapidjson::Value
     {
         if (!value["HlsAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeRecordStreamData.HlsAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRecordStreamData.HlsAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hlsAddr = string(value["HlsAddr"].GetString());
         m_hlsAddrHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeRecordStreamData::Deserialize(const rapidjson::Value
     {
         if (!value["FlvAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeRecordStreamData.FlvAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRecordStreamData.FlvAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flvAddr = string(value["FlvAddr"].GetString());
         m_flvAddrHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeRecordStreamData::Deserialize(const rapidjson::Value
     {
         if (!value["StreamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeRecordStreamData.StreamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRecordStreamData.StreamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamId = string(value["StreamId"].GetString());
         m_streamIdHasBeenSet = true;

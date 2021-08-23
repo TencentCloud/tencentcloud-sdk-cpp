@@ -34,7 +34,7 @@ CoreInternalOutcome OcrFullTextConfigureInfoForUpdate::Deserialize(const rapidjs
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OcrFullTextConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrFullTextConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;

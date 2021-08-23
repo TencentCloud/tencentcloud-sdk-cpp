@@ -41,7 +41,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Microservice.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceId = string(value["MicroserviceId"].GetString());
         m_microserviceIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Microservice.MicroserviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.MicroserviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceName = string(value["MicroserviceName"].GetString());
         m_microserviceNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Microservice.MicroserviceDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.MicroserviceDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceDesc = string(value["MicroserviceDesc"].GetString());
         m_microserviceDescHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Microservice.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Microservice.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Microservice.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Microservice.RunInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.RunInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runInstanceCount = value["RunInstanceCount"].GetInt64();
         m_runInstanceCountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CriticalInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Microservice.CriticalInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Microservice.CriticalInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_criticalInstanceCount = value["CriticalInstanceCount"].GetInt64();
         m_criticalInstanceCountHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome CreateCameraAlertsMoveAlert::Deserialize(const rapidjson::Va
     {
         if (!value["Move"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertsMoveAlert.Move` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertsMoveAlert.Move` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_move = value["Move"].GetBool();
         m_moveHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CreateCameraAlertsMoveAlert::Deserialize(const rapidjson::Va
     {
         if (!value["MoveConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertsMoveAlert.MoveConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertsMoveAlert.MoveConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_moveConfidence = value["MoveConfidence"].GetDouble();
         m_moveConfidenceHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBound.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBound.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CidrIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBound.CidrIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBound.CidrIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrIp = string(value["CidrIp"].GetString());
         m_cidrIpHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PortRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBound.PortRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBound.PortRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_portRange = string(value["PortRange"].GetString());
         m_portRangeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBound.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBound.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;

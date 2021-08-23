@@ -35,7 +35,7 @@ CoreInternalOutcome PersonGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome PersonGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PersonExDescriptions") && !value["PersonExDescriptions"].IsNull())
     {
         if (!value["PersonExDescriptions"].IsArray())
-            return CoreInternalOutcome(Error("response `PersonGroupInfo.PersonExDescriptions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PersonGroupInfo.PersonExDescriptions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PersonExDescriptions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

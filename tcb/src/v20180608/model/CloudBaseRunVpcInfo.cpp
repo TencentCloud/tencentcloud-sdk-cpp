@@ -36,7 +36,7 @@ CoreInternalOutcome CloudBaseRunVpcInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CloudBaseRunVpcInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("SubnetIds") && !value["SubnetIds"].IsNull())
     {
         if (!value["SubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcInfo.SubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcInfo.SubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome CloudBaseRunVpcInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcInfo.CreateType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcInfo.CreateType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createType = value["CreateType"].GetInt64();
         m_createTypeHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome ProxyIdDict::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyIdDict.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyIdDict.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyId = string(value["ProxyId"].GetString());
         m_proxyIdHasBeenSet = true;

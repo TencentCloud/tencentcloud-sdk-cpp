@@ -37,7 +37,7 @@ CoreInternalOutcome BotStatPointItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeStamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotStatPointItem.TimeStamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotStatPointItem.TimeStamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeStamp = string(value["TimeStamp"].GetString());
         m_timeStampHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BotStatPointItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotStatPointItem.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotStatPointItem.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BotStatPointItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BotStatPointItem.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotStatPointItem.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BotStatPointItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotStatPointItem.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotStatPointItem.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome DailyTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DailyTracePoint.TraceDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyTracePoint.TraceDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceDate = string(value["TraceDate"].GetString());
         m_traceDateHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DailyTracePoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TracePointSet") && !value["TracePointSet"].IsNull())
     {
         if (!value["TracePointSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DailyTracePoint.TracePointSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DailyTracePoint.TracePointSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TracePointSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

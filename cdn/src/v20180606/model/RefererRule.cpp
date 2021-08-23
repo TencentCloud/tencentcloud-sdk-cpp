@@ -38,7 +38,7 @@ CoreInternalOutcome RefererRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RefererRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `RefererRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RefererRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome RefererRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefererType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererRule.RefererType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererRule.RefererType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_refererType = string(value["RefererType"].GetString());
         m_refererTypeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome RefererRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Referers") && !value["Referers"].IsNull())
     {
         if (!value["Referers"].IsArray())
-            return CoreInternalOutcome(Error("response `RefererRule.Referers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RefererRule.Referers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Referers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome RefererRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllowEmpty"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RefererRule.AllowEmpty` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererRule.AllowEmpty` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_allowEmpty = value["AllowEmpty"].GetBool();
         m_allowEmptyHasBeenSet = true;

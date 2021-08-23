@@ -36,7 +36,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     {
         if (!value["SegmentSetFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentSetFileUrl = string(value["SegmentSetFileUrl"].GetString());
         m_segmentSetFileUrlHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     {
         if (!value["SegmentSetFileUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentSetFileUrlExpireTime = string(value["SegmentSetFileUrlExpireTime"].GetString());
         m_segmentSetFileUrlExpireTimeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     {
         if (!value["SubtitleUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.SubtitleUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SubtitleUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subtitleUrl = string(value["SubtitleUrl"].GetString());
         m_subtitleUrlHasBeenSet = true;

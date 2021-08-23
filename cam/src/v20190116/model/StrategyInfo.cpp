@@ -48,7 +48,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.PolicyId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.PolicyId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = value["PolicyId"].GetUint64();
         m_policyIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(value["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.CreateMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.CreateMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createMode = value["CreateMode"].GetUint64();
         m_createModeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Attachments"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.Attachments` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.Attachments` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attachments = value["Attachments"].GetUint64();
         m_attachmentsHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAttached"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.IsAttached` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.IsAttached` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isAttached = value["IsAttached"].GetUint64();
         m_isAttachedHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Deactived"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deactived = value["Deactived"].GetUint64();
         m_deactivedHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DeactivedDetail") && !value["DeactivedDetail"].IsNull())
     {
         if (!value["DeactivedDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `StrategyInfo.DeactivedDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.DeactivedDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeactivedDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -161,7 +161,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsServiceLinkedPolicy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.IsServiceLinkedPolicy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.IsServiceLinkedPolicy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isServiceLinkedPolicy = value["IsServiceLinkedPolicy"].GetUint64();
         m_isServiceLinkedPolicyHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachEntityCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.AttachEntityCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.AttachEntityCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_attachEntityCount = value["AttachEntityCount"].GetInt64();
         m_attachEntityCountHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachEntityBoundaryCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.AttachEntityBoundaryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.AttachEntityBoundaryCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_attachEntityBoundaryCount = value["AttachEntityBoundaryCount"].GetInt64();
         m_attachEntityBoundaryCountHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StrategyInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

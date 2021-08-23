@@ -34,7 +34,7 @@ CoreInternalOutcome TableTitle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableTitle.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableTitle.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;

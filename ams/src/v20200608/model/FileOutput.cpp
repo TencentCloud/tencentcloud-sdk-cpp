@@ -36,7 +36,7 @@ CoreInternalOutcome FileOutput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileOutput.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileOutput.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FileOutput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileOutput.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileOutput.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FileOutput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjectPrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileOutput.ObjectPrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileOutput.ObjectPrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objectPrefix = string(value["ObjectPrefix"].GetString());
         m_objectPrefixHasBeenSet = true;

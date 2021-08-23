@@ -36,7 +36,7 @@ CoreInternalOutcome SimpleCacheRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleCacheRule.CacheType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCacheRule.CacheType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cacheType = string(value["CacheType"].GetString());
         m_cacheTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SimpleCacheRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CacheContents") && !value["CacheContents"].IsNull())
     {
         if (!value["CacheContents"].IsArray())
-            return CoreInternalOutcome(Error("response `SimpleCacheRule.CacheContents` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SimpleCacheRule.CacheContents` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CacheContents"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome SimpleCacheRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SimpleCacheRule.CacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCacheRule.CacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cacheTime = value["CacheTime"].GetInt64();
         m_cacheTimeHasBeenSet = true;

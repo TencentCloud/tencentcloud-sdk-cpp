@@ -35,7 +35,7 @@ CoreInternalOutcome CreateMmsInstanceItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["ContentType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateMmsInstanceItem.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMmsInstanceItem.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_contentType = value["ContentType"].GetInt64();
         m_contentTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CreateMmsInstanceItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateMmsInstanceItem.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMmsInstanceItem.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;

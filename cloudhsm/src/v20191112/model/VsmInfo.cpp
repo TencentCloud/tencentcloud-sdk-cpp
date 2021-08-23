@@ -35,7 +35,7 @@ CoreInternalOutcome VsmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VsmInfo.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VsmInfo.TypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_typeName = string(value["TypeName"].GetString());
         m_typeNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VsmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VsmInfo.TypeID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VsmInfo.TypeID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_typeID = value["TypeID"].GetInt64();
         m_typeIDHasBeenSet = true;

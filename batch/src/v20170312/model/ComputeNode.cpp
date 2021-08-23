@@ -45,7 +45,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComputeNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.ComputeNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ComputeNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_computeNodeId = string(value["ComputeNodeId"].GetString());
         m_computeNodeIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComputeNodeInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.ComputeNodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ComputeNodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_computeNodeInstanceId = string(value["ComputeNodeInstanceId"].GetString());
         m_computeNodeInstanceIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComputeNodeState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.ComputeNodeState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ComputeNodeState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_computeNodeState = string(value["ComputeNodeState"].GetString());
         m_computeNodeStateHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetUint64();
         m_memHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceCreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.ResourceCreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ResourceCreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceCreatedTime = string(value["ResourceCreatedTime"].GetString());
         m_resourceCreatedTimeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskInstanceNumAvailable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.TaskInstanceNumAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.TaskInstanceNumAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskInstanceNumAvailable = value["TaskInstanceNumAvailable"].GetUint64();
         m_taskInstanceNumAvailableHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.AgentVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.AgentVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentVersion = string(value["AgentVersion"].GetString());
         m_agentVersionHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
     {
         if (!value["PrivateIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `ComputeNode.PrivateIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.PrivateIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublicIpAddresses") && !value["PublicIpAddresses"].IsNull())
     {
         if (!value["PublicIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `ComputeNode.PublicIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.PublicIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -151,7 +151,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeNode.ResourceOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ResourceOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceOrigin = string(value["ResourceOrigin"].GetString());
         m_resourceOriginHasBeenSet = true;

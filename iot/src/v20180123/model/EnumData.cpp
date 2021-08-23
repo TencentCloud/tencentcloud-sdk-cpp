@@ -37,7 +37,7 @@ CoreInternalOutcome EnumData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnumData.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnumData.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome EnumData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnumData.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnumData.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome EnumData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnumData.Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnumData.Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(value["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome EnumData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Range") && !value["Range"].IsNull())
     {
         if (!value["Range"].IsArray())
-            return CoreInternalOutcome(Error("response `EnumData.Range` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnumData.Range` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Range"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

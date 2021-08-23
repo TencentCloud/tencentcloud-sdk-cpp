@@ -38,7 +38,7 @@ CoreInternalOutcome RollbackInstancesInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackInstancesInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackInstancesInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RollbackInstancesInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Strategy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackInstancesInfo.Strategy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackInstancesInfo.Strategy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = string(value["Strategy"].GetString());
         m_strategyHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RollbackInstancesInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["RollbackTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackInstancesInfo.RollbackTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackInstancesInfo.RollbackTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rollbackTime = string(value["RollbackTime"].GetString());
         m_rollbackTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RollbackInstancesInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Databases") && !value["Databases"].IsNull())
     {
         if (!value["Databases"].IsArray())
-            return CoreInternalOutcome(Error("response `RollbackInstancesInfo.Databases` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RollbackInstancesInfo.Databases` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Databases"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -87,7 +87,7 @@ CoreInternalOutcome RollbackInstancesInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Tables") && !value["Tables"].IsNull())
     {
         if (!value["Tables"].IsArray())
-            return CoreInternalOutcome(Error("response `RollbackInstancesInfo.Tables` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RollbackInstancesInfo.Tables` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tables"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

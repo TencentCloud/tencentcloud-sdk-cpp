@@ -41,16 +41,16 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["PostTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PostTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_postTime = string(rsp["PostTime"].GetString());
         m_postTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(rsp["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = rsp["Level"].GetInt64();
         m_levelHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     if (rsp.HasMember("RiskType") && !rsp["RiskType"].IsNull())
     {
         if (!rsp["RiskType"].IsArray())
-            return CoreInternalOutcome(Error("response `RiskType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RiskType` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RiskType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -116,7 +116,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["AssociateAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_associateAccount = string(rsp["AssociateAccount"].GetString());
         m_associateAccountHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["Uid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Uid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uid = string(rsp["Uid"].GetString());
         m_uidHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["RootId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RootId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RootId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rootId = string(rsp["RootId"].GetString());
         m_rootIdHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome QueryActivityAntiRushResponse::Deserialize(const string &pay
     {
         if (!rsp["CodeDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeDesc = string(rsp["CodeDesc"].GetString());
         m_codeDescHasBeenSet = true;

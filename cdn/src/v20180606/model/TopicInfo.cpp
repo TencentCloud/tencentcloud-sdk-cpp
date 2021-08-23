@@ -38,7 +38,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.Enabled` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Enabled` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetInt64();
         m_enabledHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Channel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channel = string(value["Channel"].GetString());
         m_channelHasBeenSet = true;

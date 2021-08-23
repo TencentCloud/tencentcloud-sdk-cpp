@@ -39,7 +39,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personName = string(value["PersonName"].GetString());
         m_personNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PersonExDescriptions") && !value["PersonExDescriptions"].IsNull())
     {
         if (!value["PersonExDescriptions"].IsArray())
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonExDescriptions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonExDescriptions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PersonExDescriptions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FaceIds") && !value["FaceIds"].IsNull())
     {
         if (!value["FaceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `PersonInfo.FaceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.FaceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTimestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.CreationTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.CreationTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_creationTimestamp = value["CreationTimestamp"].GetUint64();
         m_creationTimestampHasBeenSet = true;

@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(rsp["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["LastModifiedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedDate = string(rsp["LastModifiedDate"].GetString());
         m_lastModifiedDateHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["CustomizedOrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomizedOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomizedOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customizedOrgNodeId = string(rsp["CustomizedOrgNodeId"].GetString());
         m_customizedOrgNodeIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["ParentOrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParentOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParentOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentOrgNodeId = string(rsp["ParentOrgNodeId"].GetString());
         m_parentOrgNodeIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["OrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orgNodeId = string(rsp["OrgNodeId"].GetString());
         m_orgNodeIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["DataSource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataSource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataSource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataSource = string(rsp["DataSource"].GetString());
         m_dataSourceHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreatedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdDate = string(rsp["CreatedDate"].GetString());
         m_createdDateHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome DescribeOrgNodeResponse::Deserialize(const string &payload)
     if (rsp.HasMember("OrgNodeChildInfo") && !rsp["OrgNodeChildInfo"].IsNull())
     {
         if (!rsp["OrgNodeChildInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["OrgNodeChildInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

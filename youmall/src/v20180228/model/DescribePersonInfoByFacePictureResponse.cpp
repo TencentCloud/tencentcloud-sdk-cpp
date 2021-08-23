@@ -40,16 +40,16 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["CompanyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = string(rsp["CompanyId"].GetString());
         m_companyIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["ShopId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = rsp["ShopId"].GetInt64();
         m_shopIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["PersonId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personId = rsp["PersonId"].GetInt64();
         m_personIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["PictureUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PictureUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pictureUrl = string(rsp["PictureUrl"].GetString());
         m_pictureUrlHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["PersonType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personType = rsp["PersonType"].GetInt64();
         m_personTypeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["FirstVisitTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirstVisitTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirstVisitTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstVisitTime = string(rsp["FirstVisitTime"].GetString());
         m_firstVisitTimeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     {
         if (!rsp["VisitTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VisitTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VisitTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_visitTimes = rsp["VisitTimes"].GetInt64();
         m_visitTimesHasBeenSet = true;

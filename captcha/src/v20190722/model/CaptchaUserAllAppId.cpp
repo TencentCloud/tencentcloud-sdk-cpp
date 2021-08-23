@@ -37,7 +37,7 @@ CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const rapidjson::Value &val
     {
         if (!value["CaptchaAppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CaptchaUserAllAppId.CaptchaAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaUserAllAppId.CaptchaAppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_captchaAppId = value["CaptchaAppId"].GetInt64();
         m_captchaAppIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const rapidjson::Value &val
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaUserAllAppId.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaUserAllAppId.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const rapidjson::Value &val
     {
         if (!value["TcAppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CaptchaUserAllAppId.TcAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaUserAllAppId.TcAppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tcAppId = value["TcAppId"].GetInt64();
         m_tcAppIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const rapidjson::Value &val
     {
         if (!value["ChannelInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaUserAllAppId.ChannelInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaUserAllAppId.ChannelInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelInfo = string(value["ChannelInfo"].GetString());
         m_channelInfoHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Business"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.Business` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.Business` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_business = string(value["Business"].GetString());
         m_businessHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mbps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.Mbps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.Mbps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mbps = value["Mbps"].GetUint64();
         m_mbpsHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.Pps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.Pps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pps = value["Pps"].GetUint64();
         m_ppsHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttackType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.AttackType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.AttackType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attackType = string(value["AttackType"].GetString());
         m_attackTypeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.BlockFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.BlockFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockFlag = value["BlockFlag"].GetUint64();
         m_blockFlagHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OverLoad"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.OverLoad` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.OverLoad` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_overLoad = string(value["OverLoad"].GetString());
         m_overLoadHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttackStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.AttackStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.AttackStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attackStatus = value["AttackStatus"].GetUint64();
         m_attackStatusHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSEventRecord.EventId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSEventRecord.EventId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = string(value["EventId"].GetString());
         m_eventIdHasBeenSet = true;

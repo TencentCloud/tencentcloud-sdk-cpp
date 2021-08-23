@@ -35,7 +35,7 @@ CoreInternalOutcome IVRKeyPressedElement::Deserialize(const rapidjson::Value &va
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IVRKeyPressedElement.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IVRKeyPressedElement.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IVRKeyPressedElement::Deserialize(const rapidjson::Value &va
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IVRKeyPressedElement.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IVRKeyPressedElement.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;

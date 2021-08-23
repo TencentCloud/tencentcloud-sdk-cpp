@@ -38,7 +38,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MainlandOrOversea"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.MainlandOrOversea` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.MainlandOrOversea` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mainlandOrOversea = string(value["MainlandOrOversea"].GetString());
         m_mainlandOrOverseaHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetDouble();
         m_bandwidthHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Flux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_flux = value["Flux"].GetDouble();
         m_fluxHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Online"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_online = value["Online"].GetUint64();
         m_onlineHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Request"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.Request` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.Request` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_request = value["Request"].GetUint64();
         m_requestHasBeenSet = true;

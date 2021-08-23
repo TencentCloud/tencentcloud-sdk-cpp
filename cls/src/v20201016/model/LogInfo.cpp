@@ -41,7 +41,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.Time` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.Time` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetInt64();
         m_timeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgLogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.PkgLogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.PkgLogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgLogId = string(value["PkgLogId"].GetString());
         m_pkgLogIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogJson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.LogJson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.LogJson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logJson = string(value["LogJson"].GetString());
         m_logJsonHasBeenSet = true;

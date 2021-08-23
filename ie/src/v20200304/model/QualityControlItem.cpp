@@ -37,7 +37,7 @@ CoreInternalOutcome QualityControlItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Confidence"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlItem.Confidence` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlItem.Confidence` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetUint64();
         m_confidenceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QualityControlItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `QualityControlItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QualityControlItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `QualityControlItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome QualityControlItem::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AreaCoordsSet") && !value["AreaCoordsSet"].IsNull())
     {
         if (!value["AreaCoordsSet"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlItem.AreaCoordsSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlItem.AreaCoordsSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordsSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

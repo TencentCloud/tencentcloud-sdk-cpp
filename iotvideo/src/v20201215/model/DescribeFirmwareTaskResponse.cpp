@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = rsp["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = rsp["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = rsp["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(rsp["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["UpgradeMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_upgradeMode = string(rsp["UpgradeMode"].GetString());
         m_upgradeModeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(rsp["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["OriginalVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginalVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginalVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalVersion = string(rsp["OriginalVersion"].GetString());
         m_originalVersionHasBeenSet = true;

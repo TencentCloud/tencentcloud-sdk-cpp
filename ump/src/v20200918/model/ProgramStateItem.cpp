@@ -38,7 +38,7 @@ CoreInternalOutcome ProgramStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProgramStateItem.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProgramStateItem.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverIp = string(value["ServerIp"].GetString());
         m_serverIpHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ProgramStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProgramName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProgramStateItem.ProgramName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProgramStateItem.ProgramName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_programName = string(value["ProgramName"].GetString());
         m_programNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ProgramStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OnlineCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProgramStateItem.OnlineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProgramStateItem.OnlineCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_onlineCount = value["OnlineCount"].GetUint64();
         m_onlineCountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ProgramStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OfflineCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProgramStateItem.OfflineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProgramStateItem.OfflineCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_offlineCount = value["OfflineCount"].GetUint64();
         m_offlineCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ProgramStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProgramStateItem.State` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProgramStateItem.State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;

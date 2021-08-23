@@ -43,7 +43,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ExternalReturnCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ExternalReturnCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ExternalReturnCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnCode = string(value["ExternalReturnCode"].GetString());
         m_externalReturnCodeHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ExternalReturnMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ExternalReturnMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ExternalReturnMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnMessage = string(value["ExternalReturnMessage"].GetString());
         m_externalReturnMessageHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ExternalReturnData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ExternalReturnData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ExternalReturnData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnData = string(value["ExternalReturnData"].GetString());
         m_externalReturnDataHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ChannelMerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ChannelMerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ChannelMerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelMerchantId = string(value["ChannelMerchantId"].GetString());
         m_channelMerchantIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ChannelSubMerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ChannelSubMerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ChannelSubMerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelSubMerchantId = string(value["ChannelSubMerchantId"].GetString());
         m_channelSubMerchantIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ChannelAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ChannelAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ChannelAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelAppId = string(value["ChannelAppId"].GetString());
         m_channelAppIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ChannelSubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ChannelSubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ChannelSubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelSubAppId = string(value["ChannelSubAppId"].GetString());
         m_channelSubAppIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ChannelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelName = string(value["ChannelName"].GetString());
         m_channelNameHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["ReturnContractInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.ReturnContractInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.ReturnContractInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_returnContractInfo.Deserialize(value["ReturnContractInfo"]);
@@ -140,7 +140,7 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &v
     {
         if (!value["NotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseQueryContract.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseQueryContract.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyUrl = string(value["NotifyUrl"].GetString());
         m_notifyUrlHasBeenSet = true;

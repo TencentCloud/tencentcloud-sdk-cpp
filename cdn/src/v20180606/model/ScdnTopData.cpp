@@ -38,7 +38,7 @@ CoreInternalOutcome ScdnTopData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopData.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopData.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ScdnTopData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopData.Value` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopData.Value` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetUint64();
         m_valueHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ScdnTopData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopData.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopData.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ScdnTopData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopData.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopData.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ScdnTopData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["District"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopData.District` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopData.District` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_district = string(value["District"].GetString());
         m_districtHasBeenSet = true;

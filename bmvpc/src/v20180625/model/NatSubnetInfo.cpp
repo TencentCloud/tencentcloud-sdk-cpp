@@ -37,7 +37,7 @@ CoreInternalOutcome NatSubnetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatSubnetInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatSubnetInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome NatSubnetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatSubnetInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatSubnetInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome NatSubnetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetNatType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatSubnetInfo.SubnetNatType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatSubnetInfo.SubnetNatType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_subnetNatType = value["SubnetNatType"].GetUint64();
         m_subnetNatTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NatSubnetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatSubnetInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatSubnetInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;

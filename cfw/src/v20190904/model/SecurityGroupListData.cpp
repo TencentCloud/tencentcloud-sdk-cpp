@@ -56,7 +56,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["SourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.SourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.SourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceId = string(value["SourceId"].GetString());
         m_sourceIdHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = value["SourceType"].GetUint64();
         m_sourceTypeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["TargetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.TargetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.TargetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetId = string(value["TargetId"].GetString());
         m_targetIdHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["TargetType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.TargetType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.TargetType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_targetType = value["TargetType"].GetUint64();
         m_targetTypeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Strategy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Strategy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Strategy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = value["Strategy"].GetUint64();
         m_strategyHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["BothWay"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.BothWay` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.BothWay` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bothWay = value["BothWay"].GetUint64();
         m_bothWayHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsNew"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.IsNew` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.IsNew` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isNew = value["IsNew"].GetUint64();
         m_isNewHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["PublicIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIp = string(value["PublicIp"].GetString());
         m_publicIpHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["PrivateIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIp = string(value["PrivateIp"].GetString());
         m_privateIpHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Cidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Cidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Cidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidr = string(value["Cidr"].GetString());
         m_cidrHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServiceTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateId = string(value["ServiceTemplateId"].GetString());
         m_serviceTemplateIdHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     if (value.HasMember("BothWayInfo") && !value["BothWayInfo"].IsNull())
     {
         if (!value["BothWayInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.BothWayInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.BothWayInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BothWayInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -276,7 +276,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Direction"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetUint64();
         m_directionHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
     {
         if (!value["ProtocolPortType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.ProtocolPortType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.ProtocolPortType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protocolPortType = value["ProtocolPortType"].GetUint64();
         m_protocolPortTypeHasBeenSet = true;

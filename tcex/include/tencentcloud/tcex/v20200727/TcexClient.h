@@ -41,10 +41,10 @@ namespace TencentCloud
                 TcexClient(const Credential &credential, const std::string &region);
                 TcexClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeInvocationResultResponse> DescribeInvocationResultOutcome;
+                typedef Outcome<Core::Error, Model::DescribeInvocationResultResponse> DescribeInvocationResultOutcome;
                 typedef std::future<DescribeInvocationResultOutcome> DescribeInvocationResultOutcomeCallable;
                 typedef std::function<void(const TcexClient*, const Model::DescribeInvocationResultRequest&, DescribeInvocationResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationResultAsyncHandler;
-                typedef Outcome<Error, Model::InvokeServiceResponse> InvokeServiceOutcome;
+                typedef Outcome<Core::Error, Model::InvokeServiceResponse> InvokeServiceOutcome;
                 typedef std::future<InvokeServiceOutcome> InvokeServiceOutcomeCallable;
                 typedef std::function<void(const TcexClient*, const Model::InvokeServiceRequest&, InvokeServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeServiceAsyncHandler;
 

@@ -35,7 +35,7 @@ CoreInternalOutcome ObjectConfigureInfoForUpdate::Deserialize(const rapidjson::V
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ObjectConfigureInfoForUpdate::Deserialize(const rapidjson::V
     {
         if (!value["ObjectLibrary"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectConfigureInfoForUpdate.ObjectLibrary` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectConfigureInfoForUpdate.ObjectLibrary` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objectLibrary = string(value["ObjectLibrary"].GetString());
         m_objectLibraryHasBeenSet = true;

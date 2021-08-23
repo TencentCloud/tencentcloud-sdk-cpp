@@ -38,7 +38,7 @@ CoreInternalOutcome SubscribeRegionConf::Deserialize(const rapidjson::Value &val
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeRegionConf.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeRegionConf.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SubscribeRegionConf::Deserialize(const rapidjson::Value &val
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeRegionConf.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeRegionConf.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SubscribeRegionConf::Deserialize(const rapidjson::Value &val
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeRegionConf.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeRegionConf.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SubscribeRegionConf::Deserialize(const rapidjson::Value &val
     {
         if (!value["IsDefaultRegion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubscribeRegionConf.IsDefaultRegion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeRegionConf.IsDefaultRegion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultRegion = value["IsDefaultRegion"].GetInt64();
         m_isDefaultRegionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SubscribeRegionConf::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubscribeRegionConf.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeRegionConf.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome PlayCodeTotalInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayCodeTotalInfo.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayCodeTotalInfo.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PlayCodeTotalInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Num"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayCodeTotalInfo.Num` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayCodeTotalInfo.Num` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_num = value["Num"].GetUint64();
         m_numHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushTask.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PushTask.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetInt64();
         m_percentHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushTask.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PushTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushTask.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushTask.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

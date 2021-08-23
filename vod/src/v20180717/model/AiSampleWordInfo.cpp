@@ -35,7 +35,7 @@ CoreInternalOutcome AiSampleWordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleWordInfo.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWordInfo.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AiSampleWordInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSampleWordInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWordInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

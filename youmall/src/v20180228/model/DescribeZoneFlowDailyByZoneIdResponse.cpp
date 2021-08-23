@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
     {
         if (!rsp["CompanyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = string(rsp["CompanyId"].GetString());
         m_companyIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
     {
         if (!rsp["ShopId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = rsp["ShopId"].GetInt64();
         m_shopIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
     {
         if (!rsp["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = rsp["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
     {
         if (!rsp["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(rsp["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeZoneFlowDailyByZoneIdResponse::Deserialize(const str
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

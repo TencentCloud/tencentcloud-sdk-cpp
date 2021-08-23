@@ -37,7 +37,7 @@ CoreInternalOutcome Producer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Producer.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Producer.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(value["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Producer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Producer.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Producer.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Producer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CountConnect"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Producer.CountConnect` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Producer.CountConnect` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_countConnect = value["CountConnect"].GetInt64();
         m_countConnectHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome Producer::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ConnectionSets") && !value["ConnectionSets"].IsNull())
     {
         if (!value["ConnectionSets"].IsArray())
-            return CoreInternalOutcome(Error("response `Producer.ConnectionSets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Producer.ConnectionSets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ConnectionSets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

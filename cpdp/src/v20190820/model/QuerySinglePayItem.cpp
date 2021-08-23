@@ -37,7 +37,7 @@ CoreInternalOutcome QuerySinglePayItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayItem.PayStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayItem.PayStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payStatus = string(value["PayStatus"].GetString());
         m_payStatusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QuerySinglePayItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PlatformMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayItem.PlatformMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayItem.PlatformMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platformMsg = string(value["PlatformMsg"].GetString());
         m_platformMsgHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QuerySinglePayItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BankRetCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayItem.BankRetCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayItem.BankRetCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankRetCode = string(value["BankRetCode"].GetString());
         m_bankRetCodeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome QuerySinglePayItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BankRetMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayItem.BankRetMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayItem.BankRetMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankRetMsg = string(value["BankRetMsg"].GetString());
         m_bankRetMsgHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome ErrLogDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrLogDetail.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrLogDetail.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ErrLogDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrLogDetail.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrLogDetail.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ErrLogDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrLogDetail.ErrTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrLogDetail.ErrTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errTime = string(value["ErrTime"].GetString());
         m_errTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ErrLogDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrLogDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrLogDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;

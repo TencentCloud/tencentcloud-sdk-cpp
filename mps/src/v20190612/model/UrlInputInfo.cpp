@@ -34,7 +34,7 @@ CoreInternalOutcome UrlInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlInputInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlInputInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

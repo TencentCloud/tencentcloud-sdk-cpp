@@ -34,7 +34,7 @@ CoreInternalOutcome TopicAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Topic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicAction.Topic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAction.Topic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topic = string(value["Topic"].GetString());
         m_topicHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome InstanceRelation::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EipList") && !value["EipList"].IsNull())
     {
         if (!value["EipList"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceRelation.EipList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceRelation.EipList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EipList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome InstanceRelation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceRelation.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceRelation.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

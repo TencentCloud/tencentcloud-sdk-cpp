@@ -35,7 +35,7 @@ CoreInternalOutcome IPLineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPLineInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPLineInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IPLineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Eip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPLineInfo.Eip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPLineInfo.Eip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eip = string(value["Eip"].GetString());
         m_eipHasBeenSet = true;

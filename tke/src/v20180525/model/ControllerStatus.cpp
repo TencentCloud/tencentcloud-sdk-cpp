@@ -35,7 +35,7 @@ CoreInternalOutcome ControllerStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ControllerStatus.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ControllerStatus.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ControllerStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ControllerStatus.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ControllerStatus.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;

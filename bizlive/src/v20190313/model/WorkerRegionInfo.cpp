@@ -35,7 +35,7 @@ CoreInternalOutcome WorkerRegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Idle"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WorkerRegionInfo.Idle` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkerRegionInfo.Idle` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_idle = value["Idle"].GetUint64();
         m_idleHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome WorkerRegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkerRegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkerRegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

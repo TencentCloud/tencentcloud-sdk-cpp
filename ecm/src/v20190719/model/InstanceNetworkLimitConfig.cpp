@@ -37,7 +37,7 @@ CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const rapidjson::Val
     {
         if (!value["CpuNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkLimitConfig.CpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkLimitConfig.CpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuNum = value["CpuNum"].GetInt64();
         m_cpuNumHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const rapidjson::Val
     {
         if (!value["NetworkInterfaceLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkLimitConfig.NetworkInterfaceLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkLimitConfig.NetworkInterfaceLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceLimit = value["NetworkInterfaceLimit"].GetInt64();
         m_networkInterfaceLimitHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const rapidjson::Val
     {
         if (!value["InnerIpPerNetworkInterface"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkLimitConfig.InnerIpPerNetworkInterface` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkLimitConfig.InnerIpPerNetworkInterface` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_innerIpPerNetworkInterface = value["InnerIpPerNetworkInterface"].GetInt64();
         m_innerIpPerNetworkInterfaceHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const rapidjson::Val
     {
         if (!value["PublicIpPerInstance"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkLimitConfig.PublicIpPerInstance` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkLimitConfig.PublicIpPerInstance` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpPerInstance = value["PublicIpPerInstance"].GetInt64();
         m_publicIpPerInstanceHasBeenSet = true;

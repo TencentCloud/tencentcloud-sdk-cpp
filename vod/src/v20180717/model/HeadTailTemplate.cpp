@@ -39,7 +39,7 @@ CoreInternalOutcome HeadTailTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HeadTailTemplate.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadTailTemplate.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome HeadTailTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HeadTailTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadTailTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome HeadTailTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HeadTailTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadTailTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome HeadTailTemplate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HeadCandidateSet") && !value["HeadCandidateSet"].IsNull())
     {
         if (!value["HeadCandidateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `HeadTailTemplate.HeadCandidateSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HeadTailTemplate.HeadCandidateSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HeadCandidateSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome HeadTailTemplate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TailCandidateSet") && !value["TailCandidateSet"].IsNull())
     {
         if (!value["TailCandidateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `HeadTailTemplate.TailCandidateSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HeadTailTemplate.TailCandidateSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TailCandidateSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome HeadTailTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FillType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HeadTailTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadTailTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fillType = string(value["FillType"].GetString());
         m_fillTypeHasBeenSet = true;

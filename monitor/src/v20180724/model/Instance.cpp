@@ -33,7 +33,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Dimensions") && !value["Dimensions"].IsNull())
     {
         if (!value["Dimensions"].IsArray())
-            return CoreInternalOutcome(Error("response `Instance.Dimensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Instance.Dimensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Dimensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome ConsistencyParams::Deserialize(const rapidjson::Value &value
     {
         if (!value["SelectRowsPerTable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsistencyParams.SelectRowsPerTable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsistencyParams.SelectRowsPerTable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_selectRowsPerTable = value["SelectRowsPerTable"].GetInt64();
         m_selectRowsPerTableHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ConsistencyParams::Deserialize(const rapidjson::Value &value
     {
         if (!value["TablesSelectAll"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsistencyParams.TablesSelectAll` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsistencyParams.TablesSelectAll` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tablesSelectAll = value["TablesSelectAll"].GetInt64();
         m_tablesSelectAllHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ConsistencyParams::Deserialize(const rapidjson::Value &value
     {
         if (!value["TablesSelectCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsistencyParams.TablesSelectCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsistencyParams.TablesSelectCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tablesSelectCount = value["TablesSelectCount"].GetInt64();
         m_tablesSelectCountHasBeenSet = true;

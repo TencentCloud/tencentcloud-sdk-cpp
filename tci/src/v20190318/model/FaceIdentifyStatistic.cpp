@@ -38,7 +38,7 @@ CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyStatistic.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyStatistic.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["EndTs"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyStatistic.EndTs` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyStatistic.EndTs` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTs = value["EndTs"].GetInt64();
         m_endTsHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyStatistic.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyStatistic.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyStatistic.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyStatistic.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = value["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["StartTs"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyStatistic.StartTs` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyStatistic.StartTs` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTs = value["StartTs"].GetInt64();
         m_startTsHasBeenSet = true;

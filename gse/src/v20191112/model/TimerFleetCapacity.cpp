@@ -40,7 +40,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DesiredInstances"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.DesiredInstances` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.DesiredInstances` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredInstances = value["DesiredInstances"].GetInt64();
         m_desiredInstancesHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MinSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minSize = value["MinSize"].GetInt64();
         m_minSizeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MaxSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetInt64();
         m_maxSizeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ScalingInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.ScalingInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.ScalingInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scalingInterval = value["ScalingInterval"].GetInt64();
         m_scalingIntervalHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ScalingType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.ScalingType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.ScalingType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scalingType = value["ScalingType"].GetInt64();
         m_scalingTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TargetConfiguration"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TimerFleetCapacity.TargetConfiguration` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerFleetCapacity.TargetConfiguration` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetConfiguration.Deserialize(value["TargetConfiguration"]);

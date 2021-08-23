@@ -34,7 +34,7 @@ CoreInternalOutcome HostVolumeContext::Deserialize(const rapidjson::Value &value
     {
         if (!value["VolumePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostVolumeContext.VolumePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostVolumeContext.VolumePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_volumePath = string(value["VolumePath"].GetString());
         m_volumePathHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome Whiteboard::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Whiteboard.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Whiteboard.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Whiteboard::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Whiteboard.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Whiteboard.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Whiteboard::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InitParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Whiteboard.InitParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Whiteboard.InitParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_initParam = string(value["InitParam"].GetString());
         m_initParamHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome InternetAddressStatistics::Deserialize(const rapidjson::Valu
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetAddressStatistics.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAddressStatistics.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InternetAddressStatistics::Deserialize(const rapidjson::Valu
     {
         if (!value["SubnetNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InternetAddressStatistics.SubnetNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAddressStatistics.SubnetNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_subnetNum = value["SubnetNum"].GetInt64();
         m_subnetNumHasBeenSet = true;

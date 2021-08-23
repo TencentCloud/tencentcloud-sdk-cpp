@@ -36,7 +36,7 @@ CoreInternalOutcome ProcedurePrivilege::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedurePrivilege.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedurePrivilege.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ProcedurePrivilege::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Procedure"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedurePrivilege.Procedure` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedurePrivilege.Procedure` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procedure = string(value["Procedure"].GetString());
         m_procedureHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ProcedurePrivilege::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
     {
         if (!value["Privileges"].IsArray())
-            return CoreInternalOutcome(Error("response `ProcedurePrivilege.Privileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProcedurePrivilege.Privileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Privileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     {
         if (!rsp["BuyStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BuyStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BuyStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_buyStatus = rsp["BuyStatus"].GetUint64();
         m_buyStatusHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     {
         if (!rsp["InquireNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InquireNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InquireNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_inquireNum = rsp["InquireNum"].GetUint64();
         m_inquireNumHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     {
         if (!rsp["IsAutoOpenRenew"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IsAutoOpenRenew` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsAutoOpenRenew` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isAutoOpenRenew = rsp["IsAutoOpenRenew"].GetUint64();
         m_isAutoOpenRenewHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     {
         if (!rsp["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(rsp["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
     {
         if (!rsp["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetUint64();
         m_statusHasBeenSet = true;

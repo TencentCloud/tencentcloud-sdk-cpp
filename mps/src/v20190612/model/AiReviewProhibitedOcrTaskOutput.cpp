@@ -36,7 +36,7 @@ CoreInternalOutcome AiReviewProhibitedOcrTaskOutput::Deserialize(const rapidjson
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiReviewProhibitedOcrTaskOutput.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewProhibitedOcrTaskOutput.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AiReviewProhibitedOcrTaskOutput::Deserialize(const rapidjson
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewProhibitedOcrTaskOutput.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewProhibitedOcrTaskOutput.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome AiReviewProhibitedOcrTaskOutput::Deserialize(const rapidjson
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiReviewProhibitedOcrTaskOutput.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiReviewProhibitedOcrTaskOutput.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

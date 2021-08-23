@@ -51,7 +51,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DenseFaceShape.X` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.X` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetInt64();
         m_xHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DenseFaceShape.Y` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.Y` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetInt64();
         m_yHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DenseFaceShape.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DenseFaceShape.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LeftEye") && !value["LeftEye"].IsNull())
     {
         if (!value["LeftEye"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.LeftEye` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.LeftEye` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LeftEye"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RightEye") && !value["RightEye"].IsNull())
     {
         if (!value["RightEye"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.RightEye` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.RightEye` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RightEye"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -130,7 +130,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LeftEyeBrow") && !value["LeftEyeBrow"].IsNull())
     {
         if (!value["LeftEyeBrow"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.LeftEyeBrow` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.LeftEyeBrow` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LeftEyeBrow"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RightEyeBrow") && !value["RightEyeBrow"].IsNull())
     {
         if (!value["RightEyeBrow"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.RightEyeBrow` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.RightEyeBrow` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RightEyeBrow"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -170,7 +170,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MouthOutside") && !value["MouthOutside"].IsNull())
     {
         if (!value["MouthOutside"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.MouthOutside` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.MouthOutside` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MouthOutside"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -190,7 +190,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MouthInside") && !value["MouthInside"].IsNull())
     {
         if (!value["MouthInside"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.MouthInside` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.MouthInside` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MouthInside"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -210,7 +210,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Nose") && !value["Nose"].IsNull())
     {
         if (!value["Nose"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.Nose` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.Nose` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Nose"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -230,7 +230,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LeftPupil") && !value["LeftPupil"].IsNull())
     {
         if (!value["LeftPupil"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.LeftPupil` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.LeftPupil` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LeftPupil"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -250,7 +250,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RightPupil") && !value["RightPupil"].IsNull())
     {
         if (!value["RightPupil"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.RightPupil` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.RightPupil` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RightPupil"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -270,7 +270,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CentralAxis") && !value["CentralAxis"].IsNull())
     {
         if (!value["CentralAxis"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.CentralAxis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.CentralAxis` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CentralAxis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -290,7 +290,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Chin") && !value["Chin"].IsNull())
     {
         if (!value["Chin"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.Chin` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.Chin` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Chin"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -310,7 +310,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LeftEyeBags") && !value["LeftEyeBags"].IsNull())
     {
         if (!value["LeftEyeBags"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.LeftEyeBags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.LeftEyeBags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LeftEyeBags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -330,7 +330,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RightEyeBags") && !value["RightEyeBags"].IsNull())
     {
         if (!value["RightEyeBags"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.RightEyeBags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.RightEyeBags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RightEyeBags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -350,7 +350,7 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Forehead") && !value["Forehead"].IsNull())
     {
         if (!value["Forehead"].IsArray())
-            return CoreInternalOutcome(Error("response `DenseFaceShape.Forehead` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DenseFaceShape.Forehead` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Forehead"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

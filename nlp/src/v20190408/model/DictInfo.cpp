@@ -38,7 +38,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

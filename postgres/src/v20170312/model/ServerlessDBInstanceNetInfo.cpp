@@ -38,7 +38,7 @@ CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstanceNetInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstanceNetInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstanceNetInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstanceNetInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstanceNetInfo.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstanceNetInfo.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstanceNetInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstanceNetInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const rapidjson::Va
     {
         if (!value["NetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstanceNetInfo.NetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstanceNetInfo.NetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netType = string(value["NetType"].GetString());
         m_netTypeHasBeenSet = true;

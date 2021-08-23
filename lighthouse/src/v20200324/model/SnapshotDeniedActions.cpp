@@ -35,7 +35,7 @@ CoreInternalOutcome SnapshotDeniedActions::Deserialize(const rapidjson::Value &v
     {
         if (!value["SnapshotId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotDeniedActions.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotDeniedActions.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotId = string(value["SnapshotId"].GetString());
         m_snapshotIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SnapshotDeniedActions::Deserialize(const rapidjson::Value &v
     if (value.HasMember("DeniedActions") && !value["DeniedActions"].IsNull())
     {
         if (!value["DeniedActions"].IsArray())
-            return CoreInternalOutcome(Error("response `SnapshotDeniedActions.DeniedActions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SnapshotDeniedActions.DeniedActions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeniedActions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

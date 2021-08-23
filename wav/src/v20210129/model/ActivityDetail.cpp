@@ -43,7 +43,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.ActivityId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.ActivityId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activityId = value["ActivityId"].GetInt64();
         m_activityIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.ActivityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.ActivityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityName = string(value["ActivityName"].GetString());
         m_activityNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.ActivityState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.ActivityState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activityState = value["ActivityState"].GetInt64();
         m_activityStateHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.ActivityType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.ActivityType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activityType = value["ActivityType"].GetInt64();
         m_activityTypeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MainPhoto"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.MainPhoto` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.MainPhoto` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mainPhoto = string(value["MainPhoto"].GetString());
         m_mainPhotoHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivacyAgreementId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.PrivacyAgreementId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.PrivacyAgreementId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privacyAgreementId = string(value["PrivacyAgreementId"].GetString());
         m_privacyAgreementIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ActivityDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityDataList"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityDetail.ActivityDataList` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityDetail.ActivityDataList` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityDataList = string(value["ActivityDataList"].GetString());
         m_activityDataListHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome NetDetectState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetDetectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetectState.NetDetectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetectState.NetDetectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netDetectId = string(value["NetDetectId"].GetString());
         m_netDetectIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome NetDetectState::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NetDetectIpStateSet") && !value["NetDetectIpStateSet"].IsNull())
     {
         if (!value["NetDetectIpStateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NetDetectState.NetDetectIpStateSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetDetectState.NetDetectIpStateSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NetDetectIpStateSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

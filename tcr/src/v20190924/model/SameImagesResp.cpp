@@ -33,7 +33,7 @@ CoreInternalOutcome SameImagesResp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SameImages") && !value["SameImages"].IsNull())
     {
         if (!value["SameImages"].IsArray())
-            return CoreInternalOutcome(Error("response `SameImagesResp.SameImages` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SameImagesResp.SameImages` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SameImages"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

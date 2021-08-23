@@ -52,7 +52,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleSet") && !value["RuleSet"].IsNull())
     {
         if (!value["RuleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainRuleSet.RuleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.RuleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -82,7 +82,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(value["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.CertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.CertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateAlias = string(value["CertificateAlias"].GetString());
         m_certificateAliasHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientCertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.ClientCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.ClientCertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientCertificateId = string(value["ClientCertificateId"].GetString());
         m_clientCertificateIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientCertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.ClientCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.ClientCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientCertificateAlias = string(value["ClientCertificateAlias"].GetString());
         m_clientCertificateAliasHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicAuthConfId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.BasicAuthConfId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.BasicAuthConfId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_basicAuthConfId = string(value["BasicAuthConfId"].GetString());
         m_basicAuthConfIdHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicAuth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.BasicAuth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.BasicAuth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_basicAuth = value["BasicAuth"].GetInt64();
         m_basicAuthHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicAuthConfAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.BasicAuthConfAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.BasicAuthConfAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_basicAuthConfAlias = string(value["BasicAuthConfAlias"].GetString());
         m_basicAuthConfAliasHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerCertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.RealServerCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.RealServerCertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerCertificateId = string(value["RealServerCertificateId"].GetString());
         m_realServerCertificateIdHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerAuth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.RealServerAuth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.RealServerAuth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerAuth = value["RealServerAuth"].GetInt64();
         m_realServerAuthHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerCertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.RealServerCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.RealServerCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerCertificateAlias = string(value["RealServerCertificateAlias"].GetString());
         m_realServerCertificateAliasHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GaapCertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.GaapCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.GaapCertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gaapCertificateId = string(value["GaapCertificateId"].GetString());
         m_gaapCertificateIdHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GaapAuth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.GaapAuth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.GaapAuth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gaapAuth = value["GaapAuth"].GetInt64();
         m_gaapAuthHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GaapCertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.GaapCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.GaapCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gaapCertificateAlias = string(value["GaapCertificateAlias"].GetString());
         m_gaapCertificateAliasHasBeenSet = true;
@@ -212,7 +212,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerCertificateDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.RealServerCertificateDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.RealServerCertificateDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerCertificateDomain = string(value["RealServerCertificateDomain"].GetString());
         m_realServerCertificateDomainHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PolyClientCertificateAliasInfo") && !value["PolyClientCertificateAliasInfo"].IsNull())
     {
         if (!value["PolyClientCertificateAliasInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainRuleSet.PolyClientCertificateAliasInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.PolyClientCertificateAliasInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolyClientCertificateAliasInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -241,7 +241,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PolyRealServerCertificateAliasInfo") && !value["PolyRealServerCertificateAliasInfo"].IsNull())
     {
         if (!value["PolyRealServerCertificateAliasInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainRuleSet.PolyRealServerCertificateAliasInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.PolyRealServerCertificateAliasInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolyRealServerCertificateAliasInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -262,7 +262,7 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainRuleSet.DomainStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.DomainStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainStatus = value["DomainStatus"].GetUint64();
         m_domainStatusHasBeenSet = true;

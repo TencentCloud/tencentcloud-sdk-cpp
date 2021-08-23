@@ -35,7 +35,7 @@ CoreInternalOutcome WaterPrintRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["WaterPrintConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintRelation.WaterPrintConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintRelation.WaterPrintConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_waterPrintConfig.Deserialize(value["WaterPrintConfig"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome WaterPrintRelation::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `WaterPrintRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

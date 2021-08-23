@@ -38,7 +38,7 @@ CoreInternalOutcome OnlineScamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OnlineScamInfo.ContentLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnlineScamInfo.ContentLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contentLabel = string(value["ContentLabel"].GetString());
         m_contentLabelHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome OnlineScamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentRiskLevel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OnlineScamInfo.ContentRiskLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnlineScamInfo.ContentRiskLevel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_contentRiskLevel = value["ContentRiskLevel"].GetInt64();
         m_contentRiskLevelHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome OnlineScamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OnlineScamInfo.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnlineScamInfo.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_contentType = value["ContentType"].GetInt64();
         m_contentTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome OnlineScamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FraudType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OnlineScamInfo.FraudType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnlineScamInfo.FraudType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fraudType = value["FraudType"].GetInt64();
         m_fraudTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome OnlineScamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FraudAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OnlineScamInfo.FraudAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnlineScamInfo.FraudAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fraudAccount = string(value["FraudAccount"].GetString());
         m_fraudAccountHasBeenSet = true;

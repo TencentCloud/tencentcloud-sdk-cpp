@@ -35,7 +35,7 @@ CoreInternalOutcome WordTimePair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mbtm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WordTimePair.Mbtm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordTimePair.Mbtm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mbtm = value["Mbtm"].GetInt64();
         m_mbtmHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome WordTimePair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WordTimePair.Metm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordTimePair.Metm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_metm = value["Metm"].GetInt64();
         m_metmHasBeenSet = true;

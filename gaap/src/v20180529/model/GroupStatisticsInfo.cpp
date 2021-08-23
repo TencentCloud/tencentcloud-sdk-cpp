@@ -36,7 +36,7 @@ CoreInternalOutcome GroupStatisticsInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupStatisticsInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupStatisticsInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome GroupStatisticsInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupStatisticsInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupStatisticsInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome GroupStatisticsInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("ProxySet") && !value["ProxySet"].IsNull())
     {
         if (!value["ProxySet"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupStatisticsInfo.ProxySet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupStatisticsInfo.ProxySet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProxySet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

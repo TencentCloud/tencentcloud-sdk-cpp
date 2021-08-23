@@ -41,7 +41,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     {
         if (!value["OldPodList"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.OldPodList` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.OldPodList` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_oldPodList.Deserialize(value["OldPodList"]);
@@ -58,7 +58,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     {
         if (!value["NewPodList"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.NewPodList` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.NewPodList` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_newPodList.Deserialize(value["NewPodList"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     {
         if (!value["BatchStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.BatchStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.BatchStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchStatus = string(value["BatchStatus"].GetString());
         m_batchStatusHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     {
         if (!value["PodNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.PodNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.PodNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_podNum = value["PodNum"].GetInt64();
         m_podNumHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     {
         if (!value["BatchIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.BatchIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.BatchIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_batchIndex = value["BatchIndex"].GetInt64();
         m_batchIndexHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     if (value.HasMember("OldPods") && !value["OldPods"].IsNull())
     {
         if (!value["OldPods"].IsArray())
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.OldPods` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.OldPods` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OldPods"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     if (value.HasMember("NewPods") && !value["NewPods"].IsNull())
     {
         if (!value["NewPods"].IsArray())
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.NewPods` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.NewPods` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NewPods"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -145,7 +145,7 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
     {
         if (!value["NextBatchStartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.NextBatchStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServiceBatchDetail.NextBatchStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nextBatchStartTime = value["NextBatchStartTime"].GetInt64();
         m_nextBatchStartTimeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Ports") && !value["Ports"].IsNull())
     {
         if (!value["Ports"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceConfig.Ports` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.Ports` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Ports"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheck"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.HealthCheck` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.HealthCheck` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);

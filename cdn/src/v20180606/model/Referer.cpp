@@ -35,7 +35,7 @@ CoreInternalOutcome Referer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Referer.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Referer.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Referer::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RefererRules") && !value["RefererRules"].IsNull())
     {
         if (!value["RefererRules"].IsArray())
-            return CoreInternalOutcome(Error("response `Referer.RefererRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Referer.RefererRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RefererRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -39,7 +39,7 @@ CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageStatData.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageStatData.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StorageStatData.TotalStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageStatData.TotalStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalStorage = value["TotalStorage"].GetUint64();
         m_totalStorageHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InfrequentStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StorageStatData.InfrequentStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageStatData.InfrequentStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_infrequentStorage = value["InfrequentStorage"].GetUint64();
         m_infrequentStorageHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StandardStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StorageStatData.StandardStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageStatData.StandardStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_standardStorage = value["StandardStorage"].GetUint64();
         m_standardStorageHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArchiveStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StorageStatData.ArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageStatData.ArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_archiveStorage = value["ArchiveStorage"].GetUint64();
         m_archiveStorageHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeepArchiveStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StorageStatData.DeepArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageStatData.DeepArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deepArchiveStorage = value["DeepArchiveStorage"].GetUint64();
         m_deepArchiveStorageHasBeenSet = true;

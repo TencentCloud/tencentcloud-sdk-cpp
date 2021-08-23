@@ -40,7 +40,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiagnoseUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.DiagnoseUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.DiagnoseUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagnoseUrl = string(value["DiagnoseUrl"].GetString());
         m_diagnoseUrlHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiagnoseLink"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.DiagnoseLink` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.DiagnoseLink` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagnoseLink = string(value["DiagnoseLink"].GetString());
         m_diagnoseLinkHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.ExpireDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.ExpireDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireDate = string(value["ExpireDate"].GetString());
         m_expireDateHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VisitCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.VisitCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.VisitCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_visitCount = value["VisitCount"].GetInt64();
         m_visitCountHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ClientList") && !value["ClientList"].IsNull())
     {
         if (!value["ClientList"].IsArray())
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.ClientList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.ClientList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClientList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseInfo.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseInfo.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;

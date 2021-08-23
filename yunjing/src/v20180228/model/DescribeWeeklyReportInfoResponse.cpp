@@ -46,16 +46,16 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["CompanyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyName = string(rsp["CompanyName"].GetString());
         m_companyNameHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["MachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineNum = rsp["MachineNum"].GetUint64();
         m_machineNumHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["OnlineMachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OnlineMachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnlineMachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_onlineMachineNum = rsp["OnlineMachineNum"].GetUint64();
         m_onlineMachineNumHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["OfflineMachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OfflineMachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OfflineMachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_offlineMachineNum = rsp["OfflineMachineNum"].GetUint64();
         m_offlineMachineNumHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["ProVersionMachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProVersionMachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProVersionMachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_proVersionMachineNum = rsp["ProVersionMachineNum"].GetUint64();
         m_proVersionMachineNumHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["BeginDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BeginDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeginDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginDate = string(rsp["BeginDate"].GetString());
         m_beginDateHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["EndDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endDate = string(rsp["EndDate"].GetString());
         m_endDateHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(rsp["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["MalwareNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MalwareNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MalwareNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_malwareNum = rsp["MalwareNum"].GetUint64();
         m_malwareNumHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["NonlocalLoginNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NonlocalLoginNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonlocalLoginNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nonlocalLoginNum = rsp["NonlocalLoginNum"].GetUint64();
         m_nonlocalLoginNumHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["BruteAttackSuccessNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackSuccessNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackSuccessNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bruteAttackSuccessNum = rsp["BruteAttackSuccessNum"].GetUint64();
         m_bruteAttackSuccessNumHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["VulNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulNum = rsp["VulNum"].GetUint64();
         m_vulNumHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     {
         if (!rsp["DownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadUrl = string(rsp["DownloadUrl"].GetString());
         m_downloadUrlHasBeenSet = true;

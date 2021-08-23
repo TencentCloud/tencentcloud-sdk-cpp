@@ -36,7 +36,7 @@ CoreInternalOutcome PodVolume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VolumeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodVolume.VolumeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodVolume.VolumeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_volumeType = string(value["VolumeType"].GetString());
         m_volumeTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PodVolume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PVCVolume"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PodVolume.PVCVolume` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodVolume.PVCVolume` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pVCVolume.Deserialize(value["PVCVolume"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome PodVolume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostVolume"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PodVolume.HostVolume` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodVolume.HostVolume` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hostVolume.Deserialize(value["HostVolume"]);

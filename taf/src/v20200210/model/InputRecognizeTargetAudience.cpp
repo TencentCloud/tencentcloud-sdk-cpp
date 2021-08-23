@@ -71,7 +71,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Uid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Uid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Uid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uid = string(value["Uid"].GetString());
         m_uidHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["AccountType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.AccountType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.AccountType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_accountType = value["AccountType"].GetInt64();
         m_accountTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     if (value.HasMember("ModelIdList") && !value["ModelIdList"].IsNull())
     {
         if (!value["ModelIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ModelIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ModelIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ModelIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Os"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Os` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Os` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_os = string(value["Os"].GetString());
         m_osHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Osv"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Osv` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Osv` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osv = string(value["Osv"].GetString());
         m_osvHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Lat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Lat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Lat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lat = string(value["Lat"].GetString());
         m_latHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Lon"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Lon` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Lon` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lon = string(value["Lon"].GetString());
         m_lonHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["DeviceModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.DeviceModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.DeviceModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceModel = string(value["DeviceModel"].GetString());
         m_deviceModelHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["BidFloor"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.BidFloor` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.BidFloor` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bidFloor = value["BidFloor"].GetInt64();
         m_bidFloorHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Age"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Age` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Age` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetInt64();
         m_ageHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["DeliveryMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.DeliveryMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.DeliveryMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deliveryMode = value["DeliveryMode"].GetInt64();
         m_deliveryModeHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["AdvertisingType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.AdvertisingType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.AdvertisingType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_advertisingType = value["AdvertisingType"].GetInt64();
         m_advertisingTypeHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Mac"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Mac` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Mac` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mac = string(value["Mac"].GetString());
         m_macHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Ua"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Ua` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Ua` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ua = string(value["Ua"].GetString());
         m_uaHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["App"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.App` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.App` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_app = string(value["App"].GetString());
         m_appHasBeenSet = true;
@@ -264,7 +264,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Package"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Package` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Package` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_package = string(value["Package"].GetString());
         m_packageHasBeenSet = true;
@@ -274,7 +274,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Maker"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Maker` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Maker` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maker = string(value["Maker"].GetString());
         m_makerHasBeenSet = true;
@@ -284,7 +284,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["DeviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = string(value["DeviceType"].GetString());
         m_deviceTypeHasBeenSet = true;
@@ -294,7 +294,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["AccessMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.AccessMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.AccessMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessMode = string(value["AccessMode"].GetString());
         m_accessModeHasBeenSet = true;
@@ -304,7 +304,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Sp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Sp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Sp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sp = value["Sp"].GetInt64();
         m_spHasBeenSet = true;
@@ -314,7 +314,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["DeviceW"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.DeviceW` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.DeviceW` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceW = value["DeviceW"].GetInt64();
         m_deviceWHasBeenSet = true;
@@ -324,7 +324,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["DeviceH"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.DeviceH` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.DeviceH` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceH = value["DeviceH"].GetInt64();
         m_deviceHHasBeenSet = true;
@@ -334,7 +334,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["FullScreen"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.FullScreen` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.FullScreen` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fullScreen = value["FullScreen"].GetInt64();
         m_fullScreenHasBeenSet = true;
@@ -344,7 +344,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["ImpBannerW"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ImpBannerW` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ImpBannerW` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_impBannerW = value["ImpBannerW"].GetInt64();
         m_impBannerWHasBeenSet = true;
@@ -354,7 +354,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["ImpBannerH"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ImpBannerH` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ImpBannerH` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_impBannerH = value["ImpBannerH"].GetInt64();
         m_impBannerHHasBeenSet = true;
@@ -364,7 +364,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -374,7 +374,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Context"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Context` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Context` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_context = string(value["Context"].GetString());
         m_contextHasBeenSet = true;
@@ -384,7 +384,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["Channel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.Channel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.Channel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channel = string(value["Channel"].GetString());
         m_channelHasBeenSet = true;
@@ -394,7 +394,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["ReqId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ReqId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ReqId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reqId = string(value["ReqId"].GetString());
         m_reqIdHasBeenSet = true;
@@ -404,7 +404,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["ReqMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ReqMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ReqMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reqMd5 = string(value["ReqMd5"].GetString());
         m_reqMd5HasBeenSet = true;
@@ -414,7 +414,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["AdType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.AdType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.AdType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_adType = value["AdType"].GetInt64();
         m_adTypeHasBeenSet = true;
@@ -424,7 +424,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -434,7 +434,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["AppVer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.AppVer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.AppVer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appVer = string(value["AppVer"].GetString());
         m_appVerHasBeenSet = true;
@@ -444,7 +444,7 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     {
         if (!value["ReqType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ReqType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ReqType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reqType = value["ReqType"].GetInt64();
         m_reqTypeHasBeenSet = true;

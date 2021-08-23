@@ -35,7 +35,7 @@ CoreInternalOutcome Paging::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Offset"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Paging.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Paging.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetUint64();
         m_offsetHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Paging::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Limit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Paging.Limit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Paging.Limit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_limit = value["Limit"].GetUint64();
         m_limitHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome Concat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Concat.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Concat.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Concat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Concat.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Concat.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Placement.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

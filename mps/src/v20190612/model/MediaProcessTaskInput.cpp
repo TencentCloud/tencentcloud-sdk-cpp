@@ -38,7 +38,7 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("TranscodeTaskSet") && !value["TranscodeTaskSet"].IsNull())
     {
         if (!value["TranscodeTaskSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.TranscodeTaskSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskInput.TranscodeTaskSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TranscodeTaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("AnimatedGraphicTaskSet") && !value["AnimatedGraphicTaskSet"].IsNull())
     {
         if (!value["AnimatedGraphicTaskSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.AnimatedGraphicTaskSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskInput.AnimatedGraphicTaskSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AnimatedGraphicTaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("SnapshotByTimeOffsetTaskSet") && !value["SnapshotByTimeOffsetTaskSet"].IsNull())
     {
         if (!value["SnapshotByTimeOffsetTaskSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.SnapshotByTimeOffsetTaskSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskInput.SnapshotByTimeOffsetTaskSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SnapshotByTimeOffsetTaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("SampleSnapshotTaskSet") && !value["SampleSnapshotTaskSet"].IsNull())
     {
         if (!value["SampleSnapshotTaskSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.SampleSnapshotTaskSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskInput.SampleSnapshotTaskSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SampleSnapshotTaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("ImageSpriteTaskSet") && !value["ImageSpriteTaskSet"].IsNull())
     {
         if (!value["ImageSpriteTaskSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.ImageSpriteTaskSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskInput.ImageSpriteTaskSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageSpriteTaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -138,7 +138,7 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("AdaptiveDynamicStreamingTaskSet") && !value["AdaptiveDynamicStreamingTaskSet"].IsNull())
     {
         if (!value["AdaptiveDynamicStreamingTaskSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.AdaptiveDynamicStreamingTaskSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskInput.AdaptiveDynamicStreamingTaskSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AdaptiveDynamicStreamingTaskSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

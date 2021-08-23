@@ -38,7 +38,7 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayFlowMonitorDetail.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value
     {
         if (!value["InPkg"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GatewayFlowMonitorDetail.InPkg` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.InPkg` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_inPkg = value["InPkg"].GetUint64();
         m_inPkgHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value
     {
         if (!value["OutPkg"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GatewayFlowMonitorDetail.OutPkg` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.OutPkg` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_outPkg = value["OutPkg"].GetUint64();
         m_outPkgHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value
     {
         if (!value["InTraffic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GatewayFlowMonitorDetail.InTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.InTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_inTraffic = value["InTraffic"].GetUint64();
         m_inTrafficHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value
     {
         if (!value["OutTraffic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GatewayFlowMonitorDetail.OutTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.OutTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_outTraffic = value["OutTraffic"].GetUint64();
         m_outTrafficHasBeenSet = true;

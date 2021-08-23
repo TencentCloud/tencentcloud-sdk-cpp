@@ -43,7 +43,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CvmId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.CvmId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.CvmId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cvmId = string(value["CvmId"].GetString());
         m_cvmIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Url") && !value["Url"].IsNull())
     {
         if (!value["Url"].IsArray())
-            return CoreInternalOutcome(Error("response `MigrateSource.Url` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.Url` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Url"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -136,7 +136,7 @@ CoreInternalOutcome MigrateSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UrlPassword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateSource.UrlPassword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateSource.UrlPassword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_urlPassword = string(value["UrlPassword"].GetString());
         m_urlPasswordHasBeenSet = true;

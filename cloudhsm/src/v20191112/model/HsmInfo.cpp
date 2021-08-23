@@ -35,7 +35,7 @@ CoreInternalOutcome HsmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Model"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HsmInfo.Model` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HsmInfo.Model` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_model = string(value["Model"].GetString());
         m_modelHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome HsmInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VsmTypes") && !value["VsmTypes"].IsNull())
     {
         if (!value["VsmTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `HsmInfo.VsmTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HsmInfo.VsmTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VsmTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

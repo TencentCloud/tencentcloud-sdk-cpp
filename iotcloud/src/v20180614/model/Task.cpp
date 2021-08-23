@@ -35,7 +35,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateShadowTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.UpdateShadowTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.UpdateShadowTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_updateShadowTask.Deserialize(value["UpdateShadowTask"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishMessageTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.PublishMessageTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.PublishMessageTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_publishMessageTask.Deserialize(value["PublishMessageTask"]);

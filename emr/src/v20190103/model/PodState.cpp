@@ -39,7 +39,7 @@ CoreInternalOutcome PodState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodState.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodState.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PodState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodState.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodState.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PodState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodState.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodState.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PodState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodState.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodState.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PodState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerCluster"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodState.OwnerCluster` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodState.OwnerCluster` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerCluster = string(value["OwnerCluster"].GetString());
         m_ownerClusterHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PodState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PodState.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodState.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;

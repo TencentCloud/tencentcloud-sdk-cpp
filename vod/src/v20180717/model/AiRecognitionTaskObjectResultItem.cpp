@@ -35,7 +35,7 @@ CoreInternalOutcome AiRecognitionTaskObjectResultItem::Deserialize(const rapidjs
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectResultItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AiRecognitionTaskObjectResultItem::Deserialize(const rapidjs
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectResultItem.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultItem.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

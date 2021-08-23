@@ -35,7 +35,7 @@ CoreInternalOutcome AccountPrivilegeModifyInfo::Deserialize(const rapidjson::Val
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountPrivilegeModifyInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountPrivilegeModifyInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AccountPrivilegeModifyInfo::Deserialize(const rapidjson::Val
     if (value.HasMember("DBPrivileges") && !value["DBPrivileges"].IsNull())
     {
         if (!value["DBPrivileges"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountPrivilegeModifyInfo.DBPrivileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountPrivilegeModifyInfo.DBPrivileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBPrivileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

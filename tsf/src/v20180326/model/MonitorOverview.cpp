@@ -39,7 +39,7 @@ CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvocationCountOfDay"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorOverview.InvocationCountOfDay` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorOverview.InvocationCountOfDay` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invocationCountOfDay = string(value["InvocationCountOfDay"].GetString());
         m_invocationCountOfDayHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvocationCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorOverview.InvocationCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorOverview.InvocationCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invocationCount = string(value["InvocationCount"].GetString());
         m_invocationCountHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorCountOfDay"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorOverview.ErrorCountOfDay` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorOverview.ErrorCountOfDay` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCountOfDay = string(value["ErrorCountOfDay"].GetString());
         m_errorCountOfDayHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorOverview.ErrorCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorOverview.ErrorCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCount = string(value["ErrorCount"].GetString());
         m_errorCountHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuccessRatioOfDay"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorOverview.SuccessRatioOfDay` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorOverview.SuccessRatioOfDay` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_successRatioOfDay = string(value["SuccessRatioOfDay"].GetString());
         m_successRatioOfDayHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuccessRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorOverview.SuccessRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorOverview.SuccessRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_successRatio = string(value["SuccessRatio"].GetString());
         m_successRatioHasBeenSet = true;

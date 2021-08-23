@@ -44,7 +44,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.Hash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.Hash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hash = string(value["Hash"].GetString());
         m_hashHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CN"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CN` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CN` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cN = string(value["CN"].GetString());
         m_cNHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SANs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.SANs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.SANs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sANs = string(value["SANs"].GetString());
         m_sANsHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyAlgo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.KeyAlgo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.KeyAlgo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyAlgo = string(value["KeyAlgo"].GetString());
         m_keyAlgoHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Issuer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.Issuer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.Issuer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuer = string(value["Issuer"].GetString());
         m_issuerHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Days"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.Days` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.Days` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_days = value["Days"].GetInt64();
         m_daysHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Brand"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.Brand` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.Brand` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_brand = string(value["Brand"].GetString());
         m_brandHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrustStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.TrustStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.TrustStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trustStatus = string(value["TrustStatus"].GetString());
         m_trustStatusHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certType = string(value["CertType"].GetString());
         m_certTypeHasBeenSet = true;

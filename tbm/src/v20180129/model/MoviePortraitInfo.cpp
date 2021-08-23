@@ -33,7 +33,7 @@ CoreInternalOutcome MoviePortraitInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("PortraitSet") && !value["PortraitSet"].IsNull())
     {
         if (!value["PortraitSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MoviePortraitInfo.PortraitSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MoviePortraitInfo.PortraitSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PortraitSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

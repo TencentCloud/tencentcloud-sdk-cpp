@@ -39,7 +39,7 @@ CoreInternalOutcome GestureResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Class"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GestureResult.Class` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GestureResult.Class` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_class = string(value["Class"].GetString());
         m_classHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome GestureResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `GestureResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GestureResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome GestureResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GestureResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GestureResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome GestureResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GestureResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GestureResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome GestureResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Top"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GestureResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GestureResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_top = value["Top"].GetInt64();
         m_topHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome GestureResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GestureResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GestureResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

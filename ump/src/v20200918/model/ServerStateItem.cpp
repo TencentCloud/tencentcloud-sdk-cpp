@@ -36,7 +36,7 @@ CoreInternalOutcome ServerStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerStateItem.ServerState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerStateItem.ServerState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_serverState = value["ServerState"].GetInt64();
         m_serverStateHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ServerStateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerStateItem.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerStateItem.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverIp = string(value["ServerIp"].GetString());
         m_serverIpHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ServerStateItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DiskInfos") && !value["DiskInfos"].IsNull())
     {
         if (!value["DiskInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `ServerStateItem.DiskInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServerStateItem.DiskInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DiskInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

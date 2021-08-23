@@ -48,7 +48,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.MonitorStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.MonitorStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_monitorStatus = value["MonitorStatus"].GetUint64();
         m_monitorStatusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScannerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.ScannerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.ScannerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scannerType = string(value["ScannerType"].GetString());
         m_scannerTypeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Crontab"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.Crontab` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.Crontab` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_crontab = value["Crontab"].GetUint64();
         m_crontabHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IncludedVulsTypes"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.IncludedVulsTypes` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.IncludedVulsTypes` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_includedVulsTypes = string(value["IncludedVulsTypes"].GetString());
         m_includedVulsTypesHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RateLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.RateLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.RateLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rateLimit = value["RateLimit"].GetUint64();
         m_rateLimitHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstScanStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.FirstScanStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.FirstScanStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstScanStartTime = string(value["FirstScanStartTime"].GetString());
         m_firstScanStartTimeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.ScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.ScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanStatus = value["ScanStatus"].GetUint64();
         m_scanStatusHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanFinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.LastScanFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.LastScanFinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanFinishTime = string(value["LastScanFinishTime"].GetString());
         m_lastScanFinishTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentScanStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.CurrentScanStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.CurrentScanStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentScanStartTime = string(value["CurrentScanStartTime"].GetString());
         m_currentScanStartTimeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Monitor.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Appid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appid = value["Appid"].GetUint64();
         m_appidHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentScanStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Monitor.ContentScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Monitor.ContentScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_contentScanStatus = value["ContentScanStatus"].GetUint64();
         m_contentScanStatusHasBeenSet = true;

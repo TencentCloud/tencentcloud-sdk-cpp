@@ -35,7 +35,7 @@ CoreInternalOutcome HourTrafficInfoDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Hour"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HourTrafficInfoDetail.Hour` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HourTrafficInfoDetail.Hour` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hour = value["Hour"].GetUint64();
         m_hourHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome HourTrafficInfoDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["HourTrafficTotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HourTrafficInfoDetail.HourTrafficTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HourTrafficInfoDetail.HourTrafficTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hourTrafficTotalCount = value["HourTrafficTotalCount"].GetUint64();
         m_hourTrafficTotalCountHasBeenSet = true;

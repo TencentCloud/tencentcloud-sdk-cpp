@@ -45,7 +45,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BCName"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.BCName` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.BCName` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bCName = value["BCName"].GetUint64();
         m_bCNameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.TargetDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.TargetDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetDomain = string(value["TargetDomain"].GetString());
         m_targetDomainHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.PlayType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.PlayType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_playType = value["PlayType"].GetInt64();
         m_playTypeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDelayLive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.IsDelayLive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsDelayLive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDelayLive = value["IsDelayLive"].GetInt64();
         m_isDelayLiveHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentCName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.CurrentCName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CurrentCName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentCName = string(value["CurrentCName"].GetString());
         m_currentCNameHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RentTag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.RentTag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.RentTag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rentTag = value["RentTag"].GetInt64();
         m_rentTagHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RentExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.RentExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.RentExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rentExpireTime = string(value["RentExpireTime"].GetString());
         m_rentExpireTimeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsMiniProgramLive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.IsMiniProgramLive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsMiniProgramLive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isMiniProgramLive = value["IsMiniProgramLive"].GetInt64();
         m_isMiniProgramLiveHasBeenSet = true;

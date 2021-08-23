@@ -48,7 +48,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bytes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Bytes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Bytes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bytes = value["Bytes"].GetInt64();
         m_bytesHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BytesUsed"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.BytesUsed` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.BytesUsed` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bytesUsed = value["BytesUsed"].GetInt64();
         m_bytesUsedHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.EnableTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.EnableTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enableTime = string(value["EnableTime"].GetString());
         m_enableTimeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContractExtension"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.ContractExtension` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.ContractExtension` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_contractExtension = value["ContractExtension"].GetBool();
         m_contractExtensionHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoExtension"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.AutoExtension` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.AutoExtension` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoExtension = value["AutoExtension"].GetBool();
         m_autoExtensionHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Channel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Channel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Channel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channel = string(value["Channel"].GetString());
         m_channelHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifeTimeMonth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.LifeTimeMonth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.LifeTimeMonth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lifeTimeMonth = value["LifeTimeMonth"].GetInt64();
         m_lifeTimeMonthHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtensionAvailable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.ExtensionAvailable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.ExtensionAvailable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_extensionAvailable = value["ExtensionAvailable"].GetBool();
         m_extensionAvailableHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefundAvailable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.RefundAvailable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.RefundAvailable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_refundAvailable = value["RefundAvailable"].GetBool();
         m_refundAvailableHasBeenSet = true;

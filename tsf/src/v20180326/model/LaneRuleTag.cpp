@@ -40,7 +40,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.TagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.TagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = string(value["TagId"].GetString());
         m_tagIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagOperator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.TagOperator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.TagOperator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagOperator = string(value["TagOperator"].GetString());
         m_tagOperatorHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.TagValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.TagValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValue = string(value["TagValue"].GetString());
         m_tagValueHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaneRuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.LaneRuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.LaneRuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_laneRuleId = string(value["LaneRuleId"].GetString());
         m_laneRuleIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome LaneRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaneRuleTag.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneRuleTag.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome Contents::Deserialize(const rapidjson::Value &value)
     {
         if (!value["En"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Contents.En` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Contents.En` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_en = string(value["En"].GetString());
         m_enHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Contents::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Contents.Cn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Contents.Cn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cn = string(value["Cn"].GetString());
         m_cnHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Contents::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Contents.Tc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Contents.Tc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tc = string(value["Tc"].GetString());
         m_tcHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Contents::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Default"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Contents.Default` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Contents.Default` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_default = string(value["Default"].GetString());
         m_defaultHasBeenSet = true;

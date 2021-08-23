@@ -36,7 +36,7 @@ CoreInternalOutcome HighlightSegmentItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HighlightSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome HighlightSegmentItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HighlightSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome HighlightSegmentItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HighlightSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;

@@ -33,7 +33,7 @@ CoreInternalOutcome InstanceExtraArgs::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Kubelet") && !value["Kubelet"].IsNull())
     {
         if (!value["Kubelet"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceExtraArgs.Kubelet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtraArgs.Kubelet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Kubelet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

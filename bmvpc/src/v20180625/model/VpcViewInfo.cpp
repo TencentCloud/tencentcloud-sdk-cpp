@@ -41,7 +41,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LbNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.LbNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.LbNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lbNum = value["LbNum"].GetUint64();
         m_lbNumHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.EipNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.EipNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eipNum = value["EipNum"].GetUint64();
         m_eipNumHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcViewInfo.NatNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.NatNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_natNum = value["NatNum"].GetUint64();
         m_natNumHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubnetSet") && !value["SubnetSet"].IsNull())
     {
         if (!value["SubnetSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VpcViewInfo.SubnetSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VpcViewInfo.SubnetSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

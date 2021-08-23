@@ -41,7 +41,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Item"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocComplianceItem.Item` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.Item` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_item = string(value["Item"].GetString());
         m_itemHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocComplianceItem.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["StandardItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocComplianceItem.StandardItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.StandardItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_standardItem = string(value["StandardItem"].GetString());
         m_standardItemHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Result"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SocComplianceItem.Result` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.Result` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_result = value["Result"].GetInt64();
         m_resultHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocComplianceItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocComplianceItem.ProStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.ProStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proStr = string(value["ProStr"].GetString());
         m_proStrHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Production") && !value["Production"].IsNull())
     {
         if (!value["Production"].IsArray())
-            return CoreInternalOutcome(Error("response `SocComplianceItem.Production` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.Production` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Production"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome SocComplianceItem::Deserialize(const rapidjson::Value &value
     if (value.HasMember("CheckItems") && !value["CheckItems"].IsNull())
     {
         if (!value["CheckItems"].IsArray())
-            return CoreInternalOutcome(Error("response `SocComplianceItem.CheckItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceItem.CheckItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CheckItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

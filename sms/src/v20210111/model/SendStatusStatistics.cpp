@@ -36,7 +36,7 @@ CoreInternalOutcome SendStatusStatistics::Deserialize(const rapidjson::Value &va
     {
         if (!value["FeeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatusStatistics.FeeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatusStatistics.FeeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_feeCount = value["FeeCount"].GetUint64();
         m_feeCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SendStatusStatistics::Deserialize(const rapidjson::Value &va
     {
         if (!value["RequestCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatusStatistics.RequestCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatusStatistics.RequestCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_requestCount = value["RequestCount"].GetUint64();
         m_requestCountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SendStatusStatistics::Deserialize(const rapidjson::Value &va
     {
         if (!value["RequestSuccessCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatusStatistics.RequestSuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatusStatistics.RequestSuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_requestSuccessCount = value["RequestSuccessCount"].GetUint64();
         m_requestSuccessCountHasBeenSet = true;

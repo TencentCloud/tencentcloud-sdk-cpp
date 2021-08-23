@@ -36,7 +36,7 @@ CoreInternalOutcome EnvironmentStrategy::Deserialize(const rapidjson::Value &val
     {
         if (!value["EnvironmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentStrategy.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentStrategy.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentName = string(value["EnvironmentName"].GetString());
         m_environmentNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EnvironmentStrategy::Deserialize(const rapidjson::Value &val
     {
         if (!value["Quota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentStrategy.Quota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentStrategy.Quota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_quota = value["Quota"].GetInt64();
         m_quotaHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EnvironmentStrategy::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentStrategy.MaxQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentStrategy.MaxQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxQuota = value["MaxQuota"].GetInt64();
         m_maxQuotaHasBeenSet = true;

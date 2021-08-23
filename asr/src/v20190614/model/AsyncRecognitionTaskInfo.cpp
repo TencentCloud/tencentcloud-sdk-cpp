@@ -35,7 +35,7 @@ CoreInternalOutcome AsyncRecognitionTaskInfo::Deserialize(const rapidjson::Value
     {
         if (!value["TaskId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncRecognitionTaskInfo.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncRecognitionTaskInfo.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetInt64();
         m_taskIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AsyncRecognitionTaskInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncRecognitionTaskInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncRecognitionTaskInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

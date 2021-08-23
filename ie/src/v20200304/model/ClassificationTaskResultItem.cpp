@@ -35,7 +35,7 @@ CoreInternalOutcome ClassificationTaskResultItem::Deserialize(const rapidjson::V
     {
         if (!value["Classification"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationTaskResultItem.Classification` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationTaskResultItem.Classification` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classification = string(value["Classification"].GetString());
         m_classificationHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ClassificationTaskResultItem::Deserialize(const rapidjson::V
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

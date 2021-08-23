@@ -38,7 +38,7 @@ CoreInternalOutcome Proof::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Created"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Proof.Created` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Proof.Created` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_created = value["Created"].GetInt64();
         m_createdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Proof::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Proof.Creator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Proof.Creator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Proof::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SaltJson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Proof.SaltJson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Proof.SaltJson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_saltJson = string(value["SaltJson"].GetString());
         m_saltJsonHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Proof::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignatureValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Proof.SignatureValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Proof.SignatureValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signatureValue = string(value["SignatureValue"].GetString());
         m_signatureValueHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Proof::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Proof.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Proof.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

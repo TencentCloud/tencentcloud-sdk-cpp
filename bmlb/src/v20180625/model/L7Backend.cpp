@@ -42,7 +42,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.BindType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.BindType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindType = value["BindType"].GetInt64();
         m_bindTypeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.LanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.LanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lanIp = string(value["LanIp"].GetString());
         m_lanIpHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MgtIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7Backend.MgtIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.MgtIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mgtIp = string(value["MgtIp"].GetString());
         m_mgtIpHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome L7Backend::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Operates") && !value["Operates"].IsNull())
     {
         if (!value["Operates"].IsArray())
-            return CoreInternalOutcome(Error("response `L7Backend.Operates` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7Backend.Operates` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Operates"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome TagsInfoOfInstance::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome TagsInfoOfInstance::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TagsInfoOfInstance.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfInstance.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

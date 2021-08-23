@@ -57,7 +57,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.SubscribeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.SubscribeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeId = string(value["SubscribeId"].GetString());
         m_subscribeIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.SubscribeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.SubscribeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeName = string(value["SubscribeName"].GetString());
         m_subscribeNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.ChannelId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.ChannelId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelId = string(value["ChannelId"].GetString());
         m_channelIdHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Product"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.Product` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.Product` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_product = string(value["Product"].GetString());
         m_productHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatus = string(value["InstanceStatus"].GetString());
         m_instanceStatusHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubsStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.SubsStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.SubsStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subsStatus = string(value["SubsStatus"].GetString());
         m_subsStatusHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsolateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isolateTime = string(value["IsolateTime"].GetString());
         m_isolateTimeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OfflineTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offlineTime = string(value["OfflineTime"].GetString());
         m_offlineTimeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumeStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.ConsumeStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.ConsumeStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumeStartTime = string(value["ConsumeStartTime"].GetString());
         m_consumeStartTimeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.PayType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.PayType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payType = value["PayType"].GetInt64();
         m_payTypeHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqVpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqVpcId = string(value["UniqVpcId"].GetString());
         m_uniqVpcIdHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqSubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqSubnetId = string(value["UniqSubnetId"].GetString());
         m_uniqSubnetIdHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SdkConsumedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.SdkConsumedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.SdkConsumedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkConsumedTime = string(value["SdkConsumedTime"].GetString());
         m_sdkConsumedTimeHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `SubscribeInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -287,7 +287,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoRenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
         m_autoRenewFlagHasBeenSet = true;
@@ -297,7 +297,7 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeInfo.SubscribeVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.SubscribeVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeVersion = string(value["SubscribeVersion"].GetString());
         m_subscribeVersionHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome Price::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstancePrice"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Price.InstancePrice` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Price.InstancePrice` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instancePrice.Deserialize(value["InstancePrice"]);

@@ -35,7 +35,7 @@ CoreInternalOutcome ConditionBusiness::Deserialize(const rapidjson::Value &value
     {
         if (!value["BusinessCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionBusiness.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionBusiness.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCode = string(value["BusinessCode"].GetString());
         m_businessCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConditionBusiness::Deserialize(const rapidjson::Value &value
     {
         if (!value["BusinessCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionBusiness.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionBusiness.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCodeName = string(value["BusinessCodeName"].GetString());
         m_businessCodeNameHasBeenSet = true;

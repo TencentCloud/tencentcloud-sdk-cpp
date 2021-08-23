@@ -45,7 +45,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RealServerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RealServerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerType = string(value["RealServerType"].GetString());
         m_realServerTypeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheduler"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduler = string(value["Scheduler"].GetString());
         m_schedulerHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheck"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.HealthCheck` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.HealthCheck` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_healthCheck = value["HealthCheck"].GetUint64();
         m_healthCheckHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RuleStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RuleStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleStatus = value["RuleStatus"].GetUint64();
         m_ruleStatusHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.CheckParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.CheckParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_checkParams.Deserialize(value["CheckParams"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RealServerSet") && !value["RealServerSet"].IsNull())
     {
         if (!value["RealServerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleInfo.RealServerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RealServerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RealServerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -162,7 +162,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.BindStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.BindStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bindStatus = value["BindStatus"].GetUint64();
         m_bindStatusHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardHost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.ForwardHost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.ForwardHost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardHost = string(value["ForwardHost"].GetString());
         m_forwardHostHasBeenSet = true;

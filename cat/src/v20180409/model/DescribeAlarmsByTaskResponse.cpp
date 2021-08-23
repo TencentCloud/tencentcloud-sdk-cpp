@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeAlarmsByTaskResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,18 +56,18 @@ CoreInternalOutcome DescribeAlarmsByTaskResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("AlarmInfos") && !rsp["AlarmInfos"].IsNull())
     {
         if (!rsp["AlarmInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AlarmInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeAlarmsByTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["FaultRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaultRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaultRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faultRatio = rsp["FaultRatio"].GetDouble();
         m_faultRatioHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeAlarmsByTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["FaultTimeSpec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaultTimeSpec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaultTimeSpec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faultTimeSpec = string(rsp["FaultTimeSpec"].GetString());
         m_faultTimeSpecHasBeenSet = true;

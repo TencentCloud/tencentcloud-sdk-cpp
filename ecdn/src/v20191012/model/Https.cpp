@@ -42,7 +42,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Https.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Http2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Https.Http2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.Http2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_http2 = string(value["Http2"].GetString());
         m_http2HasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcspStapling"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Https.OcspStapling` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.OcspStapling` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocspStapling = string(value["OcspStapling"].GetString());
         m_ocspStaplingHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VerifyClient"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Https.VerifyClient` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.VerifyClient` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyClient = string(value["VerifyClient"].GetString());
         m_verifyClientHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Https.CertInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.CertInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_certInfo.Deserialize(value["CertInfo"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientCertInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Https.ClientCertInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.ClientCertInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clientCertInfo.Deserialize(value["ClientCertInfo"]);
@@ -116,7 +116,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spdy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Https.Spdy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.Spdy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spdy = string(value["Spdy"].GetString());
         m_spdyHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SslStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Https.SslStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.SslStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sslStatus = string(value["SslStatus"].GetString());
         m_sslStatusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hsts"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Https.Hsts` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Https.Hsts` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hsts.Deserialize(value["Hsts"]);

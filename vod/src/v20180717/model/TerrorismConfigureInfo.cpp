@@ -35,7 +35,7 @@ CoreInternalOutcome TerrorismConfigureInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["ImgReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TerrorismConfigureInfo.ImgReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TerrorismConfigureInfo.ImgReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imgReviewInfo.Deserialize(value["ImgReviewInfo"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome TerrorismConfigureInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["OcrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TerrorismConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TerrorismConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrReviewInfo.Deserialize(value["OcrReviewInfo"]);

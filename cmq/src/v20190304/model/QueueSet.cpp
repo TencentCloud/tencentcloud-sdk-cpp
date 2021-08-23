@@ -58,7 +58,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueueId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.QueueId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.QueueId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueId = string(value["QueueId"].GetString());
         m_queueIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.QueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueName = string(value["QueueName"].GetString());
         m_queueNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.Bps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.Bps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bps = value["Bps"].GetUint64();
         m_bpsHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxDelaySeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.MaxDelaySeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.MaxDelaySeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxDelaySeconds = value["MaxDelaySeconds"].GetUint64();
         m_maxDelaySecondsHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxMsgHeapNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.MaxMsgHeapNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.MaxMsgHeapNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxMsgHeapNum = value["MaxMsgHeapNum"].GetUint64();
         m_maxMsgHeapNumHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PollingWaitSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.PollingWaitSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.PollingWaitSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pollingWaitSeconds = value["PollingWaitSeconds"].GetUint64();
         m_pollingWaitSecondsHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRetentionSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.MsgRetentionSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.MsgRetentionSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgRetentionSeconds = value["MsgRetentionSeconds"].GetUint64();
         m_msgRetentionSecondsHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VisibilityTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.VisibilityTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.VisibilityTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_visibilityTimeout = value["VisibilityTimeout"].GetUint64();
         m_visibilityTimeoutHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxMsgSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.MaxMsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.MaxMsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxMsgSize = value["MaxMsgSize"].GetUint64();
         m_maxMsgSizeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RewindSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.RewindSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.RewindSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rewindSeconds = value["RewindSeconds"].GetUint64();
         m_rewindSecondsHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifyTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifyTime = value["LastModifyTime"].GetUint64();
         m_lastModifyTimeHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActiveMsgNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.ActiveMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.ActiveMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_activeMsgNum = value["ActiveMsgNum"].GetUint64();
         m_activeMsgNumHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InactiveMsgNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.InactiveMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.InactiveMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_inactiveMsgNum = value["InactiveMsgNum"].GetUint64();
         m_inactiveMsgNumHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DelayMsgNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.DelayMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.DelayMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_delayMsgNum = value["DelayMsgNum"].GetUint64();
         m_delayMsgNumHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RewindMsgNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.RewindMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.RewindMsgNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rewindMsgNum = value["RewindMsgNum"].GetUint64();
         m_rewindMsgNumHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinMsgTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.MinMsgTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.MinMsgTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minMsgTime = value["MinMsgTime"].GetUint64();
         m_minMsgTimeHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Transaction"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.Transaction` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.Transaction` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_transaction = value["Transaction"].GetBool();
         m_transactionHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DeadLetterSource") && !value["DeadLetterSource"].IsNull())
     {
         if (!value["DeadLetterSource"].IsArray())
-            return CoreInternalOutcome(Error("response `QueueSet.DeadLetterSource` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.DeadLetterSource` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeadLetterSource"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -268,7 +268,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeadLetterPolicy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.DeadLetterPolicy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.DeadLetterPolicy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_deadLetterPolicy.Deserialize(value["DeadLetterPolicy"]);
@@ -285,7 +285,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionPolicy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.TransactionPolicy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.TransactionPolicy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_transactionPolicy.Deserialize(value["TransactionPolicy"]);
@@ -302,7 +302,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createUin = value["CreateUin"].GetUint64();
         m_createUinHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `QueueSet.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -332,7 +332,7 @@ CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Trace"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QueueSet.Trace` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueSet.Trace` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_trace = value["Trace"].GetBool();
         m_traceHasBeenSet = true;

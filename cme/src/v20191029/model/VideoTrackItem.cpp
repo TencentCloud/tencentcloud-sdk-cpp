@@ -42,7 +42,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.SourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = string(value["SourceType"].GetString());
         m_sourceTypeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceMedia"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.SourceMedia` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.SourceMedia` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMedia = string(value["SourceMedia"].GetString());
         m_sourceMediaHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceMediaStartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.SourceMediaStartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.SourceMediaStartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMediaStartTime = value["SourceMediaStartTime"].GetDouble();
         m_sourceMediaStartTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.XPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.XPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xPos = string(value["XPos"].GetString());
         m_xPosHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.YPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.YPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yPos = string(value["YPos"].GetString());
         m_yPosHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoordinateOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coordinateOrigin = string(value["CoordinateOrigin"].GetString());
         m_coordinateOriginHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome VideoTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoTrackItem.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoTrackItem.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;

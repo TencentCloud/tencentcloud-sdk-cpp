@@ -44,7 +44,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.EnvName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.EnvName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envName = string(value["EnvName"].GetString());
         m_envNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Placement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.Placement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.Placement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_placement.Deserialize(value["Placement"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComputeNodeMetrics"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.ComputeNodeMetrics` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.ComputeNodeMetrics` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_computeNodeMetrics.Deserialize(value["ComputeNodeMetrics"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.EnvType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.EnvType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envType = string(value["EnvType"].GetString());
         m_envTypeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredComputeNodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.DesiredComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.DesiredComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredComputeNodeCount = value["DesiredComputeNodeCount"].GetUint64();
         m_desiredComputeNodeCountHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NextAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.NextAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.NextAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextAction = string(value["NextAction"].GetString());
         m_nextActionHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachedComputeNodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeEnvView.AttachedComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.AttachedComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attachedComputeNodeCount = value["AttachedComputeNodeCount"].GetUint64();
         m_attachedComputeNodeCountHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `ComputeEnvView.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvView.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

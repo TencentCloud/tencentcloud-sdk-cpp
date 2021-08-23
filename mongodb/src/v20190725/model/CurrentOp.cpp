@@ -42,7 +42,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.OpId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.OpId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_opId = value["OpId"].GetInt64();
         m_opIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ns"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.Ns` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.Ns` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ns = string(value["Ns"].GetString());
         m_nsHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Query"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.Query` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.Query` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_query = string(value["Query"].GetString());
         m_queryHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Op"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.Op` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.Op` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_op = string(value["Op"].GetString());
         m_opHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicaSetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.ReplicaSetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.ReplicaSetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetName = string(value["ReplicaSetName"].GetString());
         m_replicaSetNameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.NodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeName = string(value["NodeName"].GetString());
         m_nodeNameHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicrosecsRunning"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CurrentOp.MicrosecsRunning` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.MicrosecsRunning` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_microsecsRunning = value["MicrosecsRunning"].GetUint64();
         m_microsecsRunningHasBeenSet = true;

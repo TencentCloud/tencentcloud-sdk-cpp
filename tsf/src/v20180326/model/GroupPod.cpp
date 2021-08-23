@@ -47,7 +47,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PodName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.PodName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.PodName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podName = string(value["PodName"].GetString());
         m_podNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PodId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.PodId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.PodId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podId = string(value["PodId"].GetString());
         m_podIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.NodeIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.NodeIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeIp = string(value["NodeIp"].GetString());
         m_nodeIpHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RestartCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.RestartCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.RestartCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_restartCount = value["RestartCount"].GetInt64();
         m_restartCountHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadyCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.ReadyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.ReadyCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readyCount = value["ReadyCount"].GetInt64();
         m_readyCountHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Runtime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.Runtime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.Runtime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runtime = string(value["Runtime"].GetString());
         m_runtimeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceInstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.ServiceInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.ServiceInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceInstanceStatus = string(value["ServiceInstanceStatus"].GetString());
         m_serviceInstanceStatusHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceAvailableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.InstanceAvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.InstanceAvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceAvailableStatus = string(value["InstanceAvailableStatus"].GetString());
         m_instanceAvailableStatusHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatus = string(value["InstanceStatus"].GetString());
         m_instanceStatusHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupPod.NodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupPod.NodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeInstanceId = string(value["NodeInstanceId"].GetString());
         m_nodeInstanceIdHasBeenSet = true;

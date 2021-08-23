@@ -45,16 +45,16 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(rsp["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(rsp["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     if (rsp.HasMember("UserGroupIds") && !rsp["UserGroupIds"].IsNull())
     {
         if (!rsp["UserGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `UserGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["UserGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -130,7 +130,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(rsp["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(rsp["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(rsp["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["OrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orgNodeId = string(rsp["OrgNodeId"].GetString());
         m_orgNodeIdHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["DataSource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataSource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataSource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataSource = string(rsp["DataSource"].GetString());
         m_dataSourceHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["ExpirationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExpirationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpirationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expirationTime = string(rsp["ExpirationTime"].GetString());
         m_expirationTimeHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["ActivationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activationTime = string(rsp["ActivationTime"].GetString());
         m_activationTimeHasBeenSet = true;

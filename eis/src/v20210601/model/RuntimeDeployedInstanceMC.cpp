@@ -43,7 +43,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["GroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetInt64();
         m_groupIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["InstanceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.InstanceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.InstanceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = value["InstanceId"].GetInt64();
         m_instanceIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["InstanceVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.InstanceVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.InstanceVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceVersion = value["InstanceVersion"].GetInt64();
         m_instanceVersionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["InstanceCreatedAt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.InstanceCreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.InstanceCreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCreatedAt = value["InstanceCreatedAt"].GetInt64();
         m_instanceCreatedAtHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["CreatedAt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.CreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.CreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = value["CreatedAt"].GetInt64();
         m_createdAtHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome RuntimeDeployedInstanceMC::Deserialize(const rapidjson::Valu
     {
         if (!value["UpdatedAt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeDeployedInstanceMC.UpdatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeDeployedInstanceMC.UpdatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = value["UpdatedAt"].GetInt64();
         m_updatedAtHasBeenSet = true;

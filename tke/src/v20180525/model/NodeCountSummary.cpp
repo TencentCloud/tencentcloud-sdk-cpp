@@ -35,7 +35,7 @@ CoreInternalOutcome NodeCountSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManuallyAdded"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NodeCountSummary.ManuallyAdded` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeCountSummary.ManuallyAdded` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_manuallyAdded.Deserialize(value["ManuallyAdded"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome NodeCountSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoscalingAdded"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NodeCountSummary.AutoscalingAdded` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeCountSummary.AutoscalingAdded` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_autoscalingAdded.Deserialize(value["AutoscalingAdded"]);

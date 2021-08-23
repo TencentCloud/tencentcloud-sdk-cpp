@@ -35,7 +35,7 @@ CoreInternalOutcome HealthCheckSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["LivenessProbe"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSettings.LivenessProbe` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSettings.LivenessProbe` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_livenessProbe.Deserialize(value["LivenessProbe"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome HealthCheckSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReadinessProbe"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSettings.ReadinessProbe` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSettings.ReadinessProbe` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_readinessProbe.Deserialize(value["ReadinessProbe"]);

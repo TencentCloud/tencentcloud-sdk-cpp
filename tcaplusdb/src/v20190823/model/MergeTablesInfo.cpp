@@ -35,7 +35,7 @@ CoreInternalOutcome MergeTablesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MergeTables"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MergeTablesInfo.MergeTables` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeTablesInfo.MergeTables` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mergeTables.Deserialize(value["MergeTables"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome MergeTablesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckIndex"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MergeTablesInfo.CheckIndex` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeTablesInfo.CheckIndex` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_checkIndex = value["CheckIndex"].GetBool();
         m_checkIndexHasBeenSet = true;

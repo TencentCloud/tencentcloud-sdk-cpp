@@ -36,7 +36,7 @@ CoreInternalOutcome Canvas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Color"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Canvas.Color` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Canvas.Color` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_color = string(value["Color"].GetString());
         m_colorHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Canvas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Canvas.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Canvas.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Canvas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Canvas.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Canvas.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;

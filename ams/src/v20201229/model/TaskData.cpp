@@ -44,7 +44,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(value["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(value["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskData.MediaInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.MediaInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaInfo.Deserialize(value["MediaInfo"]);
@@ -130,7 +130,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskData.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskData.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -151,7 +151,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskData.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;

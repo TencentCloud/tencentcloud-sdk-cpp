@@ -34,7 +34,7 @@ CoreInternalOutcome SentenceCom::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Suggestions") && !value["Suggestions"].IsNull())
     {
         if (!value["Suggestions"].IsArray())
-            return CoreInternalOutcome(Error("response `SentenceCom.Suggestions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SentenceCom.Suggestions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Suggestions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome SentenceCom::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sentence"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SentenceCom.Sentence` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceCom.Sentence` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sentence.Deserialize(value["Sentence"]);

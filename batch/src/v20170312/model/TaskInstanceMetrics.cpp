@@ -41,7 +41,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["SubmittedCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.SubmittedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.SubmittedCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_submittedCount = value["SubmittedCount"].GetInt64();
         m_submittedCountHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["PendingCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.PendingCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.PendingCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pendingCount = value["PendingCount"].GetInt64();
         m_pendingCountHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["RunnableCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.RunnableCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.RunnableCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runnableCount = value["RunnableCount"].GetInt64();
         m_runnableCountHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["StartingCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.StartingCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.StartingCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startingCount = value["StartingCount"].GetInt64();
         m_startingCountHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["RunningCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.RunningCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.RunningCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runningCount = value["RunningCount"].GetInt64();
         m_runningCountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["SucceedCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.SucceedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.SucceedCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_succeedCount = value["SucceedCount"].GetInt64();
         m_succeedCountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["FailedInterruptedCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.FailedInterruptedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.FailedInterruptedCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_failedInterruptedCount = value["FailedInterruptedCount"].GetInt64();
         m_failedInterruptedCountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome TaskInstanceMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["FailedCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics.FailedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics.FailedCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_failedCount = value["FailedCount"].GetInt64();
         m_failedCountHasBeenSet = true;

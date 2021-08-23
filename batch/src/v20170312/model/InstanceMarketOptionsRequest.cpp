@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceMarketOptionsRequest::Deserialize(const rapidjson::V
     {
         if (!value["SpotOptions"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceMarketOptionsRequest.SpotOptions` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMarketOptionsRequest.SpotOptions` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_spotOptions.Deserialize(value["SpotOptions"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome InstanceMarketOptionsRequest::Deserialize(const rapidjson::V
     {
         if (!value["MarketType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMarketOptionsRequest.MarketType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMarketOptionsRequest.MarketType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marketType = string(value["MarketType"].GetString());
         m_marketTypeHasBeenSet = true;

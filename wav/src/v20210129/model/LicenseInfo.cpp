@@ -41,7 +41,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["License"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.License` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.License` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_license = string(value["License"].GetString());
         m_licenseHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LicenseEdition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.LicenseEdition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.LicenseEdition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_licenseEdition = value["LicenseEdition"].GetInt64();
         m_licenseEditionHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.ResourceStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.ResourceStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceStartTime = string(value["ResourceStartTime"].GetString());
         m_resourceStartTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.ResourceEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.ResourceEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceEndTime = string(value["ResourceEndTime"].GetString());
         m_resourceEndTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsolationDeadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.IsolationDeadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.IsolationDeadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isolationDeadline = string(value["IsolationDeadline"].GetString());
         m_isolationDeadlineHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestroyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.DestroyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.DestroyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destroyTime = string(value["DestroyTime"].GetString());
         m_destroyTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome LicenseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo.Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo.Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(value["Extra"].GetString());
         m_extraHasBeenSet = true;

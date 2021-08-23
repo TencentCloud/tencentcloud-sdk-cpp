@@ -36,7 +36,7 @@ CoreInternalOutcome AiSampleFaceOperation::Deserialize(const rapidjson::Value &v
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleFaceOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFaceOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AiSampleFaceOperation::Deserialize(const rapidjson::Value &v
     if (value.HasMember("FaceIds") && !value["FaceIds"].IsNull())
     {
         if (!value["FaceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSampleFaceOperation.FaceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFaceOperation.FaceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome AiSampleFaceOperation::Deserialize(const rapidjson::Value &v
     if (value.HasMember("FaceContents") && !value["FaceContents"].IsNull())
     {
         if (!value["FaceContents"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSampleFaceOperation.FaceContents` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFaceOperation.FaceContents` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceContents"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

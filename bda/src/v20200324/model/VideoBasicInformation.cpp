@@ -38,7 +38,7 @@ CoreInternalOutcome VideoBasicInformation::Deserialize(const rapidjson::Value &v
     {
         if (!value["FrameWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoBasicInformation.FrameWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBasicInformation.FrameWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frameWidth = value["FrameWidth"].GetInt64();
         m_frameWidthHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome VideoBasicInformation::Deserialize(const rapidjson::Value &v
     {
         if (!value["FrameHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoBasicInformation.FrameHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBasicInformation.FrameHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frameHeight = value["FrameHeight"].GetInt64();
         m_frameHeightHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome VideoBasicInformation::Deserialize(const rapidjson::Value &v
     {
         if (!value["FramesPerSecond"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoBasicInformation.FramesPerSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBasicInformation.FramesPerSecond` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_framesPerSecond = value["FramesPerSecond"].GetInt64();
         m_framesPerSecondHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome VideoBasicInformation::Deserialize(const rapidjson::Value &v
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VideoBasicInformation.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBasicInformation.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome VideoBasicInformation::Deserialize(const rapidjson::Value &v
     {
         if (!value["TotalFrames"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoBasicInformation.TotalFrames` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBasicInformation.TotalFrames` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalFrames = value["TotalFrames"].GetInt64();
         m_totalFramesHasBeenSet = true;

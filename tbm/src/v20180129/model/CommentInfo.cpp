@@ -35,7 +35,7 @@ CoreInternalOutcome CommentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommentInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommentInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CommentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommentInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommentInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;

@@ -37,16 +37,16 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
     {
         if (!rsp["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(rsp["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
     {
         if (!rsp["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(rsp["Token"].GetString());
         m_tokenHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
     {
         if (!rsp["ExpTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expTime = rsp["ExpTime"].GetInt64();
         m_expTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome CreateInstanceTokenResponse::Deserialize(const string &paylo
     {
         if (!rsp["TokenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TokenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TokenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tokenId = string(rsp["TokenId"].GetString());
         m_tokenIdHasBeenSet = true;

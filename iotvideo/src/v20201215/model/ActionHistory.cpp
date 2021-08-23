@@ -43,7 +43,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.ActionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.ActionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionId = string(value["ActionId"].GetString());
         m_actionIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.ActionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.ActionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionName = string(value["ActionName"].GetString());
         m_actionNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.ReqTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.ReqTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reqTime = value["ReqTime"].GetUint64();
         m_reqTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RspTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.RspTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.RspTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rspTime = value["RspTime"].GetUint64();
         m_rspTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputParams"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.InputParams` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.InputParams` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputParams = string(value["InputParams"].GetString());
         m_inputParamsHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutputParams"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.OutputParams` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.OutputParams` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputParams = string(value["OutputParams"].GetString());
         m_outputParamsHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Calling"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.Calling` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.Calling` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_calling = string(value["Calling"].GetString());
         m_callingHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.ClientToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.ClientToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientToken = string(value["ClientToken"].GetString());
         m_clientTokenHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ActionHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionHistory.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionHistory.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

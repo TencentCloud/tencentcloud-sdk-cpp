@@ -41,7 +41,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["CurrentInputEndpoint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.CurrentInputEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.CurrentInputEndpoint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentInputEndpoint = string(value["CurrentInputEndpoint"].GetString());
         m_currentInputEndpointHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["CurrentStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.CurrentStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.CurrentStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentStartTime = string(value["CurrentStartTime"].GetString());
         m_currentStartTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["CurrentStopTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.CurrentStopTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.CurrentStopTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentStopTime = string(value["CurrentStopTime"].GetString());
         m_currentStopTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["LastStopTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.LastStopTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.LastStopTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastStopTime = string(value["LastStopTime"].GetString());
         m_lastStopTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["MainInput"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.MainInput` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.MainInput` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mainInput.Deserialize(value["MainInput"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     {
         if (!value["BackupInput"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.BackupInput` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.BackupInput` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_backupInput.Deserialize(value["BackupInput"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value
     if (value.HasMember("OutputSet") && !value["OutputSet"].IsNull())
     {
         if (!value["OutputSet"].IsArray())
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.OutputSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInfo.OutputSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutputSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

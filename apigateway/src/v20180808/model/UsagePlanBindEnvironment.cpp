@@ -35,7 +35,7 @@ CoreInternalOutcome UsagePlanBindEnvironment::Deserialize(const rapidjson::Value
     {
         if (!value["EnvironmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanBindEnvironment.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindEnvironment.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentName = string(value["EnvironmentName"].GetString());
         m_environmentNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome UsagePlanBindEnvironment::Deserialize(const rapidjson::Value
     {
         if (!value["ServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanBindEnvironment.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindEnvironment.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceId = string(value["ServiceId"].GetString());
         m_serviceIdHasBeenSet = true;

@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeDDoSDefendStatusResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome DescribeDDoSDefendStatusResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeDDoSDefendStatusResponse::Deserialize(const string &
     {
         if (!rsp["DefendStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DefendStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_defendStatus = rsp["DefendStatus"].GetUint64();
         m_defendStatusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeDDoSDefendStatusResponse::Deserialize(const string &
     {
         if (!rsp["UndefendExpire"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UndefendExpire` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UndefendExpire` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_undefendExpire = string(rsp["UndefendExpire"].GetString());
         m_undefendExpireHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeDDoSDefendStatusResponse::Deserialize(const string &
     {
         if (!rsp["ShowFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShowFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShowFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_showFlag = rsp["ShowFlag"].GetUint64();
         m_showFlagHasBeenSet = true;

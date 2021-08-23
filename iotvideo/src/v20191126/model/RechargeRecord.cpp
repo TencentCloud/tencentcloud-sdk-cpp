@@ -37,7 +37,7 @@ CoreInternalOutcome RechargeRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaterId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RechargeRecord.WaterId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RechargeRecord.WaterId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_waterId = value["WaterId"].GetInt64();
         m_waterIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RechargeRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BalanceBeforeRecharge"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RechargeRecord.BalanceBeforeRecharge` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RechargeRecord.BalanceBeforeRecharge` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_balanceBeforeRecharge = value["BalanceBeforeRecharge"].GetInt64();
         m_balanceBeforeRechargeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RechargeRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Money"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RechargeRecord.Money` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RechargeRecord.Money` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_money = value["Money"].GetInt64();
         m_moneyHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RechargeRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RechargeRecord.OperateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RechargeRecord.OperateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_operateTime = value["OperateTime"].GetInt64();
         m_operateTimeHasBeenSet = true;

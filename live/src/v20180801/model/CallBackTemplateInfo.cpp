@@ -43,7 +43,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["StreamBeginNotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.StreamBeginNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.StreamBeginNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamBeginNotifyUrl = string(value["StreamBeginNotifyUrl"].GetString());
         m_streamBeginNotifyUrlHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["StreamMixNotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.StreamMixNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.StreamMixNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamMixNotifyUrl = string(value["StreamMixNotifyUrl"].GetString());
         m_streamMixNotifyUrlHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["StreamEndNotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.StreamEndNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.StreamEndNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamEndNotifyUrl = string(value["StreamEndNotifyUrl"].GetString());
         m_streamEndNotifyUrlHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["RecordNotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.RecordNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.RecordNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordNotifyUrl = string(value["RecordNotifyUrl"].GetString());
         m_recordNotifyUrlHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["SnapshotNotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.SnapshotNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.SnapshotNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotNotifyUrl = string(value["SnapshotNotifyUrl"].GetString());
         m_snapshotNotifyUrlHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["PornCensorshipNotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.PornCensorshipNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.PornCensorshipNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pornCensorshipNotifyUrl = string(value["PornCensorshipNotifyUrl"].GetString());
         m_pornCensorshipNotifyUrlHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CallbackKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.CallbackKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.CallbackKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackKey = string(value["CallbackKey"].GetString());
         m_callbackKeyHasBeenSet = true;

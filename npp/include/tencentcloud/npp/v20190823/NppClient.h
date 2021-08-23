@@ -53,28 +53,28 @@ namespace TencentCloud
                 NppClient(const Credential &credential, const std::string &region);
                 NppClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateCallBackResponse> CreateCallBackOutcome;
+                typedef Outcome<Core::Error, Model::CreateCallBackResponse> CreateCallBackOutcome;
                 typedef std::future<CreateCallBackOutcome> CreateCallBackOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::CreateCallBackRequest&, CreateCallBackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCallBackAsyncHandler;
-                typedef Outcome<Error, Model::DelVirtualNumResponse> DelVirtualNumOutcome;
+                typedef Outcome<Core::Error, Model::DelVirtualNumResponse> DelVirtualNumOutcome;
                 typedef std::future<DelVirtualNumOutcome> DelVirtualNumOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::DelVirtualNumRequest&, DelVirtualNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DelVirtualNumAsyncHandler;
-                typedef Outcome<Error, Model::DeleteCallBackResponse> DeleteCallBackOutcome;
+                typedef Outcome<Core::Error, Model::DeleteCallBackResponse> DeleteCallBackOutcome;
                 typedef std::future<DeleteCallBackOutcome> DeleteCallBackOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::DeleteCallBackRequest&, DeleteCallBackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCallBackAsyncHandler;
-                typedef Outcome<Error, Model::DescribeCallBackCdrResponse> DescribeCallBackCdrOutcome;
+                typedef Outcome<Core::Error, Model::DescribeCallBackCdrResponse> DescribeCallBackCdrOutcome;
                 typedef std::future<DescribeCallBackCdrOutcome> DescribeCallBackCdrOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::DescribeCallBackCdrRequest&, DescribeCallBackCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallBackCdrAsyncHandler;
-                typedef Outcome<Error, Model::DescribeCallBackStatusResponse> DescribeCallBackStatusOutcome;
+                typedef Outcome<Core::Error, Model::DescribeCallBackStatusResponse> DescribeCallBackStatusOutcome;
                 typedef std::future<DescribeCallBackStatusOutcome> DescribeCallBackStatusOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::DescribeCallBackStatusRequest&, DescribeCallBackStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallBackStatusAsyncHandler;
-                typedef Outcome<Error, Model::DescribeCallerDisplayListResponse> DescribeCallerDisplayListOutcome;
+                typedef Outcome<Core::Error, Model::DescribeCallerDisplayListResponse> DescribeCallerDisplayListOutcome;
                 typedef std::future<DescribeCallerDisplayListOutcome> DescribeCallerDisplayListOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::DescribeCallerDisplayListRequest&, DescribeCallerDisplayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallerDisplayListAsyncHandler;
-                typedef Outcome<Error, Model::Get400CdrResponse> Get400CdrOutcome;
+                typedef Outcome<Core::Error, Model::Get400CdrResponse> Get400CdrOutcome;
                 typedef std::future<Get400CdrOutcome> Get400CdrOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::Get400CdrRequest&, Get400CdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> Get400CdrAsyncHandler;
-                typedef Outcome<Error, Model::GetVirtualNumResponse> GetVirtualNumOutcome;
+                typedef Outcome<Core::Error, Model::GetVirtualNumResponse> GetVirtualNumOutcome;
                 typedef std::future<GetVirtualNumOutcome> GetVirtualNumOutcomeCallable;
                 typedef std::function<void(const NppClient*, const Model::GetVirtualNumRequest&, GetVirtualNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVirtualNumAsyncHandler;
 

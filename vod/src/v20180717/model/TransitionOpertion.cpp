@@ -34,7 +34,7 @@ CoreInternalOutcome TransitionOpertion::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransitionOpertion.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransitionOpertion.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

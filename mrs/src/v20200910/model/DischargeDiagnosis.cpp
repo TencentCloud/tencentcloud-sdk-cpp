@@ -38,7 +38,7 @@ CoreInternalOutcome DischargeDiagnosis::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TableIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DischargeDiagnosis.TableIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DischargeDiagnosis.TableIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tableIndex = value["TableIndex"].GetInt64();
         m_tableIndexHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DischargeDiagnosis::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OutDiagnosis"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DischargeDiagnosis.OutDiagnosis` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DischargeDiagnosis.OutDiagnosis` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outDiagnosis.Deserialize(value["OutDiagnosis"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome DischargeDiagnosis::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DiseaseCode"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DischargeDiagnosis.DiseaseCode` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DischargeDiagnosis.DiseaseCode` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_diseaseCode.Deserialize(value["DiseaseCode"]);
@@ -82,7 +82,7 @@ CoreInternalOutcome DischargeDiagnosis::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DischargeDiagnosis.InStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DischargeDiagnosis.InStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_inStatus.Deserialize(value["InStatus"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome DischargeDiagnosis::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OutStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DischargeDiagnosis.OutStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DischargeDiagnosis.OutStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outStatus.Deserialize(value["OutStatus"]);

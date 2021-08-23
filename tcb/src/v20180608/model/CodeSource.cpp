@@ -42,7 +42,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkDir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.WorkDir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.WorkDir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workDir = string(value["WorkDir"].GetString());
         m_workDirHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodingPackageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.CodingPackageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.CodingPackageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codingPackageName = string(value["CodingPackageName"].GetString());
         m_codingPackageNameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodingPackageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.CodingPackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.CodingPackageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codingPackageVersion = string(value["CodingPackageVersion"].GetString());
         m_codingPackageVersionHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RawCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.RawCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.RawCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rawCode = string(value["RawCode"].GetString());
         m_rawCodeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Branch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.Branch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.Branch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_branch = string(value["Branch"].GetString());
         m_branchHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CodeSource.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSource.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;

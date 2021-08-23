@@ -35,7 +35,7 @@ CoreInternalOutcome TopicRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRecord.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRecord.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(value["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TopicRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRecord.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRecord.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;

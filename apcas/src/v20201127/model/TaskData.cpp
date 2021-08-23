@@ -34,7 +34,7 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;

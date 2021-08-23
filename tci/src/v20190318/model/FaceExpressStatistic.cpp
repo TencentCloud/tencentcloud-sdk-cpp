@@ -35,7 +35,7 @@ CoreInternalOutcome FaceExpressStatistic::Deserialize(const rapidjson::Value &va
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceExpressStatistic.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceExpressStatistic.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome FaceExpressStatistic::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ExpressRatio") && !value["ExpressRatio"].IsNull())
     {
         if (!value["ExpressRatio"].IsArray())
-            return CoreInternalOutcome(Error("response `FaceExpressStatistic.ExpressRatio` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FaceExpressStatistic.ExpressRatio` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ExpressRatio"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

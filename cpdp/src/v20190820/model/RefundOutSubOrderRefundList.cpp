@@ -38,7 +38,7 @@ CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const rapidjson::Va
     {
         if (!value["PlatformRefundAmt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RefundOutSubOrderRefundList.PlatformRefundAmt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefundOutSubOrderRefundList.PlatformRefundAmt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_platformRefundAmt = value["PlatformRefundAmt"].GetInt64();
         m_platformRefundAmtHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const rapidjson::Va
     {
         if (!value["RefundAmt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RefundOutSubOrderRefundList.RefundAmt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefundOutSubOrderRefundList.RefundAmt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_refundAmt = value["RefundAmt"].GetInt64();
         m_refundAmtHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const rapidjson::Va
     {
         if (!value["SubMchRefundAmt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RefundOutSubOrderRefundList.SubMchRefundAmt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefundOutSubOrderRefundList.SubMchRefundAmt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_subMchRefundAmt = value["SubMchRefundAmt"].GetInt64();
         m_subMchRefundAmtHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const rapidjson::Va
     {
         if (!value["SubOutTradeNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefundOutSubOrderRefundList.SubOutTradeNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefundOutSubOrderRefundList.SubOutTradeNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subOutTradeNo = string(value["SubOutTradeNo"].GetString());
         m_subOutTradeNoHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const rapidjson::Va
     {
         if (!value["SubRefundId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefundOutSubOrderRefundList.SubRefundId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefundOutSubOrderRefundList.SubRefundId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subRefundId = string(value["SubRefundId"].GetString());
         m_subRefundIdHasBeenSet = true;

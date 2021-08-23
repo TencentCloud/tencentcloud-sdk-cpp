@@ -37,7 +37,7 @@ CoreInternalOutcome AgentSalesmanElem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentSalesmanElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentSalesmanElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AgentSalesmanElem::Deserialize(const rapidjson::Value &value
     {
         if (!value["SalesUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentSalesmanElem.SalesUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentSalesmanElem.SalesUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_salesUin = string(value["SalesUin"].GetString());
         m_salesUinHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AgentSalesmanElem::Deserialize(const rapidjson::Value &value
     {
         if (!value["SalesName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentSalesmanElem.SalesName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentSalesmanElem.SalesName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_salesName = string(value["SalesName"].GetString());
         m_salesNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AgentSalesmanElem::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentSalesmanElem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentSalesmanElem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

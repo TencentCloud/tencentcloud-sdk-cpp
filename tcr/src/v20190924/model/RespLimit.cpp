@@ -33,7 +33,7 @@ CoreInternalOutcome RespLimit::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LimitInfo") && !value["LimitInfo"].IsNull())
     {
         if (!value["LimitInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `RespLimit.LimitInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RespLimit.LimitInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LimitInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

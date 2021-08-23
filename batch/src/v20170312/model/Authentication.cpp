@@ -36,7 +36,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scene"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Authentication.Scene` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.Scene` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scene = string(value["Scene"].GetString());
         m_sceneHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Authentication.SecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.SecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretId = string(value["SecretId"].GetString());
         m_secretIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Authentication.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;

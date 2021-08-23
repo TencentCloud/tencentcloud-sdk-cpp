@@ -36,7 +36,7 @@ CoreInternalOutcome StorageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome StorageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome StorageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BucketInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StorageInfo.BucketInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageInfo.BucketInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bucketInfo.Deserialize(value["BucketInfo"]);

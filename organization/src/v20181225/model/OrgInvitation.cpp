@@ -44,7 +44,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.HostUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.HostUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hostUin = value["HostUin"].GetUint64();
         m_hostUinHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.HostName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.HostName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostName = string(value["HostName"].GetString());
         m_hostNameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostMail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.HostMail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.HostMail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostMail = string(value["HostMail"].GetString());
         m_hostMailHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrgType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.OrgType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.OrgType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orgType = value["OrgType"].GetUint64();
         m_orgTypeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InviteTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.InviteTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.InviteTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inviteTime = string(value["InviteTime"].GetString());
         m_inviteTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome OrgInvitation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgInvitation.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgInvitation.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;

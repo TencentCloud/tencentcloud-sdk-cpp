@@ -34,7 +34,7 @@ CoreInternalOutcome CancelActivityData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CancelActivityData.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CancelActivityData.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

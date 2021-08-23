@@ -37,7 +37,7 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MainDict") && !value["MainDict"].IsNull())
     {
         if (!value["MainDict"].IsArray())
-            return CoreInternalOutcome(Error("response `EsDictionaryInfo.MainDict` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.MainDict` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MainDict"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Stopwords") && !value["Stopwords"].IsNull())
     {
         if (!value["Stopwords"].IsArray())
-            return CoreInternalOutcome(Error("response `EsDictionaryInfo.Stopwords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.Stopwords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Stopwords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("QQDict") && !value["QQDict"].IsNull())
     {
         if (!value["QQDict"].IsArray())
-            return CoreInternalOutcome(Error("response `EsDictionaryInfo.QQDict` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.QQDict` is not array type"));
 
         const rapidjson::Value &tmpValue = value["QQDict"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -97,7 +97,7 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Synonym") && !value["Synonym"].IsNull())
     {
         if (!value["Synonym"].IsArray())
-            return CoreInternalOutcome(Error("response `EsDictionaryInfo.Synonym` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.Synonym` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Synonym"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EsDictionaryInfo.UpdateType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.UpdateType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateType = string(value["UpdateType"].GetString());
         m_updateTypeHasBeenSet = true;

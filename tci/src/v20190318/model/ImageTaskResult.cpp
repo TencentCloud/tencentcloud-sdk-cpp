@@ -46,7 +46,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.ActionInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.ActionInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_actionInfo.Deserialize(value["ActionInfo"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceAttr"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.FaceAttr` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.FaceAttr` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceAttr.Deserialize(value["FaceAttr"]);
@@ -80,7 +80,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceExpression"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.FaceExpression` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.FaceExpression` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceExpression.Deserialize(value["FaceExpression"]);
@@ -97,7 +97,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceIdentify"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.FaceIdentify` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.FaceIdentify` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceIdentify.Deserialize(value["FaceIdentify"]);
@@ -114,7 +114,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.FaceInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.FaceInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceInfo.Deserialize(value["FaceInfo"]);
@@ -131,7 +131,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FacePose"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.FacePose` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.FacePose` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_facePose.Deserialize(value["FacePose"]);
@@ -148,7 +148,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gesture"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.Gesture` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.Gesture` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gesture.Deserialize(value["Gesture"]);
@@ -165,7 +165,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HandTracking"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.HandTracking` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.HandTracking` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_handTracking.Deserialize(value["HandTracking"]);
@@ -182,7 +182,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Light"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.Light` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.Light` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_light.Deserialize(value["Light"]);
@@ -199,7 +199,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StudentBodyMovement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.StudentBodyMovement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.StudentBodyMovement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_studentBodyMovement.Deserialize(value["StudentBodyMovement"]);
@@ -216,7 +216,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TeacherBodyMovement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.TeacherBodyMovement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.TeacherBodyMovement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_teacherBodyMovement.Deserialize(value["TeacherBodyMovement"]);
@@ -233,7 +233,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TeacherOutScreen"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.TeacherOutScreen` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.TeacherOutScreen` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_teacherOutScreen.Deserialize(value["TeacherOutScreen"]);
@@ -250,7 +250,7 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskResult.TimeInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskResult.TimeInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_timeInfo.Deserialize(value["TimeInfo"]);

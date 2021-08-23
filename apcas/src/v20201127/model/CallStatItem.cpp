@@ -35,7 +35,7 @@ CoreInternalOutcome CallStatItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallStatItem.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallStatItem.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CallStatItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Amount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CallStatItem.Amount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallStatItem.Amount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetUint64();
         m_amountHasBeenSet = true;

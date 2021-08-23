@@ -36,7 +36,7 @@ CoreInternalOutcome GeneralResourceQuota::Deserialize(const rapidjson::Value &va
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GeneralResourceQuota.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralResourceQuota.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome GeneralResourceQuota::Deserialize(const rapidjson::Value &va
     {
         if (!value["ResourceQuotaAvailable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GeneralResourceQuota.ResourceQuotaAvailable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralResourceQuota.ResourceQuotaAvailable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceQuotaAvailable = value["ResourceQuotaAvailable"].GetInt64();
         m_resourceQuotaAvailableHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome GeneralResourceQuota::Deserialize(const rapidjson::Value &va
     {
         if (!value["ResourceQuotaTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GeneralResourceQuota.ResourceQuotaTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralResourceQuota.ResourceQuotaTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceQuotaTotal = value["ResourceQuotaTotal"].GetInt64();
         m_resourceQuotaTotalHasBeenSet = true;

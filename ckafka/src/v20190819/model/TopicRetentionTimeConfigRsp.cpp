@@ -36,7 +36,7 @@ CoreInternalOutcome TopicRetentionTimeConfigRsp::Deserialize(const rapidjson::Va
     {
         if (!value["Expect"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicRetentionTimeConfigRsp.Expect` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRetentionTimeConfigRsp.Expect` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expect = value["Expect"].GetInt64();
         m_expectHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TopicRetentionTimeConfigRsp::Deserialize(const rapidjson::Va
     {
         if (!value["Current"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicRetentionTimeConfigRsp.Current` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRetentionTimeConfigRsp.Current` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_current = value["Current"].GetInt64();
         m_currentHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TopicRetentionTimeConfigRsp::Deserialize(const rapidjson::Va
     {
         if (!value["ModTimeStamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicRetentionTimeConfigRsp.ModTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRetentionTimeConfigRsp.ModTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_modTimeStamp = value["ModTimeStamp"].GetInt64();
         m_modTimeStampHasBeenSet = true;

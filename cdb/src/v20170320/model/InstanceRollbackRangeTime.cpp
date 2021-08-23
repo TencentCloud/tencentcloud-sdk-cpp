@@ -37,7 +37,7 @@ CoreInternalOutcome InstanceRollbackRangeTime::Deserialize(const rapidjson::Valu
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceRollbackRangeTime.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceRollbackRangeTime.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InstanceRollbackRangeTime::Deserialize(const rapidjson::Valu
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceRollbackRangeTime.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceRollbackRangeTime.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InstanceRollbackRangeTime::Deserialize(const rapidjson::Valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceRollbackRangeTime.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceRollbackRangeTime.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome InstanceRollbackRangeTime::Deserialize(const rapidjson::Valu
     if (value.HasMember("Times") && !value["Times"].IsNull())
     {
         if (!value["Times"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceRollbackRangeTime.Times` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceRollbackRangeTime.Times` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Times"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

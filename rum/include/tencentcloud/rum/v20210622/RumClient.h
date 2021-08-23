@@ -45,16 +45,16 @@ namespace TencentCloud
                 RumClient(const Credential &credential, const std::string &region);
                 RumClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateProjectResponse> CreateProjectOutcome;
+                typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDataLogUrlStatisticsResponse> DescribeDataLogUrlStatisticsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDataLogUrlStatisticsResponse> DescribeDataLogUrlStatisticsOutcome;
                 typedef std::future<DescribeDataLogUrlStatisticsOutcome> DescribeDataLogUrlStatisticsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlStatisticsRequest&, DescribeDataLogUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlStatisticsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
                 typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
-                typedef Outcome<Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
+                typedef Outcome<Core::Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
                 typedef std::future<DescribeErrorOutcome> DescribeErrorOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeErrorRequest&, DescribeErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorAsyncHandler;
 

@@ -35,7 +35,7 @@ CoreInternalOutcome ShieldPlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShieldPlanInfo.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldPlanInfo.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ShieldPlanInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PlanSet") && !value["PlanSet"].IsNull())
     {
         if (!value["PlanSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ShieldPlanInfo.PlanSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ShieldPlanInfo.PlanSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PlanSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

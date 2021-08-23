@@ -36,7 +36,7 @@ CoreInternalOutcome ApplicationAttribute::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationAttribute.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAttribute.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetInt64();
         m_instanceCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ApplicationAttribute::Deserialize(const rapidjson::Value &va
     {
         if (!value["RunInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationAttribute.RunInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAttribute.RunInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runInstanceCount = value["RunInstanceCount"].GetInt64();
         m_runInstanceCountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ApplicationAttribute::Deserialize(const rapidjson::Value &va
     {
         if (!value["GroupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationAttribute.GroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAttribute.GroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupCount = value["GroupCount"].GetInt64();
         m_groupCountHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome RealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServer.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServer.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerIP = string(value["RealServerIP"].GetString());
         m_realServerIPHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServer.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServer.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerId = string(value["RealServerId"].GetString());
         m_realServerIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServer.RealServerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServer.RealServerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerName = string(value["RealServerName"].GetString());
         m_realServerNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealServer.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServer.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;

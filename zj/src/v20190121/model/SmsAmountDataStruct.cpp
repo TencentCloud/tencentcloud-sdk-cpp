@@ -41,7 +41,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["SmsCampaignAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.SmsCampaignAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.SmsCampaignAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_smsCampaignAmount = value["SmsCampaignAmount"].GetUint64();
         m_smsCampaignAmountHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["SmsCampaignConsume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.SmsCampaignConsume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.SmsCampaignConsume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_smsCampaignConsume = value["SmsCampaignConsume"].GetUint64();
         m_smsCampaignConsumeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["SmsSendAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.SmsSendAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.SmsSendAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_smsSendAmount = value["SmsSendAmount"].GetUint64();
         m_smsSendAmountHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["SmsSendConsume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.SmsSendConsume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.SmsSendConsume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_smsSendConsume = value["SmsSendConsume"].GetUint64();
         m_smsSendConsumeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["MmsCampaignAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.MmsCampaignAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.MmsCampaignAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mmsCampaignAmount = value["MmsCampaignAmount"].GetUint64();
         m_mmsCampaignAmountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["MmsCampaignConsume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.MmsCampaignConsume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.MmsCampaignConsume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mmsCampaignConsume = value["MmsCampaignConsume"].GetUint64();
         m_mmsCampaignConsumeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["MmsSendAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.MmsSendAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.MmsSendAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mmsSendAmount = value["MmsSendAmount"].GetUint64();
         m_mmsSendAmountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &val
     {
         if (!value["MmsSendConsume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAmountDataStruct.MmsSendConsume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAmountDataStruct.MmsSendConsume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mmsSendConsume = value["MmsSendConsume"].GetUint64();
         m_mmsSendConsumeHasBeenSet = true;

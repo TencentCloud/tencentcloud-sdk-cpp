@@ -35,7 +35,7 @@ CoreInternalOutcome SecurityEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EventCnt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityEventInfo.EventCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityEventInfo.EventCnt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventCnt = value["EventCnt"].GetUint64();
         m_eventCntHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SecurityEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["UuidCnt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityEventInfo.UuidCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityEventInfo.UuidCnt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uuidCnt = value["UuidCnt"].GetUint64();
         m_uuidCntHasBeenSet = true;

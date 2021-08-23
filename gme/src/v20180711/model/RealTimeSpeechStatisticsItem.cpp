@@ -39,7 +39,7 @@ CoreInternalOutcome RealTimeSpeechStatisticsItem::Deserialize(const rapidjson::V
     {
         if (!value["MainLandDau"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealTimeSpeechStatisticsItem.MainLandDau` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealTimeSpeechStatisticsItem.MainLandDau` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mainLandDau = value["MainLandDau"].GetUint64();
         m_mainLandDauHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RealTimeSpeechStatisticsItem::Deserialize(const rapidjson::V
     {
         if (!value["MainLandPcu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealTimeSpeechStatisticsItem.MainLandPcu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealTimeSpeechStatisticsItem.MainLandPcu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mainLandPcu = value["MainLandPcu"].GetUint64();
         m_mainLandPcuHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RealTimeSpeechStatisticsItem::Deserialize(const rapidjson::V
     {
         if (!value["MainLandDuration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealTimeSpeechStatisticsItem.MainLandDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealTimeSpeechStatisticsItem.MainLandDuration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mainLandDuration = value["MainLandDuration"].GetUint64();
         m_mainLandDurationHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RealTimeSpeechStatisticsItem::Deserialize(const rapidjson::V
     {
         if (!value["OverseaDau"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealTimeSpeechStatisticsItem.OverseaDau` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealTimeSpeechStatisticsItem.OverseaDau` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_overseaDau = value["OverseaDau"].GetUint64();
         m_overseaDauHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RealTimeSpeechStatisticsItem::Deserialize(const rapidjson::V
     {
         if (!value["OverseaPcu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealTimeSpeechStatisticsItem.OverseaPcu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealTimeSpeechStatisticsItem.OverseaPcu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_overseaPcu = value["OverseaPcu"].GetUint64();
         m_overseaPcuHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RealTimeSpeechStatisticsItem::Deserialize(const rapidjson::V
     {
         if (!value["OverseaDuration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealTimeSpeechStatisticsItem.OverseaDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealTimeSpeechStatisticsItem.OverseaDuration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_overseaDuration = value["OverseaDuration"].GetUint64();
         m_overseaDurationHasBeenSet = true;

@@ -47,16 +47,16 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,11 +67,11 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -79,7 +79,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(rsp["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["MerchantBatchNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantBatchNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantBatchNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantBatchNo = string(rsp["MerchantBatchNo"].GetString());
         m_merchantBatchNoHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["BatchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchId = string(rsp["BatchId"].GetString());
         m_batchIdHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["MerchantDetailNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantDetailNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantDetailNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantDetailNo = string(rsp["MerchantDetailNo"].GetString());
         m_merchantDetailNoHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["DetailId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detailId = string(rsp["DetailId"].GetString());
         m_detailIdHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["DetailStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detailStatus = string(rsp["DetailStatus"].GetString());
         m_detailStatusHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["TransferAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TransferAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_transferAmount = rsp["TransferAmount"].GetUint64();
         m_transferAmountHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["FailReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failReason = string(rsp["FailReason"].GetString());
         m_failReasonHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["InitiateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InitiateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InitiateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_initiateTime = string(rsp["InitiateTime"].GetString());
         m_initiateTimeHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(rsp["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(rsp["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["TransferRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transferRemark = string(rsp["TransferRemark"].GetString());
         m_transferRemarkHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["MerchantAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantAppId = string(rsp["MerchantAppId"].GetString());
         m_merchantAppIdHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome QueryTransferDetailResponse::Deserialize(const string &paylo
     {
         if (!rsp["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openId = string(rsp["OpenId"].GetString());
         m_openIdHasBeenSet = true;

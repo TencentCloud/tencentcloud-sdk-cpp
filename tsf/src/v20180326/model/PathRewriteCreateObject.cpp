@@ -38,7 +38,7 @@ CoreInternalOutcome PathRewriteCreateObject::Deserialize(const rapidjson::Value 
     {
         if (!value["GatewayGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRewriteCreateObject.GatewayGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRewriteCreateObject.GatewayGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayGroupId = string(value["GatewayGroupId"].GetString());
         m_gatewayGroupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PathRewriteCreateObject::Deserialize(const rapidjson::Value 
     {
         if (!value["Regex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRewriteCreateObject.Regex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRewriteCreateObject.Regex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regex = string(value["Regex"].GetString());
         m_regexHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PathRewriteCreateObject::Deserialize(const rapidjson::Value 
     {
         if (!value["Replacement"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRewriteCreateObject.Replacement` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRewriteCreateObject.Replacement` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replacement = string(value["Replacement"].GetString());
         m_replacementHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PathRewriteCreateObject::Deserialize(const rapidjson::Value 
     {
         if (!value["Blocked"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRewriteCreateObject.Blocked` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRewriteCreateObject.Blocked` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blocked = string(value["Blocked"].GetString());
         m_blockedHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PathRewriteCreateObject::Deserialize(const rapidjson::Value 
     {
         if (!value["Order"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PathRewriteCreateObject.Order` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRewriteCreateObject.Order` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_order = value["Order"].GetInt64();
         m_orderHasBeenSet = true;

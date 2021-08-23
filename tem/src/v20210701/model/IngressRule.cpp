@@ -36,7 +36,7 @@ CoreInternalOutcome IngressRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Http"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `IngressRule.Http` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRule.Http` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_http.Deserialize(value["Http"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome IngressRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressRule.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRule.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome IngressRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;

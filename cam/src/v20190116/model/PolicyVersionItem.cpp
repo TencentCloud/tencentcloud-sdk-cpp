@@ -36,7 +36,7 @@ CoreInternalOutcome PolicyVersionItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["VersionId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionItem.VersionId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionItem.VersionId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = value["VersionId"].GetUint64();
         m_versionIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PolicyVersionItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionItem.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionItem.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createDate = string(value["CreateDate"].GetString());
         m_createDateHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PolicyVersionItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["IsDefaultVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionItem.IsDefaultVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionItem.IsDefaultVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultVersion = value["IsDefaultVersion"].GetInt64();
         m_isDefaultVersionHasBeenSet = true;

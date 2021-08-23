@@ -35,7 +35,7 @@ CoreInternalOutcome ExtensionAddon::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionAddon.AddonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionAddon.AddonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addonName = string(value["AddonName"].GetString());
         m_addonNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ExtensionAddon::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddonParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionAddon.AddonParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionAddon.AddonParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addonParam = string(value["AddonParam"].GetString());
         m_addonParamHasBeenSet = true;

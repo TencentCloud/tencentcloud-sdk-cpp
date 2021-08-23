@@ -39,7 +39,7 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindRealServer.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerId = string(value["RealServerId"].GetString());
         m_realServerIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindRealServer.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerIP = string(value["RealServerIP"].GetString());
         m_realServerIPHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerWeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BindRealServer.RealServerWeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.RealServerWeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerWeight = value["RealServerWeight"].GetInt64();
         m_realServerWeightHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BindRealServer.RealServerStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.RealServerStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerStatus = value["RealServerStatus"].GetInt64();
         m_realServerStatusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BindRealServer.RealServerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.RealServerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerPort = value["RealServerPort"].GetInt64();
         m_realServerPortHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DownIPList") && !value["DownIPList"].IsNull())
     {
         if (!value["DownIPList"].IsArray())
-            return CoreInternalOutcome(Error("response `BindRealServer.DownIPList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.DownIPList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DownIPList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

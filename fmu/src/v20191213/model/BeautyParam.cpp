@@ -37,7 +37,7 @@ CoreInternalOutcome BeautyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WhitenLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BeautyParam.WhitenLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeautyParam.WhitenLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_whitenLevel = value["WhitenLevel"].GetUint64();
         m_whitenLevelHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BeautyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SmoothingLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BeautyParam.SmoothingLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeautyParam.SmoothingLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_smoothingLevel = value["SmoothingLevel"].GetUint64();
         m_smoothingLevelHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BeautyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyeEnlargeLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BeautyParam.EyeEnlargeLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeautyParam.EyeEnlargeLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eyeEnlargeLevel = value["EyeEnlargeLevel"].GetUint64();
         m_eyeEnlargeLevelHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BeautyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceShrinkLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BeautyParam.FaceShrinkLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeautyParam.FaceShrinkLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_faceShrinkLevel = value["FaceShrinkLevel"].GetUint64();
         m_faceShrinkLevelHasBeenSet = true;

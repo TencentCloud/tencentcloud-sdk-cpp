@@ -42,7 +42,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Size` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Size` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetUint64();
         m_sizeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetUint64();
         m_bitrateHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rotate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetInt64();
         m_rotateHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VideoStreamInfoSet") && !value["VideoStreamInfoSet"].IsNull())
     {
         if (!value["VideoStreamInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMetaData.VideoStreamInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.VideoStreamInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VideoStreamInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -131,7 +131,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AudioStreamInfoSet") && !value["AudioStreamInfoSet"].IsNull())
     {
         if (!value["AudioStreamInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMetaData.AudioStreamInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.AudioStreamInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AudioStreamInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

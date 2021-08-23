@@ -38,7 +38,7 @@ CoreInternalOutcome AlgorithmResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlgoId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmResult.AlgoId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmResult.AlgoId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_algoId = string(value["AlgoId"].GetString());
         m_algoIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AlgorithmResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlgoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmResult.AlgoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmResult.AlgoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_algoName = string(value["AlgoName"].GetString());
         m_algoNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AlgorithmResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmResult.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmResult.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AlgorithmResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmResult.Error` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmResult.Error` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_error = string(value["Error"].GetString());
         m_errorHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AlgorithmResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlgoType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmResult.AlgoType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmResult.AlgoType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_algoType = value["AlgoType"].GetInt64();
         m_algoTypeHasBeenSet = true;

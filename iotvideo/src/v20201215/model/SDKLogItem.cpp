@@ -38,7 +38,7 @@ CoreInternalOutcome SDKLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SDKLogItem.ProductID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SDKLogItem.ProductID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productID = string(value["ProductID"].GetString());
         m_productIDHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SDKLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SDKLogItem.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SDKLogItem.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SDKLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SDKLogItem.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SDKLogItem.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SDKLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SDKLogItem.DateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SDKLogItem.DateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateTime = string(value["DateTime"].GetString());
         m_dateTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SDKLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SDKLogItem.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SDKLogItem.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;

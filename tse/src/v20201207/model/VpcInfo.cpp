@@ -36,7 +36,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntranetAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.IntranetAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.IntranetAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_intranetAddress = string(value["IntranetAddress"].GetString());
         m_intranetAddressHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome PersistentVolumeContext::Deserialize(const rapidjson::Value 
     {
         if (!value["DiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersistentVolumeContext.DiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersistentVolumeContext.DiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetUint64();
         m_diskSizeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PersistentVolumeContext::Deserialize(const rapidjson::Value 
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersistentVolumeContext.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersistentVolumeContext.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PersistentVolumeContext::Deserialize(const rapidjson::Value 
     {
         if (!value["DiskNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersistentVolumeContext.DiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersistentVolumeContext.DiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskNum = value["DiskNum"].GetInt64();
         m_diskNumHasBeenSet = true;

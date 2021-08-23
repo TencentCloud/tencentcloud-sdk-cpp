@@ -38,7 +38,7 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginActionFlag.Phone` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.Phone` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_phone = value["Phone"].GetUint64();
         m_phoneHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Token"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginActionFlag.Token` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.Token` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_token = value["Token"].GetUint64();
         m_tokenHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Stoken"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginActionFlag.Stoken` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.Stoken` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_stoken = value["Stoken"].GetUint64();
         m_stokenHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Wechat"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginActionFlag.Wechat` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.Wechat` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_wechat = value["Wechat"].GetUint64();
         m_wechatHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Custom"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginActionFlag.Custom` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.Custom` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_custom = value["Custom"].GetUint64();
         m_customHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome InstancePrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalBundlePrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.OriginalBundlePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstancePrice.OriginalBundlePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalBundlePrice = value["OriginalBundlePrice"].GetDouble();
         m_originalBundlePriceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InstancePrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstancePrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = value["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InstancePrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Discount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstancePrice.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetInt64();
         m_discountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InstancePrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstancePrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstancePrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = value["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;

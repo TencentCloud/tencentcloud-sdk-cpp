@@ -40,7 +40,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     {
         if (!value["StartPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startPtsTime = value["StartPtsTime"].GetDouble();
         m_startPtsTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     {
         if (!value["EndPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endPtsTime = value["EndPtsTime"].GetDouble();
         m_endPtsTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome LiveStreamFaceRecognitionResult::Deserialize(const rapidjson
     if (value.HasMember("AreaCoordSet") && !value["AreaCoordSet"].IsNull())
     {
         if (!value["AreaCoordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamFaceRecognitionResult.AreaCoordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamFaceRecognitionResult.AreaCoordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

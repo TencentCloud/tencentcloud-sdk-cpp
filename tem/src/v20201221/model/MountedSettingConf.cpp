@@ -36,7 +36,7 @@ CoreInternalOutcome MountedSettingConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ConfigDataName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountedSettingConf.ConfigDataName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountedSettingConf.ConfigDataName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configDataName = string(value["ConfigDataName"].GetString());
         m_configDataNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MountedSettingConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MountedPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountedSettingConf.MountedPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountedSettingConf.MountedPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountedPath = string(value["MountedPath"].GetString());
         m_mountedPathHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MountedSettingConf::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `MountedSettingConf.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MountedSettingConf.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

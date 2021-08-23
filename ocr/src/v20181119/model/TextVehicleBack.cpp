@@ -43,7 +43,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlateNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.PlateNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.PlateNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_plateNo = string(value["PlateNo"].GetString());
         m_plateNoHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.FileNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.FileNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileNo = string(value["FileNo"].GetString());
         m_fileNoHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllowNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.AllowNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.AllowNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_allowNum = string(value["AllowNum"].GetString());
         m_allowNumHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalMass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.TotalMass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.TotalMass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalMass = string(value["TotalMass"].GetString());
         m_totalMassHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurbWeight"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.CurbWeight` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.CurbWeight` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_curbWeight = string(value["CurbWeight"].GetString());
         m_curbWeightHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadQuality"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.LoadQuality` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.LoadQuality` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadQuality = string(value["LoadQuality"].GetString());
         m_loadQualityHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.ExternalSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.ExternalSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalSize = string(value["ExternalSize"].GetString());
         m_externalSizeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Marks"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.Marks` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.Marks` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marks = string(value["Marks"].GetString());
         m_marksHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Record"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.Record` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.Record` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_record = string(value["Record"].GetString());
         m_recordHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalQuasiMass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleBack.TotalQuasiMass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.TotalQuasiMass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalQuasiMass = string(value["TotalQuasiMass"].GetString());
         m_totalQuasiMassHasBeenSet = true;

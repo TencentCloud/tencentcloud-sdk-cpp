@@ -37,7 +37,7 @@ CoreInternalOutcome ListGrantServiceAccessPolicy::Deserialize(const rapidjson::V
     {
         if (!value["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessPolicy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessPolicy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(value["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ListGrantServiceAccessPolicy::Deserialize(const rapidjson::V
     {
         if (!value["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessPolicy.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessPolicy.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(value["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ListGrantServiceAccessPolicy::Deserialize(const rapidjson::V
     {
         if (!value["PolicyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessPolicy.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessPolicy.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyType = string(value["PolicyType"].GetString());
         m_policyTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ListGrantServiceAccessPolicy::Deserialize(const rapidjson::V
     {
         if (!value["PolicyDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessPolicy.PolicyDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessPolicy.PolicyDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyDescription = string(value["PolicyDescription"].GetString());
         m_policyDescriptionHasBeenSet = true;

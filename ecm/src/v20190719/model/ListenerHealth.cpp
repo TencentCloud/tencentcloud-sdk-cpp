@@ -38,7 +38,7 @@ CoreInternalOutcome ListenerHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerHealth.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerHealth.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ListenerHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerHealth.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerHealth.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ListenerHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerHealth.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerHealth.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ListenerHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ListenerHealth.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerHealth.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ListenerHealth::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `ListenerHealth.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ListenerHealth.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

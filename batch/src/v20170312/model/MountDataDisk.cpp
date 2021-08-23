@@ -35,7 +35,7 @@ CoreInternalOutcome MountDataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountDataDisk.LocalPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountDataDisk.LocalPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_localPath = string(value["LocalPath"].GetString());
         m_localPathHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MountDataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountDataDisk.FileSystemType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountDataDisk.FileSystemType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemType = string(value["FileSystemType"].GetString());
         m_fileSystemTypeHasBeenSet = true;

@@ -33,7 +33,7 @@ CoreInternalOutcome ErrorCoordinate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Coordinate") && !value["Coordinate"].IsNull())
     {
         if (!value["Coordinate"].IsArray())
-            return CoreInternalOutcome(Error("response `ErrorCoordinate.Coordinate` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ErrorCoordinate.Coordinate` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Coordinate"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

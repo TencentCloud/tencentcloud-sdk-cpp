@@ -43,13 +43,13 @@ namespace TencentCloud
                 WssClient(const Credential &credential, const std::string &region);
                 WssClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DeleteCertResponse> DeleteCertOutcome;
+                typedef Outcome<Core::Error, Model::DeleteCertResponse> DeleteCertOutcome;
                 typedef std::future<DeleteCertOutcome> DeleteCertOutcomeCallable;
                 typedef std::function<void(const WssClient*, const Model::DeleteCertRequest&, DeleteCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertAsyncHandler;
-                typedef Outcome<Error, Model::DescribeCertListResponse> DescribeCertListOutcome;
+                typedef Outcome<Core::Error, Model::DescribeCertListResponse> DescribeCertListOutcome;
                 typedef std::future<DescribeCertListOutcome> DescribeCertListOutcomeCallable;
                 typedef std::function<void(const WssClient*, const Model::DescribeCertListRequest&, DescribeCertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertListAsyncHandler;
-                typedef Outcome<Error, Model::UploadCertResponse> UploadCertOutcome;
+                typedef Outcome<Core::Error, Model::UploadCertResponse> UploadCertOutcome;
                 typedef std::future<UploadCertOutcome> UploadCertOutcomeCallable;
                 typedef std::function<void(const WssClient*, const Model::UploadCertRequest&, UploadCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadCertAsyncHandler;
 

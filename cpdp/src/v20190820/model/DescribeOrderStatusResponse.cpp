@@ -42,16 +42,16 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["OrderStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderStatus = string(rsp["OrderStatus"].GetString());
         m_orderStatusHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["OrderAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderAmount = string(rsp["OrderAmount"].GetString());
         m_orderAmountHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["OrderDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderDate = string(rsp["OrderDate"].GetString());
         m_orderDateHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["OrderTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderTime = string(rsp["OrderTime"].GetString());
         m_orderTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["OutSubAccountNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outSubAccountNumber = string(rsp["OutSubAccountNumber"].GetString());
         m_outSubAccountNumberHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["InSubAccountNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inSubAccountNumber = string(rsp["InSubAccountNumber"].GetString());
         m_inSubAccountNumberHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["BookingFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bookingFlag = string(rsp["BookingFlag"].GetString());
         m_bookingFlagHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["FailMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failMessage = string(rsp["FailMessage"].GetString());
         m_failMessageHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome DescribeOrderStatusResponse::Deserialize(const string &paylo
     {
         if (!rsp["RequestType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestType = string(rsp["RequestType"].GetString());
         m_requestTypeHasBeenSet = true;

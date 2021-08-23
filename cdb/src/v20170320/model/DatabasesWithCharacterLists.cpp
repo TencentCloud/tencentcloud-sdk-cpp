@@ -35,7 +35,7 @@ CoreInternalOutcome DatabasesWithCharacterLists::Deserialize(const rapidjson::Va
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabasesWithCharacterLists.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabasesWithCharacterLists.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DatabasesWithCharacterLists::Deserialize(const rapidjson::Va
     {
         if (!value["CharacterSet"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabasesWithCharacterLists.CharacterSet` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabasesWithCharacterLists.CharacterSet` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_characterSet = string(value["CharacterSet"].GetString());
         m_characterSetHasBeenSet = true;

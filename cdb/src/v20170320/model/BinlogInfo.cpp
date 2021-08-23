@@ -41,7 +41,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntranetUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.IntranetUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.IntranetUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_intranetUrl = string(value["IntranetUrl"].GetString());
         m_intranetUrlHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.InternetUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.InternetUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetUrl = string(value["InternetUrl"].GetString());
         m_internetUrlHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BinlogStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.BinlogStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.BinlogStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_binlogStartTime = string(value["BinlogStartTime"].GetString());
         m_binlogStartTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BinlogFinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BinlogInfo.BinlogFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.BinlogFinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_binlogFinishTime = string(value["BinlogFinishTime"].GetString());
         m_binlogFinishTimeHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ExternalMediaInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExternalMediaInfo.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalMediaInfo.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ExternalMediaInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MediaKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalMediaInfo.MediaKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalMediaInfo.MediaKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaKey = string(value["MediaKey"].GetString());
         m_mediaKeyHasBeenSet = true;

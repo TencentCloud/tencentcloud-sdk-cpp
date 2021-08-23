@@ -36,16 +36,16 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
     {
         if (!rsp["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = rsp["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
     {
         if (!rsp["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(rsp["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
     {
         if (!rsp["ClusterDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterDesc = string(rsp["ClusterDesc"].GetString());
         m_clusterDescHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome ScdnBotConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnBotConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnBotConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScdnBotConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BotCookie") && !value["BotCookie"].IsNull())
     {
         if (!value["BotCookie"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnBotConfig.BotCookie` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnBotConfig.BotCookie` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BotCookie"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome ScdnBotConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BotJavaScript") && !value["BotJavaScript"].IsNull())
     {
         if (!value["BotJavaScript"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnBotConfig.BotJavaScript` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnBotConfig.BotJavaScript` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BotJavaScript"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

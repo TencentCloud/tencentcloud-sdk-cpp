@@ -35,7 +35,7 @@ CoreInternalOutcome StatusCodeCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusCodeCache.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusCodeCache.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome StatusCodeCache::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CacheRules") && !value["CacheRules"].IsNull())
     {
         if (!value["CacheRules"].IsArray())
-            return CoreInternalOutcome(Error("response `StatusCodeCache.CacheRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StatusCodeCache.CacheRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CacheRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

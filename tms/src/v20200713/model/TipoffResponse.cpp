@@ -35,7 +35,7 @@ CoreInternalOutcome TipoffResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TipoffResponse.ResultCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TipoffResponse.ResultCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCode = value["ResultCode"].GetInt64();
         m_resultCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TipoffResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TipoffResponse.ResultMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TipoffResponse.ResultMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultMsg = string(value["ResultMsg"].GetString());
         m_resultMsgHasBeenSet = true;

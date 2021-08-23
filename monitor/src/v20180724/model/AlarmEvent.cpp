@@ -36,7 +36,7 @@ CoreInternalOutcome AlarmEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmEvent.EventName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmEvent.EventName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventName = string(value["EventName"].GetString());
         m_eventNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AlarmEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmEvent.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmEvent.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AlarmEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmEvent.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmEvent.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;

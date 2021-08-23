@@ -33,7 +33,7 @@ CoreInternalOutcome WordCoordPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WordCoordinate") && !value["WordCoordinate"].IsNull())
     {
         if (!value["WordCoordinate"].IsArray())
-            return CoreInternalOutcome(Error("response `WordCoordPoint.WordCoordinate` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WordCoordPoint.WordCoordinate` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WordCoordinate"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

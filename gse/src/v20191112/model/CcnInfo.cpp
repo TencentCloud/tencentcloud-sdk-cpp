@@ -35,7 +35,7 @@ CoreInternalOutcome CcnInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInfo.AccountId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInfo.AccountId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountId = string(value["AccountId"].GetString());
         m_accountIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CcnInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CcnId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccnId = string(value["CcnId"].GetString());
         m_ccnIdHasBeenSet = true;

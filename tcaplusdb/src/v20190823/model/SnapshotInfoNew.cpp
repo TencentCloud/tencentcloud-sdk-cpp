@@ -37,7 +37,7 @@ CoreInternalOutcome SnapshotInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SnapshotInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SnapshotInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfoNew.SnapshotName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfoNew.SnapshotName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotName = string(value["SnapshotName"].GetString());
         m_snapshotNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SnapshotInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotDeadTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfoNew.SnapshotDeadTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfoNew.SnapshotDeadTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotDeadTime = string(value["SnapshotDeadTime"].GetString());
         m_snapshotDeadTimeHasBeenSet = true;

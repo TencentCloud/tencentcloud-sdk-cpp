@@ -43,7 +43,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DevPre"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.DevPre` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.DevPre` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devPre = string(value["DevPre"].GetString());
         m_devPreHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DevNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.DevNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.DevNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_devNum = value["DevNum"].GetUint64();
         m_devNumHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DevNumCreated"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.DevNumCreated` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.DevNumCreated` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_devNumCreated = value["DevNumCreated"].GetUint64();
         m_devNumCreatedHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BatchURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.BatchURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.BatchURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchURL = string(value["BatchURL"].GetString());
         m_batchURLHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome VideoBatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoBatch.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBatch.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;

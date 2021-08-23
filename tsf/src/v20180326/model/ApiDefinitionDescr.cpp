@@ -35,7 +35,7 @@ CoreInternalOutcome ApiDefinitionDescr::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDefinitionDescr.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDefinitionDescr.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ApiDefinitionDescr::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Properties") && !value["Properties"].IsNull())
     {
         if (!value["Properties"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiDefinitionDescr.Properties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiDefinitionDescr.Properties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

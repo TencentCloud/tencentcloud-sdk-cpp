@@ -36,7 +36,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverBeginUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.CoverBeginUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.CoverBeginUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverBeginUrl = string(value["CoverBeginUrl"].GetString());
         m_coverBeginUrlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverEndUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.CoverEndUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.CoverEndUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverEndUrl = string(value["CoverEndUrl"].GetString());
         m_coverEndUrlHasBeenSet = true;

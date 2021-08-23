@@ -37,7 +37,7 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
     {
         if (!value["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunJobDescription.JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(value["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
     {
         if (!value["RunType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RunJobDescription.RunType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.RunType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runType = value["RunType"].GetInt64();
         m_runTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
     {
         if (!value["StartMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunJobDescription.StartMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.StartMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startMode = string(value["StartMode"].GetString());
         m_startModeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
     {
         if (!value["JobConfigVersion"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RunJobDescription.JobConfigVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.JobConfigVersion` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_jobConfigVersion = value["JobConfigVersion"].GetUint64();
         m_jobConfigVersionHasBeenSet = true;

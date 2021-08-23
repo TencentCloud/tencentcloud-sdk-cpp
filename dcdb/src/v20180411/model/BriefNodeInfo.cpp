@@ -36,7 +36,7 @@ CoreInternalOutcome BriefNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BriefNodeInfo.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BriefNodeInfo.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BriefNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BriefNodeInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BriefNodeInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BriefNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BriefNodeInfo.ShardId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BriefNodeInfo.ShardId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardId = string(value["ShardId"].GetString());
         m_shardIdHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome RecordUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordUsage.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordUsage.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeKey = string(value["TimeKey"].GetString());
         m_timeKeyHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RecordUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Class1VideoTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordUsage.Class1VideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordUsage.Class1VideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_class1VideoTime = value["Class1VideoTime"].GetUint64();
         m_class1VideoTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RecordUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Class2VideoTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordUsage.Class2VideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordUsage.Class2VideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_class2VideoTime = value["Class2VideoTime"].GetUint64();
         m_class2VideoTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RecordUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Class3VideoTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordUsage.Class3VideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordUsage.Class3VideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_class3VideoTime = value["Class3VideoTime"].GetUint64();
         m_class3VideoTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RecordUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordUsage.AudioTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordUsage.AudioTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioTime = value["AudioTime"].GetUint64();
         m_audioTimeHasBeenSet = true;

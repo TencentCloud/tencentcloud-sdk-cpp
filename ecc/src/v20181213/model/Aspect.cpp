@@ -36,7 +36,7 @@ CoreInternalOutcome Aspect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Aspect.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Aspect.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Aspect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Aspect.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Aspect.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Aspect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Aspect.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Aspect.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percentage = value["Percentage"].GetDouble();
         m_percentageHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneTrafficInfoDetail.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneTrafficInfoDetail.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneTrafficInfoDetail.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneTrafficInfoDetail.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["TrafficTotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneTrafficInfoDetail.TrafficTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneTrafficInfoDetail.TrafficTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficTotalCount = value["TrafficTotalCount"].GetUint64();
         m_trafficTotalCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["AvgStayTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneTrafficInfoDetail.AvgStayTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneTrafficInfoDetail.AvgStayTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_avgStayTime = value["AvgStayTime"].GetUint64();
         m_avgStayTimeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["URL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `URLNotice.URL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `URLNotice.URL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uRL = string(value["URL"].GetString());
         m_uRLHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsValid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `URLNotice.IsValid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `URLNotice.IsValid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isValid = value["IsValid"].GetInt64();
         m_isValidHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValidationCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `URLNotice.ValidationCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `URLNotice.ValidationCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validationCode = string(value["ValidationCode"].GetString());
         m_validationCodeHasBeenSet = true;

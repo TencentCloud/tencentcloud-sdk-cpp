@@ -35,7 +35,7 @@ CoreInternalOutcome PeerSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeerSet.PeerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerSet.PeerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerName = string(value["PeerName"].GetString());
         m_peerNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PeerSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeerSet.OrgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerSet.OrgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orgName = string(value["OrgName"].GetString());
         m_orgNameHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ResultAudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResultAudioInfo.StreamId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultAudioInfo.StreamId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_streamId = value["StreamId"].GetInt64();
         m_streamIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResultAudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResultAudioInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultAudioInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome CacheOptResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SuccessUrls") && !value["SuccessUrls"].IsNull())
     {
         if (!value["SuccessUrls"].IsArray())
-            return CoreInternalOutcome(Error("response `CacheOptResult.SuccessUrls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CacheOptResult.SuccessUrls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SuccessUrls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome CacheOptResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FailUrls") && !value["FailUrls"].IsNull())
     {
         if (!value["FailUrls"].IsArray())
-            return CoreInternalOutcome(Error("response `CacheOptResult.FailUrls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CacheOptResult.FailUrls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FailUrls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

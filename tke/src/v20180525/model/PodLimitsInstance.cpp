@@ -37,7 +37,7 @@ CoreInternalOutcome PodLimitsInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PodLimitsInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsInstance.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsInstance.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PodLimitsInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PodLimitsInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["PodLimits"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsInstance.PodLimits` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsInstance.PodLimits` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_podLimits.Deserialize(value["PodLimits"]);

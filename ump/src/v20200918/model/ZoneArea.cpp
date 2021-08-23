@@ -35,7 +35,7 @@ CoreInternalOutcome ZoneArea::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneArea.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneArea.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ZoneArea::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ShopArea") && !value["ShopArea"].IsNull())
     {
         if (!value["ShopArea"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneArea.ShopArea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneArea.ShopArea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShopArea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome DescribeProductEventListEventsGroupInfo::Deserialize(const r
     {
         if (!value["GroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEventsGroupInfo.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEventsGroupInfo.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetInt64();
         m_groupIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DescribeProductEventListEventsGroupInfo::Deserialize(const r
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEventsGroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEventsGroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;

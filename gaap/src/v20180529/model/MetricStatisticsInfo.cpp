@@ -35,7 +35,7 @@ CoreInternalOutcome MetricStatisticsInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricStatisticsInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricStatisticsInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MetricStatisticsInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("MetricData") && !value["MetricData"].IsNull())
     {
         if (!value["MetricData"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricStatisticsInfo.MetricData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricStatisticsInfo.MetricData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MetricData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

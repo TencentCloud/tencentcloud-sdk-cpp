@@ -38,7 +38,7 @@ CoreInternalOutcome AppUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppUser.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppUser.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AppUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppUser.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppUser.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AppUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NickName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppUser.NickName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppUser.NickName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickName = string(value["NickName"].GetString());
         m_nickNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AppUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppUser.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppUser.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AppUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppUser.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppUser.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

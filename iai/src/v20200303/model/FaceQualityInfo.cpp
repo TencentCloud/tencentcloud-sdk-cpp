@@ -37,7 +37,7 @@ CoreInternalOutcome FaceQualityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityInfo.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityInfo.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FaceQualityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sharpness"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityInfo.Sharpness` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityInfo.Sharpness` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sharpness = value["Sharpness"].GetInt64();
         m_sharpnessHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FaceQualityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Brightness"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityInfo.Brightness` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityInfo.Brightness` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_brightness = value["Brightness"].GetInt64();
         m_brightnessHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FaceQualityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Completeness"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityInfo.Completeness` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityInfo.Completeness` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_completeness.Deserialize(value["Completeness"]);

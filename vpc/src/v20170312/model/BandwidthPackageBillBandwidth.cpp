@@ -34,7 +34,7 @@ CoreInternalOutcome BandwidthPackageBillBandwidth::Deserialize(const rapidjson::
     {
         if (!value["BandwidthUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackageBillBandwidth.BandwidthUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackageBillBandwidth.BandwidthUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthUsage = value["BandwidthUsage"].GetUint64();
         m_bandwidthUsageHasBeenSet = true;

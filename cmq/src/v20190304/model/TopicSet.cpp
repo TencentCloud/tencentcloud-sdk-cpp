@@ -45,7 +45,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRetentionSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.MsgRetentionSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.MsgRetentionSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgRetentionSeconds = value["MsgRetentionSeconds"].GetUint64();
         m_msgRetentionSecondsHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxMsgSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.MaxMsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.MaxMsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxMsgSize = value["MaxMsgSize"].GetUint64();
         m_maxMsgSizeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilterType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.FilterType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.FilterType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = value["FilterType"].GetUint64();
         m_filterTypeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifyTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifyTime = value["LastModifyTime"].GetUint64();
         m_lastModifyTimeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgCount = value["MsgCount"].GetUint64();
         m_msgCountHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createUin = value["CreateUin"].GetUint64();
         m_createUinHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TopicSet.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -165,7 +165,7 @@ CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Trace"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicSet.Trace` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSet.Trace` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_trace = value["Trace"].GetBool();
         m_traceHasBeenSet = true;

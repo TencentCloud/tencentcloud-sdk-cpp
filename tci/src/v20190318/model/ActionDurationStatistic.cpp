@@ -35,7 +35,7 @@ CoreInternalOutcome ActionDurationStatistic::Deserialize(const rapidjson::Value 
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActionDurationStatistic.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionDurationStatistic.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ActionDurationStatistic::Deserialize(const rapidjson::Value 
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionDurationStatistic.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionDurationStatistic.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

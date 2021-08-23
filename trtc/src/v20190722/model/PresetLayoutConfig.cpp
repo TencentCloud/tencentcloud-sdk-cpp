@@ -43,7 +43,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StreamType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.StreamType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.StreamType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_streamType = value["StreamType"].GetUint64();
         m_streamTypeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ImageWidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.ImageWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.ImageWidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageWidth = value["ImageWidth"].GetUint64();
         m_imageWidthHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ImageHeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.ImageHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.ImageHeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageHeight = value["ImageHeight"].GetUint64();
         m_imageHeightHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LocationX"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.LocationX` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.LocationX` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_locationX = value["LocationX"].GetUint64();
         m_locationXHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LocationY"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.LocationY` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.LocationY` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_locationY = value["LocationY"].GetUint64();
         m_locationYHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ZOrder"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.ZOrder` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.ZOrder` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zOrder = value["ZOrder"].GetUint64();
         m_zOrderHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RenderMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.RenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.RenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_renderMode = value["RenderMode"].GetUint64();
         m_renderModeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MixInputType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.MixInputType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.MixInputType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mixInputType = value["MixInputType"].GetUint64();
         m_mixInputTypeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PlaceImageId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PresetLayoutConfig.PlaceImageId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetLayoutConfig.PlaceImageId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_placeImageId = value["PlaceImageId"].GetUint64();
         m_placeImageIdHasBeenSet = true;

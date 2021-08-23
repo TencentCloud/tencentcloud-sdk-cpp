@@ -42,7 +42,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.ZoneType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.ZoneType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneType = value["ZoneType"].GetInt64();
         m_zoneTypeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BunkCodes"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.BunkCodes` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.BunkCodes` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bunkCodes = string(value["BunkCodes"].GetString());
         m_bunkCodesHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FloorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.FloorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.FloorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_floorName = string(value["FloorName"].GetString());
         m_floorNameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FloorId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.FloorId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.FloorId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_floorId = value["FloorId"].GetInt64();
         m_floorIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.BindNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.BindNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindNum = value["BindNum"].GetInt64();
         m_bindNumHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DebugNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.DebugNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.DebugNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_debugNum = value["DebugNum"].GetInt64();
         m_debugNumHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneConfig.State` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;

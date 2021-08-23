@@ -39,7 +39,7 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRule.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRule.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRule.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRule.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRule.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayInstanceId = string(value["GatewayInstanceId"].GetString());
         m_gatewayInstanceIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRule.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRule.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UnitRuleItemList") && !value["UnitRuleItemList"].IsNull())
     {
         if (!value["UnitRuleItemList"].IsArray())
-            return CoreInternalOutcome(Error("response `UnitRule.UnitRuleItemList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UnitRule.UnitRuleItemList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UnitRuleItemList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

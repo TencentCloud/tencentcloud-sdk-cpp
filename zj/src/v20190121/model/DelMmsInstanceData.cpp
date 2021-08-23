@@ -34,7 +34,7 @@ CoreInternalOutcome DelMmsInstanceData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DelMmsInstanceData.InstanceId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DelMmsInstanceData.InstanceId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = value["InstanceId"].GetUint64();
         m_instanceIdHasBeenSet = true;

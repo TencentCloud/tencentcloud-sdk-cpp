@@ -35,7 +35,7 @@ CoreInternalOutcome EipRsMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipRsMap.EipId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipRsMap.EipId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipId = string(value["EipId"].GetString());
         m_eipIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome EipRsMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipRsMap.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipRsMap.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

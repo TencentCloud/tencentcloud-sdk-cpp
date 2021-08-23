@@ -38,7 +38,7 @@ CoreInternalOutcome ProxyDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyUid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyDetailInfo.ProxyUid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyDetailInfo.ProxyUid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyUid = string(value["ProxyUid"].GetString());
         m_proxyUidHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ProxyDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyDetailInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyDetailInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ProxyDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessSpeed"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyDetailInfo.ProcessSpeed` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyDetailInfo.ProcessSpeed` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_processSpeed = value["ProcessSpeed"].GetInt64();
         m_processSpeedHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ProxyDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AverageProcessDelay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyDetailInfo.AverageProcessDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyDetailInfo.AverageProcessDelay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_averageProcessDelay = value["AverageProcessDelay"].GetInt64();
         m_averageProcessDelayHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ProxyDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SlowProcessSpeed"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyDetailInfo.SlowProcessSpeed` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyDetailInfo.SlowProcessSpeed` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_slowProcessSpeed = value["SlowProcessSpeed"].GetInt64();
         m_slowProcessSpeedHasBeenSet = true;

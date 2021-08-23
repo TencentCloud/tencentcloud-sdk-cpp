@@ -35,7 +35,7 @@ CoreInternalOutcome CallBackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Body"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackInfo.Body` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackInfo.Body` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_body = string(value["Body"].GetString());
         m_bodyHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome CallBackInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Headers") && !value["Headers"].IsNull())
     {
         if (!value["Headers"].IsArray())
-            return CoreInternalOutcome(Error("response `CallBackInfo.Headers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CallBackInfo.Headers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Headers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

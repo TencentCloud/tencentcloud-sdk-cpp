@@ -35,7 +35,7 @@ CoreInternalOutcome FaceResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceResult.FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceResult.FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(value["FaceRect"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome FaceResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Candidates") && !value["Candidates"].IsNull())
     {
         if (!value["Candidates"].IsArray())
-            return CoreInternalOutcome(Error("response `FaceResult.Candidates` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FaceResult.Candidates` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Candidates"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

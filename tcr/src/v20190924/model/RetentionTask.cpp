@@ -41,7 +41,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetInt64();
         m_taskIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecutionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.ExecutionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.ExecutionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_executionId = value["ExecutionId"].GetInt64();
         m_executionIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Retained"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.Retained` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.Retained` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retained = value["Retained"].GetInt64();
         m_retainedHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Repository"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionTask.Repository` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionTask.Repository` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repository = string(value["Repository"].GetString());
         m_repositoryHasBeenSet = true;

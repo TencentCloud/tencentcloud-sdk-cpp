@@ -49,22 +49,22 @@ namespace TencentCloud
                 BizliveClient(const Credential &credential, const std::string &region);
                 BizliveClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateSessionResponse> CreateSessionOutcome;
+                typedef Outcome<Core::Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const BizliveClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
-                typedef Outcome<Error, Model::DescribeStreamPlayInfoListResponse> DescribeStreamPlayInfoListOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStreamPlayInfoListResponse> DescribeStreamPlayInfoListOutcome;
                 typedef std::future<DescribeStreamPlayInfoListOutcome> DescribeStreamPlayInfoListOutcomeCallable;
                 typedef std::function<void(const BizliveClient*, const Model::DescribeStreamPlayInfoListRequest&, DescribeStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPlayInfoListAsyncHandler;
-                typedef Outcome<Error, Model::DescribeWorkersResponse> DescribeWorkersOutcome;
+                typedef Outcome<Core::Error, Model::DescribeWorkersResponse> DescribeWorkersOutcome;
                 typedef std::future<DescribeWorkersOutcome> DescribeWorkersOutcomeCallable;
                 typedef std::function<void(const BizliveClient*, const Model::DescribeWorkersRequest&, DescribeWorkersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkersAsyncHandler;
-                typedef Outcome<Error, Model::ForbidLiveStreamResponse> ForbidLiveStreamOutcome;
+                typedef Outcome<Core::Error, Model::ForbidLiveStreamResponse> ForbidLiveStreamOutcome;
                 typedef std::future<ForbidLiveStreamOutcome> ForbidLiveStreamOutcomeCallable;
                 typedef std::function<void(const BizliveClient*, const Model::ForbidLiveStreamRequest&, ForbidLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveStreamAsyncHandler;
-                typedef Outcome<Error, Model::RegisterIMResponse> RegisterIMOutcome;
+                typedef Outcome<Core::Error, Model::RegisterIMResponse> RegisterIMOutcome;
                 typedef std::future<RegisterIMOutcome> RegisterIMOutcomeCallable;
                 typedef std::function<void(const BizliveClient*, const Model::RegisterIMRequest&, RegisterIMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterIMAsyncHandler;
-                typedef Outcome<Error, Model::StopGameResponse> StopGameOutcome;
+                typedef Outcome<Core::Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const BizliveClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
 

@@ -36,7 +36,7 @@ CoreInternalOutcome IntelligenceType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IntelligenceType.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IntelligenceType.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome IntelligenceType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Stamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IntelligenceType.Stamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IntelligenceType.Stamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stamp = string(value["Stamp"].GetString());
         m_stampHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome IntelligenceType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IntelligenceType.Time` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IntelligenceType.Time` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetUint64();
         m_timeHasBeenSet = true;

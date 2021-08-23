@@ -35,7 +35,7 @@ CoreInternalOutcome DeviceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceItem.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceItem.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeviceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceItem.ChannelId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceItem.ChannelId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelId = string(value["ChannelId"].GetString());
         m_channelIdHasBeenSet = true;

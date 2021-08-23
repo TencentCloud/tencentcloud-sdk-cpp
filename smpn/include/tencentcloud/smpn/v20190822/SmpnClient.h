@@ -47,19 +47,19 @@ namespace TencentCloud
                 SmpnClient(const Credential &credential, const std::string &region);
                 SmpnClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateSmpnEpaResponse> CreateSmpnEpaOutcome;
+                typedef Outcome<Core::Error, Model::CreateSmpnEpaResponse> CreateSmpnEpaOutcome;
                 typedef std::future<CreateSmpnEpaOutcome> CreateSmpnEpaOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::CreateSmpnEpaRequest&, CreateSmpnEpaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSmpnEpaAsyncHandler;
-                typedef Outcome<Error, Model::DescribeSmpnChpResponse> DescribeSmpnChpOutcome;
+                typedef Outcome<Core::Error, Model::DescribeSmpnChpResponse> DescribeSmpnChpOutcome;
                 typedef std::future<DescribeSmpnChpOutcome> DescribeSmpnChpOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnChpRequest&, DescribeSmpnChpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnChpAsyncHandler;
-                typedef Outcome<Error, Model::DescribeSmpnFnrResponse> DescribeSmpnFnrOutcome;
+                typedef Outcome<Core::Error, Model::DescribeSmpnFnrResponse> DescribeSmpnFnrOutcome;
                 typedef std::future<DescribeSmpnFnrOutcome> DescribeSmpnFnrOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnFnrRequest&, DescribeSmpnFnrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnFnrAsyncHandler;
-                typedef Outcome<Error, Model::DescribeSmpnMhmResponse> DescribeSmpnMhmOutcome;
+                typedef Outcome<Core::Error, Model::DescribeSmpnMhmResponse> DescribeSmpnMhmOutcome;
                 typedef std::future<DescribeSmpnMhmOutcome> DescribeSmpnMhmOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnMhmRequest&, DescribeSmpnMhmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnMhmAsyncHandler;
-                typedef Outcome<Error, Model::DescribeSmpnMrlResponse> DescribeSmpnMrlOutcome;
+                typedef Outcome<Core::Error, Model::DescribeSmpnMrlResponse> DescribeSmpnMrlOutcome;
                 typedef std::future<DescribeSmpnMrlOutcome> DescribeSmpnMrlOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnMrlRequest&, DescribeSmpnMrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnMrlAsyncHandler;
 

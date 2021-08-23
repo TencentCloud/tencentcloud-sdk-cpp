@@ -40,7 +40,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationCidrBlock = string(value["DestinationCidrBlock"].GetString());
         m_destinationCidrBlockHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.GatewayType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.GatewayType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayType = string(value["GatewayType"].GetString());
         m_gatewayTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayId = string(value["GatewayId"].GetString());
         m_gatewayIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.RouteDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.RouteDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeDescription = string(value["RouteDescription"].GetString());
         m_routeDescriptionHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoutePolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.RoutePolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.RoutePolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routePolicyId = string(value["RoutePolicyId"].GetString());
         m_routePolicyIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoutePolicyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.RoutePolicyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.RoutePolicyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routePolicyType = string(value["RoutePolicyType"].GetString());
         m_routePolicyTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome RoutePolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RoutePolicy.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutePolicy.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;

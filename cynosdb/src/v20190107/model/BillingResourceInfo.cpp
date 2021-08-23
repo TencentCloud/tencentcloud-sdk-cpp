@@ -35,7 +35,7 @@ CoreInternalOutcome BillingResourceInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillingResourceInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillingResourceInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome BillingResourceInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("InstanceIds") && !value["InstanceIds"].IsNull())
     {
         if (!value["InstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `BillingResourceInfo.InstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BillingResourceInfo.InstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

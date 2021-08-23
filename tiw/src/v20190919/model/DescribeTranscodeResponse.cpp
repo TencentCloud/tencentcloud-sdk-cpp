@@ -43,16 +43,16 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["Pages"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Pages` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Pages` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pages = rsp["Pages"].GetInt64();
         m_pagesHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = rsp["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(rsp["Resolution"].GetString());
         m_resolutionHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["ResultUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResultUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultUrl = string(rsp["ResultUrl"].GetString());
         m_resultUrlHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(rsp["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(rsp["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["ThumbnailUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ThumbnailUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThumbnailUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thumbnailUrl = string(rsp["ThumbnailUrl"].GetString());
         m_thumbnailUrlHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["ThumbnailResolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ThumbnailResolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThumbnailResolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thumbnailResolution = string(rsp["ThumbnailResolution"].GetString());
         m_thumbnailResolutionHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
     {
         if (!rsp["CompressFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compressFileUrl = string(rsp["CompressFileUrl"].GetString());
         m_compressFileUrlHasBeenSet = true;

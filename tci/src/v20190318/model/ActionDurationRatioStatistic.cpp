@@ -35,7 +35,7 @@ CoreInternalOutcome ActionDurationRatioStatistic::Deserialize(const rapidjson::V
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionDurationRatioStatistic.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionDurationRatioStatistic.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ActionDurationRatioStatistic::Deserialize(const rapidjson::V
     {
         if (!value["Ratio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ActionDurationRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionDurationRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = value["Ratio"].GetDouble();
         m_ratioHasBeenSet = true;

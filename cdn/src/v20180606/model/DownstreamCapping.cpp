@@ -35,7 +35,7 @@ CoreInternalOutcome DownstreamCapping::Deserialize(const rapidjson::Value &value
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownstreamCapping.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownstreamCapping.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DownstreamCapping::Deserialize(const rapidjson::Value &value
     if (value.HasMember("CappingRules") && !value["CappingRules"].IsNull())
     {
         if (!value["CappingRules"].IsArray())
-            return CoreInternalOutcome(Error("response `DownstreamCapping.CappingRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DownstreamCapping.CappingRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CappingRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

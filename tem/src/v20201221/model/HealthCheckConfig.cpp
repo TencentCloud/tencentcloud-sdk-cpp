@@ -41,7 +41,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Exec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.Exec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.Exec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exec = string(value["Exec"].GetString());
         m_execHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["InitialDelaySeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.InitialDelaySeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.InitialDelaySeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_initialDelaySeconds = value["InitialDelaySeconds"].GetInt64();
         m_initialDelaySecondsHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["TimeoutSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.TimeoutSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.TimeoutSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeoutSeconds = value["TimeoutSeconds"].GetInt64();
         m_timeoutSecondsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeriodSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.PeriodSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.PeriodSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_periodSeconds = value["PeriodSeconds"].GetInt64();
         m_periodSecondsHasBeenSet = true;

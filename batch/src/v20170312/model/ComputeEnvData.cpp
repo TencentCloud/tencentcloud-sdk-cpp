@@ -33,7 +33,7 @@ CoreInternalOutcome ComputeEnvData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceTypes") && !value["InstanceTypes"].IsNull())
     {
         if (!value["InstanceTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `ComputeEnvData.InstanceTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ComputeEnvData.InstanceTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

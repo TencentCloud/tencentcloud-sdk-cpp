@@ -44,7 +44,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["City"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.City` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.City` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_city = value["City"].GetUint64();
         m_cityHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Country"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.Country` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.Country` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_country = value["Country"].GetUint64();
         m_countryHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Province"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.Province` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.Province` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_province = value["Province"].GetUint64();
         m_provinceHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(value["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LoginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.LoginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.LoginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loginTime = string(value["LoginTime"].GetString());
         m_loginTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome NonLocalLoginPlace::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlace.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlace.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;

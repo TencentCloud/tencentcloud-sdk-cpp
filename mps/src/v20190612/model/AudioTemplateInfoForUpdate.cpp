@@ -37,7 +37,7 @@ CoreInternalOutcome AudioTemplateInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfoForUpdate.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfoForUpdate.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AudioTemplateInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["Bitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfoForUpdate.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfoForUpdate.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetUint64();
         m_bitrateHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AudioTemplateInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["SampleRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfoForUpdate.SampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfoForUpdate.SampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sampleRate = value["SampleRate"].GetUint64();
         m_sampleRateHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AudioTemplateInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["AudioChannel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfoForUpdate.AudioChannel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfoForUpdate.AudioChannel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_audioChannel = value["AudioChannel"].GetInt64();
         m_audioChannelHasBeenSet = true;

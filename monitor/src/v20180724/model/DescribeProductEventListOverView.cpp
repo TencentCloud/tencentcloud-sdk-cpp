@@ -37,7 +37,7 @@ CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const rapidjso
     {
         if (!value["StatusChangeAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListOverView.StatusChangeAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListOverView.StatusChangeAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusChangeAmount = value["StatusChangeAmount"].GetInt64();
         m_statusChangeAmountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const rapidjso
     {
         if (!value["UnConfigAlarmAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListOverView.UnConfigAlarmAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListOverView.UnConfigAlarmAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unConfigAlarmAmount = value["UnConfigAlarmAmount"].GetInt64();
         m_unConfigAlarmAmountHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const rapidjso
     {
         if (!value["UnNormalEventAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListOverView.UnNormalEventAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListOverView.UnNormalEventAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unNormalEventAmount = value["UnNormalEventAmount"].GetInt64();
         m_unNormalEventAmountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const rapidjso
     {
         if (!value["UnRecoverAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListOverView.UnRecoverAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListOverView.UnRecoverAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unRecoverAmount = value["UnRecoverAmount"].GetInt64();
         m_unRecoverAmountHasBeenSet = true;

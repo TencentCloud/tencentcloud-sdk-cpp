@@ -47,7 +47,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.AssetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.AssetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetId = string(value["AssetId"].GetString());
         m_assetIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.AssetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.AssetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetName = string(value["AssetName"].GetString());
         m_assetNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.AssetVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.AssetVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetVersion = string(value["AssetVersion"].GetString());
         m_assetVersionHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperateSystem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.OperateSystem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.OperateSystem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operateSystem = string(value["OperateSystem"].GetString());
         m_operateSystemHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Stauts"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Asset.Stauts` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.Stauts` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stauts = value["Stauts"].GetInt64();
         m_stautsHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.Size` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.Size` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_size = string(value["Size"].GetString());
         m_sizeHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindFleetNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Asset.BindFleetNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.BindFleetNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindFleetNum = value["BindFleetNum"].GetInt64();
         m_bindFleetNumHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetArn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.AssetArn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.AssetArn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetArn = string(value["AssetArn"].GetString());
         m_assetArnHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.OsType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.OsType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osType = string(value["OsType"].GetString());
         m_osTypeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SharingStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Asset.SharingStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Asset.SharingStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sharingStatus = string(value["SharingStatus"].GetString());
         m_sharingStatusHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome Asset::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Asset.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Asset.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

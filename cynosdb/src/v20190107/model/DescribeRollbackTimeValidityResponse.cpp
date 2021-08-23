@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeRollbackTimeValidityResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeRollbackTimeValidityResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeRollbackTimeValidityResponse::Deserialize(const stri
     {
         if (!rsp["PoolId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PoolId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoolId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_poolId = rsp["PoolId"].GetUint64();
         m_poolIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeRollbackTimeValidityResponse::Deserialize(const stri
     {
         if (!rsp["QueryId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueryId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_queryId = rsp["QueryId"].GetUint64();
         m_queryIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeRollbackTimeValidityResponse::Deserialize(const stri
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeRollbackTimeValidityResponse::Deserialize(const stri
     {
         if (!rsp["SuggestTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SuggestTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SuggestTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestTime = string(rsp["SuggestTime"].GetString());
         m_suggestTimeHasBeenSet = true;

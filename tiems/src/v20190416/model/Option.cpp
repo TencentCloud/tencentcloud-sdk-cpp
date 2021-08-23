@@ -35,7 +35,7 @@ CoreInternalOutcome Option::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Option.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Option.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Option::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Option.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Option.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;

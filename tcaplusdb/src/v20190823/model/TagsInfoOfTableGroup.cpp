@@ -37,7 +37,7 @@ CoreInternalOutcome TagsInfoOfTableGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTableGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTableGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TagsInfoOfTableGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTableGroup.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTableGroup.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TagsInfoOfTableGroup::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TagsInfoOfTableGroup.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTableGroup.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome TagsInfoOfTableGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTableGroup.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTableGroup.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);

@@ -39,7 +39,7 @@ CoreInternalOutcome SurgeryHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SurgeryName"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SurgeryHistory.SurgeryName` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SurgeryHistory.SurgeryName` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_surgeryName.Deserialize(value["SurgeryName"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome SurgeryHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SurgeryDate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SurgeryHistory.SurgeryDate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SurgeryHistory.SurgeryDate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_surgeryDate.Deserialize(value["SurgeryDate"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome SurgeryHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PreoperativePathology"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SurgeryHistory.PreoperativePathology` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SurgeryHistory.PreoperativePathology` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_preoperativePathology.Deserialize(value["PreoperativePathology"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome SurgeryHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntraoperativePathology"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SurgeryHistory.IntraoperativePathology` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SurgeryHistory.IntraoperativePathology` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_intraoperativePathology.Deserialize(value["IntraoperativePathology"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome SurgeryHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PostoperativePathology"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SurgeryHistory.PostoperativePathology` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SurgeryHistory.PostoperativePathology` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_postoperativePathology.Deserialize(value["PostoperativePathology"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome SurgeryHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DischargeDiagnosis"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SurgeryHistory.DischargeDiagnosis` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SurgeryHistory.DischargeDiagnosis` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dischargeDiagnosis.Deserialize(value["DischargeDiagnosis"]);

@@ -39,7 +39,7 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShortStructAccuracy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareMetricsData.ShortStructAccuracy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareMetricsData.ShortStructAccuracy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shortStructAccuracy = string(value["ShortStructAccuracy"].GetString());
         m_shortStructAccuracyHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShortStructRecall"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareMetricsData.ShortStructRecall` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareMetricsData.ShortStructRecall` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shortStructRecall = string(value["ShortStructRecall"].GetString());
         m_shortStructRecallHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LongStructAccuracy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareMetricsData.LongStructAccuracy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareMetricsData.LongStructAccuracy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_longStructAccuracy = string(value["LongStructAccuracy"].GetString());
         m_longStructAccuracyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LongStructRecall"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareMetricsData.LongStructRecall` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareMetricsData.LongStructRecall` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_longStructRecall = string(value["LongStructRecall"].GetString());
         m_longStructRecallHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LongContentAccuracy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareMetricsData.LongContentAccuracy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareMetricsData.LongContentAccuracy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_longContentAccuracy = string(value["LongContentAccuracy"].GetString());
         m_longContentAccuracyHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LongContentRecall"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareMetricsData.LongContentRecall` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareMetricsData.LongContentRecall` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_longContentRecall = string(value["LongContentRecall"].GetString());
         m_longContentRecallHasBeenSet = true;

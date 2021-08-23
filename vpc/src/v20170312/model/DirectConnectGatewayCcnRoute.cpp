@@ -36,7 +36,7 @@ CoreInternalOutcome DirectConnectGatewayCcnRoute::Deserialize(const rapidjson::V
     {
         if (!value["RouteId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGatewayCcnRoute.RouteId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGatewayCcnRoute.RouteId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = string(value["RouteId"].GetString());
         m_routeIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DirectConnectGatewayCcnRoute::Deserialize(const rapidjson::V
     {
         if (!value["DestinationCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGatewayCcnRoute.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGatewayCcnRoute.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationCidrBlock = string(value["DestinationCidrBlock"].GetString());
         m_destinationCidrBlockHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DirectConnectGatewayCcnRoute::Deserialize(const rapidjson::V
     if (value.HasMember("ASPath") && !value["ASPath"].IsNull())
     {
         if (!value["ASPath"].IsArray())
-            return CoreInternalOutcome(Error("response `DirectConnectGatewayCcnRoute.ASPath` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGatewayCcnRoute.ASPath` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ASPath"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

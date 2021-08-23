@@ -36,7 +36,7 @@ CoreInternalOutcome ForbidStreamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForbidStreamInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForbidStreamInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ForbidStreamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForbidStreamInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForbidStreamInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ForbidStreamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForbidStreamInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForbidStreamInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(value["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifiedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedDate = string(value["LastModifiedDate"].GetString());
         m_lastModifiedDateHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomizedOrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.CustomizedOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.CustomizedOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customizedOrgNodeId = string(value["CustomizedOrgNodeId"].GetString());
         m_customizedOrgNodeIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentOrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.ParentOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.ParentOrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentOrgNodeId = string(value["ParentOrgNodeId"].GetString());
         m_parentOrgNodeIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orgNodeId = string(value["OrgNodeId"].GetString());
         m_orgNodeIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataSource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.DataSource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.DataSource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataSource = string(value["DataSource"].GetString());
         m_dataSourceHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome OrgNodeChildInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildInfo.CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildInfo.CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdDate = string(value["CreatedDate"].GetString());
         m_createdDateHasBeenSet = true;

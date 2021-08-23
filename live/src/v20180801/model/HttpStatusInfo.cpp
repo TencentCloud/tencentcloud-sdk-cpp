@@ -35,7 +35,7 @@ CoreInternalOutcome HttpStatusInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpStatusInfo.HttpStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusInfo.HttpStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpStatus = string(value["HttpStatus"].GetString());
         m_httpStatusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome HttpStatusInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Num"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HttpStatusInfo.Num` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusInfo.Num` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_num = value["Num"].GetUint64();
         m_numHasBeenSet = true;

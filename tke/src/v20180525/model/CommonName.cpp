@@ -35,7 +35,7 @@ CoreInternalOutcome CommonName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubaccountUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonName.SubaccountUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonName.SubaccountUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subaccountUin = string(value["SubaccountUin"].GetString());
         m_subaccountUinHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CommonName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CN"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonName.CN` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonName.CN` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cN = string(value["CN"].GetString());
         m_cNHasBeenSet = true;

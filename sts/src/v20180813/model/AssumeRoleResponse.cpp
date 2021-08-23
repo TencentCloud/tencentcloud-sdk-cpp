@@ -36,16 +36,16 @@ CoreInternalOutcome AssumeRoleResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome AssumeRoleResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome AssumeRoleResponse::Deserialize(const string &payload)
     {
         if (!rsp["Credentials"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Credentials` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Credentials` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_credentials.Deserialize(rsp["Credentials"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome AssumeRoleResponse::Deserialize(const string &payload)
     {
         if (!rsp["ExpiredTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = rsp["ExpiredTime"].GetInt64();
         m_expiredTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome AssumeRoleResponse::Deserialize(const string &payload)
     {
         if (!rsp["Expiration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Expiration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Expiration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiration = string(rsp["Expiration"].GetString());
         m_expirationHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome ScdnAclRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclRule.MatchKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclRule.MatchKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchKey = string(value["MatchKey"].GetString());
         m_matchKeyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ScdnAclRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogiOperator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclRule.LogiOperator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclRule.LogiOperator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logiOperator = string(value["LogiOperator"].GetString());
         m_logiOperatorHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ScdnAclRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclRule.MatchValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclRule.MatchValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchValue = string(value["MatchValue"].GetString());
         m_matchValueHasBeenSet = true;

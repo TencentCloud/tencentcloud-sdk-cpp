@@ -35,7 +35,7 @@ CoreInternalOutcome AbnormalEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AbnormalEventId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AbnormalEvent.AbnormalEventId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalEvent.AbnormalEventId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_abnormalEventId = value["AbnormalEventId"].GetUint64();
         m_abnormalEventIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AbnormalEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbnormalEvent.PeerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalEvent.PeerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerId = string(value["PeerId"].GetString());
         m_peerIdHasBeenSet = true;

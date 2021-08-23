@@ -39,7 +39,7 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmallVideoLayoutParams.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmallVideoLayoutParams.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &
     {
         if (!value["StreamType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmallVideoLayoutParams.StreamType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmallVideoLayoutParams.StreamType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_streamType = value["StreamType"].GetUint64();
         m_streamTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &
     {
         if (!value["ImageWidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmallVideoLayoutParams.ImageWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmallVideoLayoutParams.ImageWidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageWidth = value["ImageWidth"].GetUint64();
         m_imageWidthHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &
     {
         if (!value["ImageHeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmallVideoLayoutParams.ImageHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmallVideoLayoutParams.ImageHeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageHeight = value["ImageHeight"].GetUint64();
         m_imageHeightHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &
     {
         if (!value["LocationX"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmallVideoLayoutParams.LocationX` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmallVideoLayoutParams.LocationX` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_locationX = value["LocationX"].GetUint64();
         m_locationXHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &
     {
         if (!value["LocationY"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmallVideoLayoutParams.LocationY` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmallVideoLayoutParams.LocationY` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_locationY = value["LocationY"].GetUint64();
         m_locationYHasBeenSet = true;

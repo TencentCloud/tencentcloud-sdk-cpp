@@ -34,7 +34,7 @@ CoreInternalOutcome RiskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDetail.RiskCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDetail.RiskCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskCode = value["RiskCode"].GetUint64();
         m_riskCodeHasBeenSet = true;

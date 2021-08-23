@@ -40,7 +40,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.InstanceIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.InstanceIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceIP = string(value["InstanceIP"].GetString());
         m_instanceIPHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["TotalUsedTimeSeconds"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.TotalUsedTimeSeconds` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.TotalUsedTimeSeconds` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalUsedTimeSeconds = string(value["TotalUsedTimeSeconds"].GetString());
         m_totalUsedTimeSecondsHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome FleetStatisticDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["TotalUsedFlowMegaBytes"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticDetail.TotalUsedFlowMegaBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticDetail.TotalUsedFlowMegaBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalUsedFlowMegaBytes = value["TotalUsedFlowMegaBytes"].GetDouble();
         m_totalUsedFlowMegaBytesHasBeenSet = true;

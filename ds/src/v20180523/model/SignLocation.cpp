@@ -38,7 +38,7 @@ CoreInternalOutcome SignLocation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignOnPage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignLocation.SignOnPage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignLocation.SignOnPage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signOnPage = string(value["SignOnPage"].GetString());
         m_signOnPageHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SignLocation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignLocationLBX"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignLocation.SignLocationLBX` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignLocation.SignLocationLBX` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signLocationLBX = string(value["SignLocationLBX"].GetString());
         m_signLocationLBXHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SignLocation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignLocationLBY"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignLocation.SignLocationLBY` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignLocation.SignLocationLBY` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signLocationLBY = string(value["SignLocationLBY"].GetString());
         m_signLocationLBYHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SignLocation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignLocationRUX"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignLocation.SignLocationRUX` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignLocation.SignLocationRUX` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signLocationRUX = string(value["SignLocationRUX"].GetString());
         m_signLocationRUXHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SignLocation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignLocationRUY"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignLocation.SignLocationRUY` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignLocation.SignLocationRUY` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signLocationRUY = string(value["SignLocationRUY"].GetString());
         m_signLocationRUYHasBeenSet = true;

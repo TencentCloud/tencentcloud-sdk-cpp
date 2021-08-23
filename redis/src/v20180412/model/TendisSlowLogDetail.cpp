@@ -38,7 +38,7 @@ CoreInternalOutcome TendisSlowLogDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExecuteTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TendisSlowLogDetail.ExecuteTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisSlowLogDetail.ExecuteTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_executeTime = string(value["ExecuteTime"].GetString());
         m_executeTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TendisSlowLogDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TendisSlowLogDetail.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisSlowLogDetail.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TendisSlowLogDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Command"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TendisSlowLogDetail.Command` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisSlowLogDetail.Command` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_command = string(value["Command"].GetString());
         m_commandHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TendisSlowLogDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["CommandLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TendisSlowLogDetail.CommandLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisSlowLogDetail.CommandLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandLine = string(value["CommandLine"].GetString());
         m_commandLineHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TendisSlowLogDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Node"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TendisSlowLogDetail.Node` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisSlowLogDetail.Node` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_node = string(value["Node"].GetString());
         m_nodeHasBeenSet = true;

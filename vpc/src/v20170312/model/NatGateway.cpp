@@ -51,7 +51,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayId = string(value["NatGatewayId"].GetString());
         m_natGatewayIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.NatGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.NatGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayName = string(value["NatGatewayName"].GetString());
         m_natGatewayNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetMaxBandwidthOut"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetUint64();
         m_internetMaxBandwidthOutHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxConcurrentConnection"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.MaxConcurrentConnection` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.MaxConcurrentConnection` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxConcurrentConnection = value["MaxConcurrentConnection"].GetUint64();
         m_maxConcurrentConnectionHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublicIpAddressSet") && !value["PublicIpAddressSet"].IsNull())
     {
         if (!value["PublicIpAddressSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGateway.PublicIpAddressSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.PublicIpAddressSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIpAddressSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -131,7 +131,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.NetworkState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.NetworkState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkState = string(value["NetworkState"].GetString());
         m_networkStateHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DestinationIpPortTranslationNatRuleSet") && !value["DestinationIpPortTranslationNatRuleSet"].IsNull())
     {
         if (!value["DestinationIpPortTranslationNatRuleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGateway.DestinationIpPortTranslationNatRuleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.DestinationIpPortTranslationNatRuleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DestinationIpPortTranslationNatRuleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -161,7 +161,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DirectConnectGatewayIds") && !value["DirectConnectGatewayIds"].IsNull())
     {
         if (!value["DirectConnectGatewayIds"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGateway.DirectConnectGatewayIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.DirectConnectGatewayIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DirectConnectGatewayIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -194,7 +194,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGateway.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -223,7 +223,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityGroupSet") && !value["SecurityGroupSet"].IsNull())
     {
         if (!value["SecurityGroupSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGateway.SecurityGroupSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.SecurityGroupSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -236,7 +236,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceIpTranslationNatRuleSet") && !value["SourceIpTranslationNatRuleSet"].IsNull())
     {
         if (!value["SourceIpTranslationNatRuleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGateway.SourceIpTranslationNatRuleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.SourceIpTranslationNatRuleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceIpTranslationNatRuleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -257,7 +257,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsExclusive"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.IsExclusive` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.IsExclusive` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isExclusive = value["IsExclusive"].GetBool();
         m_isExclusiveHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExclusiveGatewayBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGateway.ExclusiveGatewayBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGateway.ExclusiveGatewayBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_exclusiveGatewayBandwidth = value["ExclusiveGatewayBandwidth"].GetUint64();
         m_exclusiveGatewayBandwidthHasBeenSet = true;

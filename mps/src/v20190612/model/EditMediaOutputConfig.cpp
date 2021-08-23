@@ -34,7 +34,7 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaOutputConfig.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaOutputConfig.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;

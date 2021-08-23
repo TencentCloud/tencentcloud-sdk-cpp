@@ -46,7 +46,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["IsZero"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.IsZero` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.IsZero` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isZero = value["IsZero"].GetBool();
         m_isZeroHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["GrayKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.GrayKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.GrayKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grayKey = string(value["GrayKey"].GetString());
         m_grayKeyHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["GrayValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.GrayValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.GrayValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grayValue = string(value["GrayValue"].GetString());
         m_grayValueHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetBool();
         m_isDefaultHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["AccessType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.AccessType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.AccessType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_accessType = value["AccessType"].GetInt64();
         m_accessTypeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     if (value.HasMember("URLs") && !value["URLs"].IsNull())
     {
         if (!value["URLs"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.URLs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.URLs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["URLs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -119,7 +119,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["ServerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.ServerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.ServerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverName = string(value["ServerName"].GetString());
         m_serverNameHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["GrayType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.GrayType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.GrayType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grayType = string(value["GrayType"].GetString());
         m_grayTypeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["LbAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.LbAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.LbAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lbAddr = string(value["LbAddr"].GetString());
         m_lbAddrHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome CloudBaseRunForGatewayConf::Deserialize(const rapidjson::Val
     {
         if (!value["ConfigType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunForGatewayConf.ConfigType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunForGatewayConf.ConfigType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_configType = value["ConfigType"].GetInt64();
         m_configTypeHasBeenSet = true;

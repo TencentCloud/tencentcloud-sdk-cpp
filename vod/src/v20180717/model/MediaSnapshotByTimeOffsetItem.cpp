@@ -35,7 +35,7 @@ CoreInternalOutcome MediaSnapshotByTimeOffsetItem::Deserialize(const rapidjson::
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaSnapshotByTimeOffsetItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSnapshotByTimeOffsetItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MediaSnapshotByTimeOffsetItem::Deserialize(const rapidjson::
     if (value.HasMember("PicInfoSet") && !value["PicInfoSet"].IsNull())
     {
         if (!value["PicInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaSnapshotByTimeOffsetItem.PicInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaSnapshotByTimeOffsetItem.PicInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PicInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

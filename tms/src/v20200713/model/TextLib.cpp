@@ -35,7 +35,7 @@ CoreInternalOutcome TextLib::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextLib.LibId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextLib.LibId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_libId = value["LibId"].GetInt64();
         m_libIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TextLib::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextLib.LibName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextLib.LibName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libName = string(value["LibName"].GetString());
         m_libNameHasBeenSet = true;

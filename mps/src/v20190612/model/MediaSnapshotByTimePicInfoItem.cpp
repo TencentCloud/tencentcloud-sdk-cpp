@@ -36,7 +36,7 @@ CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const rapidjson:
     {
         if (!value["TimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaSnapshotByTimePicInfoItem.TimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSnapshotByTimePicInfoItem.TimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_timeOffset = value["TimeOffset"].GetDouble();
         m_timeOffsetHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const rapidjson:
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSnapshotByTimePicInfoItem.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSnapshotByTimePicInfoItem.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const rapidjson:
     if (value.HasMember("WaterMarkDefinition") && !value["WaterMarkDefinition"].IsNull())
     {
         if (!value["WaterMarkDefinition"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaSnapshotByTimePicInfoItem.WaterMarkDefinition` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaSnapshotByTimePicInfoItem.WaterMarkDefinition` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WaterMarkDefinition"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

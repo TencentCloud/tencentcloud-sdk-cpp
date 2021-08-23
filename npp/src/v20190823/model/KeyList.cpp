@@ -35,7 +35,7 @@ CoreInternalOutcome KeyList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyList.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyList.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome KeyList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyList.Operate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyList.Operate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operate = string(value["Operate"].GetString());
         m_operateHasBeenSet = true;

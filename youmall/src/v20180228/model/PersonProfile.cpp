@@ -40,7 +40,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.Gender` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.Gender` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetUint64();
         m_genderHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Age"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.Age` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.Age` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetUint64();
         m_ageHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstArrivedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.FirstArrivedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.FirstArrivedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstArrivedTime = string(value["FirstArrivedTime"].GetString());
         m_firstArrivedTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArrivedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.ArrivedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.ArrivedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_arrivedCount = value["ArrivedCount"].GetUint64();
         m_arrivedCountHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PicUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.PicUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.PicUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_picUrl = string(value["PicUrl"].GetString());
         m_picUrlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PersonProfile.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonProfile.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = value["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;

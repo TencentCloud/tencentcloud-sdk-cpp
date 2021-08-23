@@ -39,7 +39,7 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Param"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamDesc.Param` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.Param` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_param = string(value["Param"].GetString());
         m_paramHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamDesc.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SetValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamDesc.SetValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.SetValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_setValue = string(value["SetValue"].GetString());
         m_setValueHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Default"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamDesc.Default` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.Default` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_default = string(value["Default"].GetString());
         m_defaultHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Constraint"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ParamDesc.Constraint` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.Constraint` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_constraint.Deserialize(value["Constraint"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HaveSetValue"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ParamDesc.HaveSetValue` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.HaveSetValue` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_haveSetValue = value["HaveSetValue"].GetBool();
         m_haveSetValueHasBeenSet = true;

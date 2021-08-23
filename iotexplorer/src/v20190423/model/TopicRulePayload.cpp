@@ -37,7 +37,7 @@ CoreInternalOutcome TopicRulePayload::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sql"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRulePayload.Sql` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRulePayload.Sql` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sql = string(value["Sql"].GetString());
         m_sqlHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TopicRulePayload::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Actions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRulePayload.Actions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRulePayload.Actions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actions = string(value["Actions"].GetString());
         m_actionsHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TopicRulePayload::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRulePayload.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRulePayload.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TopicRulePayload::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleDisabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicRulePayload.RuleDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRulePayload.RuleDisabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_ruleDisabled = value["RuleDisabled"].GetBool();
         m_ruleDisabledHasBeenSet = true;

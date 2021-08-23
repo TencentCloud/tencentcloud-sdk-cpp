@@ -36,7 +36,7 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModelId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModelInfo.ModelId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ModelId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modelId = string(value["ModelId"].GetString());
         m_modelIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LUTFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModelInfo.LUTFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.LUTFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lUTFileUrl = string(value["LUTFileUrl"].GetString());
         m_lUTFileUrlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModelInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

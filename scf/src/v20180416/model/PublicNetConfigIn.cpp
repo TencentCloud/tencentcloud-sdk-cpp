@@ -35,7 +35,7 @@ CoreInternalOutcome PublicNetConfigIn::Deserialize(const rapidjson::Value &value
     {
         if (!value["PublicNetStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicNetConfigIn.PublicNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicNetConfigIn.PublicNetStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicNetStatus = string(value["PublicNetStatus"].GetString());
         m_publicNetStatusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PublicNetConfigIn::Deserialize(const rapidjson::Value &value
     {
         if (!value["EipConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PublicNetConfigIn.EipConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicNetConfigIn.EipConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eipConfig.Deserialize(value["EipConfig"]);

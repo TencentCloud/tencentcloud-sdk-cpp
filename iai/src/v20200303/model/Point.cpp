@@ -35,7 +35,7 @@ CoreInternalOutcome Point::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Point.X` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Point.X` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetInt64();
         m_xHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Point::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Point.Y` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Point.Y` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetInt64();
         m_yHasBeenSet = true;

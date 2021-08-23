@@ -36,7 +36,7 @@ CoreInternalOutcome EnvAddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvAddressInfo.EnvName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvAddressInfo.EnvName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envName = string(value["EnvName"].GetString());
         m_envNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EnvAddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableConfigInternet"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EnvAddressInfo.EnableConfigInternet` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvAddressInfo.EnableConfigInternet` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableConfigInternet = value["EnableConfigInternet"].GetBool();
         m_enableConfigInternetHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EnvAddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigInternetServiceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvAddressInfo.ConfigInternetServiceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvAddressInfo.ConfigInternetServiceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configInternetServiceIp = string(value["ConfigInternetServiceIp"].GetString());
         m_configInternetServiceIpHasBeenSet = true;

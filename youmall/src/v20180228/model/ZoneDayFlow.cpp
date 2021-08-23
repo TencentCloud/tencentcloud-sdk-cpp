@@ -35,7 +35,7 @@ CoreInternalOutcome ZoneDayFlow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Day"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneDayFlow.Day` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneDayFlow.Day` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_day = string(value["Day"].GetString());
         m_dayHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ZoneDayFlow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneDayFlow.FlowCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneDayFlow.FlowCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowCount = value["FlowCount"].GetInt64();
         m_flowCountHasBeenSet = true;

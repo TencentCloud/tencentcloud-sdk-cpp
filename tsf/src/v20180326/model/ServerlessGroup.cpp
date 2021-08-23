@@ -52,7 +52,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.PkgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.PkgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgName = string(value["PkgName"].GetString());
         m_pkgNameHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.PkgVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.PkgVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgVersion = string(value["PkgVersion"].GetString());
         m_pkgVersionHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.Memory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.Memory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memory = string(value["Memory"].GetString());
         m_memoryHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceRequest"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.InstanceRequest` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.InstanceRequest` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceRequest = value["InstanceRequest"].GetUint64();
         m_instanceRequestHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartupParameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startupParameters = string(value["StartupParameters"].GetString());
         m_startupParametersHasBeenSet = true;
@@ -212,7 +212,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServerlessGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
     {
         if (!value["ApplicationName"].IsArray())
-            return CoreInternalOutcome(Error("response `ServerlessGroup.ApplicationName` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServerlessGroup.ApplicationName` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ApplicationName"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

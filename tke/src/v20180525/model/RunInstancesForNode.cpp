@@ -36,7 +36,7 @@ CoreInternalOutcome RunInstancesForNode::Deserialize(const rapidjson::Value &val
     {
         if (!value["NodeRole"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunInstancesForNode.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunInstancesForNode.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeRole = string(value["NodeRole"].GetString());
         m_nodeRoleHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RunInstancesForNode::Deserialize(const rapidjson::Value &val
     if (value.HasMember("RunInstancesPara") && !value["RunInstancesPara"].IsNull())
     {
         if (!value["RunInstancesPara"].IsArray())
-            return CoreInternalOutcome(Error("response `RunInstancesForNode.RunInstancesPara` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RunInstancesForNode.RunInstancesPara` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RunInstancesPara"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome RunInstancesForNode::Deserialize(const rapidjson::Value &val
     if (value.HasMember("InstanceAdvancedSettingsOverrides") && !value["InstanceAdvancedSettingsOverrides"].IsNull())
     {
         if (!value["InstanceAdvancedSettingsOverrides"].IsArray())
-            return CoreInternalOutcome(Error("response `RunInstancesForNode.InstanceAdvancedSettingsOverrides` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RunInstancesForNode.InstanceAdvancedSettingsOverrides` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceAdvancedSettingsOverrides"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

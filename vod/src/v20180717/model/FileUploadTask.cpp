@@ -37,7 +37,7 @@ CoreInternalOutcome FileUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileUploadTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileUploadTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FileUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaBasicInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FileUploadTask.MediaBasicInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileUploadTask.MediaBasicInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaBasicInfo.Deserialize(value["MediaBasicInfo"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome FileUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcedureTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileUploadTask.ProcedureTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileUploadTask.ProcedureTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procedureTaskId = string(value["ProcedureTaskId"].GetString());
         m_procedureTaskIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome FileUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FileUploadTask.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileUploadTask.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);

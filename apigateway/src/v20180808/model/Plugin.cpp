@@ -42,7 +42,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.PluginId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.PluginId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginId = string(value["PluginId"].GetString());
         m_pluginIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.PluginName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.PluginName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginName = string(value["PluginName"].GetString());
         m_pluginNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.PluginType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.PluginType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginType = string(value["PluginType"].GetString());
         m_pluginTypeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.PluginData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.PluginData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginData = string(value["PluginData"].GetString());
         m_pluginDataHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Plugin.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachedApiTotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Plugin.AttachedApiTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Plugin.AttachedApiTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_attachedApiTotalCount = value["AttachedApiTotalCount"].GetInt64();
         m_attachedApiTotalCountHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AttachedApis") && !value["AttachedApis"].IsNull())
     {
         if (!value["AttachedApis"].IsArray())
-            return CoreInternalOutcome(Error("response `Plugin.AttachedApis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Plugin.AttachedApis` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AttachedApis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

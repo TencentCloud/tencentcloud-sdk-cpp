@@ -36,7 +36,7 @@ CoreInternalOutcome CustomerGatewayVendor::Deserialize(const rapidjson::Value &v
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGatewayVendor.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGatewayVendor.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CustomerGatewayVendor::Deserialize(const rapidjson::Value &v
     {
         if (!value["SoftwareVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGatewayVendor.SoftwareVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGatewayVendor.SoftwareVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_softwareVersion = string(value["SoftwareVersion"].GetString());
         m_softwareVersionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CustomerGatewayVendor::Deserialize(const rapidjson::Value &v
     {
         if (!value["VendorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGatewayVendor.VendorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGatewayVendor.VendorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vendorName = string(value["VendorName"].GetString());
         m_vendorNameHasBeenSet = true;

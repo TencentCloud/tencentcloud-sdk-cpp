@@ -37,7 +37,7 @@ CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const rapidjs
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsTemplateData.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsTemplateData.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const rapidjs
     {
         if (!value["TemplateContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsTemplateData.TemplateContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsTemplateData.TemplateContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateContent = string(value["TemplateContent"].GetString());
         m_templateContentHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const rapidjs
     {
         if (!value["SendCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsTemplateData.SendCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsTemplateData.SendCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sendCount = value["SendCount"].GetUint64();
         m_sendCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const rapidjs
     {
         if (!value["ClickCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsTemplateData.ClickCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsTemplateData.ClickCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clickCount = value["ClickCount"].GetUint64();
         m_clickCountHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome SecondaryStatusTransition::Deserialize(const rapidjson::Valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecondaryStatusTransition.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecondaryStatusTransition.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SecondaryStatusTransition::Deserialize(const rapidjson::Valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecondaryStatusTransition.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecondaryStatusTransition.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SecondaryStatusTransition::Deserialize(const rapidjson::Valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecondaryStatusTransition.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecondaryStatusTransition.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SecondaryStatusTransition::Deserialize(const rapidjson::Valu
     {
         if (!value["StatusMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecondaryStatusTransition.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecondaryStatusTransition.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMessage = string(value["StatusMessage"].GetString());
         m_statusMessageHasBeenSet = true;

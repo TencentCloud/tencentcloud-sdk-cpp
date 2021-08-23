@@ -42,7 +42,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Face.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `Face.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Face.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Face.BasicInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.BasicInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_basicInfo = string(value["BasicInfo"].GetString());
         m_basicInfoHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Face.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Face.X` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.X` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetInt64();
         m_xHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Face.Y` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.Y` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetInt64();
         m_yHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Face.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Face.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome Face::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Face.ID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Face.ID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iD = string(value["ID"].GetString());
         m_iDHasBeenSet = true;

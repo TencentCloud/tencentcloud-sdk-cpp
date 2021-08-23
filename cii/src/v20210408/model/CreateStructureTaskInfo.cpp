@@ -39,7 +39,7 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateStructureTaskInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value 
     if (value.HasMember("FileList") && !value["FileList"].IsNull())
     {
         if (!value["FileList"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.FileList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateStructureTaskInfo.FileList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["CustomerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.CustomerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateStructureTaskInfo.CustomerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerId = string(value["CustomerId"].GetString());
         m_customerIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["CustomerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.CustomerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateStructureTaskInfo.CustomerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerName = string(value["CustomerName"].GetString());
         m_customerNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value 
     if (value.HasMember("ImageList") && !value["ImageList"].IsNull())
     {
         if (!value["ImageList"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.ImageList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateStructureTaskInfo.ImageList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["Year"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.Year` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateStructureTaskInfo.Year` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_year = string(value["Year"].GetString());
         m_yearHasBeenSet = true;

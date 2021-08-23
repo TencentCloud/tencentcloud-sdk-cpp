@@ -37,7 +37,7 @@ CoreInternalOutcome OperationCountLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OperationCountLimit.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationCountLimit.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OperationCountLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OperationCountLimit.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationCountLimit.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OperationCountLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["CurrentCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OperationCountLimit.CurrentCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationCountLimit.CurrentCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentCount = value["CurrentCount"].GetInt64();
         m_currentCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OperationCountLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["LimitCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OperationCountLimit.LimitCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationCountLimit.LimitCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_limitCount = value["LimitCount"].GetInt64();
         m_limitCountHasBeenSet = true;

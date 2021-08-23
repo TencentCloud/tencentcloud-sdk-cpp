@@ -35,7 +35,7 @@ CoreInternalOutcome ProjectStreamConnectStatusChangedEvent::Deserialize(const ra
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectStreamConnectStatusChangedEvent.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStreamConnectStatusChangedEvent.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ProjectStreamConnectStatusChangedEvent::Deserialize(const ra
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectStreamConnectStatusChangedEvent.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStreamConnectStatusChangedEvent.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

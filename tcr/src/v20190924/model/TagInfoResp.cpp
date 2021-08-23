@@ -37,7 +37,7 @@ CoreInternalOutcome TagInfoResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagInfoResp.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfoResp.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tagCount = value["TagCount"].GetInt64();
         m_tagCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TagInfoResp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagInfo") && !value["TagInfo"].IsNull())
     {
         if (!value["TagInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `TagInfoResp.TagInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagInfoResp.TagInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome TagInfoResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfoResp.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfoResp.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome TagInfoResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfoResp.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfoResp.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome JobFlowResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResource.Spec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResource.Spec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spec = string(value["Spec"].GetString());
         m_specHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome JobFlowResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome JobFlowResource::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `JobFlowResource.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResource.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome JobFlowResource::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DiskGroups") && !value["DiskGroups"].IsNull())
     {
         if (!value["DiskGroups"].IsArray())
-            return CoreInternalOutcome(Error("response `JobFlowResource.DiskGroups` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResource.DiskGroups` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DiskGroups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

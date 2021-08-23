@@ -34,7 +34,7 @@ CoreInternalOutcome PaasCreateSignResp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SignId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PaasCreateSignResp.SignId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaasCreateSignResp.SignId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_signId = value["SignId"].GetInt64();
         m_signIdHasBeenSet = true;

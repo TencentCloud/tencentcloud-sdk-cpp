@@ -40,7 +40,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditRule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditRule.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleFilters") && !value["RuleFilters"].IsNull())
     {
         if (!value["RuleFilters"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditRule.RuleFilters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.RuleFilters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleFilters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome AuditRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditAll"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AuditRule.AuditAll` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditRule.AuditAll` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_auditAll = value["AuditAll"].GetBool();
         m_auditAllHasBeenSet = true;

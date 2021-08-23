@@ -41,7 +41,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["RealTotalCostRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCostRatio = string(value["RealTotalCostRatio"].GetString());
         m_realTotalCostRatioHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["BillMonth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billMonth = string(value["BillMonth"].GetString());
         m_billMonthHasBeenSet = true;

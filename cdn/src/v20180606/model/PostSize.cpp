@@ -35,7 +35,7 @@ CoreInternalOutcome PostSize::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PostSize.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostSize.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PostSize::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PostSize.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostSize.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetInt64();
         m_maxSizeHasBeenSet = true;

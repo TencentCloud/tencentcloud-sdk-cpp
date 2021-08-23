@@ -35,7 +35,7 @@ CoreInternalOutcome SchemaSpaceTimeSeries::Deserialize(const rapidjson::Value &v
     {
         if (!value["TableSchema"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceTimeSeries.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceTimeSeries.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableSchema = string(value["TableSchema"].GetString());
         m_tableSchemaHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SchemaSpaceTimeSeries::Deserialize(const rapidjson::Value &v
     {
         if (!value["SeriesData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceTimeSeries.SeriesData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceTimeSeries.SeriesData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_seriesData.Deserialize(value["SeriesData"]);

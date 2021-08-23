@@ -35,7 +35,7 @@ CoreInternalOutcome IngressTls::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Hosts") && !value["Hosts"].IsNull())
     {
         if (!value["Hosts"].IsArray())
-            return CoreInternalOutcome(Error("response `IngressTls.Hosts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IngressTls.Hosts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Hosts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome IngressTls::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressTls.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressTls.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome IngressTls::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressTls.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressTls.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(value["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;

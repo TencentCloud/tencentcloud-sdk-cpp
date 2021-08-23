@@ -38,7 +38,7 @@ CoreInternalOutcome HighlightsTaskResultItem::Deserialize(const rapidjson::Value
     {
         if (!value["HighlightUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HighlightsTaskResultItem.HighlightUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsTaskResultItem.HighlightUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_highlightUrl = string(value["HighlightUrl"].GetString());
         m_highlightUrlHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome HighlightsTaskResultItem::Deserialize(const rapidjson::Value
     {
         if (!value["CovImgUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HighlightsTaskResultItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsTaskResultItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_covImgUrl = string(value["CovImgUrl"].GetString());
         m_covImgUrlHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome HighlightsTaskResultItem::Deserialize(const rapidjson::Value
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HighlightsTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome HighlightsTaskResultItem::Deserialize(const rapidjson::Value
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HighlightsTaskResultItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsTaskResultItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome HighlightsTaskResultItem::Deserialize(const rapidjson::Value
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `HighlightsTaskResultItem.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HighlightsTaskResultItem.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

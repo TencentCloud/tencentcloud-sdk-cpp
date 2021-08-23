@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceTrafficPackage::Deserialize(const rapidjson::Value &
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTrafficPackage.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTrafficPackage.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome InstanceTrafficPackage::Deserialize(const rapidjson::Value &
     if (value.HasMember("TrafficPackageSet") && !value["TrafficPackageSet"].IsNull())
     {
         if (!value["TrafficPackageSet"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceTrafficPackage.TrafficPackageSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceTrafficPackage.TrafficPackageSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TrafficPackageSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

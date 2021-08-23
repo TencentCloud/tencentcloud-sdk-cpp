@@ -35,7 +35,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Manufacturer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.Manufacturer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.Manufacturer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_manufacturer = string(value["Manufacturer"].GetString());
         m_manufacturerHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HsmTypes") && !value["HsmTypes"].IsNull())
     {
         if (!value["HsmTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceInfo.HsmTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.HsmTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HsmTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

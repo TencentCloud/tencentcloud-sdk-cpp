@@ -37,7 +37,7 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceEdition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceInfo.ServiceEdition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ServiceEdition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceEdition = string(value["ServiceEdition"].GetString());
         m_serviceEditionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallbackUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackUrl = string(value["CallbackUrl"].GetString());
         m_callbackUrlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubmitSource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceInfo.SubmitSource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.SubmitSource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_submitSource = string(value["SubmitSource"].GetString());
         m_submitSourceHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlanId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServiceInfo.PlanId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.PlanId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_planId = value["PlanId"].GetUint64();
         m_planIdHasBeenSet = true;

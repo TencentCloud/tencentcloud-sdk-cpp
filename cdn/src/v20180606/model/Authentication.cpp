@@ -38,7 +38,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Authentication.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeA"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Authentication.TypeA` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.TypeA` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeA.Deserialize(value["TypeA"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeB"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Authentication.TypeB` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.TypeB` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeB.Deserialize(value["TypeB"]);
@@ -82,7 +82,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeC"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Authentication.TypeC` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.TypeC` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeC.Deserialize(value["TypeC"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeD"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Authentication.TypeD` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authentication.TypeD` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeD.Deserialize(value["TypeD"]);

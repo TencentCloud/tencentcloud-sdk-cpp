@@ -35,7 +35,7 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const rapidjson::Value 
     if (value.HasMember("TopReqAmount") && !value["TopReqAmount"].IsNull())
     {
         if (!value["TopReqAmount"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupDailyUseStatistics.TopReqAmount` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupDailyUseStatistics.TopReqAmount` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopReqAmount"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const rapidjson::Value 
     if (value.HasMember("TopFailureRate") && !value["TopFailureRate"].IsNull())
     {
         if (!value["TopFailureRate"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupDailyUseStatistics.TopFailureRate` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupDailyUseStatistics.TopFailureRate` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopFailureRate"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const rapidjson::Value 
     if (value.HasMember("TopAvgTimeCost") && !value["TopAvgTimeCost"].IsNull())
     {
         if (!value["TopAvgTimeCost"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupDailyUseStatistics.TopAvgTimeCost` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupDailyUseStatistics.TopAvgTimeCost` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopAvgTimeCost"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

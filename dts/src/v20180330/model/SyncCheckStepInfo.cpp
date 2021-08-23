@@ -37,7 +37,7 @@ CoreInternalOutcome SyncCheckStepInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StepNo"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SyncCheckStepInfo.StepNo` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncCheckStepInfo.StepNo` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_stepNo = value["StepNo"].GetUint64();
         m_stepNoHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SyncCheckStepInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StepName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncCheckStepInfo.StepName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncCheckStepInfo.StepName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepName = string(value["StepName"].GetString());
         m_stepNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SyncCheckStepInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StepCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SyncCheckStepInfo.StepCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncCheckStepInfo.StepCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepCode = value["StepCode"].GetInt64();
         m_stepCodeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SyncCheckStepInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StepMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncCheckStepInfo.StepMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncCheckStepInfo.StepMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepMessage = string(value["StepMessage"].GetString());
         m_stepMessageHasBeenSet = true;

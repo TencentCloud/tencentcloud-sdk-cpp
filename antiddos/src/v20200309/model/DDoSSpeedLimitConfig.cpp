@@ -39,7 +39,7 @@ CoreInternalOutcome DDoSSpeedLimitConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["Mode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfig.Mode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfig.Mode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mode = value["Mode"].GetUint64();
         m_modeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DDoSSpeedLimitConfig::Deserialize(const rapidjson::Value &va
     if (value.HasMember("SpeedValues") && !value["SpeedValues"].IsNull())
     {
         if (!value["SpeedValues"].IsArray())
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfig.SpeedValues` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfig.SpeedValues` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SpeedValues"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome DDoSSpeedLimitConfig::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DstPortScopes") && !value["DstPortScopes"].IsNull())
     {
         if (!value["DstPortScopes"].IsArray())
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfig.DstPortScopes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfig.DstPortScopes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DstPortScopes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome DDoSSpeedLimitConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfig.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfig.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DDoSSpeedLimitConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["ProtocolList"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfig.ProtocolList` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfig.ProtocolList` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocolList = string(value["ProtocolList"].GetString());
         m_protocolListHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DDoSSpeedLimitConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["DstPortList"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfig.DstPortList` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfig.DstPortList` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstPortList = string(value["DstPortList"].GetString());
         m_dstPortListHasBeenSet = true;

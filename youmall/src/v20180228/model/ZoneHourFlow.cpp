@@ -35,7 +35,7 @@ CoreInternalOutcome ZoneHourFlow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneHourFlow.Hour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneHourFlow.Hour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hour = value["Hour"].GetInt64();
         m_hourHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ZoneHourFlow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneHourFlow.FlowCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneHourFlow.FlowCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowCount = value["FlowCount"].GetInt64();
         m_flowCountHasBeenSet = true;

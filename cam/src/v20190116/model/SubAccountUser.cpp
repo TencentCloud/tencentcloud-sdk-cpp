@@ -41,7 +41,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uid = value["Uid"].GetUint64();
         m_uidHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.UserType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.UserType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_userType = value["UserType"].GetUint64();
         m_userTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastLoginIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.LastLoginIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.LastLoginIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastLoginIp = string(value["LastLoginIp"].GetString());
         m_lastLoginIpHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SubAccountUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastLoginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountUser.LastLoginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountUser.LastLoginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastLoginTime = string(value["LastLoginTime"].GetString());
         m_lastLoginTimeHasBeenSet = true;

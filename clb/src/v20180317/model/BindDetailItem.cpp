@@ -42,7 +42,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome BindDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UconfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDetailItem.UconfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDetailItem.UconfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uconfigId = string(value["UconfigId"].GetString());
         m_uconfigIdHasBeenSet = true;

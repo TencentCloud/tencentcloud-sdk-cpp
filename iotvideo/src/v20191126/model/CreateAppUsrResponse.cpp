@@ -36,16 +36,16 @@ CoreInternalOutcome CreateAppUsrResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome CreateAppUsrResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome CreateAppUsrResponse::Deserialize(const string &payload)
     {
         if (!rsp["CunionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CunionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CunionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cunionId = string(rsp["CunionId"].GetString());
         m_cunionIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CreateAppUsrResponse::Deserialize(const string &payload)
     {
         if (!rsp["AccessId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessId = string(rsp["AccessId"].GetString());
         m_accessIdHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CreateAppUsrResponse::Deserialize(const string &payload)
     {
         if (!rsp["NewRegist"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NewRegist` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewRegist` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_newRegist = rsp["NewRegist"].GetBool();
         m_newRegistHasBeenSet = true;

@@ -42,7 +42,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceMedia"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.SourceMedia` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.SourceMedia` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMedia = string(value["SourceMedia"].GetString());
         m_sourceMediaHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoordinateOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coordinateOrigin = string(value["CoordinateOrigin"].GetString());
         m_coordinateOriginHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.XPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.XPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xPos = string(value["XPos"].GetString());
         m_xPosHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.YPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.YPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yPos = string(value["YPos"].GetString());
         m_yPosHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StickerTrackItem.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome StickerTrackItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ImageOperations") && !value["ImageOperations"].IsNull())
     {
         if (!value["ImageOperations"].IsArray())
-            return CoreInternalOutcome(Error("response `StickerTrackItem.ImageOperations` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StickerTrackItem.ImageOperations` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageOperations"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

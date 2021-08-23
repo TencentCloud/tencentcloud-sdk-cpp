@@ -51,7 +51,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetBool();
         m_isDefaultHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableMulticast"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.EnableMulticast` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.EnableMulticast` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableMulticast = value["EnableMulticast"].GetBool();
         m_enableMulticastHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DnsServerSet") && !value["DnsServerSet"].IsNull())
     {
         if (!value["DnsServerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VpcInfo.DnsServerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.DnsServerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DnsServerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DhcpOptionsId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.DhcpOptionsId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.DhcpOptionsId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dhcpOptionsId = string(value["DhcpOptionsId"].GetString());
         m_dhcpOptionsIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableDhcp"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.EnableDhcp` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.EnableDhcp` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableDhcp = value["EnableDhcp"].GetBool();
         m_enableDhcpHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
         m_ipv6CidrBlockHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VpcInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -183,7 +183,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssistantCidrSet") && !value["AssistantCidrSet"].IsNull())
     {
         if (!value["AssistantCidrSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VpcInfo.AssistantCidrSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.AssistantCidrSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssistantCidrSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -204,7 +204,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.SubnetCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.SubnetCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_subnetCount = value["SubnetCount"].GetUint64();
         m_subnetCountHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcInfo.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;

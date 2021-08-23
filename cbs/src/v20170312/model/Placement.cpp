@@ -39,7 +39,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.CageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.CageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cageId = string(value["CageId"].GetString());
         m_cageIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Placement.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CdcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.CdcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.CdcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cdcName = string(value["CdcName"].GetString());
         m_cdcNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CdcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.CdcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cdcId = string(value["CdcId"].GetString());
         m_cdcIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DedicatedClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dedicatedClusterId = string(value["DedicatedClusterId"].GetString());
         m_dedicatedClusterIdHasBeenSet = true;

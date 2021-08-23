@@ -47,7 +47,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["ResolutionAdaptive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
         m_resolutionAdaptiveHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["SampleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.SampleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.SampleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sampleType = string(value["SampleType"].GetString());
         m_sampleTypeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["SampleInterval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.SampleInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.SampleInterval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sampleInterval = value["SampleInterval"].GetUint64();
         m_sampleIntervalHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["RowCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.RowCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.RowCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rowCount = value["RowCount"].GetUint64();
         m_rowCountHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["ColumnCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.ColumnCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.ColumnCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_columnCount = value["ColumnCount"].GetUint64();
         m_columnCountHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["FillType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fillType = string(value["FillType"].GetString());
         m_fillTypeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;

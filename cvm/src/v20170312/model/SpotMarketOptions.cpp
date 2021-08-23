@@ -35,7 +35,7 @@ CoreInternalOutcome SpotMarketOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaxPrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpotMarketOptions.MaxPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotMarketOptions.MaxPrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maxPrice = string(value["MaxPrice"].GetString());
         m_maxPriceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SpotMarketOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["SpotInstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpotMarketOptions.SpotInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotMarketOptions.SpotInstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spotInstanceType = string(value["SpotInstanceType"].GetString());
         m_spotInstanceTypeHasBeenSet = true;

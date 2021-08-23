@@ -40,7 +40,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BucketName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.BucketName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.BucketName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucketName = string(value["BucketName"].GetString());
         m_bucketNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DosageBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.DosageBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.DosageBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dosageBeginTime = string(value["DosageBeginTime"].GetString());
         m_dosageBeginTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DosageEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.DosageEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.DosageEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dosageEndTime = string(value["DosageEndTime"].GetString());
         m_dosageEndTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubProductCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.SubProductCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.SubProductCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subProductCodeName = string(value["SubProductCodeName"].GetString());
         m_subProductCodeNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BillingItemCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.BillingItemCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.BillingItemCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billingItemCodeName = string(value["BillingItemCodeName"].GetString());
         m_billingItemCodeNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DosageValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.DosageValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.DosageValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dosageValue = string(value["DosageValue"].GetString());
         m_dosageValueHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CosDetailSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDetailSets.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDetailSets.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;

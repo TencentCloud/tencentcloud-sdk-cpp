@@ -35,7 +35,7 @@ CoreInternalOutcome RoWeightValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoWeightValue.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoWeightValue.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RoWeightValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoWeightValue.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoWeightValue.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;

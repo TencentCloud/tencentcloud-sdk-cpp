@@ -38,7 +38,7 @@ CoreInternalOutcome MRLResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisturbLevel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MRLResponse.DisturbLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MRLResponse.DisturbLevel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_disturbLevel = value["DisturbLevel"].GetInt64();
         m_disturbLevelHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MRLResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HouseAgentLevel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MRLResponse.HouseAgentLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MRLResponse.HouseAgentLevel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_houseAgentLevel = value["HouseAgentLevel"].GetInt64();
         m_houseAgentLevelHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MRLResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsuranceLevel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MRLResponse.InsuranceLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MRLResponse.InsuranceLevel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_insuranceLevel = value["InsuranceLevel"].GetInt64();
         m_insuranceLevelHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MRLResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SalesLevel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MRLResponse.SalesLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MRLResponse.SalesLevel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_salesLevel = value["SalesLevel"].GetInt64();
         m_salesLevelHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MRLResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheatLevel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MRLResponse.CheatLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MRLResponse.CheatLevel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cheatLevel = value["CheatLevel"].GetInt64();
         m_cheatLevelHasBeenSet = true;

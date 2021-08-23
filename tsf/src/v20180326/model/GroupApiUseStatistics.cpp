@@ -35,7 +35,7 @@ CoreInternalOutcome GroupApiUseStatistics::Deserialize(const rapidjson::Value &v
     if (value.HasMember("TopStatusCode") && !value["TopStatusCode"].IsNull())
     {
         if (!value["TopStatusCode"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupApiUseStatistics.TopStatusCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupApiUseStatistics.TopStatusCode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopStatusCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome GroupApiUseStatistics::Deserialize(const rapidjson::Value &v
     if (value.HasMember("TopTimeCost") && !value["TopTimeCost"].IsNull())
     {
         if (!value["TopTimeCost"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupApiUseStatistics.TopTimeCost` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupApiUseStatistics.TopTimeCost` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopTimeCost"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome GroupApiUseStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["Quantile"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GroupApiUseStatistics.Quantile` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupApiUseStatistics.Quantile` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_quantile.Deserialize(value["Quantile"]);

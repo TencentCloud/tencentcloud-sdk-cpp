@@ -71,7 +71,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["PayMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.PayMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.PayMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = value["PayMode"].GetUint64();
         m_payModeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ClusterType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.ClusterType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.ClusterType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = value["ClusterType"].GetUint64();
         m_clusterTypeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["NetType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.NetType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.NetType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_netType = value["NetType"].GetUint64();
         m_netTypeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Vport"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Vport` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Vport` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetUint64();
         m_vportHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["DeadLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.DeadLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.DeadLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadLine = string(value["DeadLine"].GetString());
         m_deadLineHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["MongoVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.MongoVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.MongoVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mongoVersion = string(value["MongoVersion"].GetString());
         m_mongoVersionHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -241,7 +241,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Volume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Volume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Volume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_volume = value["Volume"].GetUint64();
         m_volumeHasBeenSet = true;
@@ -251,7 +251,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["CpuNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.CpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.CpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuNum = value["CpuNum"].GetUint64();
         m_cpuNumHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -271,7 +271,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["SecondaryNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.SecondaryNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.SecondaryNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_secondaryNum = value["SecondaryNum"].GetUint64();
         m_secondaryNumHasBeenSet = true;
@@ -281,7 +281,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ReplicationSetNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.ReplicationSetNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.ReplicationSetNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_replicationSetNum = value["ReplicationSetNum"].GetUint64();
         m_replicationSetNumHasBeenSet = true;
@@ -291,7 +291,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["AutoRenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
         m_autoRenewFlagHasBeenSet = true;
@@ -301,7 +301,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["UsedVolume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.UsedVolume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.UsedVolume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_usedVolume = value["UsedVolume"].GetUint64();
         m_usedVolumeHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["MaintenanceStart"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.MaintenanceStart` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.MaintenanceStart` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maintenanceStart = string(value["MaintenanceStart"].GetString());
         m_maintenanceStartHasBeenSet = true;
@@ -321,7 +321,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["MaintenanceEnd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.MaintenanceEnd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.MaintenanceEnd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maintenanceEnd = string(value["MaintenanceEnd"].GetString());
         m_maintenanceEndHasBeenSet = true;
@@ -330,7 +330,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     if (value.HasMember("ReplicaSets") && !value["ReplicaSets"].IsNull())
     {
         if (!value["ReplicaSets"].IsArray())
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.ReplicaSets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.ReplicaSets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReplicaSets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -350,7 +350,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     if (value.HasMember("ReadonlyInstances") && !value["ReadonlyInstances"].IsNull())
     {
         if (!value["ReadonlyInstances"].IsArray())
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.ReadonlyInstances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.ReadonlyInstances` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReadonlyInstances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -370,7 +370,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     if (value.HasMember("StandbyInstances") && !value["StandbyInstances"].IsNull())
     {
         if (!value["StandbyInstances"].IsArray())
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.StandbyInstances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.StandbyInstances` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StandbyInstances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -390,7 +390,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     if (value.HasMember("CloneInstances") && !value["CloneInstances"].IsNull())
     {
         if (!value["CloneInstances"].IsArray())
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.CloneInstances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.CloneInstances` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CloneInstances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -411,7 +411,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["RelatedInstance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.RelatedInstance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.RelatedInstance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_relatedInstance.Deserialize(value["RelatedInstance"]);
@@ -427,7 +427,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -448,7 +448,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceVer"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.InstanceVer` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.InstanceVer` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceVer = value["InstanceVer"].GetUint64();
         m_instanceVerHasBeenSet = true;
@@ -458,7 +458,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ClusterVer"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.ClusterVer` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.ClusterVer` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterVer = value["ClusterVer"].GetUint64();
         m_clusterVerHasBeenSet = true;
@@ -468,7 +468,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Protocol"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.Protocol` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.Protocol` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = value["Protocol"].GetUint64();
         m_protocolHasBeenSet = true;
@@ -478,7 +478,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.InstanceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.InstanceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = value["InstanceType"].GetUint64();
         m_instanceTypeHasBeenSet = true;
@@ -488,7 +488,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceStatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.InstanceStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.InstanceStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatusDesc = string(value["InstanceStatusDesc"].GetString());
         m_instanceStatusDescHasBeenSet = true;
@@ -498,7 +498,7 @@ CoreInternalOutcome MongoDBInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["RealInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MongoDBInstanceDetail.RealInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MongoDBInstanceDetail.RealInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realInstanceId = string(value["RealInstanceId"].GetString());
         m_realInstanceIdHasBeenSet = true;

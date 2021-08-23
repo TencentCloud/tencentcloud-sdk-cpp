@@ -48,7 +48,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["DBInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBInstanceId = string(value["DBInstanceId"].GetString());
         m_dBInstanceIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["DBInstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBInstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBInstanceName = string(value["DBInstanceName"].GetString());
         m_dBInstanceNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["DBInstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBInstanceStatus = string(value["DBInstanceStatus"].GetString());
         m_dBInstanceStatusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["DBCharset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBCharset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBCharset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBCharset = string(value["DBCharset"].GetString());
         m_dBCharsetHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["DBVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBVersion = string(value["DBVersion"].GetString());
         m_dBVersionHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DBInstanceNetInfo") && !value["DBInstanceNetInfo"].IsNull())
     {
         if (!value["DBInstanceNetInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBInstanceNetInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBInstanceNetInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBInstanceNetInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -177,7 +177,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DBAccountSet") && !value["DBAccountSet"].IsNull())
     {
         if (!value["DBAccountSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBAccountSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBAccountSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBAccountSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -197,7 +197,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DBDatabaseList") && !value["DBDatabaseList"].IsNull())
     {
         if (!value["DBDatabaseList"].IsArray())
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.DBDatabaseList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.DBDatabaseList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBDatabaseList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -210,7 +210,7 @@ CoreInternalOutcome ServerlessDBInstance::Deserialize(const rapidjson::Value &va
     if (value.HasMember("TagList") && !value["TagList"].IsNull())
     {
         if (!value["TagList"].IsArray())
-            return CoreInternalOutcome(Error("response `ServerlessDBInstance.TagList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBInstance.TagList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -40,7 +40,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["LoadBalancerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPort = value["LoadBalancerPort"].GetInt64();
         m_loadBalancerPortHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::V
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerPortInfoListener.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPortInfoListener.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;

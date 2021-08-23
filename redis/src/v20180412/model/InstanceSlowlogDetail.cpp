@@ -39,7 +39,7 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowlogDetail.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Client"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.Client` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowlogDetail.Client` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_client = string(value["Client"].GetString());
         m_clientHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Command"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.Command` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowlogDetail.Command` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_command = string(value["Command"].GetString());
         m_commandHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["CommandLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.CommandLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowlogDetail.CommandLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandLine = string(value["CommandLine"].GetString());
         m_commandLineHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ExecuteTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.ExecuteTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowlogDetail.ExecuteTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_executeTime = string(value["ExecuteTime"].GetString());
         m_executeTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Node"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceSlowlogDetail.Node` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowlogDetail.Node` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_node = string(value["Node"].GetString());
         m_nodeHasBeenSet = true;

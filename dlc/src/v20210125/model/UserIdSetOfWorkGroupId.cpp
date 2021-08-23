@@ -35,7 +35,7 @@ CoreInternalOutcome UserIdSetOfWorkGroupId::Deserialize(const rapidjson::Value &
     {
         if (!value["WorkGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UserIdSetOfWorkGroupId.WorkGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserIdSetOfWorkGroupId.WorkGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workGroupId = value["WorkGroupId"].GetInt64();
         m_workGroupIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome UserIdSetOfWorkGroupId::Deserialize(const rapidjson::Value &
     if (value.HasMember("UserIds") && !value["UserIds"].IsNull())
     {
         if (!value["UserIds"].IsArray())
-            return CoreInternalOutcome(Error("response `UserIdSetOfWorkGroupId.UserIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserIdSetOfWorkGroupId.UserIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

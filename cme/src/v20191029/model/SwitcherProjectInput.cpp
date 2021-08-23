@@ -35,7 +35,7 @@ CoreInternalOutcome SwitcherProjectInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["StopTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitcherProjectInput.StopTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherProjectInput.StopTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stopTime = string(value["StopTime"].GetString());
         m_stopTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SwitcherProjectInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["PgmOutputConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SwitcherProjectInput.PgmOutputConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherProjectInput.PgmOutputConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pgmOutputConfig.Deserialize(value["PgmOutputConfig"]);

@@ -35,7 +35,7 @@ CoreInternalOutcome QueryBillDownloadURLData::Deserialize(const rapidjson::Value
     {
         if (!value["BillDownloadURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBillDownloadURLData.BillDownloadURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBillDownloadURLData.BillDownloadURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billDownloadURL = string(value["BillDownloadURL"].GetString());
         m_billDownloadURLHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome QueryBillDownloadURLData::Deserialize(const rapidjson::Value
     {
         if (!value["OriginalBillDownloadURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBillDownloadURLData.OriginalBillDownloadURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBillDownloadURLData.OriginalBillDownloadURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalBillDownloadURL = string(value["OriginalBillDownloadURL"].GetString());
         m_originalBillDownloadURLHasBeenSet = true;

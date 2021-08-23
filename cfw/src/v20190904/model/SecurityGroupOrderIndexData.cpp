@@ -35,7 +35,7 @@ CoreInternalOutcome SecurityGroupOrderIndexData::Deserialize(const rapidjson::Va
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupOrderIndexData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupOrderIndexData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SecurityGroupOrderIndexData::Deserialize(const rapidjson::Va
     {
         if (!value["NewOrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupOrderIndexData.NewOrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupOrderIndexData.NewOrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_newOrderIndex = value["NewOrderIndex"].GetUint64();
         m_newOrderIndexHasBeenSet = true;

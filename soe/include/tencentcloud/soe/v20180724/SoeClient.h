@@ -45,16 +45,16 @@ namespace TencentCloud
                 SoeClient(const Credential &credential, const std::string &region);
                 SoeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::InitOralProcessResponse> InitOralProcessOutcome;
+                typedef Outcome<Core::Error, Model::InitOralProcessResponse> InitOralProcessOutcome;
                 typedef std::future<InitOralProcessOutcome> InitOralProcessOutcomeCallable;
                 typedef std::function<void(const SoeClient*, const Model::InitOralProcessRequest&, InitOralProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitOralProcessAsyncHandler;
-                typedef Outcome<Error, Model::KeywordEvaluateResponse> KeywordEvaluateOutcome;
+                typedef Outcome<Core::Error, Model::KeywordEvaluateResponse> KeywordEvaluateOutcome;
                 typedef std::future<KeywordEvaluateOutcome> KeywordEvaluateOutcomeCallable;
                 typedef std::function<void(const SoeClient*, const Model::KeywordEvaluateRequest&, KeywordEvaluateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KeywordEvaluateAsyncHandler;
-                typedef Outcome<Error, Model::TransmitOralProcessResponse> TransmitOralProcessOutcome;
+                typedef Outcome<Core::Error, Model::TransmitOralProcessResponse> TransmitOralProcessOutcome;
                 typedef std::future<TransmitOralProcessOutcome> TransmitOralProcessOutcomeCallable;
                 typedef std::function<void(const SoeClient*, const Model::TransmitOralProcessRequest&, TransmitOralProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransmitOralProcessAsyncHandler;
-                typedef Outcome<Error, Model::TransmitOralProcessWithInitResponse> TransmitOralProcessWithInitOutcome;
+                typedef Outcome<Core::Error, Model::TransmitOralProcessWithInitResponse> TransmitOralProcessWithInitOutcome;
                 typedef std::future<TransmitOralProcessWithInitOutcome> TransmitOralProcessWithInitOutcomeCallable;
                 typedef std::function<void(const SoeClient*, const Model::TransmitOralProcessWithInitRequest&, TransmitOralProcessWithInitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransmitOralProcessWithInitAsyncHandler;
 

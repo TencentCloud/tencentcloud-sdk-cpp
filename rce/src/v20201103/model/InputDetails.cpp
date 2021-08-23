@@ -35,7 +35,7 @@ CoreInternalOutcome InputDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputDetails.FieldName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputDetails.FieldName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fieldName = string(value["FieldName"].GetString());
         m_fieldNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InputDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputDetails.FieldValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputDetails.FieldValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fieldValue = string(value["FieldValue"].GetString());
         m_fieldValueHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ErrorPage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorPage.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorPage.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ErrorPage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PageRules") && !value["PageRules"].IsNull())
     {
         if (!value["PageRules"].IsArray())
-            return CoreInternalOutcome(Error("response `ErrorPage.PageRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ErrorPage.PageRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PageRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

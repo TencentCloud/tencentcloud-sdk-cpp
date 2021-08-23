@@ -38,7 +38,7 @@ CoreInternalOutcome SmsFreeQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FreeQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsFreeQuota.FreeQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsFreeQuota.FreeQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_freeQuota = value["FreeQuota"].GetUint64();
         m_freeQuotaHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SmsFreeQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalUsedQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsFreeQuota.TotalUsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsFreeQuota.TotalUsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalUsedQuota = value["TotalUsedQuota"].GetUint64();
         m_totalUsedQuotaHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SmsFreeQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CycleStart"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsFreeQuota.CycleStart` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsFreeQuota.CycleStart` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cycleStart = string(value["CycleStart"].GetString());
         m_cycleStartHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SmsFreeQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CycleEnd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsFreeQuota.CycleEnd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsFreeQuota.CycleEnd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cycleEnd = string(value["CycleEnd"].GetString());
         m_cycleEndHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SmsFreeQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TodayUsedQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsFreeQuota.TodayUsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsFreeQuota.TodayUsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_todayUsedQuota = value["TodayUsedQuota"].GetUint64();
         m_todayUsedQuotaHasBeenSet = true;

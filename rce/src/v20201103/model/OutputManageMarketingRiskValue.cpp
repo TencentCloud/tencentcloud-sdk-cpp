@@ -39,7 +39,7 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
     {
         if (!value["PostTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postTime = value["PostTime"].GetUint64();
         m_postTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
     {
         if (!value["AssociateAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_associateAccount = string(value["AssociateAccount"].GetString());
         m_associateAccountHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
     {
         if (!value["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(value["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
     {
         if (!value["RiskLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_riskLevel = string(value["RiskLevel"].GetString());
         m_riskLevelHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson:
     if (value.HasMember("RiskType") && !value["RiskType"].IsNull())
     {
         if (!value["RiskType"].IsArray())
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.RiskType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRiskValue.RiskType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RiskType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome AiRecognitionTaskObjectResultOutput::Deserialize(const rapid
     if (value.HasMember("ResultSet") && !value["ResultSet"].IsNull())
     {
         if (!value["ResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectResultOutput.ResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultOutput.ResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome AiRecognitionTaskObjectResultOutput::Deserialize(const rapid
     {
         if (!value["ResultSetFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectResultOutput.ResultSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultOutput.ResultSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultSetFileUrl = string(value["ResultSetFileUrl"].GetString());
         m_resultSetFileUrlHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AiRecognitionTaskObjectResultOutput::Deserialize(const rapid
     {
         if (!value["ResultSetFileUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectResultOutput.ResultSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultOutput.ResultSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultSetFileUrlExpireTime = string(value["ResultSetFileUrlExpireTime"].GetString());
         m_resultSetFileUrlExpireTimeHasBeenSet = true;

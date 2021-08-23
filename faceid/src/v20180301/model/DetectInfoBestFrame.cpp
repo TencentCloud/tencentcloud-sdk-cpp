@@ -35,7 +35,7 @@ CoreInternalOutcome DetectInfoBestFrame::Deserialize(const rapidjson::Value &val
     {
         if (!value["BestFrame"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoBestFrame.BestFrame` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoBestFrame.BestFrame` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bestFrame = string(value["BestFrame"].GetString());
         m_bestFrameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DetectInfoBestFrame::Deserialize(const rapidjson::Value &val
     if (value.HasMember("BestFrames") && !value["BestFrames"].IsNull())
     {
         if (!value["BestFrames"].IsArray())
-            return CoreInternalOutcome(Error("response `DetectInfoBestFrame.BestFrames` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoBestFrame.BestFrames` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BestFrames"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

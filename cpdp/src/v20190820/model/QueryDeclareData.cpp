@@ -44,7 +44,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionId = string(value["TransactionId"].GetString());
         m_transactionIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeclareId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.DeclareId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.DeclareId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_declareId = string(value["DeclareId"].GetString());
         m_declareIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalDeclareId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.OriginalDeclareId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.OriginalDeclareId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalDeclareId = string(value["OriginalDeclareId"].GetString());
         m_originalDeclareIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerId = string(value["PayerId"].GetString());
         m_payerIdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.SourceCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.SourceCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceCurrency = string(value["SourceCurrency"].GetString());
         m_sourceCurrencyHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.SourceAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.SourceAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceAmount = string(value["SourceAmount"].GetString());
         m_sourceAmountHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.TargetCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.TargetCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetCurrency = string(value["TargetCurrency"].GetString());
         m_targetCurrencyHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.TargetAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.TargetAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetAmount = string(value["TargetAmount"].GetString());
         m_targetAmountHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.TradeCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.TradeCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeCode = string(value["TradeCode"].GetString());
         m_tradeCodeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome QueryDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryDeclareData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryDeclareData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

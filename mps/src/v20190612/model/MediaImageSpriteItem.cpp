@@ -40,7 +40,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ImagePathSet") && !value["ImagePathSet"].IsNull())
     {
         if (!value["ImagePathSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.ImagePathSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.ImagePathSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImagePathSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -93,7 +93,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["WebVttPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.WebVttPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.WebVttPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webVttPath = string(value["WebVttPath"].GetString());
         m_webVttPathHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Storage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaImageSpriteItem.Storage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteItem.Storage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_storage.Deserialize(value["Storage"]);

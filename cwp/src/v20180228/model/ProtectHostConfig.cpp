@@ -36,7 +36,7 @@ CoreInternalOutcome ProtectHostConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProtectHostConfig.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectHostConfig.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ProtectHostConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProtectSwitch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectHostConfig.ProtectSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectHostConfig.ProtectSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectSwitch = value["ProtectSwitch"].GetUint64();
         m_protectSwitchHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ProtectHostConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["AutoRecovery"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectHostConfig.AutoRecovery` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectHostConfig.AutoRecovery` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRecovery = value["AutoRecovery"].GetUint64();
         m_autoRecoveryHasBeenSet = true;

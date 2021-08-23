@@ -35,7 +35,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.TagKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.TagKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagKey = string(value["TagKey"].GetString());
         m_tagKeyHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagValue") && !value["TagValue"].IsNull())
     {
         if (!value["TagValue"].IsArray())
-            return CoreInternalOutcome(Error("response `TagInfo.TagValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.TagValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

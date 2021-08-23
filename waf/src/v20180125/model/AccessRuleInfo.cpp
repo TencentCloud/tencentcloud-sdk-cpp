@@ -36,7 +36,7 @@ CoreInternalOutcome AccessRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullText"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccessRuleInfo.FullText` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRuleInfo.FullText` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fullText.Deserialize(value["FullText"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome AccessRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyValue"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccessRuleInfo.KeyValue` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRuleInfo.KeyValue` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_keyValue.Deserialize(value["KeyValue"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome AccessRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccessRuleInfo.Tag` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRuleInfo.Tag` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tag.Deserialize(value["Tag"]);

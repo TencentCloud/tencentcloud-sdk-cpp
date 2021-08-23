@@ -35,7 +35,7 @@ CoreInternalOutcome RsgAsActivityRelatedInstance::Deserialize(const rapidjson::V
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsActivityRelatedInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsActivityRelatedInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RsgAsActivityRelatedInstance::Deserialize(const rapidjson::V
     {
         if (!value["InstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsActivityRelatedInstance.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsActivityRelatedInstance.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatus = string(value["InstanceStatus"].GetString());
         m_instanceStatusHasBeenSet = true;

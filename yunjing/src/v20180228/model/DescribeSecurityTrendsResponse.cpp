@@ -43,16 +43,16 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,18 +63,18 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("Malwares") && !rsp["Malwares"].IsNull())
     {
         if (!rsp["Malwares"].IsArray())
-            return CoreInternalOutcome(Error("response `Malwares` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Malwares` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Malwares"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("NonLocalLoginPlaces") && !rsp["NonLocalLoginPlaces"].IsNull())
     {
         if (!rsp["NonLocalLoginPlaces"].IsArray())
-            return CoreInternalOutcome(Error("response `NonLocalLoginPlaces` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NonLocalLoginPlaces` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["NonLocalLoginPlaces"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("BruteAttacks") && !rsp["BruteAttacks"].IsNull())
     {
         if (!rsp["BruteAttacks"].IsArray())
-            return CoreInternalOutcome(Error("response `BruteAttacks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BruteAttacks` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["BruteAttacks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("Vuls") && !rsp["Vuls"].IsNull())
     {
         if (!rsp["Vuls"].IsArray())
-            return CoreInternalOutcome(Error("response `Vuls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Vuls` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Vuls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -154,7 +154,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("BaseLines") && !rsp["BaseLines"].IsNull())
     {
         if (!rsp["BaseLines"].IsArray())
-            return CoreInternalOutcome(Error("response `BaseLines` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BaseLines` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["BaseLines"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -174,7 +174,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("MaliciousRequests") && !rsp["MaliciousRequests"].IsNull())
     {
         if (!rsp["MaliciousRequests"].IsArray())
-            return CoreInternalOutcome(Error("response `MaliciousRequests` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequests` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["MaliciousRequests"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -194,7 +194,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("HighRiskBashs") && !rsp["HighRiskBashs"].IsNull())
     {
         if (!rsp["HighRiskBashs"].IsArray())
-            return CoreInternalOutcome(Error("response `HighRiskBashs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HighRiskBashs` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["HighRiskBashs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -214,7 +214,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("ReverseShells") && !rsp["ReverseShells"].IsNull())
     {
         if (!rsp["ReverseShells"].IsArray())
-            return CoreInternalOutcome(Error("response `ReverseShells` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReverseShells` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ReverseShells"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -234,7 +234,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("PrivilegeEscalations") && !rsp["PrivilegeEscalations"].IsNull())
     {
         if (!rsp["PrivilegeEscalations"].IsArray())
-            return CoreInternalOutcome(Error("response `PrivilegeEscalations` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalations` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["PrivilegeEscalations"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -254,7 +254,7 @@ CoreInternalOutcome DescribeSecurityTrendsResponse::Deserialize(const string &pa
     if (rsp.HasMember("CyberAttacks") && !rsp["CyberAttacks"].IsNull())
     {
         if (!rsp["CyberAttacks"].IsArray())
-            return CoreInternalOutcome(Error("response `CyberAttacks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CyberAttacks` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["CyberAttacks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

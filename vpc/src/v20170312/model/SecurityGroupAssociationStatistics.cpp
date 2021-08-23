@@ -41,7 +41,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["SecurityGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupId = string(value["SecurityGroupId"].GetString());
         m_securityGroupIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["CVM"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.CVM` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.CVM` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cVM = value["CVM"].GetUint64();
         m_cVMHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["CDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.CDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.CDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cDB = value["CDB"].GetUint64();
         m_cDBHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["ENI"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.ENI` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.ENI` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eNI = value["ENI"].GetUint64();
         m_eNIHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["SG"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.SG` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.SG` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sG = value["SG"].GetUint64();
         m_sGHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["CLB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.CLB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.CLB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cLB = value["CLB"].GetUint64();
         m_cLBHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     if (value.HasMember("InstanceStatistics") && !value["InstanceStatistics"].IsNull())
     {
         if (!value["InstanceStatistics"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.InstanceStatistics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.InstanceStatistics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceStatistics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidj
     {
         if (!value["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupAssociationStatistics.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;

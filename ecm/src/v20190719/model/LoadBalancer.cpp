@@ -48,7 +48,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Position"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.Position` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Position` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_position.Deserialize(value["Position"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerName = string(value["LoadBalancerName"].GetString());
         m_loadBalancerNameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerType = string(value["LoadBalancerType"].GetString());
         m_loadBalancerTypeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LoadBalancerVips") && !value["LoadBalancerVips"].IsNull())
     {
         if (!value["LoadBalancerVips"].IsArray())
-            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerVips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerVips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerVips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.StatusTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.StatusTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusTime = string(value["StatusTime"].GetString());
         m_statusTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `LoadBalancer.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -178,7 +178,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipIsp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.VipIsp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.VipIsp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vipIsp = string(value["VipIsp"].GetString());
         m_vipIspHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkAttributes"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.NetworkAttributes` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.NetworkAttributes` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_networkAttributes.Deserialize(value["NetworkAttributes"]);
@@ -204,7 +204,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecureGroups") && !value["SecureGroups"].IsNull())
     {
         if (!value["SecureGroups"].IsArray())
-            return CoreInternalOutcome(Error("response `LoadBalancer.SecureGroups` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.SecureGroups` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecureGroups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -218,7 +218,7 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerPassToTarget"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerPassToTarget` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerPassToTarget` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPassToTarget = value["LoadBalancerPassToTarget"].GetBool();
         m_loadBalancerPassToTargetHasBeenSet = true;

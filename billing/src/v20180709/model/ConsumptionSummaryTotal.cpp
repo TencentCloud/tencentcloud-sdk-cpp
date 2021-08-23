@@ -34,7 +34,7 @@ CoreInternalOutcome ConsumptionSummaryTotal::Deserialize(const rapidjson::Value 
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionSummaryTotal.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionSummaryTotal.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;

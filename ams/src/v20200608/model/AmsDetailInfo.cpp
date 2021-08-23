@@ -47,7 +47,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Label") && !value["Label"].IsNull())
     {
         if (!value["Label"].IsArray())
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Label` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Label` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Label"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.TaskID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.TaskID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskID = string(value["TaskID"].GetString());
         m_taskIDHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsertTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.InsertTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.InsertTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = string(value["InsertTime"].GetString());
         m_insertTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataForm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.DataForm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.DataForm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataForm = value["DataForm"].GetInt64();
         m_dataFormHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OriginalLabel") && !value["OriginalLabel"].IsNull())
     {
         if (!value["OriginalLabel"].IsArray())
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.OriginalLabel` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.OriginalLabel` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OriginalLabel"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.OperateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.OperateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operateTime = string(value["OperateTime"].GetString());
         m_operateTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Thumbnail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thumbnail = string(value["Thumbnail"].GetString());
         m_thumbnailHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetailCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.DetailCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.DetailCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_detailCount = value["DetailCount"].GetInt64();
         m_detailCountHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.RequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.RequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestId = string(value["RequestId"].GetString());
         m_requestIdHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome AmsDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AmsDetailInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AmsDetailInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

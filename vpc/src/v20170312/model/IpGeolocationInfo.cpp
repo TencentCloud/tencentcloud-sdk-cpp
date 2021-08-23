@@ -42,7 +42,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Country"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.Country` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.Country` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_country = string(value["Country"].GetString());
         m_countryHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.AsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.AsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asName = string(value["AsName"].GetString());
         m_asNameHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AsId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.AsId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.AsId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asId = string(value["AsId"].GetString());
         m_asIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome IpGeolocationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AddressIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpGeolocationInfo.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpGeolocationInfo.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressIp = string(value["AddressIp"].GetString());
         m_addressIpHasBeenSet = true;

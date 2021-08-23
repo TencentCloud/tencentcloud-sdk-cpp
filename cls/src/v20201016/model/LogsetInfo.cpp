@@ -39,7 +39,7 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogsetInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogsetInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetName = string(value["LogsetName"].GetString());
         m_logsetNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogsetInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `LogsetInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LogsetInfo.TopicCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.TopicCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_topicCount = value["TopicCount"].GetInt64();
         m_topicCountHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogsetInfo.RoleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.RoleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleName = string(value["RoleName"].GetString());
         m_roleNameHasBeenSet = true;

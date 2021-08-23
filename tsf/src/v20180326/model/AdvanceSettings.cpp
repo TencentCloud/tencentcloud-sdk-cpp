@@ -34,7 +34,7 @@ CoreInternalOutcome AdvanceSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubTaskConcurrency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdvanceSettings.SubTaskConcurrency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvanceSettings.SubTaskConcurrency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_subTaskConcurrency = value["SubTaskConcurrency"].GetInt64();
         m_subTaskConcurrencyHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Parents"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Parents` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Parents` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parents = string(value["Parents"].GetString());
         m_parentsHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Product.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XMin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Product.XMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.XMin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_xMin = value["XMin"].GetInt64();
         m_xMinHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YMin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Product.YMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.YMin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_yMin = value["YMin"].GetInt64();
         m_yMinHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Product.XMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.XMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_xMax = value["XMax"].GetInt64();
         m_xMaxHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Product.YMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.YMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_yMax = value["YMax"].GetInt64();
         m_yMaxHasBeenSet = true;

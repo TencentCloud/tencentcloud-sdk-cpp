@@ -36,7 +36,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = value["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;

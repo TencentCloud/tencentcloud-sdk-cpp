@@ -39,7 +39,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GroupExDescriptions") && !value["GroupExDescriptions"].IsNull())
     {
         if (!value["GroupExDescriptions"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupExDescriptions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupExDescriptions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupExDescriptions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceModelVersion = string(value["FaceModelVersion"].GetString());
         m_faceModelVersionHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTimestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.CreationTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.CreationTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_creationTimestamp = value["CreationTimestamp"].GetUint64();
         m_creationTimestampHasBeenSet = true;

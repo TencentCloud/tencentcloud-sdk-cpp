@@ -36,7 +36,7 @@ CoreInternalOutcome PrometheusConfigItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusConfigItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusConfigItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PrometheusConfigItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Config"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusConfigItem.Config` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusConfigItem.Config` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_config = string(value["Config"].GetString());
         m_configHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PrometheusConfigItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusConfigItem.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusConfigItem.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;

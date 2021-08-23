@@ -42,7 +42,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemBeginTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.MemBeginTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.MemBeginTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memBeginTime = value["MemBeginTime"].GetInt64();
         m_memBeginTimeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemEndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.MemEndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.MemEndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memEndTime = value["MemEndTime"].GetInt64();
         m_memEndTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectedStress"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.DetectedStress` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.DetectedStress` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_detectedStress = value["DetectedStress"].GetBool();
         m_detectedStressHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Stress"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.Stress` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.Stress` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_stress = value["Stress"].GetBool();
         m_stressHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReferencePhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.ReferencePhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.ReferencePhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_referencePhone = string(value["ReferencePhone"].GetString());
         m_referencePhoneHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchTag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.MatchTag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.MatchTag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_matchTag = value["MatchTag"].GetInt64();
         m_matchTagHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReferenceLetter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhoneInfo.ReferenceLetter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneInfo.ReferenceLetter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_referenceLetter = string(value["ReferenceLetter"].GetString());
         m_referenceLetterHasBeenSet = true;

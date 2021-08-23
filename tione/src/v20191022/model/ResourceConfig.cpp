@@ -36,7 +36,7 @@ CoreInternalOutcome ResourceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceConfig.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceConfig.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ResourceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ResourceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VolumeSizeInGB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceConfig.VolumeSizeInGB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceConfig.VolumeSizeInGB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_volumeSizeInGB = value["VolumeSizeInGB"].GetUint64();
         m_volumeSizeInGBHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome OssPrivateAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OssPrivateAccess.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OssPrivateAccess.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OssPrivateAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OssPrivateAccess.AccessKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OssPrivateAccess.AccessKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessKey = string(value["AccessKey"].GetString());
         m_accessKeyHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OssPrivateAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OssPrivateAccess.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OssPrivateAccess.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;

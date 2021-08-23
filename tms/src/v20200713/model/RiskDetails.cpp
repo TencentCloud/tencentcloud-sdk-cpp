@@ -35,7 +35,7 @@ CoreInternalOutcome RiskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDetails.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDetails.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RiskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RiskDetails.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDetails.Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetInt64();
         m_levelHasBeenSet = true;

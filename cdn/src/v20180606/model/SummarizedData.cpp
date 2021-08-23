@@ -35,7 +35,7 @@ CoreInternalOutcome SummarizedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SummarizedData.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SummarizedData.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SummarizedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SummarizedData.Value` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SummarizedData.Value` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetDouble();
         m_valueHasBeenSet = true;

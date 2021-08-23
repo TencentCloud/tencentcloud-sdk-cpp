@@ -37,7 +37,7 @@ CoreInternalOutcome VpcPrivateIpAddress::Deserialize(const rapidjson::Value &val
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateIpAddress.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateIpAddress.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome VpcPrivateIpAddress::Deserialize(const rapidjson::Value &val
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateIpAddress.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateIpAddress.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VpcPrivateIpAddress::Deserialize(const rapidjson::Value &val
     {
         if (!value["PrivateIpAddressType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateIpAddress.PrivateIpAddressType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateIpAddress.PrivateIpAddressType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddressType = string(value["PrivateIpAddressType"].GetString());
         m_privateIpAddressTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VpcPrivateIpAddress::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateIpAddress.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateIpAddress.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

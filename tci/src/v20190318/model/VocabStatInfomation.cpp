@@ -34,7 +34,7 @@ CoreInternalOutcome VocabStatInfomation::Deserialize(const rapidjson::Value &val
     if (value.HasMember("VocabDetailInfo") && !value["VocabDetailInfo"].IsNull())
     {
         if (!value["VocabDetailInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `VocabStatInfomation.VocabDetailInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VocabStatInfomation.VocabDetailInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VocabDetailInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome VocabStatInfomation::Deserialize(const rapidjson::Value &val
     {
         if (!value["VocabLibName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VocabStatInfomation.VocabLibName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VocabStatInfomation.VocabLibName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vocabLibName = string(value["VocabLibName"].GetString());
         m_vocabLibNameHasBeenSet = true;

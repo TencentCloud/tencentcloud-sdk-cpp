@@ -41,7 +41,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraId = value["CameraId"].GetUint64();
         m_cameraIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.CameraName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.CameraName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cameraName = string(value["CameraName"].GetString());
         m_cameraNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraFeature"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.CameraFeature` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.CameraFeature` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraFeature = value["CameraFeature"].GetInt64();
         m_cameraFeatureHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.CameraIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.CameraIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cameraIp = string(value["CameraIp"].GetString());
         m_cameraIpHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.CameraState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.CameraState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraState = value["CameraState"].GetInt64();
         m_cameraStateHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Zones") && !value["Zones"].IsNull())
     {
         if (!value["Zones"].IsArray())
-            return CoreInternalOutcome(Error("response `CameraZones.Zones` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.Zones` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Zones"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pixel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.Pixel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.Pixel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pixel = string(value["Pixel"].GetString());
         m_pixelHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RTSP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraZones.RTSP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraZones.RTSP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rTSP = string(value["RTSP"].GetString());
         m_rTSPHasBeenSet = true;

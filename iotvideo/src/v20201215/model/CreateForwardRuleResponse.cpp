@@ -45,16 +45,16 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["Endpoint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Endpoint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Endpoint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endpoint = string(rsp["Endpoint"].GetString());
         m_endpointHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["QueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueName = string(rsp["QueueName"].GetString());
         m_queueNameHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["ProductID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productID = string(rsp["ProductID"].GetString());
         m_productIDHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["MsgType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MsgType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgType = rsp["MsgType"].GetUint64();
         m_msgTypeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["Result"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Result` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_result = rsp["Result"].GetUint64();
         m_resultHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["RoleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleName = string(rsp["RoleName"].GetString());
         m_roleNameHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["RoleID"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RoleID` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoleID` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_roleID = rsp["RoleID"].GetUint64();
         m_roleIDHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["QueueRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueueRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueRegion = string(rsp["QueueRegion"].GetString());
         m_queueRegionHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["QueueType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QueueType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueueType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_queueType = rsp["QueueType"].GetUint64();
         m_queueTypeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(rsp["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(rsp["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome CreateForwardRuleResponse::Deserialize(const string &payload
     {
         if (!rsp["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(rsp["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;

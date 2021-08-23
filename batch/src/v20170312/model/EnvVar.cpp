@@ -35,7 +35,7 @@ CoreInternalOutcome EnvVar::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvVar.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvVar.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome EnvVar::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvVar.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvVar.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

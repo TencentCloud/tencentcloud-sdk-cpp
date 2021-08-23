@@ -35,7 +35,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = string(value["VersionId"].GetString());
         m_versionIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;

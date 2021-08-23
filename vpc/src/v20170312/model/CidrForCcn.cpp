@@ -35,7 +35,7 @@ CoreInternalOutcome CidrForCcn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CidrForCcn.Cidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CidrForCcn.Cidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidr = string(value["Cidr"].GetString());
         m_cidrHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CidrForCcn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishedToVbc"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CidrForCcn.PublishedToVbc` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CidrForCcn.PublishedToVbc` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_publishedToVbc = value["PublishedToVbc"].GetBool();
         m_publishedToVbcHasBeenSet = true;

@@ -39,7 +39,7 @@ namespace TencentCloud
                 AfcClient(const Credential &credential, const std::string &region);
                 AfcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::QueryAntiFraudVipResponse> QueryAntiFraudVipOutcome;
+                typedef Outcome<Core::Error, Model::QueryAntiFraudVipResponse> QueryAntiFraudVipOutcome;
                 typedef std::future<QueryAntiFraudVipOutcome> QueryAntiFraudVipOutcomeCallable;
                 typedef std::function<void(const AfcClient*, const Model::QueryAntiFraudVipRequest&, QueryAntiFraudVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAntiFraudVipAsyncHandler;
 

@@ -34,7 +34,7 @@ CoreInternalOutcome AiRecognitionTaskObjectResultInput::Deserialize(const rapidj
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;

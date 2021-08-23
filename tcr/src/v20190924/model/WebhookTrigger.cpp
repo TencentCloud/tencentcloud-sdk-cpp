@@ -41,7 +41,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTrigger.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `WebhookTrigger.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EventTypes") && !value["EventTypes"].IsNull())
     {
         if (!value["EventTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `WebhookTrigger.EventTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.EventTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EventTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Condition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTrigger.Condition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Condition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_condition = string(value["Condition"].GetString());
         m_conditionHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `WebhookTrigger.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WebhookTrigger.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTrigger.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WebhookTrigger.NamespaceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.NamespaceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = value["NamespaceId"].GetInt64();
         m_namespaceIdHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome CreateRedInvoiceResultV2::Deserialize(const rapidjson::Value
     {
         if (!value["InvoiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResultV2.InvoiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResultV2.InvoiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceId = string(value["InvoiceId"].GetString());
         m_invoiceIdHasBeenSet = true;

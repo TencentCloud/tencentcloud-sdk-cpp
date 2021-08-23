@@ -38,7 +38,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Codecs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.Codecs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Codecs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codecs = string(value["Codecs"].GetString());
         m_codecsHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Thumbnail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thumbnail = string(value["Thumbnail"].GetString());
         m_thumbnailHasBeenSet = true;

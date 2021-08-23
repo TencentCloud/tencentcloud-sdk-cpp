@@ -43,7 +43,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Favors.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Favors.RepoType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.RepoType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoType = string(value["RepoType"].GetString());
         m_repoTypeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PullCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Favors.PullCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.PullCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pullCount = value["PullCount"].GetInt64();
         m_pullCountHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FavorCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Favors.FavorCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.FavorCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_favorCount = value["FavorCount"].GetInt64();
         m_favorCountHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Public"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Favors.Public` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.Public` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_public = value["Public"].GetInt64();
         m_publicHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsQcloudOfficial"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Favors.IsQcloudOfficial` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.IsQcloudOfficial` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isQcloudOfficial = value["IsQcloudOfficial"].GetBool();
         m_isQcloudOfficialHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Favors.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tagCount = value["TagCount"].GetInt64();
         m_tagCountHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Logo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Favors.Logo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.Logo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logo = string(value["Logo"].GetString());
         m_logoHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Favors.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Favors.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Favors.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;

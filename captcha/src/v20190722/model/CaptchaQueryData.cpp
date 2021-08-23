@@ -35,7 +35,7 @@ CoreInternalOutcome CaptchaQueryData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CaptchaQueryData.Cnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaQueryData.Cnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cnt = value["Cnt"].GetInt64();
         m_cntHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CaptchaQueryData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaQueryData.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaQueryData.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;

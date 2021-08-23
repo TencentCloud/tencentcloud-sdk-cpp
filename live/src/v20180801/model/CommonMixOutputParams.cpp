@@ -42,7 +42,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputStreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputStreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputStreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputStreamName = string(value["OutputStreamName"].GetString());
         m_outputStreamNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputStreamType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputStreamType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputStreamType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputStreamType = value["OutputStreamType"].GetInt64();
         m_outputStreamTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputStreamBitRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputStreamBitRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputStreamBitRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputStreamBitRate = value["OutputStreamBitRate"].GetInt64();
         m_outputStreamBitRateHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputStreamGop"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputStreamGop` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputStreamGop` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputStreamGop = value["OutputStreamGop"].GetInt64();
         m_outputStreamGopHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputStreamFrameRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputStreamFrameRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputStreamFrameRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputStreamFrameRate = value["OutputStreamFrameRate"].GetInt64();
         m_outputStreamFrameRateHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputAudioBitRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputAudioBitRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputAudioBitRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputAudioBitRate = value["OutputAudioBitRate"].GetInt64();
         m_outputAudioBitRateHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputAudioSampleRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputAudioSampleRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputAudioSampleRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputAudioSampleRate = value["OutputAudioSampleRate"].GetInt64();
         m_outputAudioSampleRateHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["OutputAudioChannels"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.OutputAudioChannels` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.OutputAudioChannels` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outputAudioChannels = value["OutputAudioChannels"].GetInt64();
         m_outputAudioChannelsHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["MixSei"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonMixOutputParams.MixSei` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixOutputParams.MixSei` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mixSei = string(value["MixSei"].GetString());
         m_mixSeiHasBeenSet = true;

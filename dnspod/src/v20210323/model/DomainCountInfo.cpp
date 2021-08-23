@@ -45,7 +45,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.DomainTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.DomainTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainTotal = value["DomainTotal"].GetUint64();
         m_domainTotalHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.AllTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.AllTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_allTotal = value["AllTotal"].GetUint64();
         m_allTotalHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MineTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.MineTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.MineTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mineTotal = value["MineTotal"].GetUint64();
         m_mineTotalHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShareTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.ShareTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.ShareTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shareTotal = value["ShareTotal"].GetUint64();
         m_shareTotalHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.VipTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.VipTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vipTotal = value["VipTotal"].GetUint64();
         m_vipTotalHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PauseTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.PauseTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.PauseTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pauseTotal = value["PauseTotal"].GetUint64();
         m_pauseTotalHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.ErrorTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.ErrorTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_errorTotal = value["ErrorTotal"].GetUint64();
         m_errorTotalHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.LockTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.LockTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lockTotal = value["LockTotal"].GetUint64();
         m_lockTotalHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpamTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.SpamTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.SpamTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_spamTotal = value["SpamTotal"].GetUint64();
         m_spamTotalHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipExpire"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.VipExpire` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.VipExpire` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vipExpire = value["VipExpire"].GetUint64();
         m_vipExpireHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShareOutTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.ShareOutTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.ShareOutTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shareOutTotal = value["ShareOutTotal"].GetUint64();
         m_shareOutTotalHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCountInfo.GroupTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCountInfo.GroupTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupTotal = value["GroupTotal"].GetUint64();
         m_groupTotalHasBeenSet = true;

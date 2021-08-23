@@ -39,7 +39,7 @@ CoreInternalOutcome SqlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UploadTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SqlFileInfo.UploadTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlFileInfo.UploadTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uploadTime = string(value["UploadTime"].GetString());
         m_uploadTimeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SqlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UploadInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SqlFileInfo.UploadInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlFileInfo.UploadInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_uploadInfo.Deserialize(value["UploadInfo"]);
@@ -66,7 +66,7 @@ CoreInternalOutcome SqlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SqlFileInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlFileInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome SqlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SqlFileInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlFileInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome SqlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsUploadFinished"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SqlFileInfo.IsUploadFinished` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlFileInfo.IsUploadFinished` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isUploadFinished = value["IsUploadFinished"].GetInt64();
         m_isUploadFinishedHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome SqlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SqlFileInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlFileInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;

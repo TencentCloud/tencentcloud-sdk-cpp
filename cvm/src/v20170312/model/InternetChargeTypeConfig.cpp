@@ -35,7 +35,7 @@ CoreInternalOutcome InternetChargeTypeConfig::Deserialize(const rapidjson::Value
     {
         if (!value["InternetChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetChargeTypeConfig.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetChargeTypeConfig.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetChargeType = string(value["InternetChargeType"].GetString());
         m_internetChargeTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InternetChargeTypeConfig::Deserialize(const rapidjson::Value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetChargeTypeConfig.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetChargeTypeConfig.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

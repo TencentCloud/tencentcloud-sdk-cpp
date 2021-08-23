@@ -35,7 +35,7 @@ CoreInternalOutcome ExtraInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZhiTong"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ExtraInfo.ZhiTong` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtraInfo.ZhiTong` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_zhiTong = value["ZhiTong"].GetBool();
         m_zhiTongHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ExtraInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TgwGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtraInfo.TgwGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtraInfo.TgwGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tgwGroupName = string(value["TgwGroupName"].GetString());
         m_tgwGroupNameHasBeenSet = true;

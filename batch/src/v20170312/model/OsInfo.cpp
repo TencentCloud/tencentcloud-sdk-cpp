@@ -40,7 +40,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsTypeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.OsTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.OsTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_osTypeId = value["OsTypeId"].GetUint64();
         m_osTypeIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.OsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.OsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osName = string(value["OsName"].GetString());
         m_osNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.OsDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.OsDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osDescription = string(value["OsDescription"].GetString());
         m_osDescriptionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsEnglishDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.OsEnglishDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.OsEnglishDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osEnglishDescription = string(value["OsEnglishDescription"].GetString());
         m_osEnglishDescriptionHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsClass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.OsClass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.OsClass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osClass = string(value["OsClass"].GetString());
         m_osClassHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageTag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.ImageTag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.ImageTag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageTag = string(value["ImageTag"].GetString());
         m_imageTagHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxPartitionSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OsInfo.MaxPartitionSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsInfo.MaxPartitionSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxPartitionSize = value["MaxPartitionSize"].GetUint64();
         m_maxPartitionSizeHasBeenSet = true;

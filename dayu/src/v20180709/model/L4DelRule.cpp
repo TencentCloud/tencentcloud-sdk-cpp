@@ -36,7 +36,7 @@ CoreInternalOutcome L4DelRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L4DelRule.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4DelRule.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome L4DelRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L4DelRule.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4DelRule.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome L4DelRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleIdList") && !value["RuleIdList"].IsNull())
     {
         if (!value["RuleIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `L4DelRule.RuleIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L4DelRule.RuleIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

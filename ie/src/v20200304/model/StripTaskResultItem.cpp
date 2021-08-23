@@ -38,7 +38,7 @@ CoreInternalOutcome StripTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["SegmentUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StripTaskResultItem.SegmentUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripTaskResultItem.SegmentUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentUrl = string(value["SegmentUrl"].GetString());
         m_segmentUrlHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome StripTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["CovImgUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StripTaskResultItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripTaskResultItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_covImgUrl = string(value["CovImgUrl"].GetString());
         m_covImgUrlHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome StripTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StripTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome StripTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StripTaskResultItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripTaskResultItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome StripTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StripTaskResultItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripTaskResultItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;

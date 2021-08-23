@@ -40,7 +40,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
         m_ipv6CidrBlockHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome NetworkAclEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAclEntry.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntry.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

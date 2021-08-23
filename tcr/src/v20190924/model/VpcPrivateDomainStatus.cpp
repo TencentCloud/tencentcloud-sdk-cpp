@@ -36,7 +36,7 @@ CoreInternalOutcome VpcPrivateDomainStatus::Deserialize(const rapidjson::Value &
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateDomainStatus.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateDomainStatus.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome VpcPrivateDomainStatus::Deserialize(const rapidjson::Value &
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateDomainStatus.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateDomainStatus.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome VpcPrivateDomainStatus::Deserialize(const rapidjson::Value &
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPrivateDomainStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPrivateDomainStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

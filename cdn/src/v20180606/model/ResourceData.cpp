@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceData.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceData.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ResourceData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CdnData") && !value["CdnData"].IsNull())
     {
         if (!value["CdnData"].IsArray())
-            return CoreInternalOutcome(Error("response `ResourceData.CdnData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResourceData.CdnData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CdnData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

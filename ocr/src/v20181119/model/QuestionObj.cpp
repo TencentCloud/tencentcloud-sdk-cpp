@@ -39,7 +39,7 @@ CoreInternalOutcome QuestionObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionTextNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuestionObj.QuestionTextNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuestionObj.QuestionTextNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_questionTextNo = string(value["QuestionTextNo"].GetString());
         m_questionTextNoHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome QuestionObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionTextType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QuestionObj.QuestionTextType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuestionObj.QuestionTextType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_questionTextType = value["QuestionTextType"].GetInt64();
         m_questionTextTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome QuestionObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuestionObj.QuestionText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuestionObj.QuestionText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_questionText = string(value["QuestionText"].GetString());
         m_questionTextHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome QuestionObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionOptions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuestionObj.QuestionOptions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuestionObj.QuestionOptions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_questionOptions = string(value["QuestionOptions"].GetString());
         m_questionOptionsHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome QuestionObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionSubquestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuestionObj.QuestionSubquestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuestionObj.QuestionSubquestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_questionSubquestion = string(value["QuestionSubquestion"].GetString());
         m_questionSubquestionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome QuestionObj::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("QuestionImageCoords") && !value["QuestionImageCoords"].IsNull())
     {
         if (!value["QuestionImageCoords"].IsArray())
-            return CoreInternalOutcome(Error("response `QuestionObj.QuestionImageCoords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QuestionObj.QuestionImageCoords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["QuestionImageCoords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

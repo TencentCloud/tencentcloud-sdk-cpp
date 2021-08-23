@@ -45,7 +45,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilFlag = value["EvilFlag"].GetInt64();
         m_evilFlagHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageData.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.CodeDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.CodeDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_codeDetect.Deserialize(value["CodeDetect"]);
@@ -82,7 +82,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HotDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.HotDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.HotDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hotDetect.Deserialize(value["HotDetect"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IllegalDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.IllegalDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.IllegalDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_illegalDetect.Deserialize(value["IllegalDetect"]);
@@ -116,7 +116,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogoDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.LogoDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.LogoDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_logoDetect.Deserialize(value["LogoDetect"]);
@@ -133,7 +133,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OCRDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.OCRDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.OCRDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_oCRDetect.Deserialize(value["OCRDetect"]);
@@ -150,7 +150,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.PhoneDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.PhoneDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_phoneDetect.Deserialize(value["PhoneDetect"]);
@@ -167,7 +167,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolityDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.PolityDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.PolityDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_polityDetect.Deserialize(value["PolityDetect"]);
@@ -184,7 +184,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PornDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.PornDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.PornDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornDetect.Deserialize(value["PornDetect"]);
@@ -201,7 +201,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Similar"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.Similar` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.Similar` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_similar.Deserialize(value["Similar"]);
@@ -218,7 +218,7 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TerrorDetect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageData.TerrorDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.TerrorDetect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_terrorDetect.Deserialize(value["TerrorDetect"]);

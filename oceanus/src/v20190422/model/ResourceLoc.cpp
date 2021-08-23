@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceLoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceLoc.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceLoc.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageType = value["StorageType"].GetInt64();
         m_storageTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResourceLoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Param"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceLoc.Param` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceLoc.Param` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_param.Deserialize(value["Param"]);

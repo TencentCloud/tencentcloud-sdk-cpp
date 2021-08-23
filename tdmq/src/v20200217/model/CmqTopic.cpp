@@ -47,7 +47,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRetentionSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.MsgRetentionSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.MsgRetentionSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgRetentionSeconds = value["MsgRetentionSeconds"].GetUint64();
         m_msgRetentionSecondsHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxMsgSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.MaxMsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.MaxMsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxMsgSize = value["MaxMsgSize"].GetUint64();
         m_maxMsgSizeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilterType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.FilterType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.FilterType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = value["FilterType"].GetUint64();
         m_filterTypeHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifyTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifyTime = value["LastModifyTime"].GetUint64();
         m_lastModifyTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgCount = value["MsgCount"].GetUint64();
         m_msgCountHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createUin = value["CreateUin"].GetUint64();
         m_createUinHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `CmqTopic.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -167,7 +167,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Trace"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.Trace` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.Trace` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_trace = value["Trace"].GetBool();
         m_traceHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TenantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.TenantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.TenantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tenantId = string(value["TenantId"].GetString());
         m_tenantIdHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqTopic.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;

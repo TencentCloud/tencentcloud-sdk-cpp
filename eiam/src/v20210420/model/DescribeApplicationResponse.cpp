@@ -48,16 +48,16 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -68,11 +68,11 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(rsp["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(rsp["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["LastModifiedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedDate = string(rsp["LastModifiedDate"].GetString());
         m_lastModifiedDateHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["ClientId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientId = string(rsp["ClientId"].GetString());
         m_clientIdHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(rsp["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["CreatedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdDate = string(rsp["CreatedDate"].GetString());
         m_createdDateHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(rsp["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["TokenExpired"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TokenExpired` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TokenExpired` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tokenExpired = rsp["TokenExpired"].GetInt64();
         m_tokenExpiredHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["ClientSecret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientSecret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientSecret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientSecret = string(rsp["ClientSecret"].GetString());
         m_clientSecretHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["PublicKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicKey = string(rsp["PublicKey"].GetString());
         m_publicKeyHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["AuthorizeUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizeUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizeUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authorizeUrl = string(rsp["AuthorizeUrl"].GetString());
         m_authorizeUrlHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["IconUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IconUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IconUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iconUrl = string(rsp["IconUrl"].GetString());
         m_iconUrlHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["SecureLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecureLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecureLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secureLevel = string(rsp["SecureLevel"].GetString());
         m_secureLevelHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["AppStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AppStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_appStatus = rsp["AppStatus"].GetBool();
         m_appStatusHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;

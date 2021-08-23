@@ -37,7 +37,7 @@ CoreInternalOutcome QueryTransferResultData::Deserialize(const rapidjson::Value 
     {
         if (!value["TradeSerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTransferResultData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTransferResultData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeSerialNo = string(value["TradeSerialNo"].GetString());
         m_tradeSerialNoHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QueryTransferResultData::Deserialize(const rapidjson::Value 
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTransferResultData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTransferResultData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QueryTransferResultData::Deserialize(const rapidjson::Value 
     {
         if (!value["TradeStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryTransferResultData.TradeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTransferResultData.TradeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tradeStatus = value["TradeStatus"].GetInt64();
         m_tradeStatusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome QueryTransferResultData::Deserialize(const rapidjson::Value 
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTransferResultData.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTransferResultData.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

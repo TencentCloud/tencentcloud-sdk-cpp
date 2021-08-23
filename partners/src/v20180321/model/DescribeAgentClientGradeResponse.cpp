@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
     {
         if (!rsp["AuditStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AuditStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_auditStatus = rsp["AuditStatus"].GetUint64();
         m_auditStatusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
     {
         if (!rsp["AuthState"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AuthState` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthState` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_authState = rsp["AuthState"].GetUint64();
         m_authStateHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
     {
         if (!rsp["ClientGrade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientGrade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientGrade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientGrade = string(rsp["ClientGrade"].GetString());
         m_clientGradeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
     {
         if (!rsp["ClientType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clientType = rsp["ClientType"].GetUint64();
         m_clientTypeHasBeenSet = true;

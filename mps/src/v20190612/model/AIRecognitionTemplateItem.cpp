@@ -43,7 +43,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["FaceConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.FaceConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.FaceConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceConfigure.Deserialize(value["FaceConfigure"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["OcrFullTextConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.OcrFullTextConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.OcrFullTextConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrFullTextConfigure.Deserialize(value["OcrFullTextConfigure"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["OcrWordsConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.OcrWordsConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.OcrWordsConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrWordsConfigure.Deserialize(value["OcrWordsConfigure"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["AsrFullTextConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.AsrFullTextConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.AsrFullTextConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrFullTextConfigure.Deserialize(value["AsrFullTextConfigure"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["AsrWordsConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.AsrWordsConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.AsrWordsConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrWordsConfigure.Deserialize(value["AsrWordsConfigure"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

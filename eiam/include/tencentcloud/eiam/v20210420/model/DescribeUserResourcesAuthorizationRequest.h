@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取用户ID。
-                     * @return UserId 用户ID。
+                     * 获取用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
+                     * @return UserId 用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID。
-                     * @param UserId 用户ID。
+                     * 设置用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
+                     * @param UserId 用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名。
-                     * @return UserName 用户名。
+                     * 获取用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
+                     * @return UserName 用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名。
-                     * @param UserName 用户名。
+                     * 设置用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
+                     * @param UserName 用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 用户ID。
+                     * 用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户名。
+                     * 用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

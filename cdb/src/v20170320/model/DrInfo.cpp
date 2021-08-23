@@ -40,7 +40,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SyncStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.SyncStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.SyncStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_syncStatus = value["SyncStatus"].GetInt64();
         m_syncStatusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DrInfo.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrInfo.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = value["InstanceType"].GetInt64();
         m_instanceTypeHasBeenSet = true;

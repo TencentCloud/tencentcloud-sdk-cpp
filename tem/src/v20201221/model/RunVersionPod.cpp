@@ -41,7 +41,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Webshell"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.Webshell` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.Webshell` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webshell = string(value["Webshell"].GetString());
         m_webshellHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PodId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.PodId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.PodId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podId = string(value["PodId"].GetString());
         m_podIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PodIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.PodIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.PodIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podIp = string(value["PodIp"].GetString());
         m_podIpHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeployVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.DeployVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.DeployVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deployVersion = string(value["DeployVersion"].GetString());
         m_deployVersionHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RestartCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RunVersionPod.RestartCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.RestartCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_restartCount = value["RestartCount"].GetInt64();
         m_restartCountHasBeenSet = true;

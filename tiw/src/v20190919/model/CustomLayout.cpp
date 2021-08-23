@@ -35,7 +35,7 @@ CoreInternalOutcome CustomLayout::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Canvas"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CustomLayout.Canvas` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomLayout.Canvas` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_canvas.Deserialize(value["Canvas"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome CustomLayout::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InputStreamList") && !value["InputStreamList"].IsNull())
     {
         if (!value["InputStreamList"].IsArray())
-            return CoreInternalOutcome(Error("response `CustomLayout.InputStreamList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CustomLayout.InputStreamList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InputStreamList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome PaiInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PaiInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaiInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PaiInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PaiInstance.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaiInstance.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PaiInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PaiMateUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PaiInstance.PaiMateUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaiInstance.PaiMateUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paiMateUrl = string(value["PaiMateUrl"].GetString());
         m_paiMateUrlHasBeenSet = true;

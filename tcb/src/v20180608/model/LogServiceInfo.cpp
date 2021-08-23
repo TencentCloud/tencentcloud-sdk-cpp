@@ -38,7 +38,7 @@ CoreInternalOutcome LogServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogServiceInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogServiceInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetName = string(value["LogsetName"].GetString());
         m_logsetNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LogServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogServiceInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogServiceInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LogServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogServiceInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogServiceInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LogServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogServiceInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogServiceInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LogServiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogServiceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogServiceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

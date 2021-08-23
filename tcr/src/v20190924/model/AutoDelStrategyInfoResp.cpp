@@ -35,7 +35,7 @@ CoreInternalOutcome AutoDelStrategyInfoResp::Deserialize(const rapidjson::Value 
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfoResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfoResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AutoDelStrategyInfoResp::Deserialize(const rapidjson::Value 
     if (value.HasMember("StrategyInfo") && !value["StrategyInfo"].IsNull())
     {
         if (!value["StrategyInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfoResp.StrategyInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfoResp.StrategyInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StrategyInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

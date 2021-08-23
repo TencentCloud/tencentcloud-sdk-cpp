@@ -47,7 +47,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["SessionExpire"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.SessionExpire` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.SessionExpire` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionExpire = value["SessionExpire"].GetInt64();
         m_sessionExpireHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["HealthSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthSwitch = value["HealthSwitch"].GetInt64();
         m_healthSwitchHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["HttpCheckPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckPath = string(value["HttpCheckPath"].GetString());
         m_httpCheckPathHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["HttpCheckDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.HttpCheckDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.HttpCheckDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckDomain = string(value["HttpCheckDomain"].GetString());
         m_httpCheckDomainHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["IntervalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_intervalTime = value["IntervalTime"].GetInt64();
         m_intervalTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["HealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthNum = value["HealthNum"].GetInt64();
         m_healthNumHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["UnhealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.UnhealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.UnhealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unhealthNum = value["UnhealthNum"].GetInt64();
         m_unhealthNumHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     if (value.HasMember("HttpCodes") && !value["HttpCodes"].IsNull())
     {
         if (!value["HttpCodes"].IsArray())
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.HttpCodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.HttpCodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HttpCodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["BalanceMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.BalanceMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.BalanceMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_balanceMode = string(value["BalanceMode"].GetString());
         m_balanceModeHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     {
         if (!value["AddTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTimestamp = string(value["AddTimestamp"].GetString());
         m_addTimestampHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome L7ListenerInfoLocation::Deserialize(const rapidjson::Value &
     if (value.HasMember("BackendSet") && !value["BackendSet"].IsNull())
     {
         if (!value["BackendSet"].IsArray())
-            return CoreInternalOutcome(Error("response `L7ListenerInfoLocation.BackendSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoLocation.BackendSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BackendSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

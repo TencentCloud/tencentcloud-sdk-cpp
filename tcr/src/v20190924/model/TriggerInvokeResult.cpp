@@ -35,7 +35,7 @@ CoreInternalOutcome TriggerInvokeResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReturnCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokeResult.ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokeResult.ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_returnCode = value["ReturnCode"].GetInt64();
         m_returnCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TriggerInvokeResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReturnMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokeResult.ReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokeResult.ReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_returnMsg = string(value["ReturnMsg"].GetString());
         m_returnMsgHasBeenSet = true;

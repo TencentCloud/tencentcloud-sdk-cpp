@@ -36,7 +36,7 @@ CoreInternalOutcome SubscriptionTopic::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscriptionTopic.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscriptionTopic.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(value["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SubscriptionTopic::Deserialize(const rapidjson::Value &value
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscriptionTopic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscriptionTopic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SubscriptionTopic::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubscriptionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscriptionTopic.SubscriptionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscriptionTopic.SubscriptionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscriptionName = string(value["SubscriptionName"].GetString());
         m_subscriptionNameHasBeenSet = true;

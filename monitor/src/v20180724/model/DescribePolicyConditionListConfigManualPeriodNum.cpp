@@ -36,7 +36,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualPeriodNum::Deserializ
     {
         if (!value["Default"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualPeriodNum.Default` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualPeriodNum.Default` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_default = value["Default"].GetInt64();
         m_defaultHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualPeriodNum::Deserializ
     if (value.HasMember("Keys") && !value["Keys"].IsNull())
     {
         if (!value["Keys"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualPeriodNum.Keys` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualPeriodNum.Keys` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keys"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualPeriodNum::Deserializ
     {
         if (!value["Need"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualPeriodNum.Need` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualPeriodNum.Need` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_need = value["Need"].GetBool();
         m_needHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome WebSocket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebSocket.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebSocket.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome WebSocket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WebSocket.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebSocket.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetInt64();
         m_timeoutHasBeenSet = true;

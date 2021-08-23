@@ -56,7 +56,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.SourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = string(value["SourceType"].GetString());
         m_sourceTypeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("SourceUrls") && !value["SourceUrls"].IsNull())
     {
         if (!value["SourceUrls"].IsArray())
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.SourceUrls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.SourceUrls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceUrls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PushArgs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.PushArgs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.PushArgs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushArgs = string(value["PushArgs"].GetString());
         m_pushArgsHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["VodLoopTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.VodLoopTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.VodLoopTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vodLoopTimes = value["VodLoopTimes"].GetInt64();
         m_vodLoopTimesHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["VodRefreshType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.VodRefreshType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.VodRefreshType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodRefreshType = string(value["VodRefreshType"].GetString());
         m_vodRefreshTypeHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateBy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CreateBy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.CreateBy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createBy = string(value["CreateBy"].GetString());
         m_createByHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UpdateBy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.UpdateBy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.UpdateBy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateBy = string(value["UpdateBy"].GetString());
         m_updateByHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CallbackUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackUrl = string(value["CallbackUrl"].GetString());
         m_callbackUrlHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("CallbackEvents") && !value["CallbackEvents"].IsNull())
     {
         if (!value["CallbackEvents"].IsArray())
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CallbackEvents` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.CallbackEvents` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CallbackEvents"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -242,7 +242,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CallbackInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CallbackInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.CallbackInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackInfo = string(value["CallbackInfo"].GetString());
         m_callbackInfoHasBeenSet = true;
@@ -252,7 +252,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ErrorInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.ErrorInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.ErrorInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorInfo = string(value["ErrorInfo"].GetString());
         m_errorInfoHasBeenSet = true;
@@ -262,7 +262,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -272,7 +272,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RecentPullInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.RecentPullInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.RecentPullInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_recentPullInfo.Deserialize(value["RecentPullInfo"]);
@@ -289,7 +289,7 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;

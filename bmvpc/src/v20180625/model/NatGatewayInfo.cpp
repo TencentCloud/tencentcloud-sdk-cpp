@@ -49,7 +49,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.NatId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.NatId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natId = string(value["NatId"].GetString());
         m_natIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.NatName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.NatName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natName = string(value["NatName"].GetString());
         m_natNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductionStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.ProductionStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.ProductionStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_productionStatus = value["ProductionStatus"].GetUint64();
         m_productionStatusHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Eips") && !value["Eips"].IsNull())
     {
         if (!value["Eips"].IsArray())
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.Eips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.Eips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Eips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -112,7 +112,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxConcurrent"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.MaxConcurrent` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.MaxConcurrent` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxConcurrent = value["MaxConcurrent"].GetUint64();
         m_maxConcurrentHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Exclusive"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.Exclusive` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.Exclusive` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_exclusive = value["Exclusive"].GetUint64();
         m_exclusiveHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.ForwardMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.ForwardMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_forwardMode = value["ForwardMode"].GetUint64();
         m_forwardModeHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidrBlock = string(value["VpcCidrBlock"].GetString());
         m_vpcCidrBlockHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.State` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.State` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetUint64();
         m_stateHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntVpcId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_intVpcId = value["IntVpcId"].GetUint64();
         m_intVpcIdHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatResourceId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayInfo.NatResourceId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayInfo.NatResourceId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_natResourceId = value["NatResourceId"].GetUint64();
         m_natResourceIdHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome Station::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CategoryID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Station.CategoryID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Station.CategoryID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_categoryID = string(value["CategoryID"].GetString());
         m_categoryIDHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Station::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CategoryCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Station.CategoryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Station.CategoryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_categoryCode = string(value["CategoryCode"].GetString());
         m_categoryCodeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Station::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Station.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Station.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Station::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rank"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Station.Rank` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Station.Rank` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rank = value["Rank"].GetInt64();
         m_rankHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Station::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ImagePathMap") && !value["ImagePathMap"].IsNull())
     {
         if (!value["ImagePathMap"].IsArray())
-            return CoreInternalOutcome(Error("response `Station.ImagePathMap` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Station.ImagePathMap` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImagePathMap"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

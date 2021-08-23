@@ -34,7 +34,7 @@ CoreInternalOutcome SuspectedInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FaceSet") && !value["FaceSet"].IsNull())
     {
         if (!value["FaceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SuspectedInfo.FaceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SuspectedInfo.FaceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome SuspectedInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SuspectedInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SuspectedInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;

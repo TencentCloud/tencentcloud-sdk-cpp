@@ -39,16 +39,16 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     {
         if (!rsp["PeakBandwidthTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakBandwidthTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakBandwidthTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peakBandwidthTime = string(rsp["PeakBandwidthTime"].GetString());
         m_peakBandwidthTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     {
         if (!rsp["PeakBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PeakBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_peakBandwidth = rsp["PeakBandwidth"].GetDouble();
         m_peakBandwidthHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     {
         if (!rsp["P95PeakBandwidthTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `P95PeakBandwidthTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `P95PeakBandwidthTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p95PeakBandwidthTime = string(rsp["P95PeakBandwidthTime"].GetString());
         m_p95PeakBandwidthTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     {
         if (!rsp["P95PeakBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `P95PeakBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `P95PeakBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_p95PeakBandwidth = rsp["P95PeakBandwidth"].GetDouble();
         m_p95PeakBandwidthHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     {
         if (!rsp["SumFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SumFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SumFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sumFlux = rsp["SumFlux"].GetDouble();
         m_sumFluxHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribePushBandwidthAndFluxListResponse::Deserialize(const 
     if (rsp.HasMember("DataInfoList") && !rsp["DataInfoList"].IsNull())
     {
         if (!rsp["DataInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `DataInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DataInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

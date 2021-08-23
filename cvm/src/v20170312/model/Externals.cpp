@@ -36,7 +36,7 @@ CoreInternalOutcome Externals::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseAddress"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Externals.ReleaseAddress` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Externals.ReleaseAddress` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_releaseAddress = value["ReleaseAddress"].GetBool();
         m_releaseAddressHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Externals::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UnsupportNetworks") && !value["UnsupportNetworks"].IsNull())
     {
         if (!value["UnsupportNetworks"].IsArray())
-            return CoreInternalOutcome(Error("response `Externals.UnsupportNetworks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Externals.UnsupportNetworks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UnsupportNetworks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome Externals::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageBlockAttr"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Externals.StorageBlockAttr` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Externals.StorageBlockAttr` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_storageBlockAttr.Deserialize(value["StorageBlockAttr"]);

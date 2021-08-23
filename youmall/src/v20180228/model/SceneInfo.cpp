@@ -38,7 +38,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScenePictureURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.ScenePictureURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.ScenePictureURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scenePictureURL = string(value["ScenePictureURL"].GetString());
         m_scenePictureURLHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadX"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.HeadX` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.HeadX` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_headX = value["HeadX"].GetInt64();
         m_headXHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadY"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.HeadY` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.HeadY` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_headY = value["HeadY"].GetInt64();
         m_headYHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.HeadWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.HeadWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_headWidth = value["HeadWidth"].GetInt64();
         m_headWidthHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.HeadHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.HeadHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_headHeight = value["HeadHeight"].GetInt64();
         m_headHeightHasBeenSet = true;

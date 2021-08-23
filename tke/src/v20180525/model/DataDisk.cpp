@@ -39,7 +39,7 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataDisk.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataDisk.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataDisk.FileSystem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataDisk.FileSystem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystem = string(value["FileSystem"].GetString());
         m_fileSystemHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataDisk.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataDisk.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetInt64();
         m_diskSizeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoFormatAndMount"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DataDisk.AutoFormatAndMount` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataDisk.AutoFormatAndMount` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoFormatAndMount = value["AutoFormatAndMount"].GetBool();
         m_autoFormatAndMountHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountTarget"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataDisk.MountTarget` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataDisk.MountTarget` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountTarget = string(value["MountTarget"].GetString());
         m_mountTargetHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskPartition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataDisk.DiskPartition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataDisk.DiskPartition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskPartition = string(value["DiskPartition"].GetString());
         m_diskPartitionHasBeenSet = true;

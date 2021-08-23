@@ -36,7 +36,7 @@ CoreInternalOutcome CertificateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInfo.CertificateCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.CertificateCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateCode = string(value["CertificateCode"].GetString());
         m_certificateCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CertificateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInfo.CertificateType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.CertificateType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateType = string(value["CertificateType"].GetString());
         m_certificateTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CertificateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImgUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInfo.ImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.ImgUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imgUrl = string(value["ImgUrl"].GetString());
         m_imgUrlHasBeenSet = true;

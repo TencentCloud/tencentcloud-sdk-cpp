@@ -40,7 +40,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Retention"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.Retention` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.Retention` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retention = value["Retention"].GetInt64();
         m_retentionHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinInsyncReplicas"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.MinInsyncReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.MinInsyncReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minInsyncReplicas = value["MinInsyncReplicas"].GetInt64();
         m_minInsyncReplicasHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CleanUpPolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Config.CleanUpPolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.CleanUpPolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cleanUpPolicy = string(value["CleanUpPolicy"].GetString());
         m_cleanUpPolicyHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SegmentMs"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.SegmentMs` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.SegmentMs` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_segmentMs = value["SegmentMs"].GetInt64();
         m_segmentMsHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UncleanLeaderElectionEnable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.UncleanLeaderElectionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.UncleanLeaderElectionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_uncleanLeaderElectionEnable = value["UncleanLeaderElectionEnable"].GetInt64();
         m_uncleanLeaderElectionEnableHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SegmentBytes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.SegmentBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.SegmentBytes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_segmentBytes = value["SegmentBytes"].GetInt64();
         m_segmentBytesHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxMessageBytes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.MaxMessageBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.MaxMessageBytes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxMessageBytes = value["MaxMessageBytes"].GetInt64();
         m_maxMessageBytesHasBeenSet = true;

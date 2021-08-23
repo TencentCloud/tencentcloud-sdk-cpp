@@ -46,7 +46,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIp = string(value["PublicIp"].GetString());
         m_publicIpHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntranetIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.IntranetIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.IntranetIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_intranetIp = string(value["IntranetIp"].GetString());
         m_intranetIpHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.AssetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetType = string(value["AssetType"].GetString());
         m_assetTypeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.Switch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.Switch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_switch = value["Switch"].GetInt64();
         m_switchHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIpType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.PublicIpType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.PublicIpType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpType = value["PublicIpType"].GetUint64();
         m_publicIpTypeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PortTimes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.PortTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.PortTimes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_portTimes = value["PortTimes"].GetUint64();
         m_portTimesHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.LastTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.LastTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastTime = string(value["LastTime"].GetString());
         m_lastTimeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.ScanMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.ScanMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanMode = string(value["ScanMode"].GetString());
         m_scanModeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitchListsData.ScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitchListsData.ScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanStatus = value["ScanStatus"].GetUint64();
         m_scanStatusHasBeenSet = true;

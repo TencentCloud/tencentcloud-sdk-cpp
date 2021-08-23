@@ -44,7 +44,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaBasicInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.MediaBasicInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.MediaBasicInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaBasicInfo.Deserialize(value["MediaBasicInfo"]);
@@ -111,7 +111,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -128,7 +128,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcedureTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.ProcedureTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.ProcedureTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procedureTaskId = string(value["ProcedureTaskId"].GetString());
         m_procedureTaskIdHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionContext = string(value["SessionContext"].GetString());
         m_sessionContextHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome PullUploadTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(value["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;

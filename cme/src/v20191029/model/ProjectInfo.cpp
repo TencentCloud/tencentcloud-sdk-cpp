@@ -42,7 +42,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AspectRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aspectRatio = string(value["AspectRatio"].GetString());
         m_aspectRatioHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Category"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.Category` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.Category` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_category = string(value["Category"].GetString());
         m_categoryHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.Owner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.Owner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamConnectProjectInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.StreamConnectProjectInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.StreamConnectProjectInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_streamConnectProjectInfo.Deserialize(value["StreamConnectProjectInfo"]);
@@ -126,7 +126,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

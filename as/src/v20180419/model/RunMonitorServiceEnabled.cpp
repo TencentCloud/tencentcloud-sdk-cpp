@@ -34,7 +34,7 @@ CoreInternalOutcome RunMonitorServiceEnabled::Deserialize(const rapidjson::Value
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RunMonitorServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunMonitorServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;

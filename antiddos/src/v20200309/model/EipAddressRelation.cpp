@@ -38,7 +38,7 @@ CoreInternalOutcome EipAddressRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EipAddressRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAddressRelation.EipAddressRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressRelation.EipAddressRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipAddressRegion = string(value["EipAddressRegion"].GetString());
         m_eipAddressRegionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome EipAddressRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EipBoundRscIns"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAddressRelation.EipBoundRscIns` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressRelation.EipBoundRscIns` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipBoundRscIns = string(value["EipBoundRscIns"].GetString());
         m_eipBoundRscInsHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome EipAddressRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EipBoundRscEni"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAddressRelation.EipBoundRscEni` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressRelation.EipBoundRscEni` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipBoundRscEni = string(value["EipBoundRscEni"].GetString());
         m_eipBoundRscEniHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome EipAddressRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EipBoundRscVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAddressRelation.EipBoundRscVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressRelation.EipBoundRscVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipBoundRscVip = string(value["EipBoundRscVip"].GetString());
         m_eipBoundRscVipHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome EipAddressRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAddressRelation.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressRelation.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

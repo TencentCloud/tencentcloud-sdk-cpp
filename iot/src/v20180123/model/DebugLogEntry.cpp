@@ -41,7 +41,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Event"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.Event` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.Event` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_event = string(value["Event"].GetString());
         m_eventHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.LogType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.LogType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logType = string(value["LogType"].GetString());
         m_logTypeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetUint64();
         m_timestampHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Data"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.Data` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.Data` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_data = string(value["Data"].GetString());
         m_dataHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Topic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.Topic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.Topic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topic = string(value["Topic"].GetString());
         m_topicHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DebugLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DebugLogEntry.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DebugLogEntry.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.BasicInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.BasicInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_basicInfo.Deserialize(value["BasicInfo"]);
@@ -57,7 +57,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.VideoMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.VideoMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoMaterial.Deserialize(value["VideoMaterial"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.AudioMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.AudioMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioMaterial.Deserialize(value["AudioMaterial"]);
@@ -91,7 +91,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.ImageMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.ImageMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageMaterial.Deserialize(value["ImageMaterial"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LinkMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.LinkMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.LinkMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_linkMaterial.Deserialize(value["LinkMaterial"]);
@@ -125,7 +125,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoEditTemplateMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.VideoEditTemplateMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.VideoEditTemplateMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoEditTemplateMaterial.Deserialize(value["VideoEditTemplateMaterial"]);
@@ -142,7 +142,7 @@ CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtherMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialInfo.OtherMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialInfo.OtherMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_otherMaterial.Deserialize(value["OtherMaterial"]);

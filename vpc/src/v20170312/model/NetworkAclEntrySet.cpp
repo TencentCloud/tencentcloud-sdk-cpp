@@ -34,7 +34,7 @@ CoreInternalOutcome NetworkAclEntrySet::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Ingress") && !value["Ingress"].IsNull())
     {
         if (!value["Ingress"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkAclEntrySet.Ingress` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntrySet.Ingress` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Ingress"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome NetworkAclEntrySet::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Egress") && !value["Egress"].IsNull())
     {
         if (!value["Egress"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkAclEntrySet.Egress` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkAclEntrySet.Egress` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Egress"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

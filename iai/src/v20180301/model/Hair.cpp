@@ -36,7 +36,7 @@ CoreInternalOutcome Hair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Length"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Hair.Length` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hair.Length` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_length.Deserialize(value["Length"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome Hair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bang"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Hair.Bang` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hair.Bang` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bang.Deserialize(value["Bang"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome Hair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Color"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Hair.Color` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hair.Color` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_color.Deserialize(value["Color"]);

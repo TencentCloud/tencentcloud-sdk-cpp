@@ -43,7 +43,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupType = string(value["GroupType"].GetString());
         m_groupTypeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupPath = string(value["GroupPath"].GetString());
         m_groupPathHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.ParentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.ParentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentId = string(value["ParentId"].GetString());
         m_parentIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupDescribe"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupDescribe` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupDescribe` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupDescribe = string(value["GroupDescribe"].GetString());
         m_groupDescribeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtraInformation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.ExtraInformation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.ExtraInformation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extraInformation = string(value["ExtraInformation"].GetString());
         m_extraInformationHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupStatus = value["GroupStatus"].GetInt64();
         m_groupStatusHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.Error` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.Error` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_error = string(value["Error"].GetString());
         m_errorHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome TaskStatDataItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatDataItem.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatDataItem.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskStatDataItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskStatDataItem.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatDataItem.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskStatDataItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Usage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskStatDataItem.Usage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatDataItem.Usage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_usage = value["Usage"].GetInt64();
         m_usageHasBeenSet = true;

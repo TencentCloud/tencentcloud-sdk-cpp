@@ -40,7 +40,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["GroupCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.GroupCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.GroupCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupCode = string(value["GroupCode"].GetString());
         m_groupCodeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["MallId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.MallId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.MallId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mallId = value["MallId"].GetUint64();
         m_mallIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["CameraId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraId = value["CameraId"].GetUint64();
         m_cameraIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["CaptureTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.CaptureTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.CaptureTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_captureTime = value["CaptureTime"].GetInt64();
         m_captureTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["MoveAlert"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.MoveAlert` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.MoveAlert` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_moveAlert.Deserialize(value["MoveAlert"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &
     {
         if (!value["CoverAlert"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertAlert.CoverAlert` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertAlert.CoverAlert` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coverAlert.Deserialize(value["CoverAlert"]);

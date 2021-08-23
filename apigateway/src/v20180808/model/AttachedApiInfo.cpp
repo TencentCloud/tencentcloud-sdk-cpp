@@ -41,7 +41,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceId = string(value["ServiceId"].GetString());
         m_serviceIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.ServiceDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.ServiceDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceDesc = string(value["ServiceDesc"].GetString());
         m_serviceDescHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.ApiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.ApiName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiName = string(value["ApiName"].GetString());
         m_apiNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.ApiDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.ApiDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiDesc = string(value["ApiDesc"].GetString());
         m_apiDescHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Environment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.Environment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.Environment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environment = string(value["Environment"].GetString());
         m_environmentHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AttachedApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedApiInfo.AttachedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedApiInfo.AttachedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attachedTime = string(value["AttachedTime"].GetString());
         m_attachedTimeHasBeenSet = true;

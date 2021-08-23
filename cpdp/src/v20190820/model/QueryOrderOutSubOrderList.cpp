@@ -43,7 +43,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["Amt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.Amt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.Amt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_amt = value["Amt"].GetInt64();
         m_amtHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["SubMchIncome"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.SubMchIncome` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.SubMchIncome` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_subMchIncome = value["SubMchIncome"].GetInt64();
         m_subMchIncomeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["Metadata"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.Metadata` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.Metadata` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metadata = string(value["Metadata"].GetString());
         m_metadataHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["OriginalAmt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.OriginalAmt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.OriginalAmt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_originalAmt = value["OriginalAmt"].GetInt64();
         m_originalAmtHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["PlatformIncome"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.PlatformIncome` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.PlatformIncome` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_platformIncome = value["PlatformIncome"].GetInt64();
         m_platformIncomeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["ProductDetail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.ProductDetail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.ProductDetail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productDetail = string(value["ProductDetail"].GetString());
         m_productDetailHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["SettleCheck"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.SettleCheck` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.SettleCheck` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_settleCheck = value["SettleCheck"].GetInt64();
         m_settleCheckHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["SubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.SubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.SubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAppId = string(value["SubAppId"].GetString());
         m_subAppIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome QueryOrderOutSubOrderList::Deserialize(const rapidjson::Valu
     {
         if (!value["SubOutTradeNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryOrderOutSubOrderList.SubOutTradeNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutSubOrderList.SubOutTradeNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subOutTradeNo = string(value["SubOutTradeNo"].GetString());
         m_subOutTradeNoHasBeenSet = true;

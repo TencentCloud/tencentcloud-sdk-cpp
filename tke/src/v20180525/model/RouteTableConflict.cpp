@@ -37,7 +37,7 @@ CoreInternalOutcome RouteTableConflict::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RouteTableType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTableConflict.RouteTableType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTableConflict.RouteTableType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableType = string(value["RouteTableType"].GetString());
         m_routeTableTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RouteTableConflict::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RouteTableCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTableConflict.RouteTableCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTableConflict.RouteTableCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableCidrBlock = string(value["RouteTableCidrBlock"].GetString());
         m_routeTableCidrBlockHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RouteTableConflict::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RouteTableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTableConflict.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTableConflict.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableName = string(value["RouteTableName"].GetString());
         m_routeTableNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RouteTableConflict::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RouteTableId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTableConflict.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTableConflict.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableId = string(value["RouteTableId"].GetString());
         m_routeTableIdHasBeenSet = true;

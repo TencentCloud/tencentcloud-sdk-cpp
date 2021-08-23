@@ -52,7 +52,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkInterfaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceId = string(value["NetworkInterfaceId"].GetString());
         m_networkInterfaceIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkInterfaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.NetworkInterfaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.NetworkInterfaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceName = string(value["NetworkInterfaceName"].GetString());
         m_networkInterfaceNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkInterfaceDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.NetworkInterfaceDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.NetworkInterfaceDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceDescription = string(value["NetworkInterfaceDescription"].GetString());
         m_networkInterfaceDescriptionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GroupSet") && !value["GroupSet"].IsNull())
     {
         if (!value["GroupSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkInterface.GroupSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.GroupSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -115,7 +115,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Primary"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.Primary` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Primary` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_primary = value["Primary"].GetBool();
         m_primaryHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MacAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.MacAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.MacAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_macAddress = string(value["MacAddress"].GetString());
         m_macAddressHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PrivateIpAddressSet") && !value["PrivateIpAddressSet"].IsNull())
     {
         if (!value["PrivateIpAddressSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkInterface.PrivateIpAddressSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.PrivateIpAddressSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddressSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -165,7 +165,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Attachment"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.Attachment` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Attachment` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_attachment.Deserialize(value["Attachment"]);
@@ -182,7 +182,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Ipv6AddressSet") && !value["Ipv6AddressSet"].IsNull())
     {
         if (!value["Ipv6AddressSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkInterface.Ipv6AddressSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Ipv6AddressSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Ipv6AddressSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -221,7 +221,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkInterface.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -242,7 +242,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EniType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.EniType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.EniType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eniType = value["EniType"].GetUint64();
         m_eniTypeHasBeenSet = true;
@@ -252,7 +252,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Business"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.Business` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Business` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_business = string(value["Business"].GetString());
         m_businessHasBeenSet = true;
@@ -262,7 +262,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CdcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.CdcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cdcId = string(value["CdcId"].GetString());
         m_cdcIdHasBeenSet = true;
@@ -272,7 +272,7 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterface.AttachType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.AttachType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attachType = value["AttachType"].GetUint64();
         m_attachTypeHasBeenSet = true;

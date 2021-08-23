@@ -38,7 +38,7 @@ CoreInternalOutcome AnchorContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AnchorId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnchorContractInfo.AnchorId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnchorContractInfo.AnchorId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_anchorId = string(value["AnchorId"].GetString());
         m_anchorIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AnchorContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AnchorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnchorContractInfo.AnchorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnchorContractInfo.AnchorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_anchorName = string(value["AnchorName"].GetString());
         m_anchorNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AnchorContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AgentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnchorContractInfo.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnchorContractInfo.AgentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentId = string(value["AgentId"].GetString());
         m_agentIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AnchorContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AgentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnchorContractInfo.AgentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnchorContractInfo.AgentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentName = string(value["AgentName"].GetString());
         m_agentNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AnchorContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IdNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnchorContractInfo.IdNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnchorContractInfo.IdNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idNo = string(value["IdNo"].GetString());
         m_idNoHasBeenSet = true;

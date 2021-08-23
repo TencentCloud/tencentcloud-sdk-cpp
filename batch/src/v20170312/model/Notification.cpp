@@ -35,7 +35,7 @@ CoreInternalOutcome Notification::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Notification.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Notification.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Notification::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EventConfigs") && !value["EventConfigs"].IsNull())
     {
         if (!value["EventConfigs"].IsArray())
-            return CoreInternalOutcome(Error("response `Notification.EventConfigs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Notification.EventConfigs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EventConfigs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

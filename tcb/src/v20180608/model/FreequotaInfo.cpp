@@ -39,7 +39,7 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FreequotaInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreequotaInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceMetric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FreequotaInfo.ResourceMetric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreequotaInfo.ResourceMetric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceMetric = string(value["ResourceMetric"].GetString());
         m_resourceMetricHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FreeQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FreequotaInfo.FreeQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreequotaInfo.FreeQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_freeQuota = value["FreeQuota"].GetInt64();
         m_freeQuotaHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FreequotaInfo.MetricUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreequotaInfo.MetricUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricUnit = string(value["MetricUnit"].GetString());
         m_metricUnitHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeductType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FreequotaInfo.DeductType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreequotaInfo.DeductType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deductType = string(value["DeductType"].GetString());
         m_deductTypeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FreeQuotaType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FreequotaInfo.FreeQuotaType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreequotaInfo.FreeQuotaType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_freeQuotaType = string(value["FreeQuotaType"].GetString());
         m_freeQuotaTypeHasBeenSet = true;

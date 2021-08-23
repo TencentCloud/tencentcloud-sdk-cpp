@@ -39,7 +39,7 @@ namespace TencentCloud
                 CimClient(const Credential &credential, const std::string &region);
                 CimClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeSdkAppidResponse> DescribeSdkAppidOutcome;
+                typedef Outcome<Core::Error, Model::DescribeSdkAppidResponse> DescribeSdkAppidOutcome;
                 typedef std::future<DescribeSdkAppidOutcome> DescribeSdkAppidOutcomeCallable;
                 typedef std::function<void(const CimClient*, const Model::DescribeSdkAppidRequest&, DescribeSdkAppidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSdkAppidAsyncHandler;
 

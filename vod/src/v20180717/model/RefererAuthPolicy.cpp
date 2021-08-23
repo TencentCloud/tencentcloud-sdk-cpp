@@ -37,7 +37,7 @@ CoreInternalOutcome RefererAuthPolicy::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthPolicy.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthPolicy.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RefererAuthPolicy::Deserialize(const rapidjson::Value &value
     {
         if (!value["AuthType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthPolicy.AuthType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthPolicy.AuthType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authType = string(value["AuthType"].GetString());
         m_authTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RefererAuthPolicy::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Referers") && !value["Referers"].IsNull())
     {
         if (!value["Referers"].IsArray())
-            return CoreInternalOutcome(Error("response `RefererAuthPolicy.Referers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthPolicy.Referers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Referers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome RefererAuthPolicy::Deserialize(const rapidjson::Value &value
     {
         if (!value["BlankRefererAllowed"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthPolicy.BlankRefererAllowed` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthPolicy.BlankRefererAllowed` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blankRefererAllowed = string(value["BlankRefererAllowed"].GetString());
         m_blankRefererAllowedHasBeenSet = true;

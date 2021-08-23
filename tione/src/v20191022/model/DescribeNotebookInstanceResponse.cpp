@@ -54,16 +54,16 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -74,11 +74,11 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["NotebookInstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notebookInstanceName = string(rsp["NotebookInstanceName"].GetString());
         m_notebookInstanceNameHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(rsp["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["RoleArn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoleArn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleArn = string(rsp["RoleArn"].GetString());
         m_roleArnHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["DirectInternetAccess"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectInternetAccess` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectInternetAccess` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_directInternetAccess = string(rsp["DirectInternetAccess"].GetString());
         m_directInternetAccessHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["RootAccess"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RootAccess` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RootAccess` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rootAccess = string(rsp["RootAccess"].GetString());
         m_rootAccessHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(rsp["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["VolumeSizeInGB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VolumeSizeInGB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VolumeSizeInGB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_volumeSizeInGB = rsp["VolumeSizeInGB"].GetUint64();
         m_volumeSizeInGBHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["FailureReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailureReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailureReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failureReason = string(rsp["FailureReason"].GetString());
         m_failureReasonHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(rsp["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(rsp["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["LogUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logUrl = string(rsp["LogUrl"].GetString());
         m_logUrlHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["NotebookInstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notebookInstanceStatus = string(rsp["NotebookInstanceStatus"].GetString());
         m_notebookInstanceStatusHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(rsp["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["LifecycleScriptsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleScriptsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleScriptsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifecycleScriptsName = string(rsp["LifecycleScriptsName"].GetString());
         m_lifecycleScriptsNameHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["DefaultCodeRepository"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefaultCodeRepository` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefaultCodeRepository` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultCodeRepository = string(rsp["DefaultCodeRepository"].GetString());
         m_defaultCodeRepositoryHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     if (rsp.HasMember("AdditionalCodeRepositories") && !rsp["AdditionalCodeRepositories"].IsNull())
     {
         if (!rsp["AdditionalCodeRepositories"].IsArray())
-            return CoreInternalOutcome(Error("response `AdditionalCodeRepositories` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdditionalCodeRepositories` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AdditionalCodeRepositories"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -249,7 +249,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["ClsAccess"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsAccess` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsAccess` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsAccess = string(rsp["ClsAccess"].GetString());
         m_clsAccessHasBeenSet = true;
@@ -259,7 +259,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["Prepay"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Prepay` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Prepay` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_prepay = rsp["Prepay"].GetBool();
         m_prepayHasBeenSet = true;
@@ -269,7 +269,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["Deadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadline = string(rsp["Deadline"].GetString());
         m_deadlineHasBeenSet = true;
@@ -279,7 +279,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["StoppingCondition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StoppingCondition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StoppingCondition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_stoppingCondition.Deserialize(rsp["StoppingCondition"]);
@@ -296,7 +296,7 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
     {
         if (!rsp["ClsConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClsConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clsConfig.Deserialize(rsp["ClsConfig"]);

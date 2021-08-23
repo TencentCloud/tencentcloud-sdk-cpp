@@ -42,7 +42,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["MsgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.MsgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.MsgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgId = string(value["MsgId"].GetString());
         m_msgIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["MsgType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.MsgType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.MsgType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgType = string(value["MsgType"].GetString());
         m_msgTypeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["From"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.From` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.From` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_from = string(value["From"].GetString());
         m_fromHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     if (value.HasMember("ToList") && !value["ToList"].IsNull())
     {
         if (!value["ToList"].IsArray())
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.ToList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.ToList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ToList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["RoomId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.RoomId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.RoomId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = string(value["RoomId"].GetString());
         m_roomIdHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["MsgTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.MsgTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.MsgTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgTime = value["MsgTime"].GetUint64();
         m_msgTimeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Video"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.Video` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.Video` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_video.Deserialize(value["Video"]);
@@ -132,7 +132,7 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["BodyJson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingDetail.BodyJson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingDetail.BodyJson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bodyJson = string(value["BodyJson"].GetString());
         m_bodyJsonHasBeenSet = true;

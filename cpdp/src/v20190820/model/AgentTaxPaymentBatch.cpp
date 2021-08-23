@@ -42,7 +42,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["StatusMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMsg = string(value["StatusMsg"].GetString());
         m_statusMsgHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["BatchNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.BatchNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.BatchNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_batchNum = value["BatchNum"].GetInt64();
         m_batchNumHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["InfoNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.InfoNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.InfoNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_infoNum = value["InfoNum"].GetInt64();
         m_infoNumHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["RawElectronicCertUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.RawElectronicCertUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.RawElectronicCertUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rawElectronicCertUrl = string(value["RawElectronicCertUrl"].GetString());
         m_rawElectronicCertUrlHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["AgentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.AgentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentId = string(value["AgentId"].GetString());
         m_agentIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["StatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetInt64();
         m_statusCodeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["Channel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_channel = value["Channel"].GetInt64();
         m_channelHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPaymentBatch.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPaymentBatch.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;

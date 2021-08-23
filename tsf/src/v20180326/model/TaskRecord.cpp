@@ -53,7 +53,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecuteType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.ExecuteType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.ExecuteType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_executeType = string(value["ExecuteType"].GetString());
         m_executeTypeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskContent = string(value["TaskContent"].GetString());
         m_taskContentHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeOut = value["TimeOut"].GetInt64();
         m_timeOutHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetryCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.RetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.RetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retryCount = value["RetryCount"].GetInt64();
         m_retryCountHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetryInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.RetryInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.RetryInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retryInterval = value["RetryInterval"].GetInt64();
         m_retryIntervalHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskRule"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskRule` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskRule` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskRule.Deserialize(value["TaskRule"]);
@@ -150,7 +150,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskState = string(value["TaskState"].GetString());
         m_taskStateHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuccessOperator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.SuccessOperator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.SuccessOperator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_successOperator = string(value["SuccessOperator"].GetString());
         m_successOperatorHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuccessRatio"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.SuccessRatio` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.SuccessRatio` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_successRatio = value["SuccessRatio"].GetInt64();
         m_successRatioHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.ShardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.ShardCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shardCount = value["ShardCount"].GetInt64();
         m_shardCountHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvanceSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.AdvanceSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.AdvanceSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_advanceSettings.Deserialize(value["AdvanceSettings"]);
@@ -216,7 +216,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ShardArguments") && !value["ShardArguments"].IsNull())
     {
         if (!value["ShardArguments"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskRecord.ShardArguments` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.ShardArguments` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShardArguments"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -236,7 +236,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BelongFlowIds") && !value["BelongFlowIds"].IsNull())
     {
         if (!value["BelongFlowIds"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskRecord.BelongFlowIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.BelongFlowIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BelongFlowIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -250,7 +250,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskLogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskLogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskLogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskLogId = string(value["TaskLogId"].GetString());
         m_taskLogIdHasBeenSet = true;
@@ -260,7 +260,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TriggerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TriggerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TriggerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_triggerType = string(value["TriggerType"].GetString());
         m_triggerTypeHasBeenSet = true;
@@ -270,7 +270,7 @@ CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskArgument"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRecord.TaskArgument` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRecord.TaskArgument` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskArgument = string(value["TaskArgument"].GetString());
         m_taskArgumentHasBeenSet = true;

@@ -42,7 +42,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.TotalHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.TotalHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalHour = value["TotalHour"].GetInt64();
         m_totalHourHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PassCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.PassCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.PassCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_passCount = value["PassCount"].GetInt64();
         m_passCountHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PassHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.PassHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.PassHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_passHour = value["PassHour"].GetInt64();
         m_passHourHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.EvilCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.EvilCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilCount = value["EvilCount"].GetInt64();
         m_evilCountHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.EvilHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.EvilHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilHour = value["EvilHour"].GetInt64();
         m_evilHourHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuspectCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.SuspectCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.SuspectCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suspectCount = value["SuspectCount"].GetInt64();
         m_suspectCountHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuspectHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.SuspectHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.SuspectHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suspectHour = value["SuspectHour"].GetInt64();
         m_suspectHourHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrendCount.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrendCount.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;

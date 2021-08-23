@@ -41,7 +41,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosX"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.PosX` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.PosX` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_posX = value["PosX"].GetInt64();
         m_posXHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosY"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.PosY` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.PosY` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_posY = value["PosY"].GetInt64();
         m_posYHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.CosInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.CosInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosInfo.Deserialize(value["CosInfo"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PicMarkInfoItem.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PicMarkInfoItem.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;

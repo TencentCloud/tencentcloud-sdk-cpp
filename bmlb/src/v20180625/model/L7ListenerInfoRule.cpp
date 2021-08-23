@@ -38,7 +38,7 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoRule.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoRule.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DomainId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoRule.DomainId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoRule.DomainId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = string(value["DomainId"].GetString());
         m_domainIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoRule.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoRule.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AddTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoRule.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoRule.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTimestamp = string(value["AddTimestamp"].GetString());
         m_addTimestampHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("LocationSet") && !value["LocationSet"].IsNull())
     {
         if (!value["LocationSet"].IsArray())
-            return CoreInternalOutcome(Error("response `L7ListenerInfoRule.LocationSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoRule.LocationSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LocationSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome CloudBaseCodeRepoName::Deserialize(const rapidjson::Value &v
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseCodeRepoName.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseCodeRepoName.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CloudBaseCodeRepoName::Deserialize(const rapidjson::Value &v
     {
         if (!value["FullName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseCodeRepoName.FullName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseCodeRepoName.FullName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullName = string(value["FullName"].GetString());
         m_fullNameHasBeenSet = true;

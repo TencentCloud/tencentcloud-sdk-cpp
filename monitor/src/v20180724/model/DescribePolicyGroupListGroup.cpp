@@ -53,7 +53,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["GroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetInt64();
         m_groupIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["IsOpen"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.IsOpen` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.IsOpen` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isOpen = value["IsOpen"].GetBool();
         m_isOpenHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(value["ViewName"].GetString());
         m_viewNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["LastEditUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastEditUin = string(value["LastEditUin"].GetString());
         m_lastEditUinHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["InsertTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = value["InsertTime"].GetInt64();
         m_insertTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["UseSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.UseSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.UseSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_useSum = value["UseSum"].GetInt64();
         m_useSumHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["NoShieldedSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.NoShieldedSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.NoShieldedSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_noShieldedSum = value["NoShieldedSum"].GetInt64();
         m_noShieldedSumHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["IsDefault"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetInt64();
         m_isDefaultHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["CanSetDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.CanSetDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.CanSetDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_canSetDefault = value["CanSetDefault"].GetBool();
         m_canSetDefaultHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["ParentGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.ParentGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.ParentGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_parentGroupId = value["ParentGroupId"].GetInt64();
         m_parentGroupIdHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
     {
         if (!value["Conditions"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.Conditions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.Conditions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Conditions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -212,7 +212,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     if (value.HasMember("EventConditions") && !value["EventConditions"].IsNull())
     {
         if (!value["EventConditions"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.EventConditions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.EventConditions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EventConditions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -232,7 +232,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     if (value.HasMember("ReceiverInfos") && !value["ReceiverInfos"].IsNull())
     {
         if (!value["ReceiverInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.ReceiverInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.ReceiverInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -253,7 +253,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["ConditionsTemp"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.ConditionsTemp` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.ConditionsTemp` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_conditionsTemp.Deserialize(value["ConditionsTemp"]);
@@ -270,7 +270,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["InstanceGroup"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.InstanceGroup` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.InstanceGroup` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceGroup.Deserialize(value["InstanceGroup"]);
@@ -287,7 +287,7 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::V
     {
         if (!value["IsUnionRule"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroup.IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isUnionRule = value["IsUnionRule"].GetInt64();
         m_isUnionRuleHasBeenSet = true;

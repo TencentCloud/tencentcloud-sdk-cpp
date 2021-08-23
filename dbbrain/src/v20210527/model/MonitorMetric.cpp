@@ -36,7 +36,7 @@ CoreInternalOutcome MonitorMetric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorMetric.Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorMetric.Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(value["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MonitorMetric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorMetric.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorMetric.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MonitorMetric::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
         if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Error("response `MonitorMetric.Values` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MonitorMetric.Values` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Values"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

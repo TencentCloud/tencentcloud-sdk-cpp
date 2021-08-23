@@ -57,16 +57,16 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -77,11 +77,11 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(rsp["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["Online"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Online` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Online` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_online = rsp["Online"].GetUint64();
         m_onlineHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoginTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loginTime = rsp["LoginTime"].GetUint64();
         m_loginTimeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(rsp["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LastUpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LastUpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastUpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastUpdateTime = rsp["LastUpdateTime"].GetUint64();
         m_lastUpdateTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeviceCert"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCert` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCert` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceCert = string(rsp["DeviceCert"].GetString());
         m_deviceCertHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DevicePsk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devicePsk = string(rsp["DevicePsk"].GetString());
         m_devicePskHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -179,7 +179,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeviceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = rsp["DeviceType"].GetUint64();
         m_deviceTypeHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["Imei"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Imei` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Imei` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imei = string(rsp["Imei"].GetString());
         m_imeiHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["Isp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Isp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Isp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isp = rsp["Isp"].GetUint64();
         m_ispHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["ConnIP"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ConnIP` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConnIP` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_connIP = rsp["ConnIP"].GetUint64();
         m_connIPHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["NbiotDeviceID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NbiotDeviceID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NbiotDeviceID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nbiotDeviceID = string(rsp["NbiotDeviceID"].GetString());
         m_nbiotDeviceIDHasBeenSet = true;
@@ -229,7 +229,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoraDevEui"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoraDevEui` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoraDevEui` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loraDevEui = string(rsp["LoraDevEui"].GetString());
         m_loraDevEuiHasBeenSet = true;
@@ -239,7 +239,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoraMoteType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoraMoteType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoraMoteType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loraMoteType = rsp["LoraMoteType"].GetUint64();
         m_loraMoteTypeHasBeenSet = true;
@@ -249,7 +249,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LogLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_logLevel = rsp["LogLevel"].GetUint64();
         m_logLevelHasBeenSet = true;
@@ -259,7 +259,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["FirstOnlineTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FirstOnlineTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirstOnlineTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_firstOnlineTime = rsp["FirstOnlineTime"].GetUint64();
         m_firstOnlineTimeHasBeenSet = true;
@@ -269,7 +269,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LastOfflineTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LastOfflineTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastOfflineTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastOfflineTime = rsp["LastOfflineTime"].GetUint64();
         m_lastOfflineTimeHasBeenSet = true;
@@ -279,7 +279,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = rsp["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -289,7 +289,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["CertState"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CertState` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertState` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_certState = rsp["CertState"].GetUint64();
         m_certStateHasBeenSet = true;
@@ -299,7 +299,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["EnableState"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EnableState` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnableState` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_enableState = rsp["EnableState"].GetUint64();
         m_enableStateHasBeenSet = true;
@@ -308,7 +308,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Labels") && !rsp["Labels"].IsNull())
     {
         if (!rsp["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -329,7 +329,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["ClientIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIP = string(rsp["ClientIP"].GetString());
         m_clientIPHasBeenSet = true;
@@ -339,7 +339,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["FirmwareUpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FirmwareUpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirmwareUpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_firmwareUpdateTime = rsp["FirmwareUpdateTime"].GetUint64();
         m_firmwareUpdateTimeHasBeenSet = true;

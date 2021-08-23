@@ -38,7 +38,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.ModTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.ModTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modTime = string(value["ModTime"].GetString());
         m_modTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

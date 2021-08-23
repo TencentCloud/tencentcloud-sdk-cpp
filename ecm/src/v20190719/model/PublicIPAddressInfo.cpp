@@ -38,7 +38,7 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ChargeMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicIPAddressInfo.ChargeMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicIPAddressInfo.ChargeMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chargeMode = string(value["ChargeMode"].GetString());
         m_chargeModeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["PublicIPAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicIPAddressInfo.PublicIPAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicIPAddressInfo.PublicIPAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIPAddress = string(value["PublicIPAddress"].GetString());
         m_publicIPAddressHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ISP"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PublicIPAddressInfo.ISP` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicIPAddressInfo.ISP` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_iSP.Deserialize(value["ISP"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxBandwidthOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicIPAddressInfo.MaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicIPAddressInfo.MaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidthOut = value["MaxBandwidthOut"].GetInt64();
         m_maxBandwidthOutHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxBandwidthIn"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicIPAddressInfo.MaxBandwidthIn` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicIPAddressInfo.MaxBandwidthIn` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidthIn = value["MaxBandwidthIn"].GetInt64();
         m_maxBandwidthInHasBeenSet = true;

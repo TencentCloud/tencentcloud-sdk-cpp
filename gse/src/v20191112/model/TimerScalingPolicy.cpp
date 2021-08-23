@@ -38,7 +38,7 @@ CoreInternalOutcome TimerScalingPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimerScalingPolicy.TimerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerScalingPolicy.TimerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timerId = string(value["TimerId"].GetString());
         m_timerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TimerScalingPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimerScalingPolicy.TimerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerScalingPolicy.TimerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timerName = string(value["TimerName"].GetString());
         m_timerNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TimerScalingPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerScalingPolicy.TimerStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerScalingPolicy.TimerStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timerStatus = value["TimerStatus"].GetInt64();
         m_timerStatusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TimerScalingPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerFleetCapacity"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TimerScalingPolicy.TimerFleetCapacity` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerScalingPolicy.TimerFleetCapacity` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_timerFleetCapacity.Deserialize(value["TimerFleetCapacity"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome TimerScalingPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerConfiguration"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TimerScalingPolicy.TimerConfiguration` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerScalingPolicy.TimerConfiguration` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_timerConfiguration.Deserialize(value["TimerConfiguration"]);

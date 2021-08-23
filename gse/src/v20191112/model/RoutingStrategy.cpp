@@ -36,7 +36,7 @@ CoreInternalOutcome RoutingStrategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutingStrategy.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutingStrategy.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RoutingStrategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutingStrategy.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutingStrategy.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RoutingStrategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoutingStrategy.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoutingStrategy.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome OriginIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginIp.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginIp.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;

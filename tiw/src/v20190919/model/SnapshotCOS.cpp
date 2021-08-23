@@ -38,7 +38,7 @@ CoreInternalOutcome SnapshotCOS::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotCOS.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotCOS.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SnapshotCOS::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotCOS.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotCOS.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SnapshotCOS::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotCOS.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotCOS.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SnapshotCOS::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetDir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotCOS.TargetDir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotCOS.TargetDir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetDir = string(value["TargetDir"].GetString());
         m_targetDirHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SnapshotCOS::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotCOS.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotCOS.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;

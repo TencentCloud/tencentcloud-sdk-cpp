@@ -34,7 +34,7 @@ CoreInternalOutcome ModifyTemplateStatus::Deserialize(const rapidjson::Value &va
     {
         if (!value["TemplateId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ModifyTemplateStatus.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyTemplateStatus.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetUint64();
         m_templateIdHasBeenSet = true;

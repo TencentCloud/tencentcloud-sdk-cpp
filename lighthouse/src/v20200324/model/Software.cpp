@@ -38,7 +38,7 @@ CoreInternalOutcome Software::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Software.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Software.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Software::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Software.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Software.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Software::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Software.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Software.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageUrl = string(value["ImageUrl"].GetString());
         m_imageUrlHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Software::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstallDir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Software.InstallDir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Software.InstallDir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_installDir = string(value["InstallDir"].GetString());
         m_installDirHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Software::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetailSet") && !value["DetailSet"].IsNull())
     {
         if (!value["DetailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Software.DetailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Software.DetailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -51,16 +51,16 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -71,11 +71,11 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerFirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerFirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerFirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerFirstName = string(rsp["ManagerFirstName"].GetString());
         m_managerFirstNameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerMail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerMail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerMail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerMail = string(rsp["ManagerMail"].GetString());
         m_managerMailHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ContactFirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactFirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactFirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactFirstName = string(rsp["ContactFirstName"].GetString());
         m_contactFirstNameHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerLastName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerLastName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerLastName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerLastName = string(rsp["ManagerLastName"].GetString());
         m_managerLastNameHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ContactPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactPosition = string(rsp["ContactPosition"].GetString());
         m_contactPositionHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerPosition = string(rsp["ManagerPosition"].GetString());
         m_managerPositionHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["VerifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyTime = string(rsp["VerifyTime"].GetString());
         m_verifyTimeHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(rsp["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ContactLastName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactLastName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactLastName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactLastName = string(rsp["ContactLastName"].GetString());
         m_contactLastNameHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerPhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerPhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerPhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerPhone = string(rsp["ManagerPhone"].GetString());
         m_managerPhoneHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ContactPhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactPhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactPhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactPhone = string(rsp["ContactPhone"].GetString());
         m_contactPhoneHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ContactMail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactMail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactMail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactMail = string(rsp["ContactMail"].GetString());
         m_contactMailHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerDepartment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerDepartment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerDepartment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerDepartment = string(rsp["ManagerDepartment"].GetString());
         m_managerDepartmentHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["CompanyInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_companyInfo.Deserialize(rsp["CompanyInfo"]);
@@ -250,7 +250,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["CompanyId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CompanyId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = rsp["CompanyId"].GetInt64();
         m_companyIdHasBeenSet = true;
@@ -260,7 +260,7 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
     {
         if (!rsp["ManagerId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManagerId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_managerId = rsp["ManagerId"].GetInt64();
         m_managerIdHasBeenSet = true;

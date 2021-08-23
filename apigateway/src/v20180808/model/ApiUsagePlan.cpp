@@ -48,7 +48,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceId = string(value["ServiceId"].GetString());
         m_serviceIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.ApiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.ApiName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiName = string(value["ApiName"].GetString());
         m_apiNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsagePlanId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.UsagePlanId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.UsagePlanId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanId = string(value["UsagePlanId"].GetString());
         m_usagePlanIdHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsagePlanName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.UsagePlanName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.UsagePlanName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanName = string(value["UsagePlanName"].GetString());
         m_usagePlanNameHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsagePlanDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.UsagePlanDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.UsagePlanDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanDesc = string(value["UsagePlanDesc"].GetString());
         m_usagePlanDescHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Environment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.Environment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.Environment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environment = string(value["Environment"].GetString());
         m_environmentHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InUseRequestNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.InUseRequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.InUseRequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_inUseRequestNum = value["InUseRequestNum"].GetInt64();
         m_inUseRequestNumHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxRequestNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.MaxRequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.MaxRequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRequestNum = value["MaxRequestNum"].GetInt64();
         m_maxRequestNumHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxRequestNumPreSec"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.MaxRequestNumPreSec` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.MaxRequestNumPreSec` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRequestNumPreSec = value["MaxRequestNumPreSec"].GetInt64();
         m_maxRequestNumPreSecHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome ApiUsagePlan::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUsagePlan.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUsagePlan.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;

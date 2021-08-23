@@ -58,7 +58,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CsrType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.CsrType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.CsrType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_csrType = string(value["CsrType"].GetString());
         m_csrTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CsrContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.CsrContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.CsrContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_csrContent = string(value["CsrContent"].GetString());
         m_csrContentHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.CertificateDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.CertificateDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateDomain = string(value["CertificateDomain"].GetString());
         m_certificateDomainHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DomainList") && !value["DomainList"].IsNull())
     {
         if (!value["DomainList"].IsArray())
-            return CoreInternalOutcome(Error("response `SubmittedData.DomainList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.DomainList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DomainList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -101,7 +101,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyPassword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.KeyPassword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.KeyPassword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyPassword = string(value["KeyPassword"].GetString());
         m_keyPasswordHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationName = string(value["OrganizationName"].GetString());
         m_organizationNameHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationDivision"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.OrganizationDivision` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.OrganizationDivision` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationDivision = string(value["OrganizationDivision"].GetString());
         m_organizationDivisionHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.OrganizationAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.OrganizationAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationAddress = string(value["OrganizationAddress"].GetString());
         m_organizationAddressHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationCountry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.OrganizationCountry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.OrganizationCountry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationCountry = string(value["OrganizationCountry"].GetString());
         m_organizationCountryHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationCity"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.OrganizationCity` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.OrganizationCity` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationCity = string(value["OrganizationCity"].GetString());
         m_organizationCityHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.OrganizationRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.OrganizationRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationRegion = string(value["OrganizationRegion"].GetString());
         m_organizationRegionHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PostalCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.PostalCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.PostalCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_postalCode = string(value["PostalCode"].GetString());
         m_postalCodeHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneAreaCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.PhoneAreaCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.PhoneAreaCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneAreaCode = string(value["PhoneAreaCode"].GetString());
         m_phoneAreaCodeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(value["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdminFirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.AdminFirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.AdminFirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adminFirstName = string(value["AdminFirstName"].GetString());
         m_adminFirstNameHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdminLastName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.AdminLastName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.AdminLastName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adminLastName = string(value["AdminLastName"].GetString());
         m_adminLastNameHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdminPhoneNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.AdminPhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.AdminPhoneNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adminPhoneNum = string(value["AdminPhoneNum"].GetString());
         m_adminPhoneNumHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdminEmail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.AdminEmail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.AdminEmail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adminEmail = string(value["AdminEmail"].GetString());
         m_adminEmailHasBeenSet = true;
@@ -241,7 +241,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdminPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.AdminPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.AdminPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adminPosition = string(value["AdminPosition"].GetString());
         m_adminPositionHasBeenSet = true;
@@ -251,7 +251,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContactFirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.ContactFirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.ContactFirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactFirstName = string(value["ContactFirstName"].GetString());
         m_contactFirstNameHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContactLastName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.ContactLastName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.ContactLastName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactLastName = string(value["ContactLastName"].GetString());
         m_contactLastNameHasBeenSet = true;
@@ -271,7 +271,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContactNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.ContactNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.ContactNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactNumber = string(value["ContactNumber"].GetString());
         m_contactNumberHasBeenSet = true;
@@ -281,7 +281,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContactEmail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.ContactEmail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.ContactEmail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactEmail = string(value["ContactEmail"].GetString());
         m_contactEmailHasBeenSet = true;
@@ -291,7 +291,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContactPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.ContactPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.ContactPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contactPosition = string(value["ContactPosition"].GetString());
         m_contactPositionHasBeenSet = true;
@@ -301,7 +301,7 @@ CoreInternalOutcome SubmittedData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VerifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData.VerifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData.VerifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyType = string(value["VerifyType"].GetString());
         m_verifyTypeHasBeenSet = true;

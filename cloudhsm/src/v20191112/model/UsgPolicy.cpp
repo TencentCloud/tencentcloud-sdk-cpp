@@ -41,7 +41,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressModule"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.AddressModule` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.AddressModule` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressModule = string(value["AddressModule"].GetString());
         m_addressModuleHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Proto"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.Proto` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.Proto` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proto = string(value["Proto"].GetString());
         m_protoHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceModule"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.ServiceModule` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.ServiceModule` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceModule = string(value["ServiceModule"].GetString());
         m_serviceModuleHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome UsgPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgPolicy.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgPolicy.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;

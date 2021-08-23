@@ -41,7 +41,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     if (value.HasMember("ImageSpriteUrlSet") && !value["ImageSpriteUrlSet"].IsNull())
     {
         if (!value["ImageSpriteUrlSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.ImageSpriteUrlSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.ImageSpriteUrlSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageSpriteUrlSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome CreateImageSpriteTask2017::Deserialize(const rapidjson::Valu
     {
         if (!value["WebVttUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask2017.WebVttUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask2017.WebVttUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webVttUrl = string(value["WebVttUrl"].GetString());
         m_webVttUrlHasBeenSet = true;

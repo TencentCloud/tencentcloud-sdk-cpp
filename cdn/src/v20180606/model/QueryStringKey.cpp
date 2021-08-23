@@ -37,7 +37,7 @@ CoreInternalOutcome QueryStringKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryStringKey.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryStringKey.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QueryStringKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reorder"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryStringKey.Reorder` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryStringKey.Reorder` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reorder = string(value["Reorder"].GetString());
         m_reorderHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QueryStringKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryStringKey.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryStringKey.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome QueryStringKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryStringKey.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryStringKey.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

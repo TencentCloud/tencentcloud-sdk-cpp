@@ -38,7 +38,7 @@ CoreInternalOutcome PkgList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PkgList.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgList.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PkgList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Content") && !value["Content"].IsNull())
     {
         if (!value["Content"].IsArray())
-            return CoreInternalOutcome(Error("response `PkgList.Content` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PkgList.Content` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Content"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome PkgList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepositoryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgList.RepositoryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgList.RepositoryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryId = string(value["RepositoryId"].GetString());
         m_repositoryIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PkgList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepositoryType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgList.RepositoryType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgList.RepositoryType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryType = string(value["RepositoryType"].GetString());
         m_repositoryTypeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome PkgList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepositoryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgList.RepositoryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgList.RepositoryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryName = string(value["RepositoryName"].GetString());
         m_repositoryNameHasBeenSet = true;

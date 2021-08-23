@@ -47,7 +47,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subDomain = string(value["SubDomain"].GetString());
         m_subDomainHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.RecordType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.RecordType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordType = string(value["RecordType"].GetString());
         m_recordTypeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordLine = string(value["RecordLine"].GetString());
         m_recordLineHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordLineId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.RecordLineId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.RecordLineId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordLineId = string(value["RecordLineId"].GetString());
         m_recordLineIdHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MX"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.MX` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.MX` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mX = value["MX"].GetUint64();
         m_mXHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.Enabled` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.Enabled` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetUint64();
         m_enabledHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.MonitorStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.MonitorStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_monitorStatus = string(value["MonitorStatus"].GetString());
         m_monitorStatusHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome RecordInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordInfo.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordInfo.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = value["DomainId"].GetUint64();
         m_domainIdHasBeenSet = true;

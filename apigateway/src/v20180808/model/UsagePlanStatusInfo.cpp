@@ -40,7 +40,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["UsagePlanId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.UsagePlanId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.UsagePlanId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanId = string(value["UsagePlanId"].GetString());
         m_usagePlanIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["UsagePlanName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.UsagePlanName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.UsagePlanName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanName = string(value["UsagePlanName"].GetString());
         m_usagePlanNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["UsagePlanDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.UsagePlanDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.UsagePlanDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanDesc = string(value["UsagePlanDesc"].GetString());
         m_usagePlanDescHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxRequestNumPreSec"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.MaxRequestNumPreSec` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.MaxRequestNumPreSec` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRequestNumPreSec = value["MaxRequestNumPreSec"].GetInt64();
         m_maxRequestNumPreSecHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxRequestNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.MaxRequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.MaxRequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRequestNum = value["MaxRequestNum"].GetInt64();
         m_maxRequestNumHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome UsagePlanStatusInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanStatusInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanStatusInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;

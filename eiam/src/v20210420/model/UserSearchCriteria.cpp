@@ -40,7 +40,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LastUpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastUpdateTime = string(value["LastUpdateTime"].GetString());
         m_lastUpdateTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome UserSearchCriteria::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;

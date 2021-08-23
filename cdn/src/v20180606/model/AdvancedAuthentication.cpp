@@ -40,7 +40,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["TypeA"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.TypeA` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.TypeA` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeA.Deserialize(value["TypeA"]);
@@ -67,7 +67,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["TypeB"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.TypeB` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.TypeB` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeB.Deserialize(value["TypeB"]);
@@ -84,7 +84,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["TypeC"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.TypeC` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.TypeC` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeC.Deserialize(value["TypeC"]);
@@ -101,7 +101,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["TypeD"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.TypeD` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.TypeD` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeD.Deserialize(value["TypeD"]);
@@ -118,7 +118,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["TypeE"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.TypeE` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.TypeE` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeE.Deserialize(value["TypeE"]);
@@ -135,7 +135,7 @@ CoreInternalOutcome AdvancedAuthentication::Deserialize(const rapidjson::Value &
     {
         if (!value["TypeF"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthentication.TypeF` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthentication.TypeF` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeF.Deserialize(value["TypeF"]);

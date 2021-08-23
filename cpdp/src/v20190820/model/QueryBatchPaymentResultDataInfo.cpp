@@ -39,7 +39,7 @@ CoreInternalOutcome QueryBatchPaymentResultDataInfo::Deserialize(const rapidjson
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultDataInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultDataInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome QueryBatchPaymentResultDataInfo::Deserialize(const rapidjson
     {
         if (!value["AgentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultDataInfo.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultDataInfo.AgentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentId = string(value["AgentId"].GetString());
         m_agentIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome QueryBatchPaymentResultDataInfo::Deserialize(const rapidjson
     {
         if (!value["AgentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultDataInfo.AgentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultDataInfo.AgentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentName = string(value["AgentName"].GetString());
         m_agentNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome QueryBatchPaymentResultDataInfo::Deserialize(const rapidjson
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultDataInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultDataInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome QueryBatchPaymentResultDataInfo::Deserialize(const rapidjson
     {
         if (!value["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultDataInfo.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultDataInfo.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome QueryBatchPaymentResultDataInfo::Deserialize(const rapidjson
     {
         if (!value["TransferAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultDataInfo.TransferAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultDataInfo.TransferAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transferAmount = value["TransferAmount"].GetInt64();
         m_transferAmountHasBeenSet = true;

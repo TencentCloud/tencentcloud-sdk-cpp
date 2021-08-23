@@ -35,7 +35,7 @@ CoreInternalOutcome DiagCert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Advice"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DiagCert.Advice` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagCert.Advice` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_advice.Deserialize(value["Advice"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome DiagCert::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Diagnosis") && !value["Diagnosis"].IsNull())
     {
         if (!value["Diagnosis"].IsArray())
-            return CoreInternalOutcome(Error("response `DiagCert.Diagnosis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DiagCert.Diagnosis` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Diagnosis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

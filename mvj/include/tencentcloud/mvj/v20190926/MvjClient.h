@@ -39,7 +39,7 @@ namespace TencentCloud
                 MvjClient(const Credential &credential, const std::string &region);
                 MvjClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::MarketingValueJudgementResponse> MarketingValueJudgementOutcome;
+                typedef Outcome<Core::Error, Model::MarketingValueJudgementResponse> MarketingValueJudgementOutcome;
                 typedef std::future<MarketingValueJudgementOutcome> MarketingValueJudgementOutcomeCallable;
                 typedef std::function<void(const MvjClient*, const Model::MarketingValueJudgementRequest&, MarketingValueJudgementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MarketingValueJudgementAsyncHandler;
 

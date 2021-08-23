@@ -36,7 +36,7 @@ CoreInternalOutcome LocalDiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalDiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskInfo.LocalDiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskInfo.LocalDiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_localDiskType = string(value["LocalDiskType"].GetString());
         m_localDiskTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome LocalDiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskInfo.LocalDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskInfo.LocalDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_localDiskSize = value["LocalDiskSize"].GetUint64();
         m_localDiskSizeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome LocalDiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalDiskCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskInfo.LocalDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskInfo.LocalDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_localDiskCount = value["LocalDiskCount"].GetUint64();
         m_localDiskCountHasBeenSet = true;

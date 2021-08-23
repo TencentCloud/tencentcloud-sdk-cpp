@@ -41,7 +41,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetName = string(value["LogsetName"].GetString());
         m_logsetNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Query"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.Query` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.Query` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_query = string(value["Query"].GetString());
         m_queryHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Number"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.Number` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.Number` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_number = value["Number"].GetInt64();
         m_numberHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimeOffset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.StartTimeOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.StartTimeOffset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetInt64();
         m_startTimeOffsetHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTimeOffset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmTargetInfo.EndTimeOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.EndTimeOffset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetInt64();
         m_endTimeOffsetHasBeenSet = true;

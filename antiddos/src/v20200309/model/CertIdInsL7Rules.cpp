@@ -34,7 +34,7 @@ CoreInternalOutcome CertIdInsL7Rules::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("L7Rules") && !value["L7Rules"].IsNull())
     {
         if (!value["L7Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `CertIdInsL7Rules.L7Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CertIdInsL7Rules.L7Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["L7Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome CertIdInsL7Rules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertIdInsL7Rules.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertIdInsL7Rules.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;

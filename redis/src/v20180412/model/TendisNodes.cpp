@@ -35,7 +35,7 @@ CoreInternalOutcome TendisNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TendisNodes.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisNodes.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TendisNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeRole"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TendisNodes.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisNodes.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeRole = string(value["NodeRole"].GetString());
         m_nodeRoleHasBeenSet = true;

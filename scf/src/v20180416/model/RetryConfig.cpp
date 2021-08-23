@@ -34,7 +34,7 @@ CoreInternalOutcome RetryConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetryNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetryConfig.RetryNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetryConfig.RetryNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retryNum = value["RetryNum"].GetInt64();
         m_retryNumHasBeenSet = true;

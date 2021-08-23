@@ -33,7 +33,7 @@ CoreInternalOutcome FrameTagResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FrameTagItems") && !value["FrameTagItems"].IsNull())
     {
         if (!value["FrameTagItems"].IsArray())
-            return CoreInternalOutcome(Error("response `FrameTagResult.FrameTagItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FrameTagResult.FrameTagItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FrameTagItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

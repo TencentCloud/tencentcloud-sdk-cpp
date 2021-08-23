@@ -45,7 +45,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["SnapshotInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.SnapshotInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.SnapshotInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotInterval = value["SnapshotInterval"].GetInt64();
         m_snapshotIntervalHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["PornFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.PornFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.PornFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pornFlag = value["PornFlag"].GetInt64();
         m_pornFlagHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CosAppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosAppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cosAppId = value["CosAppId"].GetInt64();
         m_cosAppIdHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CosBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosBucket = string(value["CosBucket"].GetString());
         m_cosBucketHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CosRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosRegion = string(value["CosRegion"].GetString());
         m_cosRegionHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CosPrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosPrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosPrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosPrefix = string(value["CosPrefix"].GetString());
         m_cosPrefixHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CosFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosFileName = string(value["CosFileName"].GetString());
         m_cosFileNameHasBeenSet = true;

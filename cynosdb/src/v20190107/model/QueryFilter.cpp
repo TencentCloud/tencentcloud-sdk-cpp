@@ -36,7 +36,7 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Names") && !value["Names"].IsNull())
     {
         if (!value["Names"].IsArray())
-            return CoreInternalOutcome(Error("response `QueryFilter.Names` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QueryFilter.Names` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Names"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
         if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Error("response `QueryFilter.Values` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QueryFilter.Values` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Values"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -63,7 +63,7 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExactMatch"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QueryFilter.ExactMatch` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryFilter.ExactMatch` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_exactMatch = value["ExactMatch"].GetBool();
         m_exactMatchHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryFilter.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryFilter.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

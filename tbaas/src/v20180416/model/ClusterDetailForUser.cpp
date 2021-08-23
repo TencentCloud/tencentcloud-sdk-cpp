@@ -36,7 +36,7 @@ CoreInternalOutcome ClusterDetailForUser::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterDetailForUser.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterDetailForUser.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ClusterDetailForUser::Deserialize(const rapidjson::Value &va
     if (value.HasMember("GroupList") && !value["GroupList"].IsNull())
     {
         if (!value["GroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterDetailForUser.GroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterDetailForUser.GroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome ClusterDetailForUser::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterDetailForUser.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterDetailForUser.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.FaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.FaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faceRatio = value["FaceRatio"].GetDouble();
         m_faceRatioHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrameHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.FrameHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.FrameHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frameHeight = value["FrameHeight"].GetInt64();
         m_frameHeightHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrameWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.FrameWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.FrameWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frameWidth = value["FrameWidth"].GetInt64();
         m_frameWidthHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Top"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_top = value["Top"].GetInt64();
         m_topHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfoResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfoResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

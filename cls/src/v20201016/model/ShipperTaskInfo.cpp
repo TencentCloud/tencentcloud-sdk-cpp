@@ -42,7 +42,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShipperId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.ShipperId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.ShipperId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shipperId = string(value["ShipperId"].GetString());
         m_shipperIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RangeStart"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.RangeStart` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.RangeStart` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rangeStart = value["RangeStart"].GetInt64();
         m_rangeStartHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RangeEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.RangeEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.RangeEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rangeEnd = value["RangeEnd"].GetInt64();
         m_rangeEndHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ShipperTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperTaskInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperTaskInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

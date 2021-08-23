@@ -45,7 +45,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceProviderIdentifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.ResourceProviderIdentifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.ResourceProviderIdentifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceProviderIdentifier = string(value["ResourceProviderIdentifier"].GetString());
         m_resourceProviderIdentifierHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceProviderType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.ResourceProviderType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.ResourceProviderType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceProviderType = string(value["ResourceProviderType"].GetString());
         m_resourceProviderTypeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.NodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeType = string(value["NodeType"].GetString());
         m_nodeTypeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataVolumes") && !value["DataVolumes"].IsNull())
     {
         if (!value["DataVolumes"].IsArray())
-            return CoreInternalOutcome(Error("response `PodSpec.DataVolumes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.DataVolumes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataVolumes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -108,7 +108,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.CpuType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.CpuType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuType = string(value["CpuType"].GetString());
         m_cpuTypeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PodVolumes") && !value["PodVolumes"].IsNull())
     {
         if (!value["PodVolumes"].IsArray())
-            return CoreInternalOutcome(Error("response `PodSpec.PodVolumes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.PodVolumes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PodVolumes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -138,7 +138,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDynamicSpec"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.IsDynamicSpec` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.IsDynamicSpec` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isDynamicSpec = value["IsDynamicSpec"].GetUint64();
         m_isDynamicSpecHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DynamicPodSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.DynamicPodSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.DynamicPodSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dynamicPodSpec.Deserialize(value["DynamicPodSpec"]);
@@ -165,7 +165,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSpec.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSpec.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;

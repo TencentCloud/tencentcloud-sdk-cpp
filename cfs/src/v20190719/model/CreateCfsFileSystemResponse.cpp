@@ -41,16 +41,16 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(rsp["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["CreationToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreationToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreationToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationToken = string(rsp["CreationToken"].GetString());
         m_creationTokenHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["FileSystemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemId = string(rsp["FileSystemId"].GetString());
         m_fileSystemIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["LifeCycleState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifeCycleState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifeCycleState = string(rsp["LifeCycleState"].GetString());
         m_lifeCycleStateHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["SizeByte"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SizeByte` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SizeByte` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sizeByte = rsp["SizeByte"].GetUint64();
         m_sizeByteHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = rsp["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["FsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fsName = string(rsp["FsName"].GetString());
         m_fsNameHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome CreateCfsFileSystemResponse::Deserialize(const string &paylo
     {
         if (!rsp["Encrypted"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Encrypted` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Encrypted` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_encrypted = rsp["Encrypted"].GetBool();
         m_encryptedHasBeenSet = true;

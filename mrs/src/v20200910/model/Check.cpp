@@ -35,7 +35,7 @@ CoreInternalOutcome Check::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Check.Desc` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Check.Desc` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_desc.Deserialize(value["Desc"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome Check::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Summary"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Check.Summary` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Check.Summary` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_summary.Deserialize(value["Summary"]);

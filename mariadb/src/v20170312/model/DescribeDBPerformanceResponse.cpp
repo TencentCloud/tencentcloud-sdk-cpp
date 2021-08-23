@@ -43,16 +43,16 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["LongQuery"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LongQuery` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LongQuery` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_longQuery.Deserialize(rsp["LongQuery"]);
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["SelectTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SelectTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_selectTotal.Deserialize(rsp["SelectTotal"]);
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["UpdateTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UpdateTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_updateTotal.Deserialize(rsp["UpdateTotal"]);
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["InsertTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InsertTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InsertTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_insertTotal.Deserialize(rsp["InsertTotal"]);
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["DeleteTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DeleteTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeleteTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_deleteTotal.Deserialize(rsp["DeleteTotal"]);
@@ -160,7 +160,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["MemHitRate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MemHitRate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MemHitRate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_memHitRate.Deserialize(rsp["MemHitRate"]);
@@ -177,7 +177,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["DiskIops"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DiskIops` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskIops` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_diskIops.Deserialize(rsp["DiskIops"]);
@@ -194,7 +194,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["ConnActive"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConnActive` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConnActive` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_connActive.Deserialize(rsp["ConnActive"]);
@@ -211,7 +211,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["IsMasterSwitched"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `IsMasterSwitched` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsMasterSwitched` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_isMasterSwitched.Deserialize(rsp["IsMasterSwitched"]);
@@ -228,7 +228,7 @@ CoreInternalOutcome DescribeDBPerformanceResponse::Deserialize(const string &pay
     {
         if (!rsp["SlaveDelay"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SlaveDelay` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveDelay` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_slaveDelay.Deserialize(rsp["SlaveDelay"]);

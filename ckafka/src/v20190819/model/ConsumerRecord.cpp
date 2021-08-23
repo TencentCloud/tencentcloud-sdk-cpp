@@ -39,7 +39,7 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Topic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumerRecord.Topic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Topic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topic = string(value["Topic"].GetString());
         m_topicHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Partition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsumerRecord.Partition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Partition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partition = value["Partition"].GetInt64();
         m_partitionHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsumerRecord.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumerRecord.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumerRecord.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsumerRecord.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetInt64();
         m_timestampHasBeenSet = true;

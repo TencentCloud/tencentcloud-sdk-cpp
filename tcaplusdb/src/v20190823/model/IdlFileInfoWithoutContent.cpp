@@ -39,7 +39,7 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Valu
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfoWithoutContent.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfoWithoutContent.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Valu
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfoWithoutContent.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfoWithoutContent.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Valu
     {
         if (!value["FileExtType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfoWithoutContent.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfoWithoutContent.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileExtType = string(value["FileExtType"].GetString());
         m_fileExtTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Valu
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfoWithoutContent.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfoWithoutContent.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Valu
     {
         if (!value["FileId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfoWithoutContent.FileId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfoWithoutContent.FileId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = value["FileId"].GetInt64();
         m_fileIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Valu
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfoWithoutContent.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfoWithoutContent.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);

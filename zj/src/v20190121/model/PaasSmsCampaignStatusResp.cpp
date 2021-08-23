@@ -34,7 +34,7 @@ CoreInternalOutcome PaasSmsCampaignStatusResp::Deserialize(const rapidjson::Valu
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PaasSmsCampaignStatusResp.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaasSmsCampaignStatusResp.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

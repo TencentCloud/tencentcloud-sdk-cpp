@@ -38,7 +38,7 @@ CoreInternalOutcome TableGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableGroupInfo.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableGroupInfo.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TableGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableGroupInfo.TableGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableGroupInfo.TableGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupName = string(value["TableGroupName"].GetString());
         m_tableGroupNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TableGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableGroupInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableGroupInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TableGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TableGroupInfo.TableCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableGroupInfo.TableCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tableCount = value["TableCount"].GetUint64();
         m_tableCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TableGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TableGroupInfo.TotalSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableGroupInfo.TotalSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalSize = value["TotalSize"].GetUint64();
         m_totalSizeHasBeenSet = true;

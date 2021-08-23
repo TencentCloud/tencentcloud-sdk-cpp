@@ -38,7 +38,7 @@ CoreInternalOutcome ReplicaGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReplicaGroup.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaGroup.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetInt64();
         m_groupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ReplicaGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ReplicaGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaGroup.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaGroup.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(value["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ReplicaGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaGroup.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaGroup.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ReplicaGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RedisNodes") && !value["RedisNodes"].IsNull())
     {
         if (!value["RedisNodes"].IsArray())
-            return CoreInternalOutcome(Error("response `ReplicaGroup.RedisNodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReplicaGroup.RedisNodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RedisNodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

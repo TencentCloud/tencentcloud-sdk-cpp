@@ -38,7 +38,7 @@ CoreInternalOutcome ImageScale::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageScale.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageScale.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ImageScale::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageScale.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageScale.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ImageScale::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageScale.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageScale.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ImageScale::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LongEdge"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageScale.LongEdge` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageScale.LongEdge` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_longEdge = value["LongEdge"].GetUint64();
         m_longEdgeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ImageScale::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShortEdge"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageScale.ShortEdge` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageScale.ShortEdge` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shortEdge = value["ShortEdge"].GetUint64();
         m_shortEdgeHasBeenSet = true;

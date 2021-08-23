@@ -36,7 +36,7 @@ CoreInternalOutcome HotKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HotKeyInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HotKeyInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome HotKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HotKeyInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HotKeyInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome HotKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HotKeyInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HotKeyInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShieldCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.ShieldCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.ShieldCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shieldCode = value["ShieldCode"].GetUint64();
         m_shieldCodeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShieldSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.ShieldSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.ShieldSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shieldSize = value["ShieldSize"].GetUint64();
         m_shieldSizeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShieldMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.ShieldMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.ShieldMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shieldMd5 = string(value["ShieldMd5"].GetString());
         m_shieldMd5HasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.AppUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.AppUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appUrl = string(value["AppUrl"].GetString());
         m_appUrlHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.TaskTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.TaskTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskTime = value["TaskTime"].GetUint64();
         m_taskTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.ItemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.ItemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemId = string(value["ItemId"].GetString());
         m_itemIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceEdition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShieldInfo.ServiceEdition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShieldInfo.ServiceEdition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceEdition = string(value["ServiceEdition"].GetString());
         m_serviceEditionHasBeenSet = true;

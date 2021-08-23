@@ -34,7 +34,7 @@ CoreInternalOutcome UserGroupInfoSearchCriteria::Deserialize(const rapidjson::Va
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserGroupInfoSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserGroupInfoSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;

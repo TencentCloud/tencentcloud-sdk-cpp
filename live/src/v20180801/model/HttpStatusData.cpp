@@ -35,7 +35,7 @@ CoreInternalOutcome HttpStatusData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpStatusData.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusData.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome HttpStatusData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HttpStatusInfoList") && !value["HttpStatusInfoList"].IsNull())
     {
         if (!value["HttpStatusInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusData.HttpStatusInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusData.HttpStatusInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HttpStatusInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -43,13 +43,13 @@ namespace TencentCloud
                 AaClient(const Credential &credential, const std::string &region);
                 AaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ManageMarketingRiskResponse> ManageMarketingRiskOutcome;
+                typedef Outcome<Core::Error, Model::ManageMarketingRiskResponse> ManageMarketingRiskOutcome;
                 typedef std::future<ManageMarketingRiskOutcome> ManageMarketingRiskOutcomeCallable;
                 typedef std::function<void(const AaClient*, const Model::ManageMarketingRiskRequest&, ManageMarketingRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageMarketingRiskAsyncHandler;
-                typedef Outcome<Error, Model::QueryActivityAntiRushResponse> QueryActivityAntiRushOutcome;
+                typedef Outcome<Core::Error, Model::QueryActivityAntiRushResponse> QueryActivityAntiRushOutcome;
                 typedef std::future<QueryActivityAntiRushOutcome> QueryActivityAntiRushOutcomeCallable;
                 typedef std::function<void(const AaClient*, const Model::QueryActivityAntiRushRequest&, QueryActivityAntiRushOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityAntiRushAsyncHandler;
-                typedef Outcome<Error, Model::QueryActivityAntiRushAdvancedResponse> QueryActivityAntiRushAdvancedOutcome;
+                typedef Outcome<Core::Error, Model::QueryActivityAntiRushAdvancedResponse> QueryActivityAntiRushAdvancedOutcome;
                 typedef std::future<QueryActivityAntiRushAdvancedOutcome> QueryActivityAntiRushAdvancedOutcomeCallable;
                 typedef std::function<void(const AaClient*, const Model::QueryActivityAntiRushAdvancedRequest&, QueryActivityAntiRushAdvancedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityAntiRushAdvancedAsyncHandler;
 

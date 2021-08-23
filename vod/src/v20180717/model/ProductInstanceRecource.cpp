@@ -36,7 +36,7 @@ CoreInternalOutcome ProductInstanceRecource::Deserialize(const rapidjson::Value 
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstanceRecource.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstanceRecource.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ProductInstanceRecource::Deserialize(const rapidjson::Value 
     {
         if (!value["Amount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductInstanceRecource.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstanceRecource.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetInt64();
         m_amountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ProductInstanceRecource::Deserialize(const rapidjson::Value 
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductInstanceRecource.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstanceRecource.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome RetentionRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionRule.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionRule.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RetentionRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionRule.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionRule.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;

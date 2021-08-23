@@ -34,7 +34,7 @@ CoreInternalOutcome MigrateDB::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DBName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateDB.DBName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDB.DBName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBName = string(value["DBName"].GetString());
         m_dBNameHasBeenSet = true;

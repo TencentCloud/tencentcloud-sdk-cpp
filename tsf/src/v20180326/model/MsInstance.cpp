@@ -58,7 +58,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.LanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.LanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lanIp = string(value["LanIp"].GetString());
         m_lanIpHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.WanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.WanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanIp = string(value["WanIp"].GetString());
         m_wanIpHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceAvailableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.InstanceAvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.InstanceAvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceAvailableStatus = string(value["InstanceAvailableStatus"].GetString());
         m_instanceAvailableStatusHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceInstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ServiceInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ServiceInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceInstanceStatus = string(value["ServiceInstanceStatus"].GetString());
         m_serviceInstanceStatusHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatus = string(value["InstanceStatus"].GetString());
         m_instanceStatusHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheckUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.HealthCheckUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.HealthCheckUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_healthCheckUrl = string(value["HealthCheckUrl"].GetString());
         m_healthCheckUrlHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationPackageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ApplicationPackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ApplicationPackageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationPackageVersion = string(value["ApplicationPackageVersion"].GetString());
         m_applicationPackageVersionHasBeenSet = true;
@@ -248,7 +248,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -258,7 +258,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.ServiceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.ServiceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceStatus = string(value["ServiceStatus"].GetString());
         m_serviceStatusHasBeenSet = true;
@@ -268,7 +268,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistrationTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.RegistrationTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.RegistrationTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_registrationTime = value["RegistrationTime"].GetInt64();
         m_registrationTimeHasBeenSet = true;
@@ -278,7 +278,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastHeartbeatTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.LastHeartbeatTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.LastHeartbeatTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lastHeartbeatTime = value["LastHeartbeatTime"].GetInt64();
         m_lastHeartbeatTimeHasBeenSet = true;
@@ -288,7 +288,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistrationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.RegistrationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.RegistrationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registrationId = string(value["RegistrationId"].GetString());
         m_registrationIdHasBeenSet = true;
@@ -298,7 +298,7 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HiddenStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsInstance.HiddenStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsInstance.HiddenStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hiddenStatus = string(value["HiddenStatus"].GetString());
         m_hiddenStatusHasBeenSet = true;

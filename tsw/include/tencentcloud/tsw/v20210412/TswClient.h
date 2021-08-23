@@ -43,13 +43,13 @@ namespace TencentCloud
                 TswClient(const Credential &credential, const std::string &region);
                 TswClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeComponentAlertObjectResponse> DescribeComponentAlertObjectOutcome;
+                typedef Outcome<Core::Error, Model::DescribeComponentAlertObjectResponse> DescribeComponentAlertObjectOutcome;
                 typedef std::future<DescribeComponentAlertObjectOutcome> DescribeComponentAlertObjectOutcomeCallable;
                 typedef std::function<void(const TswClient*, const Model::DescribeComponentAlertObjectRequest&, DescribeComponentAlertObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentAlertObjectAsyncHandler;
-                typedef Outcome<Error, Model::DescribeServiceAlertObjectResponse> DescribeServiceAlertObjectOutcome;
+                typedef Outcome<Core::Error, Model::DescribeServiceAlertObjectResponse> DescribeServiceAlertObjectOutcome;
                 typedef std::future<DescribeServiceAlertObjectOutcome> DescribeServiceAlertObjectOutcomeCallable;
                 typedef std::function<void(const TswClient*, const Model::DescribeServiceAlertObjectRequest&, DescribeServiceAlertObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAlertObjectAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTokenResponse> DescribeTokenOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTokenResponse> DescribeTokenOutcome;
                 typedef std::future<DescribeTokenOutcome> DescribeTokenOutcomeCallable;
                 typedef std::function<void(const TswClient*, const Model::DescribeTokenRequest&, DescribeTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenAsyncHandler;
 

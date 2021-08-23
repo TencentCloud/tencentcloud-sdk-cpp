@@ -35,7 +35,7 @@ CoreInternalOutcome CloudStorageTimeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageTimeInfo.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageTimeInfo.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CloudStorageTimeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageTimeInfo.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageTimeInfo.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetUint64();
         m_endTimeHasBeenSet = true;

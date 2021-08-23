@@ -35,7 +35,7 @@ CoreInternalOutcome CosBackup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAutoBackup"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CosBackup.IsAutoBackup` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosBackup.IsAutoBackup` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAutoBackup = value["IsAutoBackup"].GetBool();
         m_isAutoBackupHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CosBackup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosBackup.BackupTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosBackup.BackupTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupTime = string(value["BackupTime"].GetString());
         m_backupTimeHasBeenSet = true;

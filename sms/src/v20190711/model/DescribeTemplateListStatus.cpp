@@ -39,7 +39,7 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Val
     {
         if (!value["TemplateId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTemplateListStatus.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetUint64();
         m_templateIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Val
     {
         if (!value["International"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.International` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTemplateListStatus.International` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_international = value["International"].GetUint64();
         m_internationalHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Val
     {
         if (!value["StatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTemplateListStatus.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetInt64();
         m_statusCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Val
     {
         if (!value["ReviewReply"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.ReviewReply` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTemplateListStatus.ReviewReply` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reviewReply = string(value["ReviewReply"].GetString());
         m_reviewReplyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Val
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTemplateListStatus.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Val
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTemplateListStatus.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;

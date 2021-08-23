@@ -40,7 +40,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Public"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.Public` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.Public` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_public = value["Public"].GetBool();
         m_publicHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["BriefDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.BriefDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.BriefDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_briefDescription = string(value["BriefDescription"].GetString());
         m_briefDescriptionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TcrRepositoryInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepositoryInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepositoryInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

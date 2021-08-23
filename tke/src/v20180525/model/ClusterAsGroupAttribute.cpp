@@ -36,7 +36,7 @@ CoreInternalOutcome ClusterAsGroupAttribute::Deserialize(const rapidjson::Value 
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupAttribute.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupAttribute.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ClusterAsGroupAttribute::Deserialize(const rapidjson::Value 
     {
         if (!value["AutoScalingGroupEnabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupAttribute.AutoScalingGroupEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupAttribute.AutoScalingGroupEnabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupEnabled = value["AutoScalingGroupEnabled"].GetBool();
         m_autoScalingGroupEnabledHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ClusterAsGroupAttribute::Deserialize(const rapidjson::Value 
     {
         if (!value["AutoScalingGroupRange"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupAttribute.AutoScalingGroupRange` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupAttribute.AutoScalingGroupRange` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_autoScalingGroupRange.Deserialize(value["AutoScalingGroupRange"]);

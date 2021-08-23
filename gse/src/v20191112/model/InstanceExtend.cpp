@@ -41,7 +41,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Instance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.Instance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.Instance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instance.Deserialize(value["Instance"]);
@@ -58,7 +58,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthyProcessCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.HealthyProcessCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.HealthyProcessCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthyProcessCnt = value["HealthyProcessCnt"].GetInt64();
         m_healthyProcessCntHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActiveProcessCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.ActiveProcessCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.ActiveProcessCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activeProcessCnt = value["ActiveProcessCnt"].GetInt64();
         m_activeProcessCntHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GameSessionCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.GameSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.GameSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gameSessionCnt = value["GameSessionCnt"].GetInt64();
         m_gameSessionCntHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxGameSessionCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.MaxGameSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.MaxGameSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxGameSessionCnt = value["MaxGameSessionCnt"].GetInt64();
         m_maxGameSessionCntHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayerSessionCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.PlayerSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.PlayerSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_playerSessionCnt = value["PlayerSessionCnt"].GetInt64();
         m_playerSessionCntHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxPlayerSessionCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceExtend.MaxPlayerSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceExtend.MaxPlayerSessionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxPlayerSessionCnt = value["MaxPlayerSessionCnt"].GetInt64();
         m_maxPlayerSessionCntHasBeenSet = true;

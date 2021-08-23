@@ -38,7 +38,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

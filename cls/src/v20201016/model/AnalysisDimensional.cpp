@@ -36,7 +36,7 @@ CoreInternalOutcome AnalysisDimensional::Deserialize(const rapidjson::Value &val
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnalysisDimensional.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnalysisDimensional.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AnalysisDimensional::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnalysisDimensional.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnalysisDimensional.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AnalysisDimensional::Deserialize(const rapidjson::Value &val
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnalysisDimensional.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnalysisDimensional.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;

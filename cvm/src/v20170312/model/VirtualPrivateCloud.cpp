@@ -38,7 +38,7 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const rapidjson::Value &val
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirtualPrivateCloud.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirtualPrivateCloud.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const rapidjson::Value &val
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirtualPrivateCloud.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirtualPrivateCloud.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const rapidjson::Value &val
     {
         if (!value["AsVpcGateway"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VirtualPrivateCloud.AsVpcGateway` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirtualPrivateCloud.AsVpcGateway` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_asVpcGateway = value["AsVpcGateway"].GetBool();
         m_asVpcGatewayHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const rapidjson::Value &val
     if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
     {
         if (!value["PrivateIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `VirtualPrivateCloud.PrivateIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VirtualPrivateCloud.PrivateIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const rapidjson::Value &val
     {
         if (!value["Ipv6AddressCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VirtualPrivateCloud.Ipv6AddressCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirtualPrivateCloud.Ipv6AddressCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6AddressCount = value["Ipv6AddressCount"].GetUint64();
         m_ipv6AddressCountHasBeenSet = true;

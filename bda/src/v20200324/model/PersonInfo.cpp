@@ -36,7 +36,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personName = string(value["PersonName"].GetString());
         m_personNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TraceInfos") && !value["TraceInfos"].IsNull())
     {
         if (!value["TraceInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `PersonInfo.TraceInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.TraceInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TraceInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

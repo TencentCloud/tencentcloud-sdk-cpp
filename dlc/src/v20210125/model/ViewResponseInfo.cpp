@@ -38,7 +38,7 @@ CoreInternalOutcome ViewResponseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ViewBaseInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ViewResponseInfo.ViewBaseInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewResponseInfo.ViewBaseInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_viewBaseInfo.Deserialize(value["ViewBaseInfo"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome ViewResponseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Columns") && !value["Columns"].IsNull())
     {
         if (!value["Columns"].IsArray())
-            return CoreInternalOutcome(Error("response `ViewResponseInfo.Columns` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ViewResponseInfo.Columns` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Columns"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -74,7 +74,7 @@ CoreInternalOutcome ViewResponseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Properties") && !value["Properties"].IsNull())
     {
         if (!value["Properties"].IsArray())
-            return CoreInternalOutcome(Error("response `ViewResponseInfo.Properties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ViewResponseInfo.Properties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome ViewResponseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewResponseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewResponseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ViewResponseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewResponseInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewResponseInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;

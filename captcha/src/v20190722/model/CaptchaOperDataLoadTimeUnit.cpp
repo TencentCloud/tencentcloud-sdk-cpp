@@ -36,7 +36,7 @@ CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const rapidjson::Va
     {
         if (!value["DateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataLoadTimeUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateKey = string(value["DateKey"].GetString());
         m_dateKeyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const rapidjson::Va
     {
         if (!value["MarketLoadTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.MarketLoadTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataLoadTimeUnit.MarketLoadTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_marketLoadTime = value["MarketLoadTime"].GetDouble();
         m_marketLoadTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const rapidjson::Va
     {
         if (!value["AppIdLoadTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataLoadTimeUnit.AppIdLoadTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataLoadTimeUnit.AppIdLoadTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_appIdLoadTime = value["AppIdLoadTime"].GetDouble();
         m_appIdLoadTimeHasBeenSet = true;

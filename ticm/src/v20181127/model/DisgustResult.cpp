@@ -37,7 +37,7 @@ CoreInternalOutcome DisgustResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisgustResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisgustResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DisgustResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisgustResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisgustResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DisgustResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisgustResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisgustResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DisgustResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisgustResult.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisgustResult.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;

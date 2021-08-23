@@ -38,7 +38,7 @@ CoreInternalOutcome AvailableRegion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableRegion.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableRegion.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AvailableRegion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableRegion.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableRegion.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AvailableRegion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableRegion.RegionStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableRegion.RegionStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionStatus = string(value["RegionStatus"].GetString());
         m_regionStatusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AvailableRegion::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Zones") && !value["Zones"].IsNull())
     {
         if (!value["Zones"].IsArray())
-            return CoreInternalOutcome(Error("response `AvailableRegion.Zones` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AvailableRegion.Zones` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Zones"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome AvailableRegion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionCnName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableRegion.RegionCnName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableRegion.RegionCnName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionCnName = string(value["RegionCnName"].GetString());
         m_regionCnNameHasBeenSet = true;

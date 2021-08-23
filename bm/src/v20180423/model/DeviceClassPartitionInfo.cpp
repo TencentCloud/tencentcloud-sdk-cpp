@@ -44,7 +44,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["RaidId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.RaidId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.RaidId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_raidId = value["RaidId"].GetUint64();
         m_raidIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Raid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.Raid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.Raid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_raid = string(value["Raid"].GetString());
         m_raidHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["RaidDisplay"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.RaidDisplay` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.RaidDisplay` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_raidDisplay = string(value["RaidDisplay"].GetString());
         m_raidDisplayHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SystemDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.SystemDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.SystemDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_systemDiskSize = value["SystemDiskSize"].GetUint64();
         m_systemDiskSizeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SysRootSpace"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.SysRootSpace` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.SysRootSpace` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sysRootSpace = value["SysRootSpace"].GetUint64();
         m_sysRootSpaceHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SysSwaporuefiSpace"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.SysSwaporuefiSpace` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.SysSwaporuefiSpace` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sysSwaporuefiSpace = value["SysSwaporuefiSpace"].GetUint64();
         m_sysSwaporuefiSpaceHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SysUsrlocalSpace"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.SysUsrlocalSpace` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.SysUsrlocalSpace` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sysUsrlocalSpace = value["SysUsrlocalSpace"].GetUint64();
         m_sysUsrlocalSpaceHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SysDataSpace"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.SysDataSpace` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.SysDataSpace` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sysDataSpace = value["SysDataSpace"].GetUint64();
         m_sysDataSpaceHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SysIsUefiType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.SysIsUefiType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.SysIsUefiType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sysIsUefiType = value["SysIsUefiType"].GetUint64();
         m_sysIsUefiTypeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     {
         if (!value["DataDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.DataDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.DataDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dataDiskSize = value["DataDiskSize"].GetUint64();
         m_dataDiskSizeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value
     if (value.HasMember("DeviceDiskSizeInfoSet") && !value["DeviceDiskSizeInfoSet"].IsNull())
     {
         if (!value["DeviceDiskSizeInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.DeviceDiskSizeInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceClassPartitionInfo.DeviceDiskSizeInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeviceDiskSizeInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

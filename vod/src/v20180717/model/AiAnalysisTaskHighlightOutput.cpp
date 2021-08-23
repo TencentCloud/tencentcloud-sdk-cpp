@@ -33,7 +33,7 @@ CoreInternalOutcome AiAnalysisTaskHighlightOutput::Deserialize(const rapidjson::
     if (value.HasMember("HighlightSet") && !value["HighlightSet"].IsNull())
     {
         if (!value["HighlightSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiAnalysisTaskHighlightOutput.HighlightSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskHighlightOutput.HighlightSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HighlightSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

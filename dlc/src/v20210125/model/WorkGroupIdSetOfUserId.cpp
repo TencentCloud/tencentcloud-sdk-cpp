@@ -35,7 +35,7 @@ CoreInternalOutcome WorkGroupIdSetOfUserId::Deserialize(const rapidjson::Value &
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupIdSetOfUserId.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupIdSetOfUserId.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome WorkGroupIdSetOfUserId::Deserialize(const rapidjson::Value &
     if (value.HasMember("WorkGroupIds") && !value["WorkGroupIds"].IsNull())
     {
         if (!value["WorkGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkGroupIdSetOfUserId.WorkGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupIdSetOfUserId.WorkGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WorkGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

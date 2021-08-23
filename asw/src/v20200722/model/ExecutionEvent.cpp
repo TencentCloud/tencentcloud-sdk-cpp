@@ -41,7 +41,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecutionResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.ExecutionResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.ExecutionResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_executionResourceName = string(value["ExecutionResourceName"].GetString());
         m_executionResourceNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventCategory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.EventCategory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.EventCategory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventCategory = string(value["EventCategory"].GetString());
         m_eventCategoryHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StepName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.StepName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.StepName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepName = string(value["StepName"].GetString());
         m_stepNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = string(value["Timestamp"].GetString());
         m_timestampHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Exception"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExecutionEvent.Exception` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExecutionEvent.Exception` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exception = string(value["Exception"].GetString());
         m_exceptionHasBeenSet = true;

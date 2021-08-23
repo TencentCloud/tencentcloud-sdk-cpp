@@ -35,7 +35,7 @@ CoreInternalOutcome StorageMountConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VolumeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageMountConf.VolumeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageMountConf.VolumeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_volumeName = string(value["VolumeName"].GetString());
         m_volumeNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StorageMountConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageMountConf.MountPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageMountConf.MountPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPath = string(value["MountPath"].GetString());
         m_mountPathHasBeenSet = true;

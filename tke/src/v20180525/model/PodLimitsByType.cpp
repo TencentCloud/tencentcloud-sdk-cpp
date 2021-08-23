@@ -36,7 +36,7 @@ CoreInternalOutcome PodLimitsByType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TKERouteENINonStaticIP"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsByType.TKERouteENINonStaticIP` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsByType.TKERouteENINonStaticIP` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tKERouteENINonStaticIP = value["TKERouteENINonStaticIP"].GetInt64();
         m_tKERouteENINonStaticIPHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PodLimitsByType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TKERouteENIStaticIP"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsByType.TKERouteENIStaticIP` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsByType.TKERouteENIStaticIP` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tKERouteENIStaticIP = value["TKERouteENIStaticIP"].GetInt64();
         m_tKERouteENIStaticIPHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PodLimitsByType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TKEDirectENI"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PodLimitsByType.TKEDirectENI` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodLimitsByType.TKEDirectENI` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tKEDirectENI = value["TKEDirectENI"].GetInt64();
         m_tKEDirectENIHasBeenSet = true;

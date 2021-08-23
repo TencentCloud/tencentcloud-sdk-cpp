@@ -36,7 +36,7 @@ CoreInternalOutcome NQAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProbeFailedTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NQAInfo.ProbeFailedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NQAInfo.ProbeFailedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_probeFailedTimes = value["ProbeFailedTimes"].GetInt64();
         m_probeFailedTimesHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NQAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Interval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NQAInfo.Interval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NQAInfo.Interval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetInt64();
         m_intervalHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NQAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NQAInfo.DestinationIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NQAInfo.DestinationIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationIp = string(value["DestinationIp"].GetString());
         m_destinationIpHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.LogType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.LogType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logType = string(value["LogType"].GetString());
         m_logTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Condition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.Condition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.Condition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_condition = string(value["Condition"].GetString());
         m_conditionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.TimeRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.TimeRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeRange = string(value["TimeRange"].GetString());
         m_timeRangeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Query"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.Query` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.Query` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_query = string(value["Query"].GetString());
         m_queryHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Flag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.Flag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.Flag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flag = string(value["Flag"].GetString());
         m_flagHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisplayData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.DisplayData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.DisplayData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayData = string(value["DisplayData"].GetString());
         m_displayDataHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SearchTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SearchTemplate.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchTemplate.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;

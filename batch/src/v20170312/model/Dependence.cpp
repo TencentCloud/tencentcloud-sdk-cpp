@@ -35,7 +35,7 @@ CoreInternalOutcome Dependence::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTask"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Dependence.StartTask` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Dependence.StartTask` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTask = string(value["StartTask"].GetString());
         m_startTaskHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Dependence::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTask"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Dependence.EndTask` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Dependence.EndTask` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTask = string(value["EndTask"].GetString());
         m_endTaskHasBeenSet = true;

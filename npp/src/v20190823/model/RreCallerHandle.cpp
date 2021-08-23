@@ -39,7 +39,7 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadPrompt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RreCallerHandle.ReadPrompt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RreCallerHandle.ReadPrompt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readPrompt = string(value["ReadPrompt"].GetString());
         m_readPromptHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InterruptPrompt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RreCallerHandle.InterruptPrompt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RreCallerHandle.InterruptPrompt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_interruptPrompt = string(value["InterruptPrompt"].GetString());
         m_interruptPromptHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KeyList") && !value["KeyList"].IsNull())
     {
         if (!value["KeyList"].IsArray())
-            return CoreInternalOutcome(Error("response `RreCallerHandle.KeyList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RreCallerHandle.KeyList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeyList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepeatTimes"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RreCallerHandle.RepeatTimes` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RreCallerHandle.RepeatTimes` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repeatTimes = string(value["RepeatTimes"].GetString());
         m_repeatTimesHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyPressUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RreCallerHandle.KeyPressUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RreCallerHandle.KeyPressUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyPressUrl = string(value["KeyPressUrl"].GetString());
         m_keyPressUrlHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PromptGender"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RreCallerHandle.PromptGender` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RreCallerHandle.PromptGender` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_promptGender = string(value["PromptGender"].GetString());
         m_promptGenderHasBeenSet = true;

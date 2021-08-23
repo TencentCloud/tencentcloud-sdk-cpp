@@ -46,7 +46,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PackageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.PackageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.PackageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageId = string(value["PackageId"].GetString());
         m_packageIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsAutoRenew"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.IsAutoRenew` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.IsAutoRenew` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAutoRenew = value["IsAutoRenew"].GetBool();
         m_isAutoRenewHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsolatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.IsolatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.IsolatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isolatedTime = string(value["IsolatedTime"].GetString());
         m_isolatedTimeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsAlwaysFree"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.IsAlwaysFree` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.IsAlwaysFree` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAlwaysFree = value["IsAlwaysFree"].GetBool();
         m_isAlwaysFreeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PaymentChannel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.PaymentChannel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.PaymentChannel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paymentChannel = string(value["PaymentChannel"].GetString());
         m_paymentChannelHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OrderInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.OrderInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.OrderInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_orderInfo.Deserialize(value["OrderInfo"]);
@@ -173,7 +173,7 @@ CoreInternalOutcome EnvBillingInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FreeQuota"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvBillingInfoItem.FreeQuota` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvBillingInfoItem.FreeQuota` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_freeQuota = string(value["FreeQuota"].GetString());
         m_freeQuotaHasBeenSet = true;

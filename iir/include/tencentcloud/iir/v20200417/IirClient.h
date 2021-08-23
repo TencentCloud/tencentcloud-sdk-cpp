@@ -39,7 +39,7 @@ namespace TencentCloud
                 IirClient(const Credential &credential, const std::string &region);
                 IirClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::RecognizeProductResponse> RecognizeProductOutcome;
+                typedef Outcome<Core::Error, Model::RecognizeProductResponse> RecognizeProductOutcome;
                 typedef std::future<RecognizeProductOutcome> RecognizeProductOutcomeCallable;
                 typedef std::function<void(const IirClient*, const Model::RecognizeProductRequest&, RecognizeProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeProductAsyncHandler;
 

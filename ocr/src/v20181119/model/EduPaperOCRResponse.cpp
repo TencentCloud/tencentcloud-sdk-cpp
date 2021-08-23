@@ -36,16 +36,16 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,18 +56,18 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("EduPaperInfos") && !rsp["EduPaperInfos"].IsNull())
     {
         if (!rsp["EduPaperInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `EduPaperInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EduPaperInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["EduPaperInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Angle"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Angle` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Angle` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_angle = rsp["Angle"].GetInt64();
         m_angleHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
     if (rsp.HasMember("QuestionBlockInfos") && !rsp["QuestionBlockInfos"].IsNull())
     {
         if (!rsp["QuestionBlockInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `QuestionBlockInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QuestionBlockInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["QuestionBlockInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,16 +38,16 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
     {
         if (!rsp["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(rsp["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
     {
         if (!rsp["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(rsp["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
     {
         if (!rsp["Partitions"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Partitions` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Partitions` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_partitions = rsp["Partitions"].GetUint64();
         m_partitionsHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome CreateTopicResponse::Deserialize(const string &payload)
     {
         if (!rsp["TopicType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TopicType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_topicType = rsp["TopicType"].GetUint64();
         m_topicTypeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome NotificationTarget::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TargetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotificationTarget.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotificationTarget.TargetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetType = string(value["TargetType"].GetString());
         m_targetTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NotificationTarget::Deserialize(const rapidjson::Value &valu
     {
         if (!value["QueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotificationTarget.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotificationTarget.QueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueName = string(value["QueueName"].GetString());
         m_queueNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NotificationTarget::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotificationTarget.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotificationTarget.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome CSV::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeCompress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CSV.CodeCompress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSV.CodeCompress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeCompress = string(value["CodeCompress"].GetString());
         m_codeCompressHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CSV::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CSVSerde"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CSV.CSVSerde` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSV.CSVSerde` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cSVSerde.Deserialize(value["CSVSerde"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome CSV::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadLines"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CSV.HeadLines` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSV.HeadLines` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_headLines = value["HeadLines"].GetInt64();
         m_headLinesHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome CSV::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CSV.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSV.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;

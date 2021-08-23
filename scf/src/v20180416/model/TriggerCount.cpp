@@ -44,7 +44,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cos"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Cos` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Cos` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cos = value["Cos"].GetInt64();
         m_cosHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timer"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Timer` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Timer` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timer = value["Timer"].GetInt64();
         m_timerHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cmq"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Cmq` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Cmq` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cmq = value["Cmq"].GetInt64();
         m_cmqHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ckafka"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Ckafka` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Ckafka` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ckafka = value["Ckafka"].GetInt64();
         m_ckafkaHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Apigw"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Apigw` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Apigw` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_apigw = value["Apigw"].GetInt64();
         m_apigwHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cls"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Cls` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Cls` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cls = value["Cls"].GetInt64();
         m_clsHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Clb"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Clb` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Clb` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_clb = value["Clb"].GetInt64();
         m_clbHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Mps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Mps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mps = value["Mps"].GetInt64();
         m_mpsHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Cm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Cm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cm = value["Cm"].GetInt64();
         m_cmHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerCount.Vod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerCount.Vod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vod = value["Vod"].GetInt64();
         m_vodHasBeenSet = true;

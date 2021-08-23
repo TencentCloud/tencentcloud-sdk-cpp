@@ -56,7 +56,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Category"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Category` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Category` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_category = string(value["Category"].GetString());
         m_categoryHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ErrorCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.ErrorCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.ErrorCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorCount = value["ErrorCount"].GetInt64();
         m_errorCountHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["NameEn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.NameEn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.NameEn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nameEn = string(value["NameEn"].GetString());
         m_nameEnHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["CheckName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.CheckName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.CheckName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checkName = string(value["CheckName"].GetString());
         m_checkNameHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Doc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Doc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Doc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_doc = string(value["Doc"].GetString());
         m_docHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["SafeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.SafeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.SafeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_safeCount = value["SafeCount"].GetInt64();
         m_safeCountHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsPass"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.IsPass` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.IsPass` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isPass = value["IsPass"].GetInt64();
         m_isPassHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["IgnoreCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.IgnoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.IgnoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCount = value["IgnoreCount"].GetInt64();
         m_ignoreCountHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["RiskCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.RiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.RiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_riskCount = value["RiskCount"].GetInt64();
         m_riskCountHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["LastCheckTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.LastCheckTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.LastCheckTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastCheckTime = string(value["LastCheckTime"].GetString());
         m_lastCheckTimeHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["AssetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.AssetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetType = string(value["AssetType"].GetString());
         m_assetTypeHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["ResCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.ResCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.ResCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resCount = value["ResCount"].GetInt64();
         m_resCountHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["UUID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.UUID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.UUID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uUID = string(value["UUID"].GetString());
         m_uUIDHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["StandardItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.StandardItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.StandardItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_standardItem = string(value["StandardItem"].GetString());
         m_standardItemHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Chapter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Chapter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Chapter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chapter = string(value["Chapter"].GetString());
         m_chapterHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["AssetTypeDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.AssetTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.AssetTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetTypeDesc = string(value["AssetTypeDesc"].GetString());
         m_assetTypeDescHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsIgnore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.IsIgnore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.IsIgnore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isIgnore = value["IsIgnore"].GetUint64();
         m_isIgnoreHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["RiskItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.RiskItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.RiskItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_riskItem = string(value["RiskItem"].GetString());
         m_riskItemHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome ComplianceCheckDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComplianceCheckDetail.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComplianceCheckDetail.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;

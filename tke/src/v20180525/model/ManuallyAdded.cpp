@@ -37,7 +37,7 @@ CoreInternalOutcome ManuallyAdded::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Joining"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManuallyAdded.Joining` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManuallyAdded.Joining` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_joining = value["Joining"].GetInt64();
         m_joiningHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ManuallyAdded::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Initializing"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManuallyAdded.Initializing` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManuallyAdded.Initializing` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_initializing = value["Initializing"].GetInt64();
         m_initializingHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ManuallyAdded::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Normal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManuallyAdded.Normal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManuallyAdded.Normal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_normal = value["Normal"].GetInt64();
         m_normalHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ManuallyAdded::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManuallyAdded.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManuallyAdded.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;

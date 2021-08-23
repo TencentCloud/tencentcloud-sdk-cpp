@@ -39,7 +39,7 @@ CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeywordScore.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeywordScore.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeywordScore.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = value["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronCompletion"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeywordScore.PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronCompletion = value["PronCompletion"].GetDouble();
         m_pronCompletionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Words") && !value["Words"].IsNull())
     {
         if (!value["Words"].IsArray())
-            return CoreInternalOutcome(Error("response `KeywordScore.Words` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KeywordScore.Words` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Words"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuggestedScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeywordScore.SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeywordScore.SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_suggestedScore = value["SuggestedScore"].GetDouble();
         m_suggestedScoreHasBeenSet = true;

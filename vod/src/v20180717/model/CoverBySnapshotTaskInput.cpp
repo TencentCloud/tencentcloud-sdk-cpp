@@ -37,7 +37,7 @@ CoreInternalOutcome CoverBySnapshotTaskInput::Deserialize(const rapidjson::Value
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverBySnapshotTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CoverBySnapshotTaskInput::Deserialize(const rapidjson::Value
     {
         if (!value["PositionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskInput.PositionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverBySnapshotTaskInput.PositionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_positionType = string(value["PositionType"].GetString());
         m_positionTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CoverBySnapshotTaskInput::Deserialize(const rapidjson::Value
     {
         if (!value["PositionValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskInput.PositionValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverBySnapshotTaskInput.PositionValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_positionValue = value["PositionValue"].GetDouble();
         m_positionValueHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CoverBySnapshotTaskInput::Deserialize(const rapidjson::Value
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CoverBySnapshotTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

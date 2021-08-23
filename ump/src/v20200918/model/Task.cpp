@@ -38,7 +38,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.GroupCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.GroupCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupCode = string(value["GroupCode"].GetString());
         m_groupCodeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MallId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.MallId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.MallId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mallId = value["MallId"].GetUint64();
         m_mallIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskContent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskContent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskContent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskContent.Deserialize(value["TaskContent"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = value["TaskType"].GetInt64();
         m_taskTypeHasBeenSet = true;

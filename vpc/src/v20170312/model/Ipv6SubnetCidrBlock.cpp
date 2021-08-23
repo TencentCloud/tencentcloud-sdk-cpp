@@ -35,7 +35,7 @@ CoreInternalOutcome Ipv6SubnetCidrBlock::Deserialize(const rapidjson::Value &val
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ipv6SubnetCidrBlock.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6SubnetCidrBlock.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Ipv6SubnetCidrBlock::Deserialize(const rapidjson::Value &val
     {
         if (!value["Ipv6CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ipv6SubnetCidrBlock.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6SubnetCidrBlock.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
         m_ipv6CidrBlockHasBeenSet = true;

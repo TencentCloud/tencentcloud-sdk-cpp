@@ -41,7 +41,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.RunMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.RunMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runMode = value["RunMode"].GetInt64();
         m_runModeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpectTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.ExpectTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.ExpectTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expectTime = string(value["ExpectTime"].GetString());
         m_expectTimeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrateType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.MigrateType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.MigrateType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_migrateType = value["MigrateType"].GetInt64();
         m_migrateTypeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrateObject"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.MigrateObject` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.MigrateObject` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_migrateObject = value["MigrateObject"].GetInt64();
         m_migrateObjectHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsistencyType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.ConsistencyType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.ConsistencyType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_consistencyType = value["ConsistencyType"].GetInt64();
         m_consistencyTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsOverrideRoot"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.IsOverrideRoot` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.IsOverrideRoot` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isOverrideRoot = value["IsOverrideRoot"].GetInt64();
         m_isOverrideRootHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternParams"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.ExternParams` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.ExternParams` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externParams = string(value["ExternParams"].GetString());
         m_externParamsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsistencyParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MigrateOption.ConsistencyParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.ConsistencyParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_consistencyParams.Deserialize(value["ConsistencyParams"]);

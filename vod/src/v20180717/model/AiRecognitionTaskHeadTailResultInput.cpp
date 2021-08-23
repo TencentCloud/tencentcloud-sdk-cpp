@@ -34,7 +34,7 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultInput::Deserialize(const rapi
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskHeadTailResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;

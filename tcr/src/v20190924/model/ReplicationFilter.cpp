@@ -35,7 +35,7 @@ CoreInternalOutcome ReplicationFilter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ReplicationFilter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationFilter.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationFilter.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

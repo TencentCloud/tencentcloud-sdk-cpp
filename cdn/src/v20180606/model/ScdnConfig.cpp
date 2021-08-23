@@ -35,7 +35,7 @@ CoreInternalOutcome ScdnConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ScdnConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnConfig.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnConfig.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

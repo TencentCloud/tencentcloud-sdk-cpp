@@ -36,7 +36,7 @@ CoreInternalOutcome BatchStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BatchStatus.LogId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchStatus.LogId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_logId = value["LogId"].GetUint64();
         m_logIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BatchStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BatchStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BatchAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchStatus.BatchAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchStatus.BatchAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchAction = string(value["BatchAction"].GetString());
         m_batchActionHasBeenSet = true;

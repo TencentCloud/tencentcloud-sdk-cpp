@@ -36,7 +36,7 @@ CoreInternalOutcome MessageBody::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MessageBody.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MessageBody.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetInt64();
         m_timestampHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MessageBody::Deserialize(const rapidjson::Value &value)
     {
         if (!value["From"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MessageBody.From` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MessageBody.From` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_from = string(value["From"].GetString());
         m_fromHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MessageBody::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Messages") && !value["Messages"].IsNull())
     {
         if (!value["Messages"].IsArray())
-            return CoreInternalOutcome(Error("response `MessageBody.Messages` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MessageBody.Messages` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Messages"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

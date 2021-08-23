@@ -43,7 +43,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FunctionsCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.FunctionsCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.FunctionsCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_functionsCount = value["FunctionsCount"].GetInt64();
         m_functionsCountHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Trigger"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.Trigger` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.Trigger` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_trigger.Deserialize(value["Trigger"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConcurrentExecutions"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.ConcurrentExecutions` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.ConcurrentExecutions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_concurrentExecutions = value["ConcurrentExecutions"].GetInt64();
         m_concurrentExecutionsHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeoutLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.TimeoutLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.TimeoutLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeoutLimit = value["TimeoutLimit"].GetInt64();
         m_timeoutLimitHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TestModelLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.TestModelLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.TestModelLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_testModelLimit = value["TestModelLimit"].GetInt64();
         m_testModelLimitHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InitTimeoutLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.InitTimeoutLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.InitTimeoutLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_initTimeoutLimit = value["InitTimeoutLimit"].GetInt64();
         m_initTimeoutLimitHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetryNumLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.RetryNumLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.RetryNumLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retryNumLimit = value["RetryNumLimit"].GetInt64();
         m_retryNumLimitHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinMsgTTL"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.MinMsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.MinMsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minMsgTTL = value["MinMsgTTL"].GetInt64();
         m_minMsgTTLHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxMsgTTL"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceLimit.MaxMsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceLimit.MaxMsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxMsgTTL = value["MaxMsgTTL"].GetInt64();
         m_maxMsgTTLHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome NetworkLastInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkLastInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkLastInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome NetworkLastInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Infos") && !value["Infos"].IsNull())
     {
         if (!value["Infos"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkLastInfo.Infos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkLastInfo.Infos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Infos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

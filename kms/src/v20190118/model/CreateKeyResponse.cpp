@@ -41,16 +41,16 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(rsp["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(rsp["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = rsp["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["KeyState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyState = string(rsp["KeyState"].GetString());
         m_keyStateHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["KeyUsage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyUsage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyUsage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyUsage = string(rsp["KeyUsage"].GetString());
         m_keyUsageHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["TagCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TagCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tagCode = rsp["TagCode"].GetUint64();
         m_tagCodeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
     {
         if (!rsp["TagMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagMsg = string(rsp["TagMsg"].GetString());
         m_tagMsgHasBeenSet = true;

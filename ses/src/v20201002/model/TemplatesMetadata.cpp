@@ -38,7 +38,7 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreatedTimestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TemplatesMetadata.CreatedTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplatesMetadata.CreatedTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createdTimestamp = value["CreatedTimestamp"].GetUint64();
         m_createdTimestampHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const rapidjson::Value &value
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplatesMetadata.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplatesMetadata.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const rapidjson::Value &value
     {
         if (!value["TemplateStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplatesMetadata.TemplateStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplatesMetadata.TemplateStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateStatus = value["TemplateStatus"].GetInt64();
         m_templateStatusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const rapidjson::Value &value
     {
         if (!value["TemplateID"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TemplatesMetadata.TemplateID` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplatesMetadata.TemplateID` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_templateID = value["TemplateID"].GetUint64();
         m_templateIDHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const rapidjson::Value &value
     {
         if (!value["ReviewReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplatesMetadata.ReviewReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplatesMetadata.ReviewReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reviewReason = string(value["ReviewReason"].GetString());
         m_reviewReasonHasBeenSet = true;

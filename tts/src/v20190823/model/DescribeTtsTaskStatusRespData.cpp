@@ -38,7 +38,7 @@ CoreInternalOutcome DescribeTtsTaskStatusRespData::Deserialize(const rapidjson::
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeTtsTaskStatusRespData.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTtsTaskStatusRespData.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DescribeTtsTaskStatusRespData::Deserialize(const rapidjson::
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeTtsTaskStatusRespData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTtsTaskStatusRespData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DescribeTtsTaskStatusRespData::Deserialize(const rapidjson::
     {
         if (!value["StatusStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeTtsTaskStatusRespData.StatusStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTtsTaskStatusRespData.StatusStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusStr = string(value["StatusStr"].GetString());
         m_statusStrHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeTtsTaskStatusRespData::Deserialize(const rapidjson::
     {
         if (!value["ResultUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeTtsTaskStatusRespData.ResultUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTtsTaskStatusRespData.ResultUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultUrl = string(value["ResultUrl"].GetString());
         m_resultUrlHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeTtsTaskStatusRespData::Deserialize(const rapidjson::
     {
         if (!value["ErrorMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeTtsTaskStatusRespData.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeTtsTaskStatusRespData.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMsg = string(value["ErrorMsg"].GetString());
         m_errorMsgHasBeenSet = true;

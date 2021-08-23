@@ -35,7 +35,7 @@ CoreInternalOutcome GameServerSessionQueueDestination::Deserialize(const rapidjs
     {
         if (!value["DestinationArn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionQueueDestination.DestinationArn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueueDestination.DestinationArn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationArn = string(value["DestinationArn"].GetString());
         m_destinationArnHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GameServerSessionQueueDestination::Deserialize(const rapidjs
     {
         if (!value["FleetStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionQueueDestination.FleetStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueueDestination.FleetStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetStatus = string(value["FleetStatus"].GetString());
         m_fleetStatusHasBeenSet = true;

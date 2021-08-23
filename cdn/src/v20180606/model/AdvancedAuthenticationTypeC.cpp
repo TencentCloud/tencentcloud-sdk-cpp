@@ -35,7 +35,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeC::Deserialize(const rapidjson::Va
     {
         if (!value["AccessKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeC.AccessKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeC.AccessKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessKey = string(value["AccessKey"].GetString());
         m_accessKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeC::Deserialize(const rapidjson::Va
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeC.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeC.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;

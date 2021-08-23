@@ -38,7 +38,7 @@ CoreInternalOutcome PrometheusGrafanaInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PrometheusGrafanaInfo.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusGrafanaInfo.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PrometheusGrafanaInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusGrafanaInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusGrafanaInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PrometheusGrafanaInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusGrafanaInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusGrafanaInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PrometheusGrafanaInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Internet"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusGrafanaInfo.Internet` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusGrafanaInfo.Internet` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internet = string(value["Internet"].GetString());
         m_internetHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PrometheusGrafanaInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["AdminUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusGrafanaInfo.AdminUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusGrafanaInfo.AdminUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adminUser = string(value["AdminUser"].GetString());
         m_adminUserHasBeenSet = true;

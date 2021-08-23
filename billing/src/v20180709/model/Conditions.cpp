@@ -52,7 +52,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeRange"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Conditions.TimeRange` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.TimeRange` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeRange = value["TimeRange"].GetUint64();
         m_timeRangeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BusinessCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Conditions.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCode = string(value["BusinessCode"].GetString());
         m_businessCodeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Conditions.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Conditions.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Conditions.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceKeyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Conditions.ResourceKeyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.ResourceKeyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceKeyword = string(value["ResourceKeyword"].GetString());
         m_resourceKeywordHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BusinessCodes") && !value["BusinessCodes"].IsNull())
     {
         if (!value["BusinessCodes"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.BusinessCodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.BusinessCodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BusinessCodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProductCodes") && !value["ProductCodes"].IsNull())
     {
         if (!value["ProductCodes"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.ProductCodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.ProductCodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProductCodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RegionIds") && !value["RegionIds"].IsNull())
     {
         if (!value["RegionIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.RegionIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.RegionIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RegionIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProjectIds") && !value["ProjectIds"].IsNull())
     {
         if (!value["ProjectIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.ProjectIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.ProjectIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProjectIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -163,7 +163,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PayModes") && !value["PayModes"].IsNull())
     {
         if (!value["PayModes"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.PayModes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.PayModes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PayModes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -176,7 +176,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ActionTypes") && !value["ActionTypes"].IsNull())
     {
         if (!value["ActionTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.ActionTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.ActionTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ActionTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -190,7 +190,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HideFreeCost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Conditions.HideFreeCost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.HideFreeCost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hideFreeCost = value["HideFreeCost"].GetInt64();
         m_hideFreeCostHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderByCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Conditions.OrderByCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Conditions.OrderByCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderByCost = string(value["OrderByCost"].GetString());
         m_orderByCostHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BillIds") && !value["BillIds"].IsNull())
     {
         if (!value["BillIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.BillIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.BillIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BillIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -222,7 +222,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ComponentCodes") && !value["ComponentCodes"].IsNull())
     {
         if (!value["ComponentCodes"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.ComponentCodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.ComponentCodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ComponentCodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -235,7 +235,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileIds") && !value["FileIds"].IsNull())
     {
         if (!value["FileIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.FileIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.FileIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -248,7 +248,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileTypes") && !value["FileTypes"].IsNull())
     {
         if (!value["FileTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.FileTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.FileTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -261,7 +261,7 @@ CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
         if (!value["Status"].IsArray())
-            return CoreInternalOutcome(Error("response `Conditions.Status` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Conditions.Status` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Status"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

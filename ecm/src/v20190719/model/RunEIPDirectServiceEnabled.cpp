@@ -34,7 +34,7 @@ CoreInternalOutcome RunEIPDirectServiceEnabled::Deserialize(const rapidjson::Val
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RunEIPDirectServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunEIPDirectServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;

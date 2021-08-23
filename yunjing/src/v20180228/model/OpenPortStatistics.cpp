@@ -35,7 +35,7 @@ CoreInternalOutcome OpenPortStatistics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OpenPortStatistics.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPortStatistics.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OpenPortStatistics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OpenPortStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPortStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineNum = value["MachineNum"].GetUint64();
         m_machineNumHasBeenSet = true;

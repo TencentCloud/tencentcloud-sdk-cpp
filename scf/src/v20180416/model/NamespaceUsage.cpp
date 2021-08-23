@@ -35,7 +35,7 @@ CoreInternalOutcome NamespaceUsage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Functions") && !value["Functions"].IsNull())
     {
         if (!value["Functions"].IsArray())
-            return CoreInternalOutcome(Error("response `NamespaceUsage.Functions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamespaceUsage.Functions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Functions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome NamespaceUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamespaceUsage.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceUsage.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome NamespaceUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FunctionsCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespaceUsage.FunctionsCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceUsage.FunctionsCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_functionsCount = value["FunctionsCount"].GetInt64();
         m_functionsCountHasBeenSet = true;

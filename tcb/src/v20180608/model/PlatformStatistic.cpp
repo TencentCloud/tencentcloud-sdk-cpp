@@ -36,7 +36,7 @@ CoreInternalOutcome PlatformStatistic::Deserialize(const rapidjson::Value &value
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformStatistic.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformStatistic.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PlatformStatistic::Deserialize(const rapidjson::Value &value
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlatformStatistic.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformStatistic.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PlatformStatistic::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformStatistic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformStatistic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

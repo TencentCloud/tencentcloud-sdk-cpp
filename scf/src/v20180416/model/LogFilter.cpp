@@ -34,7 +34,7 @@ CoreInternalOutcome LogFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogFilter.RetCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogFilter.RetCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_retCode = string(value["RetCode"].GetString());
         m_retCodeHasBeenSet = true;

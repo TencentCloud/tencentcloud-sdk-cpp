@@ -34,7 +34,7 @@ CoreInternalOutcome WechatMiniProgramPublishTaskInput::Deserialize(const rapidjs
     {
         if (!value["SourceDefinition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTaskInput.SourceDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTaskInput.SourceDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceDefinition = value["SourceDefinition"].GetUint64();
         m_sourceDefinitionHasBeenSet = true;

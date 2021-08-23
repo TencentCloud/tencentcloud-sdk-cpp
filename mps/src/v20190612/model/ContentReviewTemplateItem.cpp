@@ -43,7 +43,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["PornConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.PornConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.PornConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornConfigure.Deserialize(value["PornConfigure"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["TerrorismConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.TerrorismConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.TerrorismConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_terrorismConfigure.Deserialize(value["TerrorismConfigure"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["PoliticalConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.PoliticalConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.PoliticalConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalConfigure.Deserialize(value["PoliticalConfigure"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["ProhibitedConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.ProhibitedConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.ProhibitedConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_prohibitedConfigure.Deserialize(value["ProhibitedConfigure"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["UserDefineConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.UserDefineConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.UserDefineConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_userDefineConfigure.Deserialize(value["UserDefineConfigure"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

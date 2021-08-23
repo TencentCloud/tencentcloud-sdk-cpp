@@ -39,7 +39,7 @@ CoreInternalOutcome InstanceBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceBasicInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceBasicInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome InstanceBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceBasicInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceBasicInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome InstanceBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceBasicInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceBasicInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome InstanceBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceBasicInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceBasicInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome InstanceBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Product"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceBasicInfo.Product` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceBasicInfo.Product` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_product = string(value["Product"].GetString());
         m_productHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome InstanceBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EngineVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceBasicInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceBasicInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineVersion = string(value["EngineVersion"].GetString());
         m_engineVersionHasBeenSet = true;

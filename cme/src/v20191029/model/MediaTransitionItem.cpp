@@ -35,7 +35,7 @@ CoreInternalOutcome MediaTransitionItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["TransitionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTransitionItem.TransitionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTransitionItem.TransitionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transitionId = string(value["TransitionId"].GetString());
         m_transitionIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaTransitionItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaTransitionItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTransitionItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;

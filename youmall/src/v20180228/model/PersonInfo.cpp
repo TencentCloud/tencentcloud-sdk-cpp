@@ -42,7 +42,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_personId = value["PersonId"].GetUint64();
         m_personIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonPicture"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonPicture` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonPicture` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personPicture = string(value["PersonPicture"].GetString());
         m_personPictureHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Age"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetInt64();
         m_ageHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personType = value["PersonType"].GetInt64();
         m_personTypeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonPictureUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonPictureUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonPictureUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personPictureUrl = string(value["PersonPictureUrl"].GetString());
         m_personPictureUrlHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonSubType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.PersonSubType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.PersonSubType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personSubType = value["PersonSubType"].GetInt64();
         m_personSubTypeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VisitTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.VisitTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.VisitTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_visitTimes = value["VisitTimes"].GetInt64();
         m_visitTimesHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VisitDays"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo.VisitDays` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.VisitDays` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_visitDays = value["VisitDays"].GetInt64();
         m_visitDaysHasBeenSet = true;

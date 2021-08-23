@@ -38,7 +38,7 @@ CoreInternalOutcome DomainLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DomainLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DomainLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainLog.LogPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainLog.LogPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logPath = string(value["LogPath"].GetString());
         m_logPathHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DomainLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainLog.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainLog.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DomainLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainLog.LogName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainLog.LogName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logName = string(value["LogName"].GetString());
         m_logNameHasBeenSet = true;

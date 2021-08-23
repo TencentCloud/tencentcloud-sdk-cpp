@@ -35,7 +35,7 @@ CoreInternalOutcome ResponseHeader::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseHeader.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseHeader.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ResponseHeader::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HeaderRules") && !value["HeaderRules"].IsNull())
     {
         if (!value["HeaderRules"].IsArray())
-            return CoreInternalOutcome(Error("response `ResponseHeader.HeaderRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResponseHeader.HeaderRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HeaderRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

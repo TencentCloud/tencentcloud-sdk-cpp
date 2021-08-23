@@ -34,7 +34,7 @@ CoreInternalOutcome CreateTtsTaskRespData::Deserialize(const rapidjson::Value &v
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTtsTaskRespData.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTtsTaskRespData.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;

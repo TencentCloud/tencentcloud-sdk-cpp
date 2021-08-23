@@ -37,7 +37,7 @@ CoreInternalOutcome RuleTargets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleTargets.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleTargets.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RuleTargets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleTargets.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleTargets.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RuleTargets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleTargets.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleTargets.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome RuleTargets::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleTargets.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleTargets.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

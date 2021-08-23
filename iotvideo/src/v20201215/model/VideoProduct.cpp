@@ -44,7 +44,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.DeviceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.DeviceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = value["DeviceType"].GetUint64();
         m_deviceTypeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EncryptionType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.EncryptionType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.EncryptionType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_encryptionType = value["EncryptionType"].GetUint64();
         m_encryptionTypeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Features") && !value["Features"].IsNull())
     {
         if (!value["Features"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoProduct.Features` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.Features` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Features"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -97,7 +97,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChipOs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.ChipOs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ChipOs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chipOs = string(value["ChipOs"].GetString());
         m_chipOsHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChipManufactureId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.ChipManufactureId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ChipManufactureId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chipManufactureId = string(value["ChipManufactureId"].GetString());
         m_chipManufactureIdHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChipId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.ChipId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ChipId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chipId = string(value["ChipId"].GetString());
         m_chipIdHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productDescription = string(value["ProductDescription"].GetString());
         m_productDescriptionHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VideoProduct.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;

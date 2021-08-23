@@ -45,7 +45,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FundSummaryAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.FundSummaryAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.FundSummaryAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fundSummaryAcctNo = string(value["FundSummaryAcctNo"].GetString());
         m_fundSummaryAcctNoHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctNo = string(value["SubAcctNo"].GetString());
         m_subAcctNoHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranNetMemberCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranNetMemberCode = string(value["TranNetMemberCode"].GetString());
         m_tranNetMemberCodeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.MemberName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.MemberName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memberName = string(value["MemberName"].GetString());
         m_memberNameHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberGlobalType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.MemberGlobalType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.MemberGlobalType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memberGlobalType = string(value["MemberGlobalType"].GetString());
         m_memberGlobalTypeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberGlobalId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.MemberGlobalId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.MemberGlobalId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memberGlobalId = string(value["MemberGlobalId"].GetString());
         m_memberGlobalIdHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.MemberAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.MemberAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memberAcctNo = string(value["MemberAcctNo"].GetString());
         m_memberAcctNoHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BankType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.BankType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.BankType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankType = string(value["BankType"].GetString());
         m_bankTypeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcctOpenBranchName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.AcctOpenBranchName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.AcctOpenBranchName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acctOpenBranchName = string(value["AcctOpenBranchName"].GetString());
         m_acctOpenBranchNameHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CnapsBranchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.CnapsBranchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.CnapsBranchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnapsBranchId = string(value["CnapsBranchId"].GetString());
         m_cnapsBranchIdHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EiconBankBranchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.EiconBankBranchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.EiconBankBranchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eiconBankBranchId = string(value["EiconBankBranchId"].GetString());
         m_eiconBankBranchIdHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome TranItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mobile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranItem.Mobile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranItem.Mobile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobile = string(value["Mobile"].GetString());
         m_mobileHasBeenSet = true;

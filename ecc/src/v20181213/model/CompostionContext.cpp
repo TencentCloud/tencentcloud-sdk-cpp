@@ -37,7 +37,7 @@ CoreInternalOutcome CompostionContext::Deserialize(const rapidjson::Value &value
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompostionContext.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompostionContext.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CompostionContext::Deserialize(const rapidjson::Value &value
     {
         if (!value["CorrectData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CompostionContext.CorrectData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompostionContext.CorrectData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_correctData.Deserialize(value["CorrectData"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome CompostionContext::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompostionContext.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompostionContext.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome CompostionContext::Deserialize(const rapidjson::Value &value
     {
         if (!value["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompostionContext.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompostionContext.SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(value["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;

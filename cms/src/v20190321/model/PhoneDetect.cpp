@@ -37,7 +37,7 @@ CoreInternalOutcome PhoneDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PhoneDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PhoneDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HitFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PhoneDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = value["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PhoneDetect::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `PhoneDetect.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PhoneDetect.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome PhoneDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PhoneDetect.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneDetect.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;

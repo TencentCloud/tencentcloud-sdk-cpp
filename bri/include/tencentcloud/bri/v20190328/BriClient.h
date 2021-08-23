@@ -39,7 +39,7 @@ namespace TencentCloud
                 BriClient(const Credential &credential, const std::string &region);
                 BriClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeBRIResponse> DescribeBRIOutcome;
+                typedef Outcome<Core::Error, Model::DescribeBRIResponse> DescribeBRIOutcome;
                 typedef std::future<DescribeBRIOutcome> DescribeBRIOutcomeCallable;
                 typedef std::function<void(const BriClient*, const Model::DescribeBRIRequest&, DescribeBRIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBRIAsyncHandler;
 

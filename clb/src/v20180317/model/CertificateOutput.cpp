@@ -36,7 +36,7 @@ CoreInternalOutcome CertificateOutput::Deserialize(const rapidjson::Value &value
     {
         if (!value["SSLMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateOutput.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateOutput.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSLMode = string(value["SSLMode"].GetString());
         m_sSLModeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CertificateOutput::Deserialize(const rapidjson::Value &value
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateOutput.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateOutput.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CertificateOutput::Deserialize(const rapidjson::Value &value
     {
         if (!value["CertCaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateOutput.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateOutput.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaId = string(value["CertCaId"].GetString());
         m_certCaIdHasBeenSet = true;

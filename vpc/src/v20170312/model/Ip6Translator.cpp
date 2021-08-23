@@ -41,7 +41,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip6TranslatorId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.Ip6TranslatorId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.Ip6TranslatorId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip6TranslatorId = string(value["Ip6TranslatorId"].GetString());
         m_ip6TranslatorIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip6TranslatorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.Ip6TranslatorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.Ip6TranslatorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip6TranslatorName = string(value["Ip6TranslatorName"].GetString());
         m_ip6TranslatorNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip6"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.Vip6` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.Vip6` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip6 = string(value["Vip6"].GetString());
         m_vip6HasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranslatorStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.TranslatorStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.TranslatorStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_translatorStatus = string(value["TranslatorStatus"].GetString());
         m_translatorStatusHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip6RuleCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Ip6Translator.Ip6RuleCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.Ip6RuleCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ip6RuleCount = value["Ip6RuleCount"].GetInt64();
         m_ip6RuleCountHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IP6RuleSet") && !value["IP6RuleSet"].IsNull())
     {
         if (!value["IP6RuleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Ip6Translator.IP6RuleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Ip6Translator.IP6RuleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IP6RuleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

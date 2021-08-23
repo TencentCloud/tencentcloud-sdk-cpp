@@ -40,7 +40,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Serial"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CarTagItem.Serial` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Serial` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serial = string(value["Serial"].GetString());
         m_serialHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Brand"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CarTagItem.Brand` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Brand` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_brand = string(value["Brand"].GetString());
         m_brandHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CarTagItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Color"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CarTagItem.Color` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Color` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_color = string(value["Color"].GetString());
         m_colorHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CarTagItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Year"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CarTagItem.Year` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Year` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_year = value["Year"].GetInt64();
         m_yearHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CarLocation") && !value["CarLocation"].IsNull())
     {
         if (!value["CarLocation"].IsArray())
-            return CoreInternalOutcome(Error("response `CarTagItem.CarLocation` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.CarLocation` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CarLocation"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

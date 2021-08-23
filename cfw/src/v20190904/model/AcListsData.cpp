@@ -43,7 +43,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.SourceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.SourceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceIp = string(value["SourceIp"].GetString());
         m_sourceIpHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.TargetIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.TargetIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetIp = string(value["TargetIp"].GetString());
         m_targetIpHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Strategy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.Strategy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.Strategy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = value["Strategy"].GetUint64();
         m_strategyHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AcListsData.LogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AcListsData.LogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logId = string(value["LogId"].GetString());
         m_logIdHasBeenSet = true;

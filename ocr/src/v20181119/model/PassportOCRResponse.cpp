@@ -48,16 +48,16 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -68,11 +68,11 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -80,7 +80,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Country"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Country` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Country` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_country = string(rsp["Country"].GetString());
         m_countryHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["PassportNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PassportNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PassportNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_passportNo = string(rsp["PassportNo"].GetString());
         m_passportNoHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Nationality"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationality = string(rsp["Nationality"].GetString());
         m_nationalityHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["BirthDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BirthDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BirthDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthDate = string(rsp["BirthDate"].GetString());
         m_birthDateHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["BirthPlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthPlace = string(rsp["BirthPlace"].GetString());
         m_birthPlaceHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["IssueDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueDate = string(rsp["IssueDate"].GetString());
         m_issueDateHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["IssuePlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssuePlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssuePlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuePlace = string(rsp["IssuePlace"].GetString());
         m_issuePlaceHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ExpiryDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExpiryDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpiryDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiryDate = string(rsp["ExpiryDate"].GetString());
         m_expiryDateHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Signature"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Signature` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Signature` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signature = string(rsp["Signature"].GetString());
         m_signatureHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeSet"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSet` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSet` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeSet = string(rsp["CodeSet"].GetString());
         m_codeSetHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeCrc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeCrc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeCrc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeCrc = string(rsp["CodeCrc"].GetString());
         m_codeCrcHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["FamilyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FamilyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FamilyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_familyName = string(rsp["FamilyName"].GetString());
         m_familyNameHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome PassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["FirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstName = string(rsp["FirstName"].GetString());
         m_firstNameHasBeenSet = true;

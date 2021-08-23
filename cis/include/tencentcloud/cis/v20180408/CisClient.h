@@ -51,25 +51,25 @@ namespace TencentCloud
                 CisClient(const Credential &credential, const std::string &region);
                 CisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateContainerInstanceResponse> CreateContainerInstanceOutcome;
+                typedef Outcome<Core::Error, Model::CreateContainerInstanceResponse> CreateContainerInstanceOutcome;
                 typedef std::future<CreateContainerInstanceOutcome> CreateContainerInstanceOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::CreateContainerInstanceRequest&, CreateContainerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContainerInstanceAsyncHandler;
-                typedef Outcome<Error, Model::DeleteContainerInstanceResponse> DeleteContainerInstanceOutcome;
+                typedef Outcome<Core::Error, Model::DeleteContainerInstanceResponse> DeleteContainerInstanceOutcome;
                 typedef std::future<DeleteContainerInstanceOutcome> DeleteContainerInstanceOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::DeleteContainerInstanceRequest&, DeleteContainerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContainerInstanceAsyncHandler;
-                typedef Outcome<Error, Model::DescribeContainerInstanceResponse> DescribeContainerInstanceOutcome;
+                typedef Outcome<Core::Error, Model::DescribeContainerInstanceResponse> DescribeContainerInstanceOutcome;
                 typedef std::future<DescribeContainerInstanceOutcome> DescribeContainerInstanceOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::DescribeContainerInstanceRequest&, DescribeContainerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerInstanceAsyncHandler;
-                typedef Outcome<Error, Model::DescribeContainerInstanceEventsResponse> DescribeContainerInstanceEventsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeContainerInstanceEventsResponse> DescribeContainerInstanceEventsOutcome;
                 typedef std::future<DescribeContainerInstanceEventsOutcome> DescribeContainerInstanceEventsOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::DescribeContainerInstanceEventsRequest&, DescribeContainerInstanceEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerInstanceEventsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeContainerInstancesResponse> DescribeContainerInstancesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeContainerInstancesResponse> DescribeContainerInstancesOutcome;
                 typedef std::future<DescribeContainerInstancesOutcome> DescribeContainerInstancesOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::DescribeContainerInstancesRequest&, DescribeContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerInstancesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeContainerLogResponse> DescribeContainerLogOutcome;
+                typedef Outcome<Core::Error, Model::DescribeContainerLogResponse> DescribeContainerLogOutcome;
                 typedef std::future<DescribeContainerLogOutcome> DescribeContainerLogOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::DescribeContainerLogRequest&, DescribeContainerLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerLogAsyncHandler;
-                typedef Outcome<Error, Model::InquiryPriceCreateCisResponse> InquiryPriceCreateCisOutcome;
+                typedef Outcome<Core::Error, Model::InquiryPriceCreateCisResponse> InquiryPriceCreateCisOutcome;
                 typedef std::future<InquiryPriceCreateCisOutcome> InquiryPriceCreateCisOutcomeCallable;
                 typedef std::function<void(const CisClient*, const Model::InquiryPriceCreateCisRequest&, InquiryPriceCreateCisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateCisAsyncHandler;
 

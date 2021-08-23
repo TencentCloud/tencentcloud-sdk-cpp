@@ -37,7 +37,7 @@ CoreInternalOutcome LinkMaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterialInfo.BasicInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterialInfo.BasicInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_basicInfo.Deserialize(value["BasicInfo"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome LinkMaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterialInfo.VideoMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterialInfo.VideoMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoMaterial.Deserialize(value["VideoMaterial"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome LinkMaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterialInfo.AudioMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterialInfo.AudioMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioMaterial.Deserialize(value["AudioMaterial"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome LinkMaterialInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageMaterial"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterialInfo.ImageMaterial` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterialInfo.ImageMaterial` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageMaterial.Deserialize(value["ImageMaterial"]);

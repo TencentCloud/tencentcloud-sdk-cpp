@@ -35,7 +35,7 @@ CoreInternalOutcome AllMuteSlice::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MuteSlice") && !value["MuteSlice"].IsNull())
     {
         if (!value["MuteSlice"].IsArray())
-            return CoreInternalOutcome(Error("response `AllMuteSlice.MuteSlice` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AllMuteSlice.MuteSlice` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MuteSlice"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome AllMuteSlice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MuteRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AllMuteSlice.MuteRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllMuteSlice.MuteRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_muteRatio = value["MuteRatio"].GetDouble();
         m_muteRatioHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AllMuteSlice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalMuteDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AllMuteSlice.TotalMuteDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllMuteSlice.TotalMuteDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalMuteDuration = value["TotalMuteDuration"].GetInt64();
         m_totalMuteDurationHasBeenSet = true;

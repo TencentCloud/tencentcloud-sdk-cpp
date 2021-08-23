@@ -34,7 +34,7 @@ CoreInternalOutcome EcdnData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Metrics") && !value["Metrics"].IsNull())
     {
         if (!value["Metrics"].IsArray())
-            return CoreInternalOutcome(Error("response `EcdnData.Metrics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EcdnData.Metrics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Metrics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome EcdnData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetailData") && !value["DetailData"].IsNull())
     {
         if (!value["DetailData"].IsArray())
-            return CoreInternalOutcome(Error("response `EcdnData.DetailData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EcdnData.DetailData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

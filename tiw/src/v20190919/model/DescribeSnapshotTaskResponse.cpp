@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["TaskID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskID = string(rsp["TaskID"].GetString());
         m_taskIDHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = rsp["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["FinishTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FinishTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FinishTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = rsp["FinishTime"].GetUint64();
         m_finishTimeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeSnapshotTaskResponse::Deserialize(const string &payl
     {
         if (!rsp["Result"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);

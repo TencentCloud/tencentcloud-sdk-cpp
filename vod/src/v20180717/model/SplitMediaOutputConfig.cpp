@@ -37,7 +37,7 @@ CoreInternalOutcome SplitMediaOutputConfig::Deserialize(const rapidjson::Value &
     {
         if (!value["MediaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaOutputConfig.MediaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaOutputConfig.MediaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaName = string(value["MediaName"].GetString());
         m_mediaNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SplitMediaOutputConfig::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaOutputConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaOutputConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SplitMediaOutputConfig::Deserialize(const rapidjson::Value &
     {
         if (!value["ClassId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaOutputConfig.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaOutputConfig.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_classId = value["ClassId"].GetInt64();
         m_classIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SplitMediaOutputConfig::Deserialize(const rapidjson::Value &
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaOutputConfig.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaOutputConfig.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome MonitorData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorData.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorData.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MonitorData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorData.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorData.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MonitorData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `MonitorData.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MonitorData.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const rapidjson::Value &v
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceVolume.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudRunServiceVolume.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const rapidjson::Value &v
     {
         if (!value["NFS"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceVolume.NFS` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudRunServiceVolume.NFS` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_nFS.Deserialize(value["NFS"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const rapidjson::Value &v
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceVolume.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudRunServiceVolume.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const rapidjson::Value &v
     {
         if (!value["EnableEmptyDirVolume"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceVolume.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudRunServiceVolume.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableEmptyDirVolume = value["EnableEmptyDirVolume"].GetBool();
         m_enableEmptyDirVolumeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const rapidjson::Value &v
     {
         if (!value["EmptyDir"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudRunServiceVolume.EmptyDir` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudRunServiceVolume.EmptyDir` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_emptyDir.Deserialize(value["EmptyDir"]);

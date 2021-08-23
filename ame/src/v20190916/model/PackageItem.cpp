@@ -40,7 +40,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrackName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.TrackName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.TrackName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trackName = string(value["TrackName"].GetString());
         m_trackNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.ItemID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.ItemID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemID = string(value["ItemID"].GetString());
         m_itemIDHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Img"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.Img` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.Img` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_img = string(value["Img"].GetString());
         m_imgHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArtistName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.ArtistName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.ArtistName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_artistName = string(value["ArtistName"].GetString());
         m_artistNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.Duration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.Duration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_duration = string(value["Duration"].GetString());
         m_durationHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthorizedArea"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageItem.AuthorizedArea` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageItem.AuthorizedArea` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authorizedArea = string(value["AuthorizedArea"].GetString());
         m_authorizedAreaHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome PolicyVersionDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["VersionId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionDetail.VersionId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionDetail.VersionId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = value["VersionId"].GetUint64();
         m_versionIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PolicyVersionDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionDetail.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionDetail.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createDate = string(value["CreateDate"].GetString());
         m_createDateHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PolicyVersionDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["IsDefaultVersion"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionDetail.IsDefaultVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionDetail.IsDefaultVersion` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultVersion = value["IsDefaultVersion"].GetUint64();
         m_isDefaultVersionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PolicyVersionDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Document"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyVersionDetail.Document` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyVersionDetail.Document` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_document = string(value["Document"].GetString());
         m_documentHasBeenSet = true;

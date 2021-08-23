@@ -39,7 +39,7 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrganizationInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationName = string(value["OrganizationName"].GetString());
         m_organizationNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrganizationInfo.OrganizationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.OrganizationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationType = string(value["OrganizationType"].GetString());
         m_organizationTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrganizationInfo.OrganizationCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.OrganizationCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationCode = string(value["OrganizationCode"].GetString());
         m_organizationCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LegalPersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrganizationInfo.LegalPersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.LegalPersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPersonName = string(value["LegalPersonName"].GetString());
         m_legalPersonNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LegalPersonIdType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrganizationInfo.LegalPersonIdType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.LegalPersonIdType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPersonIdType = string(value["LegalPersonIdType"].GetString());
         m_legalPersonIdTypeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LegalPersonIdCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrganizationInfo.LegalPersonIdCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.LegalPersonIdCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPersonIdCode = string(value["LegalPersonIdCode"].GetString());
         m_legalPersonIdCodeHasBeenSet = true;

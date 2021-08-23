@@ -41,10 +41,10 @@ namespace TencentCloud
                 MarketClient(const Credential &credential, const std::string &region);
                 MarketClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::FlowProductRemindResponse> FlowProductRemindOutcome;
+                typedef Outcome<Core::Error, Model::FlowProductRemindResponse> FlowProductRemindOutcome;
                 typedef std::future<FlowProductRemindOutcome> FlowProductRemindOutcomeCallable;
                 typedef std::function<void(const MarketClient*, const Model::FlowProductRemindRequest&, FlowProductRemindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlowProductRemindAsyncHandler;
-                typedef Outcome<Error, Model::GetUsagePlanUsageAmountResponse> GetUsagePlanUsageAmountOutcome;
+                typedef Outcome<Core::Error, Model::GetUsagePlanUsageAmountResponse> GetUsagePlanUsageAmountOutcome;
                 typedef std::future<GetUsagePlanUsageAmountOutcome> GetUsagePlanUsageAmountOutcomeCallable;
                 typedef std::function<void(const MarketClient*, const Model::GetUsagePlanUsageAmountRequest&, GetUsagePlanUsageAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUsagePlanUsageAmountAsyncHandler;
 

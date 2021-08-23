@@ -35,7 +35,7 @@ CoreInternalOutcome MediaDeleteItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaDeleteItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaDeleteItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaDeleteItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaDeleteItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaDeleteItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;

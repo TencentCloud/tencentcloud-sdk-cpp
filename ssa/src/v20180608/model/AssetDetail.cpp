@@ -78,7 +78,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetType = string(value["AssetType"].GetString());
         m_assetTypeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceState = string(value["InstanceState"].GetString());
         m_instanceStateHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublicIpAddresses") && !value["PublicIpAddresses"].IsNull())
     {
         if (!value["PublicIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.PublicIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.PublicIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -151,7 +151,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EngineVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineVersion = string(value["EngineVersion"].GetString());
         m_engineVersionHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tag") && !value["Tag"].IsNull())
     {
         if (!value["Tag"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.Tag` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Tag` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tag"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -191,7 +191,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LoadBalancerVips") && !value["LoadBalancerVips"].IsNull())
     {
         if (!value["LoadBalancerVips"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.LoadBalancerVips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.LoadBalancerVips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerVips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -224,7 +224,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Uin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Uin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetInt64();
         m_uinHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.CreationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.CreationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationDate = string(value["CreationDate"].GetString());
         m_creationDateHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetUniqid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetUniqid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetUniqid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetUniqid = string(value["AssetUniqid"].GetString());
         m_assetUniqidHasBeenSet = true;
@@ -264,7 +264,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -274,7 +274,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -284,7 +284,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetInt64();
         m_diskSizeHasBeenSet = true;
@@ -294,7 +294,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetStatus = string(value["AssetStatus"].GetString());
         m_assetStatusHasBeenSet = true;
@@ -304,7 +304,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.CertType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.CertType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certType = string(value["CertType"].GetString());
         m_certTypeHasBeenSet = true;
@@ -314,7 +314,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -324,7 +324,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certEndTime = string(value["CertEndTime"].GetString());
         m_certEndTimeHasBeenSet = true;
@@ -334,7 +334,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.ProductType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.ProductType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_productType = value["ProductType"].GetInt64();
         m_productTypeHasBeenSet = true;
@@ -343,7 +343,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
     {
         if (!value["PrivateIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.PrivateIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.PrivateIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -357,7 +357,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValidityPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.ValidityPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.ValidityPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validityPeriod = string(value["ValidityPeriod"].GetString());
         m_validityPeriodHasBeenSet = true;
@@ -367,7 +367,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -376,7 +376,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Port") && !value["Port"].IsNull())
     {
         if (!value["Port"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.Port` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Port` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Port"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -389,7 +389,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RiskConfig") && !value["RiskConfig"].IsNull())
     {
         if (!value["RiskConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.RiskConfig` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.RiskConfig` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RiskConfig"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -403,7 +403,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Event"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Event` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Event` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_event = string(value["Event"].GetString());
         m_eventHasBeenSet = true;
@@ -413,7 +413,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vul"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.Vul` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.Vul` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vul = string(value["Vul"].GetString());
         m_vulHasBeenSet = true;
@@ -423,7 +423,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SsaAssetDiscoverTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.SsaAssetDiscoverTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.SsaAssetDiscoverTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ssaAssetDiscoverTime = string(value["SsaAssetDiscoverTime"].GetString());
         m_ssaAssetDiscoverTimeHasBeenSet = true;
@@ -433,7 +433,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetSubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetSubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetSubnetId = string(value["AssetSubnetId"].GetString());
         m_assetSubnetIdHasBeenSet = true;
@@ -443,7 +443,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetSubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetSubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetSubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetSubnetName = string(value["AssetSubnetName"].GetString());
         m_assetSubnetNameHasBeenSet = true;
@@ -453,7 +453,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetVpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetVpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetVpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetVpcName = string(value["AssetVpcName"].GetString());
         m_assetVpcNameHasBeenSet = true;
@@ -463,7 +463,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.ClusterType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.ClusterType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = value["ClusterType"].GetInt64();
         m_clusterTypeHasBeenSet = true;
@@ -473,7 +473,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NameSpace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.NameSpace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.NameSpace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nameSpace = string(value["NameSpace"].GetString());
         m_nameSpaceHasBeenSet = true;
@@ -483,7 +483,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetCreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetCreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetCreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetCreateTime = string(value["AssetCreateTime"].GetString());
         m_assetCreateTimeHasBeenSet = true;
@@ -493,7 +493,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.LoadBalancerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.LoadBalancerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerType = string(value["LoadBalancerType"].GetString());
         m_loadBalancerTypeHasBeenSet = true;
@@ -502,7 +502,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssetIpv6") && !value["AssetIpv6"].IsNull())
     {
         if (!value["AssetIpv6"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetIpv6` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetIpv6` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssetIpv6"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -516,7 +516,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SSHRisk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.SSHRisk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.SSHRisk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSHRisk = string(value["SSHRisk"].GetString());
         m_sSHRiskHasBeenSet = true;
@@ -526,7 +526,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RDPRisk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.RDPRisk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.RDPRisk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rDPRisk = string(value["RDPRisk"].GetString());
         m_rDPRiskHasBeenSet = true;
@@ -536,7 +536,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventRisk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.EventRisk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.EventRisk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventRisk = string(value["EventRisk"].GetString());
         m_eventRiskHasBeenSet = true;
@@ -546,7 +546,7 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetVulNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetDetail.AssetVulNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetVulNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_assetVulNum = value["AssetVulNum"].GetInt64();
         m_assetVulNumHasBeenSet = true;

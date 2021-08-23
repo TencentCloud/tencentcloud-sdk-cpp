@@ -45,7 +45,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuleState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.RuleState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.RuleState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleState = value["RuleState"].GetInt64();
         m_ruleStateHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Annotations") && !value["Annotations"].IsNull())
     {
         if (!value["Annotations"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Annotations` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Annotations` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Annotations"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -125,7 +125,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["Expr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Expr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Expr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expr = string(value["Expr"].GetString());
         m_exprHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["Duration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Duration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Duration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_duration = string(value["Duration"].GetString());
         m_durationHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Receivers") && !value["Receivers"].IsNull())
     {
         if (!value["Receivers"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Receivers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Receivers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Receivers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -158,7 +158,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["Health"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.Health` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.Health` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_health = string(value["Health"].GetString());
         m_healthHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome PrometheusRuleSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusRuleSet.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusRuleSet.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;

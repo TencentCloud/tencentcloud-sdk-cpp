@@ -34,7 +34,7 @@ CoreInternalOutcome MatchCodeAttr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchCodeAttr.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchCodeAttr.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchCode = string(value["MatchCode"].GetString());
         m_matchCodeHasBeenSet = true;

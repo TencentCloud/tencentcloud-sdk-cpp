@@ -36,7 +36,7 @@ CoreInternalOutcome SentenceWords::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceWords.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceWords.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SentenceWords::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetStartMs"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SentenceWords.OffsetStartMs` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceWords.OffsetStartMs` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offsetStartMs = value["OffsetStartMs"].GetInt64();
         m_offsetStartMsHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SentenceWords::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetEndMs"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SentenceWords.OffsetEndMs` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceWords.OffsetEndMs` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offsetEndMs = value["OffsetEndMs"].GetInt64();
         m_offsetEndMsHasBeenSet = true;

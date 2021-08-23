@@ -37,7 +37,7 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vpc.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vpc.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vpc.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vpc.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vpc.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vpc.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Vpc.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vpc.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetBool();
         m_isDefaultHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ServiceEnvironmentStrategyStatus::Deserialize(const rapidjso
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategyStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategyStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ServiceEnvironmentStrategyStatus::Deserialize(const rapidjso
     if (value.HasMember("EnvironmentList") && !value["EnvironmentList"].IsNull())
     {
         if (!value["EnvironmentList"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategyStatus.EnvironmentList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategyStatus.EnvironmentList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnvironmentList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome UserProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProfileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserProfile.ProfileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserProfile.ProfileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_profileId = string(value["ProfileId"].GetString());
         m_profileIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome UserProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProfileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserProfile.ProfileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserProfile.ProfileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_profileType = string(value["ProfileType"].GetString());
         m_profileTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome UserProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProfileLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserProfile.ProfileLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserProfile.ProfileLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_profileLevel = string(value["ProfileLevel"].GetString());
         m_profileLevelHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome UserProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProfileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserProfile.ProfileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserProfile.ProfileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_profileName = string(value["ProfileName"].GetString());
         m_profileNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome UserProfile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProfileInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UserProfile.ProfileInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserProfile.ProfileInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_profileInfo.Deserialize(value["ProfileInfo"]);

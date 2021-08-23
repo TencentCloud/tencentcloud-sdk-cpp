@@ -38,7 +38,7 @@ CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Spots") && !value["Spots"].IsNull())
     {
         if (!value["Spots"].IsArray())
-            return CoreInternalOutcome(Error("response `AdInfo.Spots` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdInfo.Spots` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Spots"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BoutiqueRecommands") && !value["BoutiqueRecommands"].IsNull())
     {
         if (!value["BoutiqueRecommands"].IsArray())
-            return CoreInternalOutcome(Error("response `AdInfo.BoutiqueRecommands` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdInfo.BoutiqueRecommands` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BoutiqueRecommands"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FloatWindowses") && !value["FloatWindowses"].IsNull())
     {
         if (!value["FloatWindowses"].IsArray())
-            return CoreInternalOutcome(Error("response `AdInfo.FloatWindowses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdInfo.FloatWindowses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FloatWindowses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Banners") && !value["Banners"].IsNull())
     {
         if (!value["Banners"].IsArray())
-            return CoreInternalOutcome(Error("response `AdInfo.Banners` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdInfo.Banners` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Banners"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IntegralWalls") && !value["IntegralWalls"].IsNull())
     {
         if (!value["IntegralWalls"].IsArray())
-            return CoreInternalOutcome(Error("response `AdInfo.IntegralWalls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdInfo.IntegralWalls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IntegralWalls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -138,7 +138,7 @@ CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NotifyBars") && !value["NotifyBars"].IsNull())
     {
         if (!value["NotifyBars"].IsArray())
-            return CoreInternalOutcome(Error("response `AdInfo.NotifyBars` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdInfo.NotifyBars` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotifyBars"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

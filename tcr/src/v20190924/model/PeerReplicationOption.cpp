@@ -36,7 +36,7 @@ CoreInternalOutcome PeerReplicationOption::Deserialize(const rapidjson::Value &v
     {
         if (!value["PeerRegistryUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeerReplicationOption.PeerRegistryUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerReplicationOption.PeerRegistryUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerRegistryUin = string(value["PeerRegistryUin"].GetString());
         m_peerRegistryUinHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PeerReplicationOption::Deserialize(const rapidjson::Value &v
     {
         if (!value["PeerRegistryToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeerReplicationOption.PeerRegistryToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerReplicationOption.PeerRegistryToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerRegistryToken = string(value["PeerRegistryToken"].GetString());
         m_peerRegistryTokenHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PeerReplicationOption::Deserialize(const rapidjson::Value &v
     {
         if (!value["EnablePeerReplication"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PeerReplicationOption.EnablePeerReplication` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerReplicationOption.EnablePeerReplication` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enablePeerReplication = value["EnablePeerReplication"].GetBool();
         m_enablePeerReplicationHasBeenSet = true;

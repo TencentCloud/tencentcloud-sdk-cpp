@@ -38,7 +38,7 @@ CoreInternalOutcome CrowdAntiRushInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SponsorOpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrowdAntiRushInfo.SponsorOpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrowdAntiRushInfo.SponsorOpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorOpenId = string(value["SponsorOpenId"].GetString());
         m_sponsorOpenIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CrowdAntiRushInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SponsorDeviceNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrowdAntiRushInfo.SponsorDeviceNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrowdAntiRushInfo.SponsorDeviceNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorDeviceNumber = string(value["SponsorDeviceNumber"].GetString());
         m_sponsorDeviceNumberHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CrowdAntiRushInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SponsorPhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrowdAntiRushInfo.SponsorPhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrowdAntiRushInfo.SponsorPhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorPhone = string(value["SponsorPhone"].GetString());
         m_sponsorPhoneHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CrowdAntiRushInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SponsorIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrowdAntiRushInfo.SponsorIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrowdAntiRushInfo.SponsorIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorIp = string(value["SponsorIp"].GetString());
         m_sponsorIpHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CrowdAntiRushInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CampaignUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrowdAntiRushInfo.CampaignUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrowdAntiRushInfo.CampaignUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_campaignUrl = string(value["CampaignUrl"].GetString());
         m_campaignUrlHasBeenSet = true;

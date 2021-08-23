@@ -39,7 +39,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvancedValue::Deserialize(const rapid
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvancedValue.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvancedValue.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvancedValue::Deserialize(const rapid
     {
         if (!value["PostTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvancedValue.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvancedValue.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postTime = value["PostTime"].GetUint64();
         m_postTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvancedValue::Deserialize(const rapid
     {
         if (!value["AssociateAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvancedValue.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvancedValue.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_associateAccount = string(value["AssociateAccount"].GetString());
         m_associateAccountHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvancedValue::Deserialize(const rapid
     {
         if (!value["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvancedValue.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvancedValue.UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(value["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvancedValue::Deserialize(const rapid
     {
         if (!value["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvancedValue.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvancedValue.Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetInt64();
         m_levelHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvancedValue::Deserialize(const rapid
     if (value.HasMember("RiskType") && !value["RiskType"].IsNull())
     {
         if (!value["RiskType"].IsArray())
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvancedValue.RiskType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvancedValue.RiskType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RiskType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

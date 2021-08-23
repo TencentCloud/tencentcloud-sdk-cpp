@@ -35,7 +35,7 @@ CoreInternalOutcome TextOutputID::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextOutputID.MsgID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputID.MsgID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgID = string(value["MsgID"].GetString());
         m_msgIDHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TextOutputID::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextOutputID.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputID.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;

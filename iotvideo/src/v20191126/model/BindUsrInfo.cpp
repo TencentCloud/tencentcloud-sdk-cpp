@@ -35,7 +35,7 @@ CoreInternalOutcome BindUsrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindUsrInfo.AccessId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindUsrInfo.AccessId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessId = string(value["AccessId"].GetString());
         m_accessIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BindUsrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindUsrInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindUsrInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Catalog"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Policy.Catalog` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Policy.Catalog` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_catalog = string(value["Catalog"].GetString());
         m_catalogHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Policy.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Policy.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Table"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Policy.Table` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Policy.Table` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_table = string(value["Table"].GetString());
         m_tableHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Policy.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Policy.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;

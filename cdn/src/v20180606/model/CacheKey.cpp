@@ -41,7 +41,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullUrlCache"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.FullUrlCache` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.FullUrlCache` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullUrlCache = string(value["FullUrlCache"].GetString());
         m_fullUrlCacheHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreCase"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.IgnoreCase` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.IgnoreCase` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCase = string(value["IgnoreCase"].GetString());
         m_ignoreCaseHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryString"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.QueryString` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.QueryString` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_queryString.Deserialize(value["QueryString"]);
@@ -78,7 +78,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cookie"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.Cookie` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.Cookie` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cookie.Deserialize(value["Cookie"]);
@@ -95,7 +95,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Header"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.Header` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.Header` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_header.Deserialize(value["Header"]);
@@ -112,7 +112,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheTag"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.CacheTag` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.CacheTag` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cacheTag.Deserialize(value["CacheTag"]);
@@ -129,7 +129,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheme"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.Scheme` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.Scheme` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_scheme.Deserialize(value["Scheme"]);
@@ -145,7 +145,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KeyRules") && !value["KeyRules"].IsNull())
     {
         if (!value["KeyRules"].IsArray())
-            return CoreInternalOutcome(Error("response `CacheKey.KeyRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.KeyRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeyRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

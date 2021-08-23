@@ -39,7 +39,7 @@ CoreInternalOutcome BotCookie::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotCookie.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotCookie.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome BotCookie::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotCookie.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotCookie.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome BotCookie::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleValue") && !value["RuleValue"].IsNull())
     {
         if (!value["RuleValue"].IsArray())
-            return CoreInternalOutcome(Error("response `BotCookie.RuleValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BotCookie.RuleValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome BotCookie::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotCookie.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotCookie.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome BotCookie::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotCookie.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotCookie.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectUrl = string(value["RedirectUrl"].GetString());
         m_redirectUrlHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome BotCookie::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BotCookie.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotCookie.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome DeadLetterSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueueId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterSource.QueueId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterSource.QueueId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueId = string(value["QueueId"].GetString());
         m_queueIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeadLetterSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterSource.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterSource.QueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueName = string(value["QueueName"].GetString());
         m_queueNameHasBeenSet = true;

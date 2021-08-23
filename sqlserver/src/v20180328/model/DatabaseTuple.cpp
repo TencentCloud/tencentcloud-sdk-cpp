@@ -35,7 +35,7 @@ CoreInternalOutcome DatabaseTuple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishDatabase"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTuple.PublishDatabase` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTuple.PublishDatabase` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishDatabase = string(value["PublishDatabase"].GetString());
         m_publishDatabaseHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DatabaseTuple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeDatabase"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTuple.SubscribeDatabase` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTuple.SubscribeDatabase` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeDatabase = string(value["SubscribeDatabase"].GetString());
         m_subscribeDatabaseHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome TempCertificate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TempCertificate.SecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TempCertificate.SecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretId = string(value["SecretId"].GetString());
         m_secretIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TempCertificate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TempCertificate.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TempCertificate.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TempCertificate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TempCertificate.Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TempCertificate.Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(value["Token"].GetString());
         m_tokenHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TempCertificate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TempCertificate.ExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TempCertificate.ExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = value["ExpiredTime"].GetUint64();
         m_expiredTimeHasBeenSet = true;

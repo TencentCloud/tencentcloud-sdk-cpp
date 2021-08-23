@@ -39,7 +39,7 @@ CoreInternalOutcome SnapshotOperationLog::Deserialize(const rapidjson::Value &va
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotOperationLog.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotOperationLog.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SnapshotOperationLog::Deserialize(const rapidjson::Value &va
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotOperationLog.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotOperationLog.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SnapshotOperationLog::Deserialize(const rapidjson::Value &va
     {
         if (!value["SnapshotId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotOperationLog.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotOperationLog.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotId = string(value["SnapshotId"].GetString());
         m_snapshotIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SnapshotOperationLog::Deserialize(const rapidjson::Value &va
     {
         if (!value["OperationState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotOperationLog.OperationState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotOperationLog.OperationState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationState = string(value["OperationState"].GetString());
         m_operationStateHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SnapshotOperationLog::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotOperationLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotOperationLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SnapshotOperationLog::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotOperationLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotOperationLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

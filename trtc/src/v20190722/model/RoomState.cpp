@@ -39,7 +39,7 @@ CoreInternalOutcome RoomState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoomState.CommId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomState.CommId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commId = string(value["CommId"].GetString());
         m_commIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RoomState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomString"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoomState.RoomString` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomState.RoomString` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomString = string(value["RoomString"].GetString());
         m_roomStringHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RoomState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RoomState.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomState.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RoomState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestroyTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RoomState.DestroyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomState.DestroyTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_destroyTime = value["DestroyTime"].GetUint64();
         m_destroyTimeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RoomState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsFinished"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RoomState.IsFinished` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomState.IsFinished` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isFinished = value["IsFinished"].GetBool();
         m_isFinishedHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RoomState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoomState.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomState.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;

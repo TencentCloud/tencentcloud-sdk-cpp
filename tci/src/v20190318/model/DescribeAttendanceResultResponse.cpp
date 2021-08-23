@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,18 +58,18 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("AbsenceSetInLibs") && !rsp["AbsenceSetInLibs"].IsNull())
     {
         if (!rsp["AbsenceSetInLibs"].IsArray())
-            return CoreInternalOutcome(Error("response `AbsenceSetInLibs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AbsenceSetInLibs` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AbsenceSetInLibs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     if (rsp.HasMember("AttendanceSet") && !rsp["AttendanceSet"].IsNull())
     {
         if (!rsp["AttendanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AttendanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AttendanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AttendanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     if (rsp.HasMember("SuspectedSet") && !rsp["SuspectedSet"].IsNull())
     {
         if (!rsp["SuspectedSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SuspectedSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SuspectedSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SuspectedSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     if (rsp.HasMember("AbsenceSet") && !rsp["AbsenceSet"].IsNull())
     {
         if (!rsp["AbsenceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AbsenceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AbsenceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AbsenceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     {
         if (!rsp["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = rsp["Progress"].GetInt64();
         m_progressHasBeenSet = true;

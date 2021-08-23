@@ -38,7 +38,7 @@ CoreInternalOutcome WeeklyReportBruteAttack::Deserialize(const rapidjson::Value 
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportBruteAttack.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportBruteAttack.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome WeeklyReportBruteAttack::Deserialize(const rapidjson::Value 
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportBruteAttack.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportBruteAttack.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome WeeklyReportBruteAttack::Deserialize(const rapidjson::Value 
     {
         if (!value["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportBruteAttack.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportBruteAttack.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(value["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome WeeklyReportBruteAttack::Deserialize(const rapidjson::Value 
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportBruteAttack.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportBruteAttack.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome WeeklyReportBruteAttack::Deserialize(const rapidjson::Value 
     {
         if (!value["AttackTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportBruteAttack.AttackTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportBruteAttack.AttackTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attackTime = string(value["AttackTime"].GetString());
         m_attackTimeHasBeenSet = true;

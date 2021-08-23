@@ -38,7 +38,7 @@ CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayAuthKeyInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayAuthKeyInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PlayAuthKeyInfo.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayAuthKeyInfo.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayAuthKeyInfo.AuthKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayAuthKeyInfo.AuthKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authKey = string(value["AuthKey"].GetString());
         m_authKeyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthDelta"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayAuthKeyInfo.AuthDelta` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayAuthKeyInfo.AuthDelta` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_authDelta = value["AuthDelta"].GetUint64();
         m_authDeltaHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthBackKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayAuthKeyInfo.AuthBackKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayAuthKeyInfo.AuthBackKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authBackKey = string(value["AuthBackKey"].GetString());
         m_authBackKeyHasBeenSet = true;

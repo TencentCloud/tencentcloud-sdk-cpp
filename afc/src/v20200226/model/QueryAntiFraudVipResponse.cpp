@@ -38,16 +38,16 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
     {
         if (!rsp["Found"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Found` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Found` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_found = rsp["Found"].GetInt64();
         m_foundHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
     {
         if (!rsp["IdFound"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IdFound` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdFound` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_idFound = rsp["IdFound"].GetInt64();
         m_idFoundHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
     {
         if (!rsp["RiskScore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskScore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskScore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskScore = rsp["RiskScore"].GetUint64();
         m_riskScoreHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
     if (rsp.HasMember("RiskInfo") && !rsp["RiskInfo"].IsNull())
     {
         if (!rsp["RiskInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `RiskInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RiskInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RiskInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome QueryAntiFraudVipResponse::Deserialize(const string &payload
     {
         if (!rsp["CodeDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeDesc = string(rsp["CodeDesc"].GetString());
         m_codeDescHasBeenSet = true;

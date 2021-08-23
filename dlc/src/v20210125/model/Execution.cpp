@@ -34,7 +34,7 @@ CoreInternalOutcome Execution::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SQL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Execution.SQL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Execution.SQL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sQL = string(value["SQL"].GetString());
         m_sQLHasBeenSet = true;

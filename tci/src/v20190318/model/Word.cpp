@@ -38,7 +38,7 @@ CoreInternalOutcome Word::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Word.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Word.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Word::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mbtm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Word.Mbtm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Word.Mbtm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mbtm = value["Mbtm"].GetInt64();
         m_mbtmHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Word::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Word.Metm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Word.Metm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_metm = value["Metm"].GetInt64();
         m_metmHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Word::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Word.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Word.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Word::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Wsize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Word.Wsize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Word.Wsize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wsize = value["Wsize"].GetInt64();
         m_wsizeHasBeenSet = true;

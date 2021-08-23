@@ -41,7 +41,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.RoomStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.RoomStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomStr = string(value["RoomStr"].GetString());
         m_roomStrHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JoinTs"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.JoinTs` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.JoinTs` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_joinTs = value["JoinTs"].GetUint64();
         m_joinTsHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LeaveTs"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.LeaveTs` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.LeaveTs` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_leaveTs = value["LeaveTs"].GetUint64();
         m_leaveTsHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = string(value["DeviceType"].GetString());
         m_deviceTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SdkVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.SdkVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.SdkVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkVersion = string(value["SdkVersion"].GetString());
         m_sdkVersionHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Finished"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `UserInformation.Finished` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInformation.Finished` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_finished = value["Finished"].GetBool();
         m_finishedHasBeenSet = true;

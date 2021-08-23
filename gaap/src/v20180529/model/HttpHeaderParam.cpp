@@ -35,7 +35,7 @@ CoreInternalOutcome HttpHeaderParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeaderName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderParam.HeaderName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderParam.HeaderName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerName = string(value["HeaderName"].GetString());
         m_headerNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome HttpHeaderParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeaderValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderParam.HeaderValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderParam.HeaderValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerValue = string(value["HeaderValue"].GetString());
         m_headerValueHasBeenSet = true;

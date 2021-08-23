@@ -35,7 +35,7 @@ CoreInternalOutcome ShardZoneChooseInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MasterZone"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ShardZoneChooseInfo.MasterZone` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardZoneChooseInfo.MasterZone` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_masterZone.Deserialize(value["MasterZone"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome ShardZoneChooseInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("SlaveZones") && !value["SlaveZones"].IsNull())
     {
         if (!value["SlaveZones"].IsArray())
-            return CoreInternalOutcome(Error("response `ShardZoneChooseInfo.SlaveZones` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ShardZoneChooseInfo.SlaveZones` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SlaveZones"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome SyncOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SyncObject"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SyncOption.SyncObject` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncOption.SyncObject` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_syncObject = value["SyncObject"].GetUint64();
         m_syncObjectHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SyncOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SyncOption.RunMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncOption.RunMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_runMode = value["RunMode"].GetUint64();
         m_runModeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SyncOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SyncType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SyncOption.SyncType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncOption.SyncType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_syncType = value["SyncType"].GetUint64();
         m_syncTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SyncOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsistencyType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SyncOption.ConsistencyType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncOption.ConsistencyType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_consistencyType = value["ConsistencyType"].GetUint64();
         m_consistencyTypeHasBeenSet = true;

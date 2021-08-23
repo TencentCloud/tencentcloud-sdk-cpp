@@ -55,7 +55,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdCard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.IdCard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.IdCard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idCard = string(value["IdCard"].GetString());
         m_idCardHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrNation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrNation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrNation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrNation = string(value["OcrNation"].GetString());
         m_ocrNationHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrAddress = string(value["OcrAddress"].GetString());
         m_ocrAddressHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrBirth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrBirth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrBirth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrBirth = string(value["OcrBirth"].GetString());
         m_ocrBirthHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrAuthority"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrAuthority` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrAuthority` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrAuthority = string(value["OcrAuthority"].GetString());
         m_ocrAuthorityHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrValidDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrValidDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrValidDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrValidDate = string(value["OcrValidDate"].GetString());
         m_ocrValidDateHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrName = string(value["OcrName"].GetString());
         m_ocrNameHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrIdCard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrIdCard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrIdCard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrIdCard = string(value["OcrIdCard"].GetString());
         m_ocrIdCardHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrGender"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.OcrGender` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.OcrGender` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrGender = string(value["OcrGender"].GetString());
         m_ocrGenderHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.LiveStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.LiveStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_liveStatus = value["LiveStatus"].GetInt64();
         m_liveStatusHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.LiveMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.LiveMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_liveMsg = string(value["LiveMsg"].GetString());
         m_liveMsgHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comparestatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Comparestatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Comparestatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_comparestatus = value["Comparestatus"].GetInt64();
         m_comparestatusHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comparemsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Comparemsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Comparemsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comparemsg = string(value["Comparemsg"].GetString());
         m_comparemsgHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sim"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Sim` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Sim` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sim = string(value["Sim"].GetString());
         m_simHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(value["Extra"].GetString());
         m_extraHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LivenessDetail") && !value["LivenessDetail"].IsNull())
     {
         if (!value["LivenessDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `DetectInfoText.LivenessDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.LivenessDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LivenessDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -265,7 +265,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mobile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.Mobile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.Mobile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobile = string(value["Mobile"].GetString());
         m_mobileHasBeenSet = true;
@@ -275,7 +275,7 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompareLibType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoText.CompareLibType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.CompareLibType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compareLibType = string(value["CompareLibType"].GetString());
         m_compareLibTypeHasBeenSet = true;

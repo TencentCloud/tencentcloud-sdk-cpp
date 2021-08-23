@@ -46,7 +46,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AverageMsgSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.AverageMsgSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.AverageMsgSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_averageMsgSize = string(value["AverageMsgSize"].GetString());
         m_averageMsgSizeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumerCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.ConsumerCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.ConsumerCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumerCount = string(value["ConsumerCount"].GetString());
         m_consumerCountHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastConfirmedEntry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.LastConfirmedEntry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.LastConfirmedEntry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastConfirmedEntry = string(value["LastConfirmedEntry"].GetString());
         m_lastConfirmedEntryHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastLedgerCreatedTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.LastLedgerCreatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.LastLedgerCreatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastLedgerCreatedTimestamp = string(value["LastLedgerCreatedTimestamp"].GetString());
         m_lastLedgerCreatedTimestampHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRateIn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.MsgRateIn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.MsgRateIn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRateIn = string(value["MsgRateIn"].GetString());
         m_msgRateInHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRateOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.MsgRateOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.MsgRateOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRateOut = string(value["MsgRateOut"].GetString());
         m_msgRateOutHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgThroughputIn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.MsgThroughputIn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.MsgThroughputIn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgThroughputIn = string(value["MsgThroughputIn"].GetString());
         m_msgThroughputInHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgThroughputOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.MsgThroughputOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.MsgThroughputOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgThroughputOut = string(value["MsgThroughputOut"].GetString());
         m_msgThroughputOutHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NumberOfEntries"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.NumberOfEntries` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.NumberOfEntries` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_numberOfEntries = string(value["NumberOfEntries"].GetString());
         m_numberOfEntriesHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Partitions"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitions = value["Partitions"].GetInt64();
         m_partitionsHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProducerCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.ProducerCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.ProducerCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_producerCount = string(value["ProducerCount"].GetString());
         m_producerCountHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.TotalSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.TotalSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalSize = string(value["TotalSize"].GetString());
         m_totalSizeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome PartitionsTopic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PartitionsTopic.TopicType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionsTopic.TopicType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_topicType = value["TopicType"].GetUint64();
         m_topicTypeHasBeenSet = true;

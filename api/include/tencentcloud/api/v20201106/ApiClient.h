@@ -41,10 +41,10 @@ namespace TencentCloud
                 ApiClient(const Credential &credential, const std::string &region);
                 ApiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const ApiClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const ApiClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
 

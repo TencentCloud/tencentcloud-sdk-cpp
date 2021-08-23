@@ -34,7 +34,7 @@ CoreInternalOutcome ResourceFieldRef::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceFieldRef.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceFieldRef.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;

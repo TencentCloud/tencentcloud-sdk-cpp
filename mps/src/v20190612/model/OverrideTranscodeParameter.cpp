@@ -39,7 +39,7 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OverrideTranscodeParameter.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
     {
         if (!value["RemoveVideo"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OverrideTranscodeParameter.RemoveVideo` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.RemoveVideo` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_removeVideo = value["RemoveVideo"].GetUint64();
         m_removeVideoHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
     {
         if (!value["RemoveAudio"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OverrideTranscodeParameter.RemoveAudio` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.RemoveAudio` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_removeAudio = value["RemoveAudio"].GetUint64();
         m_removeAudioHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
     {
         if (!value["VideoTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OverrideTranscodeParameter.VideoTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.VideoTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoTemplate.Deserialize(value["VideoTemplate"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
     {
         if (!value["AudioTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OverrideTranscodeParameter.AudioTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.AudioTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioTemplate.Deserialize(value["AudioTemplate"]);
@@ -103,7 +103,7 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
     {
         if (!value["TEHDConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OverrideTranscodeParameter.TEHDConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.TEHDConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tEHDConfig.Deserialize(value["TEHDConfig"]);

@@ -42,7 +42,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.TranId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.TranId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranId = string(value["TranId"].GetString());
         m_tranIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.PackageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.PackageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageId = string(value["PackageId"].GetString());
         m_packageIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.TranType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.TranType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranType = string(value["TranType"].GetString());
         m_tranTypeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.TranStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.TranStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranStatus = string(value["TranStatus"].GetString());
         m_tranStatusHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtensionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.ExtensionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.ExtensionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extensionId = string(value["ExtensionId"].GetString());
         m_extensionIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome OrderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceReady"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInfo.ResourceReady` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInfo.ResourceReady` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceReady = string(value["ResourceReady"].GetString());
         m_resourceReadyHasBeenSet = true;

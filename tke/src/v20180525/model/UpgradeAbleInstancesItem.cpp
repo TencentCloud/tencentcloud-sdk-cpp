@@ -36,7 +36,7 @@ CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const rapidjson::Value
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeAbleInstancesItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeAbleInstancesItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const rapidjson::Value
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeAbleInstancesItem.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeAbleInstancesItem.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const rapidjson::Value
     {
         if (!value["LatestVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeAbleInstancesItem.LatestVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeAbleInstancesItem.LatestVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestVersion = string(value["LatestVersion"].GetString());
         m_latestVersionHasBeenSet = true;

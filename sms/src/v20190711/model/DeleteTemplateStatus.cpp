@@ -35,7 +35,7 @@ CoreInternalOutcome DeleteTemplateStatus::Deserialize(const rapidjson::Value &va
     {
         if (!value["DeleteStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeleteTemplateStatus.DeleteStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeleteTemplateStatus.DeleteStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deleteStatus = string(value["DeleteStatus"].GetString());
         m_deleteStatusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeleteTemplateStatus::Deserialize(const rapidjson::Value &va
     {
         if (!value["DeleteTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeleteTemplateStatus.DeleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeleteTemplateStatus.DeleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deleteTime = value["DeleteTime"].GetUint64();
         m_deleteTimeHasBeenSet = true;

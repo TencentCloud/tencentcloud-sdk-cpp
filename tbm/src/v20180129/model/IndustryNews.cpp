@@ -42,7 +42,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IndustryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.IndustryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.IndustryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_industryId = string(value["IndustryId"].GetString());
         m_industryIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PubTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.PubTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.PubTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pubTime = string(value["PubTime"].GetString());
         m_pubTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FromSite"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.FromSite` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.FromSite` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fromSite = string(value["FromSite"].GetString());
         m_fromSiteHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.Level` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.Level` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetUint64();
         m_levelHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hot"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.Hot` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.Hot` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hot = value["Hot"].GetUint64();
         m_hotHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Flag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.Flag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.Flag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_flag = value["Flag"].GetUint64();
         m_flagHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome IndustryNews::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Abstract"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryNews.Abstract` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryNews.Abstract` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_abstract = string(value["Abstract"].GetString());
         m_abstractHasBeenSet = true;

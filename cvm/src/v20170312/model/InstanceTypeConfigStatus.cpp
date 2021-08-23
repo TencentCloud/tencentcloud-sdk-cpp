@@ -36,7 +36,7 @@ CoreInternalOutcome InstanceTypeConfigStatus::Deserialize(const rapidjson::Value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfigStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfigStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InstanceTypeConfigStatus::Deserialize(const rapidjson::Value
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfigStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfigStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome InstanceTypeConfigStatus::Deserialize(const rapidjson::Value
     {
         if (!value["InstanceTypeConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfigStatus.InstanceTypeConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfigStatus.InstanceTypeConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceTypeConfig.Deserialize(value["InstanceTypeConfig"]);

@@ -34,7 +34,7 @@ CoreInternalOutcome DrmStreamingsInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["SimpleAesDefinition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DrmStreamingsInfoForUpdate.SimpleAesDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrmStreamingsInfoForUpdate.SimpleAesDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_simpleAesDefinition = value["SimpleAesDefinition"].GetUint64();
         m_simpleAesDefinitionHasBeenSet = true;

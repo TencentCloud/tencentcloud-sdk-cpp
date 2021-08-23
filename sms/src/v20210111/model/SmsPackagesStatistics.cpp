@@ -40,7 +40,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageCreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageCreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageCreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageCreateTime = value["PackageCreateTime"].GetUint64();
         m_packageCreateTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageEffectiveTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageEffectiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageEffectiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageEffectiveTime = value["PackageEffectiveTime"].GetUint64();
         m_packageEffectiveTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageExpiredTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageExpiredTime = value["PackageExpiredTime"].GetUint64();
         m_packageExpiredTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageAmount = value["PackageAmount"].GetUint64();
         m_packageAmountHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageType = value["PackageType"].GetUint64();
         m_packageTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageId = value["PackageId"].GetUint64();
         m_packageIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["CurrentUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.CurrentUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.CurrentUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_currentUsage = value["CurrentUsage"].GetUint64();
         m_currentUsageHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome GroupCandidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupCandidate.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupCandidate.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome GroupCandidate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Candidates") && !value["Candidates"].IsNull())
     {
         if (!value["Candidates"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupCandidate.Candidates` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupCandidate.Candidates` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Candidates"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome DatabaseProcedure::Deserialize(const rapidjson::Value &value
     {
         if (!value["Proc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseProcedure.Proc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseProcedure.Proc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proc = string(value["Proc"].GetString());
         m_procHasBeenSet = true;

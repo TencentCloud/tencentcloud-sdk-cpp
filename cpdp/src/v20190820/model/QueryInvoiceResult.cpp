@@ -37,7 +37,7 @@ CoreInternalOutcome QueryInvoiceResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QueryInvoiceResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QueryInvoiceResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResult.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResult.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome QueryInvoiceResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Order"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResult.Order` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResult.Order` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_order.Deserialize(value["Order"]);

@@ -40,16 +40,16 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["X"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `X` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `X` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_x = rsp["X"].GetInt64();
         m_xHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["Y"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Y` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Y` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_y = rsp["Y"].GetInt64();
         m_yHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = rsp["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = rsp["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["OriginalWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OriginalWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginalWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_originalWidth = rsp["OriginalWidth"].GetInt64();
         m_originalWidthHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["OriginalHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OriginalHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginalHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_originalHeight = rsp["OriginalHeight"].GetInt64();
         m_originalHeightHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     {
         if (!rsp["CropResult"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CropResult` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CropResult` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cropResult = rsp["CropResult"].GetInt64();
         m_cropResultHasBeenSet = true;

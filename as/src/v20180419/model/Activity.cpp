@@ -46,7 +46,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityId = string(value["ActivityId"].GetString());
         m_activityIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.ActivityType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.ActivityType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityType = string(value["ActivityType"].GetString());
         m_activityTypeHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.StatusCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.StatusCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = string(value["StatusCode"].GetString());
         m_statusCodeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMessage = string(value["StatusMessage"].GetString());
         m_statusMessageHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cause"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.Cause` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.Cause` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cause = string(value["Cause"].GetString());
         m_causeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ActivityRelatedInstanceSet") && !value["ActivityRelatedInstanceSet"].IsNull())
     {
         if (!value["ActivityRelatedInstanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Activity.ActivityRelatedInstanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Activity.ActivityRelatedInstanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ActivityRelatedInstanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -166,7 +166,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusMessageSimplified"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Activity.StatusMessageSimplified` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Activity.StatusMessageSimplified` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMessageSimplified = string(value["StatusMessageSimplified"].GetString());
         m_statusMessageSimplifiedHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LifecycleActionResultSet") && !value["LifecycleActionResultSet"].IsNull())
     {
         if (!value["LifecycleActionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Activity.LifecycleActionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Activity.LifecycleActionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LifecycleActionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome SimpleAesEdkPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Edk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleAesEdkPair.Edk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleAesEdkPair.Edk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_edk = string(value["Edk"].GetString());
         m_edkHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SimpleAesEdkPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleAesEdkPair.Dk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleAesEdkPair.Dk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dk = string(value["Dk"].GetString());
         m_dkHasBeenSet = true;

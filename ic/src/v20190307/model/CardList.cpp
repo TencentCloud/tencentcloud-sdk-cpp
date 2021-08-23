@@ -35,7 +35,7 @@ CoreInternalOutcome CardList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardList.Total` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardList.Total` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_total = string(value["Total"].GetString());
         m_totalHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome CardList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("List") && !value["List"].IsNull())
     {
         if (!value["List"].IsArray())
-            return CoreInternalOutcome(Error("response `CardList.List` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CardList.List` is not array type"));
 
         const rapidjson::Value &tmpValue = value["List"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

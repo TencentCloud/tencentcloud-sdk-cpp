@@ -38,7 +38,7 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableBaseInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TableInfo.TableBaseInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfo.TableBaseInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tableBaseInfo.Deserialize(value["TableBaseInfo"]);
@@ -55,7 +55,7 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataFormat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TableInfo.DataFormat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfo.DataFormat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dataFormat.Deserialize(value["DataFormat"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Columns") && !value["Columns"].IsNull())
     {
         if (!value["Columns"].IsArray())
-            return CoreInternalOutcome(Error("response `TableInfo.Columns` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableInfo.Columns` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Columns"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Partitions") && !value["Partitions"].IsNull())
     {
         if (!value["Partitions"].IsArray())
-            return CoreInternalOutcome(Error("response `TableInfo.Partitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableInfo.Partitions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Partitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -112,7 +112,7 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;

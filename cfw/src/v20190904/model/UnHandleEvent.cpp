@@ -36,7 +36,7 @@ CoreInternalOutcome UnHandleEvent::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EventTableListStruct") && !value["EventTableListStruct"].IsNull())
     {
         if (!value["EventTableListStruct"].IsArray())
-            return CoreInternalOutcome(Error("response `UnHandleEvent.EventTableListStruct` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UnHandleEvent.EventTableListStruct` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EventTableListStruct"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome UnHandleEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BaseLineUser"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UnHandleEvent.BaseLineUser` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnHandleEvent.BaseLineUser` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_baseLineUser = value["BaseLineUser"].GetUint64();
         m_baseLineUserHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome UnHandleEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BaseLineInSwitch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UnHandleEvent.BaseLineInSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnHandleEvent.BaseLineInSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_baseLineInSwitch = value["BaseLineInSwitch"].GetUint64();
         m_baseLineInSwitchHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome UnHandleEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BaseLineOutSwitch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UnHandleEvent.BaseLineOutSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnHandleEvent.BaseLineOutSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_baseLineOutSwitch = value["BaseLineOutSwitch"].GetUint64();
         m_baseLineOutSwitchHasBeenSet = true;

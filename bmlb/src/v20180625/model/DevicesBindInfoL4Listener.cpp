@@ -37,7 +37,7 @@ CoreInternalOutcome DevicesBindInfoL4Listener::Deserialize(const rapidjson::Valu
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL4Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL4Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DevicesBindInfoL4Listener::Deserialize(const rapidjson::Valu
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL4Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL4Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DevicesBindInfoL4Listener::Deserialize(const rapidjson::Valu
     {
         if (!value["LoadBalancerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL4Listener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL4Listener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPort = value["LoadBalancerPort"].GetInt64();
         m_loadBalancerPortHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DevicesBindInfoL4Listener::Deserialize(const rapidjson::Valu
     if (value.HasMember("BackendSet") && !value["BackendSet"].IsNull())
     {
         if (!value["BackendSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL4Listener.BackendSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL4Listener.BackendSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BackendSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

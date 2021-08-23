@@ -35,7 +35,7 @@ CoreInternalOutcome TraceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TraceStatus.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TraceStatus.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TraceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsExist"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TraceStatus.IsExist` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TraceStatus.IsExist` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isExist = value["IsExist"].GetBool();
         m_isExistHasBeenSet = true;

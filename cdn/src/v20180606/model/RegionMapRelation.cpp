@@ -35,7 +35,7 @@ CoreInternalOutcome RegionMapRelation::Deserialize(const rapidjson::Value &value
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RegionMapRelation.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionMapRelation.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome RegionMapRelation::Deserialize(const rapidjson::Value &value
     if (value.HasMember("SubRegionIdList") && !value["SubRegionIdList"].IsNull())
     {
         if (!value["SubRegionIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `RegionMapRelation.SubRegionIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RegionMapRelation.SubRegionIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubRegionIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

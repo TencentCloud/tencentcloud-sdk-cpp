@@ -36,7 +36,7 @@ CoreInternalOutcome ResetDeviceResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResetDeviceResult.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResetDeviceResult.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ResetDeviceResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["Success"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ResetDeviceResult.Success` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResetDeviceResult.Success` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_success = value["Success"].GetBool();
         m_successHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ResetDeviceResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResetDeviceResult.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResetDeviceResult.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;

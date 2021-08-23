@@ -36,7 +36,7 @@ CoreInternalOutcome DevicesBindInfoLocation::Deserialize(const rapidjson::Value 
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLocation.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLocation.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DevicesBindInfoLocation::Deserialize(const rapidjson::Value 
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLocation.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLocation.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DevicesBindInfoLocation::Deserialize(const rapidjson::Value 
     if (value.HasMember("BackendSet") && !value["BackendSet"].IsNull())
     {
         if (!value["BackendSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLocation.BackendSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLocation.BackendSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BackendSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

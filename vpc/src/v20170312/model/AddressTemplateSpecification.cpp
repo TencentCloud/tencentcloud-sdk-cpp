@@ -35,7 +35,7 @@ CoreInternalOutcome AddressTemplateSpecification::Deserialize(const rapidjson::V
     {
         if (!value["AddressId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateSpecification.AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateSpecification.AddressId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressId = string(value["AddressId"].GetString());
         m_addressIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AddressTemplateSpecification::Deserialize(const rapidjson::V
     {
         if (!value["AddressGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateSpecification.AddressGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateSpecification.AddressGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressGroupId = string(value["AddressGroupId"].GetString());
         m_addressGroupIdHasBeenSet = true;

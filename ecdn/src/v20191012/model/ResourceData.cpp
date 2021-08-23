@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceData.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceData.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResourceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EcdnData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceData.EcdnData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceData.EcdnData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ecdnData.Deserialize(value["EcdnData"]);

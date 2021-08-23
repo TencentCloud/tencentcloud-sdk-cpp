@@ -41,7 +41,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CADX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.CADX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.CADX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cADX = value["CADX"].GetDouble();
         m_cADXHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CADY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.CADY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.CADY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cADY = value["CADY"].GetDouble();
         m_cADYHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CapTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.CapTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.CapTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_capTime = string(value["CapTime"].GetString());
         m_capTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CapPic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.CapPic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.CapPic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_capPic = string(value["CapPic"].GetString());
         m_capPicHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MallAreaType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.MallAreaType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.MallAreaType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mallAreaType = value["MallAreaType"].GetInt64();
         m_mallAreaTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.PosId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.PosId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_posId = value["PosId"].GetInt64();
         m_posIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShopId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = value["ShopId"].GetInt64();
         m_shopIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Event"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonCoordinate.Event` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonCoordinate.Event` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_event = string(value["Event"].GetString());
         m_eventHasBeenSet = true;

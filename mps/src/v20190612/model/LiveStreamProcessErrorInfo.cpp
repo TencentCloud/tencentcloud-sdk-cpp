@@ -35,7 +35,7 @@ CoreInternalOutcome LiveStreamProcessErrorInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessErrorInfo.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessErrorInfo.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LiveStreamProcessErrorInfo::Deserialize(const rapidjson::Val
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessErrorInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessErrorInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

@@ -51,7 +51,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodePoolId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.NodePoolId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.NodePoolId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodePoolId = string(value["NodePoolId"].GetString());
         m_nodePoolIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.ClusterInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.ClusterInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterInstanceId = string(value["ClusterInstanceId"].GetString());
         m_clusterInstanceIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifeState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.LifeState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.LifeState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifeState = string(value["LifeState"].GetString());
         m_lifeStateHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaunchConfigurationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.LaunchConfigurationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.LaunchConfigurationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_launchConfigurationId = string(value["LaunchConfigurationId"].GetString());
         m_launchConfigurationIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoscalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.AutoscalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.AutoscalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoscalingGroupId = string(value["AutoscalingGroupId"].GetString());
         m_autoscalingGroupIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `NodePool.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NodePool.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -130,7 +130,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Taints") && !value["Taints"].IsNull())
     {
         if (!value["Taints"].IsArray())
-            return CoreInternalOutcome(Error("response `NodePool.Taints` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NodePool.Taints` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Taints"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -151,7 +151,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeCountSummary"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NodePool.NodeCountSummary` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.NodeCountSummary` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_nodeCountSummary.Deserialize(value["NodeCountSummary"]);
@@ -168,7 +168,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoscalingGroupStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.AutoscalingGroupStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.AutoscalingGroupStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoscalingGroupStatus = string(value["AutoscalingGroupStatus"].GetString());
         m_autoscalingGroupStatusHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxNodesNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodePool.MaxNodesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.MaxNodesNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxNodesNum = value["MaxNodesNum"].GetInt64();
         m_maxNodesNumHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinNodesNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodePool.MinNodesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.MinNodesNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minNodesNum = value["MinNodesNum"].GetInt64();
         m_minNodesNumHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredNodesNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodePool.DesiredNodesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.DesiredNodesNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredNodesNum = value["DesiredNodesNum"].GetInt64();
         m_desiredNodesNumHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodePoolOs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.NodePoolOs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.NodePoolOs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodePoolOs = string(value["NodePoolOs"].GetString());
         m_nodePoolOsHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsCustomizeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osCustomizeType = string(value["OsCustomizeType"].GetString());
         m_osCustomizeTypeHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredPodNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodePool.DesiredPodNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.DesiredPodNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredPodNum = value["DesiredPodNum"].GetInt64();
         m_desiredPodNumHasBeenSet = true;
@@ -248,7 +248,7 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserScript"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePool.UserScript` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePool.UserScript` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userScript = string(value["UserScript"].GetString());
         m_userScriptHasBeenSet = true;

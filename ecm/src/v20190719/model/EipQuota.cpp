@@ -36,7 +36,7 @@ CoreInternalOutcome EipQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipQuota.QuotaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipQuota.QuotaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quotaId = string(value["QuotaId"].GetString());
         m_quotaIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EipQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaCurrent"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EipQuota.QuotaCurrent` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipQuota.QuotaCurrent` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_quotaCurrent = value["QuotaCurrent"].GetUint64();
         m_quotaCurrentHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EipQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EipQuota.QuotaLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipQuota.QuotaLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_quotaLimit = value["QuotaLimit"].GetUint64();
         m_quotaLimitHasBeenSet = true;

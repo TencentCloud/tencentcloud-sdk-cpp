@@ -38,7 +38,7 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const rapi
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewAsrTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewAsrTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const rapi
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewAsrTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewAsrTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const rapi
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewAsrTextSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewAsrTextSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const rapi
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewAsrTextSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewAsrTextSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const rapi
     if (value.HasMember("KeywordSet") && !value["KeywordSet"].IsNull())
     {
         if (!value["KeywordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaContentReviewAsrTextSegmentItem.KeywordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewAsrTextSegmentItem.KeywordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeywordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

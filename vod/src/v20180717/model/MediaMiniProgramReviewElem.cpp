@@ -36,7 +36,7 @@ CoreInternalOutcome MediaMiniProgramReviewElem::Deserialize(const rapidjson::Val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewElem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewElem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MediaMiniProgramReviewElem::Deserialize(const rapidjson::Val
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewElem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewElem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MediaMiniProgramReviewElem::Deserialize(const rapidjson::Val
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewElem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewElem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

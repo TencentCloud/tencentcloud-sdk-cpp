@@ -36,7 +36,7 @@ CoreInternalOutcome DelayDistribution::Deserialize(const rapidjson::Value &value
     {
         if (!value["Ladder"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DelayDistribution.Ladder` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DelayDistribution.Ladder` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ladder = value["Ladder"].GetInt64();
         m_ladderHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DelayDistribution::Deserialize(const rapidjson::Value &value
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DelayDistribution.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DelayDistribution.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DelayDistribution::Deserialize(const rapidjson::Value &value
     {
         if (!value["Updatetime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DelayDistribution.Updatetime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DelayDistribution.Updatetime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updatetime = value["Updatetime"].GetInt64();
         m_updatetimeHasBeenSet = true;

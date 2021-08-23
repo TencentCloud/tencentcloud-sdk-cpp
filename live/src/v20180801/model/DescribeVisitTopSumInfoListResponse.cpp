@@ -40,16 +40,16 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     {
         if (!rsp["PageNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PageNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PageNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageNum = rsp["PageNum"].GetUint64();
         m_pageNumHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     {
         if (!rsp["PageSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PageSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageSize = rsp["PageSize"].GetUint64();
         m_pageSizeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     {
         if (!rsp["TopIndex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopIndex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopIndex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topIndex = string(rsp["TopIndex"].GetString());
         m_topIndexHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     {
         if (!rsp["OrderParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderParam = string(rsp["OrderParam"].GetString());
         m_orderParamHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     {
         if (!rsp["TotalNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalNum = rsp["TotalNum"].GetUint64();
         m_totalNumHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     {
         if (!rsp["TotalPage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalPage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalPage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalPage = rsp["TotalPage"].GetUint64();
         m_totalPageHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DescribeVisitTopSumInfoListResponse::Deserialize(const strin
     if (rsp.HasMember("DataInfoList") && !rsp["DataInfoList"].IsNull())
     {
         if (!rsp["DataInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `DataInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DataInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

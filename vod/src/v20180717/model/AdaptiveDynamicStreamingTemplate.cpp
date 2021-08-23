@@ -44,7 +44,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["DrmType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.DrmType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.DrmType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_drmType = string(value["DrmType"].GetString());
         m_drmTypeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     if (value.HasMember("StreamInfos") && !value["StreamInfos"].IsNull())
     {
         if (!value["StreamInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.StreamInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.StreamInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StreamInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["DisableHigherVideoBitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.DisableHigherVideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.DisableHigherVideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_disableHigherVideoBitrate = value["DisableHigherVideoBitrate"].GetUint64();
         m_disableHigherVideoBitrateHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["DisableHigherVideoResolution"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.DisableHigherVideoResolution` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.DisableHigherVideoResolution` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_disableHigherVideoResolution = value["DisableHigherVideoResolution"].GetUint64();
         m_disableHigherVideoResolutionHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

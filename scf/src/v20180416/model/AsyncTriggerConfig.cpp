@@ -34,7 +34,7 @@ CoreInternalOutcome AsyncTriggerConfig::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("RetryConfig") && !value["RetryConfig"].IsNull())
     {
         if (!value["RetryConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `AsyncTriggerConfig.RetryConfig` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AsyncTriggerConfig.RetryConfig` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RetryConfig"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome AsyncTriggerConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MsgTTL"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncTriggerConfig.MsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncTriggerConfig.MsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_msgTTL = value["MsgTTL"].GetInt64();
         m_msgTTLHasBeenSet = true;

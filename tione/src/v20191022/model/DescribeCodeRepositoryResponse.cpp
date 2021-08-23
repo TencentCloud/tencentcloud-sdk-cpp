@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
     {
         if (!rsp["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(rsp["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
     {
         if (!rsp["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(rsp["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
     {
         if (!rsp["CodeRepositoryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeRepositoryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeRepositoryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeRepositoryName = string(rsp["CodeRepositoryName"].GetString());
         m_codeRepositoryNameHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
     {
         if (!rsp["GitConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GitConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GitConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gitConfig.Deserialize(rsp["GitConfig"]);
@@ -117,7 +117,7 @@ CoreInternalOutcome DescribeCodeRepositoryResponse::Deserialize(const string &pa
     {
         if (!rsp["NoSecret"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NoSecret` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoSecret` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_noSecret = rsp["NoSecret"].GetBool();
         m_noSecretHasBeenSet = true;

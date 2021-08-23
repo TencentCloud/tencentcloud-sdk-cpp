@@ -43,7 +43,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     if (value.HasMember("AreaCoordSet") && !value["AreaCoordSet"].IsNull())
     {
         if (!value["AreaCoordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.AreaCoordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.AreaCoordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -126,7 +126,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["PicUrlExpireTimeStamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.PicUrlExpireTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.PicUrlExpireTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTimeStamp = value["PicUrlExpireTimeStamp"].GetInt64();
         m_picUrlExpireTimeStampHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome MediaContentReviewPoliticalSegmentItem::Deserialize(const ra
     {
         if (!value["PicUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewPoliticalSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewPoliticalSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
         m_picUrlExpireTimeHasBeenSet = true;

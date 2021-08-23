@@ -37,7 +37,7 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisNodeInfo.NodeType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodeInfo.NodeType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeType = value["NodeType"].GetInt64();
         m_nodeTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisNodeInfo.NodeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodeInfo.NodeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = value["NodeId"].GetInt64();
         m_nodeIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RedisNodeInfo.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodeInfo.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNodeInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodeInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;

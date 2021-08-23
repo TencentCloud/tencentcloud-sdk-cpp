@@ -38,7 +38,7 @@ CoreInternalOutcome CronHorizontalAutoscaler::Deserialize(const rapidjson::Value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscaler.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscaler.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CronHorizontalAutoscaler::Deserialize(const rapidjson::Value
     {
         if (!value["Period"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscaler.Period` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscaler.Period` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_period = string(value["Period"].GetString());
         m_periodHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CronHorizontalAutoscaler::Deserialize(const rapidjson::Value
     if (value.HasMember("Schedules") && !value["Schedules"].IsNull())
     {
         if (!value["Schedules"].IsArray())
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscaler.Schedules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscaler.Schedules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Schedules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome CronHorizontalAutoscaler::Deserialize(const rapidjson::Value
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscaler.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscaler.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CronHorizontalAutoscaler::Deserialize(const rapidjson::Value
     {
         if (!value["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscaler.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscaler.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;

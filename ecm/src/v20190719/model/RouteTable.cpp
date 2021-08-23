@@ -40,7 +40,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTable.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteTableId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTable.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableId = string(value["RouteTableId"].GetString());
         m_routeTableIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteTableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTable.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableName = string(value["RouteTableName"].GetString());
         m_routeTableNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssociationSet") && !value["AssociationSet"].IsNull())
     {
         if (!value["AssociationSet"].IsArray())
-            return CoreInternalOutcome(Error("response `RouteTable.AssociationSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.AssociationSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssociationSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RouteSet") && !value["RouteSet"].IsNull())
     {
         if (!value["RouteSet"].IsArray())
-            return CoreInternalOutcome(Error("response `RouteTable.RouteSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.RouteSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RouteSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Main"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RouteTable.Main` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.Main` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_main = value["Main"].GetBool();
         m_mainHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome RouteTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTable.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTable.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

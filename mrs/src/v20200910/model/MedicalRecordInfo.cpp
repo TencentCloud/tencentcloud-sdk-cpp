@@ -41,7 +41,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DiagnosisTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.DiagnosisTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.DiagnosisTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagnosisTime = string(value["DiagnosisTime"].GetString());
         m_diagnosisTimeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DiagnosisDepartmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.DiagnosisDepartmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.DiagnosisDepartmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagnosisDepartmentName = string(value["DiagnosisDepartmentName"].GetString());
         m_diagnosisDepartmentNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DiagnosisDoctorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.DiagnosisDoctorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.DiagnosisDoctorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagnosisDoctorName = string(value["DiagnosisDoctorName"].GetString());
         m_diagnosisDoctorNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClinicalDiagnosis"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.ClinicalDiagnosis` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.ClinicalDiagnosis` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clinicalDiagnosis = string(value["ClinicalDiagnosis"].GetString());
         m_clinicalDiagnosisHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MainNarration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.MainNarration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.MainNarration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mainNarration = string(value["MainNarration"].GetString());
         m_mainNarrationHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["PhysicalExamination"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.PhysicalExamination` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.PhysicalExamination` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_physicalExamination = string(value["PhysicalExamination"].GetString());
         m_physicalExaminationHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["InspectionFindings"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.InspectionFindings` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.InspectionFindings` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inspectionFindings = string(value["InspectionFindings"].GetString());
         m_inspectionFindingsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MedicalRecordInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TreatmentOpinion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MedicalRecordInfo.TreatmentOpinion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedicalRecordInfo.TreatmentOpinion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_treatmentOpinion = string(value["TreatmentOpinion"].GetString());
         m_treatmentOpinionHasBeenSet = true;

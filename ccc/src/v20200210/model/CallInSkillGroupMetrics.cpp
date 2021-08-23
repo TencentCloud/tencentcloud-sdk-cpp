@@ -36,7 +36,7 @@ CoreInternalOutcome CallInSkillGroupMetrics::Deserialize(const rapidjson::Value 
     {
         if (!value["SkillGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInSkillGroupMetrics.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInSkillGroupMetrics.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupId = value["SkillGroupId"].GetInt64();
         m_skillGroupIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CallInSkillGroupMetrics::Deserialize(const rapidjson::Value 
     {
         if (!value["Metrics"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CallInSkillGroupMetrics.Metrics` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInSkillGroupMetrics.Metrics` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metrics.Deserialize(value["Metrics"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome CallInSkillGroupMetrics::Deserialize(const rapidjson::Value 
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallInSkillGroupMetrics.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInSkillGroupMetrics.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome VideoEditTemplateMaterial::Deserialize(const rapidjson::Valu
     {
         if (!value["AspectRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditTemplateMaterial.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditTemplateMaterial.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aspectRatio = string(value["AspectRatio"].GetString());
         m_aspectRatioHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VideoEditTemplateMaterial::Deserialize(const rapidjson::Valu
     if (value.HasMember("SlotSet") && !value["SlotSet"].IsNull())
     {
         if (!value["SlotSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoEditTemplateMaterial.SlotSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoEditTemplateMaterial.SlotSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SlotSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome VideoEditTemplateMaterial::Deserialize(const rapidjson::Valu
     {
         if (!value["PreviewVideoUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditTemplateMaterial.PreviewVideoUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditTemplateMaterial.PreviewVideoUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_previewVideoUrl = string(value["PreviewVideoUrl"].GetString());
         m_previewVideoUrlHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome PGroupRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupRuleInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupRuleInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PGroupRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupRuleInfo.AuthClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupRuleInfo.AuthClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authClientIp = string(value["AuthClientIp"].GetString());
         m_authClientIpHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PGroupRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RWPermission"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupRuleInfo.RWPermission` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupRuleInfo.RWPermission` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rWPermission = string(value["RWPermission"].GetString());
         m_rWPermissionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PGroupRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserPermission"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupRuleInfo.UserPermission` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupRuleInfo.UserPermission` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userPermission = string(value["UserPermission"].GetString());
         m_userPermissionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PGroupRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PGroupRuleInfo.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupRuleInfo.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;

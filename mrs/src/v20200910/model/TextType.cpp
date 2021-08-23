@@ -36,7 +36,7 @@ CoreInternalOutcome TextType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextType.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextType.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TextType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextType.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextType.Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetInt64();
         m_levelHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TextType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextType.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextType.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome NewModeItems::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VpcList") && !value["VpcList"].IsNull())
     {
         if (!value["VpcList"].IsArray())
-            return CoreInternalOutcome(Error("response `NewModeItems.VpcList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NewModeItems.VpcList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VpcList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome NewModeItems::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Eips") && !value["Eips"].IsNull())
     {
         if (!value["Eips"].IsArray())
-            return CoreInternalOutcome(Error("response `NewModeItems.Eips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NewModeItems.Eips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Eips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome NewModeItems::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NewModeItems.AddCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewModeItems.AddCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_addCount = value["AddCount"].GetInt64();
         m_addCountHasBeenSet = true;

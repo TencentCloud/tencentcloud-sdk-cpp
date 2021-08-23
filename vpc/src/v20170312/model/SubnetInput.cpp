@@ -37,7 +37,7 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetInput.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetInput.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetName = string(value["SubnetName"].GetString());
         m_subnetNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetInput.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteTableId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetInput.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableId = string(value["RouteTableId"].GetString());
         m_routeTableIdHasBeenSet = true;

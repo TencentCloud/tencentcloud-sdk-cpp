@@ -36,7 +36,7 @@ CoreInternalOutcome ProductSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductSimple.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductSimple.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ProductSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductSimple.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductSimple.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ProductSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductEnName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductSimple.ProductEnName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductSimple.ProductEnName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productEnName = string(value["ProductEnName"].GetString());
         m_productEnNameHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome TagGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TagGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagGroup.BizGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagGroup.BizGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizGroupId = string(value["BizGroupId"].GetString());
         m_bizGroupIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TagGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TagGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TagGroup.Sort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagGroup.Sort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sort = value["Sort"].GetUint64();
         m_sortHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TagGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TagGroup.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagGroup.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome TagGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TagGroup.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagGroup.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -46,7 +46,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Describe"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.Describe` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.Describe` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_describe = string(value["Describe"].GetString());
         m_describeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AlertRules") && !value["AlertRules"].IsNull())
     {
         if (!value["AlertRules"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.AlertRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.AlertRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AlertRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("RecordRules") && !value["RecordRules"].IsNull())
     {
         if (!value["RecordRules"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.RecordRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.RecordRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RecordRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -115,7 +115,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ServiceMonitors") && !value["ServiceMonitors"].IsNull())
     {
         if (!value["ServiceMonitors"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.ServiceMonitors` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.ServiceMonitors` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServiceMonitors"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -135,7 +135,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("PodMonitors") && !value["PodMonitors"].IsNull())
     {
         if (!value["PodMonitors"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.PodMonitors` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.PodMonitors` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PodMonitors"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -155,7 +155,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("RawJobs") && !value["RawJobs"].IsNull())
     {
         if (!value["RawJobs"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.RawJobs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.RawJobs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RawJobs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -176,7 +176,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetBool();
         m_isDefaultHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome PrometheusTemplate::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AlertDetailRules") && !value["AlertDetailRules"].IsNull())
     {
         if (!value["AlertDetailRules"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTemplate.AlertDetailRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplate.AlertDetailRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AlertDetailRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

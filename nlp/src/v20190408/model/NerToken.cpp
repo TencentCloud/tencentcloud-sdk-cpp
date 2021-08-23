@@ -37,7 +37,7 @@ CoreInternalOutcome NerToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NerToken.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NerToken.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome NerToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Length"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NerToken.Length` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NerToken.Length` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_length = value["Length"].GetInt64();
         m_lengthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome NerToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginOffset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NerToken.BeginOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NerToken.BeginOffset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_beginOffset = value["BeginOffset"].GetInt64();
         m_beginOffsetHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NerToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NerToken.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NerToken.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

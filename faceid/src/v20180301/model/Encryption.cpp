@@ -36,7 +36,7 @@ CoreInternalOutcome Encryption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CiphertextBlob"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Encryption.CiphertextBlob` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Encryption.CiphertextBlob` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ciphertextBlob = string(value["CiphertextBlob"].GetString());
         m_ciphertextBlobHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Encryption::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EncryptList") && !value["EncryptList"].IsNull())
     {
         if (!value["EncryptList"].IsArray())
-            return CoreInternalOutcome(Error("response `Encryption.EncryptList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Encryption.EncryptList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EncryptList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome Encryption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Iv"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Encryption.Iv` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Encryption.Iv` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iv = string(value["Iv"].GetString());
         m_ivHasBeenSet = true;

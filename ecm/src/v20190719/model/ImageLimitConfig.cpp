@@ -34,7 +34,7 @@ CoreInternalOutcome ImageLimitConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxImageSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageLimitConfig.MaxImageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageLimitConfig.MaxImageSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxImageSize = value["MaxImageSize"].GetInt64();
         m_maxImageSizeHasBeenSet = true;

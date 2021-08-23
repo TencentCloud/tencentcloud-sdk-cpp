@@ -38,7 +38,7 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupPolicy.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["CidrIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.CidrIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupPolicy.CidrIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrIp = string(value["CidrIp"].GetString());
         m_cidrIpHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["PortRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.PortRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupPolicy.PortRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_portRange = string(value["PortRange"].GetString());
         m_portRangeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupPolicy.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["Dir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.Dir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupPolicy.Dir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dir = string(value["Dir"].GetString());
         m_dirHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ExtensionFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionFile.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionFile.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ExtensionFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionFile.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionFile.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;

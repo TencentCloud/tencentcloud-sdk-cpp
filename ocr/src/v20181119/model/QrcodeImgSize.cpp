@@ -35,7 +35,7 @@ CoreInternalOutcome QrcodeImgSize::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Wide"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QrcodeImgSize.Wide` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodeImgSize.Wide` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wide = value["Wide"].GetInt64();
         m_wideHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome QrcodeImgSize::Deserialize(const rapidjson::Value &value)
     {
         if (!value["High"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QrcodeImgSize.High` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodeImgSize.High` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_high = value["High"].GetInt64();
         m_highHasBeenSet = true;

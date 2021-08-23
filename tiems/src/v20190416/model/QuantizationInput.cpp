@@ -38,7 +38,7 @@ CoreInternalOutcome QuantizationInput::Deserialize(const rapidjson::Value &value
     {
         if (!value["InputPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantizationInput.InputPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantizationInput.InputPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputPath = string(value["InputPath"].GetString());
         m_inputPathHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome QuantizationInput::Deserialize(const rapidjson::Value &value
     {
         if (!value["OutputPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantizationInput.OutputPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantizationInput.OutputPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputPath = string(value["OutputPath"].GetString());
         m_outputPathHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome QuantizationInput::Deserialize(const rapidjson::Value &value
     {
         if (!value["BatchSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QuantizationInput.BatchSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantizationInput.BatchSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_batchSize = value["BatchSize"].GetUint64();
         m_batchSizeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome QuantizationInput::Deserialize(const rapidjson::Value &value
     {
         if (!value["Precision"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantizationInput.Precision` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantizationInput.Precision` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_precision = string(value["Precision"].GetString());
         m_precisionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome QuantizationInput::Deserialize(const rapidjson::Value &value
     {
         if (!value["ConvertType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantizationInput.ConvertType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantizationInput.ConvertType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_convertType = string(value["ConvertType"].GetString());
         m_convertTypeHasBeenSet = true;

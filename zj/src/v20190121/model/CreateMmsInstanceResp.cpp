@@ -36,7 +36,7 @@ CoreInternalOutcome CreateMmsInstanceResp::Deserialize(const rapidjson::Value &v
     {
         if (!value["ReturnCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateMmsInstanceResp.ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMmsInstanceResp.ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_returnCode = value["ReturnCode"].GetInt64();
         m_returnCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CreateMmsInstanceResp::Deserialize(const rapidjson::Value &v
     {
         if (!value["ReturnMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateMmsInstanceResp.ReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMmsInstanceResp.ReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_returnMsg = string(value["ReturnMsg"].GetString());
         m_returnMsgHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CreateMmsInstanceResp::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateMmsInstanceResp.InstanceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMmsInstanceResp.InstanceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = value["InstanceId"].GetInt64();
         m_instanceIdHasBeenSet = true;

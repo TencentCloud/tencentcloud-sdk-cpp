@@ -34,7 +34,7 @@ CoreInternalOutcome TransactionArg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokerTDid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionArg.InvokerTDid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionArg.InvokerTDid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokerTDid = string(value["InvokerTDid"].GetString());
         m_invokerTDidHasBeenSet = true;

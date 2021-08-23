@@ -41,7 +41,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionId = string(value["TransactionId"].GetString());
         m_transactionIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TransactionHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TransactionHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionHash = string(value["TransactionHash"].GetString());
         m_transactionHashHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateOrgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.CreateOrgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.CreateOrgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createOrgName = string(value["CreateOrgName"].GetString());
         m_createOrgNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.BlockId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.BlockId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockId = value["BlockId"].GetUint64();
         m_blockIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TransactionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TransactionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionType = string(value["TransactionType"].GetString());
         m_transactionTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockHeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.BlockHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.BlockHeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockHeight = value["BlockHeight"].GetUint64();
         m_blockHeightHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TransactionStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TransactionStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionStatus = string(value["TransactionStatus"].GetString());
         m_transactionStatusHasBeenSet = true;

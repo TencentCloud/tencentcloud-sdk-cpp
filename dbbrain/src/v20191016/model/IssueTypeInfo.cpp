@@ -36,7 +36,7 @@ CoreInternalOutcome IssueTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IssueType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssueTypeInfo.IssueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssueTypeInfo.IssueType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueType = string(value["IssueType"].GetString());
         m_issueTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IssueTypeInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Events") && !value["Events"].IsNull())
     {
         if (!value["Events"].IsArray())
-            return CoreInternalOutcome(Error("response `IssueTypeInfo.Events` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IssueTypeInfo.Events` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Events"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome IssueTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IssueTypeInfo.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssueTypeInfo.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;

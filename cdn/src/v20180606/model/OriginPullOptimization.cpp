@@ -35,7 +35,7 @@ CoreInternalOutcome OriginPullOptimization::Deserialize(const rapidjson::Value &
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginPullOptimization.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginPullOptimization.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OriginPullOptimization::Deserialize(const rapidjson::Value &
     {
         if (!value["OptimizationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginPullOptimization.OptimizationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginPullOptimization.OptimizationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_optimizationType = string(value["OptimizationType"].GetString());
         m_optimizationTypeHasBeenSet = true;

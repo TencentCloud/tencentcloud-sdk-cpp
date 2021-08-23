@@ -35,7 +35,7 @@ CoreInternalOutcome CallBackPhoneCode::Deserialize(const rapidjson::Value &value
     {
         if (!value["Nation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackPhoneCode.Nation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackPhoneCode.Nation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nation = string(value["Nation"].GetString());
         m_nationHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CallBackPhoneCode::Deserialize(const rapidjson::Value &value
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallBackPhoneCode.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallBackPhoneCode.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;

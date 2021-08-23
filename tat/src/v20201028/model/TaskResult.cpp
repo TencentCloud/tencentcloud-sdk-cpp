@@ -38,7 +38,7 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExitCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskResult.ExitCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskResult.ExitCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exitCode = value["ExitCode"].GetInt64();
         m_exitCodeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Output"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskResult.Output` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskResult.Output` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_output = string(value["Output"].GetString());
         m_outputHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskResult.ExecStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskResult.ExecStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_execStartTime = string(value["ExecStartTime"].GetString());
         m_execStartTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskResult.ExecEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskResult.ExecEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_execEndTime = string(value["ExecEndTime"].GetString());
         m_execEndTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dropped"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskResult.Dropped` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskResult.Dropped` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dropped = value["Dropped"].GetUint64();
         m_droppedHasBeenSet = true;

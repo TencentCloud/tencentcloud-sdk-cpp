@@ -37,7 +37,7 @@ CoreInternalOutcome Team::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Team.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Team.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Team::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Team.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Team.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Team::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinPlayers"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Team.MinPlayers` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Team.MinPlayers` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minPlayers = value["MinPlayers"].GetInt64();
         m_minPlayersHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Team::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxPlayers"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Team.MaxPlayers` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Team.MaxPlayers` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxPlayers = value["MaxPlayers"].GetInt64();
         m_maxPlayersHasBeenSet = true;

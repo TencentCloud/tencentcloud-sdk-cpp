@@ -35,7 +35,7 @@ CoreInternalOutcome TransactionPolicy::Deserialize(const rapidjson::Value &value
     {
         if (!value["FirstQueryInterval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TransactionPolicy.FirstQueryInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionPolicy.FirstQueryInterval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_firstQueryInterval = value["FirstQueryInterval"].GetUint64();
         m_firstQueryIntervalHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TransactionPolicy::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaxQueryCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TransactionPolicy.MaxQueryCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionPolicy.MaxQueryCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxQueryCount = value["MaxQueryCount"].GetUint64();
         m_maxQueryCountHasBeenSet = true;

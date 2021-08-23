@@ -38,7 +38,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Item.ItemID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.ItemID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemID = string(value["ItemID"].GetString());
         m_itemIDHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Item.DataInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.DataInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dataInfo.Deserialize(value["DataInfo"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Album"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Item.Album` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.Album` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_album.Deserialize(value["Album"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Artists") && !value["Artists"].IsNull())
     {
         if (!value["Artists"].IsArray())
-            return CoreInternalOutcome(Error("response `Item.Artists` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Item.Artists` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Artists"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -102,7 +102,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Item.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

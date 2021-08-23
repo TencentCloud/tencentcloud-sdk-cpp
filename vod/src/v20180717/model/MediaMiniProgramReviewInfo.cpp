@@ -33,7 +33,7 @@ CoreInternalOutcome MediaMiniProgramReviewInfo::Deserialize(const rapidjson::Val
     if (value.HasMember("MiniProgramReviewList") && !value["MiniProgramReviewList"].IsNull())
     {
         if (!value["MiniProgramReviewList"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfo.MiniProgramReviewList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewInfo.MiniProgramReviewList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MiniProgramReviewList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

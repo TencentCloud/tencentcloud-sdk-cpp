@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceNode.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceClusterNode") && !value["InstanceClusterNode"].IsNull())
     {
         if (!value["InstanceClusterNode"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceNode.InstanceClusterNode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.InstanceClusterNode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceClusterNode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

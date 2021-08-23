@@ -41,7 +41,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.VulName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.VulName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulName = string(value["VulName"].GetString());
         m_vulNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.VulLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.VulLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulLevel = string(value["VulLevel"].GetString());
         m_vulLevelHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanTime = string(value["LastScanTime"].GetString());
         m_lastScanTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulId = value["VulId"].GetUint64();
         m_vulIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AgentVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentVul.VulStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentVul.VulStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulStatus = string(value["VulStatus"].GetString());
         m_vulStatusHasBeenSet = true;

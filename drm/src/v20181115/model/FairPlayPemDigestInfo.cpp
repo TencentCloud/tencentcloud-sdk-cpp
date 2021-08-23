@@ -38,7 +38,7 @@ CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["FairPlayPemId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FairPlayPemDigestInfo.FairPlayPemId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FairPlayPemDigestInfo.FairPlayPemId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fairPlayPemId = value["FairPlayPemId"].GetUint64();
         m_fairPlayPemIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Priority"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FairPlayPemDigestInfo.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FairPlayPemDigestInfo.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetUint64();
         m_priorityHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Md5Pem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FairPlayPemDigestInfo.Md5Pem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FairPlayPemDigestInfo.Md5Pem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5Pem = string(value["Md5Pem"].GetString());
         m_md5PemHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Md5Ask"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FairPlayPemDigestInfo.Md5Ask` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FairPlayPemDigestInfo.Md5Ask` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5Ask = string(value["Md5Ask"].GetString());
         m_md5AskHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Md5PemDecryptKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FairPlayPemDigestInfo.Md5PemDecryptKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FairPlayPemDigestInfo.Md5PemDecryptKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5PemDecryptKey = string(value["Md5PemDecryptKey"].GetString());
         m_md5PemDecryptKeyHasBeenSet = true;

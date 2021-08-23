@@ -39,7 +39,7 @@ CoreInternalOutcome GatewayApiGroupVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayApiGroupVo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayApiGroupVo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome GatewayApiGroupVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayApiGroupVo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayApiGroupVo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome GatewayApiGroupVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["GroupApiCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GatewayApiGroupVo.GroupApiCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayApiGroupVo.GroupApiCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupApiCount = value["GroupApiCount"].GetUint64();
         m_groupApiCountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome GatewayApiGroupVo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("GroupApis") && !value["GroupApis"].IsNull())
     {
         if (!value["GroupApis"].IsArray())
-            return CoreInternalOutcome(Error("response `GatewayApiGroupVo.GroupApis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GatewayApiGroupVo.GroupApis` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupApis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome GatewayApiGroupVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["GatewayInstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayApiGroupVo.GatewayInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayApiGroupVo.GatewayInstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayInstanceType = string(value["GatewayInstanceType"].GetString());
         m_gatewayInstanceTypeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome GatewayApiGroupVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["GatewayInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayApiGroupVo.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayApiGroupVo.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayInstanceId = string(value["GatewayInstanceId"].GetString());
         m_gatewayInstanceIdHasBeenSet = true;

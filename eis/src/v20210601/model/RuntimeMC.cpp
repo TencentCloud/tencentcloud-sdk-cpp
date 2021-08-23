@@ -44,7 +44,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuntimeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.RuntimeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.RuntimeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runtimeId = value["RuntimeId"].GetInt64();
         m_runtimeIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(value["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.CreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.CreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = value["CreatedAt"].GetInt64();
         m_createdAtHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.UpdatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.UpdatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = value["UpdatedAt"].GetInt64();
         m_updatedAtHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkerSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.WorkerSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.WorkerSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workerSize = value["WorkerSize"].GetInt64();
         m_workerSizeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkerReplica"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.WorkerReplica` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.WorkerReplica` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workerReplica = value["WorkerReplica"].GetInt64();
         m_workerReplicaHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunningInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeMC.RunningInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.RunningInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runningInstanceCount = value["RunningInstanceCount"].GetInt64();
         m_runningInstanceCountHasBeenSet = true;

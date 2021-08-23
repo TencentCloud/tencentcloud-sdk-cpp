@@ -37,7 +37,7 @@ CoreInternalOutcome CCRuleConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCRuleConfig.Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRuleConfig.Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CCRuleConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCRuleConfig.ReqNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRuleConfig.ReqNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reqNumber = value["ReqNumber"].GetUint64();
         m_reqNumberHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CCRuleConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCRuleConfig.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRuleConfig.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CCRuleConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExeDuration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCRuleConfig.ExeDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRuleConfig.ExeDuration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_exeDuration = value["ExeDuration"].GetUint64();
         m_exeDurationHasBeenSet = true;

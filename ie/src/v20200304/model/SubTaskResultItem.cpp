@@ -40,7 +40,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["StatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetInt64();
         m_statusCodeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["StatusMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMsg = string(value["StatusMsg"].GetString());
         m_statusMsgHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProgressRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.ProgressRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.ProgressRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progressRate = value["ProgressRate"].GetInt64();
         m_progressRateHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["DownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadUrl = string(value["DownloadUrl"].GetString());
         m_downloadUrlHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Md5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5 = string(value["Md5"].GetString());
         m_md5HasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["FileInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubTaskResultItem.FileInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskResultItem.FileInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fileInfo.Deserialize(value["FileInfo"]);

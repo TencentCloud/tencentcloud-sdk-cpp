@@ -35,7 +35,7 @@ CoreInternalOutcome MediaTrack::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTrack.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrack.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MediaTrack::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TrackItems") && !value["TrackItems"].IsNull())
     {
         if (!value["TrackItems"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaTrack.TrackItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaTrack.TrackItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TrackItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

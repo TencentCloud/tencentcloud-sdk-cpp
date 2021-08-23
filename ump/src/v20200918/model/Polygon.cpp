@@ -33,7 +33,7 @@ CoreInternalOutcome Polygon::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Points") && !value["Points"].IsNull())
     {
         if (!value["Points"].IsArray())
-            return CoreInternalOutcome(Error("response `Polygon.Points` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Polygon.Points` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Points"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

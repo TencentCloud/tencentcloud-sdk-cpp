@@ -35,7 +35,7 @@ CoreInternalOutcome RiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RiskInfo.Key` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskInfo.Key` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_key = value["Key"].GetInt64();
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

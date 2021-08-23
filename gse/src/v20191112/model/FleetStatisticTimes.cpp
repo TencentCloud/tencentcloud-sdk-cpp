@@ -35,7 +35,7 @@ CoreInternalOutcome FleetStatisticTimes::Deserialize(const rapidjson::Value &val
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticTimes.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticTimes.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FleetStatisticTimes::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalUsedTimeSeconds"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticTimes.TotalUsedTimeSeconds` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticTimes.TotalUsedTimeSeconds` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalUsedTimeSeconds = string(value["TotalUsedTimeSeconds"].GetString());
         m_totalUsedTimeSecondsHasBeenSet = true;

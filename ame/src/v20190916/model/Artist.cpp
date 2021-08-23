@@ -34,7 +34,7 @@ CoreInternalOutcome Artist::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArtistName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Artist.ArtistName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Artist.ArtistName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_artistName = string(value["ArtistName"].GetString());
         m_artistNameHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.ClientUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.ClientUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientUin = string(value["ClientUin"].GetString());
         m_clientUinHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.ClientRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.ClientRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientRemark = string(value["ClientRemark"].GetString());
         m_clientRemarkHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.PayTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.PayTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payTime = string(value["PayTime"].GetString());
         m_payTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GoodsType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.GoodsType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.GoodsType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_goodsType = string(value["GoodsType"].GetString());
         m_goodsTypeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SettleMonth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.SettleMonth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.SettleMonth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_settleMonth = string(value["SettleMonth"].GetString());
         m_settleMonthHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Amt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.Amt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.Amt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_amt = value["Amt"].GetInt64();
         m_amtHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayerMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.PayerMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.PayerMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerMode = string(value["PayerMode"].GetString());
         m_payerModeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.ClientType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.ClientType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientType = string(value["ClientType"].GetString());
         m_clientTypeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.ProjectType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.ProjectType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectType = string(value["ProjectType"].GetString());
         m_projectTypeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome AgentBillElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentBillElem.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentBillElem.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityId = string(value["ActivityId"].GetString());
         m_activityIdHasBeenSet = true;

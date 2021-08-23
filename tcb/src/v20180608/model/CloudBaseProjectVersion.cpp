@@ -54,7 +54,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["Sam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Sam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Sam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sam = string(value["Sam"].GetString());
         m_samHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["Source"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Source` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Source` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_source.Deserialize(value["Source"]);
@@ -91,7 +91,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     if (value.HasMember("Parameters") && !value["Parameters"].IsNull())
     {
         if (!value["Parameters"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Parameters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Parameters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Parameters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -141,7 +141,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["CIId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.CIId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.CIId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cIId = string(value["CIId"].GetString());
         m_cIIdHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["CDId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.CDId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.CDId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cDId = string(value["CDId"].GetString());
         m_cDIdHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["VersionNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.VersionNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.VersionNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_versionNum = value["VersionNum"].GetInt64();
         m_versionNumHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["FailReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.FailReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failReason = string(value["FailReason"].GetString());
         m_failReasonHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["RcJson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.RcJson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.RcJson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rcJson = string(value["RcJson"].GetString());
         m_rcJsonHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["AddonConfig"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.AddonConfig` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.AddonConfig` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addonConfig = string(value["AddonConfig"].GetString());
         m_addonConfigHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -234,7 +234,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["NetworkConfig"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkConfig = string(value["NetworkConfig"].GetString());
         m_networkConfigHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["ExtensionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.ExtensionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.ExtensionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extensionId = string(value["ExtensionId"].GetString());
         m_extensionIdHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["FailType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.FailType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.FailType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failType = string(value["FailType"].GetString());
         m_failTypeHasBeenSet = true;
@@ -264,7 +264,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["RepoUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.RepoUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.RepoUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoUrl = string(value["RepoUrl"].GetString());
         m_repoUrlHasBeenSet = true;
@@ -274,7 +274,7 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
     {
         if (!value["AutoDeployOnCodeChange"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseProjectVersion.AutoDeployOnCodeChange` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.AutoDeployOnCodeChange` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoDeployOnCodeChange = value["AutoDeployOnCodeChange"].GetBool();
         m_autoDeployOnCodeChangeHasBeenSet = true;

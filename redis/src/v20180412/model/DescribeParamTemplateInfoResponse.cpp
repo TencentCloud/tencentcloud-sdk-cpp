@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     {
         if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = rsp["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     {
         if (!rsp["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(rsp["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     {
         if (!rsp["ProductType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_productType = rsp["ProductType"].GetUint64();
         m_productTypeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
     if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
     {
         if (!rsp["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

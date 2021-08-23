@@ -41,7 +41,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.Result` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.Result` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_result = value["Result"].GetBool();
         m_resultHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
     {
         if (!value["Polygon"].IsArray())
-            return CoreInternalOutcome(Error("response `TextArithmetic.Polygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.Polygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Polygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(value["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemCoord"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.ItemCoord` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.ItemCoord` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_itemCoord.Deserialize(value["ItemCoord"]);
@@ -118,7 +118,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpressionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.ExpressionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.ExpressionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expressionType = string(value["ExpressionType"].GetString());
         m_expressionTypeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome TextArithmetic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Answer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextArithmetic.Answer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextArithmetic.Answer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_answer = string(value["Answer"].GetString());
         m_answerHasBeenSet = true;

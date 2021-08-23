@@ -41,7 +41,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.NodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.NodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeNum = value["NodeNum"].GetUint64();
         m_nodeNumHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeType = string(value["NodeType"].GetString());
         m_nodeTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.DiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.DiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetUint64();
         m_diskSizeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalDiskInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.LocalDiskInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.LocalDiskInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_localDiskInfo.Deserialize(value["LocalDiskInfo"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.DiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.DiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskCount = value["DiskCount"].GetUint64();
         m_diskCountHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskEncrypt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.DiskEncrypt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.DiskEncrypt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskEncrypt = value["DiskEncrypt"].GetUint64();
         m_diskEncryptHasBeenSet = true;

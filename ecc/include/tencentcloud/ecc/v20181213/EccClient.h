@@ -45,16 +45,16 @@ namespace TencentCloud
                 EccClient(const Credential &credential, const std::string &region);
                 EccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CorrectMultiImageResponse> CorrectMultiImageOutcome;
+                typedef Outcome<Core::Error, Model::CorrectMultiImageResponse> CorrectMultiImageOutcome;
                 typedef std::future<CorrectMultiImageOutcome> CorrectMultiImageOutcomeCallable;
                 typedef std::function<void(const EccClient*, const Model::CorrectMultiImageRequest&, CorrectMultiImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CorrectMultiImageAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
                 typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
                 typedef std::function<void(const EccClient*, const Model::DescribeTaskRequest&, DescribeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAsyncHandler;
-                typedef Outcome<Error, Model::ECCResponse> ECCOutcome;
+                typedef Outcome<Core::Error, Model::ECCResponse> ECCOutcome;
                 typedef std::future<ECCOutcome> ECCOutcomeCallable;
                 typedef std::function<void(const EccClient*, const Model::ECCRequest&, ECCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ECCAsyncHandler;
-                typedef Outcome<Error, Model::EHOCRResponse> EHOCROutcome;
+                typedef Outcome<Core::Error, Model::EHOCRResponse> EHOCROutcome;
                 typedef std::future<EHOCROutcome> EHOCROutcomeCallable;
                 typedef std::function<void(const EccClient*, const Model::EHOCRRequest&, EHOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EHOCRAsyncHandler;
 

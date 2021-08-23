@@ -36,7 +36,7 @@ CoreInternalOutcome Filters::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Filters.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Filters.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Filters::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DeptIds") && !value["DeptIds"].IsNull())
     {
         if (!value["DeptIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Filters.DeptIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Filters.DeptIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeptIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome Filters::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UserIds") && !value["UserIds"].IsNull())
     {
         if (!value["UserIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Filters.UserIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Filters.UserIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

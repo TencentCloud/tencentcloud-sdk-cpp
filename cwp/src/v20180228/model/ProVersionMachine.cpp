@@ -36,7 +36,7 @@ CoreInternalOutcome ProVersionMachine::Deserialize(const rapidjson::Value &value
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProVersionMachine.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProVersionMachine.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ProVersionMachine::Deserialize(const rapidjson::Value &value
     {
         if (!value["MachineRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProVersionMachine.MachineRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProVersionMachine.MachineRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineRegion = string(value["MachineRegion"].GetString());
         m_machineRegionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ProVersionMachine::Deserialize(const rapidjson::Value &value
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProVersionMachine.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProVersionMachine.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;

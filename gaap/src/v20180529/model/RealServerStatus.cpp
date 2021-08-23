@@ -36,7 +36,7 @@ CoreInternalOutcome RealServerStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServerStatus.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerStatus.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerId = string(value["RealServerId"].GetString());
         m_realServerIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RealServerStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RealServerStatus.BindStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerStatus.BindStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindStatus = value["BindStatus"].GetInt64();
         m_bindStatusHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RealServerStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServerStatus.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerStatus.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyId = string(value["ProxyId"].GetString());
         m_proxyIdHasBeenSet = true;

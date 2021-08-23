@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         if (!rsp["NoticeLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NoticeLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_noticeLevel = string(rsp["NoticeLevel"].GetString());
         m_noticeLevelHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         if (!rsp["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = rsp["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(rsp["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         if (!rsp["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(rsp["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         if (!rsp["Appid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Appid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appid = rsp["Appid"].GetUint64();
         m_appidHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         if (!rsp["ContentLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ContentLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_contentLevel = rsp["ContentLevel"].GetUint64();
         m_contentLevelHasBeenSet = true;

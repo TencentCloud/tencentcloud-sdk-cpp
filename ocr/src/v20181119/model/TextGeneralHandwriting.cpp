@@ -38,7 +38,7 @@ CoreInternalOutcome TextGeneralHandwriting::Deserialize(const rapidjson::Value &
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextGeneralHandwriting.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextGeneralHandwriting.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TextGeneralHandwriting::Deserialize(const rapidjson::Value &
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextGeneralHandwriting.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextGeneralHandwriting.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TextGeneralHandwriting::Deserialize(const rapidjson::Value &
     if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
     {
         if (!value["Polygon"].IsArray())
-            return CoreInternalOutcome(Error("response `TextGeneralHandwriting.Polygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextGeneralHandwriting.Polygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Polygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome TextGeneralHandwriting::Deserialize(const rapidjson::Value &
     {
         if (!value["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextGeneralHandwriting.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextGeneralHandwriting.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(value["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome TextGeneralHandwriting::Deserialize(const rapidjson::Value &
     if (value.HasMember("WordPolygon") && !value["WordPolygon"].IsNull())
     {
         if (!value["WordPolygon"].IsArray())
-            return CoreInternalOutcome(Error("response `TextGeneralHandwriting.WordPolygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextGeneralHandwriting.WordPolygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WordPolygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

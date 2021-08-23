@@ -35,7 +35,7 @@ CoreInternalOutcome TraceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TraceInfo.TraceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TraceInfo.TraceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceId = string(value["TraceId"].GetString());
         m_traceIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome TraceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BodyIds") && !value["BodyIds"].IsNull())
     {
         if (!value["BodyIds"].IsArray())
-            return CoreInternalOutcome(Error("response `TraceInfo.BodyIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TraceInfo.BodyIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BodyIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

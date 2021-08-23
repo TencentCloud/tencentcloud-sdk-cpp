@@ -35,7 +35,7 @@ CoreInternalOutcome Province::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Province.ProvinceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Province.ProvinceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceId = string(value["ProvinceId"].GetString());
         m_provinceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Province::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Province.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Province.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceName = string(value["ProvinceName"].GetString());
         m_provinceNameHasBeenSet = true;

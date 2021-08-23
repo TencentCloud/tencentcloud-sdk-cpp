@@ -36,7 +36,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DictInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.Size` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DictInfo.Size` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetUint64();
         m_sizeHasBeenSet = true;

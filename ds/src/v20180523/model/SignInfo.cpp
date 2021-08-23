@@ -40,7 +40,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountResId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.AccountResId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.AccountResId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountResId = string(value["AccountResId"].GetString());
         m_accountResIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthorizationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.AuthorizationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.AuthorizationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authorizationTime = string(value["AuthorizationTime"].GetString());
         m_authorizationTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SealId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.SealId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.SealId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sealId = string(value["SealId"].GetString());
         m_sealIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.ImageData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.ImageData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageData = string(value["ImageData"].GetString());
         m_imageDataHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.CertType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.CertType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_certType = value["CertType"].GetInt64();
         m_certTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignLocation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignInfo.SignLocation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignInfo.SignLocation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signLocation = string(value["SignLocation"].GetString());
         m_signLocationHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome QueryOutwardOrderResult::Deserialize(const rapidjson::Value 
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryOutwardOrderResult.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOutwardOrderResult.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome QueryOutwardOrderResult::Deserialize(const rapidjson::Value 
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueryOutwardOrderResult.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryOutwardOrderResult.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);

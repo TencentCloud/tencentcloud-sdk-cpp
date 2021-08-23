@@ -35,7 +35,7 @@ CoreInternalOutcome AlarmPolicyTriggerTask::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyTriggerTask.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyTriggerTask.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AlarmPolicyTriggerTask::Deserialize(const rapidjson::Value &
     {
         if (!value["TaskConfig"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyTriggerTask.TaskConfig` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyTriggerTask.TaskConfig` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskConfig = string(value["TaskConfig"].GetString());
         m_taskConfigHasBeenSet = true;

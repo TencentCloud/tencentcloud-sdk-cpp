@@ -38,7 +38,7 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["ServiceTemplateGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplateGroup.ServiceTemplateGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateGroup.ServiceTemplateGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateGroupId = string(value["ServiceTemplateGroupId"].GetString());
         m_serviceTemplateGroupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["ServiceTemplateGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplateGroup.ServiceTemplateGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateGroup.ServiceTemplateGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateGroupName = string(value["ServiceTemplateGroupName"].GetString());
         m_serviceTemplateGroupNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ServiceTemplateIdSet") && !value["ServiceTemplateIdSet"].IsNull())
     {
         if (!value["ServiceTemplateIdSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceTemplateGroup.ServiceTemplateIdSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateGroup.ServiceTemplateIdSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServiceTemplateIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -71,7 +71,7 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplateGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ServiceTemplateSet") && !value["ServiceTemplateSet"].IsNull())
     {
         if (!value["ServiceTemplateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceTemplateGroup.ServiceTemplateSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateGroup.ServiceTemplateSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServiceTemplateSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

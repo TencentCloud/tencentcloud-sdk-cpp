@@ -34,7 +34,7 @@ CoreInternalOutcome AiReviewPornTaskInput::Deserialize(const rapidjson::Value &v
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AiReviewPornTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewPornTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;

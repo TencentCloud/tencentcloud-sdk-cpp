@@ -44,7 +44,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlateNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.PlateNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.PlateNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_plateNo = string(value["PlateNo"].GetString());
         m_plateNoHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VehicleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.VehicleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.VehicleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vehicleType = string(value["VehicleType"].GetString());
         m_vehicleTypeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.Owner` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.Owner` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_owner = string(value["Owner"].GetString());
         m_ownerHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UseCharacter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.UseCharacter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.UseCharacter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_useCharacter = string(value["UseCharacter"].GetString());
         m_useCharacterHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Model"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.Model` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.Model` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_model = string(value["Model"].GetString());
         m_modelHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.Vin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.Vin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vin = string(value["Vin"].GetString());
         m_vinHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EngineNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.EngineNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.EngineNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineNo = string(value["EngineNo"].GetString());
         m_engineNoHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegisterDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.RegisterDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.RegisterDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registerDate = string(value["RegisterDate"].GetString());
         m_registerDateHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IssueDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.IssueDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.IssueDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueDate = string(value["IssueDate"].GetString());
         m_issueDateHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Seal"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVehicleFront.Seal` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.Seal` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_seal = string(value["Seal"].GetString());
         m_sealHasBeenSet = true;

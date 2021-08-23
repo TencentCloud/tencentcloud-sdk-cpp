@@ -35,7 +35,7 @@ CoreInternalOutcome WebhookTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTarget.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTarget.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome WebhookTarget::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Headers") && !value["Headers"].IsNull())
     {
         if (!value["Headers"].IsArray())
-            return CoreInternalOutcome(Error("response `WebhookTarget.Headers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WebhookTarget.Headers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Headers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

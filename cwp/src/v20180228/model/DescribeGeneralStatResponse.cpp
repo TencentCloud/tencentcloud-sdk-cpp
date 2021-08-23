@@ -42,16 +42,16 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachinesAll"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MachinesAll` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachinesAll` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machinesAll = rsp["MachinesAll"].GetUint64();
         m_machinesAllHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachinesUninstalled"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MachinesUninstalled` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachinesUninstalled` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machinesUninstalled = rsp["MachinesUninstalled"].GetUint64();
         m_machinesUninstalledHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["AgentsAll"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentsAll` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentsAll` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentsAll = rsp["AgentsAll"].GetUint64();
         m_agentsAllHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["AgentsOnline"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentsOnline` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentsOnline` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentsOnline = rsp["AgentsOnline"].GetUint64();
         m_agentsOnlineHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["AgentsOffline"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentsOffline` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentsOffline` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentsOffline = rsp["AgentsOffline"].GetUint64();
         m_agentsOfflineHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["AgentsPro"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentsPro` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentsPro` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentsPro = rsp["AgentsPro"].GetUint64();
         m_agentsProHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["AgentsBasic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentsBasic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentsBasic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentsBasic = rsp["AgentsBasic"].GetUint64();
         m_agentsBasicHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["AgentsProExpireWithInSevenDays"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentsProExpireWithInSevenDays` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentsProExpireWithInSevenDays` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentsProExpireWithInSevenDays = rsp["AgentsProExpireWithInSevenDays"].GetUint64();
         m_agentsProExpireWithInSevenDaysHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     {
         if (!rsp["RiskMachine"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskMachine` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskMachine` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskMachine = rsp["RiskMachine"].GetUint64();
         m_riskMachineHasBeenSet = true;

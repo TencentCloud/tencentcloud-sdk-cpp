@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeDashboardResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeDashboardResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeDashboardResponse::Deserialize(const string &payload
     {
         if (!rsp["ZoneTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneTotal = rsp["ZoneTotal"].GetInt64();
         m_zoneTotalHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeDashboardResponse::Deserialize(const string &payload
     {
         if (!rsp["ZoneVpcCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneVpcCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneVpcCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneVpcCount = rsp["ZoneVpcCount"].GetInt64();
         m_zoneVpcCountHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeDashboardResponse::Deserialize(const string &payload
     {
         if (!rsp["RequestTotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RequestTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RequestTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_requestTotalCount = rsp["RequestTotalCount"].GetInt64();
         m_requestTotalCountHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeDashboardResponse::Deserialize(const string &payload
     if (rsp.HasMember("FlowUsage") && !rsp["FlowUsage"].IsNull())
     {
         if (!rsp["FlowUsage"].IsArray())
-            return CoreInternalOutcome(Error("response `FlowUsage` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FlowUsage` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["FlowUsage"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

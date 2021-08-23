@@ -39,7 +39,7 @@ CoreInternalOutcome SubTaskTranscodeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskTranscodeInfo.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskTranscodeInfo.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SubTaskTranscodeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TargetInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubTaskTranscodeInfo.TargetInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskTranscodeInfo.TargetInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetInfo.Deserialize(value["TargetInfo"]);
@@ -66,7 +66,7 @@ CoreInternalOutcome SubTaskTranscodeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["EditInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubTaskTranscodeInfo.EditInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskTranscodeInfo.EditInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_editInfo.Deserialize(value["EditInfo"]);
@@ -83,7 +83,7 @@ CoreInternalOutcome SubTaskTranscodeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["VideoInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubTaskTranscodeInfo.VideoInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskTranscodeInfo.VideoInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoInfo.Deserialize(value["VideoInfo"]);
@@ -100,7 +100,7 @@ CoreInternalOutcome SubTaskTranscodeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["AudioInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubTaskTranscodeInfo.AudioInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskTranscodeInfo.AudioInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioInfo.Deserialize(value["AudioInfo"]);
@@ -117,7 +117,7 @@ CoreInternalOutcome SubTaskTranscodeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MuxInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubTaskTranscodeInfo.MuxInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskTranscodeInfo.MuxInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_muxInfo.Deserialize(value["MuxInfo"]);

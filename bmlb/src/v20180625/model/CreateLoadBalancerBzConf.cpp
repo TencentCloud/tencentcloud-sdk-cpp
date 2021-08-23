@@ -36,7 +36,7 @@ CoreInternalOutcome CreateLoadBalancerBzConf::Deserialize(const rapidjson::Value
     {
         if (!value["BzPayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateLoadBalancerBzConf.BzPayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateLoadBalancerBzConf.BzPayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bzPayMode = string(value["BzPayMode"].GetString());
         m_bzPayModeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CreateLoadBalancerBzConf::Deserialize(const rapidjson::Value
     {
         if (!value["BzL4Metrics"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateLoadBalancerBzConf.BzL4Metrics` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateLoadBalancerBzConf.BzL4Metrics` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bzL4Metrics = string(value["BzL4Metrics"].GetString());
         m_bzL4MetricsHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CreateLoadBalancerBzConf::Deserialize(const rapidjson::Value
     {
         if (!value["BzL7Metrics"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateLoadBalancerBzConf.BzL7Metrics` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateLoadBalancerBzConf.BzL7Metrics` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bzL7Metrics = string(value["BzL7Metrics"].GetString());
         m_bzL7MetricsHasBeenSet = true;

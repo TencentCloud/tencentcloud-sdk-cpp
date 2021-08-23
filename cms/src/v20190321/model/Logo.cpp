@@ -36,7 +36,7 @@ CoreInternalOutcome Logo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RrectF"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Logo.RrectF` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Logo.RrectF` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rrectF.Deserialize(value["RrectF"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome Logo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Logo.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Logo.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Logo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Logo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Logo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

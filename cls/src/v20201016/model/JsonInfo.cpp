@@ -35,7 +35,7 @@ CoreInternalOutcome JsonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableTag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `JsonInfo.EnableTag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JsonInfo.EnableTag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableTag = value["EnableTag"].GetBool();
         m_enableTagHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome JsonInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MetaFields") && !value["MetaFields"].IsNull())
     {
         if (!value["MetaFields"].IsArray())
-            return CoreInternalOutcome(Error("response `JsonInfo.MetaFields` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JsonInfo.MetaFields` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MetaFields"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

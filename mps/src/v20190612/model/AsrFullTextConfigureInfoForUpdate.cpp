@@ -35,7 +35,7 @@ CoreInternalOutcome AsrFullTextConfigureInfoForUpdate::Deserialize(const rapidjs
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsrFullTextConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AsrFullTextConfigureInfoForUpdate::Deserialize(const rapidjs
     {
         if (!value["SubtitleFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsrFullTextConfigureInfoForUpdate.SubtitleFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfoForUpdate.SubtitleFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subtitleFormat = string(value["SubtitleFormat"].GetString());
         m_subtitleFormatHasBeenSet = true;

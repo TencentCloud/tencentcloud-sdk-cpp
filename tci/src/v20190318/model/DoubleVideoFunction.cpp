@@ -34,7 +34,7 @@ CoreInternalOutcome DoubleVideoFunction::Deserialize(const rapidjson::Value &val
     {
         if (!value["EnableCoverPictures"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DoubleVideoFunction.EnableCoverPictures` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DoubleVideoFunction.EnableCoverPictures` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableCoverPictures = value["EnableCoverPictures"].GetBool();
         m_enableCoverPicturesHasBeenSet = true;

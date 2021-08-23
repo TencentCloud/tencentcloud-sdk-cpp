@@ -37,7 +37,7 @@ CoreInternalOutcome DevInfoQ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevInfoQ.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevInfoQ.OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openId = string(value["OpenId"].GetString());
         m_openIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DevInfoQ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskScore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DevInfoQ.RiskScore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevInfoQ.RiskScore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_riskScore = value["RiskScore"].GetInt64();
         m_riskScoreHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DevInfoQ::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RiskInfo") && !value["RiskInfo"].IsNull())
     {
         if (!value["RiskInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `DevInfoQ.RiskInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DevInfoQ.RiskInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RiskInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome DevInfoQ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Probability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DevInfoQ.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevInfoQ.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_probability = value["Probability"].GetDouble();
         m_probabilityHasBeenSet = true;

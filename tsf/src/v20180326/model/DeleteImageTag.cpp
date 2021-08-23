@@ -35,7 +35,7 @@ CoreInternalOutcome DeleteImageTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeleteImageTag.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeleteImageTag.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeleteImageTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeleteImageTag.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeleteImageTag.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;

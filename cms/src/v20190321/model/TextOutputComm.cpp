@@ -37,7 +37,7 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextOutputComm.AppID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputComm.AppID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appID = value["AppID"].GetInt64();
         m_appIDHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BUCtrlID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextOutputComm.BUCtrlID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputComm.BUCtrlID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bUCtrlID = value["BUCtrlID"].GetInt64();
         m_bUCtrlIDHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextOutputComm.SendTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputComm.SendTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sendTime = value["SendTime"].GetInt64();
         m_sendTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextOutputComm.Uin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputComm.Uin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetInt64();
         m_uinHasBeenSet = true;

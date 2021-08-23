@@ -69,6 +69,10 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryAnalysisRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryAnalysisResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryListRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryListResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceRequest.h>
@@ -129,142 +133,148 @@ namespace TencentCloud
                 PostgresClient(const Credential &credential, const std::string &region);
                 PostgresClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::AddDBInstanceToReadOnlyGroupResponse> AddDBInstanceToReadOnlyGroupOutcome;
+                typedef Outcome<Core::Error, Model::AddDBInstanceToReadOnlyGroupResponse> AddDBInstanceToReadOnlyGroupOutcome;
                 typedef std::future<AddDBInstanceToReadOnlyGroupOutcome> AddDBInstanceToReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::AddDBInstanceToReadOnlyGroupRequest&, AddDBInstanceToReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDBInstanceToReadOnlyGroupAsyncHandler;
-                typedef Outcome<Error, Model::CloseDBExtranetAccessResponse> CloseDBExtranetAccessOutcome;
+                typedef Outcome<Core::Error, Model::CloseDBExtranetAccessResponse> CloseDBExtranetAccessOutcome;
                 typedef std::future<CloseDBExtranetAccessOutcome> CloseDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseDBExtranetAccessRequest&, CloseDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBExtranetAccessAsyncHandler;
-                typedef Outcome<Error, Model::CloseServerlessDBExtranetAccessResponse> CloseServerlessDBExtranetAccessOutcome;
+                typedef Outcome<Core::Error, Model::CloseServerlessDBExtranetAccessResponse> CloseServerlessDBExtranetAccessOutcome;
                 typedef std::future<CloseServerlessDBExtranetAccessOutcome> CloseServerlessDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseServerlessDBExtranetAccessRequest&, CloseServerlessDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseServerlessDBExtranetAccessAsyncHandler;
-                typedef Outcome<Error, Model::CreateDBInstancesResponse> CreateDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::CreateDBInstancesResponse> CreateDBInstancesOutcome;
                 typedef std::future<CreateDBInstancesOutcome> CreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDBInstancesRequest&, CreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
+                typedef Outcome<Core::Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
                 typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
-                typedef Outcome<Error, Model::CreateReadOnlyDBInstanceResponse> CreateReadOnlyDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::CreateReadOnlyDBInstanceResponse> CreateReadOnlyDBInstanceOutcome;
                 typedef std::future<CreateReadOnlyDBInstanceOutcome> CreateReadOnlyDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateReadOnlyDBInstanceRequest&, CreateReadOnlyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::CreateReadOnlyGroupResponse> CreateReadOnlyGroupOutcome;
+                typedef Outcome<Core::Error, Model::CreateReadOnlyGroupResponse> CreateReadOnlyGroupOutcome;
                 typedef std::future<CreateReadOnlyGroupOutcome> CreateReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateReadOnlyGroupRequest&, CreateReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyGroupAsyncHandler;
-                typedef Outcome<Error, Model::CreateServerlessDBInstanceResponse> CreateServerlessDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::CreateServerlessDBInstanceResponse> CreateServerlessDBInstanceOutcome;
                 typedef std::future<CreateServerlessDBInstanceOutcome> CreateServerlessDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateServerlessDBInstanceRequest&, CreateServerlessDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::DeleteReadOnlyGroupResponse> DeleteReadOnlyGroupOutcome;
+                typedef Outcome<Core::Error, Model::DeleteReadOnlyGroupResponse> DeleteReadOnlyGroupOutcome;
                 typedef std::future<DeleteReadOnlyGroupOutcome> DeleteReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DeleteReadOnlyGroupRequest&, DeleteReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReadOnlyGroupAsyncHandler;
-                typedef Outcome<Error, Model::DeleteServerlessDBInstanceResponse> DeleteServerlessDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::DeleteServerlessDBInstanceResponse> DeleteServerlessDBInstanceOutcome;
                 typedef std::future<DeleteServerlessDBInstanceOutcome> DeleteServerlessDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DeleteServerlessDBInstanceRequest&, DeleteServerlessDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDBBackupsResponse> DescribeDBBackupsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDBBackupsResponse> DescribeDBBackupsOutcome;
                 typedef std::future<DescribeDBBackupsOutcome> DescribeDBBackupsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBBackupsRequest&, DescribeDBBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBBackupsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDBErrlogsResponse> DescribeDBErrlogsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDBErrlogsResponse> DescribeDBErrlogsOutcome;
                 typedef std::future<DescribeDBErrlogsOutcome> DescribeDBErrlogsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBErrlogsRequest&, DescribeDBErrlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBErrlogsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDBInstanceAttributeResponse> DescribeDBInstanceAttributeOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceAttributeResponse> DescribeDBInstanceAttributeOutcome;
                 typedef std::future<DescribeDBInstanceAttributeOutcome> DescribeDBInstanceAttributeOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceAttributeRequest&, DescribeDBInstanceAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceAttributeAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDBSlowlogsResponse> DescribeDBSlowlogsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDBSlowlogsResponse> DescribeDBSlowlogsOutcome;
                 typedef std::future<DescribeDBSlowlogsOutcome> DescribeDBSlowlogsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBSlowlogsRequest&, DescribeDBSlowlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSlowlogsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDBXlogsResponse> DescribeDBXlogsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDBXlogsResponse> DescribeDBXlogsOutcome;
                 typedef std::future<DescribeDBXlogsOutcome> DescribeDBXlogsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBXlogsRequest&, DescribeDBXlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBXlogsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
+                typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
-                typedef Outcome<Error, Model::DescribeProductConfigResponse> DescribeProductConfigOutcome;
+                typedef Outcome<Core::Error, Model::DescribeProductConfigResponse> DescribeProductConfigOutcome;
                 typedef std::future<DescribeProductConfigOutcome> DescribeProductConfigOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeProductConfigRequest&, DescribeProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductConfigAsyncHandler;
-                typedef Outcome<Error, Model::DescribeReadOnlyGroupsResponse> DescribeReadOnlyGroupsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeReadOnlyGroupsResponse> DescribeReadOnlyGroupsOutcome;
                 typedef std::future<DescribeReadOnlyGroupsOutcome> DescribeReadOnlyGroupsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeReadOnlyGroupsRequest&, DescribeReadOnlyGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReadOnlyGroupsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeServerlessDBInstancesResponse> DescribeServerlessDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeServerlessDBInstancesResponse> DescribeServerlessDBInstancesOutcome;
                 typedef std::future<DescribeServerlessDBInstancesOutcome> DescribeServerlessDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeServerlessDBInstancesRequest&, DescribeServerlessDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeSlowQueryAnalysisResponse> DescribeSlowQueryAnalysisOutcome;
+                typedef std::future<DescribeSlowQueryAnalysisOutcome> DescribeSlowQueryAnalysisOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeSlowQueryAnalysisRequest&, DescribeSlowQueryAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowQueryAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSlowQueryListResponse> DescribeSlowQueryListOutcome;
+                typedef std::future<DescribeSlowQueryListOutcome> DescribeSlowQueryListOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeSlowQueryListRequest&, DescribeSlowQueryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowQueryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
-                typedef Outcome<Error, Model::DestroyDBInstanceResponse> DestroyDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::DestroyDBInstanceResponse> DestroyDBInstanceOutcome;
                 typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DestroyDBInstanceRequest&, DestroyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::DisIsolateDBInstancesResponse> DisIsolateDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::DisIsolateDBInstancesResponse> DisIsolateDBInstancesOutcome;
                 typedef std::future<DisIsolateDBInstancesOutcome> DisIsolateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DisIsolateDBInstancesRequest&, DisIsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisIsolateDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
                 typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::InquiryPriceCreateDBInstancesResponse> InquiryPriceCreateDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::InquiryPriceCreateDBInstancesResponse> InquiryPriceCreateDBInstancesOutcome;
                 typedef std::future<InquiryPriceCreateDBInstancesOutcome> InquiryPriceCreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InquiryPriceCreateDBInstancesRequest&, InquiryPriceCreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::InquiryPriceRenewDBInstanceResponse> InquiryPriceRenewDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::InquiryPriceRenewDBInstanceResponse> InquiryPriceRenewDBInstanceOutcome;
                 typedef std::future<InquiryPriceRenewDBInstanceOutcome> InquiryPriceRenewDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InquiryPriceRenewDBInstanceRequest&, InquiryPriceRenewDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::InquiryPriceUpgradeDBInstanceResponse> InquiryPriceUpgradeDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::InquiryPriceUpgradeDBInstanceResponse> InquiryPriceUpgradeDBInstanceOutcome;
                 typedef std::future<InquiryPriceUpgradeDBInstanceOutcome> InquiryPriceUpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InquiryPriceUpgradeDBInstanceRequest&, InquiryPriceUpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpgradeDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::IsolateDBInstancesResponse> IsolateDBInstancesOutcome;
+                typedef Outcome<Core::Error, Model::IsolateDBInstancesResponse> IsolateDBInstancesOutcome;
                 typedef std::future<IsolateDBInstancesOutcome> IsolateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::IsolateDBInstancesRequest&, IsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBInstancesAsyncHandler;
-                typedef Outcome<Error, Model::ModifyAccountRemarkResponse> ModifyAccountRemarkOutcome;
+                typedef Outcome<Core::Error, Model::ModifyAccountRemarkResponse> ModifyAccountRemarkOutcome;
                 typedef std::future<ModifyAccountRemarkOutcome> ModifyAccountRemarkOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyAccountRemarkRequest&, ModifyAccountRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountRemarkAsyncHandler;
-                typedef Outcome<Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
-                typedef Outcome<Error, Model::ModifyDBInstanceReadOnlyGroupResponse> ModifyDBInstanceReadOnlyGroupOutcome;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceReadOnlyGroupResponse> ModifyDBInstanceReadOnlyGroupOutcome;
                 typedef std::future<ModifyDBInstanceReadOnlyGroupOutcome> ModifyDBInstanceReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceReadOnlyGroupRequest&, ModifyDBInstanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceReadOnlyGroupAsyncHandler;
-                typedef Outcome<Error, Model::ModifyDBInstancesProjectResponse> ModifyDBInstancesProjectOutcome;
+                typedef Outcome<Core::Error, Model::ModifyDBInstancesProjectResponse> ModifyDBInstancesProjectOutcome;
                 typedef std::future<ModifyDBInstancesProjectOutcome> ModifyDBInstancesProjectOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstancesProjectRequest&, ModifyDBInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancesProjectAsyncHandler;
-                typedef Outcome<Error, Model::ModifyReadOnlyGroupConfigResponse> ModifyReadOnlyGroupConfigOutcome;
+                typedef Outcome<Core::Error, Model::ModifyReadOnlyGroupConfigResponse> ModifyReadOnlyGroupConfigOutcome;
                 typedef std::future<ModifyReadOnlyGroupConfigOutcome> ModifyReadOnlyGroupConfigOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyReadOnlyGroupConfigRequest&, ModifyReadOnlyGroupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadOnlyGroupConfigAsyncHandler;
-                typedef Outcome<Error, Model::ModifySwitchTimePeriodResponse> ModifySwitchTimePeriodOutcome;
+                typedef Outcome<Core::Error, Model::ModifySwitchTimePeriodResponse> ModifySwitchTimePeriodOutcome;
                 typedef std::future<ModifySwitchTimePeriodOutcome> ModifySwitchTimePeriodOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifySwitchTimePeriodRequest&, ModifySwitchTimePeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySwitchTimePeriodAsyncHandler;
-                typedef Outcome<Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
+                typedef Outcome<Core::Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
-                typedef Outcome<Error, Model::OpenServerlessDBExtranetAccessResponse> OpenServerlessDBExtranetAccessOutcome;
+                typedef Outcome<Core::Error, Model::OpenServerlessDBExtranetAccessResponse> OpenServerlessDBExtranetAccessOutcome;
                 typedef std::future<OpenServerlessDBExtranetAccessOutcome> OpenServerlessDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenServerlessDBExtranetAccessRequest&, OpenServerlessDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenServerlessDBExtranetAccessAsyncHandler;
-                typedef Outcome<Error, Model::RebalanceReadOnlyGroupResponse> RebalanceReadOnlyGroupOutcome;
+                typedef Outcome<Core::Error, Model::RebalanceReadOnlyGroupResponse> RebalanceReadOnlyGroupOutcome;
                 typedef std::future<RebalanceReadOnlyGroupOutcome> RebalanceReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RebalanceReadOnlyGroupRequest&, RebalanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebalanceReadOnlyGroupAsyncHandler;
-                typedef Outcome<Error, Model::RemoveDBInstanceFromReadOnlyGroupResponse> RemoveDBInstanceFromReadOnlyGroupOutcome;
+                typedef Outcome<Core::Error, Model::RemoveDBInstanceFromReadOnlyGroupResponse> RemoveDBInstanceFromReadOnlyGroupOutcome;
                 typedef std::future<RemoveDBInstanceFromReadOnlyGroupOutcome> RemoveDBInstanceFromReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RemoveDBInstanceFromReadOnlyGroupRequest&, RemoveDBInstanceFromReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDBInstanceFromReadOnlyGroupAsyncHandler;
-                typedef Outcome<Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
+                typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
-                typedef Outcome<Error, Model::ResetAccountPasswordResponse> ResetAccountPasswordOutcome;
+                typedef Outcome<Core::Error, Model::ResetAccountPasswordResponse> ResetAccountPasswordOutcome;
                 typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ResetAccountPasswordRequest&, ResetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
-                typedef Outcome<Error, Model::RestartDBInstanceResponse> RestartDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::RestartDBInstanceResponse> RestartDBInstanceOutcome;
                 typedef std::future<RestartDBInstanceOutcome> RestartDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RestartDBInstanceRequest&, RestartDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstanceAsyncHandler;
-                typedef Outcome<Error, Model::SetAutoRenewFlagResponse> SetAutoRenewFlagOutcome;
+                typedef Outcome<Core::Error, Model::SetAutoRenewFlagResponse> SetAutoRenewFlagOutcome;
                 typedef std::future<SetAutoRenewFlagOutcome> SetAutoRenewFlagOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::SetAutoRenewFlagRequest&, SetAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoRenewFlagAsyncHandler;
-                typedef Outcome<Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
+                typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
 
@@ -476,6 +486,24 @@ namespace TencentCloud
                 DescribeServerlessDBInstancesOutcome DescribeServerlessDBInstances(const Model::DescribeServerlessDBInstancesRequest &request);
                 void DescribeServerlessDBInstancesAsync(const Model::DescribeServerlessDBInstancesRequest& request, const DescribeServerlessDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServerlessDBInstancesOutcomeCallable DescribeServerlessDBInstancesCallable(const Model::DescribeServerlessDBInstancesRequest& request);
+
+                /**
+                 *慢查询统计分析接口，根据SQL语句抽象参数之后，进行聚合分析，并返回对应结果
+                 * @param req DescribeSlowQueryAnalysisRequest
+                 * @return DescribeSlowQueryAnalysisOutcome
+                 */
+                DescribeSlowQueryAnalysisOutcome DescribeSlowQueryAnalysis(const Model::DescribeSlowQueryAnalysisRequest &request);
+                void DescribeSlowQueryAnalysisAsync(const Model::DescribeSlowQueryAnalysisRequest& request, const DescribeSlowQueryAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowQueryAnalysisOutcomeCallable DescribeSlowQueryAnalysisCallable(const Model::DescribeSlowQueryAnalysisRequest& request);
+
+                /**
+                 *获取慢查询列表
+                 * @param req DescribeSlowQueryListRequest
+                 * @return DescribeSlowQueryListOutcome
+                 */
+                DescribeSlowQueryListOutcome DescribeSlowQueryList(const Model::DescribeSlowQueryListRequest &request);
+                void DescribeSlowQueryListAsync(const Model::DescribeSlowQueryListRequest& request, const DescribeSlowQueryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowQueryListOutcomeCallable DescribeSlowQueryListCallable(const Model::DescribeSlowQueryListRequest& request);
 
                 /**
                  *本接口 (DescribeZones) 用于查询支持的可用区信息。

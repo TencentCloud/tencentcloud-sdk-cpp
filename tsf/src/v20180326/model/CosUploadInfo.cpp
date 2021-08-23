@@ -38,7 +38,7 @@ CoreInternalOutcome CosUploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosUploadInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CosUploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosUploadInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CosUploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosUploadInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CosUploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosUploadInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CosUploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Credentials"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CosUploadInfo.Credentials` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadInfo.Credentials` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_credentials.Deserialize(value["Credentials"]);

@@ -39,7 +39,7 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
     if (value.HasMember("FaceRecognitionResultSet") && !value["FaceRecognitionResultSet"].IsNull())
     {
         if (!value["FaceRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.FaceRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.FaceRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
     if (value.HasMember("AsrWordsRecognitionResultSet") && !value["AsrWordsRecognitionResultSet"].IsNull())
     {
         if (!value["AsrWordsRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.AsrWordsRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.AsrWordsRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AsrWordsRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
     if (value.HasMember("OcrWordsRecognitionResultSet") && !value["OcrWordsRecognitionResultSet"].IsNull())
     {
         if (!value["OcrWordsRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.OcrWordsRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.OcrWordsRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OcrWordsRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -108,7 +108,7 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
     if (value.HasMember("AsrFullTextRecognitionResultSet") && !value["AsrFullTextRecognitionResultSet"].IsNull())
     {
         if (!value["AsrFullTextRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.AsrFullTextRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.AsrFullTextRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AsrFullTextRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -128,7 +128,7 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
     if (value.HasMember("OcrFullTextRecognitionResultSet") && !value["OcrFullTextRecognitionResultSet"].IsNull())
     {
         if (!value["OcrFullTextRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.OcrFullTextRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.OcrFullTextRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OcrFullTextRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

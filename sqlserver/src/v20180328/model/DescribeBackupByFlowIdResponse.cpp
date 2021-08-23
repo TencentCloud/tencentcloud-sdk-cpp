@@ -45,16 +45,16 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = rsp["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(rsp["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["BackupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupName = string(rsp["BackupName"].GetString());
         m_backupNameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(rsp["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["Size"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Size` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Size` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_size = rsp["Size"].GetUint64();
         m_sizeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["Strategy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Strategy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = rsp["Strategy"].GetInt64();
         m_strategyHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["BackupWay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupWay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupWay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_backupWay = rsp["BackupWay"].GetInt64();
         m_backupWayHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     if (rsp.HasMember("DBs") && !rsp["DBs"].IsNull())
     {
         if (!rsp["DBs"].IsArray())
-            return CoreInternalOutcome(Error("response `DBs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DBs` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DBs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -180,7 +180,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["InternalAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternalAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternalAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internalAddr = string(rsp["InternalAddr"].GetString());
         m_internalAddrHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome DescribeBackupByFlowIdResponse::Deserialize(const string &pa
     {
         if (!rsp["ExternalAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalAddr = string(rsp["ExternalAddr"].GetString());
         m_externalAddrHasBeenSet = true;

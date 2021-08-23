@@ -47,7 +47,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.TagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.TagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = string(value["TagId"].GetString());
         m_tagIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.Size` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.Size` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_size = string(value["Size"].GetString());
         m_sizeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DurationDays"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.DurationDays` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.DurationDays` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_durationDays = string(value["DurationDays"].GetString());
         m_durationDaysHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Author"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.Author` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.Author` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_author = string(value["Author"].GetString());
         m_authorHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Architecture"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.Architecture` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.Architecture` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_architecture = string(value["Architecture"].GetString());
         m_architectureHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DockerVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.DockerVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.DockerVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dockerVersion = string(value["DockerVersion"].GetString());
         m_dockerVersionHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OS"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.OS` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.OS` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oS = string(value["OS"].GetString());
         m_oSHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SizeByte"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.SizeByte` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.SizeByte` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sizeByte = value["SizeByte"].GetInt64();
         m_sizeByteHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PushTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInfo.PushTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInfo.PushTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushTime = string(value["PushTime"].GetString());
         m_pushTimeHasBeenSet = true;

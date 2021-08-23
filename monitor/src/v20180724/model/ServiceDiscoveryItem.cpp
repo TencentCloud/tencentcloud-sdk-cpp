@@ -40,7 +40,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Kind"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.Kind` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.Kind` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kind = string(value["Kind"].GetString());
         m_kindHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["NamespaceSelector"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.NamespaceSelector` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.NamespaceSelector` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceSelector = string(value["NamespaceSelector"].GetString());
         m_namespaceSelectorHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Selector"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.Selector` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.Selector` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_selector = string(value["Selector"].GetString());
         m_selectorHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Endpoints"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.Endpoints` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.Endpoints` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endpoints = string(value["Endpoints"].GetString());
         m_endpointsHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Yaml"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDiscoveryItem.Yaml` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDiscoveryItem.Yaml` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yaml = string(value["Yaml"].GetString());
         m_yamlHasBeenSet = true;

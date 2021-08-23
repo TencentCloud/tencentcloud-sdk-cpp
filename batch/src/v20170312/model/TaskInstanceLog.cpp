@@ -40,7 +40,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskInstanceIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.TaskInstanceIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.TaskInstanceIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskInstanceIndex = value["TaskInstanceIndex"].GetUint64();
         m_taskInstanceIndexHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StdoutLog"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.StdoutLog` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.StdoutLog` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stdoutLog = string(value["StdoutLog"].GetString());
         m_stdoutLogHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StderrLog"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.StderrLog` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.StderrLog` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stderrLog = string(value["StderrLog"].GetString());
         m_stderrLogHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StdoutRedirectPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.StdoutRedirectPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.StdoutRedirectPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stdoutRedirectPath = string(value["StdoutRedirectPath"].GetString());
         m_stdoutRedirectPathHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StderrRedirectPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.StderrRedirectPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.StderrRedirectPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stderrRedirectPath = string(value["StderrRedirectPath"].GetString());
         m_stderrRedirectPathHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StdoutRedirectFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.StdoutRedirectFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.StdoutRedirectFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stdoutRedirectFileName = string(value["StdoutRedirectFileName"].GetString());
         m_stdoutRedirectFileNameHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TaskInstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StderrRedirectFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceLog.StderrRedirectFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceLog.StderrRedirectFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stderrRedirectFileName = string(value["StderrRedirectFileName"].GetString());
         m_stderrRedirectFileNameHasBeenSet = true;

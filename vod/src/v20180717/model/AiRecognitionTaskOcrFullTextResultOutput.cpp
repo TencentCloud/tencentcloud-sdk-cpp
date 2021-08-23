@@ -35,7 +35,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const 
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const 
     {
         if (!value["SegmentSetFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentSetFileUrl = string(value["SegmentSetFileUrl"].GetString());
         m_segmentSetFileUrlHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const 
     {
         if (!value["SegmentSetFileUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentSetFileUrlExpireTime = string(value["SegmentSetFileUrlExpireTime"].GetString());
         m_segmentSetFileUrlExpireTimeHasBeenSet = true;

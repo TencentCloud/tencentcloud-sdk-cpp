@@ -41,10 +41,10 @@ namespace TencentCloud
                 ImsClient(const Credential &credential, const std::string &region);
                 ImsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
+                typedef Outcome<Core::Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
-                typedef Outcome<Error, Model::ImageRecognitionResponse> ImageRecognitionOutcome;
+                typedef Outcome<Core::Error, Model::ImageRecognitionResponse> ImageRecognitionOutcome;
                 typedef std::future<ImageRecognitionOutcome> ImageRecognitionOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::ImageRecognitionRequest&, ImageRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionAsyncHandler;
 

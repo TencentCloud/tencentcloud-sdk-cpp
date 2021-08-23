@@ -36,7 +36,7 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaInputInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInputInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosInputInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInputInfo.CosInputInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInputInfo.CosInputInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosInputInfo.Deserialize(value["CosInputInfo"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UrlInputInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInputInfo.UrlInputInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInputInfo.UrlInputInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_urlInputInfo.Deserialize(value["UrlInputInfo"]);

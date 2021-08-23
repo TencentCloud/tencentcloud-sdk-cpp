@@ -39,7 +39,7 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LeakNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanResultInfo.LeakNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.LeakNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_leakNum = value["LeakNum"].GetUint64();
         m_leakNumHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IPNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanResultInfo.IPNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.IPNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iPNum = value["IPNum"].GetUint64();
         m_iPNumHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PortNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanResultInfo.PortNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.PortNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_portNum = value["PortNum"].GetUint64();
         m_portNumHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IPStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ScanResultInfo.IPStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.IPStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_iPStatus = value["IPStatus"].GetBool();
         m_iPStatusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdpStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ScanResultInfo.IdpStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.IdpStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_idpStatus = value["IdpStatus"].GetBool();
         m_idpStatusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BanStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ScanResultInfo.BanStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.BanStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_banStatus = value["BanStatus"].GetBool();
         m_banStatusHasBeenSet = true;

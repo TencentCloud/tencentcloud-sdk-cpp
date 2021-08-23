@@ -35,7 +35,7 @@ CoreInternalOutcome LoginSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginSettings.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginSettings.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LoginSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicKeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginSettings.PublicKeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginSettings.PublicKeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicKeyId = string(value["PublicKeyId"].GetString());
         m_publicKeyIdHasBeenSet = true;

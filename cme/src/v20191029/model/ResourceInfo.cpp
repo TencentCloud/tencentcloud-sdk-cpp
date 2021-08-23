@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceInfo.Resource` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.Resource` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resource.Deserialize(value["Resource"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceInfo.Owner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.Owner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);

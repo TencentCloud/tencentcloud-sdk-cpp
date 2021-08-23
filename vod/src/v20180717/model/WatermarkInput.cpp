@@ -38,7 +38,7 @@ CoreInternalOutcome WatermarkInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WatermarkInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome WatermarkInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkInput.TextContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkInput.TextContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_textContent = string(value["TextContent"].GetString());
         m_textContentHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome WatermarkInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SvgContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkInput.SvgContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkInput.SvgContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_svgContent = string(value["SvgContent"].GetString());
         m_svgContentHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome WatermarkInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome WatermarkInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;

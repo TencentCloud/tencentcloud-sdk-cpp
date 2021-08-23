@@ -43,7 +43,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["ActionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.ActionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionType = string(value["ActionType"].GetString());
         m_actionTypeHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["Bypass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.Bypass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Bypass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bypass = string(value["Bypass"].GetString());
         m_bypassHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["Redirect"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.Redirect` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Redirect` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirect = string(value["Redirect"].GetString());
         m_redirectHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["SortId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.SortId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.SortId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sortId = string(value["SortId"].GetString());
         m_sortIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
     if (value.HasMember("Strategies") && !value["Strategies"].IsNull())
     {
         if (!value["Strategies"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesRspRuleListItem.Strategies` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Strategies` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Strategies"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

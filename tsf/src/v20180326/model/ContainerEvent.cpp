@@ -41,7 +41,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.FirstTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.FirstTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_firstTimestamp = value["FirstTimestamp"].GetInt64();
         m_firstTimestampHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.LastTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.LastTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lastTimestamp = value["LastTimestamp"].GetInt64();
         m_lastTimestampHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Kind"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.Kind` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.Kind` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kind = string(value["Kind"].GetString());
         m_kindHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerEvent.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerEvent.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

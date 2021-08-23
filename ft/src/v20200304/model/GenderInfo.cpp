@@ -35,7 +35,7 @@ CoreInternalOutcome GenderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GenderInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GenderInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GenderInfo.FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderInfo.FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(value["FaceRect"]);

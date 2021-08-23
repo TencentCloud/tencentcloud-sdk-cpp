@@ -39,7 +39,7 @@ CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DvAuthKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DvAuths.DvAuthKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuths.DvAuthKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dvAuthKey = string(value["DvAuthKey"].GetString());
         m_dvAuthKeyHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DvAuthValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DvAuths.DvAuthValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuths.DvAuthValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dvAuthValue = string(value["DvAuthValue"].GetString());
         m_dvAuthValueHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DvAuthDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DvAuths.DvAuthDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuths.DvAuthDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dvAuthDomain = string(value["DvAuthDomain"].GetString());
         m_dvAuthDomainHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DvAuthPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DvAuths.DvAuthPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuths.DvAuthPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dvAuthPath = string(value["DvAuthPath"].GetString());
         m_dvAuthPathHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DvAuthSubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DvAuths.DvAuthSubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuths.DvAuthSubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dvAuthSubDomain = string(value["DvAuthSubDomain"].GetString());
         m_dvAuthSubDomainHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DvAuthVerifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DvAuths.DvAuthVerifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuths.DvAuthVerifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dvAuthVerifyType = string(value["DvAuthVerifyType"].GetString());
         m_dvAuthVerifyTypeHasBeenSet = true;

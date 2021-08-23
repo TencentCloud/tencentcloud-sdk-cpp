@@ -40,7 +40,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(value["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TrainingJobName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.TrainingJobName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.TrainingJobName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingJobName = string(value["TrainingJobName"].GetString());
         m_trainingJobNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TrainingJobStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.TrainingJobStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.TrainingJobStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingJobStatus = string(value["TrainingJobStatus"].GetString());
         m_trainingJobStatusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TrainingEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.TrainingEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.TrainingEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingEndTime = string(value["TrainingEndTime"].GetString());
         m_trainingEndTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TrainingJobSummary::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ResourceConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobSummary.ResourceConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSummary.ResourceConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resourceConfig.Deserialize(value["ResourceConfig"]);

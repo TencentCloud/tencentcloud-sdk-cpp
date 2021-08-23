@@ -41,7 +41,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoScalingPolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.AutoScalingPolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.AutoScalingPolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingPolicyId = string(value["AutoScalingPolicyId"].GetString());
         m_autoScalingPolicyIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScalingPolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.ScalingPolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.ScalingPolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scalingPolicyName = string(value["ScalingPolicyName"].GetString());
         m_scalingPolicyNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdjustmentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.AdjustmentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.AdjustmentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_adjustmentType = string(value["AdjustmentType"].GetString());
         m_adjustmentTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdjustmentValue"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.AdjustmentValue` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.AdjustmentValue` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_adjustmentValue = value["AdjustmentValue"].GetInt64();
         m_adjustmentValueHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cooldown"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.Cooldown` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.Cooldown` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cooldown = value["Cooldown"].GetUint64();
         m_cooldownHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricAlarm"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.MetricAlarm` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.MetricAlarm` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metricAlarm.Deserialize(value["MetricAlarm"]);
@@ -117,7 +117,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NotificationUserGroupIds") && !value["NotificationUserGroupIds"].IsNull())
     {
         if (!value["NotificationUserGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ScalingPolicy.NotificationUserGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.NotificationUserGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotificationUserGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

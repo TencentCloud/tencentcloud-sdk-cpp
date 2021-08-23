@@ -38,7 +38,7 @@ CoreInternalOutcome LiveStreamProcessTask::Deserialize(const rapidjson::Value &v
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LiveStreamProcessTask::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LiveStreamProcessTask::Deserialize(const rapidjson::Value &v
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LiveStreamProcessTask::Deserialize(const rapidjson::Value &v
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LiveStreamProcessTask::Deserialize(const rapidjson::Value &v
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamProcessTask.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamProcessTask.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

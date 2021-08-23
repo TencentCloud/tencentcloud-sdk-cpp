@@ -39,7 +39,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.ImageId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.ImageId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = value["ImageId"].GetInt64();
         m_imageIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LicenseScopeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.LicenseScopeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.LicenseScopeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_licenseScopeId = value["LicenseScopeId"].GetInt64();
         m_licenseScopeIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DimensionsNameId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.DimensionsNameId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.DimensionsNameId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dimensionsNameId = value["DimensionsNameId"].GetInt64();
         m_dimensionsNameIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownloadPrice"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.DownloadPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.DownloadPrice` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_downloadPrice = value["DownloadPrice"].GetUint64();
         m_downloadPriceHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownloadType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.DownloadType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.DownloadType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadType = string(value["DownloadType"].GetString());
         m_downloadTypeHasBeenSet = true;

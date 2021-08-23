@@ -38,7 +38,7 @@ CoreInternalOutcome MixStream::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MixStream.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixStream.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MixStream::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisableAudio"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MixStream.DisableAudio` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixStream.DisableAudio` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disableAudio = value["DisableAudio"].GetBool();
         m_disableAudioHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MixStream::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModelId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MixStream.ModelId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixStream.ModelId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_modelId = value["ModelId"].GetInt64();
         m_modelIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MixStream::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TeacherId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MixStream.TeacherId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixStream.TeacherId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_teacherId = string(value["TeacherId"].GetString());
         m_teacherIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MixStream::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Custom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MixStream.Custom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixStream.Custom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_custom.Deserialize(value["Custom"]);

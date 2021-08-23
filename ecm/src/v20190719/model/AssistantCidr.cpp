@@ -37,7 +37,7 @@ CoreInternalOutcome AssistantCidr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssistantCidr.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssistantCidr.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AssistantCidr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssistantCidr.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssistantCidr.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AssistantCidr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssistantType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AssistantCidr.AssistantType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssistantCidr.AssistantType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_assistantType = value["AssistantType"].GetUint64();
         m_assistantTypeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AssistantCidr::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubnetSet") && !value["SubnetSet"].IsNull())
     {
         if (!value["SubnetSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AssistantCidr.SubnetSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssistantCidr.SubnetSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

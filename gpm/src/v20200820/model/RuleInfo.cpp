@@ -44,7 +44,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RuleDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RuleDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleDesc = string(value["RuleDesc"].GetString());
         m_ruleDescHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleScript"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RuleScript` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RuleScript` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleScript = string(value["RuleScript"].GetString());
         m_ruleScriptHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MatchCodeList") && !value["MatchCodeList"].IsNull())
     {
         if (!value["MatchCodeList"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleInfo.MatchCodeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.MatchCodeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MatchCodeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.RuleCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.RuleCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleCode = string(value["RuleCode"].GetString());
         m_ruleCodeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createUin = string(value["CreateUin"].GetString());
         m_createUinHasBeenSet = true;

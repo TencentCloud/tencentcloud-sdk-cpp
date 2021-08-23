@@ -39,7 +39,7 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalableRule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalableRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpandVmCountLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScalableRule.ExpandVmCountLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.ExpandVmCountLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expandVmCountLimit = value["ExpandVmCountLimit"].GetInt64();
         m_expandVmCountLimitHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShrinkVmCountLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScalableRule.ShrinkVmCountLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.ShrinkVmCountLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shrinkVmCountLimit = value["ShrinkVmCountLimit"].GetInt64();
         m_shrinkVmCountLimitHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScalableRule.GroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.GroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupCount = value["GroupCount"].GetInt64();
         m_groupCountHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalableRule.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome AutoScalingNotification::Deserialize(const rapidjson::Value 
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoScalingNotification.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AutoScalingNotification::Deserialize(const rapidjson::Value 
     if (value.HasMember("NotificationUserGroupIds") && !value["NotificationUserGroupIds"].IsNull())
     {
         if (!value["NotificationUserGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `AutoScalingNotification.NotificationUserGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.NotificationUserGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotificationUserGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome AutoScalingNotification::Deserialize(const rapidjson::Value 
     if (value.HasMember("NotificationTypes") && !value["NotificationTypes"].IsNull())
     {
         if (!value["NotificationTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `AutoScalingNotification.NotificationTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.NotificationTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotificationTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome AutoScalingNotification::Deserialize(const rapidjson::Value 
     {
         if (!value["AutoScalingNotificationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoScalingNotification.AutoScalingNotificationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingNotification.AutoScalingNotificationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingNotificationId = string(value["AutoScalingNotificationId"].GetString());
         m_autoScalingNotificationIdHasBeenSet = true;

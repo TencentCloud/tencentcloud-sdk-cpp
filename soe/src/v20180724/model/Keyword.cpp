@@ -38,7 +38,7 @@ CoreInternalOutcome Keyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Keyword.RefText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Keyword.RefText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_refText = string(value["RefText"].GetString());
         m_refTextHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Keyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvalMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Keyword.EvalMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Keyword.EvalMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_evalMode = value["EvalMode"].GetUint64();
         m_evalModeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Keyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreCoeff"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Keyword.ScoreCoeff` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Keyword.ScoreCoeff` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_scoreCoeff = value["ScoreCoeff"].GetDouble();
         m_scoreCoeffHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Keyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Keyword.ServerType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Keyword.ServerType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_serverType = value["ServerType"].GetUint64();
         m_serverTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Keyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Keyword.TextMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Keyword.TextMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_textMode = value["TextMode"].GetUint64();
         m_textModeHasBeenSet = true;

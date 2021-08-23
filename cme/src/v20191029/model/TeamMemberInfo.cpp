@@ -36,7 +36,7 @@ CoreInternalOutcome TeamMemberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamMemberInfo.MemberId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamMemberInfo.MemberId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memberId = string(value["MemberId"].GetString());
         m_memberIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TeamMemberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamMemberInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamMemberInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TeamMemberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamMemberInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamMemberInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome CreateRedInvoiceResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CreateRedInvoiceResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome CreateRedInvoiceResult::Deserialize(const rapidjson::Value &
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResult.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResult.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

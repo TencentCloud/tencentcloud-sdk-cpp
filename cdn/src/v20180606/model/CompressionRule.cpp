@@ -38,7 +38,7 @@ CoreInternalOutcome CompressionRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Compress"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CompressionRule.Compress` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompressionRule.Compress` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_compress = value["Compress"].GetBool();
         m_compressHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CompressionRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileExtensions") && !value["FileExtensions"].IsNull())
     {
         if (!value["FileExtensions"].IsArray())
-            return CoreInternalOutcome(Error("response `CompressionRule.FileExtensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CompressionRule.FileExtensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileExtensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome CompressionRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinLength"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CompressionRule.MinLength` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompressionRule.MinLength` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minLength = value["MinLength"].GetInt64();
         m_minLengthHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CompressionRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxLength"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CompressionRule.MaxLength` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompressionRule.MaxLength` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxLength = value["MaxLength"].GetInt64();
         m_maxLengthHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CompressionRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Algorithms") && !value["Algorithms"].IsNull())
     {
         if (!value["Algorithms"].IsArray())
-            return CoreInternalOutcome(Error("response `CompressionRule.Algorithms` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CompressionRule.Algorithms` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Algorithms"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

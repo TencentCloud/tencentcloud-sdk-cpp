@@ -39,7 +39,7 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CMEExportInfo.Owner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CMEExportInfo.Owner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CMEExportInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CMEExportInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CMEExportInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CMEExportInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CMEExportInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CMEExportInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classPath = string(value["ClassPath"].GetString());
         m_classPathHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CMEExportInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CMEExportInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ThirdPartyPublishInfos") && !value["ThirdPartyPublishInfos"].IsNull())
     {
         if (!value["ThirdPartyPublishInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `CMEExportInfo.ThirdPartyPublishInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CMEExportInfo.ThirdPartyPublishInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ThirdPartyPublishInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

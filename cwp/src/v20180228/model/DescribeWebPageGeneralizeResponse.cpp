@@ -40,16 +40,16 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["ProtectMonitor"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectMonitor` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectMonitor` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectMonitor = rsp["ProtectMonitor"].GetUint64();
         m_protectMonitorHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["ProtectDirNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectDirNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectDirNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectDirNum = rsp["ProtectDirNum"].GetUint64();
         m_protectDirNumHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["ProtectFileNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectFileNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectFileNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectFileNum = rsp["ProtectFileNum"].GetUint64();
         m_protectFileNumHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["TamperFileNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TamperFileNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TamperFileNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tamperFileNum = rsp["TamperFileNum"].GetUint64();
         m_tamperFileNumHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["TamperNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TamperNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TamperNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tamperNum = rsp["TamperNum"].GetUint64();
         m_tamperNumHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["ProtectToday"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectToday` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectToday` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectToday = rsp["ProtectToday"].GetUint64();
         m_protectTodayHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     {
         if (!rsp["ProtectHostNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectHostNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectHostNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectHostNum = rsp["ProtectHostNum"].GetUint64();
         m_protectHostNumHasBeenSet = true;

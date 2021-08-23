@@ -46,7 +46,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FunctionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.FunctionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.FunctionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionName = string(value["FunctionName"].GetString());
         m_functionNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.RetMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.RetMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_retMsg = string(value["RetMsg"].GetString());
         m_retMsgHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.RequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.RequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestId = string(value["RequestId"].GetString());
         m_requestIdHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retCode = value["RetCode"].GetInt64();
         m_retCodeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokeFinished"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.InvokeFinished` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.InvokeFinished` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_invokeFinished = value["InvokeFinished"].GetInt64();
         m_invokeFinishedHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BillDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.BillDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.BillDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_billDuration = value["BillDuration"].GetInt64();
         m_billDurationHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemUsage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.MemUsage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.MemUsage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memUsage = value["MemUsage"].GetInt64();
         m_memUsageHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Log"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.Log` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.Log` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_log = string(value["Log"].GetString());
         m_logHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome FunctionLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetryNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FunctionLog.RetryNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionLog.RetryNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_retryNum = value["RetryNum"].GetUint64();
         m_retryNumHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AnchorId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.AnchorId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.AnchorId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_anchorId = string(value["AnchorId"].GetString());
         m_anchorIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AnchorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.AnchorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.AnchorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_anchorName = string(value["AnchorName"].GetString());
         m_anchorNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AnchorIDCard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.AnchorIDCard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.AnchorIDCard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_anchorIDCard = string(value["AnchorIDCard"].GetString());
         m_anchorIDCardHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Amount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetInt64();
         m_amountHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgentTaxPayment.Tax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTaxPayment.Tax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tax = value["Tax"].GetInt64();
         m_taxHasBeenSet = true;

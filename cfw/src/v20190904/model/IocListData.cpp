@@ -36,7 +36,7 @@ CoreInternalOutcome IocListData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IocListData.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IocListData.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome IocListData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direction"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IocListData.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IocListData.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetInt64();
         m_directionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome IocListData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IocListData.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IocListData.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;

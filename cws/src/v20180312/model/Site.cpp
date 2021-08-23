@@ -67,7 +67,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.MonitorId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.MonitorId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_monitorId = value["MonitorId"].GetUint64();
         m_monitorIdHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VerifyStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.VerifyStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.VerifyStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_verifyStatus = value["VerifyStatus"].GetUint64();
         m_verifyStatusHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.MonitorStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.MonitorStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_monitorStatus = value["MonitorStatus"].GetUint64();
         m_monitorStatusHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.ScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.ScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanStatus = value["ScanStatus"].GetUint64();
         m_scanStatusHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanTaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanTaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanTaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanTaskId = value["LastScanTaskId"].GetUint64();
         m_lastScanTaskIdHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanStartTime = string(value["LastScanStartTime"].GetString());
         m_lastScanStartTimeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanFinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanFinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanFinishTime = string(value["LastScanFinishTime"].GetString());
         m_lastScanFinishTimeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanCancelTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanCancelTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanCancelTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanCancelTime = string(value["LastScanCancelTime"].GetString());
         m_lastScanCancelTimeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanPageCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanPageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanPageCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanPageCount = value["LastScanPageCount"].GetUint64();
         m_lastScanPageCountHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanScannerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanScannerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanScannerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanScannerType = string(value["LastScanScannerType"].GetString());
         m_lastScanScannerTypeHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanVulsHighNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanVulsHighNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanVulsHighNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanVulsHighNum = value["LastScanVulsHighNum"].GetUint64();
         m_lastScanVulsHighNumHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanVulsMiddleNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanVulsMiddleNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanVulsMiddleNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanVulsMiddleNum = value["LastScanVulsMiddleNum"].GetUint64();
         m_lastScanVulsMiddleNumHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanVulsLowNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanVulsLowNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanVulsLowNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanVulsLowNum = value["LastScanVulsLowNum"].GetUint64();
         m_lastScanVulsLowNumHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanVulsNoticeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanVulsNoticeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanVulsNoticeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanVulsNoticeNum = value["LastScanVulsNoticeNum"].GetUint64();
         m_lastScanVulsNoticeNumHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanRateLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanRateLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanRateLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanRateLimit = value["LastScanRateLimit"].GetUint64();
         m_lastScanRateLimitHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanVulsNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanVulsNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanVulsNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanVulsNum = value["LastScanVulsNum"].GetUint64();
         m_lastScanVulsNumHasBeenSet = true;
@@ -277,7 +277,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanNoticeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanNoticeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanNoticeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanNoticeNum = value["LastScanNoticeNum"].GetUint64();
         m_lastScanNoticeNumHasBeenSet = true;
@@ -287,7 +287,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetUint64();
         m_progressHasBeenSet = true;
@@ -297,7 +297,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Appid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appid = value["Appid"].GetUint64();
         m_appidHasBeenSet = true;
@@ -307,7 +307,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -317,7 +317,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedLogin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Site.NeedLogin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.NeedLogin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needLogin = value["NeedLogin"].GetInt64();
         m_needLoginHasBeenSet = true;
@@ -327,7 +327,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginCookie"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LoginCookie` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LoginCookie` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loginCookie = string(value["LoginCookie"].GetString());
         m_loginCookieHasBeenSet = true;
@@ -337,7 +337,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginCookieValid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LoginCookieValid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LoginCookieValid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loginCookieValid = value["LoginCookieValid"].GetUint64();
         m_loginCookieValidHasBeenSet = true;
@@ -347,7 +347,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginCheckUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LoginCheckUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LoginCheckUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loginCheckUrl = string(value["LoginCheckUrl"].GetString());
         m_loginCheckUrlHasBeenSet = true;
@@ -357,7 +357,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginCheckKw"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.LoginCheckKw` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LoginCheckKw` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loginCheckKw = string(value["LoginCheckKw"].GetString());
         m_loginCheckKwHasBeenSet = true;
@@ -367,7 +367,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanDisallow"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.ScanDisallow` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.ScanDisallow` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanDisallow = string(value["ScanDisallow"].GetString());
         m_scanDisallowHasBeenSet = true;
@@ -377,7 +377,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Site.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAgent = string(value["UserAgent"].GetString());
         m_userAgentHasBeenSet = true;
@@ -387,7 +387,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.ContentStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.ContentStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_contentStatus = value["ContentStatus"].GetUint64();
         m_contentStatusHasBeenSet = true;
@@ -397,7 +397,7 @@ CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanContentNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Site.LastScanContentNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Site.LastScanContentNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanContentNum = value["LastScanContentNum"].GetUint64();
         m_lastScanContentNumHasBeenSet = true;

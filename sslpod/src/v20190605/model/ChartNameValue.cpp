@@ -35,7 +35,7 @@ CoreInternalOutcome ChartNameValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChartNameValue.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChartNameValue.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ChartNameValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChartNameValue.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChartNameValue.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;

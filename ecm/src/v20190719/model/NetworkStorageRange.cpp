@@ -48,7 +48,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MaxBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MaxBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidth = value["MaxBandwidth"].GetInt64();
         m_maxBandwidthHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxSystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MaxSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MaxSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSystemDiskSize = value["MaxSystemDiskSize"].GetInt64();
         m_maxSystemDiskSizeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MinBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MinBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MinBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minBandwidth = value["MinBandwidth"].GetInt64();
         m_minBandwidthHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MinSystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MinSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MinSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minSystemDiskSize = value["MinSystemDiskSize"].GetInt64();
         m_minSystemDiskSizeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxDataDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MaxDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MaxDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxDataDiskSize = value["MaxDataDiskSize"].GetInt64();
         m_maxDataDiskSizeHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MinDataDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MinDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MinDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minDataDiskSize = value["MinDataDiskSize"].GetInt64();
         m_minDataDiskSizeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["SuggestBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.SuggestBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.SuggestBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suggestBandwidth = value["SuggestBandwidth"].GetInt64();
         m_suggestBandwidthHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["SuggestDataDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.SuggestDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.SuggestDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suggestDataDiskSize = value["SuggestDataDiskSize"].GetInt64();
         m_suggestDataDiskSizeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["SuggestSystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.SuggestSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.SuggestSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suggestSystemDiskSize = value["SuggestSystemDiskSize"].GetInt64();
         m_suggestSystemDiskSizeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxVcpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MaxVcpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MaxVcpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxVcpu = value["MaxVcpu"].GetInt64();
         m_maxVcpuHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MinVcpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MinVcpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MinVcpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minVcpu = value["MinVcpu"].GetInt64();
         m_minVcpuHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxVcpuPerReq"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MaxVcpuPerReq` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MaxVcpuPerReq` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxVcpuPerReq = value["MaxVcpuPerReq"].GetInt64();
         m_maxVcpuPerReqHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["PerBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.PerBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.PerBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_perBandwidth = value["PerBandwidth"].GetInt64();
         m_perBandwidthHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["PerDataDisk"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.PerDataDisk` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.PerDataDisk` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_perDataDisk = value["PerDataDisk"].GetInt64();
         m_perDataDiskHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxModuleNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkStorageRange.MaxModuleNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.MaxModuleNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxModuleNum = value["MaxModuleNum"].GetInt64();
         m_maxModuleNumHasBeenSet = true;

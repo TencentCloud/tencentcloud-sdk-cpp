@@ -35,7 +35,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.Size` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.Size` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetUint64();
         m_sizeHasBeenSet = true;

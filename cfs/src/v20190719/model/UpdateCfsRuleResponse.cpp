@@ -39,16 +39,16 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     {
         if (!rsp["PGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pGroupId = string(rsp["PGroupId"].GetString());
         m_pGroupIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     {
         if (!rsp["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(rsp["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     {
         if (!rsp["AuthClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authClientIp = string(rsp["AuthClientIp"].GetString());
         m_authClientIpHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     {
         if (!rsp["RWPermission"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RWPermission` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RWPermission` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rWPermission = string(rsp["RWPermission"].GetString());
         m_rWPermissionHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     {
         if (!rsp["UserPermission"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserPermission` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserPermission` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userPermission = string(rsp["UserPermission"].GetString());
         m_userPermissionHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome UpdateCfsRuleResponse::Deserialize(const string &payload)
     {
         if (!rsp["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = rsp["Priority"].GetInt64();
         m_priorityHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome CameraState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CameraState.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraState.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraId = value["CameraId"].GetUint64();
         m_cameraIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CameraState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CameraState.State` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraState.State` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetUint64();
         m_stateHasBeenSet = true;

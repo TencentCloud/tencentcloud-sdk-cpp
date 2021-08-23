@@ -39,7 +39,7 @@ CoreInternalOutcome VodPoliticalOcrReviewResult::Deserialize(const rapidjson::Va
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPoliticalOcrReviewResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPoliticalOcrReviewResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VodPoliticalOcrReviewResult::Deserialize(const rapidjson::Va
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodPoliticalOcrReviewResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPoliticalOcrReviewResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VodPoliticalOcrReviewResult::Deserialize(const rapidjson::Va
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPoliticalOcrReviewResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPoliticalOcrReviewResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VodPoliticalOcrReviewResult::Deserialize(const rapidjson::Va
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodPoliticalOcrReviewResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPoliticalOcrReviewResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome VodPoliticalOcrReviewResult::Deserialize(const rapidjson::Va
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPoliticalOcrReviewResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPoliticalOcrReviewResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome VodPoliticalOcrReviewResult::Deserialize(const rapidjson::Va
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VodPoliticalOcrReviewResult.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VodPoliticalOcrReviewResult.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

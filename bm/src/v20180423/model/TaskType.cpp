@@ -36,7 +36,7 @@ CoreInternalOutcome TaskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskType.TypeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskType.TypeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_typeId = value["TypeId"].GetUint64();
         m_typeIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskType.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskType.TypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_typeName = string(value["TypeName"].GetString());
         m_typeNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskSubType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskType.TaskSubType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskType.TaskSubType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskSubType = string(value["TaskSubType"].GetString());
         m_taskSubTypeHasBeenSet = true;

@@ -48,7 +48,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reference"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Reference` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Reference` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reference = string(value["Reference"].GetString());
         m_referenceHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MergeTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.MergeTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.MergeTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mergeTime = string(value["MergeTime"].GetString());
         m_mergeTimeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.ProcessMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.ProcessMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processMd5 = string(value["ProcessMd5"].GetString());
         m_processMd5HasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmdLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmdLine = string(value["CmdLine"].GetString());
         m_cmdLineHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome MaliciousRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MaliciousRequest.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaliciousRequest.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetUint64();
         m_pidHasBeenSet = true;

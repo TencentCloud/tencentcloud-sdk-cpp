@@ -57,7 +57,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["SubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetName = string(value["SubnetName"].GetString());
         m_subnetNameHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Charset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.Charset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Charset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_charset = string(value["Charset"].GetString());
         m_charsetHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["DbType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.DbType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.DbType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbType = string(value["DbType"].GetString());
         m_dbTypeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["DbVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.DbVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.DbVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbVersion = string(value["DbVersion"].GetString());
         m_dbVersionHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["UsedStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.UsedStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.UsedStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_usedStorage = value["UsedStorage"].GetInt64();
         m_usedStorageHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     if (value.HasMember("RoAddr") && !value["RoAddr"].IsNull())
     {
         if (!value["RoAddr"].IsArray())
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.RoAddr` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.RoAddr` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RoAddr"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -216,7 +216,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     if (value.HasMember("InstanceSet") && !value["InstanceSet"].IsNull())
     {
         if (!value["InstanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.InstanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.InstanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -237,7 +237,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["PayMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = value["PayMode"].GetInt64();
         m_payModeHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["PeriodEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.PeriodEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.PeriodEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_periodEndTime = string(value["PeriodEndTime"].GetString());
         m_periodEndTimeHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -277,7 +277,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ProjectID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectID = value["ProjectID"].GetInt64();
         m_projectIDHasBeenSet = true;
@@ -287,7 +287,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -296,7 +296,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ResourceTags") && !value["ResourceTags"].IsNull())
     {
         if (!value["ResourceTags"].IsArray())
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ResourceTags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ResourceTags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResourceTags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -317,7 +317,7 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ServerlessStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverlessStatus = string(value["ServerlessStatus"].GetString());
         m_serverlessStatusHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.Result` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.Result` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_result = value["Result"].GetBool();
         m_resultHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FailedIndices") && !value["FailedIndices"].IsNull())
     {
         if (!value["FailedIndices"].IsArray())
-            return CoreInternalOutcome(Error("response `SubTaskDetail.FailedIndices` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.FailedIndices` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FailedIndices"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(value["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubTaskDetail.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubTaskDetail.Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetInt64();
         m_levelHasBeenSet = true;

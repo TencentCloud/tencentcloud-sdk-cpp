@@ -65,16 +65,16 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -85,11 +85,11 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -97,7 +97,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["OwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = string(rsp["OwnerUin"].GetString());
         m_ownerUinHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(rsp["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["From"].IsString())
         {
-            return CoreInternalOutcome(Error("response `From` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `From` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_from = string(rsp["From"].GetString());
         m_fromHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["CertificateType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateType = string(rsp["CertificateType"].GetString());
         m_certificateTypeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["PackageType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageType = string(rsp["PackageType"].GetString());
         m_packageTypeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["ProductZhName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductZhName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductZhName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productZhName = string(rsp["ProductZhName"].GetString());
         m_productZhNameHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(rsp["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(rsp["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["StatusMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMsg = string(rsp["StatusMsg"].GetString());
         m_statusMsgHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["VerifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyType = string(rsp["VerifyType"].GetString());
         m_verifyTypeHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["VulnerabilityStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulnerabilityStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulnerabilityStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulnerabilityStatus = string(rsp["VulnerabilityStatus"].GetString());
         m_vulnerabilityStatusHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["CertBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certBeginTime = string(rsp["CertBeginTime"].GetString());
         m_certBeginTimeHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["CertEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certEndTime = string(rsp["CertEndTime"].GetString());
         m_certEndTimeHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["ValidityPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ValidityPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ValidityPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validityPeriod = string(rsp["ValidityPeriod"].GetString());
         m_validityPeriodHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["InsertTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InsertTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InsertTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = string(rsp["InsertTime"].GetString());
         m_insertTimeHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(rsp["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["CertificateExtra"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CertificateExtra` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_certificateExtra.Deserialize(rsp["CertificateExtra"]);
@@ -284,7 +284,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["DvAuthDetail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DvAuthDetail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DvAuthDetail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dvAuthDetail.Deserialize(rsp["DvAuthDetail"]);
@@ -301,7 +301,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["VulnerabilityReport"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulnerabilityReport` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulnerabilityReport` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulnerabilityReport = string(rsp["VulnerabilityReport"].GetString());
         m_vulnerabilityReportHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(rsp["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;
@@ -321,7 +321,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["PackageTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageTypeName = string(rsp["PackageTypeName"].GetString());
         m_packageTypeNameHasBeenSet = true;
@@ -331,7 +331,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["StatusName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusName = string(rsp["StatusName"].GetString());
         m_statusNameHasBeenSet = true;
@@ -340,7 +340,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     if (rsp.HasMember("SubjectAltName") && !rsp["SubjectAltName"].IsNull())
     {
         if (!rsp["SubjectAltName"].IsArray())
-            return CoreInternalOutcome(Error("response `SubjectAltName` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubjectAltName` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SubjectAltName"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -354,7 +354,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsVip"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsVip` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsVip` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isVip = rsp["IsVip"].GetBool();
         m_isVipHasBeenSet = true;
@@ -364,7 +364,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsWildcard"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsWildcard` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsWildcard` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isWildcard = rsp["IsWildcard"].GetBool();
         m_isWildcardHasBeenSet = true;
@@ -374,7 +374,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsDv"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsDv` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsDv` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDv = rsp["IsDv"].GetBool();
         m_isDvHasBeenSet = true;
@@ -384,7 +384,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsVulnerability"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsVulnerability` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsVulnerability` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isVulnerability = rsp["IsVulnerability"].GetBool();
         m_isVulnerabilityHasBeenSet = true;
@@ -394,7 +394,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["RenewAble"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RenewAble` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewAble` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_renewAble = rsp["RenewAble"].GetBool();
         m_renewAbleHasBeenSet = true;
@@ -404,7 +404,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["SubmittedData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SubmittedData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubmittedData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_submittedData.Deserialize(rsp["SubmittedData"]);
@@ -421,7 +421,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     {
         if (!rsp["Deployable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Deployable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deployable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deployable = rsp["Deployable"].GetBool();
         m_deployableHasBeenSet = true;
@@ -430,7 +430,7 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

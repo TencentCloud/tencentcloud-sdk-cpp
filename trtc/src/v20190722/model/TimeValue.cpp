@@ -35,7 +35,7 @@ CoreInternalOutcome TimeValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TimeValue.Time` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeValue.Time` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetUint64();
         m_timeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TimeValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TimeValue.Value` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeValue.Value` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetDouble();
         m_valueHasBeenSet = true;

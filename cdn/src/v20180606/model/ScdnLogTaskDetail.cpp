@@ -45,7 +45,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(value["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["DownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadUrl = string(value["DownloadUrl"].GetString());
         m_downloadUrlHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaskID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.TaskID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.TaskID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskID = string(value["TaskID"].GetString());
         m_taskIDHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["AttackType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.AttackType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.AttackType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attackType = string(value["AttackType"].GetString());
         m_attackTypeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["DefenceMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.DefenceMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.DefenceMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defenceMode = string(value["DefenceMode"].GetString());
         m_defenceModeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
     {
         if (!value["Conditions"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Conditions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.Conditions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Conditions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -165,7 +165,7 @@ CoreInternalOutcome ScdnLogTaskDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnLogTaskDetail.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnLogTaskDetail.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;

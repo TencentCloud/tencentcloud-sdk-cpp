@@ -35,7 +35,7 @@ CoreInternalOutcome TimeInterval::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Start"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeInterval.Start` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeInterval.Start` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_start = string(value["Start"].GetString());
         m_startHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TimeInterval::Deserialize(const rapidjson::Value &value)
     {
         if (!value["End"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeInterval.End` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeInterval.End` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_end = string(value["End"].GetString());
         m_endHasBeenSet = true;

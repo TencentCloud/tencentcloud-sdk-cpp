@@ -37,7 +37,7 @@ CoreInternalOutcome LipColorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RGBA"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LipColorInfo.RGBA` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LipColorInfo.RGBA` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rGBA.Deserialize(value["RGBA"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome LipColorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModelId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LipColorInfo.ModelId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LipColorInfo.ModelId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modelId = string(value["ModelId"].GetString());
         m_modelIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome LipColorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LipColorInfo.FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LipColorInfo.FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(value["FaceRect"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome LipColorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModelAlpha"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LipColorInfo.ModelAlpha` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LipColorInfo.ModelAlpha` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_modelAlpha = value["ModelAlpha"].GetInt64();
         m_modelAlphaHasBeenSet = true;

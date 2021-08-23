@@ -38,7 +38,7 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalReturnContractInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContractSyncInfo.ExternalReturnContractInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractSyncInfo.ExternalReturnContractInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_externalReturnContractInfo.Deserialize(value["ExternalReturnContractInfo"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ExternalContractUserInfo") && !value["ExternalContractUserInfo"].IsNull())
     {
         if (!value["ExternalContractUserInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `ContractSyncInfo.ExternalContractUserInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ContractSyncInfo.ExternalContractUserInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ExternalContractUserInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContractMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractSyncInfo.ContractMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractSyncInfo.ContractMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractMethod = string(value["ContractMethod"].GetString());
         m_contractMethodHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContractSceneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractSyncInfo.ContractSceneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractSyncInfo.ContractSceneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractSceneId = string(value["ContractSceneId"].GetString());
         m_contractSceneIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalReturnContractData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractSyncInfo.ExternalReturnContractData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractSyncInfo.ExternalReturnContractData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractData = string(value["ExternalReturnContractData"].GetString());
         m_externalReturnContractDataHasBeenSet = true;

@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payloa
     {
         if (!rsp["SyncMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SyncMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_syncMode = rsp["SyncMode"].GetInt64();
         m_syncModeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payloa
     {
         if (!rsp["IsModifying"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsModifying` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsModifying` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isModifying = rsp["IsModifying"].GetInt64();
         m_isModifyingHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeDBSyncModeResponse::Deserialize(const string &payloa
     {
         if (!rsp["CurrentSyncMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentSyncMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentSyncMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentSyncMode = rsp["CurrentSyncMode"].GetInt64();
         m_currentSyncModeHasBeenSet = true;

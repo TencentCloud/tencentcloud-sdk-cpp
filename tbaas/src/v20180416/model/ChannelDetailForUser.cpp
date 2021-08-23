@@ -35,7 +35,7 @@ CoreInternalOutcome ChannelDetailForUser::Deserialize(const rapidjson::Value &va
     {
         if (!value["ChannelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelDetailForUser.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelDetailForUser.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelName = string(value["ChannelName"].GetString());
         m_channelNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ChannelDetailForUser::Deserialize(const rapidjson::Value &va
     if (value.HasMember("PeerList") && !value["PeerList"].IsNull())
     {
         if (!value["PeerList"].IsArray())
-            return CoreInternalOutcome(Error("response `ChannelDetailForUser.PeerList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ChannelDetailForUser.PeerList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PeerList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

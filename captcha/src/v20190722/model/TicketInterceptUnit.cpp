@@ -35,7 +35,7 @@ CoreInternalOutcome TicketInterceptUnit::Deserialize(const rapidjson::Value &val
     {
         if (!value["DateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TicketInterceptUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketInterceptUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateKey = string(value["DateKey"].GetString());
         m_dateKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TicketInterceptUnit::Deserialize(const rapidjson::Value &val
     {
         if (!value["Intercept"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TicketInterceptUnit.Intercept` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketInterceptUnit.Intercept` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_intercept = value["Intercept"].GetInt64();
         m_interceptHasBeenSet = true;

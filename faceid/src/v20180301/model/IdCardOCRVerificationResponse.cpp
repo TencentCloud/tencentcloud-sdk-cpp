@@ -41,16 +41,16 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(rsp["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["IdCard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdCard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdCard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idCard = string(rsp["IdCard"].GetString());
         m_idCardHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Nation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Nation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nation = string(rsp["Nation"].GetString());
         m_nationHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Birth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Birth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Birth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birth = string(rsp["Birth"].GetString());
         m_birthHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;

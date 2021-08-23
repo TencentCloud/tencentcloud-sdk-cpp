@@ -46,7 +46,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.EnvName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.EnvName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envName = string(value["EnvName"].GetString());
         m_envNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredComputeNodeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.DesiredComputeNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.DesiredComputeNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredComputeNodeCount = value["DesiredComputeNodeCount"].GetInt64();
         m_desiredComputeNodeCountHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.EnvDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.EnvDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envDescription = string(value["EnvDescription"].GetString());
         m_envDescriptionHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.EnvType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.EnvType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envType = string(value["EnvType"].GetString());
         m_envTypeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.EnvData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.EnvData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_envData.Deserialize(value["EnvData"]);
@@ -102,7 +102,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MountDataDisks") && !value["MountDataDisks"].IsNull())
     {
         if (!value["MountDataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.MountDataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.MountDataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MountDataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -122,7 +122,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Authentications") && !value["Authentications"].IsNull())
     {
         if (!value["Authentications"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.Authentications` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.Authentications` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Authentications"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -142,7 +142,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InputMappings") && !value["InputMappings"].IsNull())
     {
         if (!value["InputMappings"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.InputMappings` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.InputMappings` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InputMappings"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -163,7 +163,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentRunningMode"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.AgentRunningMode` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.AgentRunningMode` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_agentRunningMode.Deserialize(value["AgentRunningMode"]);
@@ -180,7 +180,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Notifications"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.Notifications` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.Notifications` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_notifications.Deserialize(value["Notifications"]);
@@ -197,7 +197,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionIfComputeNodeInactive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.ActionIfComputeNodeInactive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.ActionIfComputeNodeInactive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionIfComputeNodeInactive = string(value["ActionIfComputeNodeInactive"].GetString());
         m_actionIfComputeNodeInactiveHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceMaxRetryCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.ResourceMaxRetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.ResourceMaxRetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceMaxRetryCount = value["ResourceMaxRetryCount"].GetInt64();
         m_resourceMaxRetryCountHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedComputeEnv.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedComputeEnv.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

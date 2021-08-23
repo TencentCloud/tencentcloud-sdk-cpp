@@ -38,7 +38,7 @@ CoreInternalOutcome InstanceAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Credentials"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceAccess.Credentials` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAccess.Credentials` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_credentials.Deserialize(value["Credentials"]);
@@ -55,7 +55,7 @@ CoreInternalOutcome InstanceAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAccess.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAccess.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome InstanceAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAccess.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAccess.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome InstanceAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAccess.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAccess.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipAddress = string(value["IpAddress"].GetString());
         m_ipAddressHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome InstanceAccess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperatingSystem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAccess.OperatingSystem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAccess.OperatingSystem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operatingSystem = string(value["OperatingSystem"].GetString());
         m_operatingSystemHasBeenSet = true;

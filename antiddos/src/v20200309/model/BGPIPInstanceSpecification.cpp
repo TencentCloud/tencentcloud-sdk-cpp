@@ -40,7 +40,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["ProtectBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.ProtectBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.ProtectBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectBandwidth = value["ProtectBandwidth"].GetUint64();
         m_protectBandwidthHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["ProtectCCQPS"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.ProtectCCQPS` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.ProtectCCQPS` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectCCQPS = value["ProtectCCQPS"].GetUint64();
         m_protectCCQPSHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["NormalBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.NormalBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.NormalBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_normalBandwidth = value["NormalBandwidth"].GetUint64();
         m_normalBandwidthHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["ForwardRulesLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.ForwardRulesLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.ForwardRulesLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_forwardRulesLimit = value["ForwardRulesLimit"].GetUint64();
         m_forwardRulesLimitHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["AutoRenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
         m_autoRenewFlagHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["Line"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.Line` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.Line` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_line = value["Line"].GetUint64();
         m_lineHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome BGPIPInstanceSpecification::Deserialize(const rapidjson::Val
     {
         if (!value["ElasticBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceSpecification.ElasticBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceSpecification.ElasticBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_elasticBandwidth = value["ElasticBandwidth"].GetUint64();
         m_elasticBandwidthHasBeenSet = true;

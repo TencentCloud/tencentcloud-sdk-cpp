@@ -46,7 +46,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.InstanceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.InstanceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = value["InstanceId"].GetInt64();
         m_instanceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StatusInfo") && !value["StatusInfo"].IsNull())
     {
         if (!value["StatusInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.StatusInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.StatusInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StatusInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -96,7 +96,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppSubId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.AppSubId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.AppSubId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appSubId = string(value["AppSubId"].GetString());
         m_appSubIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sign"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.Sign` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.Sign` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sign = string(value["Sign"].GetString());
         m_signHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Contents"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.Contents` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.Contents` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contents = string(value["Contents"].GetString());
         m_contentsHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Urls") && !value["Urls"].IsNull())
     {
         if (!value["Urls"].IsArray())
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.Urls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.Urls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Urls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -158,7 +158,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PhoneType") && !value["PhoneType"].IsNull())
     {
         if (!value["PhoneType"].IsArray())
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.PhoneType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.PhoneType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PhoneType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -171,7 +171,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CommonParams") && !value["CommonParams"].IsNull())
     {
         if (!value["CommonParams"].IsArray())
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.CommonParams` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.CommonParams` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CommonParams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -184,7 +184,7 @@ CoreInternalOutcome MmsInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UrlParams") && !value["UrlParams"].IsNull())
     {
         if (!value["UrlParams"].IsArray())
-            return CoreInternalOutcome(Error("response `MmsInstanceInfo.UrlParams` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceInfo.UrlParams` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UrlParams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

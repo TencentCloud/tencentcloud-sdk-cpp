@@ -36,7 +36,7 @@ CoreInternalOutcome ServerlessDBAccount::Deserialize(const rapidjson::Value &val
     {
         if (!value["DBUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBAccount.DBUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBAccount.DBUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBUser = string(value["DBUser"].GetString());
         m_dBUserHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ServerlessDBAccount::Deserialize(const rapidjson::Value &val
     {
         if (!value["DBPassword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBAccount.DBPassword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBAccount.DBPassword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBPassword = string(value["DBPassword"].GetString());
         m_dBPasswordHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ServerlessDBAccount::Deserialize(const rapidjson::Value &val
     {
         if (!value["DBConnLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerlessDBAccount.DBConnLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessDBAccount.DBConnLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dBConnLimit = value["DBConnLimit"].GetInt64();
         m_dBConnLimitHasBeenSet = true;

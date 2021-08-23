@@ -37,7 +37,7 @@ CoreInternalOutcome ServerConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerConfiguration.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerConfiguration.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ServerConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServerConfiguration.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerConfiguration.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ServerConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["Serial"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerConfiguration.Serial` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerConfiguration.Serial` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serial = string(value["Serial"].GetString());
         m_serialHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ServerConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["Realm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerConfiguration.Realm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerConfiguration.Realm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realm = string(value["Realm"].GetString());
         m_realmHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingTimeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTimeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("PointSet") && !value["PointSet"].IsNull())
     {
         if (!value["PointSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaCuttingTimeInfo.PointSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTimeInfo.PointSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PointSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["IntervalPoint"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingTimeInfo.IntervalPoint` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTimeInfo.IntervalPoint` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_intervalPoint.Deserialize(value["IntervalPoint"]);
@@ -76,7 +76,7 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("SectionSet") && !value["SectionSet"].IsNull())
     {
         if (!value["SectionSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaCuttingTimeInfo.SectionSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTimeInfo.SectionSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SectionSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

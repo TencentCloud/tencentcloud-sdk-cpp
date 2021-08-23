@@ -47,7 +47,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.DomainId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.DomainId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = string(value["DomainId"].GetString());
         m_domainIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealNameAuditStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.RealNameAuditStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.RealNameAuditStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realNameAuditStatus = string(value["RealNameAuditStatus"].GetString());
         m_realNameAuditStatusHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealNameAuditUnpassReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.RealNameAuditUnpassReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.RealNameAuditUnpassReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realNameAuditUnpassReason = string(value["RealNameAuditUnpassReason"].GetString());
         m_realNameAuditUnpassReasonHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainNameAuditStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.DomainNameAuditStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.DomainNameAuditStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainNameAuditStatus = string(value["DomainNameAuditStatus"].GetString());
         m_domainNameAuditStatusHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainNameAuditUnpassReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.DomainNameAuditUnpassReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.DomainNameAuditUnpassReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainNameAuditUnpassReason = string(value["DomainNameAuditUnpassReason"].GetString());
         m_domainNameAuditUnpassReasonHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.CreationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.CreationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationDate = string(value["CreationDate"].GetString());
         m_creationDateHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpirationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expirationDate = string(value["ExpirationDate"].GetString());
         m_expirationDateHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DomainStatus") && !value["DomainStatus"].IsNull())
     {
         if (!value["DomainStatus"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.DomainStatus` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.DomainStatus` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DomainStatus"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -140,7 +140,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BuyStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.BuyStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.BuyStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyStatus = string(value["BuyStatus"].GetString());
         m_buyStatusHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistrarType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.RegistrarType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.RegistrarType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registrarType = string(value["RegistrarType"].GetString());
         m_registrarTypeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NameServer") && !value["NameServer"].IsNull())
     {
         if (!value["NameServer"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.NameServer` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.NameServer` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NameServer"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -173,7 +173,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTransfer"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.LockTransfer` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.LockTransfer` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_lockTransfer = value["LockTransfer"].GetBool();
         m_lockTransferHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome DomainBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBaseInfo.LockEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBaseInfo.LockEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockEndTime = string(value["LockEndTime"].GetString());
         m_lockEndTimeHasBeenSet = true;

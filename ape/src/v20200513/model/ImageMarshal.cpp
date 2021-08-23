@@ -44,7 +44,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MarshalId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.MarshalId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.MarshalId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_marshalId = value["MarshalId"].GetUint64();
         m_marshalIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.Size` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.Size` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetUint64();
         m_sizeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.Price` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.Price` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetUint64();
         m_priceHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LicenseScope"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.LicenseScope` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.LicenseScope` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_licenseScope = string(value["LicenseScope"].GetString());
         m_licenseScopeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsVip"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.IsVip` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.IsVip` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isVip = value["IsVip"].GetBool();
         m_isVipHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LicenseScopeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.LicenseScopeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.LicenseScopeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_licenseScopeId = value["LicenseScopeId"].GetInt64();
         m_licenseScopeIdHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DimensionsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.DimensionsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.DimensionsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dimensionsName = string(value["DimensionsName"].GetString());
         m_dimensionsNameHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DimensionsNameId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageMarshal.DimensionsNameId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageMarshal.DimensionsNameId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dimensionsNameId = value["DimensionsNameId"].GetInt64();
         m_dimensionsNameIdHasBeenSet = true;

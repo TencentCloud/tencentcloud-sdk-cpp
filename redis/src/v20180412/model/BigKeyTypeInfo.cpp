@@ -37,7 +37,7 @@ CoreInternalOutcome BigKeyTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BigKeyTypeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BigKeyTypeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BigKeyTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BigKeyTypeInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BigKeyTypeInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BigKeyTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BigKeyTypeInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BigKeyTypeInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BigKeyTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Updatetime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BigKeyTypeInfo.Updatetime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BigKeyTypeInfo.Updatetime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updatetime = value["Updatetime"].GetInt64();
         m_updatetimeHasBeenSet = true;

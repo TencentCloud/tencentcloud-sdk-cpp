@@ -37,7 +37,7 @@ CoreInternalOutcome ApplyStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyStatus.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyStatus.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ApplyStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplyStatus.ApplicationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyStatus.ApplicationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_applicationStatus = value["ApplicationStatus"].GetInt64();
         m_applicationStatusHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ApplyStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplyStatus.ApplicationType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyStatus.ApplicationType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = value["ApplicationType"].GetInt64();
         m_applicationTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ApplyStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyStatus.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyStatus.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;

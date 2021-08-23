@@ -35,7 +35,7 @@ CoreInternalOutcome PackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackInfo.PackType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackInfo.PackType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packType = string(value["PackType"].GetString());
         m_packTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackInfo.PackId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackInfo.PackId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packId = string(value["PackId"].GetString());
         m_packIdHasBeenSet = true;

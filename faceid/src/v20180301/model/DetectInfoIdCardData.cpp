@@ -38,7 +38,7 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &va
     {
         if (!value["OcrFront"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoIdCardData.OcrFront` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoIdCardData.OcrFront` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrFront = string(value["OcrFront"].GetString());
         m_ocrFrontHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &va
     {
         if (!value["OcrBack"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoIdCardData.OcrBack` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoIdCardData.OcrBack` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ocrBack = string(value["OcrBack"].GetString());
         m_ocrBackHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &va
     {
         if (!value["ProcessedFrontImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoIdCardData.ProcessedFrontImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoIdCardData.ProcessedFrontImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processedFrontImage = string(value["ProcessedFrontImage"].GetString());
         m_processedFrontImageHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &va
     {
         if (!value["ProcessedBackImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoIdCardData.ProcessedBackImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoIdCardData.ProcessedBackImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processedBackImage = string(value["ProcessedBackImage"].GetString());
         m_processedBackImageHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &va
     {
         if (!value["Avatar"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoIdCardData.Avatar` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoIdCardData.Avatar` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_avatar = string(value["Avatar"].GetString());
         m_avatarHasBeenSet = true;

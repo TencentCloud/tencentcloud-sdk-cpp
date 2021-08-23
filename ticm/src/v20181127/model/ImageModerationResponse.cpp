@@ -39,16 +39,16 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(rsp["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["PornResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornResult.Deserialize(rsp["PornResult"]);
@@ -98,7 +98,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["TerrorismResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TerrorismResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TerrorismResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_terrorismResult.Deserialize(rsp["TerrorismResult"]);
@@ -115,7 +115,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["PoliticsResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticsResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticsResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicsResult.Deserialize(rsp["PoliticsResult"]);
@@ -132,7 +132,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(rsp["Extra"].GetString());
         m_extraHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["DisgustResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DisgustResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisgustResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_disgustResult.Deserialize(rsp["DisgustResult"]);

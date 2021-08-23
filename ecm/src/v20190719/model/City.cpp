@@ -35,7 +35,7 @@ CoreInternalOutcome City::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CityId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `City.CityId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `City.CityId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cityId = string(value["CityId"].GetString());
         m_cityIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome City::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `City.CityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `City.CityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cityName = string(value["CityName"].GetString());
         m_cityNameHasBeenSet = true;

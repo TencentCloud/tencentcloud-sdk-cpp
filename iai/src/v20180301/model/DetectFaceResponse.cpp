@@ -37,16 +37,16 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
     {
         if (!rsp["ImageWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_imageWidth = rsp["ImageWidth"].GetInt64();
         m_imageWidthHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
     {
         if (!rsp["ImageHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_imageHeight = rsp["ImageHeight"].GetInt64();
         m_imageHeightHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
     if (rsp.HasMember("FaceInfos") && !rsp["FaceInfos"].IsNull())
     {
         if (!rsp["FaceInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `FaceInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FaceInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["FaceInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
     {
         if (!rsp["FaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
         m_faceModelVersionHasBeenSet = true;

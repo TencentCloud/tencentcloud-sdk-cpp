@@ -35,7 +35,7 @@ CoreInternalOutcome UsagePlanBindSecretStatus::Deserialize(const rapidjson::Valu
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanBindSecretStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindSecretStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome UsagePlanBindSecretStatus::Deserialize(const rapidjson::Valu
     if (value.HasMember("AccessKeyList") && !value["AccessKeyList"].IsNull())
     {
         if (!value["AccessKeyList"].IsArray())
-            return CoreInternalOutcome(Error("response `UsagePlanBindSecretStatus.AccessKeyList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindSecretStatus.AccessKeyList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AccessKeyList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

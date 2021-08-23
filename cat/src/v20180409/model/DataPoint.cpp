@@ -35,7 +35,7 @@ CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataPoint.LogTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataPoint.LogTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logTime = string(value["LogTime"].GetString());
         m_logTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DataPoint.MetricValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataPoint.MetricValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_metricValue = value["MetricValue"].GetDouble();
         m_metricValueHasBeenSet = true;

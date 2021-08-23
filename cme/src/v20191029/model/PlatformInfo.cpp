@@ -39,7 +39,7 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformInfo.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodSubAppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlatformInfo.VodSubAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.VodSubAppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vodSubAppId = value["VodSubAppId"].GetUint64();
         m_vodSubAppIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LicenseId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformInfo.LicenseId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.LicenseId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_licenseId = string(value["LicenseId"].GetString());
         m_licenseIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PlatformInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlatformInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlatformInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

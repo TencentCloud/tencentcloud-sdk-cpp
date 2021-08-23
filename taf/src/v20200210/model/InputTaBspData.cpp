@@ -58,7 +58,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Seq"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Seq` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Seq` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_seq = value["Seq"].GetInt64();
         m_seqHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.OsType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.OsType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osType = string(value["OsType"].GetString());
         m_osTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgeFloor"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.AgeFloor` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.AgeFloor` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ageFloor = value["AgeFloor"].GetInt64();
         m_ageFloorHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgeCeil"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.AgeCeil` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.AgeCeil` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ageCeil = value["AgeCeil"].GetInt64();
         m_ageCeilHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.UserTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.UserTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_userTime = value["UserTime"].GetInt64();
         m_userTimeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Imei"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Imei` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Imei` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imei = string(value["Imei"].GetString());
         m_imeiHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImeiMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.ImeiMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.ImeiMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imeiMd5 = string(value["ImeiMd5"].GetString());
         m_imeiMd5HasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Idfa"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Idfa` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Idfa` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idfa = string(value["Idfa"].GetString());
         m_idfaHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdfaMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.IdfaMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.IdfaMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idfaMd5 = string(value["IdfaMd5"].GetString());
         m_idfaMd5HasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(value["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mac"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Mac` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Mac` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mac = string(value["Mac"].GetString());
         m_macHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNum = string(value["PhoneNum"].GetString());
         m_phoneNumHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAgent = string(value["UserAgent"].GetString());
         m_userAgentHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["App"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.App` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.App` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_app = string(value["App"].GetString());
         m_appHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Package"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Package` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Package` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_package = string(value["Package"].GetString());
         m_packageHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceMaker"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.DeviceMaker` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.DeviceMaker` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceMaker = string(value["DeviceMaker"].GetString());
         m_deviceMakerHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceModule"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.DeviceModule` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.DeviceModule` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceModule = string(value["DeviceModule"].GetString());
         m_deviceModuleHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.AccessMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.AccessMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessMode = string(value["AccessMode"].GetString());
         m_accessModeHasBeenSet = true;
@@ -248,7 +248,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Sp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Sp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sp = string(value["Sp"].GetString());
         m_spHasBeenSet = true;
@@ -258,7 +258,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -268,7 +268,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -278,7 +278,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Latitude"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Latitude` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Latitude` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latitude = string(value["Latitude"].GetString());
         m_latitudeHasBeenSet = true;
@@ -288,7 +288,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Longitude"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Longitude` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Longitude` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_longitude = string(value["Longitude"].GetString());
         m_longitudeHasBeenSet = true;
@@ -298,7 +298,7 @@ CoreInternalOutcome InputTaBspData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Context"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputTaBspData.Context` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputTaBspData.Context` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_context = string(value["Context"].GetString());
         m_contextHasBeenSet = true;

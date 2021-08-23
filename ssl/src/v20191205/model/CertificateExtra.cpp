@@ -38,7 +38,7 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateExtra.DomainNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.DomainNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainNumber = string(value["DomainNumber"].GetString());
         m_domainNumberHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginCertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateExtra.OriginCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.OriginCertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originCertificateId = string(value["OriginCertificateId"].GetString());
         m_originCertificateIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplacedBy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateExtra.ReplacedBy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.ReplacedBy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replacedBy = string(value["ReplacedBy"].GetString());
         m_replacedByHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplacedFor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateExtra.ReplacedFor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.ReplacedFor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replacedFor = string(value["ReplacedFor"].GetString());
         m_replacedForHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewOrder"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateExtra.RenewOrder` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.RenewOrder` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_renewOrder = string(value["RenewOrder"].GetString());
         m_renewOrderHasBeenSet = true;

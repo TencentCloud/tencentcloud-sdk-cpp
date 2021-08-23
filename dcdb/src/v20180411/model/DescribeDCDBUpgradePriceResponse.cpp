@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeDCDBUpgradePriceResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome DescribeDCDBUpgradePriceResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeDCDBUpgradePriceResponse::Deserialize(const string &
     {
         if (!rsp["OriginalPrice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OriginalPrice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginalPrice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = rsp["OriginalPrice"].GetInt64();
         m_originalPriceHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeDCDBUpgradePriceResponse::Deserialize(const string &
     {
         if (!rsp["Price"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Price` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Price` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_price = rsp["Price"].GetInt64();
         m_priceHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeDCDBUpgradePriceResponse::Deserialize(const string &
     {
         if (!rsp["Formula"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Formula` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Formula` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_formula = string(rsp["Formula"].GetString());
         m_formulaHasBeenSet = true;

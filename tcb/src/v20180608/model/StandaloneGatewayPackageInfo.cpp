@@ -36,7 +36,7 @@ CoreInternalOutcome StandaloneGatewayPackageInfo::Deserialize(const rapidjson::V
     {
         if (!value["CPU"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayPackageInfo.CPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayPackageInfo.CPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cPU = value["CPU"].GetDouble();
         m_cPUHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome StandaloneGatewayPackageInfo::Deserialize(const rapidjson::V
     {
         if (!value["Mem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayPackageInfo.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayPackageInfo.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetUint64();
         m_memHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome StandaloneGatewayPackageInfo::Deserialize(const rapidjson::V
     {
         if (!value["PackageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayPackageInfo.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayPackageInfo.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageVersion = string(value["PackageVersion"].GetString());
         m_packageVersionHasBeenSet = true;

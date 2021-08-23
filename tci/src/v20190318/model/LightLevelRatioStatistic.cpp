@@ -35,7 +35,7 @@ CoreInternalOutcome LightLevelRatioStatistic::Deserialize(const rapidjson::Value
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LightLevelRatioStatistic.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightLevelRatioStatistic.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LightLevelRatioStatistic::Deserialize(const rapidjson::Value
     {
         if (!value["Ratio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LightLevelRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightLevelRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = value["Ratio"].GetDouble();
         m_ratioHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnhancedService.SecurityService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.SecurityService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_securityService.Deserialize(value["SecurityService"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnhancedService.MonitorService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.MonitorService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_monitorService.Deserialize(value["MonitorService"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutomationService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnhancedService.AutomationService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.AutomationService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_automationService.Deserialize(value["AutomationService"]);

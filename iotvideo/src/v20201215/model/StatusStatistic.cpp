@@ -35,7 +35,7 @@ CoreInternalOutcome StatusStatistic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StatusStatistic.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusStatistic.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StatusStatistic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StatusStatistic.Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusStatistic.Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetUint64();
         m_totalHasBeenSet = true;

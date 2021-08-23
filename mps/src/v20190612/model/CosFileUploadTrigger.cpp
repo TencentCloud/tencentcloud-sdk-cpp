@@ -37,7 +37,7 @@ CoreInternalOutcome CosFileUploadTrigger::Deserialize(const rapidjson::Value &va
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosFileUploadTrigger.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosFileUploadTrigger.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CosFileUploadTrigger::Deserialize(const rapidjson::Value &va
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosFileUploadTrigger.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosFileUploadTrigger.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CosFileUploadTrigger::Deserialize(const rapidjson::Value &va
     {
         if (!value["Dir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosFileUploadTrigger.Dir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosFileUploadTrigger.Dir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dir = string(value["Dir"].GetString());
         m_dirHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CosFileUploadTrigger::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Formats") && !value["Formats"].IsNull())
     {
         if (!value["Formats"].IsArray())
-            return CoreInternalOutcome(Error("response `CosFileUploadTrigger.Formats` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CosFileUploadTrigger.Formats` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Formats"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

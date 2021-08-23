@@ -35,7 +35,7 @@ CoreInternalOutcome DDoSAIRelation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DDoSAI"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSAIRelation.DDoSAI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSAIRelation.DDoSAI` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dDoSAI = string(value["DDoSAI"].GetString());
         m_dDoSAIHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DDoSAIRelation::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `DDoSAIRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDoSAIRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome SearchUserRepositoryResp::Deserialize(const rapidjson::Value
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SearchUserRepositoryResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchUserRepositoryResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SearchUserRepositoryResp::Deserialize(const rapidjson::Value
     if (value.HasMember("RepoInfo") && !value["RepoInfo"].IsNull())
     {
         if (!value["RepoInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `SearchUserRepositoryResp.RepoInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SearchUserRepositoryResp.RepoInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RepoInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome SearchUserRepositoryResp::Deserialize(const rapidjson::Value
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchUserRepositoryResp.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchUserRepositoryResp.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome SearchUserRepositoryResp::Deserialize(const rapidjson::Value
     {
         if (!value["PrivilegeFiltered"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SearchUserRepositoryResp.PrivilegeFiltered` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchUserRepositoryResp.PrivilegeFiltered` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_privilegeFiltered = value["PrivilegeFiltered"].GetBool();
         m_privilegeFilteredHasBeenSet = true;

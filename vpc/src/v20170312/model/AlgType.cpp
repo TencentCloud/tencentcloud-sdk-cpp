@@ -35,7 +35,7 @@ CoreInternalOutcome AlgType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ftp"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AlgType.Ftp` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgType.Ftp` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_ftp = value["Ftp"].GetBool();
         m_ftpHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AlgType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sip"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AlgType.Sip` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgType.Sip` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_sip = value["Sip"].GetBool();
         m_sipHasBeenSet = true;

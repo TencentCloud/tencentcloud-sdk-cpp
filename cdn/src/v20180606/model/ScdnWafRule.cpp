@@ -35,7 +35,7 @@ CoreInternalOutcome ScdnWafRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttackType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafRule.AttackType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafRule.AttackType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attackType = string(value["AttackType"].GetString());
         m_attackTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScdnWafRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafRule.Operate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafRule.Operate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operate = string(value["Operate"].GetString());
         m_operateHasBeenSet = true;

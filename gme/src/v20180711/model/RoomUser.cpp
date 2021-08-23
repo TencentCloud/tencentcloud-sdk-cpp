@@ -35,7 +35,7 @@ CoreInternalOutcome RoomUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RoomUser.RoomId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomUser.RoomId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = value["RoomId"].GetUint64();
         m_roomIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome RoomUser::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Uins") && !value["Uins"].IsNull())
     {
         if (!value["Uins"].IsArray())
-            return CoreInternalOutcome(Error("response `RoomUser.Uins` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RoomUser.Uins` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Uins"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

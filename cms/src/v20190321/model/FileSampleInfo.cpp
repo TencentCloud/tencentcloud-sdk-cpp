@@ -44,7 +44,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.CreatedAt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.CreatedAt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = value["CreatedAt"].GetUint64();
         m_createdAtHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetUint64();
         m_evilTypeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileMd5 = string(value["FileMd5"].GetString());
         m_fileMd5HasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.Label` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.Label` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_label = value["Label"].GetUint64();
         m_labelHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompressFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compressFileUrl = string(value["CompressFileUrl"].GetString());
         m_compressFileUrlHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome FileSampleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSampleInfo.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSampleInfo.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;

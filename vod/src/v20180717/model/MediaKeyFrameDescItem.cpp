@@ -35,7 +35,7 @@ CoreInternalOutcome MediaKeyFrameDescItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["TimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaKeyFrameDescItem.TimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaKeyFrameDescItem.TimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_timeOffset = value["TimeOffset"].GetDouble();
         m_timeOffsetHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaKeyFrameDescItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaKeyFrameDescItem.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaKeyFrameDescItem.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome OutputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosOutputBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputDataConfig.CosOutputBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputDataConfig.CosOutputBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosOutputBucket = string(value["CosOutputBucket"].GetString());
         m_cosOutputBucketHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosOutputKeyPrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputDataConfig.CosOutputKeyPrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputDataConfig.CosOutputKeyPrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosOutputKeyPrefix = string(value["CosOutputKeyPrefix"].GetString());
         m_cosOutputKeyPrefixHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OutputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemDataSource"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OutputDataConfig.FileSystemDataSource` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputDataConfig.FileSystemDataSource` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fileSystemDataSource.Deserialize(value["FileSystemDataSource"]);

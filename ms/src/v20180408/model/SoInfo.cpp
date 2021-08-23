@@ -33,7 +33,7 @@ CoreInternalOutcome SoInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SoFileNames") && !value["SoFileNames"].IsNull())
     {
         if (!value["SoFileNames"].IsArray())
-            return CoreInternalOutcome(Error("response `SoInfo.SoFileNames` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SoInfo.SoFileNames` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SoFileNames"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

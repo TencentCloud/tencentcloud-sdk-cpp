@@ -36,7 +36,7 @@ CoreInternalOutcome Comment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Comment.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Comment.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Comment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NegCommentCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Comment.NegCommentCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Comment.NegCommentCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_negCommentCount = value["NegCommentCount"].GetUint64();
         m_negCommentCountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Comment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosCommentCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Comment.PosCommentCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Comment.PosCommentCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_posCommentCount = value["PosCommentCount"].GetUint64();
         m_posCommentCountHasBeenSet = true;

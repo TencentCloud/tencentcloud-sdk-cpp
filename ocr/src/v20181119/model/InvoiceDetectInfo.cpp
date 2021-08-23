@@ -37,7 +37,7 @@ CoreInternalOutcome InvoiceDetectInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InvoiceDetectInfo.Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceDetectInfo.Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angle = value["Angle"].GetDouble();
         m_angleHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InvoiceDetectInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InvoiceDetectInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceDetectInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InvoiceDetectInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Rect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InvoiceDetectInfo.Rect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceDetectInfo.Rect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rect.Deserialize(value["Rect"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome InvoiceDetectInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceDetectInfo.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceDetectInfo.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ConditionProject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionProject.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionProject.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConditionProject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionProject.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionProject.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;

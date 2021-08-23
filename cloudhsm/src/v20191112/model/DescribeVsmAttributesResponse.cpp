@@ -56,16 +56,16 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -76,11 +76,11 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(rsp["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(rsp["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(rsp["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(rsp["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(rsp["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["Model"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_model = string(rsp["Model"].GetString());
         m_modelHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["VsmType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VsmType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VsmType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vsmType = rsp["VsmType"].GetInt64();
         m_vsmTypeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = rsp["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = rsp["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["ExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = rsp["ExpireTime"].GetInt64();
         m_expireTimeHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     if (rsp.HasMember("SgList") && !rsp["SgList"].IsNull())
     {
         if (!rsp["SgList"].IsArray())
-            return CoreInternalOutcome(Error("response `SgList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SgList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SgList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -218,7 +218,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["SubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetName = string(rsp["SubnetName"].GetString());
         m_subnetNameHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(rsp["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(rsp["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -248,7 +248,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["Expired"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Expired` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Expired` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_expired = rsp["Expired"].GetBool();
         m_expiredHasBeenSet = true;
@@ -258,7 +258,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["RemainSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RemainSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RemainSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_remainSeconds = rsp["RemainSeconds"].GetInt64();
         m_remainSecondsHasBeenSet = true;
@@ -268,7 +268,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(rsp["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -278,7 +278,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["VpcCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidrBlock = string(rsp["VpcCidrBlock"].GetString());
         m_vpcCidrBlockHasBeenSet = true;
@@ -288,7 +288,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["SubnetCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetCidrBlock = string(rsp["SubnetCidrBlock"].GetString());
         m_subnetCidrBlockHasBeenSet = true;
@@ -297,7 +297,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -318,7 +318,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["RenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = rsp["RenewFlag"].GetInt64();
         m_renewFlagHasBeenSet = true;
@@ -328,7 +328,7 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
     {
         if (!rsp["Manufacturer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Manufacturer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Manufacturer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_manufacturer = string(rsp["Manufacturer"].GetString());
         m_manufacturerHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome PrePaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrePaidQuota.UsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrePaidQuota.UsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_usedQuota = value["UsedQuota"].GetUint64();
         m_usedQuotaHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PrePaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OnceQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrePaidQuota.OnceQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrePaidQuota.OnceQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_onceQuota = value["OnceQuota"].GetUint64();
         m_onceQuotaHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PrePaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemainingQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrePaidQuota.RemainingQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrePaidQuota.RemainingQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_remainingQuota = value["RemainingQuota"].GetUint64();
         m_remainingQuotaHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PrePaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrePaidQuota.TotalQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrePaidQuota.TotalQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalQuota = value["TotalQuota"].GetUint64();
         m_totalQuotaHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PrePaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrePaidQuota.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrePaidQuota.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

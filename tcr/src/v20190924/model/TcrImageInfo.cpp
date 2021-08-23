@@ -37,7 +37,7 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Digest"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrImageInfo.Digest` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrImageInfo.Digest` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_digest = string(value["Digest"].GetString());
         m_digestHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TcrImageInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrImageInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrImageInfo.ImageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrImageInfo.ImageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageVersion = string(value["ImageVersion"].GetString());
         m_imageVersionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrImageInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrImageInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

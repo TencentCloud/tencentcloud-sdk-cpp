@@ -39,7 +39,7 @@ CoreInternalOutcome IdlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome IdlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome IdlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileExtType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfo.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfo.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileExtType = string(value["FileExtType"].GetString());
         m_fileExtTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome IdlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome IdlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfo.FileId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfo.FileId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = value["FileId"].GetInt64();
         m_fileIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome IdlFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdlFileInfo.FileContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdlFileInfo.FileContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileContent = string(value["FileContent"].GetString());
         m_fileContentHasBeenSet = true;

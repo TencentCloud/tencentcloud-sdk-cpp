@@ -35,7 +35,7 @@ CoreInternalOutcome LiveStreamClipProjectInput::Deserialize(const rapidjson::Val
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamClipProjectInput.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamClipProjectInput.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LiveStreamClipProjectInput::Deserialize(const rapidjson::Val
     {
         if (!value["StreamRecordDuration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamClipProjectInput.StreamRecordDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamClipProjectInput.StreamRecordDuration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_streamRecordDuration = value["StreamRecordDuration"].GetUint64();
         m_streamRecordDurationHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["RepeatInterval"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.RepeatInterval` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.RepeatInterval` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repeatInterval = string(value["RepeatInterval"].GetString());
         m_repeatIntervalHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["TimeRangeStart"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.TimeRangeStart` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.TimeRangeStart` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeRangeStart = string(value["TimeRangeStart"].GetString());
         m_timeRangeStartHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["TimeRangeEnd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.TimeRangeEnd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.TimeRangeEnd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeRangeEnd = string(value["TimeRangeEnd"].GetString());
         m_timeRangeEndHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     if (value.HasMember("NotifyWay") && !value["NotifyWay"].IsNull())
     {
         if (!value["NotifyWay"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusNotification.NotifyWay` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.NotifyWay` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotifyWay"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     if (value.HasMember("ReceiverGroups") && !value["ReceiverGroups"].IsNull())
     {
         if (!value["ReceiverGroups"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusNotification.ReceiverGroups` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.ReceiverGroups` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverGroups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     if (value.HasMember("PhoneNotifyOrder") && !value["PhoneNotifyOrder"].IsNull())
     {
         if (!value["PhoneNotifyOrder"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusNotification.PhoneNotifyOrder` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.PhoneNotifyOrder` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PhoneNotifyOrder"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -125,7 +125,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["PhoneCircleTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.PhoneCircleTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.PhoneCircleTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_phoneCircleTimes = value["PhoneCircleTimes"].GetInt64();
         m_phoneCircleTimesHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["PhoneInnerInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.PhoneInnerInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.PhoneInnerInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_phoneInnerInterval = value["PhoneInnerInterval"].GetInt64();
         m_phoneInnerIntervalHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["PhoneCircleInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.PhoneCircleInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.PhoneCircleInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_phoneCircleInterval = value["PhoneCircleInterval"].GetInt64();
         m_phoneCircleIntervalHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["PhoneArriveNotice"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.PhoneArriveNotice` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.PhoneArriveNotice` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_phoneArriveNotice = value["PhoneArriveNotice"].GetBool();
         m_phoneArriveNoticeHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome PrometheusNotification::Deserialize(const rapidjson::Value &
     {
         if (!value["WebHook"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusNotification.WebHook` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusNotification.WebHook` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webHook = string(value["WebHook"].GetString());
         m_webHookHasBeenSet = true;

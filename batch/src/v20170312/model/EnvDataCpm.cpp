@@ -53,7 +53,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Zones") && !value["Zones"].IsNull())
     {
         if (!value["Zones"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvDataCpm.Zones` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.Zones` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Zones"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceTypes") && !value["InstanceTypes"].IsNull())
     {
         if (!value["InstanceTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvDataCpm.InstanceTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.InstanceTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeUnit = string(value["TimeUnit"].GetString());
         m_timeUnitHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeSpan"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.TimeSpan` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.TimeSpan` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = value["TimeSpan"].GetUint64();
         m_timeSpanHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RaidId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.RaidId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.RaidId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_raidId = value["RaidId"].GetInt64();
         m_raidIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsTypeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.OsTypeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.OsTypeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_osTypeId = value["OsTypeId"].GetInt64();
         m_osTypeIdHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VirtualPrivateClouds") && !value["VirtualPrivateClouds"].IsNull())
     {
         if (!value["VirtualPrivateClouds"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvDataCpm.VirtualPrivateClouds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.VirtualPrivateClouds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VirtualPrivateClouds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -140,7 +140,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedSecurityAgent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.NeedSecurityAgent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.NeedSecurityAgent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needSecurityAgent = value["NeedSecurityAgent"].GetInt64();
         m_needSecurityAgentHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedMonitorAgent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.NeedMonitorAgent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.NeedMonitorAgent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needMonitorAgent = value["NeedMonitorAgent"].GetInt64();
         m_needMonitorAgentHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoRenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
         m_autoRenewFlagHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsZoning"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.IsZoning` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.IsZoning` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isZoning = value["IsZoning"].GetInt64();
         m_isZoningHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.FileSystem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.FileSystem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystem = string(value["FileSystem"].GetString());
         m_fileSystemHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplyEip"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.ApplyEip` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.ApplyEip` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_applyEip = value["ApplyEip"].GetInt64();
         m_applyEipHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipPayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.EipPayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.EipPayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipPayMode = string(value["EipPayMode"].GetString());
         m_eipPayModeHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.EipBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.EipBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eipBandwidth = value["EipBandwidth"].GetInt64();
         m_eipBandwidthHasBeenSet = true;
@@ -230,7 +230,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -240,7 +240,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SysRootSpace"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.SysRootSpace` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.SysRootSpace` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sysRootSpace = value["SysRootSpace"].GetInt64();
         m_sysRootSpaceHasBeenSet = true;
@@ -250,7 +250,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SysDataSpace"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.SysDataSpace` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.SysDataSpace` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sysDataSpace = value["SysDataSpace"].GetInt64();
         m_sysDataSpaceHasBeenSet = true;
@@ -260,7 +260,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HyperThreading"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EnvDataCpm.HyperThreading` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.HyperThreading` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hyperThreading = value["HyperThreading"].GetInt64();
         m_hyperThreadingHasBeenSet = true;
@@ -269,7 +269,7 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LanIps") && !value["LanIps"].IsNull())
     {
         if (!value["LanIps"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvDataCpm.LanIps` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvDataCpm.LanIps` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LanIps"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

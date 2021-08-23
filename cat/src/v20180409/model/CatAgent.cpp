@@ -37,7 +37,7 @@ CoreInternalOutcome CatAgent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatAgent.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatAgent.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CatAgent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatAgent.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatAgent.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CatAgent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatAgent.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatAgent.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceName = string(value["ProvinceName"].GetString());
         m_provinceNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CatAgent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatAgent.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatAgent.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;

@@ -44,7 +44,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(value["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterNamespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.ClusterNamespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.ClusterNamespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterNamespace = string(value["ClusterNamespace"].GetString());
         m_clusterNamespaceHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressIPVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.AddressIPVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.AddressIPVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressIPVersion = string(value["AddressIPVersion"].GetString());
         m_addressIPVersionHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IngressName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.IngressName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.IngressName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ingressName = string(value["IngressName"].GetString());
         m_ingressNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `IngressInfo.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClbId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.ClbId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.ClbId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clbId = string(value["ClbId"].GetString());
         m_clbIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tls") && !value["Tls"].IsNull())
     {
         if (!value["Tls"].IsArray())
-            return CoreInternalOutcome(Error("response `IngressInfo.Tls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.Tls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mixed"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IngressInfo.Mixed` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.Mixed` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_mixed = value["Mixed"].GetBool();
         m_mixedHasBeenSet = true;

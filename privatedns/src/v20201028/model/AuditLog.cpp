@@ -37,7 +37,7 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLog.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLog.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLog.Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLog.Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(value["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuditLog.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLog.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataSet") && !value["DataSet"].IsNull())
     {
         if (!value["DataSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditLog.DataSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditLog.DataSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

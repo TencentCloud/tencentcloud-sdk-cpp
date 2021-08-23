@@ -39,7 +39,7 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterResource.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterResource.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterResource.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Idle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterResource.Idle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.Idle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idle = string(value["Idle"].GetString());
         m_idleHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterResource.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterResource.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;

@@ -45,16 +45,16 @@ namespace TencentCloud
                 TicsClient(const Credential &credential, const std::string &region);
                 TicsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeDomainInfoResponse> DescribeDomainInfoOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDomainInfoResponse> DescribeDomainInfoOutcome;
                 typedef std::future<DescribeDomainInfoOutcome> DescribeDomainInfoOutcomeCallable;
                 typedef std::function<void(const TicsClient*, const Model::DescribeDomainInfoRequest&, DescribeDomainInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainInfoAsyncHandler;
-                typedef Outcome<Error, Model::DescribeFileInfoResponse> DescribeFileInfoOutcome;
+                typedef Outcome<Core::Error, Model::DescribeFileInfoResponse> DescribeFileInfoOutcome;
                 typedef std::future<DescribeFileInfoOutcome> DescribeFileInfoOutcomeCallable;
                 typedef std::function<void(const TicsClient*, const Model::DescribeFileInfoRequest&, DescribeFileInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileInfoAsyncHandler;
-                typedef Outcome<Error, Model::DescribeIpInfoResponse> DescribeIpInfoOutcome;
+                typedef Outcome<Core::Error, Model::DescribeIpInfoResponse> DescribeIpInfoOutcome;
                 typedef std::future<DescribeIpInfoOutcome> DescribeIpInfoOutcomeCallable;
                 typedef std::function<void(const TicsClient*, const Model::DescribeIpInfoRequest&, DescribeIpInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInfoAsyncHandler;
-                typedef Outcome<Error, Model::DescribeThreatInfoResponse> DescribeThreatInfoOutcome;
+                typedef Outcome<Core::Error, Model::DescribeThreatInfoResponse> DescribeThreatInfoOutcome;
                 typedef std::future<DescribeThreatInfoOutcome> DescribeThreatInfoOutcomeCallable;
                 typedef std::function<void(const TicsClient*, const Model::DescribeThreatInfoRequest&, DescribeThreatInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatInfoAsyncHandler;
 

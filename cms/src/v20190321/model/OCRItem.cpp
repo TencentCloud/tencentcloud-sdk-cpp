@@ -39,7 +39,7 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextPosition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OCRItem.TextPosition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OCRItem.TextPosition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_textPosition.Deserialize(value["TextPosition"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OCRItem.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OCRItem.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evilLabel = string(value["EvilLabel"].GetString());
         m_evilLabelHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OCRItem.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OCRItem.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `OCRItem.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OCRItem.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OCRItem.Rate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OCRItem.Rate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rate = value["Rate"].GetInt64();
         m_rateHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OCRItem.TextContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OCRItem.TextContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_textContent = string(value["TextContent"].GetString());
         m_textContentHasBeenSet = true;

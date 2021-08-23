@@ -35,7 +35,7 @@ CoreInternalOutcome PartitionOffset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Partition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionOffset.Partition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionOffset.Partition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_partition = string(value["Partition"].GetString());
         m_partitionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PartitionOffset::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PartitionOffset.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionOffset.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;

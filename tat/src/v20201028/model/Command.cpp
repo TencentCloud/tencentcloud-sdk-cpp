@@ -48,7 +48,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommandId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.CommandId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.CommandId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandId = string(value["CommandId"].GetString());
         m_commandIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommandName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.CommandName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.CommandName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandName = string(value["CommandName"].GetString());
         m_commandNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommandType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.CommandType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.CommandType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandType = string(value["CommandType"].GetString());
         m_commandTypeHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkingDirectory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.WorkingDirectory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.WorkingDirectory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workingDirectory = string(value["WorkingDirectory"].GetString());
         m_workingDirectoryHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Command.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetUint64();
         m_timeoutHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableParameter"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Command.EnableParameter` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.EnableParameter` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableParameter = value["EnableParameter"].GetBool();
         m_enableParameterHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultParameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.DefaultParameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.DefaultParameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultParameters = string(value["DefaultParameters"].GetString());
         m_defaultParametersHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FormattedDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.FormattedDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.FormattedDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_formattedDescription = string(value["FormattedDescription"].GetString());
         m_formattedDescriptionHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedBy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.CreatedBy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.CreatedBy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdBy = string(value["CreatedBy"].GetString());
         m_createdByHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Command.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Command.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -198,7 +198,7 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Command.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;

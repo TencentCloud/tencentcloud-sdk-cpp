@@ -36,7 +36,7 @@ CoreInternalOutcome RuntimeConfiguration::Deserialize(const rapidjson::Value &va
     {
         if (!value["GameServerSessionActivationTimeoutSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gameServerSessionActivationTimeoutSeconds = value["GameServerSessionActivationTimeoutSeconds"].GetUint64();
         m_gameServerSessionActivationTimeoutSecondsHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RuntimeConfiguration::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaxConcurrentGameServerSessionActivations"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuntimeConfiguration.MaxConcurrentGameServerSessionActivations` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuntimeConfiguration.MaxConcurrentGameServerSessionActivations` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxConcurrentGameServerSessionActivations = value["MaxConcurrentGameServerSessionActivations"].GetUint64();
         m_maxConcurrentGameServerSessionActivationsHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome RuntimeConfiguration::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ServerProcesses") && !value["ServerProcesses"].IsNull())
     {
         if (!value["ServerProcesses"].IsArray())
-            return CoreInternalOutcome(Error("response `RuntimeConfiguration.ServerProcesses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuntimeConfiguration.ServerProcesses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServerProcesses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

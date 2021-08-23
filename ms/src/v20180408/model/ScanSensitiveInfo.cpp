@@ -35,7 +35,7 @@ CoreInternalOutcome ScanSensitiveInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("WordList") && !value["WordList"].IsNull())
     {
         if (!value["WordList"].IsArray())
-            return CoreInternalOutcome(Error("response `ScanSensitiveInfo.WordList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScanSensitiveInfo.WordList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WordList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome ScanSensitiveInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["FilePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanSensitiveInfo.FilePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSensitiveInfo.FilePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filePath = string(value["FilePath"].GetString());
         m_filePathHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ScanSensitiveInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["FileSha"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanSensitiveInfo.FileSha` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSensitiveInfo.FileSha` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSha = string(value["FileSha"].GetString());
         m_fileShaHasBeenSet = true;

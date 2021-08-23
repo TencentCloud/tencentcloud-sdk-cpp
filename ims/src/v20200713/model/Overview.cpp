@@ -41,7 +41,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.TotalHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.TotalHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalHour = value["TotalHour"].GetInt64();
         m_totalHourHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PassCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.PassCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.PassCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_passCount = value["PassCount"].GetInt64();
         m_passCountHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PassHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.PassHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.PassHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_passHour = value["PassHour"].GetInt64();
         m_passHourHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.EvilCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.EvilCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilCount = value["EvilCount"].GetInt64();
         m_evilCountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.EvilHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.EvilHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilHour = value["EvilHour"].GetInt64();
         m_evilHourHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuspectCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.SuspectCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.SuspectCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suspectCount = value["SuspectCount"].GetInt64();
         m_suspectCountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuspectHour"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Overview.SuspectHour` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Overview.SuspectHour` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_suspectHour = value["SuspectHour"].GetInt64();
         m_suspectHourHasBeenSet = true;

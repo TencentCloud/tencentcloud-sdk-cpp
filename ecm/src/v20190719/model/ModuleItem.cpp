@@ -35,7 +35,7 @@ CoreInternalOutcome ModuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeInstanceNum"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ModuleItem.NodeInstanceNum` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleItem.NodeInstanceNum` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_nodeInstanceNum.Deserialize(value["NodeInstanceNum"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ModuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Module"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ModuleItem.Module` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleItem.Module` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_module.Deserialize(value["Module"]);

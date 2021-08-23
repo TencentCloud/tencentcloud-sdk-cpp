@@ -38,7 +38,7 @@ CoreInternalOutcome ResponseErrorCodeReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResponseErrorCodeReq.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseErrorCodeReq.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ResponseErrorCodeReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseErrorCodeReq.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseErrorCodeReq.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ResponseErrorCodeReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseErrorCodeReq.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseErrorCodeReq.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ResponseErrorCodeReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["ConvertedCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResponseErrorCodeReq.ConvertedCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseErrorCodeReq.ConvertedCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_convertedCode = value["ConvertedCode"].GetInt64();
         m_convertedCodeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ResponseErrorCodeReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["NeedConvert"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ResponseErrorCodeReq.NeedConvert` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseErrorCodeReq.NeedConvert` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_needConvert = value["NeedConvert"].GetBool();
         m_needConvertHasBeenSet = true;

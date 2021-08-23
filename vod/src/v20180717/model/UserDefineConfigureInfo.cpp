@@ -36,7 +36,7 @@ CoreInternalOutcome UserDefineConfigureInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["FaceReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UserDefineConfigureInfo.FaceReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserDefineConfigureInfo.FaceReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceReviewInfo.Deserialize(value["FaceReviewInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome UserDefineConfigureInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["AsrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UserDefineConfigureInfo.AsrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserDefineConfigureInfo.AsrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrReviewInfo.Deserialize(value["AsrReviewInfo"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome UserDefineConfigureInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["OcrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UserDefineConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserDefineConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrReviewInfo.Deserialize(value["OcrReviewInfo"]);

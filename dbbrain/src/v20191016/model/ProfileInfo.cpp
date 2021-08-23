@@ -35,7 +35,7 @@ CoreInternalOutcome ProfileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Language"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProfileInfo.Language` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProfileInfo.Language` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_language = string(value["Language"].GetString());
         m_languageHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ProfileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MailConfiguration"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProfileInfo.MailConfiguration` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProfileInfo.MailConfiguration` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mailConfiguration.Deserialize(value["MailConfiguration"]);

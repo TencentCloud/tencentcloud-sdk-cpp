@@ -42,7 +42,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     if (value.HasMember("PublicIpAddresses") && !value["PublicIpAddresses"].IsNull())
     {
         if (!value["PublicIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.PublicIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.PublicIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -85,7 +85,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["NatGatewaySnatId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.NatGatewaySnatId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.NatGatewaySnatId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewaySnatId = string(value["NatGatewaySnatId"].GetString());
         m_natGatewaySnatIdHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["NatGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayId = string(value["NatGatewayId"].GetString());
         m_natGatewayIdHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome SourceIpTranslationNatRule::Deserialize(const rapidjson::Val
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceIpTranslationNatRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceIpTranslationNatRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

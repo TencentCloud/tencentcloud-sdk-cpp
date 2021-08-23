@@ -36,7 +36,7 @@ CoreInternalOutcome Size::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `Size.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Size.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome Size::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NormSize"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Size.NormSize` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Size.NormSize` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_normSize.Deserialize(value["NormSize"]);
@@ -67,7 +67,7 @@ CoreInternalOutcome Size::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Size.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Size.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Size::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Size.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Size.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

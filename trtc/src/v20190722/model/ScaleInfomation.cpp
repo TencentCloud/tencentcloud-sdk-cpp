@@ -37,7 +37,7 @@ CoreInternalOutcome ScaleInfomation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScaleInfomation.Time` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScaleInfomation.Time` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetUint64();
         m_timeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ScaleInfomation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScaleInfomation.UserNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScaleInfomation.UserNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_userNumber = value["UserNumber"].GetUint64();
         m_userNumberHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ScaleInfomation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScaleInfomation.UserCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScaleInfomation.UserCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_userCount = value["UserCount"].GetUint64();
         m_userCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ScaleInfomation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomNumbers"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScaleInfomation.RoomNumbers` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScaleInfomation.RoomNumbers` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_roomNumbers = value["RoomNumbers"].GetUint64();
         m_roomNumbersHasBeenSet = true;

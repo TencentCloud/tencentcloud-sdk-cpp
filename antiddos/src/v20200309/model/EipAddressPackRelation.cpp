@@ -36,7 +36,7 @@ CoreInternalOutcome EipAddressPackRelation::Deserialize(const rapidjson::Value &
     {
         if (!value["IpCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EipAddressPackRelation.IpCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressPackRelation.IpCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ipCount = value["IpCount"].GetUint64();
         m_ipCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EipAddressPackRelation::Deserialize(const rapidjson::Value &
     {
         if (!value["AutoRenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EipAddressPackRelation.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressPackRelation.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
         m_autoRenewFlagHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EipAddressPackRelation::Deserialize(const rapidjson::Value &
     {
         if (!value["CurDeadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAddressPackRelation.CurDeadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAddressPackRelation.CurDeadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_curDeadline = string(value["CurDeadline"].GetString());
         m_curDeadlineHasBeenSet = true;

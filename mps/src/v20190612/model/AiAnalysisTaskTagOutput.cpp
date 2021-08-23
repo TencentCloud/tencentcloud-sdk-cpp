@@ -33,7 +33,7 @@ CoreInternalOutcome AiAnalysisTaskTagOutput::Deserialize(const rapidjson::Value 
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiAnalysisTaskTagOutput.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskTagOutput.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

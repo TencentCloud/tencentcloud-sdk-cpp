@@ -35,7 +35,7 @@ CoreInternalOutcome AlarmPolicyFilter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AlarmPolicyFilter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Dimensions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyFilter.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyFilter.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dimensions = string(value["Dimensions"].GetString());
         m_dimensionsHasBeenSet = true;

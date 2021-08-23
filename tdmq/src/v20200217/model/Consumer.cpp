@@ -37,7 +37,7 @@ CoreInternalOutcome Consumer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConnectedSince"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Consumer.ConnectedSince` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Consumer.ConnectedSince` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_connectedSince = string(value["ConnectedSince"].GetString());
         m_connectedSinceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Consumer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumerAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Consumer.ConsumerAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Consumer.ConsumerAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumerAddr = string(value["ConsumerAddr"].GetString());
         m_consumerAddrHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Consumer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Consumer.ConsumerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Consumer.ConsumerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumerName = string(value["ConsumerName"].GetString());
         m_consumerNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Consumer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Consumer.ClientVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Consumer.ClientVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientVersion = string(value["ClientVersion"].GetString());
         m_clientVersionHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome HighlightsInfomation::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Concentration") && !value["Concentration"].IsNull())
     {
         if (!value["Concentration"].IsArray())
-            return CoreInternalOutcome(Error("response `HighlightsInfomation.Concentration` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HighlightsInfomation.Concentration` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Concentration"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome HighlightsInfomation::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Smile") && !value["Smile"].IsNull())
     {
         if (!value["Smile"].IsArray())
-            return CoreInternalOutcome(Error("response `HighlightsInfomation.Smile` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HighlightsInfomation.Smile` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Smile"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome HighlightsInfomation::Deserialize(const rapidjson::Value &va
     {
         if (!value["HighlightsUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HighlightsInfomation.HighlightsUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsInfomation.HighlightsUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_highlightsUrl = string(value["HighlightsUrl"].GetString());
         m_highlightsUrlHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome HighlightsInfomation::Deserialize(const rapidjson::Value &va
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HighlightsInfomation.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsInfomation.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;

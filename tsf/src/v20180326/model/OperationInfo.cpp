@@ -36,7 +36,7 @@ CoreInternalOutcome OperationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Init"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OperationInfo.Init` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationInfo.Init` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_init.Deserialize(value["Init"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome OperationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddInstance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OperationInfo.AddInstance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationInfo.AddInstance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_addInstance.Deserialize(value["AddInstance"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome OperationInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Destroy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OperationInfo.Destroy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationInfo.Destroy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_destroy.Deserialize(value["Destroy"]);

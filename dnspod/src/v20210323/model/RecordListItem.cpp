@@ -46,7 +46,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.RecordId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.RecordId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_recordId = value["RecordId"].GetUint64();
         m_recordIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Line"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Line` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Line` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_line = string(value["Line"].GetString());
         m_lineHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LineId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.LineId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.LineId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lineId = string(value["LineId"].GetString());
         m_lineIdHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.MonitorStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.MonitorStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_monitorStatus = string(value["MonitorStatus"].GetString());
         m_monitorStatusHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MX"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordListItem.MX` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.MX` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mX = value["MX"].GetUint64();
         m_mXHasBeenSet = true;

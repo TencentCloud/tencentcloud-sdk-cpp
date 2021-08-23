@@ -35,7 +35,7 @@ CoreInternalOutcome OcrWordsConfigureInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OcrWordsConfigureInfo.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrWordsConfigureInfo.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome OcrWordsConfigureInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("LabelSet") && !value["LabelSet"].IsNull())
     {
         if (!value["LabelSet"].IsArray())
-            return CoreInternalOutcome(Error("response `OcrWordsConfigureInfo.LabelSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OcrWordsConfigureInfo.LabelSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LabelSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

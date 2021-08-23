@@ -36,7 +36,7 @@ CoreInternalOutcome LabelDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LabelDetailItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelDetailItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome LabelDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LabelDetailItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelDetailItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome LabelDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LabelDetailItem.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelDetailItem.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetUint64();
         m_scoreHasBeenSet = true;

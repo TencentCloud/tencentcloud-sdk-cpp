@@ -37,7 +37,7 @@ CoreInternalOutcome ImageWatermarkTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["ImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkTemplate.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkTemplate.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageUrl = string(value["ImageUrl"].GetString());
         m_imageUrlHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ImageWatermarkTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkTemplate.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkTemplate.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ImageWatermarkTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkTemplate.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkTemplate.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ImageWatermarkTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["RepeatType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkTemplate.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkTemplate.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repeatType = string(value["RepeatType"].GetString());
         m_repeatTypeHasBeenSet = true;

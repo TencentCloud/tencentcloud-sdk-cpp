@@ -37,7 +37,7 @@ CoreInternalOutcome ImageInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInstance.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInstance.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ImageInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInstance.OsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInstance.OsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osName = string(value["OsName"].GetString());
         m_osNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ImageInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInstance.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInstance.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ImageInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsCustomizeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInstance.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInstance.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osCustomizeType = string(value["OsCustomizeType"].GetString());
         m_osCustomizeTypeHasBeenSet = true;

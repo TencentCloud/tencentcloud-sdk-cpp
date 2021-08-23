@@ -44,16 +44,16 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,11 +64,11 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["FlowServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FlowServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowServiceName = string(rsp["FlowServiceName"].GetString());
         m_flowServiceNameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["Definition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Definition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Definition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_definition = string(rsp["Definition"].GetString());
         m_definitionHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["RoleResource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoleResource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoleResource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleResource = string(rsp["RoleResource"].GetString());
         m_roleResourceHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["CreateDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createDate = string(rsp["CreateDate"].GetString());
         m_createDateHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["FlowServiceChineseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FlowServiceChineseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowServiceChineseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowServiceChineseName = string(rsp["FlowServiceChineseName"].GetString());
         m_flowServiceChineseNameHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["EnableCLS"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EnableCLS` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnableCLS` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableCLS = rsp["EnableCLS"].GetBool();
         m_enableCLSHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["CLSUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CLSUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CLSUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cLSUrl = string(rsp["CLSUrl"].GetString());
         m_cLSUrlHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribeFlowServiceDetailResponse::Deserialize(const string 
     {
         if (!rsp["FlowInput"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FlowInput` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowInput` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowInput = string(rsp["FlowInput"].GetString());
         m_flowInputHasBeenSet = true;

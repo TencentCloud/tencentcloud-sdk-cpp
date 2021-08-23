@@ -40,7 +40,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["BindType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.BindType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.BindType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindType = value["BindType"].GetInt64();
         m_bindTypeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &v
     {
         if (!value["LanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ListenerInfoBackend.LanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ListenerInfoBackend.LanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lanIp = string(value["LanIp"].GetString());
         m_lanIpHasBeenSet = true;

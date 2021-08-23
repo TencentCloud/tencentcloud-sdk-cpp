@@ -40,7 +40,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextSample.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextSample.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TextSample.CreatedAt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.CreatedAt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = value["CreatedAt"].GetUint64();
         m_createdAtHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TextSample.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetUint64();
         m_evilTypeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextSample.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TextSample.Label` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.Label` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_label = value["Label"].GetUint64();
         m_labelHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TextSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TextSample.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextSample.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;

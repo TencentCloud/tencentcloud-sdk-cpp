@@ -40,7 +40,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EventTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.EventTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.EventTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventTime = string(value["EventTime"].GetString());
         m_eventTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EventType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.EventType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.EventType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventType = value["EventType"].GetUint64();
         m_eventTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Request"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.Request` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.Request` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_request = string(value["Request"].GetString());
         m_requestHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Response"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.Response` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.Response` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_response = string(value["Response"].GetString());
         m_responseHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ResponseTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.ResponseTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.ResponseTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_responseTime = string(value["ResponseTime"].GetString());
         m_responseTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ResultCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCode = value["ResultCode"].GetUint64();
         m_resultCodeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StreamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallbackEventInfo.StreamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallbackEventInfo.StreamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamId = string(value["StreamId"].GetString());
         m_streamIdHasBeenSet = true;

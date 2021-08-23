@@ -35,7 +35,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SQLTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.SQLTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.SQLTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sQLTask.Deserialize(value["SQLTask"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SparkSQLTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.SparkSQLTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.SparkSQLTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sparkSQLTask.Deserialize(value["SparkSQLTask"]);

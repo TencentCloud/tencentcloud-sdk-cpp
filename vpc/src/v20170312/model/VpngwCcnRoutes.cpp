@@ -35,7 +35,7 @@ CoreInternalOutcome VpngwCcnRoutes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpngwCcnRoutes.RouteId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpngwCcnRoutes.RouteId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = string(value["RouteId"].GetString());
         m_routeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VpngwCcnRoutes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpngwCcnRoutes.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpngwCcnRoutes.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

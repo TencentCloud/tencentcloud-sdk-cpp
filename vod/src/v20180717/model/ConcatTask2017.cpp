@@ -35,7 +35,7 @@ CoreInternalOutcome ConcatTask2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConcatTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConcatTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ConcatTask2017::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileInfoSet") && !value["FileInfoSet"].IsNull())
     {
         if (!value["FileInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ConcatTask2017.FileInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConcatTask2017.FileInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

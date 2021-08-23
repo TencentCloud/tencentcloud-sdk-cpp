@@ -39,7 +39,7 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTrackItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrackItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTrackItem.VideoItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrackItem.VideoItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoItem.Deserialize(value["VideoItem"]);
@@ -66,7 +66,7 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTrackItem.AudioItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrackItem.AudioItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioItem.Deserialize(value["AudioItem"]);
@@ -83,7 +83,7 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StickerItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTrackItem.StickerItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrackItem.StickerItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_stickerItem.Deserialize(value["StickerItem"]);
@@ -100,7 +100,7 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransitionItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTrackItem.TransitionItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrackItem.TransitionItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_transitionItem.Deserialize(value["TransitionItem"]);
@@ -117,7 +117,7 @@ CoreInternalOutcome MediaTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EmptyItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTrackItem.EmptyItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTrackItem.EmptyItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_emptyItem.Deserialize(value["EmptyItem"]);

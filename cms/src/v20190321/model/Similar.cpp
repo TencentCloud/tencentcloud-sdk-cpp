@@ -36,7 +36,7 @@ CoreInternalOutcome Similar::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Similar.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Similar.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Similar::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HitFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Similar.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Similar.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = value["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Similar::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SeedUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Similar.SeedUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Similar.SeedUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_seedUrl = string(value["SeedUrl"].GetString());
         m_seedUrlHasBeenSet = true;

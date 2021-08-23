@@ -37,7 +37,7 @@ CoreInternalOutcome NetDetectIpState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectDestinationIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetectIpState.DetectDestinationIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetectIpState.DetectDestinationIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectDestinationIp = string(value["DetectDestinationIp"].GetString());
         m_detectDestinationIpHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome NetDetectIpState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetDetectIpState.State` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetectIpState.State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome NetDetectIpState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Delay"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NetDetectIpState.Delay` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetectIpState.Delay` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_delay = value["Delay"].GetUint64();
         m_delayHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NetDetectIpState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PacketLossRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NetDetectIpState.PacketLossRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetectIpState.PacketLossRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packetLossRate = value["PacketLossRate"].GetUint64();
         m_packetLossRateHasBeenSet = true;

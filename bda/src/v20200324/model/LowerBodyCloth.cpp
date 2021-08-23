@@ -36,7 +36,7 @@ CoreInternalOutcome LowerBodyCloth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Color"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LowerBodyCloth.Color` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowerBodyCloth.Color` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_color.Deserialize(value["Color"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome LowerBodyCloth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Length"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LowerBodyCloth.Length` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowerBodyCloth.Length` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_length.Deserialize(value["Length"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome LowerBodyCloth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LowerBodyCloth.Type` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowerBodyCloth.Type` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_type.Deserialize(value["Type"]);

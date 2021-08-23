@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,18 +59,18 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("Machines") && !rsp["Machines"].IsNull())
     {
         if (!rsp["Machines"].IsArray())
-            return CoreInternalOutcome(Error("response `Machines` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Machines` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Machines"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
     {
         if (!rsp["AutoUpdate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoUpdate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoUpdate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoUpdate = rsp["AutoUpdate"].GetInt64();
         m_autoUpdateHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
     {
         if (!rsp["UpdateStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateStartTime = string(rsp["UpdateStartTime"].GetString());
         m_updateStartTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
     {
         if (!rsp["UpdateEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateEndTime = string(rsp["UpdateEndTime"].GetString());
         m_updateEndTimeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
     {
         if (!rsp["LatestAgentVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LatestAgentVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LatestAgentVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestAgentVersion = string(rsp["LatestAgentVersion"].GetString());
         m_latestAgentVersionHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
     {
         if (!rsp["ServiceLogging"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceLogging` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceLogging` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_serviceLogging = rsp["ServiceLogging"].GetBool();
         m_serviceLoggingHasBeenSet = true;

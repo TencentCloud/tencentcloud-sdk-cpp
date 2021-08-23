@@ -47,7 +47,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LongSide"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.LongSide` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.LongSide` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_longSide = value["LongSide"].GetInt64();
         m_longSideHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShortSide"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.ShortSide` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.ShortSide` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shortSide = value["ShortSide"].GetInt64();
         m_shortSideHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gop"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.Gop` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.Gop` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gop = value["Gop"].GetInt64();
         m_gopHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoCodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.VideoCodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.VideoCodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoCodec = string(value["VideoCodec"].GetString());
         m_videoCodecHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PicMarkInfo") && !value["PicMarkInfo"].IsNull())
     {
         if (!value["PicMarkInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoInfo.PicMarkInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.PicMarkInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PicMarkInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -147,7 +147,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DarInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.DarInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.DarInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_darInfo.Deserialize(value["DarInfo"]);
@@ -164,7 +164,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hdr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.Hdr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.Hdr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hdr = string(value["Hdr"].GetString());
         m_hdrHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoEnhance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.VideoEnhance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.VideoEnhance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoEnhance.Deserialize(value["VideoEnhance"]);
@@ -191,7 +191,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HiddenMarkInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoInfo.HiddenMarkInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.HiddenMarkInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hiddenMarkInfo.Deserialize(value["HiddenMarkInfo"]);
@@ -207,7 +207,7 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TextMarkInfo") && !value["TextMarkInfo"].IsNull())
     {
         if (!value["TextMarkInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoInfo.TextMarkInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoInfo.TextMarkInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TextMarkInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

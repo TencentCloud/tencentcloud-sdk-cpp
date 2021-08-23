@@ -35,7 +35,7 @@ CoreInternalOutcome PathMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathMapping.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathMapping.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PathMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Environment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathMapping.Environment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathMapping.Environment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environment = string(value["Environment"].GetString());
         m_environmentHasBeenSet = true;

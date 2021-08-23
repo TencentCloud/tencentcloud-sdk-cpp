@@ -35,7 +35,7 @@ CoreInternalOutcome TableColumn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Col"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableColumn.Col` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableColumn.Col` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_col = string(value["Col"].GetString());
         m_colHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TableColumn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableColumn.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableColumn.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

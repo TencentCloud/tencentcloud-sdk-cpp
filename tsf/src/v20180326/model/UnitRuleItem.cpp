@@ -42,7 +42,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Relationship"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.Relationship` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.Relationship` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relationship = string(value["Relationship"].GetString());
         m_relationshipHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestNamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.DestNamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.DestNamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destNamespaceId = string(value["DestNamespaceId"].GetString());
         m_destNamespaceIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestNamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.DestNamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.DestNamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destNamespaceName = string(value["DestNamespaceName"].GetString());
         m_destNamespaceNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitRuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.UnitRuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.UnitRuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unitRuleId = string(value["UnitRuleId"].GetString());
         m_unitRuleIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleItem.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UnitRuleTagList") && !value["UnitRuleTagList"].IsNull())
     {
         if (!value["UnitRuleTagList"].IsArray())
-            return CoreInternalOutcome(Error("response `UnitRuleItem.UnitRuleTagList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.UnitRuleTagList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UnitRuleTagList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome ActionTimer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Externals"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ActionTimer.Externals` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.Externals` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_externals.Deserialize(value["Externals"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome ActionTimer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimerAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionTimer.TimerAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.TimerAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timerAction = string(value["TimerAction"].GetString());
         m_timerActionHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ActionTimer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionTimer.ActionTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.ActionTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionTime = string(value["ActionTime"].GetString());
         m_actionTimeHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome DetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailInfo.Value` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailInfo.Value` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Value"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome DetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailInfo.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailInfo.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;

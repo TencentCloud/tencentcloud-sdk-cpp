@@ -45,7 +45,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowServiceResource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.FlowServiceResource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.FlowServiceResource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowServiceResource = string(value["FlowServiceResource"].GetString());
         m_flowServiceResourceHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.FlowServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.FlowServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowServiceName = string(value["FlowServiceName"].GetString());
         m_flowServiceNameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowServiceChineseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.FlowServiceChineseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.FlowServiceChineseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowServiceChineseName = string(value["FlowServiceChineseName"].GetString());
         m_flowServiceChineseNameHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createDate = string(value["CreateDate"].GetString());
         m_createDateHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.ModifyDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.ModifyDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyDate = string(value["ModifyDate"].GetString());
         m_modifyDateHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.Creator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.Creator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Modifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.Modifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.Modifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifier = string(value["Modifier"].GetString());
         m_modifierHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.FlowServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.FlowServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowServiceId = string(value["FlowServiceId"].GetString());
         m_flowServiceIdHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome StateMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StateMachine.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StateMachine.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

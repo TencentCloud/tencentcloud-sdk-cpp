@@ -46,7 +46,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.ReqTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.ReqTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reqTime = string(value["ReqTime"].GetString());
         m_reqTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Seq"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Seq` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Seq` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_seq = string(value["Seq"].GetString());
         m_seqHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Idcard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Idcard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Idcard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idcard = string(value["Idcard"].GetString());
         m_idcardHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sim"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Sim` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Sim` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sim = string(value["Sim"].GetString());
         m_simHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsNeedCharge"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.IsNeedCharge` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.IsNeedCharge` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isNeedCharge = value["IsNeedCharge"].GetBool();
         m_isNeedChargeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Errcode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Errcode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Errcode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errcode = value["Errcode"].GetInt64();
         m_errcodeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Errmsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Errmsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Errmsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errmsg = string(value["Errmsg"].GetString());
         m_errmsgHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Livestatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Livestatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Livestatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_livestatus = value["Livestatus"].GetInt64();
         m_livestatusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Livemsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Livemsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Livemsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_livemsg = string(value["Livemsg"].GetString());
         m_livemsgHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comparestatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Comparestatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Comparestatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_comparestatus = value["Comparestatus"].GetInt64();
         m_comparestatusHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comparemsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.Comparemsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.Comparemsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comparemsg = string(value["Comparemsg"].GetString());
         m_comparemsgHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DetectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompareLibType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectDetail.CompareLibType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectDetail.CompareLibType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compareLibType = string(value["CompareLibType"].GetString());
         m_compareLibTypeHasBeenSet = true;

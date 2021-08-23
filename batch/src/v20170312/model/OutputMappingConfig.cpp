@@ -36,7 +36,7 @@ CoreInternalOutcome OutputMappingConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["Scene"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputMappingConfig.Scene` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputMappingConfig.Scene` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scene = string(value["Scene"].GetString());
         m_sceneHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputMappingConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["WorkerNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputMappingConfig.WorkerNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputMappingConfig.WorkerNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workerNum = value["WorkerNum"].GetInt64();
         m_workerNumHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OutputMappingConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["WorkerPartSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputMappingConfig.WorkerPartSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputMappingConfig.WorkerPartSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workerPartSize = value["WorkerPartSize"].GetInt64();
         m_workerPartSizeHasBeenSet = true;

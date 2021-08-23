@@ -38,7 +38,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Product"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.Product` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.Product` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_product = string(value["Product"].GetString());
         m_productHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqVpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqVpcId = string(value["UniqVpcId"].GetString());
         m_uniqVpcIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ServiceConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceConfig.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceConfig.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;

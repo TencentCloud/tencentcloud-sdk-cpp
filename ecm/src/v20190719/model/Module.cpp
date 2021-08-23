@@ -47,7 +47,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Module.ModuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.ModuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleId = string(value["ModuleId"].GetString());
         m_moduleIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Module.ModuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.ModuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleName = string(value["ModuleName"].GetString());
         m_moduleNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModuleState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Module.ModuleState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.ModuleState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleState = string(value["ModuleState"].GetString());
         m_moduleStateHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultSystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Module.DefaultSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.DefaultSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultSystemDiskSize = value["DefaultSystemDiskSize"].GetInt64();
         m_defaultSystemDiskSizeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultDataDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Module.DefaultDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.DefaultDataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultDataDiskSize = value["DefaultDataDiskSize"].GetInt64();
         m_defaultDataDiskSizeHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceTypeConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Module.InstanceTypeConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.InstanceTypeConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceTypeConfig.Deserialize(value["InstanceTypeConfig"]);
@@ -114,7 +114,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultImage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Module.DefaultImage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.DefaultImage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_defaultImage.Deserialize(value["DefaultImage"]);
@@ -131,7 +131,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Module.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Module.DefaultBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.DefaultBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultBandwidth = value["DefaultBandwidth"].GetInt64();
         m_defaultBandwidthHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Module.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Module.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -171,7 +171,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CloseIpDirect"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Module.CloseIpDirect` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.CloseIpDirect` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_closeIpDirect = value["CloseIpDirect"].GetInt64();
         m_closeIpDirectHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Module.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Module.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -194,7 +194,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultBandwidthIn"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Module.DefaultBandwidthIn` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.DefaultBandwidthIn` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultBandwidthIn = value["DefaultBandwidthIn"].GetInt64();
         m_defaultBandwidthInHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Module.UserData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Module.UserData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userData = string(value["UserData"].GetString());
         m_userDataHasBeenSet = true;

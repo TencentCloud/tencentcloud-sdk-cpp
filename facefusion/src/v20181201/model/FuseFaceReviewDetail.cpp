@@ -37,7 +37,7 @@ CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Field"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewDetail.Field` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewDetail.Field` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_field = string(value["Field"].GetString());
         m_fieldHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewDetail.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewDetail.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewDetail.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewDetail.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome TsfLoadBalanceConfResp::Deserialize(const rapidjson::Value &
     {
         if (!value["IsLoadBalance"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TsfLoadBalanceConfResp.IsLoadBalance` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TsfLoadBalanceConfResp.IsLoadBalance` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isLoadBalance = value["IsLoadBalance"].GetBool();
         m_isLoadBalanceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TsfLoadBalanceConfResp::Deserialize(const rapidjson::Value &
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TsfLoadBalanceConfResp.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TsfLoadBalanceConfResp.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TsfLoadBalanceConfResp::Deserialize(const rapidjson::Value &
     {
         if (!value["SessionStickRequired"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TsfLoadBalanceConfResp.SessionStickRequired` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TsfLoadBalanceConfResp.SessionStickRequired` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_sessionStickRequired = value["SessionStickRequired"].GetBool();
         m_sessionStickRequiredHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TsfLoadBalanceConfResp::Deserialize(const rapidjson::Value &
     {
         if (!value["SessionStickTimeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TsfLoadBalanceConfResp.SessionStickTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TsfLoadBalanceConfResp.SessionStickTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionStickTimeout = value["SessionStickTimeout"].GetInt64();
         m_sessionStickTimeoutHasBeenSet = true;

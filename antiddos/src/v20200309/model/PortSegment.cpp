@@ -35,7 +35,7 @@ CoreInternalOutcome PortSegment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PortSegment.BeginPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PortSegment.BeginPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_beginPort = value["BeginPort"].GetUint64();
         m_beginPortHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PortSegment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PortSegment.EndPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PortSegment.EndPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endPort = value["EndPort"].GetUint64();
         m_endPortHasBeenSet = true;

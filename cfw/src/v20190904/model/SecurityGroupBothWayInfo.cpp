@@ -55,7 +55,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.SourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.SourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceId = string(value["SourceId"].GetString());
         m_sourceIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = value["SourceType"].GetUint64();
         m_sourceTypeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["TargetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.TargetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.TargetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetId = string(value["TargetId"].GetString());
         m_targetIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["TargetType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.TargetType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.TargetType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_targetType = value["TargetType"].GetUint64();
         m_targetTypeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Strategy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Strategy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Strategy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = value["Strategy"].GetUint64();
         m_strategyHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Direction"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetUint64();
         m_directionHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["IsNew"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.IsNew` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.IsNew` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isNew = value["IsNew"].GetUint64();
         m_isNewHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["BothWay"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.BothWay` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.BothWay` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bothWay = value["BothWay"].GetUint64();
         m_bothWayHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["PublicIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIp = string(value["PublicIp"].GetString());
         m_publicIpHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["PrivateIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIp = string(value["PrivateIp"].GetString());
         m_privateIpHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Cidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.Cidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.Cidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidr = string(value["Cidr"].GetString());
         m_cidrHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["ServiceTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateId = string(value["ServiceTemplateId"].GetString());
         m_serviceTemplateIdHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
     {
         if (!value["ProtocolPortType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.ProtocolPortType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupBothWayInfo.ProtocolPortType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protocolPortType = value["ProtocolPortType"].GetUint64();
         m_protocolPortTypeHasBeenSet = true;

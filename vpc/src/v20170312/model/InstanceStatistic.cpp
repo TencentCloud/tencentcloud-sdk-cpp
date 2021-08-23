@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceStatistic::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceStatistic.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceStatistic.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceStatistic::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceStatistic.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceStatistic.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;

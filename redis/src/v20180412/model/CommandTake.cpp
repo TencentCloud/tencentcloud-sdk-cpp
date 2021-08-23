@@ -35,7 +35,7 @@ CoreInternalOutcome CommandTake::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cmd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommandTake.Cmd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandTake.Cmd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmd = string(value["Cmd"].GetString());
         m_cmdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CommandTake::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Took"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommandTake.Took` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandTake.Took` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_took = value["Took"].GetInt64();
         m_tookHasBeenSet = true;

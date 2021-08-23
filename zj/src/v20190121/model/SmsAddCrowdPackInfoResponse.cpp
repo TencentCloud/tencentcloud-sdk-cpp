@@ -34,7 +34,7 @@ CoreInternalOutcome SmsAddCrowdPackInfoResponse::Deserialize(const rapidjson::Va
     {
         if (!value["ID"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsAddCrowdPackInfoResponse.ID` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsAddCrowdPackInfoResponse.ID` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iD = value["ID"].GetUint64();
         m_iDHasBeenSet = true;

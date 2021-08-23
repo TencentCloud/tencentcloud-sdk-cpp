@@ -47,7 +47,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.CallId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.CallId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callId = string(value["CallId"].GetString());
         m_callIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.BindId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.BindId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bindId = string(value["BindId"].GetString());
         m_bindIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dst"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.Dst` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.Dst` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dst = string(value["Dst"].GetString());
         m_dstHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstVirtualNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.DstVirtualNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.DstVirtualNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstVirtualNum = string(value["DstVirtualNum"].GetString());
         m_dstVirtualNumHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallCenterAcceptTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.CallCenterAcceptTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.CallCenterAcceptTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callCenterAcceptTime = string(value["CallCenterAcceptTime"].GetString());
         m_callCenterAcceptTimeHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartDstCallTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.StartDstCallTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.StartDstCallTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startDstCallTime = string(value["StartDstCallTime"].GetString());
         m_startDstCallTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartDstRingTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.StartDstRingTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.StartDstRingTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startDstRingTime = string(value["StartDstRingTime"].GetString());
         m_startDstRingTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstAcceptTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.DstAcceptTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.DstAcceptTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstAcceptTime = string(value["DstAcceptTime"].GetString());
         m_dstAcceptTimeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndCallTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.EndCallTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.EndCallTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endCallTime = string(value["EndCallTime"].GetString());
         m_endCallTimeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallEndStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.CallEndStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.CallEndStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callEndStatus = string(value["CallEndStatus"].GetString());
         m_callEndStatusHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcDuration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.SrcDuration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.SrcDuration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcDuration = string(value["SrcDuration"].GetString());
         m_srcDurationHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstDuration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.DstDuration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.DstDuration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstDuration = string(value["DstDuration"].GetString());
         m_dstDurationHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome VirturalNumCdr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirturalNumCdr.RecordUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirturalNumCdr.RecordUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordUrl = string(value["RecordUrl"].GetString());
         m_recordUrlHasBeenSet = true;

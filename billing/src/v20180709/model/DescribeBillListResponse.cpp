@@ -45,16 +45,16 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,18 +65,18 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("TransactionList") && !rsp["TransactionList"].IsNull())
     {
         if (!rsp["TransactionList"].IsArray())
-            return CoreInternalOutcome(Error("response `TransactionList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TransactionList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TransactionList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -97,7 +97,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = rsp["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["ReturnAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReturnAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReturnAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_returnAmount = rsp["ReturnAmount"].GetDouble();
         m_returnAmountHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["RechargeAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RechargeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RechargeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rechargeAmount = rsp["RechargeAmount"].GetDouble();
         m_rechargeAmountHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["BlockAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BlockAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_blockAmount = rsp["BlockAmount"].GetDouble();
         m_blockAmountHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["UnblockAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `UnblockAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnblockAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unblockAmount = rsp["UnblockAmount"].GetDouble();
         m_unblockAmountHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeductAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DeductAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeductAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_deductAmount = rsp["DeductAmount"].GetDouble();
         m_deductAmountHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["AgentInAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AgentInAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentInAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_agentInAmount = rsp["AgentInAmount"].GetDouble();
         m_agentInAmountHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["AdvanceRechargeAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AdvanceRechargeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvanceRechargeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_advanceRechargeAmount = rsp["AdvanceRechargeAmount"].GetDouble();
         m_advanceRechargeAmountHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["WithdrawAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WithdrawAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_withdrawAmount = rsp["WithdrawAmount"].GetDouble();
         m_withdrawAmountHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["AgentOutAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AgentOutAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentOutAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_agentOutAmount = rsp["AgentOutAmount"].GetDouble();
         m_agentOutAmountHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     {
         if (!rsp["AdvancePayAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AdvancePayAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancePayAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_advancePayAmount = rsp["AdvancePayAmount"].GetDouble();
         m_advancePayAmountHasBeenSet = true;

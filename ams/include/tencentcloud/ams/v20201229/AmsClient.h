@@ -47,19 +47,19 @@ namespace TencentCloud
                 AmsClient(const Credential &credential, const std::string &region);
                 AmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CancelTaskResponse> CancelTaskOutcome;
+                typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
-                typedef Outcome<Error, Model::CreateAudioModerationSyncTaskResponse> CreateAudioModerationSyncTaskOutcome;
+                typedef Outcome<Core::Error, Model::CreateAudioModerationSyncTaskResponse> CreateAudioModerationSyncTaskOutcome;
                 typedef std::future<CreateAudioModerationSyncTaskOutcome> CreateAudioModerationSyncTaskOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::CreateAudioModerationSyncTaskRequest&, CreateAudioModerationSyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAudioModerationSyncTaskAsyncHandler;
-                typedef Outcome<Error, Model::CreateAudioModerationTaskResponse> CreateAudioModerationTaskOutcome;
+                typedef Outcome<Core::Error, Model::CreateAudioModerationTaskResponse> CreateAudioModerationTaskOutcome;
                 typedef std::future<CreateAudioModerationTaskOutcome> CreateAudioModerationTaskOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::CreateAudioModerationTaskRequest&, CreateAudioModerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAudioModerationTaskAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const AmsClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
 

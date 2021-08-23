@@ -47,16 +47,16 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,11 +67,11 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["MigrateId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MigrateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_migrateId = rsp["MigrateId"].GetUint64();
         m_migrateIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["MigrateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_migrateName = string(rsp["MigrateName"].GetString());
         m_migrateNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = rsp["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(rsp["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["SourceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = rsp["SourceType"].GetInt64();
         m_sourceTypeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(rsp["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = rsp["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["MigrateType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_migrateType = rsp["MigrateType"].GetInt64();
         m_migrateTypeHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["Source"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Source` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Source` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_source.Deserialize(rsp["Source"]);
@@ -206,7 +206,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     {
         if (!rsp["Target"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Target` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Target` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_target.Deserialize(rsp["Target"]);
@@ -222,7 +222,7 @@ CoreInternalOutcome DescribeMigrationDetailResponse::Deserialize(const string &p
     if (rsp.HasMember("MigrateDBSet") && !rsp["MigrateDBSet"].IsNull())
     {
         if (!rsp["MigrateDBSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MigrateDBSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MigrateDBSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["MigrateDBSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

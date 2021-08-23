@@ -37,7 +37,7 @@ CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const rapidjson::V
     {
         if (!value["ImageContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkInputForUpdate.ImageContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkInputForUpdate.ImageContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageContent = string(value["ImageContent"].GetString());
         m_imageContentHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const rapidjson::V
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkInputForUpdate.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkInputForUpdate.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const rapidjson::V
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkInputForUpdate.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkInputForUpdate.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const rapidjson::V
     {
         if (!value["RepeatType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageWatermarkInputForUpdate.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkInputForUpdate.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repeatType = string(value["RepeatType"].GetString());
         m_repeatTypeHasBeenSet = true;

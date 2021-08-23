@@ -35,7 +35,7 @@ CoreInternalOutcome SmsCampaignStatisticsData::Deserialize(const rapidjson::Valu
     {
         if (!value["CampaignId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsData.CampaignId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsData.CampaignId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_campaignId = value["CampaignId"].GetUint64();
         m_campaignIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SmsCampaignStatisticsData::Deserialize(const rapidjson::Valu
     if (value.HasMember("Statistics") && !value["Statistics"].IsNull())
     {
         if (!value["Statistics"].IsArray())
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsData.Statistics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsData.Statistics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Statistics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

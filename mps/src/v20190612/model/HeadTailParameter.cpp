@@ -34,7 +34,7 @@ CoreInternalOutcome HeadTailParameter::Deserialize(const rapidjson::Value &value
     if (value.HasMember("HeadSet") && !value["HeadSet"].IsNull())
     {
         if (!value["HeadSet"].IsArray())
-            return CoreInternalOutcome(Error("response `HeadTailParameter.HeadSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HeadTailParameter.HeadSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HeadSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome HeadTailParameter::Deserialize(const rapidjson::Value &value
     if (value.HasMember("TailSet") && !value["TailSet"].IsNull())
     {
         if (!value["TailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `HeadTailParameter.TailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HeadTailParameter.TailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

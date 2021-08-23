@@ -46,7 +46,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PartitionNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.PartitionNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.PartitionNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitionNum = value["PartitionNum"].GetInt64();
         m_partitionNumHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicaNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.ReplicaNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.ReplicaNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_replicaNum = value["ReplicaNum"].GetInt64();
         m_replicaNumHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Note"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.Note` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.Note` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_note = string(value["Note"].GetString());
         m_noteHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableWhiteList"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.EnableWhiteList` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.EnableWhiteList` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableWhiteList = value["EnableWhiteList"].GetBool();
         m_enableWhiteListHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpWhiteListCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.IpWhiteListCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.IpWhiteListCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ipWhiteListCount = value["IpWhiteListCount"].GetInt64();
         m_ipWhiteListCountHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardCosBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.ForwardCosBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.ForwardCosBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardCosBucket = string(value["ForwardCosBucket"].GetString());
         m_forwardCosBucketHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.ForwardStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.ForwardStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_forwardStatus = value["ForwardStatus"].GetInt64();
         m_forwardStatusHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.ForwardInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.ForwardInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_forwardInterval = value["ForwardInterval"].GetInt64();
         m_forwardIntervalHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Config"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.Config` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.Config` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_config.Deserialize(value["Config"]);
@@ -173,7 +173,7 @@ CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetentionTimeConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TopicDetail.RetentionTimeConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicDetail.RetentionTimeConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_retentionTimeConfig.Deserialize(value["RetentionTimeConfig"]);

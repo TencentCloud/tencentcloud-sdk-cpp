@@ -36,7 +36,7 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KubeAPIServer") && !value["KubeAPIServer"].IsNull())
     {
         if (!value["KubeAPIServer"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterExtraArgs.KubeAPIServer` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterExtraArgs.KubeAPIServer` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KubeAPIServer"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KubeControllerManager") && !value["KubeControllerManager"].IsNull())
     {
         if (!value["KubeControllerManager"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterExtraArgs.KubeControllerManager` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterExtraArgs.KubeControllerManager` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KubeControllerManager"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KubeScheduler") && !value["KubeScheduler"].IsNull())
     {
         if (!value["KubeScheduler"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterExtraArgs.KubeScheduler` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterExtraArgs.KubeScheduler` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KubeScheduler"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Etcd") && !value["Etcd"].IsNull())
     {
         if (!value["Etcd"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterExtraArgs.Etcd` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterExtraArgs.Etcd` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Etcd"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

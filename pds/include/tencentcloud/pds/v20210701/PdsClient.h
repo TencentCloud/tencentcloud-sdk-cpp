@@ -41,10 +41,10 @@ namespace TencentCloud
                 PdsClient(const Credential &credential, const std::string &region);
                 PdsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeNewUserAcquisitionResponse> DescribeNewUserAcquisitionOutcome;
+                typedef Outcome<Core::Error, Model::DescribeNewUserAcquisitionResponse> DescribeNewUserAcquisitionOutcome;
                 typedef std::future<DescribeNewUserAcquisitionOutcome> DescribeNewUserAcquisitionOutcomeCallable;
                 typedef std::function<void(const PdsClient*, const Model::DescribeNewUserAcquisitionRequest&, DescribeNewUserAcquisitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewUserAcquisitionAsyncHandler;
-                typedef Outcome<Error, Model::DescribeStockEstimationResponse> DescribeStockEstimationOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStockEstimationResponse> DescribeStockEstimationOutcome;
                 typedef std::future<DescribeStockEstimationOutcome> DescribeStockEstimationOutcomeCallable;
                 typedef std::function<void(const PdsClient*, const Model::DescribeStockEstimationRequest&, DescribeStockEstimationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStockEstimationAsyncHandler;
 

@@ -47,7 +47,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CompanyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.CompanyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.CompanyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = string(value["CompanyId"].GetString());
         m_companyIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShopId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = value["ShopId"].GetInt64();
         m_shopIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShopName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.ShopName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.ShopName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shopName = string(value["ShopName"].GetString());
         m_shopNameHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Upload"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.Upload` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.Upload` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_upload = value["Upload"].GetDouble();
         m_uploadHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Download"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.Download` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.Download` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_download = value["Download"].GetDouble();
         m_downloadHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MinRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.MinRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.MinRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minRtt = value["MinRtt"].GetDouble();
         m_minRttHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AvgRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.AvgRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.AvgRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgRtt = value["AvgRtt"].GetDouble();
         m_avgRttHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MaxRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.MaxRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.MaxRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxRtt = value["MaxRtt"].GetDouble();
         m_maxRttHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MdevRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.MdevRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.MdevRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_mdevRtt = value["MdevRtt"].GetDouble();
         m_mdevRttHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Loss"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.Loss` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.Loss` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_loss = value["Loss"].GetDouble();
         m_lossHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome NetworkAndShopInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mac"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAndShopInfo.Mac` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAndShopInfo.Mac` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mac = string(value["Mac"].GetString());
         m_macHasBeenSet = true;

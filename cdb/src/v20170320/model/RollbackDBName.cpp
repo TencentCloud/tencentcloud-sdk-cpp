@@ -35,7 +35,7 @@ CoreInternalOutcome RollbackDBName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackDBName.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackDBName.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RollbackDBName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewDatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackDBName.NewDatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackDBName.NewDatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newDatabaseName = string(value["NewDatabaseName"].GetString());
         m_newDatabaseNameHasBeenSet = true;

@@ -33,7 +33,7 @@ CoreInternalOutcome CandWord::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CandWords") && !value["CandWords"].IsNull())
     {
         if (!value["CandWords"].IsArray())
-            return CoreInternalOutcome(Error("response `CandWord.CandWords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CandWord.CandWords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CandWords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

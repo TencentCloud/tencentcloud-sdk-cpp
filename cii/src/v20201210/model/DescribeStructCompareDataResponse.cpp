@@ -43,16 +43,16 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(rsp["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(rsp["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["CustomerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerId = string(rsp["CustomerId"].GetString());
         m_customerIdHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["CustomerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerName = string(rsp["CustomerName"].GetString());
         m_customerNameHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["ReviewTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReviewTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReviewTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reviewTime = string(rsp["ReviewTime"].GetString());
         m_reviewTimeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["MachineResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineResult = string(rsp["MachineResult"].GetString());
         m_machineResultHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["ManualResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_manualResult = string(rsp["ManualResult"].GetString());
         m_manualResultHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["Metrics"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Metrics` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metrics` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metrics.Deserialize(rsp["Metrics"]);
@@ -162,7 +162,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["NewItems"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewItems` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewItems` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newItems = string(rsp["NewItems"].GetString());
         m_newItemsHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome DescribeStructCompareDataResponse::Deserialize(const string 
     {
         if (!rsp["ModifyItems"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyItems` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyItems` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyItems = string(rsp["ModifyItems"].GetString());
         m_modifyItemsHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const rapidjson::Valu
     {
         if (!value["GroupQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroupQuota.GroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroupQuota.GroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupQuota = value["GroupQuota"].GetInt64();
         m_groupQuotaHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const rapidjson::Valu
     {
         if (!value["CurrentNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroupQuota.CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroupQuota.CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentNum = value["CurrentNum"].GetInt64();
         m_currentNumHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const rapidjson::Valu
     {
         if (!value["CvmInHostGroupQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroupQuota.CvmInHostGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroupQuota.CvmInHostGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cvmInHostGroupQuota = value["CvmInHostGroupQuota"].GetInt64();
         m_cvmInHostGroupQuotaHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const rapidjson::Valu
     {
         if (!value["CvmInSwitchGroupQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroupQuota.CvmInSwitchGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroupQuota.CvmInSwitchGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cvmInSwitchGroupQuota = value["CvmInSwitchGroupQuota"].GetInt64();
         m_cvmInSwitchGroupQuotaHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const rapidjson::Valu
     {
         if (!value["CvmInRackGroupQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroupQuota.CvmInRackGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroupQuota.CvmInRackGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cvmInRackGroupQuota = value["CvmInRackGroupQuota"].GetInt64();
         m_cvmInRackGroupQuotaHasBeenSet = true;

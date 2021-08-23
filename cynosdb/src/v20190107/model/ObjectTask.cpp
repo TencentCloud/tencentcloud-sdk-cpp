@@ -38,7 +38,7 @@ CoreInternalOutcome ObjectTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ObjectTask.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectTask.TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetInt64();
         m_taskIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ObjectTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectTask.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectTask.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ObjectTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectTask.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectTask.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = string(value["TaskStatus"].GetString());
         m_taskStatusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ObjectTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectTask.ObjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectTask.ObjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objectId = string(value["ObjectId"].GetString());
         m_objectIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ObjectTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjectType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectTask.ObjectType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectTask.ObjectType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objectType = string(value["ObjectType"].GetString());
         m_objectTypeHasBeenSet = true;

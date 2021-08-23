@@ -34,7 +34,7 @@ CoreInternalOutcome AddTemplateStatus::Deserialize(const rapidjson::Value &value
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddTemplateStatus.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddTemplateStatus.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome StepDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StepDetail.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StepDetail.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome StepDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StepDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StepDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome StepDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StepDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StepDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

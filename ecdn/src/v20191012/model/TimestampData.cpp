@@ -35,7 +35,7 @@ CoreInternalOutcome TimestampData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimestampData.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimestampData.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome TimestampData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsArray())
-            return CoreInternalOutcome(Error("response `TimestampData.Value` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TimestampData.Value` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Value"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

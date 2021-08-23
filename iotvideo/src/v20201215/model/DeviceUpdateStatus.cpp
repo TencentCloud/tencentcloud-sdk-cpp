@@ -42,7 +42,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LastProcessTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.LastProcessTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.LastProcessTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastProcessTime = value["LastProcessTime"].GetUint64();
         m_lastProcessTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Retcode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.Retcode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.Retcode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retcode = value["Retcode"].GetInt64();
         m_retcodeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DstVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.DstVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.DstVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstVersion = string(value["DstVersion"].GetString());
         m_dstVersionHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Percent"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.Percent` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.Percent` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetUint64();
         m_percentHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OriVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.OriVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.OriVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oriVersion = string(value["OriVersion"].GetString());
         m_oriVersionHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceUpdateStatus.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceUpdateStatus.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;

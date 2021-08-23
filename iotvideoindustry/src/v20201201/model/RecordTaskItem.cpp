@@ -40,7 +40,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.RecordTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.RecordTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordTaskId = string(value["RecordTaskId"].GetString());
         m_recordTaskIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordPlanId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.RecordPlanId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.RecordPlanId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordPlanId = string(value["RecordPlanId"].GetString());
         m_recordPlanIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.VideoUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.VideoUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoUrl = string(value["VideoUrl"].GetString());
         m_videoUrlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordTaskItem.RecordStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.RecordStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recordStatus = value["RecordStatus"].GetInt64();
         m_recordStatusHasBeenSet = true;

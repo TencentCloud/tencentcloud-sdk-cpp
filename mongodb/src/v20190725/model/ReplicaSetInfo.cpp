@@ -34,7 +34,7 @@ CoreInternalOutcome ReplicaSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicaSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaSetInfo.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaSetInfo.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetId = string(value["ReplicaSetId"].GetString());
         m_replicaSetIdHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome MHMResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MHMResponse.TagType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MHMResponse.TagType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tagType = value["TagType"].GetInt64();
         m_tagTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MHMResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MHMResponse.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MHMResponse.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tagCount = value["TagCount"].GetInt64();
         m_tagCountHasBeenSet = true;

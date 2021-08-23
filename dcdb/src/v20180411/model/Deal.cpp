@@ -39,7 +39,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DealName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.DealName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.DealName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dealName = string(value["DealName"].GetString());
         m_dealNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = string(value["OwnerUin"].GetString());
         m_ownerUinHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowId = value["FlowId"].GetInt64();
         m_flowIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceIds") && !value["InstanceIds"].IsNull())
     {
         if (!value["InstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Deal.InstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Deal.InstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = value["PayMode"].GetInt64();
         m_payModeHasBeenSet = true;

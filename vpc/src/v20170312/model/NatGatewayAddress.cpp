@@ -36,7 +36,7 @@ CoreInternalOutcome NatGatewayAddress::Deserialize(const rapidjson::Value &value
     {
         if (!value["AddressId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayAddress.AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayAddress.AddressId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressId = string(value["AddressId"].GetString());
         m_addressIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NatGatewayAddress::Deserialize(const rapidjson::Value &value
     {
         if (!value["PublicIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayAddress.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayAddress.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAddress = string(value["PublicIpAddress"].GetString());
         m_publicIpAddressHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NatGatewayAddress::Deserialize(const rapidjson::Value &value
     {
         if (!value["IsBlocked"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayAddress.IsBlocked` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayAddress.IsBlocked` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isBlocked = value["IsBlocked"].GetBool();
         m_isBlockedHasBeenSet = true;

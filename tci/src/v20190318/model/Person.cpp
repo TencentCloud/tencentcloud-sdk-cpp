@@ -43,7 +43,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibraryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.LibraryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.LibraryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libraryId = string(value["LibraryId"].GetString());
         m_libraryIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.PersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.PersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personName = string(value["PersonName"].GetString());
         m_personNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.JobNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.JobNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobNumber = string(value["JobNumber"].GetString());
         m_jobNumberHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.Mail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.Mail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Male"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Person.Male` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.Male` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_male = value["Male"].GetInt64();
         m_maleHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(value["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StudentNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.StudentNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.StudentNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_studentNumber = string(value["StudentNumber"].GetString());
         m_studentNumberHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome Person::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Person.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["InstanceGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGroupId = value["InstanceGroupId"].GetInt64();
         m_instanceGroupIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(value["ViewName"].GetString());
         m_viewNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["LastEditUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastEditUin = string(value["LastEditUin"].GetString());
         m_lastEditUinHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["InstanceSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceSum = value["InstanceSum"].GetInt64();
         m_instanceSumHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     {
         if (!value["InsertTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = value["InsertTime"].GetInt64();
         m_insertTimeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     if (value.HasMember("Regions") && !value["Regions"].IsNull())
     {
         if (!value["Regions"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.Regions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstanceGroup.Regions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Regions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

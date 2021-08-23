@@ -34,7 +34,7 @@ CoreInternalOutcome DeviceMemInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Total") && !value["Total"].IsNull())
     {
         if (!value["Total"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceMemInfo.Total` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceMemInfo.Total` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Total"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome DeviceMemInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Used") && !value["Used"].IsNull())
     {
         if (!value["Used"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceMemInfo.Used` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceMemInfo.Used` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Used"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

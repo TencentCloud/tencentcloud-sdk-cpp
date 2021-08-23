@@ -35,7 +35,7 @@ CoreInternalOutcome ConsumerGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumerGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumerGroup.ConsumerGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroup.ConsumerGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumerGroupName = string(value["ConsumerGroupName"].GetString());
         m_consumerGroupNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ConsumerGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubscribedInfo") && !value["SubscribedInfo"].IsNull())
     {
         if (!value["SubscribedInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumerGroup.SubscribedInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroup.SubscribedInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubscribedInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

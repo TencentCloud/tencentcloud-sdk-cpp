@@ -39,7 +39,7 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagResource.TagKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagResource.TagKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagKey = string(value["TagKey"].GetString());
         m_tagKeyHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagResource.TagValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagResource.TagValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValue = string(value["TagValue"].GetString());
         m_tagValueHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagResource.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagResource.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagKeyMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagResource.TagKeyMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagResource.TagKeyMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagKeyMd5 = string(value["TagKeyMd5"].GetString());
         m_tagKeyMd5HasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagValueMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagResource.TagValueMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagResource.TagValueMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValueMd5 = string(value["TagValueMd5"].GetString());
         m_tagValueMd5HasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome TagResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagResource.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagResource.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;

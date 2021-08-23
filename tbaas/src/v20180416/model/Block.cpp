@@ -38,7 +38,7 @@ CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Block.BlockNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Block.BlockNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockNum = value["BlockNum"].GetUint64();
         m_blockNumHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Block.DataHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Block.DataHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataHash = string(value["DataHash"].GetString());
         m_dataHashHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Block.BlockId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Block.BlockId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockId = value["BlockId"].GetUint64();
         m_blockIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PreHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Block.PreHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Block.PreHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_preHash = string(value["PreHash"].GetString());
         m_preHashHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TxCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Block.TxCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Block.TxCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_txCount = value["TxCount"].GetUint64();
         m_txCountHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("FaceDetect") && !value["FaceDetect"].IsNull())
     {
         if (!value["FaceDetect"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.FaceDetect` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.FaceDetect` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceDetect"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("FaceExpression") && !value["FaceExpression"].IsNull())
     {
         if (!value["FaceExpression"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.FaceExpression` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.FaceExpression` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceExpression"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("FaceIdentify") && !value["FaceIdentify"].IsNull())
     {
         if (!value["FaceIdentify"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.FaceIdentify` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.FaceIdentify` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceIdentify"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -101,7 +101,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Gesture"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.Gesture` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.Gesture` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gesture.Deserialize(value["Gesture"]);
@@ -118,7 +118,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Handtracking"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.Handtracking` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.Handtracking` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_handtracking.Deserialize(value["Handtracking"]);
@@ -135,7 +135,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Light"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.Light` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.Light` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_light.Deserialize(value["Light"]);
@@ -152,7 +152,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StudentMovement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.StudentMovement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.StudentMovement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_studentMovement.Deserialize(value["StudentMovement"]);
@@ -169,7 +169,7 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TeacherMovement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskStatistic.TeacherMovement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskStatistic.TeacherMovement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_teacherMovement.Deserialize(value["TeacherMovement"]);

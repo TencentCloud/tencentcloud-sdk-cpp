@@ -45,7 +45,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["RecordId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.RecordId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.RecordId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordId = string(value["RecordId"].GetString());
         m_recordIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(value["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subDomain = string(value["SubDomain"].GetString());
         m_subDomainHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["RecordType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.RecordType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.RecordType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordType = string(value["RecordType"].GetString());
         m_recordTypeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["RecordValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.RecordValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.RecordValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordValue = string(value["RecordValue"].GetString());
         m_recordValueHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["TTL"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.TTL` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.TTL` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetInt64();
         m_tTLHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["MX"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.MX` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.MX` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mX = value["MX"].GetInt64();
         m_mXHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
     {
         if (!value["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZoneRecord.Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(value["Extra"].GetString());
         m_extraHasBeenSet = true;

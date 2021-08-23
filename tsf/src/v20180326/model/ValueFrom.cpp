@@ -35,7 +35,7 @@ CoreInternalOutcome ValueFrom::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldRef"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ValueFrom.FieldRef` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ValueFrom.FieldRef` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fieldRef.Deserialize(value["FieldRef"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ValueFrom::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceFieldRef"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ValueFrom.ResourceFieldRef` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ValueFrom.ResourceFieldRef` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resourceFieldRef.Deserialize(value["ResourceFieldRef"]);

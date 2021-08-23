@@ -35,7 +35,7 @@ CoreInternalOutcome CosUploadBackupFile::Deserialize(const rapidjson::Value &val
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosUploadBackupFile.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadBackupFile.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CosUploadBackupFile::Deserialize(const rapidjson::Value &val
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CosUploadBackupFile.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosUploadBackupFile.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;

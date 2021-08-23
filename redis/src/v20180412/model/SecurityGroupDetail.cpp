@@ -40,7 +40,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["SecurityGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupId = string(value["SecurityGroupId"].GetString());
         m_securityGroupIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["SecurityGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.SecurityGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.SecurityGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupName = string(value["SecurityGroupName"].GetString());
         m_securityGroupNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["SecurityGroupRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.SecurityGroupRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.SecurityGroupRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupRemark = string(value["SecurityGroupRemark"].GetString());
         m_securityGroupRemarkHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     if (value.HasMember("InboundRule") && !value["InboundRule"].IsNull())
     {
         if (!value["InboundRule"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.InboundRule` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.InboundRule` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InboundRule"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome SecurityGroupDetail::Deserialize(const rapidjson::Value &val
     if (value.HasMember("OutboundRule") && !value["OutboundRule"].IsNull())
     {
         if (!value["OutboundRule"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroupDetail.OutboundRule` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupDetail.OutboundRule` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutboundRule"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

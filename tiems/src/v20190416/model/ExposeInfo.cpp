@@ -40,7 +40,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExposeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.ExposeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.ExposeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exposeType = string(value["ExposeType"].GetString());
         m_exposeTypeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GateWayServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.GateWayServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.GateWayServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gateWayServiceId = string(value["GateWayServiceId"].GetString());
         m_gateWayServiceIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GateWayAPIId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.GateWayAPIId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.GateWayAPIId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gateWayAPIId = string(value["GateWayAPIId"].GetString());
         m_gateWayAPIIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ExposeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GateWayDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExposeInfo.GateWayDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExposeInfo.GateWayDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gateWayDomain = string(value["GateWayDomain"].GetString());
         m_gateWayDomainHasBeenSet = true;

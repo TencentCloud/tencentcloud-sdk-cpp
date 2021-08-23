@@ -41,7 +41,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Country"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.Country` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.Country` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_country = value["Country"].GetBool();
         m_countryHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.Province` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.Province` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_province = value["Province"].GetBool();
         m_provinceHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.City` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.City` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_city = value["City"].GetBool();
         m_cityHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.Region` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.Region` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_region = value["Region"].GetBool();
         m_regionHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.Isp` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.Isp` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isp = value["Isp"].GetBool();
         m_ispHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsName"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.AsName` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.AsName` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_asName = value["AsName"].GetBool();
         m_asNameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsId"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.AsId` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.AsId` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_asId = value["AsId"].GetBool();
         m_asIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IpField.Comment` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpField.Comment` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_comment = value["Comment"].GetBool();
         m_commentHasBeenSet = true;

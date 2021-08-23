@@ -34,7 +34,7 @@ CoreInternalOutcome Key::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Key.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Key.KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;

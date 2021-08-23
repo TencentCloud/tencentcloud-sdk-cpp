@@ -35,7 +35,7 @@ CoreInternalOutcome ExternalUserMappingInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["CorpExternalUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalUserMappingInfo.CorpExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalUserMappingInfo.CorpExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_corpExternalUserId = string(value["CorpExternalUserId"].GetString());
         m_corpExternalUserIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ExternalUserMappingInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["ExternalUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalUserMappingInfo.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalUserMappingInfo.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalUserId = string(value["ExternalUserId"].GetString());
         m_externalUserIdHasBeenSet = true;

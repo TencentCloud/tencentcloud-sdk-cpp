@@ -56,7 +56,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = value["DomainId"].GetUint64();
         m_domainIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Grade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Grade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Grade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grade = string(value["Grade"].GetString());
         m_gradeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsMark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.IsMark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsMark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isMark = string(value["IsMark"].GetString());
         m_isMarkHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CnameSpeedup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.CnameSpeedup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CnameSpeedup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnameSpeedup = string(value["CnameSpeedup"].GetString());
         m_cnameSpeedupHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Punycode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Punycode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Punycode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_punycode = string(value["Punycode"].GetString());
         m_punycodeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DnsStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.DnsStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.DnsStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dnsStatus = string(value["DnsStatus"].GetString());
         m_dnsStatusHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DnspodNsList") && !value["DnspodNsList"].IsNull())
     {
         if (!value["DnspodNsList"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainInfo.DnspodNsList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.DnspodNsList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DnspodNsList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -169,7 +169,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GradeLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.GradeLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.GradeLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gradeLevel = value["GradeLevel"].GetUint64();
         m_gradeLevelHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.UserId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.UserId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_userId = value["UserId"].GetUint64();
         m_userIdHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.IsVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isVip = string(value["IsVip"].GetString());
         m_isVipHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Owner` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Owner` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_owner = string(value["Owner"].GetString());
         m_ownerHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GradeTitle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.GradeTitle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.GradeTitle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gradeTitle = string(value["GradeTitle"].GetString());
         m_gradeTitleHasBeenSet = true;
@@ -229,7 +229,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;
@@ -239,7 +239,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -249,7 +249,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -258,7 +258,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ActualNsList") && !value["ActualNsList"].IsNull())
     {
         if (!value["ActualNsList"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainInfo.ActualNsList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.ActualNsList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ActualNsList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -272,7 +272,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.RecordCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.RecordCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_recordCount = value["RecordCount"].GetUint64();
         m_recordCountHasBeenSet = true;
@@ -282,7 +282,7 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerNick"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainInfo.OwnerNick` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.OwnerNick` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerNick = string(value["OwnerNick"].GetString());
         m_ownerNickHasBeenSet = true;

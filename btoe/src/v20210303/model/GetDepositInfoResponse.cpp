@@ -37,16 +37,16 @@ CoreInternalOutcome GetDepositInfoResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome GetDepositInfoResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome GetDepositInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["EvidenceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EvidenceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EvidenceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evidenceId = string(rsp["EvidenceId"].GetString());
         m_evidenceIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome GetDepositInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["EvidenceTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EvidenceTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EvidenceTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evidenceTime = string(rsp["EvidenceTime"].GetString());
         m_evidenceTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome GetDepositInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["EvidenceTxHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EvidenceTxHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EvidenceTxHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evidenceTxHash = string(rsp["EvidenceTxHash"].GetString());
         m_evidenceTxHashHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome GetDepositInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["BlockchainHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BlockchainHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockchainHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blockchainHeight = rsp["BlockchainHeight"].GetInt64();
         m_blockchainHeightHasBeenSet = true;

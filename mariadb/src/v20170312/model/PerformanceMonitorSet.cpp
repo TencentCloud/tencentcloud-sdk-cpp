@@ -43,7 +43,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["UpdateTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.UpdateTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.UpdateTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_updateTotal.Deserialize(value["UpdateTotal"]);
@@ -60,7 +60,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["DiskIops"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.DiskIops` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.DiskIops` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_diskIops.Deserialize(value["DiskIops"]);
@@ -77,7 +77,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["ConnActive"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.ConnActive` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.ConnActive` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_connActive.Deserialize(value["ConnActive"]);
@@ -94,7 +94,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["MemHitRate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.MemHitRate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.MemHitRate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_memHitRate.Deserialize(value["MemHitRate"]);
@@ -111,7 +111,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["SlaveDelay"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.SlaveDelay` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.SlaveDelay` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_slaveDelay.Deserialize(value["SlaveDelay"]);
@@ -128,7 +128,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["SelectTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.SelectTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.SelectTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_selectTotal.Deserialize(value["SelectTotal"]);
@@ -145,7 +145,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["LongQuery"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.LongQuery` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.LongQuery` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_longQuery.Deserialize(value["LongQuery"]);
@@ -162,7 +162,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["DeleteTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.DeleteTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.DeleteTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_deleteTotal.Deserialize(value["DeleteTotal"]);
@@ -179,7 +179,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["InsertTotal"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.InsertTotal` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.InsertTotal` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_insertTotal.Deserialize(value["InsertTotal"]);
@@ -196,7 +196,7 @@ CoreInternalOutcome PerformanceMonitorSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsMasterSwitched"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PerformanceMonitorSet.IsMasterSwitched` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PerformanceMonitorSet.IsMasterSwitched` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_isMasterSwitched.Deserialize(value["IsMasterSwitched"]);

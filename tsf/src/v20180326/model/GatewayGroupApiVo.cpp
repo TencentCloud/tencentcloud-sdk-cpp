@@ -38,7 +38,7 @@ CoreInternalOutcome GatewayGroupApiVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupApiVo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupApiVo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome GatewayGroupApiVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupApiVo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupApiVo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome GatewayGroupApiVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MicroserviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupApiVo.MicroserviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupApiVo.MicroserviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceName = string(value["MicroserviceName"].GetString());
         m_microserviceNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome GatewayGroupApiVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupApiVo.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupApiVo.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome GatewayGroupApiVo::Deserialize(const rapidjson::Value &value
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupApiVo.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupApiVo.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;

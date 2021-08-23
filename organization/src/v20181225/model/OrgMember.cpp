@@ -37,7 +37,7 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgMember.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgMember.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgMember.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgMember.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgMember.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgMember.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JoinTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgMember.JoinTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgMember.JoinTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_joinTime = string(value["JoinTime"].GetString());
         m_joinTimeHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const rapidjson::Valu
     if (value.HasMember("CoverSet") && !value["CoverSet"].IsNull())
     {
         if (!value["CoverSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiAnalysisTaskCoverOutput.CoverSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskCoverOutput.CoverSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CoverSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const rapidjson::Valu
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisTaskCoverOutput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskCoverOutput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);

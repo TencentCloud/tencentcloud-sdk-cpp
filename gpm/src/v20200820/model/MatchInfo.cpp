@@ -58,7 +58,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchCode = string(value["MatchCode"].GetString());
         m_matchCodeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.MatchName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.MatchName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchName = string(value["MatchName"].GetString());
         m_matchNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.MatchDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.MatchDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchDesc = string(value["MatchDesc"].GetString());
         m_matchDescHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.RuleCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.RuleCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleCode = string(value["RuleCode"].GetString());
         m_ruleCodeHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetInt64();
         m_timeoutHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyUrl = string(value["NotifyUrl"].GetString());
         m_notifyUrlHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.ServerType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.ServerType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_serverType = value["ServerType"].GetInt64();
         m_serverTypeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.ServerRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.ServerRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverRegion = string(value["ServerRegion"].GetString());
         m_serverRegionHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerQueue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.ServerQueue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.ServerQueue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverQueue = string(value["ServerQueue"].GetString());
         m_serverQueueHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomPushData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.CustomPushData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.CustomPushData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customPushData = string(value["CustomPushData"].GetString());
         m_customPushDataHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerSessionData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.ServerSessionData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.ServerSessionData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverSessionData = string(value["ServerSessionData"].GetString());
         m_serverSessionDataHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GameProperties") && !value["GameProperties"].IsNull())
     {
         if (!value["GameProperties"].IsArray())
-            return CoreInternalOutcome(Error("response `MatchInfo.GameProperties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.GameProperties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GameProperties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -198,7 +198,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.LogSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.LogSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_logSwitch = value["LogSwitch"].GetInt64();
         m_logSwitchHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetName = string(value["LogsetName"].GetString());
         m_logsetNameHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogTopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.LogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.LogTopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logTopicId = string(value["LogTopicId"].GetString());
         m_logTopicIdHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogTopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.LogTopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.LogTopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logTopicName = string(value["LogTopicName"].GetString());
         m_logTopicNameHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `MatchInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -268,7 +268,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -278,7 +278,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -288,7 +288,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -298,7 +298,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createUin = string(value["CreateUin"].GetString());
         m_createUinHasBeenSet = true;
@@ -308,7 +308,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -318,7 +318,7 @@ CoreInternalOutcome MatchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MatchInfo.LogStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchInfo.LogStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_logStatus = value["LogStatus"].GetInt64();
         m_logStatusHasBeenSet = true;

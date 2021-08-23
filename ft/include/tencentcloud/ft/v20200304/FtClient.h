@@ -49,22 +49,22 @@ namespace TencentCloud
                 FtClient(const Credential &credential, const std::string &region);
                 FtClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CancelFaceMorphJobResponse> CancelFaceMorphJobOutcome;
+                typedef Outcome<Core::Error, Model::CancelFaceMorphJobResponse> CancelFaceMorphJobOutcome;
                 typedef std::future<CancelFaceMorphJobOutcome> CancelFaceMorphJobOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::CancelFaceMorphJobRequest&, CancelFaceMorphJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelFaceMorphJobAsyncHandler;
-                typedef Outcome<Error, Model::ChangeAgePicResponse> ChangeAgePicOutcome;
+                typedef Outcome<Core::Error, Model::ChangeAgePicResponse> ChangeAgePicOutcome;
                 typedef std::future<ChangeAgePicOutcome> ChangeAgePicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::ChangeAgePicRequest&, ChangeAgePicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAgePicAsyncHandler;
-                typedef Outcome<Error, Model::FaceCartoonPicResponse> FaceCartoonPicOutcome;
+                typedef Outcome<Core::Error, Model::FaceCartoonPicResponse> FaceCartoonPicOutcome;
                 typedef std::future<FaceCartoonPicOutcome> FaceCartoonPicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::FaceCartoonPicRequest&, FaceCartoonPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceCartoonPicAsyncHandler;
-                typedef Outcome<Error, Model::MorphFaceResponse> MorphFaceOutcome;
+                typedef Outcome<Core::Error, Model::MorphFaceResponse> MorphFaceOutcome;
                 typedef std::future<MorphFaceOutcome> MorphFaceOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::MorphFaceRequest&, MorphFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MorphFaceAsyncHandler;
-                typedef Outcome<Error, Model::QueryFaceMorphJobResponse> QueryFaceMorphJobOutcome;
+                typedef Outcome<Core::Error, Model::QueryFaceMorphJobResponse> QueryFaceMorphJobOutcome;
                 typedef std::future<QueryFaceMorphJobOutcome> QueryFaceMorphJobOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::QueryFaceMorphJobRequest&, QueryFaceMorphJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFaceMorphJobAsyncHandler;
-                typedef Outcome<Error, Model::SwapGenderPicResponse> SwapGenderPicOutcome;
+                typedef Outcome<Core::Error, Model::SwapGenderPicResponse> SwapGenderPicOutcome;
                 typedef std::future<SwapGenderPicOutcome> SwapGenderPicOutcomeCallable;
                 typedef std::function<void(const FtClient*, const Model::SwapGenderPicRequest&, SwapGenderPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwapGenderPicAsyncHandler;
 

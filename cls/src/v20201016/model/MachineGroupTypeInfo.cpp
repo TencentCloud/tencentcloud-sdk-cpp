@@ -35,7 +35,7 @@ CoreInternalOutcome MachineGroupTypeInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupTypeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupTypeInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MachineGroupTypeInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
         if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Error("response `MachineGroupTypeInfo.Values` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupTypeInfo.Values` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Values"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

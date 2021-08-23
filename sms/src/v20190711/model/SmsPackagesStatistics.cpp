@@ -43,7 +43,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageCreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageCreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageCreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageCreateTime = string(value["PackageCreateTime"].GetString());
         m_packageCreateTimeHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageCreateUnixTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageCreateUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageCreateUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageCreateUnixTime = value["PackageCreateUnixTime"].GetUint64();
         m_packageCreateUnixTimeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageEffectiveTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageEffectiveTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageEffectiveTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageEffectiveTime = string(value["PackageEffectiveTime"].GetString());
         m_packageEffectiveTimeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageEffectiveUnixTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageEffectiveUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageEffectiveUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageEffectiveUnixTime = value["PackageEffectiveUnixTime"].GetUint64();
         m_packageEffectiveUnixTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageExpiredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageExpiredTime = string(value["PackageExpiredTime"].GetString());
         m_packageExpiredTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageExpiredUnixTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageExpiredUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageExpiredUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageExpiredUnixTime = value["PackageExpiredUnixTime"].GetUint64();
         m_packageExpiredUnixTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["AmountOfPackage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.AmountOfPackage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.AmountOfPackage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_amountOfPackage = value["AmountOfPackage"].GetUint64();
         m_amountOfPackageHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["TypeOfPackage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.TypeOfPackage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.TypeOfPackage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_typeOfPackage = value["TypeOfPackage"].GetUint64();
         m_typeOfPackageHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.PackageId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packageId = value["PackageId"].GetUint64();
         m_packageIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &v
     {
         if (!value["CurrentUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.CurrentUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsPackagesStatistics.CurrentUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_currentUsage = value["CurrentUsage"].GetUint64();
         m_currentUsageHasBeenSet = true;

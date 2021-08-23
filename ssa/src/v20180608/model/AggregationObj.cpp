@@ -35,7 +35,7 @@ CoreInternalOutcome AggregationObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AggregationObj.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AggregationObj.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AggregationObj::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Bucket") && !value["Bucket"].IsNull())
     {
         if (!value["Bucket"].IsArray())
-            return CoreInternalOutcome(Error("response `AggregationObj.Bucket` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AggregationObj.Bucket` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Bucket"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

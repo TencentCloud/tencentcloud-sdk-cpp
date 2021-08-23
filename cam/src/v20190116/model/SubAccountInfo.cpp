@@ -42,7 +42,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uid = value["Uid"].GetUint64();
         m_uidHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsoleLogin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.ConsoleLogin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.ConsoleLogin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_consoleLogin = value["ConsoleLogin"].GetUint64();
         m_consoleLoginHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNum = string(value["PhoneNum"].GetString());
         m_phoneNumHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CountryCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.CountryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.CountryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_countryCode = string(value["CountryCode"].GetString());
         m_countryCodeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAccountInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

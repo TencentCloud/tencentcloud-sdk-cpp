@@ -39,16 +39,16 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     {
         if (!rsp["SSHKeyID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSHKeyID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSHKeyID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSHKeyID = string(rsp["SSHKeyID"].GetString());
         m_sSHKeyIDHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     {
         if (!rsp["PublicKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicKey = string(rsp["PublicKey"].GetString());
         m_publicKeyHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     {
         if (!rsp["PrivateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateKey = string(rsp["PrivateKey"].GetString());
         m_privateKeyHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     {
         if (!rsp["ProjectID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectID = rsp["ProjectID"].GetInt64();
         m_projectIDHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     {
         if (!rsp["SSHKeyDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSHKeyDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSHKeyDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSHKeyDescription = string(rsp["SSHKeyDescription"].GetString());
         m_sSHKeyDescriptionHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome GetSSHKeyPairValueResponse::Deserialize(const string &payloa
     {
         if (!rsp["SSHKeyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSHKeyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSHKeyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSHKeyName = string(rsp["SSHKeyName"].GetString());
         m_sSHKeyNameHasBeenSet = true;

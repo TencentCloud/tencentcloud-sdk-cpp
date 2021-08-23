@@ -36,7 +36,7 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Resource.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Resource.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Resource.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Resource.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Resource.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Resource.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressIp = string(value["AddressIp"].GetString());
         m_addressIpHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome OperationInfoDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["DisabledReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OperationInfoDetail.DisabledReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationInfoDetail.DisabledReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_disabledReason = string(value["DisabledReason"].GetString());
         m_disabledReasonHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OperationInfoDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `OperationInfoDetail.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationInfoDetail.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OperationInfoDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Supported"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `OperationInfoDetail.Supported` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperationInfoDetail.Supported` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_supported = value["Supported"].GetBool();
         m_supportedHasBeenSet = true;

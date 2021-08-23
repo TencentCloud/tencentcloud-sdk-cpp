@@ -37,7 +37,7 @@ CoreInternalOutcome KeyFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyFile.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyFile.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome KeyFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileExtType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyFile.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyFile.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileExtType = string(value["FileExtType"].GetString());
         m_fileExtTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome KeyFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyFile.FileContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyFile.FileContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileContent = string(value["FileContent"].GetString());
         m_fileContentHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome KeyFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `KeyFile.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyFile.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;

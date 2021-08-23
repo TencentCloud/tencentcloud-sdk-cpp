@@ -43,7 +43,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraProducer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Config.CameraProducer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.CameraProducer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cameraProducer = string(value["CameraProducer"].GetString());
         m_cameraProducerHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RTSP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Config.RTSP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.RTSP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rTSP = string(value["RTSP"].GetString());
         m_rTSPHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DecodeFps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.DecodeFps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.DecodeFps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_decodeFps = value["DecodeFps"].GetInt64();
         m_decodeFpsHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PassengerFlow"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.PassengerFlow` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.PassengerFlow` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_passengerFlow = value["PassengerFlow"].GetInt64();
         m_passengerFlowHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceExpose"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Config.FaceExpose` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Config.FaceExpose` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_faceExpose = value["FaceExpose"].GetInt64();
         m_faceExposeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MallArea") && !value["MallArea"].IsNull())
     {
         if (!value["MallArea"].IsArray())
-            return CoreInternalOutcome(Error("response `Config.MallArea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Config.MallArea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MallArea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -122,7 +122,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ShopArea") && !value["ShopArea"].IsNull())
     {
         if (!value["ShopArea"].IsArray())
-            return CoreInternalOutcome(Error("response `Config.ShopArea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Config.ShopArea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShopArea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -142,7 +142,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TrackAreas") && !value["TrackAreas"].IsNull())
     {
         if (!value["TrackAreas"].IsArray())
-            return CoreInternalOutcome(Error("response `Config.TrackAreas` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Config.TrackAreas` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TrackAreas"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -162,7 +162,7 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Zones") && !value["Zones"].IsNull())
     {
         if (!value["Zones"].IsArray())
-            return CoreInternalOutcome(Error("response `Config.Zones` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Config.Zones` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Zones"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

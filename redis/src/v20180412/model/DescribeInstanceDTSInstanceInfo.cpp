@@ -41,7 +41,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["SetId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.SetId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.SetId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_setId = value["SetId"].GetInt64();
         m_setIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeInstanceDTSInstanceInfo::Deserialize(const rapidjson
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeInstanceDTSInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDTSInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

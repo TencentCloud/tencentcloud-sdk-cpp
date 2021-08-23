@@ -37,7 +37,7 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IoRatioPerSec") && !value["IoRatioPerSec"].IsNull())
     {
         if (!value["IoRatioPerSec"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceDiskInfo.IoRatioPerSec` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskInfo.IoRatioPerSec` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IoRatioPerSec"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IoWaitTime") && !value["IoWaitTime"].IsNull())
     {
         if (!value["IoWaitTime"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceDiskInfo.IoWaitTime` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskInfo.IoWaitTime` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IoWaitTime"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -63,7 +63,7 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Read") && !value["Read"].IsNull())
     {
         if (!value["Read"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceDiskInfo.Read` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskInfo.Read` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Read"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Write") && !value["Write"].IsNull())
     {
         if (!value["Write"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceDiskInfo.Write` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskInfo.Write` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Write"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CapacityRatio") && !value["CapacityRatio"].IsNull())
     {
         if (!value["CapacityRatio"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceDiskInfo.CapacityRatio` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskInfo.CapacityRatio` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CapacityRatio"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

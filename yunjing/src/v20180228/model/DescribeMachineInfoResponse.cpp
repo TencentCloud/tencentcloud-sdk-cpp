@@ -49,16 +49,16 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -69,11 +69,11 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(rsp["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["ProtectDays"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectDays` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectDays` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectDays = rsp["ProtectDays"].GetUint64();
         m_protectDaysHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineOs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineOs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineOs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineOs = string(rsp["MachineOs"].GetString());
         m_machineOsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(rsp["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineStatus = string(rsp["MachineStatus"].GetString());
         m_machineStatusHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(rsp["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineWanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineWanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineWanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineWanIp = string(rsp["MachineWanIp"].GetString());
         m_machineWanIpHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(rsp["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(rsp["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsProVersion"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isProVersion = rsp["IsProVersion"].GetBool();
         m_isProVersionHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["ProVersionOpenDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProVersionOpenDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProVersionOpenDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proVersionOpenDate = string(rsp["ProVersionOpenDate"].GetString());
         m_proVersionOpenDateHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(rsp["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["MachineRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineRegion = string(rsp["MachineRegion"].GetString());
         m_machineRegionHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(rsp["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["FreeMalwaresLeft"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FreeMalwaresLeft` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreeMalwaresLeft` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_freeMalwaresLeft = rsp["FreeMalwaresLeft"].GetUint64();
         m_freeMalwaresLeftHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["FreeVulsLeft"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FreeVulsLeft` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreeVulsLeft` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_freeVulsLeft = rsp["FreeVulsLeft"].GetUint64();
         m_freeVulsLeftHasBeenSet = true;

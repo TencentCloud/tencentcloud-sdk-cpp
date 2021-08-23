@@ -41,7 +41,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableSchema"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableSchema = string(value["TableSchema"].GetString());
         m_tableSchemaHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.DataLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.DataLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataLength = value["DataLength"].GetDouble();
         m_dataLengthHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IndexLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.IndexLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.IndexLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_indexLength = value["IndexLength"].GetDouble();
         m_indexLengthHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataFree"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.DataFree` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.DataFree` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataFree = value["DataFree"].GetDouble();
         m_dataFreeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.TotalLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.TotalLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalLength = value["TotalLength"].GetDouble();
         m_totalLengthHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FragRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.FragRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.FragRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fragRatio = value["FragRatio"].GetDouble();
         m_fragRatioHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableRows"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.TableRows` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.TableRows` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tableRows = value["TableRows"].GetInt64();
         m_tableRowsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SchemaSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhysicalFileSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SchemaSpaceData.PhysicalFileSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaSpaceData.PhysicalFileSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_physicalFileSize = value["PhysicalFileSize"].GetDouble();
         m_physicalFileSizeHasBeenSet = true;

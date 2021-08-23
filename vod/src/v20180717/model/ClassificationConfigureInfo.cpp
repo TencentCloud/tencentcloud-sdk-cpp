@@ -34,7 +34,7 @@ CoreInternalOutcome ClassificationConfigureInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationConfigureInfo.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationConfigureInfo.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;

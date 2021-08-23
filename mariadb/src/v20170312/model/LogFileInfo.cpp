@@ -37,7 +37,7 @@ CoreInternalOutcome LogFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mtime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogFileInfo.Mtime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogFileInfo.Mtime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mtime = value["Mtime"].GetUint64();
         m_mtimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LogFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Length"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogFileInfo.Length` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogFileInfo.Length` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_length = value["Length"].GetUint64();
         m_lengthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LogFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uri"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogFileInfo.Uri` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogFileInfo.Uri` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uri = string(value["Uri"].GetString());
         m_uriHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome LogFileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogFileInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogFileInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome BindRealServerInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RealServerIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindRealServerInfo.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServerInfo.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerIP = string(value["RealServerIP"].GetString());
         m_realServerIPHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome BindRealServerInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RealServerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindRealServerInfo.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServerInfo.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerId = string(value["RealServerId"].GetString());
         m_realServerIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome BindRealServerInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RealServerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindRealServerInfo.RealServerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServerInfo.RealServerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerName = string(value["RealServerName"].GetString());
         m_realServerNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome BindRealServerInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BindRealServerInfo.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindRealServerInfo.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome BindRealServerInfo::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `BindRealServerInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BindRealServerInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

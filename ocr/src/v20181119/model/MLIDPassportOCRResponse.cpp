@@ -43,16 +43,16 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iD = string(rsp["ID"].GetString());
         m_iDHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["DateOfBirth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DateOfBirth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DateOfBirth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateOfBirth = string(rsp["DateOfBirth"].GetString());
         m_dateOfBirthHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["DateOfExpiration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DateOfExpiration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DateOfExpiration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateOfExpiration = string(rsp["DateOfExpiration"].GetString());
         m_dateOfExpirationHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["IssuingCountry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssuingCountry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssuingCountry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuingCountry = string(rsp["IssuingCountry"].GetString());
         m_issuingCountryHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Nationality"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationality = string(rsp["Nationality"].GetString());
         m_nationalityHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Warn") && !rsp["Warn"].IsNull())
     {
         if (!rsp["Warn"].IsArray())
-            return CoreInternalOutcome(Error("response `Warn` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Warn` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Warn"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -158,7 +158,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(rsp["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(rsp["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;

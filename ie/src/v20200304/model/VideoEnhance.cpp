@@ -44,7 +44,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArtifactReduction"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.ArtifactReduction` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.ArtifactReduction` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_artifactReduction.Deserialize(value["ArtifactReduction"]);
@@ -61,7 +61,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Denoising"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.Denoising` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.Denoising` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_denoising.Deserialize(value["Denoising"]);
@@ -78,7 +78,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ColorEnhance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.ColorEnhance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.ColorEnhance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_colorEnhance.Deserialize(value["ColorEnhance"]);
@@ -95,7 +95,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sharp"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.Sharp` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.Sharp` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sharp.Deserialize(value["Sharp"]);
@@ -112,7 +112,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WdSuperResolution"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.WdSuperResolution` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.WdSuperResolution` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wdSuperResolution = value["WdSuperResolution"].GetInt64();
         m_wdSuperResolutionHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceProtect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.FaceProtect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.FaceProtect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceProtect.Deserialize(value["FaceProtect"]);
@@ -139,7 +139,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WdFps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.WdFps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.WdFps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wdFps = value["WdFps"].GetInt64();
         m_wdFpsHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScratchRepair"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.ScratchRepair` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.ScratchRepair` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_scratchRepair.Deserialize(value["ScratchRepair"]);
@@ -166,7 +166,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LowLightEnhance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.LowLightEnhance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.LowLightEnhance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_lowLightEnhance.Deserialize(value["LowLightEnhance"]);
@@ -183,7 +183,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoSuperResolution"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.VideoSuperResolution` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.VideoSuperResolution` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoSuperResolution.Deserialize(value["VideoSuperResolution"]);
@@ -200,7 +200,7 @@ CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoRepair"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEnhance.VideoRepair` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEnhance.VideoRepair` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoRepair.Deserialize(value["VideoRepair"]);

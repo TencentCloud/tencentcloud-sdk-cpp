@@ -41,7 +41,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsyncRequestId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.AsyncRequestId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.AsyncRequestId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_asyncRequestId = value["AsyncRequestId"].GetInt64();
         m_asyncRequestIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.InstanceInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.InstanceInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceInfo.Deserialize(value["InstanceInfo"]);
@@ -118,7 +118,7 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `HealthReportTask.HealthStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.HealthStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_healthStatus.Deserialize(value["HealthStatus"]);

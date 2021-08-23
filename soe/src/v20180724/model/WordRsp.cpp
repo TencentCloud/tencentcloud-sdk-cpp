@@ -41,7 +41,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemBeginTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.MemBeginTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.MemBeginTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memBeginTime = value["MemBeginTime"].GetInt64();
         m_memBeginTimeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemEndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.MemEndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.MemEndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memEndTime = value["MemEndTime"].GetInt64();
         m_memEndTimeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = value["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchTag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.MatchTag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.MatchTag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_matchTag = value["MatchTag"].GetInt64();
         m_matchTagHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PhoneInfos") && !value["PhoneInfos"].IsNull())
     {
         if (!value["PhoneInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `WordRsp.PhoneInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.PhoneInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PhoneInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReferenceWord"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WordRsp.ReferenceWord` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordRsp.ReferenceWord` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_referenceWord = string(value["ReferenceWord"].GetString());
         m_referenceWordHasBeenSet = true;

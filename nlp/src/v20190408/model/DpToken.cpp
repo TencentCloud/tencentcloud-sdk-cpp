@@ -37,7 +37,7 @@ CoreInternalOutcome DpToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Relation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DpToken.Relation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DpToken.Relation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relation = string(value["Relation"].GetString());
         m_relationHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DpToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DpToken.HeadId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DpToken.HeadId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_headId = value["HeadId"].GetUint64();
         m_headIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DpToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DpToken.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DpToken.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DpToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DpToken.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DpToken.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome MediaProcessInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MediaProcessInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaCuttingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessInfo.MediaCuttingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessInfo.MediaCuttingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaCuttingInfo.Deserialize(value["MediaCuttingInfo"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome MediaProcessInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaJoiningInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessInfo.MediaJoiningInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessInfo.MediaJoiningInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaJoiningInfo.Deserialize(value["MediaJoiningInfo"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome MediaProcessInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaRecognitionInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessInfo.MediaRecognitionInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessInfo.MediaRecognitionInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaRecognitionInfo.Deserialize(value["MediaRecognitionInfo"]);

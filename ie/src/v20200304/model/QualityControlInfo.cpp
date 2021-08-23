@@ -46,7 +46,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Interval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetUint64();
         m_intervalHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["VideoShot"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.VideoShot` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.VideoShot` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_videoShot = value["VideoShot"].GetBool();
         m_videoShotHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Jitter"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.Jitter` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.Jitter` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_jitter = value["Jitter"].GetBool();
         m_jitterHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Blur"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.Blur` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.Blur` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_blur = value["Blur"].GetBool();
         m_blurHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AbnormalLighting"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.AbnormalLighting` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.AbnormalLighting` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_abnormalLighting = value["AbnormalLighting"].GetBool();
         m_abnormalLightingHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CrashScreen"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.CrashScreen` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.CrashScreen` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_crashScreen = value["CrashScreen"].GetBool();
         m_crashScreenHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BlackWhiteEdge"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.BlackWhiteEdge` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.BlackWhiteEdge` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_blackWhiteEdge = value["BlackWhiteEdge"].GetBool();
         m_blackWhiteEdgeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Noise"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.Noise` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.Noise` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_noise = value["Noise"].GetBool();
         m_noiseHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mosaic"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.Mosaic` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.Mosaic` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_mosaic = value["Mosaic"].GetBool();
         m_mosaicHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["QRCode"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.QRCode` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.QRCode` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_qRCode = value["QRCode"].GetBool();
         m_qRCodeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["QualityEvaluation"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.QualityEvaluation` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.QualityEvaluation` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_qualityEvaluation = value["QualityEvaluation"].GetBool();
         m_qualityEvaluationHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["QualityEvalScore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.QualityEvalScore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.QualityEvalScore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qualityEvalScore = value["QualityEvalScore"].GetUint64();
         m_qualityEvalScoreHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Voice"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfo.Voice` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfo.Voice` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_voice = value["Voice"].GetBool();
         m_voiceHasBeenSet = true;

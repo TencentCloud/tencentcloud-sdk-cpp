@@ -40,7 +40,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FollowUser.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FollowUser.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FollowUser.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FollowUser.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddWay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FollowUser.AddWay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.AddWay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_addWay = value["AddWay"].GetInt64();
         m_addWayHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FollowUser.OperUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.OperUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operUserId = string(value["OperUserId"].GetString());
         m_operUserIdHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome FollowUser::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `FollowUser.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FollowUser.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

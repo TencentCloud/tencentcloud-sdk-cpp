@@ -36,7 +36,7 @@ CoreInternalOutcome CloudBaseRunEmptyDirVolumeSource::Deserialize(const rapidjso
     {
         if (!value["EnableEmptyDirVolume"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunEmptyDirVolumeSource.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunEmptyDirVolumeSource.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableEmptyDirVolume = value["EnableEmptyDirVolume"].GetBool();
         m_enableEmptyDirVolumeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CloudBaseRunEmptyDirVolumeSource::Deserialize(const rapidjso
     {
         if (!value["Medium"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunEmptyDirVolumeSource.Medium` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunEmptyDirVolumeSource.Medium` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_medium = string(value["Medium"].GetString());
         m_mediumHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CloudBaseRunEmptyDirVolumeSource::Deserialize(const rapidjso
     {
         if (!value["SizeLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunEmptyDirVolumeSource.SizeLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunEmptyDirVolumeSource.SizeLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sizeLimit = string(value["SizeLimit"].GetString());
         m_sizeLimitHasBeenSet = true;

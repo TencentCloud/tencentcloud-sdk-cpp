@@ -44,7 +44,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EiconBankBranchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.EiconBankBranchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.EiconBankBranchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eiconBankBranchId = string(value["EiconBankBranchId"].GetString());
         m_eiconBankBranchIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CnapsBranchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.CnapsBranchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.CnapsBranchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnapsBranchId = string(value["CnapsBranchId"].GetString());
         m_cnapsBranchIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SettleAcctType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.SettleAcctType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.SettleAcctType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_settleAcctType = value["SettleAcctType"].GetInt64();
         m_settleAcctTypeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SettleAcctName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.SettleAcctName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.SettleAcctName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_settleAcctName = string(value["SettleAcctName"].GetString());
         m_settleAcctNameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcctBranchName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.AcctBranchName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.AcctBranchName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acctBranchName = string(value["AcctBranchName"].GetString());
         m_acctBranchNameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SettleAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.SettleAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.SettleAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_settleAcctNo = string(value["SettleAcctNo"].GetString());
         m_settleAcctNoHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.SubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.SubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAppId = string(value["SubAppId"].GetString());
         m_subAppIdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.BindType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.BindType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindType = value["BindType"].GetInt64();
         m_bindTypeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mobile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.Mobile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.Mobile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobile = string(value["Mobile"].GetString());
         m_mobileHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.IdType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.IdType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idType = string(value["IdType"].GetString());
         m_idTypeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome BankCardItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankCardItem.IdCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankCardItem.IdCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idCode = string(value["IdCode"].GetString());
         m_idCodeHasBeenSet = true;

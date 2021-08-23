@@ -36,7 +36,7 @@ CoreInternalOutcome DutyPaidProofInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DutyPaidProofInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DutyPaidProofInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DutyPaidProofInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DutyPaidProofInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DutyPaidProofInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DutyPaidProofInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Rect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DutyPaidProofInfo.Rect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DutyPaidProofInfo.Rect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rect.Deserialize(value["Rect"]);

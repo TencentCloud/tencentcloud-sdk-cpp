@@ -35,7 +35,7 @@ CoreInternalOutcome HotWord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HotWord.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HotWord.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome HotWord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HotWord.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HotWord.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;

@@ -83,7 +83,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetInt64();
         m_appIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.VpcId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.VpcId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = value["VpcId"].GetInt64();
         m_vpcIdHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.SubnetId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.SubnetId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = value["SubnetId"].GetInt64();
         m_subnetIdHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanDomain = string(value["WanDomain"].GetString());
         m_wanDomainHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanVip = string(value["WanVip"].GetString());
         m_wanVipHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wanPort = value["WanPort"].GetInt64();
         m_wanPortHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -243,7 +243,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoRenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
         m_autoRenewFlagHasBeenSet = true;
@@ -253,7 +253,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeriodEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.PeriodEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.PeriodEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_periodEndTime = string(value["PeriodEndTime"].GetString());
         m_periodEndTimeHasBeenSet = true;
@@ -263,7 +263,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -273,7 +273,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TdsqlVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.TdsqlVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.TdsqlVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tdsqlVersion = string(value["TdsqlVersion"].GetString());
         m_tdsqlVersionHasBeenSet = true;
@@ -283,7 +283,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -293,7 +293,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Storage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storage = value["Storage"].GetInt64();
         m_storageHasBeenSet = true;
@@ -303,7 +303,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqueVpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.UniqueVpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.UniqueVpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqueVpcId = string(value["UniqueVpcId"].GetString());
         m_uniqueVpcIdHasBeenSet = true;
@@ -313,7 +313,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqueSubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.UniqueSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.UniqueSubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqueSubnetId = string(value["UniqueSubnetId"].GetString());
         m_uniqueSubnetIdHasBeenSet = true;
@@ -323,7 +323,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginSerialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.OriginSerialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.OriginSerialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originSerialId = string(value["OriginSerialId"].GetString());
         m_originSerialIdHasBeenSet = true;
@@ -333,7 +333,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.NodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.NodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeCount = value["NodeCount"].GetUint64();
         m_nodeCountHasBeenSet = true;
@@ -343,7 +343,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsTmp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.IsTmp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.IsTmp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isTmp = value["IsTmp"].GetUint64();
         m_isTmpHasBeenSet = true;
@@ -353,7 +353,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExclusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.ExclusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.ExclusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exclusterId = string(value["ExclusterId"].GetString());
         m_exclusterIdHasBeenSet = true;
@@ -363,7 +363,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -373,7 +373,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetInt64();
         m_pidHasBeenSet = true;
@@ -383,7 +383,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetInt64();
         m_qpsHasBeenSet = true;
@@ -393,7 +393,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Paymode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Paymode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Paymode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paymode = string(value["Paymode"].GetString());
         m_paymodeHasBeenSet = true;
@@ -403,7 +403,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Locker"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Locker` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Locker` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_locker = value["Locker"].GetInt64();
         m_lockerHasBeenSet = true;
@@ -413,7 +413,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -423,7 +423,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wanStatus = value["WanStatus"].GetInt64();
         m_wanStatusHasBeenSet = true;
@@ -433,7 +433,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAuditSupported"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.IsAuditSupported` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.IsAuditSupported` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isAuditSupported = value["IsAuditSupported"].GetUint64();
         m_isAuditSupportedHasBeenSet = true;
@@ -443,7 +443,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Machine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Machine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Machine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machine = string(value["Machine"].GetString());
         m_machineHasBeenSet = true;
@@ -453,7 +453,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsEncryptSupported"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.IsEncryptSupported` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.IsEncryptSupported` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isEncryptSupported = value["IsEncryptSupported"].GetInt64();
         m_isEncryptSupportedHasBeenSet = true;
@@ -463,7 +463,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -473,7 +473,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6Flag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Ipv6Flag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Ipv6Flag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6Flag = value["Ipv6Flag"].GetUint64();
         m_ipv6FlagHasBeenSet = true;
@@ -483,7 +483,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vipv6"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.Vipv6` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Vipv6` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vipv6 = string(value["Vipv6"].GetString());
         m_vipv6HasBeenSet = true;
@@ -493,7 +493,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanVipv6"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanVipv6` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanVipv6` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanVipv6 = string(value["WanVipv6"].GetString());
         m_wanVipv6HasBeenSet = true;
@@ -503,7 +503,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanPortIpv6"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanPortIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanPortIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_wanPortIpv6 = value["WanPortIpv6"].GetUint64();
         m_wanPortIpv6HasBeenSet = true;
@@ -513,7 +513,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WanStatusIpv6"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.WanStatusIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.WanStatusIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_wanStatusIpv6 = value["WanStatusIpv6"].GetUint64();
         m_wanStatusIpv6HasBeenSet = true;
@@ -523,7 +523,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DbEngine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.DbEngine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DbEngine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbEngine = string(value["DbEngine"].GetString());
         m_dbEngineHasBeenSet = true;
@@ -533,7 +533,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DbVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.DbVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DbVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbVersion = string(value["DbVersion"].GetString());
         m_dbVersionHasBeenSet = true;
@@ -543,7 +543,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DcnFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.DcnFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DcnFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dcnFlag = value["DcnFlag"].GetInt64();
         m_dcnFlagHasBeenSet = true;
@@ -553,7 +553,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DcnStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.DcnStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DcnStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dcnStatus = value["DcnStatus"].GetInt64();
         m_dcnStatusHasBeenSet = true;
@@ -563,7 +563,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DcnDstNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.DcnDstNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DcnDstNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dcnDstNum = value["DcnDstNum"].GetInt64();
         m_dcnDstNumHasBeenSet = true;
@@ -573,7 +573,7 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBInstance.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstance.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = value["InstanceType"].GetInt64();
         m_instanceTypeHasBeenSet = true;

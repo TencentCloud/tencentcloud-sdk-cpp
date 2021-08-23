@@ -37,7 +37,7 @@ CoreInternalOutcome BillDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDataInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDataInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BillDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BillDataInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDataInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetDouble();
         m_bandwidthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BillDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Flux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BillDataInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDataInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_flux = value["Flux"].GetDouble();
         m_fluxHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BillDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeakTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDataInfo.PeakTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDataInfo.PeakTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peakTime = string(value["PeakTime"].GetString());
         m_peakTimeHasBeenSet = true;

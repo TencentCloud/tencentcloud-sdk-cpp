@@ -35,7 +35,7 @@ CoreInternalOutcome SecretIdLastUsed::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretIdLastUsed.SecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretIdLastUsed.SecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretId = string(value["SecretId"].GetString());
         m_secretIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SecretIdLastUsed::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastUsedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretIdLastUsed.LastUsedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretIdLastUsed.LastUsedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastUsedDate = string(value["LastUsedDate"].GetString());
         m_lastUsedDateHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome ModifyLoadBalancerChargeModeListener::Deserialize(const rapi
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyLoadBalancerChargeModeListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyLoadBalancerChargeModeListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ModifyLoadBalancerChargeModeListener::Deserialize(const rapi
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyLoadBalancerChargeModeListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyLoadBalancerChargeModeListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ModifyLoadBalancerChargeModeListener::Deserialize(const rapi
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ModifyLoadBalancerChargeModeListener.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyLoadBalancerChargeModeListener.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;

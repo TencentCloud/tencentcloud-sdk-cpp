@@ -36,7 +36,7 @@ CoreInternalOutcome PornOcrReviewTemplateInfoForUpdate::Deserialize(const rapidj
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PornOcrReviewTemplateInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornOcrReviewTemplateInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PornOcrReviewTemplateInfoForUpdate::Deserialize(const rapidj
     {
         if (!value["BlockConfidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PornOcrReviewTemplateInfoForUpdate.BlockConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornOcrReviewTemplateInfoForUpdate.BlockConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blockConfidence = value["BlockConfidence"].GetInt64();
         m_blockConfidenceHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PornOcrReviewTemplateInfoForUpdate::Deserialize(const rapidj
     {
         if (!value["ReviewConfidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PornOcrReviewTemplateInfoForUpdate.ReviewConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornOcrReviewTemplateInfoForUpdate.ReviewConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reviewConfidence = value["ReviewConfidence"].GetInt64();
         m_reviewConfidenceHasBeenSet = true;

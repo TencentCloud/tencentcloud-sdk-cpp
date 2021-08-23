@@ -45,7 +45,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -62,7 +62,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Md5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5 = string(value["Md5"].GetString());
         m_md5HasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AudioStreamSet") && !value["AudioStreamSet"].IsNull())
     {
         if (!value["AudioStreamSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.AudioStreamSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.AudioStreamSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AudioStreamSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -171,7 +171,7 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("VideoStreamSet") && !value["VideoStreamSet"].IsNull())
     {
         if (!value["VideoStreamSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaTranscodeItem.VideoStreamSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.VideoStreamSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VideoStreamSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

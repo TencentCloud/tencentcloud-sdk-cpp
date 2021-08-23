@@ -44,7 +44,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EnvName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.EnvName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.EnvName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envName = string(value["EnvName"].GetString());
         m_envNameHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EnvData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.EnvData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.EnvData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_envData.Deserialize(value["EnvData"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DesiredComputeNodeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.DesiredComputeNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.DesiredComputeNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredComputeNodeCount = value["DesiredComputeNodeCount"].GetInt64();
         m_desiredComputeNodeCountHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EnvDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.EnvDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.EnvDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envDescription = string(value["EnvDescription"].GetString());
         m_envDescriptionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EnvType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.EnvType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.EnvType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envType = string(value["EnvType"].GetString());
         m_envTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Authentications") && !value["Authentications"].IsNull())
     {
         if (!value["Authentications"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.Authentications` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.Authentications` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Authentications"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("InputMappings") && !value["InputMappings"].IsNull())
     {
         if (!value["InputMappings"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.InputMappings` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.InputMappings` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InputMappings"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -141,7 +141,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Notifications"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.Notifications` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.Notifications` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_notifications.Deserialize(value["Notifications"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ActionIfComputeNodeInactive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.ActionIfComputeNodeInactive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.ActionIfComputeNodeInactive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionIfComputeNodeInactive = string(value["ActionIfComputeNodeInactive"].GetString());
         m_actionIfComputeNodeInactiveHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ResourceMaxRetryCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.ResourceMaxRetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.ResourceMaxRetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceMaxRetryCount = value["ResourceMaxRetryCount"].GetInt64();
         m_resourceMaxRetryCountHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamedCpmComputeEnv.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

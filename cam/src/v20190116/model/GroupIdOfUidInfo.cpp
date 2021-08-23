@@ -35,7 +35,7 @@ CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupIdOfUidInfo.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupIdOfUidInfo.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uid = value["Uid"].GetUint64();
         m_uidHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupIdOfUidInfo.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupIdOfUidInfo.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;

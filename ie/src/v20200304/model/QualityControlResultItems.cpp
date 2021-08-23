@@ -35,7 +35,7 @@ CoreInternalOutcome QualityControlResultItems::Deserialize(const rapidjson::Valu
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QualityControlResultItems.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlResultItems.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome QualityControlResultItems::Deserialize(const rapidjson::Valu
     if (value.HasMember("QualityControlItems") && !value["QualityControlItems"].IsNull())
     {
         if (!value["QualityControlItems"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlResultItems.QualityControlItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlResultItems.QualityControlItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["QualityControlItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome UseRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UseRangeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UseRange.UseRangeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UseRange.UseRangeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_useRangeId = value["UseRangeId"].GetInt64();
         m_useRangeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome UseRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UseRange.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UseRange.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["ResolutionAdaptive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
         m_resolutionAdaptiveHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["SampleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.SampleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.SampleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sampleType = string(value["SampleType"].GetString());
         m_sampleTypeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["SampleInterval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.SampleInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.SampleInterval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sampleInterval = value["SampleInterval"].GetUint64();
         m_sampleIntervalHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["FillType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fillType = string(value["FillType"].GetString());
         m_fillTypeHasBeenSet = true;

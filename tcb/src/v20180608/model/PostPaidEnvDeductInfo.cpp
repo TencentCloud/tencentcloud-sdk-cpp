@@ -39,7 +39,7 @@ CoreInternalOutcome PostPaidEnvDeductInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PostPaidEnvDeductInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostPaidEnvDeductInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PostPaidEnvDeductInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PostPaidEnvDeductInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostPaidEnvDeductInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PostPaidEnvDeductInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["ResQuota"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PostPaidEnvDeductInfo.ResQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostPaidEnvDeductInfo.ResQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_resQuota = value["ResQuota"].GetDouble();
         m_resQuotaHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PostPaidEnvDeductInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["PkgQuota"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PostPaidEnvDeductInfo.PkgQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostPaidEnvDeductInfo.PkgQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pkgQuota = value["PkgQuota"].GetDouble();
         m_pkgQuotaHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PostPaidEnvDeductInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["FreeQuota"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PostPaidEnvDeductInfo.FreeQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostPaidEnvDeductInfo.FreeQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_freeQuota = value["FreeQuota"].GetDouble();
         m_freeQuotaHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PostPaidEnvDeductInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PostPaidEnvDeductInfo.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PostPaidEnvDeductInfo.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;

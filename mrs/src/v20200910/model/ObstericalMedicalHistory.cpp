@@ -35,7 +35,7 @@ CoreInternalOutcome ObstericalMedicalHistory::Deserialize(const rapidjson::Value
     {
         if (!value["MarriageHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObstericalMedicalHistory.MarriageHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObstericalMedicalHistory.MarriageHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marriageHistory = string(value["MarriageHistory"].GetString());
         m_marriageHistoryHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ObstericalMedicalHistory::Deserialize(const rapidjson::Value
     {
         if (!value["FertilityHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObstericalMedicalHistory.FertilityHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObstericalMedicalHistory.FertilityHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fertilityHistory = string(value["FertilityHistory"].GetString());
         m_fertilityHistoryHasBeenSet = true;

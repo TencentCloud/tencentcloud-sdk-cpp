@@ -36,7 +36,7 @@ CoreInternalOutcome ClassifyDetectInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassifyDetectInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassifyDetectInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ClassifyDetectInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassifyDetectInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassifyDetectInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ClassifyDetectInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Rect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClassifyDetectInfo.Rect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassifyDetectInfo.Rect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rect.Deserialize(value["Rect"]);

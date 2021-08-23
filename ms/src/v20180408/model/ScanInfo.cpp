@@ -35,7 +35,7 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallbackUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackUrl = string(value["CallbackUrl"].GetString());
         m_callbackUrlHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ScanTypes") && !value["ScanTypes"].IsNull())
     {
         if (!value["ScanTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `ScanInfo.ScanTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ScanTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

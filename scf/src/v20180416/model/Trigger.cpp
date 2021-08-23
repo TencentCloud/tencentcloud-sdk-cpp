@@ -45,7 +45,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.ModTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.ModTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modTime = string(value["ModTime"].GetString());
         m_modTimeHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TriggerDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.TriggerDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.TriggerDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_triggerDesc = string(value["TriggerDesc"].GetString());
         m_triggerDescHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TriggerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.TriggerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.TriggerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_triggerName = string(value["TriggerName"].GetString());
         m_triggerNameHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Trigger.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomArgument"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.CustomArgument` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.CustomArgument` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customArgument = string(value["CustomArgument"].GetString());
         m_customArgumentHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.AvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.AvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_availableStatus = string(value["AvailableStatus"].GetString());
         m_availableStatusHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.BindStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.BindStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bindStatus = string(value["BindStatus"].GetString());
         m_bindStatusHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TriggerAttribute"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.TriggerAttribute` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.TriggerAttribute` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_triggerAttribute = string(value["TriggerAttribute"].GetString());
         m_triggerAttributeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome Trigger::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qualifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Trigger.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Trigger.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qualifier = string(value["Qualifier"].GetString());
         m_qualifierHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome OpeningEndingTaskResult::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OpeningEndingTaskResult::Deserialize(const rapidjson::Value 
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OpeningEndingTaskResult::Deserialize(const rapidjson::Value 
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OpeningEndingTaskResult::Deserialize(const rapidjson::Value 
     {
         if (!value["Item"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResult.Item` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResult.Item` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_item.Deserialize(value["Item"]);

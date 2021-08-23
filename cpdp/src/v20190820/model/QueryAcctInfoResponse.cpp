@@ -44,16 +44,16 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,11 +64,11 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -76,7 +76,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAppId = string(rsp["SubAppId"].GetString());
         m_subAppIdHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubMchName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubMchName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubMchName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subMchName = string(rsp["SubMchName"].GetString());
         m_subMchNameHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubMchType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubMchType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubMchType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subMchType = string(rsp["SubMchType"].GetString());
         m_subMchTypeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["ShortName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShortName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShortName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shortName = string(rsp["ShortName"].GetString());
         m_shortNameHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Contact"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Contact` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Contact` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contact = string(rsp["Contact"].GetString());
         m_contactHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Mobile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Mobile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mobile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobile = string(rsp["Mobile"].GetString());
         m_mobileHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(rsp["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubMchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubMchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubMchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subMchId = string(rsp["SubMchId"].GetString());
         m_subMchIdHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctNo = string(rsp["SubAcctNo"].GetString());
         m_subAcctNoHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome QueryAcctInfoResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubMerchantMemberType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubMerchantMemberType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubMerchantMemberType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subMerchantMemberType = string(rsp["SubMerchantMemberType"].GetString());
         m_subMerchantMemberTypeHasBeenSet = true;

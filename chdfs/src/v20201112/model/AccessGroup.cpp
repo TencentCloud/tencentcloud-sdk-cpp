@@ -39,7 +39,7 @@ CoreInternalOutcome AccessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessGroup.AccessGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessGroup.AccessGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessGroupId = string(value["AccessGroupId"].GetString());
         m_accessGroupIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AccessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessGroup.AccessGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessGroup.AccessGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessGroupName = string(value["AccessGroupName"].GetString());
         m_accessGroupNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AccessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessGroup.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessGroup.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AccessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AccessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccessGroup.VpcType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessGroup.VpcType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcType = value["VpcType"].GetUint64();
         m_vpcTypeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AccessGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessGroup.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessGroup.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;

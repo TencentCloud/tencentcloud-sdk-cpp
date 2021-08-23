@@ -35,7 +35,7 @@ CoreInternalOutcome AudioTransform::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioTransform.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTransform.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AudioTransform::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VolumeParam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioTransform.VolumeParam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTransform.VolumeParam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_volumeParam.Deserialize(value["VolumeParam"]);

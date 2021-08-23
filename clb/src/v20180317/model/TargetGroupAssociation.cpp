@@ -37,7 +37,7 @@ CoreInternalOutcome TargetGroupAssociation::Deserialize(const rapidjson::Value &
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupAssociation.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupAssociation.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TargetGroupAssociation::Deserialize(const rapidjson::Value &
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupAssociation.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupAssociation.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TargetGroupAssociation::Deserialize(const rapidjson::Value &
     {
         if (!value["TargetGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupAssociation.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupAssociation.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetGroupId = string(value["TargetGroupId"].GetString());
         m_targetGroupIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TargetGroupAssociation::Deserialize(const rapidjson::Value &
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupAssociation.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupAssociation.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;

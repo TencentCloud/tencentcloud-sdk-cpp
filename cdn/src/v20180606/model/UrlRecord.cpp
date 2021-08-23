@@ -37,7 +37,7 @@ CoreInternalOutcome UrlRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome UrlRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRecord.RealUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRecord.RealUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realUrl = string(value["RealUrl"].GetString());
         m_realUrlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome UrlRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRecord.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRecord.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome UrlRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRecord.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRecord.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

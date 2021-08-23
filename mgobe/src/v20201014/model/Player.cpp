@@ -40,7 +40,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openId = string(value["OpenId"].GetString());
         m_openIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TeamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.TeamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.TeamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_teamId = string(value["TeamId"].GetString());
         m_teamIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsRobot"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Player.IsRobot` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.IsRobot` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isRobot = value["IsRobot"].GetBool();
         m_isRobotHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerId = string(value["PlayerId"].GetString());
         m_playerIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomPlayerStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Player.CustomPlayerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.CustomPlayerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_customPlayerStatus = value["CustomPlayerStatus"].GetUint64();
         m_customPlayerStatusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomProfile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.CustomProfile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.CustomProfile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customProfile = string(value["CustomProfile"].GetString());
         m_customProfileHasBeenSet = true;

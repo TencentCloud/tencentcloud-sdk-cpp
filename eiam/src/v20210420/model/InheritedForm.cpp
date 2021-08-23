@@ -34,7 +34,7 @@ CoreInternalOutcome InheritedForm::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UserGroupIds") && !value["UserGroupIds"].IsNull())
     {
         if (!value["UserGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `InheritedForm.UserGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InheritedForm.UserGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome InheritedForm::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OrgNodeIds") && !value["OrgNodeIds"].IsNull())
     {
         if (!value["OrgNodeIds"].IsArray())
-            return CoreInternalOutcome(Error("response `InheritedForm.OrgNodeIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InheritedForm.OrgNodeIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OrgNodeIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

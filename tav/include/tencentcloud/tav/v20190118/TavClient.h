@@ -45,16 +45,16 @@ namespace TencentCloud
                 TavClient(const Credential &credential, const std::string &region);
                 TavClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::GetLocalEngineResponse> GetLocalEngineOutcome;
+                typedef Outcome<Core::Error, Model::GetLocalEngineResponse> GetLocalEngineOutcome;
                 typedef std::future<GetLocalEngineOutcome> GetLocalEngineOutcomeCallable;
                 typedef std::function<void(const TavClient*, const Model::GetLocalEngineRequest&, GetLocalEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLocalEngineAsyncHandler;
-                typedef Outcome<Error, Model::GetScanResultResponse> GetScanResultOutcome;
+                typedef Outcome<Core::Error, Model::GetScanResultResponse> GetScanResultOutcome;
                 typedef std::future<GetScanResultOutcome> GetScanResultOutcomeCallable;
                 typedef std::function<void(const TavClient*, const Model::GetScanResultRequest&, GetScanResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetScanResultAsyncHandler;
-                typedef Outcome<Error, Model::ScanFileResponse> ScanFileOutcome;
+                typedef Outcome<Core::Error, Model::ScanFileResponse> ScanFileOutcome;
                 typedef std::future<ScanFileOutcome> ScanFileOutcomeCallable;
                 typedef std::function<void(const TavClient*, const Model::ScanFileRequest&, ScanFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanFileAsyncHandler;
-                typedef Outcome<Error, Model::ScanFileHashResponse> ScanFileHashOutcome;
+                typedef Outcome<Core::Error, Model::ScanFileHashResponse> ScanFileHashOutcome;
                 typedef std::future<ScanFileHashOutcome> ScanFileHashOutcomeCallable;
                 typedef std::function<void(const TavClient*, const Model::ScanFileHashRequest&, ScanFileHashOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanFileHashAsyncHandler;
 

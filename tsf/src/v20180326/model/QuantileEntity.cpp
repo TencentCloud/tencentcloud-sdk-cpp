@@ -37,7 +37,7 @@ CoreInternalOutcome QuantileEntity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantileEntity.MaxValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantileEntity.MaxValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maxValue = string(value["MaxValue"].GetString());
         m_maxValueHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QuantileEntity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantileEntity.MinValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantileEntity.MinValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_minValue = string(value["MinValue"].GetString());
         m_minValueHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QuantileEntity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FifthPositionValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantileEntity.FifthPositionValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantileEntity.FifthPositionValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fifthPositionValue = string(value["FifthPositionValue"].GetString());
         m_fifthPositionValueHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome QuantileEntity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NinthPositionValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuantileEntity.NinthPositionValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuantileEntity.NinthPositionValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ninthPositionValue = string(value["NinthPositionValue"].GetString());
         m_ninthPositionValueHasBeenSet = true;

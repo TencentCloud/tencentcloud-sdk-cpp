@@ -37,7 +37,7 @@ CoreInternalOutcome TargetGroupInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["BindIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInstance.BindIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInstance.BindIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bindIP = string(value["BindIP"].GetString());
         m_bindIPHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TargetGroupInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInstance.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInstance.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TargetGroupInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["Weight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInstance.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInstance.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TargetGroupInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["NewPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInstance.NewPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInstance.NewPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_newPort = value["NewPort"].GetUint64();
         m_newPortHasBeenSet = true;

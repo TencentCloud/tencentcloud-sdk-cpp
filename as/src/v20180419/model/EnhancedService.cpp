@@ -35,7 +35,7 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnhancedService.SecurityService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.SecurityService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_securityService.Deserialize(value["SecurityService"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnhancedService.MonitorService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.MonitorService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_monitorService.Deserialize(value["MonitorService"]);

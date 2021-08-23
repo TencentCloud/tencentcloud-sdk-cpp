@@ -35,7 +35,7 @@ CoreInternalOutcome Canvas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LayoutParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Canvas.LayoutParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Canvas.LayoutParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_layoutParams.Deserialize(value["LayoutParams"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome Canvas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackgroundColor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Canvas.BackgroundColor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Canvas.BackgroundColor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backgroundColor = string(value["BackgroundColor"].GetString());
         m_backgroundColorHasBeenSet = true;

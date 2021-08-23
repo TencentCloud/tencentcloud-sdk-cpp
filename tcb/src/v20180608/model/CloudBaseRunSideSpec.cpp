@@ -42,7 +42,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["ContainerImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.ContainerImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.ContainerImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerImage = string(value["ContainerImage"].GetString());
         m_containerImageHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["ContainerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.ContainerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.ContainerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_containerPort = value["ContainerPort"].GetInt64();
         m_containerPortHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["ContainerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerName = string(value["ContainerName"].GetString());
         m_containerNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["EnvVar"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.EnvVar` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.EnvVar` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envVar = string(value["EnvVar"].GetString());
         m_envVarHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["InitialDelaySeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.InitialDelaySeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.InitialDelaySeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_initialDelaySeconds = value["InitialDelaySeconds"].GetInt64();
         m_initialDelaySecondsHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["Mem"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.Mem` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.Mem` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetInt64();
         m_memHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     {
         if (!value["Security"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.Security` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.Security` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_security.Deserialize(value["Security"]);
@@ -128,7 +128,7 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &va
     if (value.HasMember("VolumeMountInfos") && !value["VolumeMountInfos"].IsNull())
     {
         if (!value["VolumeMountInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.VolumeMountInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunSideSpec.VolumeMountInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VolumeMountInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

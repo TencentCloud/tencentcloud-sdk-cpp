@@ -42,16 +42,16 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = rsp["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = rsp["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["PronCompletion"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronCompletion = rsp["PronCompletion"].GetDouble();
         m_pronCompletionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     if (rsp.HasMember("Words") && !rsp["Words"].IsNull())
     {
         if (!rsp["Words"].IsArray())
-            return CoreInternalOutcome(Error("response `Words` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Words` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Words"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(rsp["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["AudioUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_audioUrl = string(rsp["AudioUrl"].GetString());
         m_audioUrlHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     if (rsp.HasMember("SentenceInfoSet") && !rsp["SentenceInfoSet"].IsNull())
     {
         if (!rsp["SentenceInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SentenceInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SentenceInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -164,7 +164,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         if (!rsp["SuggestedScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_suggestedScore = rsp["SuggestedScore"].GetDouble();
         m_suggestedScoreHasBeenSet = true;

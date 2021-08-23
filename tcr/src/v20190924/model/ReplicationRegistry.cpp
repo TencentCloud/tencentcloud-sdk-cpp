@@ -39,7 +39,7 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &val
     {
         if (!value["RegistryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRegistry.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRegistry.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryId = string(value["RegistryId"].GetString());
         m_registryIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReplicationRegistryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRegistry.ReplicationRegistryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRegistry.ReplicationRegistryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicationRegistryId = string(value["ReplicationRegistryId"].GetString());
         m_replicationRegistryIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReplicationRegionId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRegistry.ReplicationRegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRegistry.ReplicationRegionId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_replicationRegionId = value["ReplicationRegionId"].GetUint64();
         m_replicationRegionIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReplicationRegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRegistry.ReplicationRegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRegistry.ReplicationRegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicationRegionName = string(value["ReplicationRegionName"].GetString());
         m_replicationRegionNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRegistry.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRegistry.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRegistry.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRegistry.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;

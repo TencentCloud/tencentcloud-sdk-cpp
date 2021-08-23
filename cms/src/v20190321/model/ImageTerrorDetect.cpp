@@ -38,7 +38,7 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageTerrorDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
     {
         if (!value["HitFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageTerrorDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = value["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageTerrorDetect.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageTerrorDetect.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageTerrorDetect.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;

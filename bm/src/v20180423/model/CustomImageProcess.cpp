@@ -36,7 +36,7 @@ CoreInternalOutcome CustomImageProcess::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StepName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImageProcess.StepName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImageProcess.StepName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepName = string(value["StepName"].GetString());
         m_stepNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CustomImageProcess::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImageProcess.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImageProcess.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CustomImageProcess::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StepType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CustomImageProcess.StepType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImageProcess.StepType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_stepType = value["StepType"].GetUint64();
         m_stepTypeHasBeenSet = true;

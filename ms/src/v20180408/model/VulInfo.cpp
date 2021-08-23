@@ -34,7 +34,7 @@ CoreInternalOutcome VulInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VulList") && !value["VulList"].IsNull())
     {
         if (!value["VulList"].IsArray())
-            return CoreInternalOutcome(Error("response `VulInfo.VulList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VulInfo.VulList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VulList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome VulInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulFileScore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulInfo.VulFileScore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulInfo.VulFileScore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulFileScore = value["VulFileScore"].GetUint64();
         m_vulFileScoreHasBeenSet = true;

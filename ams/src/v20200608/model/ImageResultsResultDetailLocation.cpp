@@ -38,7 +38,7 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const rapidjso
     {
         if (!value["X"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetailLocation.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetDouble();
         m_xHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const rapidjso
     {
         if (!value["Y"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetailLocation.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetDouble();
         m_yHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const rapidjso
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetailLocation.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const rapidjso
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetailLocation.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const rapidjso
     {
         if (!value["Rotate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageResultsResultDetailLocation.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetailLocation.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetDouble();
         m_rotateHasBeenSet = true;

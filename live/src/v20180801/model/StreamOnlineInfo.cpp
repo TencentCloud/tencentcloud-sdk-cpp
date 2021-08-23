@@ -37,7 +37,7 @@ CoreInternalOutcome StreamOnlineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamOnlineInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamOnlineInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome StreamOnlineInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublishTimeList") && !value["PublishTimeList"].IsNull())
     {
         if (!value["PublishTimeList"].IsArray())
-            return CoreInternalOutcome(Error("response `StreamOnlineInfo.PublishTimeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StreamOnlineInfo.PublishTimeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublishTimeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome StreamOnlineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamOnlineInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamOnlineInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome StreamOnlineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamOnlineInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamOnlineInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;

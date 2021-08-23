@@ -35,7 +35,7 @@ CoreInternalOutcome MediaAiAnalysisTagItem::Deserialize(const rapidjson::Value &
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisTagItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisTagItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaAiAnalysisTagItem::Deserialize(const rapidjson::Value &
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisTagItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisTagItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome JobResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobResult.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobResult.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome JobResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionOnFailure"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobResult.ActionOnFailure` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobResult.ActionOnFailure` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionOnFailure = string(value["ActionOnFailure"].GetString());
         m_actionOnFailureHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome JobResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobResult.JobState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobResult.JobState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobState = string(value["JobState"].GetString());
         m_jobStateHasBeenSet = true;

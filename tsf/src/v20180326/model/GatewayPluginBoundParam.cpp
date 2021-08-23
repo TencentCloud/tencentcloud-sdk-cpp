@@ -36,7 +36,7 @@ CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const rapidjson::Value 
     {
         if (!value["PluginId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayPluginBoundParam.PluginId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayPluginBoundParam.PluginId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginId = string(value["PluginId"].GetString());
         m_pluginIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const rapidjson::Value 
     {
         if (!value["ScopeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayPluginBoundParam.ScopeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayPluginBoundParam.ScopeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scopeType = string(value["ScopeType"].GetString());
         m_scopeTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const rapidjson::Value 
     {
         if (!value["ScopeValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayPluginBoundParam.ScopeValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayPluginBoundParam.ScopeValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scopeValue = string(value["ScopeValue"].GetString());
         m_scopeValueHasBeenSet = true;

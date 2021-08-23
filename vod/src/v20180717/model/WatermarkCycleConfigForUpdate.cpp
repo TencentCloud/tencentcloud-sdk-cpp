@@ -36,7 +36,7 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const rapidjson::
     {
         if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkCycleConfigForUpdate.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const rapidjson::
     {
         if (!value["DisplayDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.DisplayDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkCycleConfigForUpdate.DisplayDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_displayDuration = value["DisplayDuration"].GetDouble();
         m_displayDurationHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const rapidjson::
     {
         if (!value["CycleDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatermarkCycleConfigForUpdate.CycleDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkCycleConfigForUpdate.CycleDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cycleDuration = value["CycleDuration"].GetDouble();
         m_cycleDurationHasBeenSet = true;

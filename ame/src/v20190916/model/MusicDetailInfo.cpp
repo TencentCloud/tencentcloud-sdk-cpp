@@ -45,7 +45,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MusicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.MusicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.MusicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicId = string(value["MusicId"].GetString());
         m_musicIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AmeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.AmeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.AmeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ameId = string(value["AmeId"].GetString());
         m_ameIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HitWords") && !value["HitWords"].IsNull())
     {
         if (!value["HitWords"].IsArray())
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.HitWords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.HitWords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HitWords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bpm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Bpm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Bpm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bpm = value["Bpm"].GetInt64();
         m_bpmHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Scene") && !value["Scene"].IsNull())
     {
         if (!value["Scene"].IsArray())
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Scene` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Scene` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Scene"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -123,7 +123,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Region") && !value["Region"].IsNull())
     {
         if (!value["Region"].IsArray())
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Region` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Region` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Region"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.AuthPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.AuthPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authPeriod = string(value["AuthPeriod"].GetString());
         m_authPeriodHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Commercialization"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Commercialization` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Commercialization` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commercialization = string(value["Commercialization"].GetString());
         m_commercializationHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Channel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicDetailInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicDetailInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channel = string(value["Channel"].GetString());
         m_channelHasBeenSet = true;

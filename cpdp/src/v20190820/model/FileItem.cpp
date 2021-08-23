@@ -37,7 +37,7 @@ CoreInternalOutcome FileItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileItem.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileItem.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FileItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RandomPassword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileItem.RandomPassword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileItem.RandomPassword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_randomPassword = string(value["RandomPassword"].GetString());
         m_randomPasswordHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FileItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileItem.FilePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileItem.FilePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filePath = string(value["FilePath"].GetString());
         m_filePathHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FileItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DrawCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileItem.DrawCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileItem.DrawCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_drawCode = string(value["DrawCode"].GetString());
         m_drawCodeHasBeenSet = true;

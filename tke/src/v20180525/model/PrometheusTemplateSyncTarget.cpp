@@ -41,7 +41,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["SyncTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.SyncTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.SyncTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_syncTime = string(value["SyncTime"].GetString());
         m_syncTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome PrometheusTemplateSyncTarget::Deserialize(const rapidjson::V
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTemplateSyncTarget.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTemplateSyncTarget.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ClassicalTargetInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalTargetInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalTargetInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ClassicalTargetInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalTargetInfo.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalTargetInfo.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;

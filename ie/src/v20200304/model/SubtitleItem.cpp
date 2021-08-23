@@ -42,7 +42,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.Zh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.Zh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zh = string(value["Zh"].GetString());
         m_zhHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["En"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.En` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.En` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_en = string(value["En"].GetString());
         m_enHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartPts"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.StartPts` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.StartPts` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startPts = value["StartPts"].GetUint64();
         m_startPtsHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPts"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.EndPts` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.EndPts` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endPts = value["EndPts"].GetUint64();
         m_endPtsHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.Period` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.Period` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_period = string(value["Period"].GetString());
         m_periodHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.EndFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.EndFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_endFlag = value["EndFlag"].GetBool();
         m_endFlagHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome SubtitleItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PuncEndTs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleItem.PuncEndTs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleItem.PuncEndTs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_puncEndTs = string(value["PuncEndTs"].GetString());
         m_puncEndTsHasBeenSet = true;

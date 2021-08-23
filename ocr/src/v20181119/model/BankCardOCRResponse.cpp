@@ -42,16 +42,16 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CardNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cardNo = string(rsp["CardNo"].GetString());
         m_cardNoHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["BankInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BankInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BankInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankInfo = string(rsp["BankInfo"].GetString());
         m_bankInfoHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ValidDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ValidDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ValidDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validDate = string(rsp["ValidDate"].GetString());
         m_validDateHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CardType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cardType = string(rsp["CardType"].GetString());
         m_cardTypeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CardName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cardName = string(rsp["CardName"].GetString());
         m_cardNameHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["BorderCutImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BorderCutImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BorderCutImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_borderCutImage = string(rsp["BorderCutImage"].GetString());
         m_borderCutImageHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CardNoImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardNoImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardNoImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cardNoImage = string(rsp["CardNoImage"].GetString());
         m_cardNoImageHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     if (rsp.HasMember("WarningCode") && !rsp["WarningCode"].IsNull())
     {
         if (!rsp["WarningCode"].IsArray())
-            return CoreInternalOutcome(Error("response `WarningCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WarningCode` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["WarningCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -157,7 +157,7 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["QualityValue"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QualityValue` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityValue` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_qualityValue = rsp["QualityValue"].GetInt64();
         m_qualityValueHasBeenSet = true;

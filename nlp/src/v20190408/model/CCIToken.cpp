@@ -36,7 +36,7 @@ CoreInternalOutcome CCIToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCIToken.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCIToken.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CCIToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginOffset"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCIToken.BeginOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCIToken.BeginOffset` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_beginOffset = value["BeginOffset"].GetUint64();
         m_beginOffsetHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CCIToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CorrectWord"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCIToken.CorrectWord` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCIToken.CorrectWord` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_correctWord = string(value["CorrectWord"].GetString());
         m_correctWordHasBeenSet = true;

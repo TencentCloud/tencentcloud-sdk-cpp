@@ -42,7 +42,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetUint64();
         m_pidHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome OpenPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenPort.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenPort.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

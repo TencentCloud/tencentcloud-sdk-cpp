@@ -37,7 +37,7 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const rapidjson::Value 
     {
         if (!value["NodeRole"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesForNode.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesForNode.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeRole = string(value["NodeRole"].GetString());
         m_nodeRoleHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const rapidjson::Value 
     {
         if (!value["ExistedInstancesPara"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesForNode.ExistedInstancesPara` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesForNode.ExistedInstancesPara` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_existedInstancesPara.Deserialize(value["ExistedInstancesPara"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceAdvancedSettingsOverride"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesForNode.InstanceAdvancedSettingsOverride` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesForNode.InstanceAdvancedSettingsOverride` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceAdvancedSettingsOverride.Deserialize(value["InstanceAdvancedSettingsOverride"]);
@@ -80,7 +80,7 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const rapidjson::Value 
     if (value.HasMember("DesiredPodNumbers") && !value["DesiredPodNumbers"].IsNull())
     {
         if (!value["DesiredPodNumbers"].IsArray())
-            return CoreInternalOutcome(Error("response `ExistedInstancesForNode.DesiredPodNumbers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesForNode.DesiredPodNumbers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DesiredPodNumbers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

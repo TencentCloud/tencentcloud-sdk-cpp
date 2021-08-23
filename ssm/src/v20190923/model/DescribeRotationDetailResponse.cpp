@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
     {
         if (!rsp["EnableRotation"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EnableRotation` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnableRotation` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableRotation = rsp["EnableRotation"].GetBool();
         m_enableRotationHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
     {
         if (!rsp["Frequency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Frequency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Frequency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frequency = rsp["Frequency"].GetInt64();
         m_frequencyHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
     {
         if (!rsp["LatestRotateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LatestRotateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LatestRotateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestRotateTime = string(rsp["LatestRotateTime"].GetString());
         m_latestRotateTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
     {
         if (!rsp["NextRotateBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NextRotateBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NextRotateBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextRotateBeginTime = string(rsp["NextRotateBeginTime"].GetString());
         m_nextRotateBeginTimeHasBeenSet = true;

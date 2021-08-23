@@ -39,7 +39,7 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArrivedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArrivedMallInfo.ArrivedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArrivedMallInfo.ArrivedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_arrivedTime = string(value["ArrivedTime"].GetString());
         m_arrivedTimeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LeaveTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArrivedMallInfo.LeaveTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArrivedMallInfo.LeaveTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_leaveTime = string(value["LeaveTime"].GetString());
         m_leaveTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaySecond"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ArrivedMallInfo.StaySecond` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArrivedMallInfo.StaySecond` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_staySecond = value["StaySecond"].GetUint64();
         m_staySecondHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InCapPic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArrivedMallInfo.InCapPic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArrivedMallInfo.InCapPic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inCapPic = string(value["InCapPic"].GetString());
         m_inCapPicHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutCapPic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArrivedMallInfo.OutCapPic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArrivedMallInfo.OutCapPic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outCapPic = string(value["OutCapPic"].GetString());
         m_outCapPicHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArrivedMallInfo.TraceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArrivedMallInfo.TraceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceId = string(value["TraceId"].GetString());
         m_traceIdHasBeenSet = true;

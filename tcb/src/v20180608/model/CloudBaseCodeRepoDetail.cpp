@@ -35,7 +35,7 @@ CoreInternalOutcome CloudBaseCodeRepoDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["Name"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseCodeRepoDetail.Name` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseCodeRepoDetail.Name` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_name.Deserialize(value["Name"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome CloudBaseCodeRepoDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseCodeRepoDetail.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseCodeRepoDetail.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

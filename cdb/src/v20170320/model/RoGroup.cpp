@@ -48,7 +48,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoGroupMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoGroupMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoGroupMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roGroupMode = string(value["RoGroupMode"].GetString());
         m_roGroupModeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roGroupId = string(value["RoGroupId"].GetString());
         m_roGroupIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roGroupName = string(value["RoGroupName"].GetString());
         m_roGroupNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoOfflineDelay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoOfflineDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoOfflineDelay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roOfflineDelay = value["RoOfflineDelay"].GetInt64();
         m_roOfflineDelayHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoMaxDelayTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoMaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoMaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roMaxDelayTime = value["RoMaxDelayTime"].GetInt64();
         m_roMaxDelayTimeHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinRoInGroup"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.MinRoInGroup` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.MinRoInGroup` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minRoInGroup = value["MinRoInGroup"].GetInt64();
         m_minRoInGroupHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WeightMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.WeightMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.WeightMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_weightMode = string(value["WeightMode"].GetString());
         m_weightModeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RoInstances") && !value["RoInstances"].IsNull())
     {
         if (!value["RoInstances"].IsArray())
-            return CoreInternalOutcome(Error("response `RoGroup.RoInstances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoInstances` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RoInstances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -148,7 +148,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqVpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqVpcId = string(value["UniqVpcId"].GetString());
         m_uniqVpcIdHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqSubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqSubnetId = string(value["UniqSubnetId"].GetString());
         m_uniqSubnetIdHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoGroupRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoGroupRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoGroupRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roGroupRegion = string(value["RoGroupRegion"].GetString());
         m_roGroupRegionHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoGroupZone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroup.RoGroupZone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoGroupZone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roGroupZone = string(value["RoGroupZone"].GetString());
         m_roGroupZoneHasBeenSet = true;

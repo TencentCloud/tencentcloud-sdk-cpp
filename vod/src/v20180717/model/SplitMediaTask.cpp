@@ -41,7 +41,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCodeExt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errCodeExt = string(value["ErrCodeExt"].GetString());
         m_errCodeExtHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileInfoSet") && !value["FileInfoSet"].IsNull())
     {
         if (!value["FileInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SplitMediaTask.FileInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.FileInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionContext = string(value["SessionContext"].GetString());
         m_sessionContextHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(value["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;

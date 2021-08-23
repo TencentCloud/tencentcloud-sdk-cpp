@@ -75,7 +75,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Classiclink"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Classiclink` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Classiclink` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_classiclink = value["Classiclink"].GetUint64();
         m_classiclinkHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Dcg"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Dcg` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Dcg` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dcg = value["Dcg"].GetUint64();
         m_dcgHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Pcx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Pcx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Pcx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pcx = value["Pcx"].GetUint64();
         m_pcxHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Ip"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Ip` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Ip` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ip = value["Ip"].GetUint64();
         m_ipHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Nat"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Nat` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Nat` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nat = value["Nat"].GetUint64();
         m_natHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Vpngw"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Vpngw` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Vpngw` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpngw = value["Vpngw"].GetUint64();
         m_vpngwHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["FlowLog"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.FlowLog` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.FlowLog` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_flowLog = value["FlowLog"].GetUint64();
         m_flowLogHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["NetworkDetect"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.NetworkDetect` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.NetworkDetect` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_networkDetect = value["NetworkDetect"].GetUint64();
         m_networkDetectHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["NetworkACL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.NetworkACL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.NetworkACL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_networkACL = value["NetworkACL"].GetUint64();
         m_networkACLHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["CVM"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.CVM` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.CVM` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cVM = value["CVM"].GetUint64();
         m_cVMHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["LB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.LB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.LB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lB = value["LB"].GetUint64();
         m_lBHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["CDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.CDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.CDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cDB = value["CDB"].GetUint64();
         m_cDBHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Cmem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Cmem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Cmem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cmem = value["Cmem"].GetUint64();
         m_cmemHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["CTSDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.CTSDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.CTSDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cTSDB = value["CTSDB"].GetUint64();
         m_cTSDBHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["MariaDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.MariaDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.MariaDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mariaDB = value["MariaDB"].GetUint64();
         m_mariaDBHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["SQLServer"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.SQLServer` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.SQLServer` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sQLServer = value["SQLServer"].GetUint64();
         m_sQLServerHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Postgres"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Postgres` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Postgres` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postgres = value["Postgres"].GetUint64();
         m_postgresHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["NAS"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.NAS` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.NAS` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nAS = value["NAS"].GetUint64();
         m_nASHasBeenSet = true;
@@ -275,7 +275,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Greenplumn"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Greenplumn` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Greenplumn` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_greenplumn = value["Greenplumn"].GetUint64();
         m_greenplumnHasBeenSet = true;
@@ -285,7 +285,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Ckafka"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Ckafka` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Ckafka` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ckafka = value["Ckafka"].GetUint64();
         m_ckafkaHasBeenSet = true;
@@ -295,7 +295,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Grocery"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Grocery` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Grocery` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_grocery = value["Grocery"].GetUint64();
         m_groceryHasBeenSet = true;
@@ -305,7 +305,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["HSM"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.HSM` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.HSM` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hSM = value["HSM"].GetUint64();
         m_hSMHasBeenSet = true;
@@ -315,7 +315,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Tcaplus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Tcaplus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Tcaplus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tcaplus = value["Tcaplus"].GetUint64();
         m_tcaplusHasBeenSet = true;
@@ -325,7 +325,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Cnas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Cnas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Cnas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cnas = value["Cnas"].GetUint64();
         m_cnasHasBeenSet = true;
@@ -335,7 +335,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["TiDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.TiDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.TiDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tiDB = value["TiDB"].GetUint64();
         m_tiDBHasBeenSet = true;
@@ -345,7 +345,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Emr"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Emr` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Emr` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_emr = value["Emr"].GetUint64();
         m_emrHasBeenSet = true;
@@ -355,7 +355,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["SEAL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.SEAL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.SEAL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sEAL = value["SEAL"].GetUint64();
         m_sEALHasBeenSet = true;
@@ -365,7 +365,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["CFS"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.CFS` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.CFS` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cFS = value["CFS"].GetUint64();
         m_cFSHasBeenSet = true;
@@ -375,7 +375,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Oracle"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Oracle` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Oracle` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_oracle = value["Oracle"].GetUint64();
         m_oracleHasBeenSet = true;
@@ -385,7 +385,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["ElasticSearch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.ElasticSearch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.ElasticSearch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_elasticSearch = value["ElasticSearch"].GetUint64();
         m_elasticSearchHasBeenSet = true;
@@ -395,7 +395,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["TBaaS"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.TBaaS` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.TBaaS` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tBaaS = value["TBaaS"].GetUint64();
         m_tBaaSHasBeenSet = true;
@@ -405,7 +405,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Itop"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Itop` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Itop` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_itop = value["Itop"].GetUint64();
         m_itopHasBeenSet = true;
@@ -415,7 +415,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["DBAudit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.DBAudit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.DBAudit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dBAudit = value["DBAudit"].GetUint64();
         m_dBAuditHasBeenSet = true;
@@ -425,7 +425,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["CynosDBPostgres"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.CynosDBPostgres` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.CynosDBPostgres` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cynosDBPostgres = value["CynosDBPostgres"].GetUint64();
         m_cynosDBPostgresHasBeenSet = true;
@@ -435,7 +435,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Redis"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Redis` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Redis` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_redis = value["Redis"].GetUint64();
         m_redisHasBeenSet = true;
@@ -445,7 +445,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["MongoDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.MongoDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.MongoDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mongoDB = value["MongoDB"].GetUint64();
         m_mongoDBHasBeenSet = true;
@@ -455,7 +455,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["DCDB"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.DCDB` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.DCDB` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dCDB = value["DCDB"].GetUint64();
         m_dCDBHasBeenSet = true;
@@ -465,7 +465,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["CynosDBMySQL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.CynosDBMySQL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.CynosDBMySQL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cynosDBMySQL = value["CynosDBMySQL"].GetUint64();
         m_cynosDBMySQLHasBeenSet = true;
@@ -475,7 +475,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["Subnet"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.Subnet` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.Subnet` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_subnet = value["Subnet"].GetUint64();
         m_subnetHasBeenSet = true;
@@ -485,7 +485,7 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value
     {
         if (!value["RouteTable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceDashboard.RouteTable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDashboard.RouteTable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_routeTable = value["RouteTable"].GetUint64();
         m_routeTableHasBeenSet = true;

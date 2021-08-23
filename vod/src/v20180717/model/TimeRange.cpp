@@ -35,7 +35,7 @@ CoreInternalOutcome TimeRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["After"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeRange.After` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeRange.After` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_after = string(value["After"].GetString());
         m_afterHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TimeRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Before"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeRange.Before` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeRange.Before` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_before = string(value["Before"].GetString());
         m_beforeHasBeenSet = true;

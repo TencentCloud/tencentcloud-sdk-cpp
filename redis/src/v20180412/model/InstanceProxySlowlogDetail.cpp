@@ -38,7 +38,7 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceProxySlowlogDetail.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
     {
         if (!value["Client"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceProxySlowlogDetail.Client` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.Client` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_client = string(value["Client"].GetString());
         m_clientHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
     {
         if (!value["Command"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceProxySlowlogDetail.Command` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.Command` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_command = string(value["Command"].GetString());
         m_commandHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
     {
         if (!value["CommandLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceProxySlowlogDetail.CommandLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.CommandLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandLine = string(value["CommandLine"].GetString());
         m_commandLineHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
     {
         if (!value["ExecuteTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceProxySlowlogDetail.ExecuteTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.ExecuteTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_executeTime = string(value["ExecuteTime"].GetString());
         m_executeTimeHasBeenSet = true;

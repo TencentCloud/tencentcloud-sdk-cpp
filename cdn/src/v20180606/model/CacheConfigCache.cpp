@@ -38,7 +38,7 @@ CoreInternalOutcome CacheConfigCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigCache.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigCache.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CacheConfigCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigCache.CacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigCache.CacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cacheTime = value["CacheTime"].GetInt64();
         m_cacheTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CacheConfigCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompareMaxAge"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigCache.CompareMaxAge` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigCache.CompareMaxAge` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compareMaxAge = string(value["CompareMaxAge"].GetString());
         m_compareMaxAgeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CacheConfigCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreCacheControl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigCache.IgnoreCacheControl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigCache.IgnoreCacheControl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCacheControl = string(value["IgnoreCacheControl"].GetString());
         m_ignoreCacheControlHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CacheConfigCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreSetCookie"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigCache.IgnoreSetCookie` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigCache.IgnoreSetCookie` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreSetCookie = string(value["IgnoreSetCookie"].GetString());
         m_ignoreSetCookieHasBeenSet = true;

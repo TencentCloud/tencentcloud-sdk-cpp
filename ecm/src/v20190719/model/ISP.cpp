@@ -35,7 +35,7 @@ CoreInternalOutcome ISP::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ISPId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ISP.ISPId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ISP.ISPId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iSPId = string(value["ISPId"].GetString());
         m_iSPIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ISP::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ISPName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ISP.ISPName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ISP.ISPName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iSPName = string(value["ISPName"].GetString());
         m_iSPNameHasBeenSet = true;

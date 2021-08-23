@@ -35,7 +35,7 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProtocolPort.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolPort.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;

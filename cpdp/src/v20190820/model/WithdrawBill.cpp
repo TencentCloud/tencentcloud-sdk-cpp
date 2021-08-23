@@ -41,7 +41,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WithdrawOrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.WithdrawOrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.WithdrawOrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_withdrawOrderId = string(value["WithdrawOrderId"].GetString());
         m_withdrawOrderIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.PayAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.PayAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payAmt = string(value["PayAmt"].GetString());
         m_payAmtHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InSubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.InSubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.InSubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inSubAppId = string(value["InSubAppId"].GetString());
         m_inSubAppIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutSubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.OutSubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.OutSubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outSubAppId = string(value["OutSubAppId"].GetString());
         m_outSubAppIdHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrencyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.CurrencyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.CurrencyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currencyType = string(value["CurrencyType"].GetString());
         m_currencyTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.MetaData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.MetaData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metaData = string(value["MetaData"].GetString());
         m_metaDataHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtendFieldData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawBill.ExtendFieldData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawBill.ExtendFieldData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendFieldData = string(value["ExtendFieldData"].GetString());
         m_extendFieldDataHasBeenSet = true;

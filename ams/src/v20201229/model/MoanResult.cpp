@@ -38,7 +38,7 @@ CoreInternalOutcome MoanResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MoanResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoanResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MoanResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MoanResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoanResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MoanResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MoanResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoanResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MoanResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MoanResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoanResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MoanResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MoanResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoanResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetDouble();
         m_endTimeHasBeenSet = true;

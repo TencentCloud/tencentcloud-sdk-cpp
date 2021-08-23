@@ -48,7 +48,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryId = string(value["RegistryId"].GetString());
         m_registryIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.RegistryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.RegistryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryName = string(value["RegistryName"].GetString());
         m_registryNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.RegistryType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.RegistryType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryType = string(value["RegistryType"].GetString());
         m_registryTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.PublicDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.PublicDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicDomain = string(value["PublicDomain"].GetString());
         m_publicDomainHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Registry.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetUint64();
         m_regionIdHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableAnonymous"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Registry.EnableAnonymous` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.EnableAnonymous` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableAnonymous = value["EnableAnonymous"].GetBool();
         m_enableAnonymousHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TokenValidTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Registry.TokenValidTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.TokenValidTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tokenValidTime = value["TokenValidTime"].GetUint64();
         m_tokenValidTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternalEndpoint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.InternalEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.InternalEndpoint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internalEndpoint = string(value["InternalEndpoint"].GetString());
         m_internalEndpointHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagSpecification"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Registry.TagSpecification` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.TagSpecification` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tagSpecification.Deserialize(value["TagSpecification"]);
@@ -175,7 +175,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Registry.ExpiredAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.ExpiredAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiredAt = string(value["ExpiredAt"].GetString());
         m_expiredAtHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Registry.PayMod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.PayMod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payMod = value["PayMod"].GetInt64();
         m_payModHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Registry.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Registry.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = value["RenewFlag"].GetInt64();
         m_renewFlagHasBeenSet = true;

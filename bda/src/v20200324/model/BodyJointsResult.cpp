@@ -36,7 +36,7 @@ CoreInternalOutcome BodyJointsResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BoundBox"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyJointsResult.BoundBox` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyJointsResult.BoundBox` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_boundBox.Deserialize(value["BoundBox"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome BodyJointsResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BodyJoints") && !value["BodyJoints"].IsNull())
     {
         if (!value["BodyJoints"].IsArray())
-            return CoreInternalOutcome(Error("response `BodyJointsResult.BodyJoints` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BodyJointsResult.BodyJoints` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BodyJoints"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome BodyJointsResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BodyJointsResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyJointsResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

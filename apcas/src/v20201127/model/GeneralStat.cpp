@@ -37,7 +37,7 @@ CoreInternalOutcome GeneralStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TodayAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GeneralStat.TodayAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralStat.TodayAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_todayAmount = value["TodayAmount"].GetUint64();
         m_todayAmountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome GeneralStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WeekAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GeneralStat.WeekAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralStat.WeekAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weekAmount = value["WeekAmount"].GetUint64();
         m_weekAmountHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GeneralStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonthAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GeneralStat.MonthAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralStat.MonthAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_monthAmount = value["MonthAmount"].GetUint64();
         m_monthAmountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome GeneralStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GeneralStat.TotalAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GeneralStat.TotalAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalAmount = value["TotalAmount"].GetUint64();
         m_totalAmountHasBeenSet = true;

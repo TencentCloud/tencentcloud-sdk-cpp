@@ -35,7 +35,7 @@ CoreInternalOutcome Album::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlbumName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Album.AlbumName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Album.AlbumName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_albumName = string(value["AlbumName"].GetString());
         m_albumNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Album::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ImagePathMap") && !value["ImagePathMap"].IsNull())
     {
         if (!value["ImagePathMap"].IsArray())
-            return CoreInternalOutcome(Error("response `Album.ImagePathMap` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Album.ImagePathMap` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImagePathMap"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

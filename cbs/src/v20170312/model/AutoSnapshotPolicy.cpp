@@ -43,7 +43,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AutoSnapshotPolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.AutoSnapshotPolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.AutoSnapshotPolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoSnapshotPolicyId = string(value["AutoSnapshotPolicyId"].GetString());
         m_autoSnapshotPolicyIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AutoSnapshotPolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.AutoSnapshotPolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.AutoSnapshotPolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoSnapshotPolicyName = string(value["AutoSnapshotPolicyName"].GetString());
         m_autoSnapshotPolicyNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AutoSnapshotPolicyState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.AutoSnapshotPolicyState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.AutoSnapshotPolicyState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoSnapshotPolicyState = string(value["AutoSnapshotPolicyState"].GetString());
         m_autoSnapshotPolicyStateHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsActivated"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.IsActivated` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.IsActivated` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isActivated = value["IsActivated"].GetBool();
         m_isActivatedHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsPermanent"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.IsPermanent` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.IsPermanent` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPermanent = value["IsPermanent"].GetBool();
         m_isPermanentHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RetentionDays"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.RetentionDays` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.RetentionDays` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_retentionDays = value["RetentionDays"].GetUint64();
         m_retentionDaysHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     {
         if (!value["NextTriggerTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.NextTriggerTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.NextTriggerTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextTriggerTime = string(value["NextTriggerTime"].GetString());
         m_nextTriggerTimeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Policy") && !value["Policy"].IsNull())
     {
         if (!value["Policy"].IsArray())
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.Policy` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.Policy` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Policy"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -142,7 +142,7 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("DiskIdSet") && !value["DiskIdSet"].IsNull())
     {
         if (!value["DiskIdSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AutoSnapshotPolicy.DiskIdSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.DiskIdSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DiskIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

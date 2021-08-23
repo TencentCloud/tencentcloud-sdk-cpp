@@ -45,7 +45,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsyncSearchTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.AsyncSearchTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.AsyncSearchTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asyncSearchTaskId = string(value["AsyncSearchTaskId"].GetString());
         m_asyncSearchTaskIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Query"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.Query` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.Query` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_query = string(value["Query"].GetString());
         m_queryHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["From"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.From` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.From` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_from = value["From"].GetInt64();
         m_fromHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["To"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.To` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.To` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_to = value["To"].GetInt64();
         m_toHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sort"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.Sort` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.Sort` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sort = string(value["Sort"].GetString());
         m_sortHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMessage = string(value["ErrorMessage"].GetString());
         m_errorMessageHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.LogCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.LogCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_logCount = value["LogCount"].GetInt64();
         m_logCountHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome AsyncSearchTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncSearchTask.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncSearchTask.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(value["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;

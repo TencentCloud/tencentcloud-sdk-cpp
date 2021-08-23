@@ -37,7 +37,7 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const rapidjson::V
     {
         if (!value["DateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataInterceptUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateKey = string(value["DateKey"].GetString());
         m_dateKeyHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const rapidjson::V
     {
         if (!value["AllStopCnt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.AllStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataInterceptUnit.AllStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_allStopCnt = value["AllStopCnt"].GetDouble();
         m_allStopCntHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const rapidjson::V
     {
         if (!value["PicStopCnt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.PicStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataInterceptUnit.PicStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_picStopCnt = value["PicStopCnt"].GetDouble();
         m_picStopCntHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const rapidjson::V
     {
         if (!value["StrategyStopCnt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataInterceptUnit.StrategyStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataInterceptUnit.StrategyStopCnt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_strategyStopCnt = value["StrategyStopCnt"].GetDouble();
         m_strategyStopCntHasBeenSet = true;

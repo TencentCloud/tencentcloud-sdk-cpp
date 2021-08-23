@@ -35,7 +35,7 @@ CoreInternalOutcome MmsInstanceStateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceStateInfo.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceStateInfo.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MmsInstanceStateInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["State"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MmsInstanceStateInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MmsInstanceStateInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;

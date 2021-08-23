@@ -37,7 +37,7 @@ CoreInternalOutcome FunctionVersion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionVersion.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionVersion.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FunctionVersion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionVersion.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionVersion.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FunctionVersion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionVersion.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionVersion.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FunctionVersion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionVersion.ModTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionVersion.ModTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modTime = string(value["ModTime"].GetString());
         m_modTimeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome MediaSubtitleInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSubtitleInput.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSubtitleInput.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MediaSubtitleInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Language"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSubtitleInput.Language` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSubtitleInput.Language` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_language = string(value["Language"].GetString());
         m_languageHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MediaSubtitleInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSubtitleInput.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSubtitleInput.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MediaSubtitleInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSubtitleInput.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSubtitleInput.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MediaSubtitleInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSubtitleInput.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSubtitleInput.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

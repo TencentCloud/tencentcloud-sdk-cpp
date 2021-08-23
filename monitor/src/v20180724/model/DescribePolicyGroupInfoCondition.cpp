@@ -44,7 +44,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["MetricShowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.MetricShowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.MetricShowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricShowName = string(value["MetricShowName"].GetString());
         m_metricShowNameHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["Period"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.Period` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetInt64();
         m_periodHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["MetricId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_metricId = value["MetricId"].GetInt64();
         m_metricIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["RuleId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = value["RuleId"].GetInt64();
         m_ruleIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["AlarmNotifyType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.AlarmNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.AlarmNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNotifyType = value["AlarmNotifyType"].GetInt64();
         m_alarmNotifyTypeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["AlarmNotifyPeriod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.AlarmNotifyPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.AlarmNotifyPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNotifyPeriod = value["AlarmNotifyPeriod"].GetInt64();
         m_alarmNotifyPeriodHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["CalcType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.CalcType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.CalcType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_calcType = value["CalcType"].GetInt64();
         m_calcTypeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["CalcValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.CalcValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.CalcValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_calcValue = string(value["CalcValue"].GetString());
         m_calcValueHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["ContinueTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.ContinueTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.ContinueTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_continueTime = value["ContinueTime"].GetInt64();
         m_continueTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const rapidjso
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoCondition.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;

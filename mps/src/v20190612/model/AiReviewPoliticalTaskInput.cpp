@@ -34,7 +34,7 @@ CoreInternalOutcome AiReviewPoliticalTaskInput::Deserialize(const rapidjson::Val
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AiReviewPoliticalTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewPoliticalTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;

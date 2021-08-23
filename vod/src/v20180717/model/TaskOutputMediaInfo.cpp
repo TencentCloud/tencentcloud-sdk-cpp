@@ -35,7 +35,7 @@ CoreInternalOutcome TaskOutputMediaInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskOutputMediaInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOutputMediaInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TaskOutputMediaInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MediaBasicInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskOutputMediaInfo.MediaBasicInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOutputMediaInfo.MediaBasicInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaBasicInfo.Deserialize(value["MediaBasicInfo"]);

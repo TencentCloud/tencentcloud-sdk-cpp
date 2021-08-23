@@ -44,7 +44,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["BatchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.BatchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.BatchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchId = string(value["BatchId"].GetString());
         m_batchIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ContentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.ContentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.ContentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contentId = string(value["ContentId"].GetString());
         m_contentIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ContentType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_contentType = value["ContentType"].GetInt64();
         m_contentTypeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["UserInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.UserInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.UserInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_userInfo.Deserialize(value["UserInfo"]);
@@ -101,7 +101,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["AutoDetailCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.AutoDetailCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.AutoDetailCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoDetailCode = value["AutoDetailCode"].GetInt64();
         m_autoDetailCodeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["AutoResult"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.AutoResult` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.AutoResult` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoResult = value["AutoResult"].GetInt64();
         m_autoResultHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["CallBackInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.CallBackInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.CallBackInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callBackInfo = string(value["CallBackInfo"].GetString());
         m_callBackInfoHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome ManualReviewContent::Deserialize(const rapidjson::Value &val
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewContent.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewContent.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;

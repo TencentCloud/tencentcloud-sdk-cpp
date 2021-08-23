@@ -35,7 +35,7 @@ CoreInternalOutcome AiSampleTagOperation::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleTagOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleTagOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AiSampleTagOperation::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSampleTagOperation.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSampleTagOperation.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

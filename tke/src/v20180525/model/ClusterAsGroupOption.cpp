@@ -46,7 +46,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["IsScaleDownEnabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.IsScaleDownEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.IsScaleDownEnabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isScaleDownEnabled = value["IsScaleDownEnabled"].GetBool();
         m_isScaleDownEnabledHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["Expander"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.Expander` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.Expander` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expander = string(value["Expander"].GetString());
         m_expanderHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaxEmptyBulkDelete"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.MaxEmptyBulkDelete` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.MaxEmptyBulkDelete` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxEmptyBulkDelete = value["MaxEmptyBulkDelete"].GetInt64();
         m_maxEmptyBulkDeleteHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["ScaleDownDelay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.ScaleDownDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.ScaleDownDelay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scaleDownDelay = value["ScaleDownDelay"].GetInt64();
         m_scaleDownDelayHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["ScaleDownUnneededTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.ScaleDownUnneededTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.ScaleDownUnneededTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scaleDownUnneededTime = value["ScaleDownUnneededTime"].GetInt64();
         m_scaleDownUnneededTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["ScaleDownUtilizationThreshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.ScaleDownUtilizationThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.ScaleDownUtilizationThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scaleDownUtilizationThreshold = value["ScaleDownUtilizationThreshold"].GetInt64();
         m_scaleDownUtilizationThresholdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["SkipNodesWithLocalStorage"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.SkipNodesWithLocalStorage` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.SkipNodesWithLocalStorage` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_skipNodesWithLocalStorage = value["SkipNodesWithLocalStorage"].GetBool();
         m_skipNodesWithLocalStorageHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["SkipNodesWithSystemPods"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.SkipNodesWithSystemPods` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.SkipNodesWithSystemPods` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_skipNodesWithSystemPods = value["SkipNodesWithSystemPods"].GetBool();
         m_skipNodesWithSystemPodsHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["IgnoreDaemonSetsUtilization"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.IgnoreDaemonSetsUtilization` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.IgnoreDaemonSetsUtilization` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreDaemonSetsUtilization = value["IgnoreDaemonSetsUtilization"].GetBool();
         m_ignoreDaemonSetsUtilizationHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["OkTotalUnreadyCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.OkTotalUnreadyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.OkTotalUnreadyCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_okTotalUnreadyCount = value["OkTotalUnreadyCount"].GetInt64();
         m_okTotalUnreadyCountHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaxTotalUnreadyPercentage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.MaxTotalUnreadyPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.MaxTotalUnreadyPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxTotalUnreadyPercentage = value["MaxTotalUnreadyPercentage"].GetInt64();
         m_maxTotalUnreadyPercentageHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["ScaleDownUnreadyTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.ScaleDownUnreadyTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.ScaleDownUnreadyTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scaleDownUnreadyTime = value["ScaleDownUnreadyTime"].GetInt64();
         m_scaleDownUnreadyTimeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["UnregisteredNodeRemovalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.UnregisteredNodeRemovalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroupOption.UnregisteredNodeRemovalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unregisteredNodeRemovalTime = value["UnregisteredNodeRemovalTime"].GetInt64();
         m_unregisteredNodeRemovalTimeHasBeenSet = true;

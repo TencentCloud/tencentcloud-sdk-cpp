@@ -36,7 +36,7 @@ CoreInternalOutcome NoticeInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NoticeInfoResult.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeInfoResult.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NoticeInfoResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NoticeType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NoticeInfoResult.NoticeType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeInfoResult.NoticeType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_noticeType = value["NoticeType"].GetInt64();
         m_noticeTypeHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome NoticeInfoResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LimitInfos") && !value["LimitInfos"].IsNull())
     {
         if (!value["LimitInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `NoticeInfoResult.LimitInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NoticeInfoResult.LimitInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LimitInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

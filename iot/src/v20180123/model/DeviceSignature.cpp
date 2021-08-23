@@ -35,7 +35,7 @@ CoreInternalOutcome DeviceSignature::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceSignature.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceSignature.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeviceSignature::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceSignature"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceSignature.DeviceSignature` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceSignature.DeviceSignature` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceSignature = string(value["DeviceSignature"].GetString());
         m_deviceSignatureHasBeenSet = true;

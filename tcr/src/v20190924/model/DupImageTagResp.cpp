@@ -34,7 +34,7 @@ CoreInternalOutcome DupImageTagResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Digest"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DupImageTagResp.Digest` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DupImageTagResp.Digest` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_digest = string(value["Digest"].GetString());
         m_digestHasBeenSet = true;

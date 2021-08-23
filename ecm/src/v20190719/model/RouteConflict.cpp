@@ -36,7 +36,7 @@ CoreInternalOutcome RouteConflict::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteTableId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteConflict.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteConflict.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableId = string(value["RouteTableId"].GetString());
         m_routeTableIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RouteConflict::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteConflict.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteConflict.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationCidrBlock = string(value["DestinationCidrBlock"].GetString());
         m_destinationCidrBlockHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome RouteConflict::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ConflictSet") && !value["ConflictSet"].IsNull())
     {
         if (!value["ConflictSet"].IsArray())
-            return CoreInternalOutcome(Error("response `RouteConflict.ConflictSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RouteConflict.ConflictSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ConflictSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

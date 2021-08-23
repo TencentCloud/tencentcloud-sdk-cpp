@@ -39,7 +39,7 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["FaceTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.FaceTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.FaceTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceTask.Deserialize(value["FaceTask"]);
@@ -66,7 +66,7 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["AsrWordsTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.AsrWordsTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.AsrWordsTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrWordsTask.Deserialize(value["AsrWordsTask"]);
@@ -83,7 +83,7 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["AsrFullTextTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.AsrFullTextTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.AsrFullTextTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrFullTextTask.Deserialize(value["AsrFullTextTask"]);
@@ -100,7 +100,7 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["OcrWordsTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.OcrWordsTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.OcrWordsTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrWordsTask.Deserialize(value["OcrWordsTask"]);
@@ -117,7 +117,7 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["OcrFullTextTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.OcrFullTextTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.OcrFullTextTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrFullTextTask.Deserialize(value["OcrFullTextTask"]);

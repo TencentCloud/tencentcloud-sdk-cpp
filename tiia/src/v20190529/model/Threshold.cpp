@@ -36,7 +36,7 @@ CoreInternalOutcome Threshold::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FalseRate1Percent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Threshold.FalseRate1Percent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Threshold.FalseRate1Percent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_falseRate1Percent = value["FalseRate1Percent"].GetInt64();
         m_falseRate1PercentHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Threshold::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FalseRate5Permil"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Threshold.FalseRate5Permil` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Threshold.FalseRate5Permil` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_falseRate5Permil = value["FalseRate5Permil"].GetInt64();
         m_falseRate5PermilHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Threshold::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FalseRate1Permil"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Threshold.FalseRate1Permil` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Threshold.FalseRate1Permil` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_falseRate1Permil = value["FalseRate1Permil"].GetInt64();
         m_falseRate1PermilHasBeenSet = true;

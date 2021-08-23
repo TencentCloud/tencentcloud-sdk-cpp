@@ -35,7 +35,7 @@ CoreInternalOutcome WeeklyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReport.BeginDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReport.BeginDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginDate = string(value["BeginDate"].GetString());
         m_beginDateHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome WeeklyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReport.EndDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReport.EndDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endDate = string(value["EndDate"].GetString());
         m_endDateHasBeenSet = true;

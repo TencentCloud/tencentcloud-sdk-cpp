@@ -37,7 +37,7 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpressRatioStatistic.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["Express"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.Express` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpressRatioStatistic.Express` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_express = string(value["Express"].GetString());
         m_expressHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["Ratio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpressRatioStatistic.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = value["Ratio"].GetDouble();
         m_ratioHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const rapidjson::Value &v
     {
         if (!value["RatioUseDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.RatioUseDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpressRatioStatistic.RatioUseDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratioUseDuration = value["RatioUseDuration"].GetDouble();
         m_ratioUseDurationHasBeenSet = true;

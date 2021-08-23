@@ -33,7 +33,7 @@ CoreInternalOutcome MediaSnapshotByTimeOffsetInfo::Deserialize(const rapidjson::
     if (value.HasMember("SnapshotByTimeOffsetSet") && !value["SnapshotByTimeOffsetSet"].IsNull())
     {
         if (!value["SnapshotByTimeOffsetSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaSnapshotByTimeOffsetInfo.SnapshotByTimeOffsetSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaSnapshotByTimeOffsetInfo.SnapshotByTimeOffsetSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SnapshotByTimeOffsetSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

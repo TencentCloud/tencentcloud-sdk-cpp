@@ -38,7 +38,7 @@ CoreInternalOutcome AttachEntityOfPolicy::Deserialize(const rapidjson::Value &va
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachEntityOfPolicy.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachEntityOfPolicy.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AttachEntityOfPolicy::Deserialize(const rapidjson::Value &va
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachEntityOfPolicy.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachEntityOfPolicy.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AttachEntityOfPolicy::Deserialize(const rapidjson::Value &va
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachEntityOfPolicy.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachEntityOfPolicy.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AttachEntityOfPolicy::Deserialize(const rapidjson::Value &va
     {
         if (!value["RelatedType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachEntityOfPolicy.RelatedType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachEntityOfPolicy.RelatedType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_relatedType = value["RelatedType"].GetUint64();
         m_relatedTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AttachEntityOfPolicy::Deserialize(const rapidjson::Value &va
     {
         if (!value["AttachmentTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachEntityOfPolicy.AttachmentTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachEntityOfPolicy.AttachmentTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attachmentTime = string(value["AttachmentTime"].GetString());
         m_attachmentTimeHasBeenSet = true;

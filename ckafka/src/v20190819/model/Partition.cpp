@@ -34,7 +34,7 @@ CoreInternalOutcome Partition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PartitionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Partition.PartitionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Partition.PartitionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitionId = value["PartitionId"].GetInt64();
         m_partitionIdHasBeenSet = true;

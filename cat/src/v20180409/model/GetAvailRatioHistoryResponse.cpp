@@ -45,16 +45,16 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["AvgAvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvgAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgAvailRatio = rsp["AvgAvailRatio"].GetDouble();
         m_avgAvailRatioHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["LowestAvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LowestAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowestAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lowestAvailRatio = rsp["LowestAvailRatio"].GetDouble();
         m_lowestAvailRatioHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["LowestProvince"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LowestProvince` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowestProvince` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lowestProvince = string(rsp["LowestProvince"].GetString());
         m_lowestProvinceHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["LowestIsp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LowestIsp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowestIsp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lowestIsp = string(rsp["LowestIsp"].GetString());
         m_lowestIspHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     if (rsp.HasMember("ProvinceData") && !rsp["ProvinceData"].IsNull())
     {
         if (!rsp["ProvinceData"].IsArray())
-            return CoreInternalOutcome(Error("response `ProvinceData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProvinceData` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ProvinceData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["AvgTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime = rsp["AvgTime"].GetDouble();
         m_avgTimeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["AvgAvailRatio2"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgAvailRatio2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvgAvailRatio2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgAvailRatio2 = rsp["AvgAvailRatio2"].GetDouble();
         m_avgAvailRatio2HasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["AvgTime2"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AvgTime2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvgTime2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime2 = rsp["AvgTime2"].GetDouble();
         m_avgTime2HasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["LowestAvailRatio2"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LowestAvailRatio2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowestAvailRatio2` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lowestAvailRatio2 = rsp["LowestAvailRatio2"].GetDouble();
         m_lowestAvailRatio2HasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["LowestProvince2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LowestProvince2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowestProvince2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lowestProvince2 = string(rsp["LowestProvince2"].GetString());
         m_lowestProvince2HasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["LowestIsp2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LowestIsp2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowestIsp2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lowestIsp2 = string(rsp["LowestIsp2"].GetString());
         m_lowestIsp2HasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome GetAvailRatioHistoryResponse::Deserialize(const string &payl
     if (rsp.HasMember("ProvinceData2") && !rsp["ProvinceData2"].IsNull())
     {
         if (!rsp["ProvinceData2"].IsArray())
-            return CoreInternalOutcome(Error("response `ProvinceData2` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProvinceData2` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ProvinceData2"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

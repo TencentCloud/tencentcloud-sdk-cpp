@@ -35,7 +35,7 @@ CoreInternalOutcome DomainAreaConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainAreaConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainAreaConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DomainAreaConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Area") && !value["Area"].IsNull())
     {
         if (!value["Area"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainAreaConfig.Area` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainAreaConfig.Area` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Area"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

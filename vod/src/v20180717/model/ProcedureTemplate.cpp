@@ -43,7 +43,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["MediaProcessTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.MediaProcessTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.MediaProcessTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaProcessTask.Deserialize(value["MediaProcessTask"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["AiContentReviewTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.AiContentReviewTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.AiContentReviewTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aiContentReviewTask.Deserialize(value["AiContentReviewTask"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["AiAnalysisTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.AiAnalysisTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.AiAnalysisTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aiAnalysisTask.Deserialize(value["AiAnalysisTask"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["AiRecognitionTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.AiRecognitionTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.AiRecognitionTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aiRecognitionTask.Deserialize(value["AiRecognitionTask"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["MiniProgramPublishTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.MiniProgramPublishTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.MiniProgramPublishTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_miniProgramPublishTask.Deserialize(value["MiniProgramPublishTask"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

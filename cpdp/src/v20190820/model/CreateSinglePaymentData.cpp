@@ -34,7 +34,7 @@ CoreInternalOutcome CreateSinglePaymentData::Deserialize(const rapidjson::Value 
     {
         if (!value["TradeSerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePaymentData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePaymentData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeSerialNo = string(value["TradeSerialNo"].GetString());
         m_tradeSerialNoHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome Strategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Field"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Strategy.Field` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategy.Field` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_field = string(value["Field"].GetString());
         m_fieldHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Strategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompareFunc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Strategy.CompareFunc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategy.CompareFunc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compareFunc = string(value["CompareFunc"].GetString());
         m_compareFuncHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Strategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Strategy.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategy.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Strategy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Arg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Strategy.Arg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Strategy.Arg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_arg = string(value["Arg"].GetString());
         m_argHasBeenSet = true;

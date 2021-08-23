@@ -35,7 +35,7 @@ CoreInternalOutcome AppIdResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AppIdResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppIdResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AppIdResponse::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AppIdList") && !value["AppIdList"].IsNull())
     {
         if (!value["AppIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `AppIdResponse.AppIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AppIdResponse.AppIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AppIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

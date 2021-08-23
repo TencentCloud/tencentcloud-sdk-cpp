@@ -37,7 +37,7 @@ CoreInternalOutcome GroupUseStatisticsEntity::Deserialize(const rapidjson::Value
     {
         if (!value["ApiPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUseStatisticsEntity.ApiPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUseStatisticsEntity.ApiPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiPath = string(value["ApiPath"].GetString());
         m_apiPathHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome GroupUseStatisticsEntity::Deserialize(const rapidjson::Value
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUseStatisticsEntity.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUseStatisticsEntity.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GroupUseStatisticsEntity::Deserialize(const rapidjson::Value
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUseStatisticsEntity.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUseStatisticsEntity.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome GroupUseStatisticsEntity::Deserialize(const rapidjson::Value
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUseStatisticsEntity.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUseStatisticsEntity.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;

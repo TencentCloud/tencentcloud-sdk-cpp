@@ -38,7 +38,7 @@ CoreInternalOutcome LoadBalancerTraffic::Deserialize(const rapidjson::Value &val
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerTraffic.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerTraffic.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LoadBalancerTraffic::Deserialize(const rapidjson::Value &val
     {
         if (!value["LoadBalancerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerTraffic.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerTraffic.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerName = string(value["LoadBalancerName"].GetString());
         m_loadBalancerNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LoadBalancerTraffic::Deserialize(const rapidjson::Value &val
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerTraffic.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerTraffic.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LoadBalancerTraffic::Deserialize(const rapidjson::Value &val
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerTraffic.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerTraffic.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LoadBalancerTraffic::Deserialize(const rapidjson::Value &val
     {
         if (!value["OutBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerTraffic.OutBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerTraffic.OutBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_outBandwidth = value["OutBandwidth"].GetDouble();
         m_outBandwidthHasBeenSet = true;

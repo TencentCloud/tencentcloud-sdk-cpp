@@ -37,7 +37,7 @@ CoreInternalOutcome HealthCheckConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsHealthCheck"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConf.IsHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConf.IsHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isHealthCheck = value["IsHealthCheck"].GetBool();
         m_isHealthCheckHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome HealthCheckConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestVolumeThreshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConf.RequestVolumeThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConf.RequestVolumeThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_requestVolumeThreshold = value["RequestVolumeThreshold"].GetInt64();
         m_requestVolumeThresholdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome HealthCheckConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SleepWindowInMilliseconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConf.SleepWindowInMilliseconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConf.SleepWindowInMilliseconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sleepWindowInMilliseconds = value["SleepWindowInMilliseconds"].GetInt64();
         m_sleepWindowInMillisecondsHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome HealthCheckConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorThresholdPercentage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConf.ErrorThresholdPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConf.ErrorThresholdPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorThresholdPercentage = value["ErrorThresholdPercentage"].GetInt64();
         m_errorThresholdPercentageHasBeenSet = true;

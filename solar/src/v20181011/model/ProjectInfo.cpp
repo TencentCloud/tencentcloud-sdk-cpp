@@ -41,7 +41,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectOrg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectOrg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectOrg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectOrg = string(value["ProjectOrg"].GetString());
         m_projectOrgHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectBudget"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectBudget` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectBudget` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_projectBudget = value["ProjectBudget"].GetDouble();
         m_projectBudgetHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectStatus = string(value["ProjectStatus"].GetString());
         m_projectStatusHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectIntroduction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectIntroduction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectIntroduction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectIntroduction = string(value["ProjectIntroduction"].GetString());
         m_projectIntroductionHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectOrgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectInfo.ProjectOrgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.ProjectOrgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectOrgId = string(value["ProjectOrgId"].GetString());
         m_projectOrgIdHasBeenSet = true;

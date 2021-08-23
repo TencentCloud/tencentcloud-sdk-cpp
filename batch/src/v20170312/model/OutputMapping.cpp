@@ -35,7 +35,7 @@ CoreInternalOutcome OutputMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourcePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputMapping.SourcePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputMapping.SourcePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourcePath = string(value["SourcePath"].GetString());
         m_sourcePathHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OutputMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputMapping.DestinationPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputMapping.DestinationPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationPath = string(value["DestinationPath"].GetString());
         m_destinationPathHasBeenSet = true;

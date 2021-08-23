@@ -34,7 +34,7 @@ CoreInternalOutcome Mouth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MouthOpen"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Mouth.MouthOpen` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mouth.MouthOpen` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mouthOpen.Deserialize(value["MouthOpen"]);

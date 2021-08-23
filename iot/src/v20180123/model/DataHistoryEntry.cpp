@@ -37,7 +37,7 @@ CoreInternalOutcome DataHistoryEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataHistoryEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataHistoryEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DataHistoryEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataHistoryEntry.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataHistoryEntry.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetUint64();
         m_timestampHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DataHistoryEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataHistoryEntry.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataHistoryEntry.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DataHistoryEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Data"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataHistoryEntry.Data` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataHistoryEntry.Data` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_data = string(value["Data"].GetString());
         m_dataHasBeenSet = true;

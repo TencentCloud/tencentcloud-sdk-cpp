@@ -40,7 +40,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetInt64();
         m_instanceCountHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     {
         if (!value["ISP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.ISP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.ISP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iSP = string(value["ISP"].GetString());
         m_iSPHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
     {
         if (!value["PrivateIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.PrivateIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.PrivateIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const rapidjson::Value &va
     {
         if (!value["Ipv6AddressCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.Ipv6AddressCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceCountISP.Ipv6AddressCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6AddressCount = value["Ipv6AddressCount"].GetInt64();
         m_ipv6AddressCountHasBeenSet = true;

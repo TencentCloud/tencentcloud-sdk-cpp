@@ -61,7 +61,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceState = string(value["InstanceState"].GetString());
         m_instanceStateHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.Image` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.Image` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_image.Deserialize(value["Image"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SimpleModule"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.SimpleModule` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.SimpleModule` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_simpleModule.Deserialize(value["SimpleModule"]);
@@ -125,7 +125,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Position"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.Position` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.Position` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_position.Deserialize(value["Position"]);
@@ -142,7 +142,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Internet"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.Internet` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.Internet` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_internet.Deserialize(value["Internet"]);
@@ -159,7 +159,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceTypeConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.InstanceTypeConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceTypeConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceTypeConfig.Deserialize(value["InstanceTypeConfig"]);
@@ -176,7 +176,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Instance.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Instance.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -206,7 +206,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestOperation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.LatestOperation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.LatestOperation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestOperation = string(value["LatestOperation"].GetString());
         m_latestOperationHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestOperationState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.LatestOperationState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.LatestOperationState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestOperationState = string(value["LatestOperationState"].GetString());
         m_latestOperationStateHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RestrictState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.RestrictState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.RestrictState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_restrictState = string(value["RestrictState"].GetString());
         m_restrictStateHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Instance.SystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.SystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_systemDiskSize = value["SystemDiskSize"].GetInt64();
         m_systemDiskSizeHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Instance.DataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.DataDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataDiskSize = value["DataDiskSize"].GetInt64();
         m_dataDiskSizeHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UUID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.UUID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.UUID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uUID = string(value["UUID"].GetString());
         m_uUIDHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Instance.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = value["PayMode"].GetInt64();
         m_payModeHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsolatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.IsolatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.IsolatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isolatedTime = string(value["IsolatedTime"].GetString());
         m_isolatedTimeHasBeenSet = true;
@@ -296,7 +296,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Instance.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = value["RenewFlag"].GetInt64();
         m_renewFlagHasBeenSet = true;
@@ -306,7 +306,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.ExpireState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.ExpireState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireState = string(value["ExpireState"].GetString());
         m_expireStateHasBeenSet = true;
@@ -316,7 +316,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SystemDisk"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.SystemDisk` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.SystemDisk` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_systemDisk.Deserialize(value["SystemDisk"]);
@@ -332,7 +332,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
     {
         if (!value["DataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `Instance.DataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Instance.DataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -353,7 +353,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Instance.NewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.NewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_newFlag = value["NewFlag"].GetInt64();
         m_newFlagHasBeenSet = true;
@@ -362,7 +362,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Instance.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Instance.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -376,7 +376,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirtualPrivateCloud"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.VirtualPrivateCloud` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.VirtualPrivateCloud` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_virtualPrivateCloud.Deserialize(value["VirtualPrivateCloud"]);
@@ -393,7 +393,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ISP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Instance.ISP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.ISP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iSP = string(value["ISP"].GetString());
         m_iSPHasBeenSet = true;
@@ -403,7 +403,7 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhysicalPosition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Instance.PhysicalPosition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Instance.PhysicalPosition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_physicalPosition.Deserialize(value["PhysicalPosition"]);

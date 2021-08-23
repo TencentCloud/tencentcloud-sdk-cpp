@@ -50,7 +50,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.RealServerPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.RealServerPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerPort = value["RealServerPort"].GetUint64();
         m_realServerPortHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.RealServerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.RealServerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerType = string(value["RealServerType"].GetString());
         m_realServerTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.ListenerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.ListenerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_listenerStatus = value["ListenerStatus"].GetUint64();
         m_listenerStatusHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheduler"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduler = string(value["Scheduler"].GetString());
         m_schedulerHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConnectTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_connectTimeout = value["ConnectTimeout"].GetUint64();
         m_connectTimeoutHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DelayLoop"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.DelayLoop` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.DelayLoop` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_delayLoop = value["DelayLoop"].GetUint64();
         m_delayLoopHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheck"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.HealthCheck` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.HealthCheck` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_healthCheck = value["HealthCheck"].GetUint64();
         m_healthCheckHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.BindStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.BindStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bindStatus = value["BindStatus"].GetUint64();
         m_bindStatusHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RealServerSet") && !value["RealServerSet"].IsNull())
     {
         if (!value["RealServerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TCPListener.RealServerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.RealServerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RealServerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -190,7 +190,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIPMethod"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.ClientIPMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.ClientIPMethod` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clientIPMethod = value["ClientIPMethod"].GetUint64();
         m_clientIPMethodHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthyThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.HealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.HealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_healthyThreshold = value["HealthyThreshold"].GetUint64();
         m_healthyThresholdHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnhealthyThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TCPListener.UnhealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TCPListener.UnhealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_unhealthyThreshold = value["UnhealthyThreshold"].GetUint64();
         m_unhealthyThresholdHasBeenSet = true;

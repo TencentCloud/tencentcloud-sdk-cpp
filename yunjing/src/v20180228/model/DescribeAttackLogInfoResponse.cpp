@@ -49,16 +49,16 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -69,11 +69,11 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = rsp["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(rsp["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["SrcPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SrcPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_srcPort = rsp["SrcPort"].GetUint64();
         m_srcPortHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(rsp["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["DstPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DstPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DstPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dstPort = rsp["DstPort"].GetUint64();
         m_dstPortHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["DstIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DstIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DstIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstIp = string(rsp["DstIp"].GetString());
         m_dstIpHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpMethod = string(rsp["HttpMethod"].GetString());
         m_httpMethodHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpHost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpHost = string(rsp["HttpHost"].GetString());
         m_httpHostHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpHead"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHead` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHead` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpHead = string(rsp["HttpHead"].GetString());
         m_httpHeadHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpUserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpUserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpUserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpUserAgent = string(rsp["HttpUserAgent"].GetString());
         m_httpUserAgentHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpReferer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpReferer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpReferer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpReferer = string(rsp["HttpReferer"].GetString());
         m_httpRefererHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["VulType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulType = string(rsp["VulType"].GetString());
         m_vulTypeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpCgi"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpCgi` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpCgi` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCgi = string(rsp["HttpCgi"].GetString());
         m_httpCgiHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpParam = string(rsp["HttpParam"].GetString());
         m_httpParamHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(rsp["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome DescribeAttackLogInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["HttpContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpContent = string(rsp["HttpContent"].GetString());
         m_httpContentHasBeenSet = true;

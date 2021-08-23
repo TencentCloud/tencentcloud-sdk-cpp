@@ -35,7 +35,7 @@ CoreInternalOutcome SubtitleRec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsrDst"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleRec.AsrDst` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleRec.AsrDst` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asrDst = string(value["AsrDst"].GetString());
         m_asrDstHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SubtitleRec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransDst"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtitleRec.TransDst` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtitleRec.TransDst` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transDst = string(value["TransDst"].GetString());
         m_transDstHasBeenSet = true;

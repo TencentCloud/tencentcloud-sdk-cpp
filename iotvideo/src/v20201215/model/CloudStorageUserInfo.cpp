@@ -34,7 +34,7 @@ CoreInternalOutcome CloudStorageUserInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageUserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageUserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome ClipFileInfo2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClipFileInfo2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipFileInfo2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ClipFileInfo2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClipFileInfo2017.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipFileInfo2017.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ClipFileInfo2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClipFileInfo2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipFileInfo2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ClipFileInfo2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClipFileInfo2017.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipFileInfo2017.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ClipFileInfo2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClipFileInfo2017.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipFileInfo2017.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CategoryKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.CategoryKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.CategoryKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_categoryKey = string(value["CategoryKey"].GetString());
         m_categoryKeyHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CategoryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.CategoryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.CategoryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_categoryName = string(value["CategoryName"].GetString());
         m_categoryNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.ParentId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.ParentId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_parentId = value["ParentId"].GetInt64();
         m_parentIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModelTemplate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.ModelTemplate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.ModelTemplate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modelTemplate = string(value["ModelTemplate"].GetString());
         m_modelTemplateHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListOrder"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.ListOrder` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.ListOrder` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_listOrder = value["ListOrder"].GetInt64();
         m_listOrderHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IconUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.IconUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.IconUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iconUrl = string(value["IconUrl"].GetString());
         m_iconUrlHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IconUrlGrid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTemplate.IconUrlGrid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTemplate.IconUrlGrid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iconUrlGrid = string(value["IconUrlGrid"].GetString());
         m_iconUrlGridHasBeenSet = true;

@@ -42,7 +42,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["ShardName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.ShardName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.ShardName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardName = string(value["ShardName"].GetString());
         m_shardNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["ShardId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.ShardId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.ShardId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardId = string(value["ShardId"].GetString());
         m_shardIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["Role"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.Role` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.Role` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_role = value["Role"].GetInt64();
         m_roleHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["Keys"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.Keys` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.Keys` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_keys = value["Keys"].GetInt64();
         m_keysHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["Slots"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.Slots` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.Slots` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_slots = string(value["Slots"].GetString());
         m_slotsHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["Storage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storage = value["Storage"].GetInt64();
         m_storageHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["StorageSlope"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.StorageSlope` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.StorageSlope` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_storageSlope = value["StorageSlope"].GetDouble();
         m_storageSlopeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["Runid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.Runid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.Runid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runid = string(value["Runid"].GetString());
         m_runidHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
     {
         if (!value["Connected"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceClusterShard.Connected` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.Connected` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_connected = value["Connected"].GetInt64();
         m_connectedHasBeenSet = true;

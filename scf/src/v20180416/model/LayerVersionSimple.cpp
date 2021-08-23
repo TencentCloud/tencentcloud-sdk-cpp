@@ -35,7 +35,7 @@ CoreInternalOutcome LayerVersionSimple::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LayerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LayerVersionSimple.LayerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayerVersionSimple.LayerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_layerName = string(value["LayerName"].GetString());
         m_layerNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LayerVersionSimple::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LayerVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayerVersionSimple.LayerVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayerVersionSimple.LayerVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_layerVersion = value["LayerVersion"].GetInt64();
         m_layerVersionHasBeenSet = true;

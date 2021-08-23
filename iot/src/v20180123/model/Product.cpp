@@ -54,7 +54,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.ProductKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.ProductKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productKey = string(value["ProductKey"].GetString());
         m_productKeyHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Product.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Standard"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Product.Standard` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Standard` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_standard = value["Standard"].GetUint64();
         m_standardHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Product.AuthType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.AuthType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_authType = value["AuthType"].GetUint64();
         m_authTypeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Deleted"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Product.Deleted` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Deleted` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deleted = value["Deleted"].GetUint64();
         m_deletedHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataTemplate") && !value["DataTemplate"].IsNull())
     {
         if (!value["DataTemplate"].IsArray())
-            return CoreInternalOutcome(Error("response `Product.DataTemplate` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Product.DataTemplate` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataTemplate"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -194,7 +194,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.DataProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.DataProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataProtocol = string(value["DataProtocol"].GetString());
         m_dataProtocolHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.CommProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.CommProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commProtocol = string(value["CommProtocol"].GetString());
         m_commProtocolHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Product.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Product.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Product.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = string(value["DeviceType"].GetString());
         m_deviceTypeHasBeenSet = true;
@@ -263,7 +263,7 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssociatedProducts") && !value["AssociatedProducts"].IsNull())
     {
         if (!value["AssociatedProducts"].IsArray())
-            return CoreInternalOutcome(Error("response `Product.AssociatedProducts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Product.AssociatedProducts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssociatedProducts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

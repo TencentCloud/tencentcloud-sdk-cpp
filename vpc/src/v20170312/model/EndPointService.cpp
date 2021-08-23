@@ -43,7 +43,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPointServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.EndPointServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.EndPointServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endPointServiceId = string(value["EndPointServiceId"].GetString());
         m_endPointServiceIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceOwner"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.ServiceOwner` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.ServiceOwner` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceOwner = string(value["ServiceOwner"].GetString());
         m_serviceOwnerHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.ServiceVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.ServiceVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceVip = string(value["ServiceVip"].GetString());
         m_serviceVipHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.ServiceInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.ServiceInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceInstanceId = string(value["ServiceInstanceId"].GetString());
         m_serviceInstanceIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoAcceptFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.AutoAcceptFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.AutoAcceptFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoAcceptFlag = value["AutoAcceptFlag"].GetBool();
         m_autoAcceptFlagHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPointCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.EndPointCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.EndPointCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endPointCount = value["EndPointCount"].GetUint64();
         m_endPointCountHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EndPointSet") && !value["EndPointSet"].IsNull())
     {
         if (!value["EndPointSet"].IsArray())
-            return CoreInternalOutcome(Error("response `EndPointService.EndPointSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.EndPointSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EndPointSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -143,7 +143,7 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndPointService.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndPointService.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

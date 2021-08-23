@@ -40,7 +40,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextDetection.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextDetection.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
     {
         if (!value["Polygon"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetection.Polygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.Polygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Polygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextDetection.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(value["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemPolygon"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextDetection.ItemPolygon` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.ItemPolygon` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_itemPolygon.Deserialize(value["ItemPolygon"]);
@@ -106,7 +106,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Words") && !value["Words"].IsNull())
     {
         if (!value["Words"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetection.Words` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.Words` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Words"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -126,7 +126,7 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WordCoordPoint") && !value["WordCoordPoint"].IsNull())
     {
         if (!value["WordCoordPoint"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetection.WordCoordPoint` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetection.WordCoordPoint` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WordCoordPoint"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

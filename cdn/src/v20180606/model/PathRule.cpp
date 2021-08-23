@@ -41,7 +41,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Regex"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PathRule.Regex` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.Regex` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_regex = value["Regex"].GetBool();
         m_regexHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRule.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Origin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRule.Origin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.Origin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_origin = string(value["Origin"].GetString());
         m_originHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRule.ServerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.ServerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverName = string(value["ServerName"].GetString());
         m_serverNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginArea"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRule.OriginArea` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.OriginArea` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originArea = string(value["OriginArea"].GetString());
         m_originAreaHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardUri"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathRule.ForwardUri` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.ForwardUri` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardUri = string(value["ForwardUri"].GetString());
         m_forwardUriHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RequestHeaders") && !value["RequestHeaders"].IsNull())
     {
         if (!value["RequestHeaders"].IsArray())
-            return CoreInternalOutcome(Error("response `PathRule.RequestHeaders` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathRule.RequestHeaders` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RequestHeaders"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullMatch"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PathRule.FullMatch` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathRule.FullMatch` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_fullMatch = value["FullMatch"].GetBool();
         m_fullMatchHasBeenSet = true;

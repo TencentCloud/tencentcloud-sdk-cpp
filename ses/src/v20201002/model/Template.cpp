@@ -35,7 +35,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateID"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Template.TemplateID` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.TemplateID` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_templateID = value["TemplateID"].GetUint64();
         m_templateIDHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Template.TemplateData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.TemplateData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateData = string(value["TemplateData"].GetString());
         m_templateDataHasBeenSet = true;

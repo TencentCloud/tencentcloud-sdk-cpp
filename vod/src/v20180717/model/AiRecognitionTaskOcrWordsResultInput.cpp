@@ -34,7 +34,7 @@ CoreInternalOutcome AiRecognitionTaskOcrWordsResultInput::Deserialize(const rapi
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrWordsResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrWordsResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;

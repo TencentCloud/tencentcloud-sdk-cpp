@@ -34,7 +34,7 @@ CoreInternalOutcome QuestionBlockObj::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("QuestionArr") && !value["QuestionArr"].IsNull())
     {
         if (!value["QuestionArr"].IsArray())
-            return CoreInternalOutcome(Error("response `QuestionBlockObj.QuestionArr` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QuestionBlockObj.QuestionArr` is not array type"));
 
         const rapidjson::Value &tmpValue = value["QuestionArr"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome QuestionBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionBboxCoord"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QuestionBlockObj.QuestionBboxCoord` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuestionBlockObj.QuestionBboxCoord` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_questionBboxCoord.Deserialize(value["QuestionBboxCoord"]);

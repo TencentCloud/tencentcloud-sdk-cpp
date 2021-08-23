@@ -53,16 +53,16 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -73,11 +73,11 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -85,7 +85,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["TicketNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TicketNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ticketNum = string(rsp["TicketNum"].GetString());
         m_ticketNumHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["StartStation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartStation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartStation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startStation = string(rsp["StartStation"].GetString());
         m_startStationHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["DestinationStation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DestinationStation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationStation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationStation = string(rsp["DestinationStation"].GetString());
         m_destinationStationHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(rsp["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["TrainNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainNum = string(rsp["TrainNum"].GetString());
         m_trainNumHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Seat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Seat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Seat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_seat = string(rsp["Seat"].GetString());
         m_seatHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Price"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Price` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Price` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_price = string(rsp["Price"].GetString());
         m_priceHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["SeatCategory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatCategory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatCategory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_seatCategory = string(rsp["SeatCategory"].GetString());
         m_seatCategoryHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iD = string(rsp["ID"].GetString());
         m_iDHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceType = string(rsp["InvoiceType"].GetString());
         m_invoiceTypeHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["SerialNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SerialNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNumber = string(rsp["SerialNumber"].GetString());
         m_serialNumberHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["AdditionalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdditionalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdditionalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_additionalCost = string(rsp["AdditionalCost"].GetString());
         m_additionalCostHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["HandlingFee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HandlingFee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandlingFee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_handlingFee = string(rsp["HandlingFee"].GetString());
         m_handlingFeeHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["LegalAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LegalAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LegalAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalAmount = string(rsp["LegalAmount"].GetString());
         m_legalAmountHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["TicketStation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TicketStation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketStation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ticketStation = string(rsp["TicketStation"].GetString());
         m_ticketStationHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["OriginalPrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginalPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginalPrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = string(rsp["OriginalPrice"].GetString());
         m_originalPriceHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceStyle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceStyle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceStyle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceStyle = string(rsp["InvoiceStyle"].GetString());
         m_invoiceStyleHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ReceiptNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReceiptNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiptNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_receiptNumber = string(rsp["ReceiptNumber"].GetString());
         m_receiptNumberHasBeenSet = true;
@@ -275,7 +275,7 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["IsReceipt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IsReceipt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsReceipt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isReceipt = string(rsp["IsReceipt"].GetString());
         m_isReceiptHasBeenSet = true;

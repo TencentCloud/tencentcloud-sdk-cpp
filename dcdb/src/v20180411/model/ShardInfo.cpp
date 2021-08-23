@@ -43,7 +43,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.ShardInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.ShardInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardInstanceId = string(value["ShardInstanceId"].GetString());
         m_shardInstanceIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardSerialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.ShardSerialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.ShardSerialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardSerialId = string(value["ShardSerialId"].GetString());
         m_shardSerialIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Createtime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Createtime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Createtime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createtime = string(value["Createtime"].GetString());
         m_createtimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Storage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storage = value["Storage"].GetInt64();
         m_storageHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.ShardId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.ShardId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shardId = value["ShardId"].GetInt64();
         m_shardIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.NodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.NodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeCount = value["NodeCount"].GetInt64();
         m_nodeCountHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetInt64();
         m_pidHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;

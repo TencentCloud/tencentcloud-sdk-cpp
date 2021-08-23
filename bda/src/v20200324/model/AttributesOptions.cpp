@@ -39,7 +39,7 @@ CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["Age"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AttributesOptions.Age` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributesOptions.Age` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetBool();
         m_ageHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["Bag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AttributesOptions.Bag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributesOptions.Bag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_bag = value["Bag"].GetBool();
         m_bagHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["Gender"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AttributesOptions.Gender` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributesOptions.Gender` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetBool();
         m_genderHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["Orientation"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AttributesOptions.Orientation` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributesOptions.Orientation` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_orientation = value["Orientation"].GetBool();
         m_orientationHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpperBodyCloth"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AttributesOptions.UpperBodyCloth` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributesOptions.UpperBodyCloth` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_upperBodyCloth = value["UpperBodyCloth"].GetBool();
         m_upperBodyClothHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value
     {
         if (!value["LowerBodyCloth"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AttributesOptions.LowerBodyCloth` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributesOptions.LowerBodyCloth` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_lowerBodyCloth = value["LowerBodyCloth"].GetBool();
         m_lowerBodyClothHasBeenSet = true;

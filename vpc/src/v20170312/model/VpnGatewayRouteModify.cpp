@@ -35,7 +35,7 @@ CoreInternalOutcome VpnGatewayRouteModify::Deserialize(const rapidjson::Value &v
     {
         if (!value["RouteId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGatewayRouteModify.RouteId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGatewayRouteModify.RouteId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = string(value["RouteId"].GetString());
         m_routeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VpnGatewayRouteModify::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGatewayRouteModify.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGatewayRouteModify.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

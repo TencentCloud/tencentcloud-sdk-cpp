@@ -45,16 +45,16 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["HouseholdNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HouseholdNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HouseholdNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_householdNumber = string(rsp["HouseholdNumber"].GetString());
         m_householdNumberHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["BirthPlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthPlace = string(rsp["BirthPlace"].GetString());
         m_birthPlaceHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["Nation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Nation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nation = string(rsp["Nation"].GetString());
         m_nationHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["NativePlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NativePlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NativePlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nativePlace = string(rsp["NativePlace"].GetString());
         m_nativePlaceHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["BirthDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BirthDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BirthDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthDate = string(rsp["BirthDate"].GetString());
         m_birthDateHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["IdCardNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idCardNumber = string(rsp["IdCardNumber"].GetString());
         m_idCardNumberHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["EducationDegree"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EducationDegree` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EducationDegree` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_educationDegree = string(rsp["EducationDegree"].GetString());
         m_educationDegreeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["ServicePlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServicePlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServicePlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_servicePlace = string(rsp["ServicePlace"].GetString());
         m_servicePlaceHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["Household"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Household` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Household` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_household = string(rsp["Household"].GetString());
         m_householdHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome ResidenceBookletOCRResponse::Deserialize(const string &paylo
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;

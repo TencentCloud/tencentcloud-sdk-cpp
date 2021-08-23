@@ -35,7 +35,7 @@ CoreInternalOutcome DiskGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DiskGroup.Spec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskGroup.Spec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_spec.Deserialize(value["Spec"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome DiskGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DiskGroup.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskGroup.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const rapidjson::Valu
     {
         if (!value["DomainValidateAuthPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RevokeDomainValidateAuths.DomainValidateAuthPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RevokeDomainValidateAuths.DomainValidateAuthPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainValidateAuthPath = string(value["DomainValidateAuthPath"].GetString());
         m_domainValidateAuthPathHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const rapidjson::Valu
     {
         if (!value["DomainValidateAuthKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RevokeDomainValidateAuths.DomainValidateAuthKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RevokeDomainValidateAuths.DomainValidateAuthKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainValidateAuthKey = string(value["DomainValidateAuthKey"].GetString());
         m_domainValidateAuthKeyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const rapidjson::Valu
     {
         if (!value["DomainValidateAuthValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RevokeDomainValidateAuths.DomainValidateAuthValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RevokeDomainValidateAuths.DomainValidateAuthValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainValidateAuthValue = string(value["DomainValidateAuthValue"].GetString());
         m_domainValidateAuthValueHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const rapidjson::Valu
     {
         if (!value["DomainValidateAuthDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RevokeDomainValidateAuths.DomainValidateAuthDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RevokeDomainValidateAuths.DomainValidateAuthDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainValidateAuthDomain = string(value["DomainValidateAuthDomain"].GetString());
         m_domainValidateAuthDomainHasBeenSet = true;

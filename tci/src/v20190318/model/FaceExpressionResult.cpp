@@ -35,7 +35,7 @@ CoreInternalOutcome FaceExpressionResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceExpressionResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceExpressionResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FaceExpressionResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["Expression"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceExpressionResult.Expression` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceExpressionResult.Expression` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expression = string(value["Expression"].GetString());
         m_expressionHasBeenSet = true;

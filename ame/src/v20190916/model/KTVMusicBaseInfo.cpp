@@ -40,7 +40,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MusicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.MusicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.MusicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicId = string(value["MusicId"].GetString());
         m_musicIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SingerSet") && !value["SingerSet"].IsNull())
     {
         if (!value["SingerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.SingerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.SingerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SingerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LyricistSet") && !value["LyricistSet"].IsNull())
     {
         if (!value["LyricistSet"].IsArray())
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.LyricistSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.LyricistSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LyricistSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -85,7 +85,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ComposerSet") && !value["ComposerSet"].IsNull())
     {
         if (!value["ComposerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.ComposerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.ComposerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ComposerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -112,7 +112,7 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;

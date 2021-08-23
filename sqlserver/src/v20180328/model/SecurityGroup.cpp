@@ -40,7 +40,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InboundSet") && !value["InboundSet"].IsNull())
     {
         if (!value["InboundSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroup.InboundSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.InboundSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InboundSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OutboundSet") && !value["OutboundSet"].IsNull())
     {
         if (!value["OutboundSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroup.OutboundSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.OutboundSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutboundSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupId = string(value["SecurityGroupId"].GetString());
         m_securityGroupIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.SecurityGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.SecurityGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupName = string(value["SecurityGroupName"].GetString());
         m_securityGroupNameHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityGroupRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.SecurityGroupRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.SecurityGroupRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupRemark = string(value["SecurityGroupRemark"].GetString());
         m_securityGroupRemarkHasBeenSet = true;

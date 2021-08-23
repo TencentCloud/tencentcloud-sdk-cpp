@@ -35,7 +35,7 @@ CoreInternalOutcome NationCountryInnerInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["NationCountryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NationCountryInnerInfo.NationCountryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NationCountryInnerInfo.NationCountryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationCountryName = string(value["NationCountryName"].GetString());
         m_nationCountryNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome NationCountryInnerInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["NationCountryInnerCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NationCountryInnerInfo.NationCountryInnerCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NationCountryInnerInfo.NationCountryInnerCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationCountryInnerCode = string(value["NationCountryInnerCode"].GetString());
         m_nationCountryInnerCodeHasBeenSet = true;

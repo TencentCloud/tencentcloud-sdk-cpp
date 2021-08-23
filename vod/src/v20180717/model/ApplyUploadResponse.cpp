@@ -39,16 +39,16 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     {
         if (!rsp["StorageBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageBucket = string(rsp["StorageBucket"].GetString());
         m_storageBucketHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     {
         if (!rsp["StorageRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageRegion = string(rsp["StorageRegion"].GetString());
         m_storageRegionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     {
         if (!rsp["VodSessionKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodSessionKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodSessionKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodSessionKey = string(rsp["VodSessionKey"].GetString());
         m_vodSessionKeyHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     {
         if (!rsp["MediaStoragePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaStoragePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaStoragePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaStoragePath = string(rsp["MediaStoragePath"].GetString());
         m_mediaStoragePathHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     {
         if (!rsp["CoverStoragePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CoverStoragePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverStoragePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverStoragePath = string(rsp["CoverStoragePath"].GetString());
         m_coverStoragePathHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome ApplyUploadResponse::Deserialize(const string &payload)
     {
         if (!rsp["TempCertificate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TempCertificate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TempCertificate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tempCertificate.Deserialize(rsp["TempCertificate"]);

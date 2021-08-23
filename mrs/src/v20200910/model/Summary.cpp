@@ -34,7 +34,7 @@ CoreInternalOutcome Summary::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Symptom") && !value["Symptom"].IsNull())
     {
         if (!value["Symptom"].IsArray())
-            return CoreInternalOutcome(Error("response `Summary.Symptom` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Summary.Symptom` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Symptom"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome Summary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Summary.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Summary.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["AsrStat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StandardAudioResult.AsrStat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.AsrStat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrStat.Deserialize(value["AsrStat"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     if (value.HasMember("Texts") && !value["Texts"].IsNull())
     {
         if (!value["Texts"].IsArray())
-            return CoreInternalOutcome(Error("response `StandardAudioResult.Texts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.Texts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Texts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     if (value.HasMember("VocabAnalysisDetailInfo") && !value["VocabAnalysisDetailInfo"].IsNull())
     {
         if (!value["VocabAnalysisDetailInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `StandardAudioResult.VocabAnalysisDetailInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.VocabAnalysisDetailInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VocabAnalysisDetailInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -96,7 +96,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     if (value.HasMember("VocabAnalysisStatInfo") && !value["VocabAnalysisStatInfo"].IsNull())
     {
         if (!value["VocabAnalysisStatInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `StandardAudioResult.VocabAnalysisStatInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.VocabAnalysisStatInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VocabAnalysisStatInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -117,7 +117,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandardAudioResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandardAudioResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome StandardAudioResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StandardAudioResult.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardAudioResult.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;

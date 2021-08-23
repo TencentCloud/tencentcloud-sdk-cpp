@@ -37,7 +37,7 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const rapidjson::Value &
     {
         if (!value["MaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditProjectOutput.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectOutput.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialId = string(value["MaterialId"].GetString());
         m_materialIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const rapidjson::Value &
     {
         if (!value["VodFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditProjectOutput.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectOutput.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodFileId = string(value["VodFileId"].GetString());
         m_vodFileIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const rapidjson::Value &
     {
         if (!value["URL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditProjectOutput.URL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectOutput.URL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uRL = string(value["URL"].GetString());
         m_uRLHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const rapidjson::Value &
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoEditProjectOutput.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectOutput.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);

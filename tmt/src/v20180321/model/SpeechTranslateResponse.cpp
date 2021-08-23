@@ -41,16 +41,16 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["SessionUuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SessionUuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SessionUuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionUuid = string(rsp["SessionUuid"].GetString());
         m_sessionUuidHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["RecognizeStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecognizeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecognizeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recognizeStatus = rsp["RecognizeStatus"].GetInt64();
         m_recognizeStatusHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["SourceText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceText = string(rsp["SourceText"].GetString());
         m_sourceTextHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["TargetText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetText = string(rsp["TargetText"].GetString());
         m_targetTextHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["Seq"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Seq` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Seq` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_seq = rsp["Seq"].GetInt64();
         m_seqHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(rsp["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["Target"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Target` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Target` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_target = string(rsp["Target"].GetString());
         m_targetHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome SpeechTranslateResponse::Deserialize(const string &payload)
     {
         if (!rsp["VadSeq"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VadSeq` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VadSeq` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vadSeq = rsp["VadSeq"].GetInt64();
         m_vadSeqHasBeenSet = true;

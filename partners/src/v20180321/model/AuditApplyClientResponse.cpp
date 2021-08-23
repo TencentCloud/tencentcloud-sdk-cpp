@@ -37,16 +37,16 @@ CoreInternalOutcome AuditApplyClientResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome AuditApplyClientResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome AuditApplyClientResponse::Deserialize(const string &payload)
     {
         if (!rsp["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(rsp["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AuditApplyClientResponse::Deserialize(const string &payload)
     {
         if (!rsp["ClientUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientUin = string(rsp["ClientUin"].GetString());
         m_clientUinHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AuditApplyClientResponse::Deserialize(const string &payload)
     {
         if (!rsp["AuditResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditResult = string(rsp["AuditResult"].GetString());
         m_auditResultHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome AuditApplyClientResponse::Deserialize(const string &payload)
     {
         if (!rsp["AgentTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentTime = rsp["AgentTime"].GetUint64();
         m_agentTimeHasBeenSet = true;

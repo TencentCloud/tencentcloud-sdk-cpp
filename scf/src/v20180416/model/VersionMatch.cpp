@@ -37,7 +37,7 @@ CoreInternalOutcome VersionMatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionMatch.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionMatch.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome VersionMatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionMatch.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionMatch.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VersionMatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionMatch.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionMatch.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VersionMatch::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Expression"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionMatch.Expression` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionMatch.Expression` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expression = string(value["Expression"].GetString());
         m_expressionHasBeenSet = true;

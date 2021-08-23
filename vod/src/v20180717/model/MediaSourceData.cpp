@@ -35,7 +35,7 @@ CoreInternalOutcome MediaSourceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSourceData.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSourceData.SourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = string(value["SourceType"].GetString());
         m_sourceTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaSourceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSourceData.SourceContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSourceData.SourceContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceContext = string(value["SourceContext"].GetString());
         m_sourceContextHasBeenSet = true;

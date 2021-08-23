@@ -35,7 +35,7 @@ CoreInternalOutcome DBSwitchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SwitchTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBSwitchInfo.SwitchTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBSwitchInfo.SwitchTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switchTime = string(value["SwitchTime"].GetString());
         m_switchTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DBSwitchInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SwitchType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBSwitchInfo.SwitchType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBSwitchInfo.SwitchType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switchType = string(value["SwitchType"].GetString());
         m_switchTypeHasBeenSet = true;

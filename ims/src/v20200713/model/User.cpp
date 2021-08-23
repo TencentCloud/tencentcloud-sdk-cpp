@@ -42,7 +42,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `User.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `User.AccountType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.AccountType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountType = string(value["AccountType"].GetString());
         m_accountTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nickname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `User.Nickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.Nickname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickname = string(value["Nickname"].GetString());
         m_nicknameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `User.Gender` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.Gender` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetUint64();
         m_genderHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Age"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `User.Age` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.Age` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetUint64();
         m_ageHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `User.Level` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.Level` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetUint64();
         m_levelHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `User.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `User.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `User.HeadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `User.HeadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headUrl = string(value["HeadUrl"].GetString());
         m_headUrlHasBeenSet = true;

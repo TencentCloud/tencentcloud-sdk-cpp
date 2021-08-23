@@ -54,7 +54,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["Account"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.Account` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.Account` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_account.Deserialize(value["Account"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["SceneCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.SceneCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.SceneCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sceneCode = string(value["SceneCode"].GetString());
         m_sceneCodeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(value["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["PostTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postTime = value["PostTime"].GetUint64();
         m_postTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["DeviceToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.DeviceToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.DeviceToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceToken = string(value["DeviceToken"].GetString());
         m_deviceTokenHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["DeviceBusinessId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.DeviceBusinessId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.DeviceBusinessId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceBusinessId = value["DeviceBusinessId"].GetInt64();
         m_deviceBusinessIdHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["BusinessId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.BusinessId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.BusinessId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_businessId = value["BusinessId"].GetUint64();
         m_businessIdHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["Nickname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.Nickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.Nickname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickname = string(value["Nickname"].GetString());
         m_nicknameHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["EmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emailAddress = string(value["EmailAddress"].GetString());
         m_emailAddressHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["CheckDevice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.CheckDevice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.CheckDevice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_checkDevice = value["CheckDevice"].GetInt64();
         m_checkDeviceHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["CookieHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.CookieHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.CookieHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cookieHash = string(value["CookieHash"].GetString());
         m_cookieHashHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["Referer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.Referer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.Referer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_referer = string(value["Referer"].GetString());
         m_refererHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["UserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAgent = string(value["UserAgent"].GetString());
         m_userAgentHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["XForwardedFor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.XForwardedFor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.XForwardedFor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xForwardedFor = string(value["XForwardedFor"].GetString());
         m_xForwardedForHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["MacAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.MacAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.MacAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_macAddress = string(value["MacAddress"].GetString());
         m_macAddressHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["VendorId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.VendorId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.VendorId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vendorId = string(value["VendorId"].GetString());
         m_vendorIdHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["DeviceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.DeviceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.DeviceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = value["DeviceType"].GetInt64();
         m_deviceTypeHasBeenSet = true;
@@ -240,7 +240,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     if (value.HasMember("Details") && !value["Details"].IsNull())
     {
         if (!value["Details"].IsArray())
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.Details` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.Details` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Details"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -261,7 +261,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["Sponsor"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.Sponsor` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.Sponsor` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sponsor.Deserialize(value["Sponsor"]);
@@ -278,7 +278,7 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
     {
         if (!value["OnlineScam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputManageMarketingRisk.OnlineScam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.OnlineScam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_onlineScam.Deserialize(value["OnlineScam"]);

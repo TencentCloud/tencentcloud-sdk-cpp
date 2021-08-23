@@ -91,7 +91,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetInt64();
         m_appIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Cname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Cname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cname = string(value["Cname"].GetString());
         m_cnameHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Origin"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Origin` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Origin` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_origin.Deserialize(value["Origin"]);
@@ -198,7 +198,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpFilter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.IpFilter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.IpFilter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ipFilter.Deserialize(value["IpFilter"]);
@@ -215,7 +215,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpFreqLimit"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.IpFreqLimit` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.IpFreqLimit` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ipFreqLimit.Deserialize(value["IpFreqLimit"]);
@@ -232,7 +232,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusCodeCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.StatusCodeCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.StatusCodeCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_statusCodeCache.Deserialize(value["StatusCodeCache"]);
@@ -249,7 +249,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Compression"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Compression` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Compression` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_compression.Deserialize(value["Compression"]);
@@ -266,7 +266,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandwidthAlert"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.BandwidthAlert` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.BandwidthAlert` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bandwidthAlert.Deserialize(value["BandwidthAlert"]);
@@ -283,7 +283,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RangeOriginPull"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.RangeOriginPull` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.RangeOriginPull` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rangeOriginPull.Deserialize(value["RangeOriginPull"]);
@@ -300,7 +300,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FollowRedirect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.FollowRedirect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.FollowRedirect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_followRedirect.Deserialize(value["FollowRedirect"]);
@@ -317,7 +317,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorPage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ErrorPage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ErrorPage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_errorPage.Deserialize(value["ErrorPage"]);
@@ -334,7 +334,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestHeader"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.RequestHeader` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.RequestHeader` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_requestHeader.Deserialize(value["RequestHeader"]);
@@ -351,7 +351,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResponseHeader"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ResponseHeader` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ResponseHeader` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_responseHeader.Deserialize(value["ResponseHeader"]);
@@ -368,7 +368,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownstreamCapping"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.DownstreamCapping` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.DownstreamCapping` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_downstreamCapping.Deserialize(value["DownstreamCapping"]);
@@ -385,7 +385,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheKey"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.CacheKey` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.CacheKey` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cacheKey.Deserialize(value["CacheKey"]);
@@ -402,7 +402,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResponseHeaderCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ResponseHeaderCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ResponseHeaderCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_responseHeaderCache.Deserialize(value["ResponseHeaderCache"]);
@@ -419,7 +419,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoSeek"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.VideoSeek` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.VideoSeek` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoSeek.Deserialize(value["VideoSeek"]);
@@ -436,7 +436,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Cache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Cache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cache.Deserialize(value["Cache"]);
@@ -453,7 +453,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginPullOptimization"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.OriginPullOptimization` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OriginPullOptimization` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_originPullOptimization.Deserialize(value["OriginPullOptimization"]);
@@ -470,7 +470,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Https"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Https` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Https` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_https.Deserialize(value["Https"]);
@@ -487,7 +487,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Authentication"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Authentication` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Authentication` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_authentication.Deserialize(value["Authentication"]);
@@ -504,7 +504,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Seo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Seo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Seo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_seo.Deserialize(value["Seo"]);
@@ -521,7 +521,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Disable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Disable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Disable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_disable = string(value["Disable"].GetString());
         m_disableHasBeenSet = true;
@@ -531,7 +531,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForceRedirect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ForceRedirect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ForceRedirect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_forceRedirect.Deserialize(value["ForceRedirect"]);
@@ -548,7 +548,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Referer"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Referer` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Referer` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_referer.Deserialize(value["Referer"]);
@@ -565,7 +565,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAge"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.MaxAge` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.MaxAge` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_maxAge.Deserialize(value["MaxAge"]);
@@ -582,7 +582,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Ipv6` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Ipv6` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ipv6.Deserialize(value["Ipv6"]);
@@ -599,7 +599,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Compatibility"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Compatibility` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Compatibility` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_compatibility.Deserialize(value["Compatibility"]);
@@ -616,7 +616,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecificConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.SpecificConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.SpecificConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_specificConfig.Deserialize(value["SpecificConfig"]);
@@ -633,7 +633,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -643,7 +643,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Readonly"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Readonly` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Readonly` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readonly = string(value["Readonly"].GetString());
         m_readonlyHasBeenSet = true;
@@ -653,7 +653,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginPullTimeout"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.OriginPullTimeout` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OriginPullTimeout` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_originPullTimeout.Deserialize(value["OriginPullTimeout"]);
@@ -670,7 +670,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AwsPrivateAccess"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.AwsPrivateAccess` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AwsPrivateAccess` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_awsPrivateAccess.Deserialize(value["AwsPrivateAccess"]);
@@ -687,7 +687,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.SecurityConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.SecurityConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_securityConfig.Deserialize(value["SecurityConfig"]);
@@ -704,7 +704,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageOptimization"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.ImageOptimization` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ImageOptimization` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageOptimization.Deserialize(value["ImageOptimization"]);
@@ -721,7 +721,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserAgentFilter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.UserAgentFilter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.UserAgentFilter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_userAgentFilter.Deserialize(value["UserAgentFilter"]);
@@ -738,7 +738,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessControl"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.AccessControl` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AccessControl` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_accessControl.Deserialize(value["AccessControl"]);
@@ -755,7 +755,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Advance"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Advance` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Advance` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advance = string(value["Advance"].GetString());
         m_advanceHasBeenSet = true;
@@ -765,7 +765,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UrlRedirect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.UrlRedirect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.UrlRedirect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_urlRedirect.Deserialize(value["UrlRedirect"]);
@@ -781,7 +781,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AccessPort") && !value["AccessPort"].IsNull())
     {
         if (!value["AccessPort"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailDomain.AccessPort` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AccessPort` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AccessPort"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -794,7 +794,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tag") && !value["Tag"].IsNull())
     {
         if (!value["Tag"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailDomain.Tag` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Tag` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tag"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -815,7 +815,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvancedAuthentication"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.AdvancedAuthentication` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AdvancedAuthentication` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_advancedAuthentication.Deserialize(value["AdvancedAuthentication"]);
@@ -832,7 +832,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginAuthentication"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.OriginAuthentication` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OriginAuthentication` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_originAuthentication.Deserialize(value["OriginAuthentication"]);
@@ -849,7 +849,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6Access"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Ipv6Access` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Ipv6Access` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ipv6Access.Deserialize(value["Ipv6Access"]);
@@ -865,7 +865,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AdvanceSet") && !value["AdvanceSet"].IsNull())
     {
         if (!value["AdvanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailDomain.AdvanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AdvanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AdvanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -886,7 +886,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OfflineCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.OfflineCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OfflineCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_offlineCache.Deserialize(value["OfflineCache"]);
@@ -903,7 +903,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginCombine"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.OriginCombine` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OriginCombine` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_originCombine.Deserialize(value["OriginCombine"]);
@@ -920,7 +920,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PostMaxSize"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.PostMaxSize` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.PostMaxSize` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_postMaxSize.Deserialize(value["PostMaxSize"]);
@@ -937,7 +937,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quic"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.Quic` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.Quic` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_quic.Deserialize(value["Quic"]);
@@ -954,7 +954,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OssPrivateAccess"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.OssPrivateAccess` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OssPrivateAccess` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ossPrivateAccess.Deserialize(value["OssPrivateAccess"]);
@@ -971,7 +971,7 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WebSocket"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DetailDomain.WebSocket` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.WebSocket` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_webSocket.Deserialize(value["WebSocket"]);

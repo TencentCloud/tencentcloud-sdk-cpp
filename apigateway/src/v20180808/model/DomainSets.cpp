@@ -35,7 +35,7 @@ CoreInternalOutcome DomainSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainSets.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSets.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DomainSets::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DomainSet") && !value["DomainSet"].IsNull())
     {
         if (!value["DomainSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainSets.DomainSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainSets.DomainSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DomainSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

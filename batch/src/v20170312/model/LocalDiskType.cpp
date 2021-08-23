@@ -38,7 +38,7 @@ CoreInternalOutcome LocalDiskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskType.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskType.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LocalDiskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PartitionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskType.PartitionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskType.PartitionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_partitionType = string(value["PartitionType"].GetString());
         m_partitionTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LocalDiskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskType.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskType.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minSize = value["MinSize"].GetInt64();
         m_minSizeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LocalDiskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskType.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskType.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetInt64();
         m_maxSizeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LocalDiskType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Required"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalDiskType.Required` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalDiskType.Required` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_required = string(value["Required"].GetString());
         m_requiredHasBeenSet = true;

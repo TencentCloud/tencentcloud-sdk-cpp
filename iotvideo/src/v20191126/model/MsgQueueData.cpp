@@ -38,7 +38,7 @@ CoreInternalOutcome MsgQueueData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgQueueType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MsgQueueData.MsgQueueType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgQueueData.MsgQueueType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgQueueType = value["MsgQueueType"].GetUint64();
         m_msgQueueTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MsgQueueData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsgQueueData.MsgType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgQueueData.MsgType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgType = string(value["MsgType"].GetString());
         m_msgTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MsgQueueData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Topic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsgQueueData.Topic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgQueueData.Topic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topic = string(value["Topic"].GetString());
         m_topicHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MsgQueueData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Instance"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsgQueueData.Instance` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgQueueData.Instance` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instance = string(value["Instance"].GetString());
         m_instanceHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MsgQueueData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MsgQueueData.MsgRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgQueueData.MsgRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRegion = string(value["MsgRegion"].GetString());
         m_msgRegionHasBeenSet = true;

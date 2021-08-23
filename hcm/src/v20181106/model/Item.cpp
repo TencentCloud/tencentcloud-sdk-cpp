@@ -40,7 +40,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Item"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Item.Item` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.Item` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_item = string(value["Item"].GetString());
         m_itemHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemString"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Item.ItemString` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.ItemString` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemString = string(value["ItemString"].GetString());
         m_itemStringHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemCoord"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Item.ItemCoord` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.ItemCoord` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_itemCoord.Deserialize(value["ItemCoord"]);
@@ -77,7 +77,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Answer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Item.Answer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.Answer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_answer = string(value["Answer"].GetString());
         m_answerHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpressionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Item.ExpressionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.ExpressionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expressionType = string(value["ExpressionType"].GetString());
         m_expressionTypeHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemConf"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Item.ItemConf` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.ItemConf` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_itemConf = value["ItemConf"].GetDouble();
         m_itemConfHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuestionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Item.QuestionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Item.QuestionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_questionId = string(value["QuestionId"].GetString());
         m_questionIdHasBeenSet = true;

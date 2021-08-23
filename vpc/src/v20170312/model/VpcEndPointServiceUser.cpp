@@ -38,7 +38,7 @@ CoreInternalOutcome VpcEndPointServiceUser::Deserialize(const rapidjson::Value &
     {
         if (!value["Owner"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcEndPointServiceUser.Owner` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcEndPointServiceUser.Owner` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_owner = value["Owner"].GetUint64();
         m_ownerHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome VpcEndPointServiceUser::Deserialize(const rapidjson::Value &
     {
         if (!value["UserUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcEndPointServiceUser.UserUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcEndPointServiceUser.UserUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userUin = string(value["UserUin"].GetString());
         m_userUinHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome VpcEndPointServiceUser::Deserialize(const rapidjson::Value &
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcEndPointServiceUser.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcEndPointServiceUser.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome VpcEndPointServiceUser::Deserialize(const rapidjson::Value &
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcEndPointServiceUser.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcEndPointServiceUser.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome VpcEndPointServiceUser::Deserialize(const rapidjson::Value &
     {
         if (!value["EndPointServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcEndPointServiceUser.EndPointServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcEndPointServiceUser.EndPointServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endPointServiceId = string(value["EndPointServiceId"].GetString());
         m_endPointServiceIdHasBeenSet = true;

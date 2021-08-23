@@ -34,7 +34,7 @@ CoreInternalOutcome MediaJoiningInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaJoiningInfo.TargetInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaJoiningInfo.TargetInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetInfo.Deserialize(value["TargetInfo"]);

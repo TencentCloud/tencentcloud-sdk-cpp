@@ -38,7 +38,7 @@ CoreInternalOutcome Library::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Library.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Library.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Library::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibraryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Library.LibraryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Library.LibraryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libraryId = string(value["LibraryId"].GetString());
         m_libraryIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Library::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibraryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Library.LibraryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Library.LibraryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libraryName = string(value["LibraryName"].GetString());
         m_libraryNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Library::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Library.PersonCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Library.PersonCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personCount = value["PersonCount"].GetInt64();
         m_personCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Library::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Library.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Library.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

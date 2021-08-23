@@ -34,7 +34,7 @@ CoreInternalOutcome OCRDetect::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Item") && !value["Item"].IsNull())
     {
         if (!value["Item"].IsArray())
-            return CoreInternalOutcome(Error("response `OCRDetect.Item` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OCRDetect.Item` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Item"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome OCRDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OCRDetect.TextInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OCRDetect.TextInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_textInfo = string(value["TextInfo"].GetString());
         m_textInfoHasBeenSet = true;

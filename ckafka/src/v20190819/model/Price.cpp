@@ -35,7 +35,7 @@ CoreInternalOutcome Price::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealTotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Price.RealTotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Price.RealTotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = value["RealTotalCost"].GetDouble();
         m_realTotalCostHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Price::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Price.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Price.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = value["TotalCost"].GetDouble();
         m_totalCostHasBeenSet = true;

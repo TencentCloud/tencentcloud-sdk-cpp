@@ -38,7 +38,7 @@ CoreInternalOutcome AvailableZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableZone.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableZone.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AvailableZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AvailableZone.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableZone.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AvailableZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneCnName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableZone.ZoneCnName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableZone.ZoneCnName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneCnName = string(value["ZoneCnName"].GetString());
         m_zoneCnNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AvailableZone::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Types") && !value["Types"].IsNull())
     {
         if (!value["Types"].IsArray())
-            return CoreInternalOutcome(Error("response `AvailableZone.Types` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AvailableZone.Types` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Types"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome AvailableZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableZone.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableZone.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;

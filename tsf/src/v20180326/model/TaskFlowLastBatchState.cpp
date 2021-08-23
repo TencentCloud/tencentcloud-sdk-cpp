@@ -36,7 +36,7 @@ CoreInternalOutcome TaskFlowLastBatchState::Deserialize(const rapidjson::Value &
     {
         if (!value["FlowBatchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowLastBatchState.FlowBatchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowLastBatchState.FlowBatchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowBatchId = string(value["FlowBatchId"].GetString());
         m_flowBatchIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskFlowLastBatchState::Deserialize(const rapidjson::Value &
     {
         if (!value["FlowBatchLogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowLastBatchState.FlowBatchLogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowLastBatchState.FlowBatchLogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowBatchLogId = string(value["FlowBatchLogId"].GetString());
         m_flowBatchLogIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskFlowLastBatchState::Deserialize(const rapidjson::Value &
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowLastBatchState.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowLastBatchState.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;

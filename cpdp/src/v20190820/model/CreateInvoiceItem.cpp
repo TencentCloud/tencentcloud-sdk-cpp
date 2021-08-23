@@ -47,7 +47,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaxCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.TaxCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.TaxCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxCode = string(value["TaxCode"].GetString());
         m_taxCodeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["TotalPrice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.TotalPrice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.TotalPrice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalPrice = value["TotalPrice"].GetInt64();
         m_totalPriceHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaxRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.TaxRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.TaxRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taxRate = value["TaxRate"].GetInt64();
         m_taxRateHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaxAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.TaxAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.TaxAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taxAmount = value["TaxAmount"].GetInt64();
         m_taxAmountHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaxType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.TaxType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.TaxType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxType = string(value["TaxType"].GetString());
         m_taxTypeHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Models"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.Models` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.Models` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_models = string(value["Models"].GetString());
         m_modelsHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Total"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.Total` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.Total` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_total = string(value["Total"].GetString());
         m_totalHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Price"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.Price` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.Price` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_price = string(value["Price"].GetString());
         m_priceHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Discount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetInt64();
         m_discountHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["PreferentialPolicyFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.PreferentialPolicyFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.PreferentialPolicyFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_preferentialPolicyFlag = string(value["PreferentialPolicyFlag"].GetString());
         m_preferentialPolicyFlagHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["ZeroTaxFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.ZeroTaxFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.ZeroTaxFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zeroTaxFlag = string(value["ZeroTaxFlag"].GetString());
         m_zeroTaxFlagHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome CreateInvoiceItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["VatSpecialManagement"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceItem.VatSpecialManagement` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceItem.VatSpecialManagement` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vatSpecialManagement = string(value["VatSpecialManagement"].GetString());
         m_vatSpecialManagementHasBeenSet = true;

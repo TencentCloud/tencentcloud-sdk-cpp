@@ -48,7 +48,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memSize = value["MemSize"].GetInt64();
         m_memSizeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Volume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.Volume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.Volume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_volume = value["Volume"].GetInt64();
         m_volumeHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Service"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.Service` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.Service` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_service = string(value["Service"].GetString());
         m_serviceHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.ApplyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.ApplyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applyTime = string(value["ApplyTime"].GetString());
         m_applyTimeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.PayType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.PayType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payType = value["PayType"].GetInt64();
         m_payTypeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.ExpireFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.ExpireFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_expireFlag = value["ExpireFlag"].GetBool();
         m_expireFlagHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAutoRenew"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.IsAutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.IsAutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isAutoRenew = value["IsAutoRenew"].GetInt64();
         m_isAutoRenewHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome CdbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CdbInfo.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdbInfo.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;

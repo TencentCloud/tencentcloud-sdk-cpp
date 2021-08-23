@@ -45,7 +45,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["XPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.XPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.XPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xPos = string(value["XPos"].GetString());
         m_xPosHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["YPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.YPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.YPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yPos = string(value["YPos"].GetString());
         m_yPosHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["ImageTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.ImageTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.ImageTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageTemplate.Deserialize(value["ImageTemplate"]);
@@ -122,7 +122,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["TextTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.TextTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.TextTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_textTemplate.Deserialize(value["TextTemplate"]);
@@ -139,7 +139,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["SvgTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.SvgTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.SvgTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_svgTemplate.Deserialize(value["SvgTemplate"]);
@@ -156,7 +156,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome WatermarkTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["CoordinateOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WatermarkTemplate.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatermarkTemplate.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coordinateOrigin = string(value["CoordinateOrigin"].GetString());
         m_coordinateOriginHasBeenSet = true;

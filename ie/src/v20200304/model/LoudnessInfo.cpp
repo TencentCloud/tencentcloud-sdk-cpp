@@ -35,7 +35,7 @@ CoreInternalOutcome LoudnessInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Loudness"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoudnessInfo.Loudness` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoudnessInfo.Loudness` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_loudness = value["Loudness"].GetDouble();
         m_loudnessHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LoudnessInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoudnessRange"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoudnessInfo.LoudnessRange` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoudnessInfo.LoudnessRange` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_loudnessRange = value["LoudnessRange"].GetDouble();
         m_loudnessRangeHasBeenSet = true;

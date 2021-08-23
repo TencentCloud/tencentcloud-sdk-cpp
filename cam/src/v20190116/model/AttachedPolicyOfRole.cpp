@@ -41,7 +41,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["PolicyId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.PolicyId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.PolicyId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = value["PolicyId"].GetUint64();
         m_policyIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(value["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["PolicyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyType = string(value["PolicyType"].GetString());
         m_policyTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.CreateMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.CreateMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createMode = value["CreateMode"].GetUint64();
         m_createModeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["Deactived"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deactived = value["Deactived"].GetUint64();
         m_deactivedHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DeactivedDetail") && !value["DeactivedDetail"].IsNull())
     {
         if (!value["DeactivedDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.DeactivedDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.DeactivedDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeactivedDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const rapidjson::Value &va
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedPolicyOfRole.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

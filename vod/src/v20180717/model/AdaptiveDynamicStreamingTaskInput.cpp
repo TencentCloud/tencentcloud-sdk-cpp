@@ -36,7 +36,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     if (value.HasMember("SubtitleSet") && !value["SubtitleSet"].IsNull())
     {
         if (!value["SubtitleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.SubtitleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.SubtitleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubtitleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

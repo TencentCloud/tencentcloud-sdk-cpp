@@ -34,7 +34,7 @@ CoreInternalOutcome FieldRef::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FieldRef.FieldPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FieldRef.FieldPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fieldPath = string(value["FieldPath"].GetString());
         m_fieldPathHasBeenSet = true;

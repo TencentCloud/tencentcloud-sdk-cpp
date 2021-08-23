@@ -38,7 +38,7 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjs
     {
         if (!value["AllocatedProvisionedConcurrencyNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionProvisionedConcurrencyInfo.AllocatedProvisionedConcurrencyNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionProvisionedConcurrencyInfo.AllocatedProvisionedConcurrencyNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_allocatedProvisionedConcurrencyNum = value["AllocatedProvisionedConcurrencyNum"].GetUint64();
         m_allocatedProvisionedConcurrencyNumHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjs
     {
         if (!value["AvailableProvisionedConcurrencyNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionProvisionedConcurrencyInfo.AvailableProvisionedConcurrencyNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionProvisionedConcurrencyInfo.AvailableProvisionedConcurrencyNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_availableProvisionedConcurrencyNum = value["AvailableProvisionedConcurrencyNum"].GetUint64();
         m_availableProvisionedConcurrencyNumHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjs
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionProvisionedConcurrencyInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionProvisionedConcurrencyInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjs
     {
         if (!value["StatusReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionProvisionedConcurrencyInfo.StatusReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionProvisionedConcurrencyInfo.StatusReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusReason = string(value["StatusReason"].GetString());
         m_statusReasonHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjs
     {
         if (!value["Qualifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionProvisionedConcurrencyInfo.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionProvisionedConcurrencyInfo.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qualifier = string(value["Qualifier"].GetString());
         m_qualifierHasBeenSet = true;

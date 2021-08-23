@@ -41,7 +41,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.RetCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.RetCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_retCode = value["RetCode"].GetUint64();
         m_retCodeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInfo.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;

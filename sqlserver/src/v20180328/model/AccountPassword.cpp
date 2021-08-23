@@ -35,7 +35,7 @@ CoreInternalOutcome AccountPassword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountPassword.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountPassword.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AccountPassword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountPassword.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountPassword.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;

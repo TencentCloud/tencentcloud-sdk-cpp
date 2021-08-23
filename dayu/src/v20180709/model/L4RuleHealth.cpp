@@ -39,7 +39,7 @@ CoreInternalOutcome L4RuleHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L4RuleHealth.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleHealth.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome L4RuleHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4RuleHealth.Enable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleHealth.Enable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetUint64();
         m_enableHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome L4RuleHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeOut"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4RuleHealth.TimeOut` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleHealth.TimeOut` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeOut = value["TimeOut"].GetUint64();
         m_timeOutHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome L4RuleHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Interval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4RuleHealth.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleHealth.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetUint64();
         m_intervalHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome L4RuleHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KickNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4RuleHealth.KickNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleHealth.KickNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kickNum = value["KickNum"].GetUint64();
         m_kickNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome L4RuleHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AliveNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4RuleHealth.AliveNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleHealth.AliveNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_aliveNum = value["AliveNum"].GetUint64();
         m_aliveNumHasBeenSet = true;

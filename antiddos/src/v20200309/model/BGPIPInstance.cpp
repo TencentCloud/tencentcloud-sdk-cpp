@@ -50,7 +50,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceDetail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.InstanceDetail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.InstanceDetail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceDetail.Deserialize(value["InstanceDetail"]);
@@ -67,7 +67,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecificationLimit"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.SpecificationLimit` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.SpecificationLimit` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_specificationLimit.Deserialize(value["SpecificationLimit"]);
@@ -84,7 +84,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Usage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.Usage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.Usage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_usage.Deserialize(value["Usage"]);
@@ -101,7 +101,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.Region` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.Region` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_region.Deserialize(value["Region"]);
@@ -118,7 +118,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = string(value["ExpiredTime"].GetString());
         m_expiredTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.PackInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.PackInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_packInfo.Deserialize(value["PackInfo"]);
@@ -175,7 +175,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaticPackRelation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.StaticPackRelation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.StaticPackRelation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_staticPackRelation.Deserialize(value["StaticPackRelation"]);
@@ -192,7 +192,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tgw"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.Tgw` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.Tgw` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tgw = value["Tgw"].GetUint64();
         m_tgwHasBeenSet = true;
@@ -212,7 +212,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipAddressStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.EipAddressStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.EipAddressStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipAddressStatus = string(value["EipAddressStatus"].GetString());
         m_eipAddressStatusHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.EipFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.EipFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eipFlag = value["EipFlag"].GetInt64();
         m_eipFlagHasBeenSet = true;
@@ -232,7 +232,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipAddressPackRelation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.EipAddressPackRelation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.EipAddressPackRelation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eipAddressPackRelation.Deserialize(value["EipAddressPackRelation"]);
@@ -249,7 +249,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipAddressInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.EipAddressInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.EipAddressInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eipAddressInfo.Deserialize(value["EipAddressInfo"]);
@@ -266,7 +266,7 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstance.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome AccessKeyValueInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessKeyValueInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessKeyValueInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AccessKeyValueInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Value"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccessKeyValueInfo.Value` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessKeyValueInfo.Value` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_value.Deserialize(value["Value"]);

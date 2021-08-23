@@ -41,7 +41,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["TagTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.TagTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.TagTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tagTaskResult.Deserialize(value["TagTaskResult"]);
@@ -78,7 +78,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClassificationTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.ClassificationTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.ClassificationTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_classificationTaskResult.Deserialize(value["ClassificationTaskResult"]);
@@ -95,7 +95,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["StripTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.StripTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.StripTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_stripTaskResult.Deserialize(value["StripTaskResult"]);
@@ -112,7 +112,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["HighlightsTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.HighlightsTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.HighlightsTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_highlightsTaskResult.Deserialize(value["HighlightsTaskResult"]);
@@ -129,7 +129,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["CoverTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.CoverTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.CoverTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coverTaskResult.Deserialize(value["CoverTaskResult"]);
@@ -146,7 +146,7 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["OpeningEndingTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingTaskResult.OpeningEndingTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingTaskResult.OpeningEndingTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_openingEndingTaskResult.Deserialize(value["OpeningEndingTaskResult"]);

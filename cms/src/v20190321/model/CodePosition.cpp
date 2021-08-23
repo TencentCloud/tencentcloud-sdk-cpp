@@ -35,7 +35,7 @@ CoreInternalOutcome CodePosition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FloatX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CodePosition.FloatX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodePosition.FloatX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_floatX = value["FloatX"].GetDouble();
         m_floatXHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CodePosition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FloatY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CodePosition.FloatY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodePosition.FloatY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_floatY = value["FloatY"].GetDouble();
         m_floatYHasBeenSet = true;

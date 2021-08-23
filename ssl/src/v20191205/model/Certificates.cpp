@@ -63,7 +63,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = string(value["OwnerUin"].GetString());
         m_ownerUinHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["From"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.From` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.From` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_from = string(value["From"].GetString());
         m_fromHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.PackageType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.PackageType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageType = string(value["PackageType"].GetString());
         m_packageTypeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.CertificateType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertificateType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateType = string(value["CertificateType"].GetString());
         m_certificateTypeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductZhName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.ProductZhName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.ProductZhName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productZhName = string(value["ProductZhName"].GetString());
         m_productZhNameHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Certificates.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateExtra"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Certificates.CertificateExtra` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertificateExtra` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_certificateExtra.Deserialize(value["CertificateExtra"]);
@@ -170,7 +170,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulnerabilityStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.VulnerabilityStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.VulnerabilityStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulnerabilityStatus = string(value["VulnerabilityStatus"].GetString());
         m_vulnerabilityStatusHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.StatusMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMsg = string(value["StatusMsg"].GetString());
         m_statusMsgHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VerifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.VerifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.VerifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyType = string(value["VerifyType"].GetString());
         m_verifyTypeHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.CertBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certBeginTime = string(value["CertBeginTime"].GetString());
         m_certBeginTimeHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certEndTime = string(value["CertEndTime"].GetString());
         m_certEndTimeHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValidityPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.ValidityPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.ValidityPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validityPeriod = string(value["ValidityPeriod"].GetString());
         m_validityPeriodHasBeenSet = true;
@@ -230,7 +230,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsertTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.InsertTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.InsertTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = string(value["InsertTime"].GetString());
         m_insertTimeHasBeenSet = true;
@@ -240,7 +240,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(value["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;
@@ -249,7 +249,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubjectAltName") && !value["SubjectAltName"].IsNull())
     {
         if (!value["SubjectAltName"].IsArray())
-            return CoreInternalOutcome(Error("response `Certificates.SubjectAltName` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Certificates.SubjectAltName` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubjectAltName"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -263,7 +263,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.PackageTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.PackageTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageTypeName = string(value["PackageTypeName"].GetString());
         m_packageTypeNameHasBeenSet = true;
@@ -273,7 +273,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Certificates.StatusName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.StatusName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusName = string(value["StatusName"].GetString());
         m_statusNameHasBeenSet = true;
@@ -283,7 +283,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsVip"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Certificates.IsVip` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsVip` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isVip = value["IsVip"].GetBool();
         m_isVipHasBeenSet = true;
@@ -293,7 +293,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDv"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Certificates.IsDv` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsDv` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDv = value["IsDv"].GetBool();
         m_isDvHasBeenSet = true;
@@ -303,7 +303,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsWildcard"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Certificates.IsWildcard` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsWildcard` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isWildcard = value["IsWildcard"].GetBool();
         m_isWildcardHasBeenSet = true;
@@ -313,7 +313,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsVulnerability"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Certificates.IsVulnerability` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsVulnerability` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isVulnerability = value["IsVulnerability"].GetBool();
         m_isVulnerabilityHasBeenSet = true;
@@ -323,7 +323,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewAble"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Certificates.RenewAble` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.RenewAble` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_renewAble = value["RenewAble"].GetBool();
         m_renewAbleHasBeenSet = true;
@@ -333,7 +333,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Certificates.ProjectInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.ProjectInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_projectInfo.Deserialize(value["ProjectInfo"]);
@@ -349,7 +349,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BoundResource") && !value["BoundResource"].IsNull())
     {
         if (!value["BoundResource"].IsArray())
-            return CoreInternalOutcome(Error("response `Certificates.BoundResource` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Certificates.BoundResource` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BoundResource"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -363,7 +363,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Deployable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Certificates.Deployable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Certificates.Deployable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deployable = value["Deployable"].GetBool();
         m_deployableHasBeenSet = true;
@@ -372,7 +372,7 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Certificates.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Certificates.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

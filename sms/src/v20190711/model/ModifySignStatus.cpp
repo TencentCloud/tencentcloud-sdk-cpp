@@ -35,7 +35,7 @@ CoreInternalOutcome ModifySignStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ModifySignStatus.SignId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifySignStatus.SignId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_signId = value["SignId"].GetUint64();
         m_signIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ModifySignStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignApplyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifySignStatus.SignApplyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifySignStatus.SignApplyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signApplyId = string(value["SignApplyId"].GetString());
         m_signApplyIdHasBeenSet = true;

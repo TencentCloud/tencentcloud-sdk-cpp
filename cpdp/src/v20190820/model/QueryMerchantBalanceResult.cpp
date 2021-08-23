@@ -35,7 +35,7 @@ CoreInternalOutcome QueryMerchantBalanceResult::Deserialize(const rapidjson::Val
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryMerchantBalanceResult.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryMerchantBalanceResult.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome QueryMerchantBalanceResult::Deserialize(const rapidjson::Val
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueryMerchantBalanceResult.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryMerchantBalanceResult.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);

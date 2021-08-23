@@ -46,16 +46,16 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["IsEnableCmqNotify"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsEnableCmqNotify` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsEnableCmqNotify` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isEnableCmqNotify = rsp["IsEnableCmqNotify"].GetInt64();
         m_isEnableCmqNotifyHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["ReadWriteAttribute"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadWriteAttribute` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadWriteAttribute` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readWriteAttribute = rsp["ReadWriteAttribute"].GetInt64();
         m_readWriteAttributeHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(rsp["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["AuditStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuditStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_auditStatus = rsp["AuditStatus"].GetInt64();
         m_auditStatusHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["AuditName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditName = string(rsp["AuditName"].GetString());
         m_auditNameHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["CosRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosRegion = string(rsp["CosRegion"].GetString());
         m_cosRegionHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["CmqQueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqQueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqQueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqQueueName = string(rsp["CmqQueueName"].GetString());
         m_cmqQueueNameHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["KmsAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KmsAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KmsAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kmsAlias = string(rsp["KmsAlias"].GetString());
         m_kmsAliasHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["KmsRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KmsRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KmsRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kmsRegion = string(rsp["KmsRegion"].GetString());
         m_kmsRegionHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["IsEnableKmsEncry"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsEnableKmsEncry` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsEnableKmsEncry` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isEnableKmsEncry = rsp["IsEnableKmsEncry"].GetInt64();
         m_isEnableKmsEncryHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["CosBucketName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosBucketName = string(rsp["CosBucketName"].GetString());
         m_cosBucketNameHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["CmqRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqRegion = string(rsp["CmqRegion"].GetString());
         m_cmqRegionHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
     {
         if (!rsp["LogFilePrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogFilePrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogFilePrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logFilePrefix = string(rsp["LogFilePrefix"].GetString());
         m_logFilePrefixHasBeenSet = true;

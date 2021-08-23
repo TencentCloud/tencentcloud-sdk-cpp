@@ -38,7 +38,7 @@ CoreInternalOutcome PGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupInfo.PGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupInfo.PGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pGroupId = string(value["PGroupId"].GetString());
         m_pGroupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DescInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupInfo.DescInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupInfo.DescInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_descInfo = string(value["DescInfo"].GetString());
         m_descInfoHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroupInfo.CDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupInfo.CDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cDate = string(value["CDate"].GetString());
         m_cDateHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindCfsNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PGroupInfo.BindCfsNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroupInfo.BindCfsNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindCfsNum = value["BindCfsNum"].GetInt64();
         m_bindCfsNumHasBeenSet = true;

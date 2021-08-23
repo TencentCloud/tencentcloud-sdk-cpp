@@ -40,7 +40,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadOnly"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.ReadOnly` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.ReadOnly` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readOnly = value["ReadOnly"].GetInt64();
         m_readOnlyHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DelayThresh"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBAccount.DelayThresh` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBAccount.DelayThresh` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_delayThresh = value["DelayThresh"].GetInt64();
         m_delayThreshHasBeenSet = true;

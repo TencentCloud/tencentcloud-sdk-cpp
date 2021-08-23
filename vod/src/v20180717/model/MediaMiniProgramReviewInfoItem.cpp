@@ -38,7 +38,7 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const rapidjson:
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewInfoItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const rapidjson:
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewInfoItem.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const rapidjson:
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewInfoItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const rapidjson:
     {
         if (!value["ReviewResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewInfoItem.ReviewResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reviewResult = string(value["ReviewResult"].GetString());
         m_reviewResultHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const rapidjson:
     if (value.HasMember("ReviewSummary") && !value["ReviewSummary"].IsNull())
     {
         if (!value["ReviewSummary"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewSummary` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaMiniProgramReviewInfoItem.ReviewSummary` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReviewSummary"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

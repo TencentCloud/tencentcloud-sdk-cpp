@@ -36,7 +36,7 @@ CoreInternalOutcome PoliticalConfigureInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["ImgReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticalConfigureInfo.ImgReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticalConfigureInfo.ImgReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imgReviewInfo.Deserialize(value["ImgReviewInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome PoliticalConfigureInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["AsrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticalConfigureInfo.AsrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticalConfigureInfo.AsrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrReviewInfo.Deserialize(value["AsrReviewInfo"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome PoliticalConfigureInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["OcrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticalConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticalConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrReviewInfo.Deserialize(value["OcrReviewInfo"]);

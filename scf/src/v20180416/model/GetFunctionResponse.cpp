@@ -75,16 +75,16 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -95,11 +95,11 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -107,7 +107,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["ModTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modTime = string(rsp["ModTime"].GetString());
         m_modTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeInfo = string(rsp["CodeInfo"].GetString());
         m_codeInfoHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Triggers") && !rsp["Triggers"].IsNull())
     {
         if (!rsp["Triggers"].IsArray())
-            return CoreInternalOutcome(Error("response `Triggers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Triggers` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Triggers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -157,7 +157,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Handler"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Handler` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Handler` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_handler = string(rsp["Handler"].GetString());
         m_handlerHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CodeSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_codeSize = rsp["CodeSize"].GetInt64();
         m_codeSizeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Timeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = rsp["Timeout"].GetInt64();
         m_timeoutHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["FunctionVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionVersion = string(rsp["FunctionVersion"].GetString());
         m_functionVersionHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["MemorySize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MemorySize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MemorySize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memorySize = rsp["MemorySize"].GetInt64();
         m_memorySizeHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Runtime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Runtime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runtime = string(rsp["Runtime"].GetString());
         m_runtimeHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["FunctionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionName = string(rsp["FunctionName"].GetString());
         m_functionNameHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["VpcConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VpcConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vpcConfig.Deserialize(rsp["VpcConfig"]);
@@ -244,7 +244,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["UseGpu"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UseGpu` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UseGpu` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_useGpu = string(rsp["UseGpu"].GetString());
         m_useGpuHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Environment"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Environment` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Environment` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_environment.Deserialize(rsp["Environment"]);
@@ -271,7 +271,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeResult = string(rsp["CodeResult"].GetString());
         m_codeResultHasBeenSet = true;
@@ -281,7 +281,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeError"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeError` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeError` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeError = string(rsp["CodeError"].GetString());
         m_codeErrorHasBeenSet = true;
@@ -291,7 +291,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["ErrNo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ErrNo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrNo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errNo = rsp["ErrNo"].GetInt64();
         m_errNoHasBeenSet = true;
@@ -301,7 +301,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(rsp["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(rsp["Role"].GetString());
         m_roleHasBeenSet = true;
@@ -321,7 +321,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["InstallDependency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstallDependency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstallDependency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_installDependency = string(rsp["InstallDependency"].GetString());
         m_installDependencyHasBeenSet = true;
@@ -331,7 +331,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -341,7 +341,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(rsp["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -351,7 +351,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["ClsLogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsLogsetId = string(rsp["ClsLogsetId"].GetString());
         m_clsLogsetIdHasBeenSet = true;
@@ -361,7 +361,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["ClsTopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsTopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsTopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsTopicId = string(rsp["ClsTopicId"].GetString());
         m_clsTopicIdHasBeenSet = true;
@@ -371,7 +371,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["FunctionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionId = string(rsp["FunctionId"].GetString());
         m_functionIdHasBeenSet = true;
@@ -380,7 +380,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -401,7 +401,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["EipConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EipConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eipConfig.Deserialize(rsp["EipConfig"]);
@@ -418,7 +418,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["AccessInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccessInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_accessInfo.Deserialize(rsp["AccessInfo"]);
@@ -435,7 +435,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -445,7 +445,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["L5Enable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L5Enable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L5Enable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_l5Enable = string(rsp["L5Enable"].GetString());
         m_l5EnableHasBeenSet = true;
@@ -454,7 +454,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Layers") && !rsp["Layers"].IsNull())
     {
         if (!rsp["Layers"].IsArray())
-            return CoreInternalOutcome(Error("response `Layers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Layers` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Layers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -475,7 +475,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeadLetterConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_deadLetterConfig.Deserialize(rsp["DeadLetterConfig"]);
@@ -492,7 +492,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(rsp["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -502,7 +502,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["PublicNetConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PublicNetConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicNetConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_publicNetConfig.Deserialize(rsp["PublicNetConfig"]);
@@ -519,7 +519,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["OnsEnable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OnsEnable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OnsEnable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_onsEnable = string(rsp["OnsEnable"].GetString());
         m_onsEnableHasBeenSet = true;
@@ -529,7 +529,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["CfsConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CfsConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfsConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cfsConfig.Deserialize(rsp["CfsConfig"]);
@@ -546,7 +546,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["AvailableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_availableStatus = string(rsp["AvailableStatus"].GetString());
         m_availableStatusHasBeenSet = true;
@@ -556,7 +556,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Qualifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Qualifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Qualifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qualifier = string(rsp["Qualifier"].GetString());
         m_qualifierHasBeenSet = true;
@@ -566,7 +566,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["InitTimeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InitTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InitTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_initTimeout = rsp["InitTimeout"].GetInt64();
         m_initTimeoutHasBeenSet = true;
@@ -575,7 +575,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     if (rsp.HasMember("StatusReasons") && !rsp["StatusReasons"].IsNull())
     {
         if (!rsp["StatusReasons"].IsArray())
-            return CoreInternalOutcome(Error("response `StatusReasons` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StatusReasons` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["StatusReasons"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -596,7 +596,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["AsyncRunEnable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncRunEnable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncRunEnable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asyncRunEnable = string(rsp["AsyncRunEnable"].GetString());
         m_asyncRunEnableHasBeenSet = true;
@@ -606,7 +606,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         if (!rsp["TraceEnable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TraceEnable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TraceEnable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceEnable = string(rsp["TraceEnable"].GetString());
         m_traceEnableHasBeenSet = true;

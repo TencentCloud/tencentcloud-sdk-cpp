@@ -35,7 +35,7 @@ CoreInternalOutcome AssetZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetZone.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetZone.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AssetZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneEng"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetZone.ZoneEng` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetZone.ZoneEng` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneEng = string(value["ZoneEng"].GetString());
         m_zoneEngHasBeenSet = true;

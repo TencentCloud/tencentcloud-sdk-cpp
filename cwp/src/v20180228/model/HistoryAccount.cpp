@@ -40,7 +40,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.ModifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.ModifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyType = string(value["ModifyType"].GetString());
         m_modifyTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome HistoryAccount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistoryAccount.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistoryAccount.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

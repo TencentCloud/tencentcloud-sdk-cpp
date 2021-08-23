@@ -36,7 +36,7 @@ CoreInternalOutcome RouteInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteTableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteInfo.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteInfo.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableName = string(value["RouteTableName"].GetString());
         m_routeTableNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RouteInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteInfo.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteInfo.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationCidrBlock = string(value["DestinationCidrBlock"].GetString());
         m_destinationCidrBlockHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RouteInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteInfo.GatewayIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteInfo.GatewayIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayIp = string(value["GatewayIp"].GetString());
         m_gatewayIpHasBeenSet = true;

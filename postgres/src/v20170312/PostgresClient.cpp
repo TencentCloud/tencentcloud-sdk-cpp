@@ -1029,6 +1029,92 @@ PostgresClient::DescribeServerlessDBInstancesOutcomeCallable PostgresClient::Des
     return task->get_future();
 }
 
+PostgresClient::DescribeSlowQueryAnalysisOutcome PostgresClient::DescribeSlowQueryAnalysis(const DescribeSlowQueryAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowQueryAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowQueryAnalysisResponse rsp = DescribeSlowQueryAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowQueryAnalysisOutcome(rsp);
+        else
+            return DescribeSlowQueryAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowQueryAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeSlowQueryAnalysisAsync(const DescribeSlowQueryAnalysisRequest& request, const DescribeSlowQueryAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowQueryAnalysis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeSlowQueryAnalysisOutcomeCallable PostgresClient::DescribeSlowQueryAnalysisCallable(const DescribeSlowQueryAnalysisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowQueryAnalysisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowQueryAnalysis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeSlowQueryListOutcome PostgresClient::DescribeSlowQueryList(const DescribeSlowQueryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowQueryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowQueryListResponse rsp = DescribeSlowQueryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowQueryListOutcome(rsp);
+        else
+            return DescribeSlowQueryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowQueryListOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeSlowQueryListAsync(const DescribeSlowQueryListRequest& request, const DescribeSlowQueryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowQueryList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeSlowQueryListOutcomeCallable PostgresClient::DescribeSlowQueryListCallable(const DescribeSlowQueryListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowQueryListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowQueryList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeZonesOutcome PostgresClient::DescribeZones(const DescribeZonesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZones");

@@ -35,7 +35,7 @@ CoreInternalOutcome StaffStatusExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusExtra.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusExtra.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StaffStatusExtra::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direct"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusExtra.Direct` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusExtra.Direct` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_direct = string(value["Direct"].GetString());
         m_directHasBeenSet = true;

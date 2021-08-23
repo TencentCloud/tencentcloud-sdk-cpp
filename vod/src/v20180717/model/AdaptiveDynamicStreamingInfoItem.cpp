@@ -37,7 +37,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingInfoItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
     {
         if (!value["Package"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingInfoItem.Package` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.Package` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_package = string(value["Package"].GetString());
         m_packageHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
     {
         if (!value["DrmType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingInfoItem.DrmType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.DrmType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_drmType = string(value["DrmType"].GetString());
         m_drmTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingInfoItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

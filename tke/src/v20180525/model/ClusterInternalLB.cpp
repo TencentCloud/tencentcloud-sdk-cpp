@@ -35,7 +35,7 @@ CoreInternalOutcome ClusterInternalLB::Deserialize(const rapidjson::Value &value
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterInternalLB.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInternalLB.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ClusterInternalLB::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInternalLB.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInternalLB.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;

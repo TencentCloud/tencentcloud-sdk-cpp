@@ -37,7 +37,7 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailResult.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailResult.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evilLabel = string(value["EvilLabel"].GetString());
         m_evilLabelHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DetailResult.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailResult.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetUint64();
         m_evilTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailResult.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailResult.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DetailResult.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailResult.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetUint64();
         m_scoreHasBeenSet = true;

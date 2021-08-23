@@ -36,7 +36,7 @@ CoreInternalOutcome WordItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WordItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordItem.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome WordItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WordItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome WordItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WordItem.Pos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WordItem.Pos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pos = string(value["Pos"].GetString());
         m_posHasBeenSet = true;

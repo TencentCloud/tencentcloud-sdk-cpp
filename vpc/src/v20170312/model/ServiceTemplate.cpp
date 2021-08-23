@@ -37,7 +37,7 @@ CoreInternalOutcome ServiceTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplate.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplate.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateId = string(value["ServiceTemplateId"].GetString());
         m_serviceTemplateIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ServiceTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceTemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplate.ServiceTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplate.ServiceTemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateName = string(value["ServiceTemplateName"].GetString());
         m_serviceTemplateNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ServiceTemplate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ServiceSet") && !value["ServiceSet"].IsNull())
     {
         if (!value["ServiceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceTemplate.ServiceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplate.ServiceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServiceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome ServiceTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplate.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplate.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

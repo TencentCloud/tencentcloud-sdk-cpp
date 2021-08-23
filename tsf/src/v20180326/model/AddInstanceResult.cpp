@@ -36,7 +36,7 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const rapidjson::Value &value
     if (value.HasMember("FailedInstanceIds") && !value["FailedInstanceIds"].IsNull())
     {
         if (!value["FailedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `AddInstanceResult.FailedInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddInstanceResult.FailedInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FailedInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const rapidjson::Value &value
     if (value.HasMember("SuccInstanceIds") && !value["SuccInstanceIds"].IsNull())
     {
         if (!value["SuccInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `AddInstanceResult.SuccInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddInstanceResult.SuccInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SuccInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const rapidjson::Value &value
     if (value.HasMember("TimeoutInstanceIds") && !value["TimeoutInstanceIds"].IsNull())
     {
         if (!value["TimeoutInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `AddInstanceResult.TimeoutInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddInstanceResult.TimeoutInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TimeoutInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const rapidjson::Value &value
     if (value.HasMember("FailedReasons") && !value["FailedReasons"].IsNull())
     {
         if (!value["FailedReasons"].IsArray())
-            return CoreInternalOutcome(Error("response `AddInstanceResult.FailedReasons` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddInstanceResult.FailedReasons` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FailedReasons"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

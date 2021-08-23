@@ -43,7 +43,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParamType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.ParamType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.ParamType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paramType = string(value["ParamType"].GetString());
         m_paramTypeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Default"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.Default` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.Default` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_default = string(value["Default"].GetString());
         m_defaultHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentValue = string(value["CurrentValue"].GetString());
         m_currentValueHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedReboot"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.NeedReboot` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.NeedReboot` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needReboot = value["NeedReboot"].GetInt64();
         m_needRebootHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Max"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.Max` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.Max` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_max = value["Max"].GetInt64();
         m_maxHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Min"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.Min` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.Min` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_min = value["Min"].GetInt64();
         m_minHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EnumValue") && !value["EnumValue"].IsNull())
     {
         if (!value["EnumValue"].IsArray())
-            return CoreInternalOutcome(Error("response `ParameterDetail.EnumValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.EnumValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnumValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -136,7 +136,7 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParameterDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

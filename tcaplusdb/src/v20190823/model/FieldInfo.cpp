@@ -37,7 +37,7 @@ CoreInternalOutcome FieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FieldInfo.FieldName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FieldInfo.FieldName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fieldName = string(value["FieldName"].GetString());
         m_fieldNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPrimaryKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FieldInfo.IsPrimaryKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FieldInfo.IsPrimaryKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isPrimaryKey = string(value["IsPrimaryKey"].GetString());
         m_isPrimaryKeyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FieldInfo.FieldType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FieldInfo.FieldType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fieldType = string(value["FieldType"].GetString());
         m_fieldTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FieldInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FieldSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FieldInfo.FieldSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FieldInfo.FieldSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fieldSize = value["FieldSize"].GetInt64();
         m_fieldSizeHasBeenSet = true;

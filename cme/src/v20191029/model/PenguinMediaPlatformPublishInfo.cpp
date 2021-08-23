@@ -37,7 +37,7 @@ CoreInternalOutcome PenguinMediaPlatformPublishInfo::Deserialize(const rapidjson
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PenguinMediaPlatformPublishInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PenguinMediaPlatformPublishInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PenguinMediaPlatformPublishInfo::Deserialize(const rapidjson
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PenguinMediaPlatformPublishInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PenguinMediaPlatformPublishInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PenguinMediaPlatformPublishInfo::Deserialize(const rapidjson
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `PenguinMediaPlatformPublishInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PenguinMediaPlatformPublishInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome PenguinMediaPlatformPublishInfo::Deserialize(const rapidjson
     {
         if (!value["Category"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PenguinMediaPlatformPublishInfo.Category` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PenguinMediaPlatformPublishInfo.Category` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_category = value["Category"].GetInt64();
         m_categoryHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome TaskListData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PageNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskListData.PageNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskListData.PageNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageNumber = value["PageNumber"].GetUint64();
         m_pageNumberHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TaskListData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PageSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskListData.PageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskListData.PageSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageSize = value["PageSize"].GetUint64();
         m_pageSizeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TaskListData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskListData.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskListData.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome TaskListData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TaskList") && !value["TaskList"].IsNull())
     {
         if (!value["TaskList"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskListData.TaskList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskListData.TaskList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TaskList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

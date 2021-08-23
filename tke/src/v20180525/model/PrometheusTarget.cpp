@@ -39,7 +39,7 @@ CoreInternalOutcome PrometheusTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTarget.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTarget.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PrometheusTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTarget.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTarget.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PrometheusTarget::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusTarget.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTarget.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome PrometheusTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScrape"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTarget.LastScrape` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTarget.LastScrape` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScrape = string(value["LastScrape"].GetString());
         m_lastScrapeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PrometheusTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScrapeDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTarget.ScrapeDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTarget.ScrapeDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_scrapeDuration = value["ScrapeDuration"].GetDouble();
         m_scrapeDurationHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome PrometheusTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusTarget.Error` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusTarget.Error` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_error = string(value["Error"].GetString());
         m_errorHasBeenSet = true;

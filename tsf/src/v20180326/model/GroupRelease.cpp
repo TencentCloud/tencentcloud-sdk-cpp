@@ -41,7 +41,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupRelease.PackageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.PackageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageId = string(value["PackageId"].GetString());
         m_packageIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupRelease.PackageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.PackageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageName = string(value["PackageName"].GetString());
         m_packageNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupRelease.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageVersion = string(value["PackageVersion"].GetString());
         m_packageVersionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupRelease.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupRelease.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublicConfigReleaseList") && !value["PublicConfigReleaseList"].IsNull())
     {
         if (!value["PublicConfigReleaseList"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupRelease.PublicConfigReleaseList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.PublicConfigReleaseList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicConfigReleaseList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ConfigReleaseList") && !value["ConfigReleaseList"].IsNull())
     {
         if (!value["ConfigReleaseList"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupRelease.ConfigReleaseList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.ConfigReleaseList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ConfigReleaseList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -130,7 +130,7 @@ CoreInternalOutcome GroupRelease::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileConfigReleaseList") && !value["FileConfigReleaseList"].IsNull())
     {
         if (!value["FileConfigReleaseList"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupRelease.FileConfigReleaseList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupRelease.FileConfigReleaseList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileConfigReleaseList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(value["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.RoomId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.RoomId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = string(value["RoomId"].GetString());
         m_roomIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openId = string(value["OpenId"].GetString());
         m_openIdHasBeenSet = true;

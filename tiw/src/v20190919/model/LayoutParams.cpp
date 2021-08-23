@@ -38,7 +38,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.X` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.X` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetInt64();
         m_xHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.Y` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.Y` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetInt64();
         m_yHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZOrder"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayoutParams.ZOrder` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.ZOrder` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zOrder = value["ZOrder"].GetInt64();
         m_zOrderHasBeenSet = true;

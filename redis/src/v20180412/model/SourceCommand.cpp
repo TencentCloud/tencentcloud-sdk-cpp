@@ -35,7 +35,7 @@ CoreInternalOutcome SourceCommand::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cmd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceCommand.Cmd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceCommand.Cmd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmd = string(value["Cmd"].GetString());
         m_cmdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SourceCommand::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SourceCommand.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceCommand.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

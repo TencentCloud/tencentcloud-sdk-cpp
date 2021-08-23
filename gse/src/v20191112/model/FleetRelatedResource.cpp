@@ -36,7 +36,7 @@ CoreInternalOutcome FleetRelatedResource::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetRelatedResource.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetRelatedResource.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FleetRelatedResource::Deserialize(const rapidjson::Value &va
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetRelatedResource.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetRelatedResource.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FleetRelatedResource::Deserialize(const rapidjson::Value &va
     {
         if (!value["ResourceRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetRelatedResource.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetRelatedResource.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceRegion = string(value["ResourceRegion"].GetString());
         m_resourceRegionHasBeenSet = true;

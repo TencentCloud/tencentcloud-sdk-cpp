@@ -35,7 +35,7 @@ CoreInternalOutcome SvgWatermarkInputForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SvgWatermarkInputForUpdate.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SvgWatermarkInputForUpdate.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SvgWatermarkInputForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SvgWatermarkInputForUpdate.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SvgWatermarkInputForUpdate.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;

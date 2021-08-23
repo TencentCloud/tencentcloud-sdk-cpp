@@ -36,7 +36,7 @@ CoreInternalOutcome VpnGatewayQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpnGatewayQuota.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGatewayQuota.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome VpnGatewayQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGatewayQuota.Cname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGatewayQuota.Cname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cname = string(value["Cname"].GetString());
         m_cnameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome VpnGatewayQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGatewayQuota.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGatewayQuota.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

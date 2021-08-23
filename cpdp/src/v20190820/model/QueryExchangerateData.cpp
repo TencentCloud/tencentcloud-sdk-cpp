@@ -38,7 +38,7 @@ CoreInternalOutcome QueryExchangerateData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Rate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryExchangerateData.Rate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateData.Rate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rate = string(value["Rate"].GetString());
         m_rateHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome QueryExchangerateData::Deserialize(const rapidjson::Value &v
     {
         if (!value["SourceCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryExchangerateData.SourceCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateData.SourceCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceCurrency = string(value["SourceCurrency"].GetString());
         m_sourceCurrencyHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome QueryExchangerateData::Deserialize(const rapidjson::Value &v
     {
         if (!value["TargetCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryExchangerateData.TargetCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateData.TargetCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetCurrency = string(value["TargetCurrency"].GetString());
         m_targetCurrencyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome QueryExchangerateData::Deserialize(const rapidjson::Value &v
     {
         if (!value["RateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryExchangerateData.RateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateData.RateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rateTime = string(value["RateTime"].GetString());
         m_rateTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome QueryExchangerateData::Deserialize(const rapidjson::Value &v
     {
         if (!value["BaseCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryExchangerateData.BaseCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateData.BaseCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_baseCurrency = string(value["BaseCurrency"].GetString());
         m_baseCurrencyHasBeenSet = true;

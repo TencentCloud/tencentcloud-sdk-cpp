@@ -38,16 +38,16 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
     {
         if (!rsp["LicenseNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_licenseNumber = string(rsp["LicenseNumber"].GetString());
         m_licenseNumberHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
     {
         if (!rsp["StartDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startDate = string(rsp["StartDate"].GetString());
         m_startDateHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
     {
         if (!rsp["EndDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endDate = string(rsp["EndDate"].GetString());
         m_endDateHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome RideHailingDriverLicenseOCRResponse::Deserialize(const strin
     {
         if (!rsp["ReleaseDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReleaseDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReleaseDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseDate = string(rsp["ReleaseDate"].GetString());
         m_releaseDateHasBeenSet = true;

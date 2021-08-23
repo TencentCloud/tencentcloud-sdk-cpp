@@ -38,7 +38,7 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassificationTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisResult.ClassificationTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.ClassificationTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_classificationTask.Deserialize(value["ClassificationTask"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisResult.CoverTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.CoverTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coverTask.Deserialize(value["CoverTask"]);
@@ -82,7 +82,7 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisResult.TagTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.TagTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tagTask.Deserialize(value["TagTask"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrameTagTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisResult.FrameTagTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.FrameTagTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_frameTagTask.Deserialize(value["FrameTagTask"]);

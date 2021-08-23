@@ -41,7 +41,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(value["Token"].GetString());
         m_tokenHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EtlIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.EtlIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.EtlIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_etlIp = string(value["EtlIp"].GetString());
         m_etlIpHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EtlPort"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.EtlPort` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.EtlPort` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_etlPort = string(value["EtlPort"].GetString());
         m_etlPortHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ByHandAccess"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.ByHandAccess` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.ByHandAccess` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_byHandAccess = string(value["ByHandAccess"].GetString());
         m_byHandAccessHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ByShellAccess"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.ByShellAccess` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.ByShellAccess` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_byShellAccess = string(value["ByShellAccess"].GetString());
         m_byShellAccessHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkyWalkingPort"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.SkyWalkingPort` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.SkyWalkingPort` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_skyWalkingPort = string(value["SkyWalkingPort"].GetString());
         m_skyWalkingPortHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZipkinPort"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.ZipkinPort` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.ZipkinPort` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zipkinPort = string(value["ZipkinPort"].GetString());
         m_zipkinPortHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JaegerPort"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentShell.JaegerPort` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentShell.JaegerPort` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jaegerPort = string(value["JaegerPort"].GetString());
         m_jaegerPortHasBeenSet = true;

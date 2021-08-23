@@ -42,7 +42,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.BackupType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_backupType = value["BackupType"].GetUint64();
         m_backupTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.BackupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupName = string(value["BackupName"].GetString());
         m_backupNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.BackupDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupDesc = string(value["BackupDesc"].GetString());
         m_backupDescHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.BackupSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_backupSize = value["BackupSize"].GetUint64();
         m_backupSizeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupMethod"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BackupInfo.BackupMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupMethod` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_backupMethod = value["BackupMethod"].GetUint64();
         m_backupMethodHasBeenSet = true;

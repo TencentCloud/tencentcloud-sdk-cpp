@@ -47,7 +47,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BundleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bundle.BundleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.BundleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bundleId = string(value["BundleId"].GetString());
         m_bundleIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Bundle.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SystemDiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bundle.SystemDiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.SystemDiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_systemDiskType = string(value["SystemDiskType"].GetString());
         m_systemDiskTypeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Bundle.SystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.SystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_systemDiskSize = value["SystemDiskSize"].GetInt64();
         m_systemDiskSizeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonthlyTraffic"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Bundle.MonthlyTraffic` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.MonthlyTraffic` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_monthlyTraffic = value["MonthlyTraffic"].GetInt64();
         m_monthlyTrafficHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SupportLinuxUnixPlatform"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Bundle.SupportLinuxUnixPlatform` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.SupportLinuxUnixPlatform` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_supportLinuxUnixPlatform = value["SupportLinuxUnixPlatform"].GetBool();
         m_supportLinuxUnixPlatformHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SupportWindowsPlatform"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Bundle.SupportWindowsPlatform` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.SupportWindowsPlatform` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_supportWindowsPlatform = value["SupportWindowsPlatform"].GetBool();
         m_supportWindowsPlatformHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Bundle.Price` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.Price` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_price.Deserialize(value["Price"]);
@@ -134,7 +134,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CPU"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Bundle.CPU` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.CPU` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cPU = value["CPU"].GetInt64();
         m_cPUHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetMaxBandwidthOut"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Bundle.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetUint64();
         m_internetMaxBandwidthOutHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bundle.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetChargeType = string(value["InternetChargeType"].GetString());
         m_internetChargeTypeHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BundleSalesState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bundle.BundleSalesState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.BundleSalesState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bundleSalesState = string(value["BundleSalesState"].GetString());
         m_bundleSalesStateHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BundleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bundle.BundleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.BundleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bundleType = string(value["BundleType"].GetString());
         m_bundleTypeHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BundleDisplayLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bundle.BundleDisplayLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bundle.BundleDisplayLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bundleDisplayLabel = string(value["BundleDisplayLabel"].GetString());
         m_bundleDisplayLabelHasBeenSet = true;

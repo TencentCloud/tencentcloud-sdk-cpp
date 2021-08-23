@@ -39,7 +39,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountPointId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.MountPointId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.MountPointId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPointId = string(value["MountPointId"].GetString());
         m_mountPointIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountPointName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.MountPointName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.MountPointName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPointName = string(value["MountPointName"].GetString());
         m_mountPointNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemId = string(value["FileSystemId"].GetString());
         m_fileSystemIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AccessGroupIds") && !value["AccessGroupIds"].IsNull())
     {
         if (!value["AccessGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `MountPoint.AccessGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.AccessGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AccessGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

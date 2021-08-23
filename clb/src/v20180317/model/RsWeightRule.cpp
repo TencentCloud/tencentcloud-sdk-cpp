@@ -39,7 +39,7 @@ CoreInternalOutcome RsWeightRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsWeightRule.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsWeightRule.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RsWeightRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `RsWeightRule.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RsWeightRule.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -69,7 +69,7 @@ CoreInternalOutcome RsWeightRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsWeightRule.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsWeightRule.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RsWeightRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsWeightRule.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsWeightRule.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RsWeightRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsWeightRule.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsWeightRule.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome RsWeightRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RsWeightRule.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsWeightRule.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;

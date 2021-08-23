@@ -61,7 +61,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.EipId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.EipId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipId = string(value["EipId"].GetString());
         m_eipIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.EipName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.EipName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipName = string(value["EipName"].GetString());
         m_eipNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Eip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.Eip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.Eip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eip = string(value["Eip"].GetString());
         m_eipHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.IspId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.IspId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ispId = value["IspId"].GetInt64();
         m_ispIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Arrears"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.Arrears` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.Arrears` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_arrears = value["Arrears"].GetInt64();
         m_arrearsHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.InstanceAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.InstanceAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceAlias = string(value["InstanceAlias"].GetString());
         m_instanceAliasHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FreeAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.FreeAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.FreeAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_freeAt = string(value["FreeAt"].GetString());
         m_freeAtHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FreeSecond"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.FreeSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.FreeSecond` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_freeSecond = value["FreeSecond"].GetInt64();
         m_freeSecondHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestPayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.LatestPayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.LatestPayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestPayMode = string(value["LatestPayMode"].GetString());
         m_latestPayModeHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.LatestBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.LatestBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_latestBandwidth = value["LatestBandwidth"].GetInt64();
         m_latestBandwidthHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -241,7 +241,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.NatId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.NatId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_natId = value["NatId"].GetInt64();
         m_natIdHasBeenSet = true;
@@ -251,7 +251,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatUid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.NatUid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.NatUid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natUid = string(value["NatUid"].GetString());
         m_natUidHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.VpcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.VpcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcIp = string(value["VpcIp"].GetString());
         m_vpcIpHasBeenSet = true;
@@ -271,7 +271,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -281,7 +281,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Exclusive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.Exclusive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.Exclusive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exclusive = value["Exclusive"].GetInt64();
         m_exclusiveHasBeenSet = true;
@@ -291,7 +291,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcCidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.VpcCidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.VpcCidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidr = string(value["VpcCidr"].GetString());
         m_vpcCidrHasBeenSet = true;
@@ -301,7 +301,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AclId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.AclId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.AclId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aclId = string(value["AclId"].GetString());
         m_aclIdHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AclName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.AclName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.AclName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aclName = string(value["AclName"].GetString());
         m_aclNameHasBeenSet = true;
@@ -321,7 +321,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.HInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.HInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hInstanceId = string(value["HInstanceId"].GetString());
         m_hInstanceIdHasBeenSet = true;
@@ -331,7 +331,7 @@ CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HInstanceAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipInfo.HInstanceAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipInfo.HInstanceAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hInstanceAlias = string(value["HInstanceAlias"].GetString());
         m_hInstanceAliasHasBeenSet = true;

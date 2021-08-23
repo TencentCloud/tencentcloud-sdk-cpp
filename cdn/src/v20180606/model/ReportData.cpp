@@ -39,7 +39,7 @@ CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReportData.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportData.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReportData.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportData.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReportData.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportData.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportData.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportData.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percentage = value["Percentage"].GetDouble();
         m_percentageHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BillingValue"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReportData.BillingValue` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportData.BillingValue` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_billingValue = value["BillingValue"].GetInt64();
         m_billingValueHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BillingPercentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportData.BillingPercentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportData.BillingPercentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_billingPercentage = value["BillingPercentage"].GetDouble();
         m_billingPercentageHasBeenSet = true;

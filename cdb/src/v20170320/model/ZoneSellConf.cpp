@@ -49,7 +49,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsCustom"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.IsCustom` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.IsCustom` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isCustom = value["IsCustom"].GetBool();
         m_isCustomHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsSupportDr"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.IsSupportDr` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.IsSupportDr` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isSupportDr = value["IsSupportDr"].GetBool();
         m_isSupportDrHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsSupportVpc"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.IsSupportVpc` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.IsSupportVpc` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isSupportVpc = value["IsSupportVpc"].GetBool();
         m_isSupportVpcHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HourInstanceSaleMaxNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.HourInstanceSaleMaxNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.HourInstanceSaleMaxNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hourInstanceSaleMaxNum = value["HourInstanceSaleMaxNum"].GetInt64();
         m_hourInstanceSaleMaxNumHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefaultZone"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.IsDefaultZone` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.IsDefaultZone` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultZone = value["IsDefaultZone"].GetBool();
         m_isDefaultZoneHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsBm"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.IsBm` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.IsBm` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isBm = value["IsBm"].GetBool();
         m_isBmHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PayType") && !value["PayType"].IsNull())
     {
         if (!value["PayType"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneSellConf.PayType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.PayType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PayType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -141,7 +141,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProtectMode") && !value["ProtectMode"].IsNull())
     {
         if (!value["ProtectMode"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneSellConf.ProtectMode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.ProtectMode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProtectMode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -155,7 +155,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SellType") && !value["SellType"].IsNull())
     {
         if (!value["SellType"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneSellConf.SellType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.SellType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SellType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -185,7 +185,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneConf"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.ZoneConf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.ZoneConf` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_zoneConf.Deserialize(value["ZoneConf"]);
@@ -201,7 +201,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DrZone") && !value["DrZone"].IsNull())
     {
         if (!value["DrZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneSellConf.DrZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.DrZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DrZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -215,7 +215,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsSupportRemoteRo"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneSellConf.IsSupportRemoteRo` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.IsSupportRemoteRo` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isSupportRemoteRo = value["IsSupportRemoteRo"].GetBool();
         m_isSupportRemoteRoHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RemoteRoZone") && !value["RemoteRoZone"].IsNull())
     {
         if (!value["RemoteRoZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneSellConf.RemoteRoZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneSellConf.RemoteRoZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RemoteRoZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

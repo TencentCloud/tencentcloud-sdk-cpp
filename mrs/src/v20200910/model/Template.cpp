@@ -45,7 +45,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PatientInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.PatientInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.PatientInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_patientInfo.Deserialize(value["PatientInfo"]);
@@ -62,7 +62,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReportInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.ReportInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.ReportInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_reportInfo.Deserialize(value["ReportInfo"]);
@@ -79,7 +79,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Check"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.Check` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.Check` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_check.Deserialize(value["Check"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pathology"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.Pathology` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.Pathology` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pathology.Deserialize(value["Pathology"]);
@@ -113,7 +113,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MedDoc"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.MedDoc` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.MedDoc` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_medDoc.Deserialize(value["MedDoc"]);
@@ -130,7 +130,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiagCert"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.DiagCert` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.DiagCert` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_diagCert.Deserialize(value["DiagCert"]);
@@ -147,7 +147,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstPage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.FirstPage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.FirstPage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_firstPage.Deserialize(value["FirstPage"]);
@@ -164,7 +164,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Indicator"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.Indicator` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.Indicator` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_indicator.Deserialize(value["Indicator"]);
@@ -181,7 +181,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReportType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Template.ReportType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.ReportType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reportType = string(value["ReportType"].GetString());
         m_reportTypeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MedicalRecordInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.MedicalRecordInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.MedicalRecordInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_medicalRecordInfo.Deserialize(value["MedicalRecordInfo"]);
@@ -208,7 +208,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hospitalization"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.Hospitalization` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.Hospitalization` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hospitalization.Deserialize(value["Hospitalization"]);
@@ -225,7 +225,7 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Surgery"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Template.Surgery` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Template.Surgery` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_surgery.Deserialize(value["Surgery"]);

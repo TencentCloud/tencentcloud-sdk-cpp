@@ -36,16 +36,16 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
     {
         if (!rsp["IsValid"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsValid` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsValid` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isValid = rsp["IsValid"].GetBool();
         m_isValidHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
     {
         if (!rsp["IsTrustedCA"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsTrustedCA` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsTrustedCA` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isTrustedCA = rsp["IsTrustedCA"].GetBool();
         m_isTrustedCAHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
     if (rsp.HasMember("Chains") && !rsp["Chains"].IsNull())
     {
         if (!rsp["Chains"].IsArray())
-            return CoreInternalOutcome(Error("response `Chains` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Chains` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Chains"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome ClipTask2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClipTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ClipTask2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClipTask2017.SrcFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipTask2017.SrcFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcFileId = string(value["SrcFileId"].GetString());
         m_srcFileIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ClipTask2017::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClipTask2017.FileInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipTask2017.FileInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fileInfo.Deserialize(value["FileInfo"]);

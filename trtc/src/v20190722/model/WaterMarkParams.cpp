@@ -38,7 +38,7 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaterMarkId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterMarkParams.WaterMarkId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterMarkParams.WaterMarkId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_waterMarkId = value["WaterMarkId"].GetUint64();
         m_waterMarkIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaterMarkWidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterMarkParams.WaterMarkWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterMarkParams.WaterMarkWidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_waterMarkWidth = value["WaterMarkWidth"].GetUint64();
         m_waterMarkWidthHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaterMarkHeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterMarkParams.WaterMarkHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterMarkParams.WaterMarkHeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_waterMarkHeight = value["WaterMarkHeight"].GetUint64();
         m_waterMarkHeightHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocationX"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterMarkParams.LocationX` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterMarkParams.LocationX` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_locationX = value["LocationX"].GetUint64();
         m_locationXHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocationY"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterMarkParams.LocationY` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterMarkParams.LocationY` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_locationY = value["LocationY"].GetUint64();
         m_locationYHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.CallId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.CallId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callId = string(value["CallId"].GetString());
         m_callIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionContext = string(value["SessionContext"].GetString());
         m_sessionContextHasBeenSet = true;

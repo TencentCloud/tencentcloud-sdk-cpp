@@ -40,7 +40,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmNotice.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmNotice.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NoticeReceivers") && !value["NoticeReceivers"].IsNull())
     {
         if (!value["NoticeReceivers"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmNotice.NoticeReceivers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.NoticeReceivers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NoticeReceivers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WebCallbacks") && !value["WebCallbacks"].IsNull())
     {
         if (!value["WebCallbacks"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmNotice.WebCallbacks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.WebCallbacks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WebCallbacks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmNoticeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmNotice.AlarmNoticeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.AlarmNoticeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNoticeId = string(value["AlarmNoticeId"].GetString());
         m_alarmNoticeIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmNotice.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmNotice.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

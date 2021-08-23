@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceFamilyTypeConfig::Deserialize(const rapidjson::Value
     {
         if (!value["InstanceFamilyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceFamilyTypeConfig.InstanceFamilyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceFamilyTypeConfig.InstanceFamilyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamilyType = string(value["InstanceFamilyType"].GetString());
         m_instanceFamilyTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceFamilyTypeConfig::Deserialize(const rapidjson::Value
     {
         if (!value["InstanceFamilyTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceFamilyTypeConfig.InstanceFamilyTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceFamilyTypeConfig.InstanceFamilyTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamilyTypeName = string(value["InstanceFamilyTypeName"].GetString());
         m_instanceFamilyTypeNameHasBeenSet = true;

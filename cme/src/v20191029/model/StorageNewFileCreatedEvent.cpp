@@ -39,7 +39,7 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageNewFileCreatedEvent.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
     {
         if (!value["MaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageNewFileCreatedEvent.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialId = string(value["MaterialId"].GetString());
         m_materialIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageNewFileCreatedEvent.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
     {
         if (!value["OperationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageNewFileCreatedEvent.OperationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.OperationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationType = string(value["OperationType"].GetString());
         m_operationTypeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
     {
         if (!value["Owner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StorageNewFileCreatedEvent.Owner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.Owner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
     {
         if (!value["ClassPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageNewFileCreatedEvent.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classPath = string(value["ClassPath"].GetString());
         m_classPathHasBeenSet = true;

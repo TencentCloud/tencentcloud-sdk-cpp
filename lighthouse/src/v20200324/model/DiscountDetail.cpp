@@ -39,7 +39,7 @@ CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeSpan"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DiscountDetail.TimeSpan` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountDetail.TimeSpan` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = value["TimeSpan"].GetInt64();
         m_timeSpanHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiscountDetail.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountDetail.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeUnit = string(value["TimeUnit"].GetString());
         m_timeUnitHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountDetail.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountDetail.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = value["TotalCost"].GetDouble();
         m_totalCostHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealTotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountDetail.RealTotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountDetail.RealTotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = value["RealTotalCost"].GetDouble();
         m_realTotalCostHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Discount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DiscountDetail.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountDetail.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetInt64();
         m_discountHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyDetail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DiscountDetail.PolicyDetail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountDetail.PolicyDetail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_policyDetail.Deserialize(value["PolicyDetail"]);

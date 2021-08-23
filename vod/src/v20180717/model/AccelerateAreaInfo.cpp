@@ -36,7 +36,7 @@ CoreInternalOutcome AccelerateAreaInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccelerateAreaInfo.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccelerateAreaInfo.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AccelerateAreaInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TencentDisableReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccelerateAreaInfo.TencentDisableReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccelerateAreaInfo.TencentDisableReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tencentDisableReason = string(value["TencentDisableReason"].GetString());
         m_tencentDisableReasonHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AccelerateAreaInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TencentEdgeDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccelerateAreaInfo.TencentEdgeDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccelerateAreaInfo.TencentEdgeDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tencentEdgeDomain = string(value["TencentEdgeDomain"].GetString());
         m_tencentEdgeDomainHasBeenSet = true;

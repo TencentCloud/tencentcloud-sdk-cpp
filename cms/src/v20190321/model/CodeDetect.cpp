@@ -34,7 +34,7 @@ CoreInternalOutcome CodeDetect::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ModerationDetail") && !value["ModerationDetail"].IsNull())
     {
         if (!value["ModerationDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `CodeDetect.ModerationDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CodeDetect.ModerationDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ModerationDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome CodeDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModerationCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CodeDetect.ModerationCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeDetect.ModerationCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_moderationCode = value["ModerationCode"].GetInt64();
         m_moderationCodeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BoundIpInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BoundIpInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BoundIpInfo.BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BoundIpInfo.BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(value["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BoundIpInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BoundIpInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BoundIpInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BoundIpInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = string(value["DeviceType"].GetString());
         m_deviceTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BoundIpInfo.IspCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BoundIpInfo.IspCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ispCode = value["IspCode"].GetUint64();
         m_ispCodeHasBeenSet = true;

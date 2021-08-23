@@ -38,7 +38,7 @@ CoreInternalOutcome ProductQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductQuota.QuotaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductQuota.QuotaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quotaId = string(value["QuotaId"].GetString());
         m_quotaIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ProductQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductQuota.QuotaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductQuota.QuotaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quotaName = string(value["QuotaName"].GetString());
         m_quotaNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ProductQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaCurrent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductQuota.QuotaCurrent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductQuota.QuotaCurrent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_quotaCurrent = value["QuotaCurrent"].GetInt64();
         m_quotaCurrentHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ProductQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductQuota.QuotaLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductQuota.QuotaLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_quotaLimit = value["QuotaLimit"].GetInt64();
         m_quotaLimitHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ProductQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuotaRegion"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ProductQuota.QuotaRegion` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductQuota.QuotaRegion` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_quotaRegion = value["QuotaRegion"].GetBool();
         m_quotaRegionHasBeenSet = true;

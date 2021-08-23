@@ -40,7 +40,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["ClusterCIDR"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.ClusterCIDR` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.ClusterCIDR` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterCIDR = string(value["ClusterCIDR"].GetString());
         m_clusterCIDRHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["IgnoreClusterCIDRConflict"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.IgnoreClusterCIDRConflict` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.IgnoreClusterCIDRConflict` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreClusterCIDRConflict = value["IgnoreClusterCIDRConflict"].GetBool();
         m_ignoreClusterCIDRConflictHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxNodePodNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.MaxNodePodNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.MaxNodePodNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxNodePodNum = value["MaxNodePodNum"].GetUint64();
         m_maxNodePodNumHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxClusterServiceNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.MaxClusterServiceNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.MaxClusterServiceNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxClusterServiceNum = value["MaxClusterServiceNum"].GetUint64();
         m_maxClusterServiceNumHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["ServiceCIDR"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.ServiceCIDR` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.ServiceCIDR` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceCIDR = string(value["ServiceCIDR"].GetString());
         m_serviceCIDRHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     if (value.HasMember("EniSubnetIds") && !value["EniSubnetIds"].IsNull())
     {
         if (!value["EniSubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.EniSubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.EniSubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EniSubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &val
     {
         if (!value["ClaimExpiredSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.ClaimExpiredSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCIDRSettings.ClaimExpiredSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_claimExpiredSeconds = value["ClaimExpiredSeconds"].GetInt64();
         m_claimExpiredSecondsHasBeenSet = true;

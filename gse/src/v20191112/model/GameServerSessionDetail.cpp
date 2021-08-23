@@ -35,7 +35,7 @@ CoreInternalOutcome GameServerSessionDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["GameServerSession"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionDetail.GameServerSession` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionDetail.GameServerSession` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gameServerSession.Deserialize(value["GameServerSession"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome GameServerSessionDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["ProtectionPolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionDetail.ProtectionPolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionDetail.ProtectionPolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protectionPolicy = string(value["ProtectionPolicy"].GetString());
         m_protectionPolicyHasBeenSet = true;

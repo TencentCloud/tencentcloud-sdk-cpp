@@ -34,7 +34,7 @@ CoreInternalOutcome LightStatistic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LightDistribution") && !value["LightDistribution"].IsNull())
     {
         if (!value["LightDistribution"].IsArray())
-            return CoreInternalOutcome(Error("response `LightStatistic.LightDistribution` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LightStatistic.LightDistribution` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LightDistribution"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome LightStatistic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LightLevelRatio") && !value["LightLevelRatio"].IsNull())
     {
         if (!value["LightLevelRatio"].IsArray())
-            return CoreInternalOutcome(Error("response `LightStatistic.LightLevelRatio` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LightStatistic.LightLevelRatio` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LightLevelRatio"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

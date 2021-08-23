@@ -41,7 +41,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OfflineTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offlineTime = string(value["OfflineTime"].GetString());
         m_offlineTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoUpdate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.AutoUpdate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.AutoUpdate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoUpdate = value["AutoUpdate"].GetInt64();
         m_autoUpdateHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.UpdateStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.UpdateStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateStatus = value["UpdateStatus"].GetInt64();
         m_updateStatusHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;

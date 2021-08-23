@@ -37,7 +37,7 @@ CoreInternalOutcome IpFilterPathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpFilterPathRule.FilterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpFilterPathRule.FilterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = string(value["FilterType"].GetString());
         m_filterTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome IpFilterPathRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Filters") && !value["Filters"].IsNull())
     {
         if (!value["Filters"].IsArray())
-            return CoreInternalOutcome(Error("response `IpFilterPathRule.Filters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IpFilterPathRule.Filters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Filters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome IpFilterPathRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpFilterPathRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpFilterPathRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome IpFilterPathRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `IpFilterPathRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IpFilterPathRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

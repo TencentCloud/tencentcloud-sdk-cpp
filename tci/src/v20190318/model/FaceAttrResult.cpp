@@ -35,7 +35,7 @@ CoreInternalOutcome FaceAttrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Age"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttrResult.Age` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttrResult.Age` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetInt64();
         m_ageHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FaceAttrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceAttrResult.Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttrResult.Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(value["Sex"].GetString());
         m_sexHasBeenSet = true;

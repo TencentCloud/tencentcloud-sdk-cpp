@@ -36,7 +36,7 @@ CoreInternalOutcome ImageOperation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ImageOperation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scale"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageOperation.Scale` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageOperation.Scale` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_scale.Deserialize(value["Scale"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome ImageOperation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CenterCut"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageOperation.CenterCut` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageOperation.CenterCut` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_centerCut.Deserialize(value["CenterCut"]);

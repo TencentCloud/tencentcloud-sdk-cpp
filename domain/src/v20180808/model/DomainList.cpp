@@ -42,7 +42,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPremium"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DomainList.IsPremium` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.IsPremium` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPremium = value["IsPremium"].GetBool();
         m_isPremiumHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.DomainId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.DomainId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = string(value["DomainId"].GetString());
         m_domainIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoRenew"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainList.AutoRenew` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.AutoRenew` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenew = value["AutoRenew"].GetUint64();
         m_autoRenewHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.CreationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.CreationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationDate = string(value["CreationDate"].GetString());
         m_creationDateHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpirationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expirationDate = string(value["ExpirationDate"].GetString());
         m_expirationDateHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tld"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.Tld` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.Tld` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tld = string(value["Tld"].GetString());
         m_tldHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeTld"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.CodeTld` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.CodeTld` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeTld = string(value["CodeTld"].GetString());
         m_codeTldHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BuyStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainList.BuyStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainList.BuyStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyStatus = string(value["BuyStatus"].GetString());
         m_buyStatusHasBeenSet = true;

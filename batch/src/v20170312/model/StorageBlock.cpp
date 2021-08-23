@@ -36,7 +36,7 @@ CoreInternalOutcome StorageBlock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageBlock.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageBlock.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome StorageBlock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StorageBlock.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageBlock.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minSize = value["MinSize"].GetInt64();
         m_minSizeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome StorageBlock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StorageBlock.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageBlock.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetInt64();
         m_maxSizeHasBeenSet = true;

@@ -48,16 +48,16 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -68,11 +68,11 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -80,7 +80,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Nationality"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationality = string(rsp["Nationality"].GetString());
         m_nationalityHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["DateOfBirth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DateOfBirth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DateOfBirth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateOfBirth = string(rsp["DateOfBirth"].GetString());
         m_dateOfBirthHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["DateOfFirstIssue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DateOfFirstIssue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DateOfFirstIssue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateOfFirstIssue = string(rsp["DateOfFirstIssue"].GetString());
         m_dateOfFirstIssueHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Class"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Class` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Class` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_class = string(rsp["Class"].GetString());
         m_classHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["StartDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startDate = string(rsp["StartDate"].GetString());
         m_startDateHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["EndDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endDate = string(rsp["EndDate"].GetString());
         m_endDateHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CardCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cardCode = string(rsp["CardCode"].GetString());
         m_cardCodeHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ArchivesCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArchivesCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArchivesCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_archivesCode = string(rsp["ArchivesCode"].GetString());
         m_archivesCodeHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Record"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Record` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Record` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_record = string(rsp["Record"].GetString());
         m_recordHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     if (rsp.HasMember("RecognizeWarnCode") && !rsp["RecognizeWarnCode"].IsNull())
     {
         if (!rsp["RecognizeWarnCode"].IsArray())
-            return CoreInternalOutcome(Error("response `RecognizeWarnCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RecognizeWarnCode` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RecognizeWarnCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -212,7 +212,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     if (rsp.HasMember("RecognizeWarnMsg") && !rsp["RecognizeWarnMsg"].IsNull())
     {
         if (!rsp["RecognizeWarnMsg"].IsArray())
-            return CoreInternalOutcome(Error("response `RecognizeWarnMsg` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RecognizeWarnMsg` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RecognizeWarnMsg"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -226,7 +226,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["IssuingAuthority"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssuingAuthority` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssuingAuthority` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuingAuthority = string(rsp["IssuingAuthority"].GetString());
         m_issuingAuthorityHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefDetail.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefDetail.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Version"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefDetail.Version` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefDetail.Version` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_version = value["Version"].GetInt64();
         m_versionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefDetail.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefDetail.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["SystemProvide"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefDetail.SystemProvide` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefDetail.SystemProvide` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_systemProvide = value["SystemProvide"].GetInt64();
         m_systemProvideHasBeenSet = true;

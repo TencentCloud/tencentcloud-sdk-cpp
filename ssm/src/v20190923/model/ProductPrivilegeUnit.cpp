@@ -38,7 +38,7 @@ CoreInternalOutcome ProductPrivilegeUnit::Deserialize(const rapidjson::Value &va
     {
         if (!value["PrivilegeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductPrivilegeUnit.PrivilegeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.PrivilegeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privilegeName = string(value["PrivilegeName"].GetString());
         m_privilegeNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ProductPrivilegeUnit::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
     {
         if (!value["Privileges"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductPrivilegeUnit.Privileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.Privileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Privileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome ProductPrivilegeUnit::Deserialize(const rapidjson::Value &va
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductPrivilegeUnit.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ProductPrivilegeUnit::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductPrivilegeUnit.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ProductPrivilegeUnit::Deserialize(const rapidjson::Value &va
     {
         if (!value["ColumnName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductPrivilegeUnit.ColumnName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.ColumnName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_columnName = string(value["ColumnName"].GetString());
         m_columnNameHasBeenSet = true;

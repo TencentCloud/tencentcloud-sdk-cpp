@@ -40,7 +40,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["WeChatOpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.WeChatOpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.WeChatOpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_weChatOpenId = string(value["WeChatOpenId"].GetString());
         m_weChatOpenIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["WeChatSubType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.WeChatSubType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.WeChatSubType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weChatSubType = value["WeChatSubType"].GetUint64();
         m_weChatSubTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["RandStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.RandStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.RandStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_randStr = string(value["RandStr"].GetString());
         m_randStrHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["WeChatAccessToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.WeChatAccessToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.WeChatAccessToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_weChatAccessToken = string(value["WeChatAccessToken"].GetString());
         m_weChatAccessTokenHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AssociateAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_associateAccount = string(value["AssociateAccount"].GetString());
         m_associateAccountHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MobilePhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.MobilePhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.MobilePhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobilePhone = string(value["MobilePhone"].GetString());
         m_mobilePhoneHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;

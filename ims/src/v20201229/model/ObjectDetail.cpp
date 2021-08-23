@@ -38,7 +38,7 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ObjectDetail.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectDetail.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ObjectDetail.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetUint64();
         m_scoreHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ObjectDetail.Location` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.Location` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_location.Deserialize(value["Location"]);

@@ -50,16 +50,16 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -70,11 +70,11 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(rsp["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["BeginProcessTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginProcessTime = string(rsp["BeginProcessTime"].GetString());
         m_beginProcessTimeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(rsp["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["ProcedureTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_procedureTask.Deserialize(rsp["ProcedureTask"]);
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["EditMediaTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_editMediaTask.Deserialize(rsp["EditMediaTask"]);
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["WechatPublishTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WechatPublishTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatPublishTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_wechatPublishTask.Deserialize(rsp["WechatPublishTask"]);
@@ -183,7 +183,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["ComposeMediaTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_composeMediaTask.Deserialize(rsp["ComposeMediaTask"]);
@@ -200,7 +200,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["SplitMediaTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_splitMediaTask.Deserialize(rsp["SplitMediaTask"]);
@@ -217,7 +217,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["WechatMiniProgramPublishTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_wechatMiniProgramPublishTask.Deserialize(rsp["WechatMiniProgramPublishTask"]);
@@ -234,7 +234,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["PullUploadTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PullUploadTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullUploadTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pullUploadTask.Deserialize(rsp["PullUploadTask"]);
@@ -251,7 +251,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["TranscodeTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_transcodeTask.Deserialize(rsp["TranscodeTask"]);
@@ -268,7 +268,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["ConcatTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConcatTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConcatTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_concatTask.Deserialize(rsp["ConcatTask"]);
@@ -285,7 +285,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["ClipTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClipTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClipTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clipTask.Deserialize(rsp["ClipTask"]);
@@ -302,7 +302,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CreateImageSpriteTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CreateImageSpriteTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateImageSpriteTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_createImageSpriteTask.Deserialize(rsp["CreateImageSpriteTask"]);
@@ -319,7 +319,7 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["SnapshotByTimeOffsetTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_snapshotByTimeOffsetTask.Deserialize(rsp["SnapshotByTimeOffsetTask"]);

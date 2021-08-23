@@ -39,7 +39,7 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["Category"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewResult.Category` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewResult.Category` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_category = string(value["Category"].GetString());
         m_categoryHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewResult.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewResult.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["CodeDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewResult.CodeDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewResult.CodeDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeDescription = string(value["CodeDescription"].GetString());
         m_codeDescriptionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FuseFaceReviewResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DetailSet") && !value["DetailSet"].IsNull())
     {
         if (!value["DetailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `FuseFaceReviewResult.DetailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FuseFaceReviewResult.DetailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

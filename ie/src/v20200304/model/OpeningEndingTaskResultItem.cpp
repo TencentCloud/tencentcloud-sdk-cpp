@@ -37,7 +37,7 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const rapidjson::Va
     {
         if (!value["OpeningTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.OpeningTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResultItem.OpeningTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_openingTimeOffset = value["OpeningTimeOffset"].GetDouble();
         m_openingTimeOffsetHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const rapidjson::Va
     {
         if (!value["OpeningConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.OpeningConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResultItem.OpeningConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_openingConfidence = value["OpeningConfidence"].GetDouble();
         m_openingConfidenceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const rapidjson::Va
     {
         if (!value["EndingTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.EndingTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResultItem.EndingTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endingTimeOffset = value["EndingTimeOffset"].GetDouble();
         m_endingTimeOffsetHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const rapidjson::Va
     {
         if (!value["EndingConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OpeningEndingTaskResultItem.EndingConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpeningEndingTaskResultItem.EndingConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endingConfidence = value["EndingConfidence"].GetDouble();
         m_endingConfidenceHasBeenSet = true;

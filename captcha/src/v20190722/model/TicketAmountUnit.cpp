@@ -35,7 +35,7 @@ CoreInternalOutcome TicketAmountUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TicketAmountUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketAmountUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateKey = string(value["DateKey"].GetString());
         m_dateKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TicketAmountUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Amount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TicketAmountUnit.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketAmountUnit.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetInt64();
         m_amountHasBeenSet = true;

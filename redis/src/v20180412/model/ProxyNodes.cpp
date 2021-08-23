@@ -34,7 +34,7 @@ CoreInternalOutcome ProxyNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyNodes.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyNodes.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;

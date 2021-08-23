@@ -35,7 +35,7 @@ CoreInternalOutcome FavorResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FavorResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FavorResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome FavorResp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RepoInfo") && !value["RepoInfo"].IsNull())
     {
         if (!value["RepoInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `FavorResp.RepoInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FavorResp.RepoInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RepoInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

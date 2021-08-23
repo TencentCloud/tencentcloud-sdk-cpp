@@ -35,7 +35,7 @@ CoreInternalOutcome TimeSlice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimeSlice.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeSlice.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TimeSlice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimeSlice.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeSlice.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetInt64();
         m_timestampHasBeenSet = true;

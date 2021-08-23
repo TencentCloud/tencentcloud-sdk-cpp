@@ -47,7 +47,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkflowId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.WorkflowId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.WorkflowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workflowId = value["WorkflowId"].GetInt64();
         m_workflowIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkflowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.WorkflowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.WorkflowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workflowName = string(value["WorkflowName"].GetString());
         m_workflowNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Trigger"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.Trigger` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.Trigger` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_trigger.Deserialize(value["Trigger"]);
@@ -94,7 +94,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -111,7 +111,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MediaProcessTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.MediaProcessTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.MediaProcessTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaProcessTask.Deserialize(value["MediaProcessTask"]);
@@ -128,7 +128,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AiContentReviewTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.AiContentReviewTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.AiContentReviewTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aiContentReviewTask.Deserialize(value["AiContentReviewTask"]);
@@ -145,7 +145,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AiAnalysisTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.AiAnalysisTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.AiAnalysisTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aiAnalysisTask.Deserialize(value["AiAnalysisTask"]);
@@ -162,7 +162,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AiRecognitionTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.AiRecognitionTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.AiRecognitionTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aiRecognitionTask.Deserialize(value["AiRecognitionTask"]);
@@ -179,7 +179,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskNotifyConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.TaskNotifyConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.TaskNotifyConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskNotifyConfig.Deserialize(value["TaskNotifyConfig"]);
@@ -196,7 +196,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskPriority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.TaskPriority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.TaskPriority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskPriority = value["TaskPriority"].GetInt64();
         m_taskPriorityHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutputDir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.OutputDir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.OutputDir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputDir = string(value["OutputDir"].GetString());
         m_outputDirHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

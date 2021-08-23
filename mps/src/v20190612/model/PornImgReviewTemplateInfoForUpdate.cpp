@@ -37,7 +37,7 @@ CoreInternalOutcome PornImgReviewTemplateInfoForUpdate::Deserialize(const rapidj
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PornImgReviewTemplateInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornImgReviewTemplateInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PornImgReviewTemplateInfoForUpdate::Deserialize(const rapidj
     if (value.HasMember("LabelSet") && !value["LabelSet"].IsNull())
     {
         if (!value["LabelSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PornImgReviewTemplateInfoForUpdate.LabelSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PornImgReviewTemplateInfoForUpdate.LabelSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LabelSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome PornImgReviewTemplateInfoForUpdate::Deserialize(const rapidj
     {
         if (!value["BlockConfidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PornImgReviewTemplateInfoForUpdate.BlockConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornImgReviewTemplateInfoForUpdate.BlockConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blockConfidence = value["BlockConfidence"].GetInt64();
         m_blockConfidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PornImgReviewTemplateInfoForUpdate::Deserialize(const rapidj
     {
         if (!value["ReviewConfidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PornImgReviewTemplateInfoForUpdate.ReviewConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornImgReviewTemplateInfoForUpdate.ReviewConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reviewConfidence = value["ReviewConfidence"].GetInt64();
         m_reviewConfidenceHasBeenSet = true;

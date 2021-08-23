@@ -41,7 +41,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(value["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsInternalApp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.IsInternalApp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.IsInternalApp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isInternalApp = value["IsInternalApp"].GetInt64();
         m_isInternalAppHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetInt64();
         m_appIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Flag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.Flag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.Flag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_flag = value["Flag"].GetBool();
         m_flagHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneStatus = value["ZoneStatus"].GetInt64();
         m_zoneStatusHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Exflag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.Exflag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.Exflag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exflag = string(value["Exflag"].GetString());
         m_exflagHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SoldOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.SoldOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.SoldOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_soldOut = string(value["SoldOut"].GetString());
         m_soldOutHasBeenSet = true;

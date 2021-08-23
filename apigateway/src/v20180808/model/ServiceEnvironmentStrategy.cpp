@@ -39,7 +39,7 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const rapidjson::Val
     {
         if (!value["EnvironmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategy.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentName = string(value["EnvironmentName"].GetString());
         m_environmentNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const rapidjson::Val
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategy.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const rapidjson::Val
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategy.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const rapidjson::Val
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategy.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const rapidjson::Val
     {
         if (!value["Strategy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.Strategy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategy.Strategy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = value["Strategy"].GetInt64();
         m_strategyHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ServiceEnvironmentStrategy::Deserialize(const rapidjson::Val
     {
         if (!value["MaxStrategy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnvironmentStrategy.MaxStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnvironmentStrategy.MaxStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStrategy = value["MaxStrategy"].GetInt64();
         m_maxStrategyHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome FirmwareTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FirmwareTaskInfo.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirmwareTaskInfo.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FirmwareTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FirmwareTaskInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirmwareTaskInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FirmwareTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FirmwareTaskInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirmwareTaskInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FirmwareTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FirmwareTaskInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirmwareTaskInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;

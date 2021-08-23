@@ -35,7 +35,7 @@ CoreInternalOutcome DeviceFingerprint::Deserialize(const rapidjson::Value &value
     {
         if (!value["Identity"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceFingerprint.Identity` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceFingerprint.Identity` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_identity = string(value["Identity"].GetString());
         m_identityHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeviceFingerprint::Deserialize(const rapidjson::Value &value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceFingerprint.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceFingerprint.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

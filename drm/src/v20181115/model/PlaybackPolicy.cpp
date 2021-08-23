@@ -35,7 +35,7 @@ CoreInternalOutcome PlaybackPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LicenseDurationSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlaybackPolicy.LicenseDurationSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlaybackPolicy.LicenseDurationSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_licenseDurationSeconds = value["LicenseDurationSeconds"].GetUint64();
         m_licenseDurationSecondsHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PlaybackPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlaybackDurationSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlaybackPolicy.PlaybackDurationSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlaybackPolicy.PlaybackDurationSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_playbackDurationSeconds = value["PlaybackDurationSeconds"].GetUint64();
         m_playbackDurationSecondsHasBeenSet = true;

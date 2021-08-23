@@ -35,7 +35,7 @@ CoreInternalOutcome Area::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AreaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Area.AreaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Area.AreaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_areaId = string(value["AreaId"].GetString());
         m_areaIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Area::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AreaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Area.AreaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Area.AreaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_areaName = string(value["AreaName"].GetString());
         m_areaNameHasBeenSet = true;

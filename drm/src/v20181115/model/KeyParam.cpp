@@ -37,7 +37,7 @@ CoreInternalOutcome KeyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Track"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyParam.Track` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyParam.Track` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_track = string(value["Track"].GetString());
         m_trackHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome KeyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyParam.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyParam.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome KeyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyParam.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyParam.KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome KeyParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Iv"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyParam.Iv` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyParam.Iv` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iv = string(value["Iv"].GetString());
         m_ivHasBeenSet = true;

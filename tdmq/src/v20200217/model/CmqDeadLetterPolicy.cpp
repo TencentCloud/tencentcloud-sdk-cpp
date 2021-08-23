@@ -37,7 +37,7 @@ CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["DeadLetterQueue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqDeadLetterPolicy.DeadLetterQueue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqDeadLetterPolicy.DeadLetterQueue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadLetterQueue = string(value["DeadLetterQueue"].GetString());
         m_deadLetterQueueHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["Policy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqDeadLetterPolicy.Policy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqDeadLetterPolicy.Policy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policy = value["Policy"].GetUint64();
         m_policyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxTimeToLive"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqDeadLetterPolicy.MaxTimeToLive` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqDeadLetterPolicy.MaxTimeToLive` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxTimeToLive = value["MaxTimeToLive"].GetUint64();
         m_maxTimeToLiveHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaxReceiveCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqDeadLetterPolicy.MaxReceiveCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqDeadLetterPolicy.MaxReceiveCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReceiveCount = value["MaxReceiveCount"].GetUint64();
         m_maxReceiveCountHasBeenSet = true;

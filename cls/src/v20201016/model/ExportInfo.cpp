@@ -46,7 +46,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExportId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.ExportId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.ExportId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exportId = string(value["ExportId"].GetString());
         m_exportIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Query"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.Query` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.Query` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_query = string(value["Query"].GetString());
         m_queryHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetUint64();
         m_fileSizeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Order"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.Order` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.Order` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_order = string(value["Order"].GetString());
         m_orderHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["From"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.From` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.From` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_from = value["From"].GetInt64();
         m_fromHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["To"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.To` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.To` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_to = value["To"].GetInt64();
         m_toHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.CosPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.CosPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosPath = string(value["CosPath"].GetString());
         m_cosPathHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExportInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

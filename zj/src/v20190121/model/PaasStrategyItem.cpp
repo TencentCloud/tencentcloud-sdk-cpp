@@ -35,7 +35,7 @@ CoreInternalOutcome PaasStrategyItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PaasStrategyItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaasStrategyItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PaasStrategyItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PaasStrategyItem.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PaasStrategyItem.ContentType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_contentType = value["ContentType"].GetInt64();
         m_contentTypeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintConfig.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintConfig.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintConfig.OpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintConfig.OpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_openStatus = value["OpenStatus"].GetInt64();
         m_openStatusHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Listeners") && !value["Listeners"].IsNull())
     {
         if (!value["Listeners"].IsArray())
-            return CoreInternalOutcome(Error("response `WaterPrintConfig.Listeners` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintConfig.Listeners` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Listeners"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keys") && !value["Keys"].IsNull())
     {
         if (!value["Keys"].IsArray())
-            return CoreInternalOutcome(Error("response `WaterPrintConfig.Keys` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintConfig.Keys` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keys"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Verify"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintConfig.Verify` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintConfig.Verify` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verify = string(value["Verify"].GetString());
         m_verifyHasBeenSet = true;

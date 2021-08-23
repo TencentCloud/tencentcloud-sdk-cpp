@@ -50,16 +50,16 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -70,11 +70,11 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(rsp["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = rsp["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["IsDefault"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = rsp["IsDefault"].GetInt64();
         m_isDefaultHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(rsp["ViewName"].GetString());
         m_viewNameHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["ShowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_showName = string(rsp["ShowName"].GetString());
         m_showNameHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["LastEditUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastEditUin = string(rsp["LastEditUin"].GetString());
         m_lastEditUinHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(rsp["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     if (rsp.HasMember("Region") && !rsp["Region"].IsNull())
     {
         if (!rsp["Region"].IsArray())
-            return CoreInternalOutcome(Error("response `Region` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Region` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Region"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -174,7 +174,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     if (rsp.HasMember("DimensionGroup") && !rsp["DimensionGroup"].IsNull())
     {
         if (!rsp["DimensionGroup"].IsArray())
-            return CoreInternalOutcome(Error("response `DimensionGroup` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DimensionGroup` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DimensionGroup"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -187,7 +187,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     if (rsp.HasMember("ConditionsConfig") && !rsp["ConditionsConfig"].IsNull())
     {
         if (!rsp["ConditionsConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `ConditionsConfig` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConditionsConfig` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ConditionsConfig"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -207,7 +207,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     if (rsp.HasMember("EventConfig") && !rsp["EventConfig"].IsNull())
     {
         if (!rsp["EventConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `EventConfig` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EventConfig` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["EventConfig"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -227,7 +227,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     if (rsp.HasMember("ReceiverInfos") && !rsp["ReceiverInfos"].IsNull())
     {
         if (!rsp["ReceiverInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ReceiverInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -248,7 +248,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["Callback"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Callback` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Callback` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_callback.Deserialize(rsp["Callback"]);
@@ -265,7 +265,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["ConditionsTemp"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConditionsTemp` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionsTemp` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_conditionsTemp.Deserialize(rsp["ConditionsTemp"]);
@@ -282,7 +282,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["CanSetDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CanSetDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CanSetDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_canSetDefault = rsp["CanSetDefault"].GetBool();
         m_canSetDefaultHasBeenSet = true;
@@ -292,7 +292,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         if (!rsp["IsUnionRule"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isUnionRule = rsp["IsUnionRule"].GetInt64();
         m_isUnionRuleHasBeenSet = true;

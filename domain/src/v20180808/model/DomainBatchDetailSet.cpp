@@ -39,7 +39,7 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DomainBatchDetailSet::Deserialize(const rapidjson::Value &va
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchDetailSet.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchDetailSet.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;

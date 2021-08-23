@@ -34,7 +34,7 @@ CoreInternalOutcome TargetConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["TargetValue"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetConfiguration.TargetValue` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetConfiguration.TargetValue` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_targetValue = value["TargetValue"].GetUint64();
         m_targetValueHasBeenSet = true;

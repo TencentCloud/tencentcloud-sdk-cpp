@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceIp.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceIp.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ResourceIp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IpList") && !value["IpList"].IsNull())
     {
         if (!value["IpList"].IsArray())
-            return CoreInternalOutcome(Error("response `ResourceIp.IpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResourceIp.IpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

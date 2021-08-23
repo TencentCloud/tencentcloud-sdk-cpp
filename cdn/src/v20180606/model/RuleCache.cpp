@@ -35,7 +35,7 @@ CoreInternalOutcome RuleCache::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleCache.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleCache.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome RuleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleCache.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCache.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RuleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleCache.CacheConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCache.CacheConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cacheConfig.Deserialize(value["CacheConfig"]);

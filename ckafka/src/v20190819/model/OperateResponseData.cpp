@@ -34,7 +34,7 @@ CoreInternalOutcome OperateResponseData::Deserialize(const rapidjson::Value &val
     {
         if (!value["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OperateResponseData.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperateResponseData.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowId = value["FlowId"].GetInt64();
         m_flowIdHasBeenSet = true;

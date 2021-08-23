@@ -35,7 +35,7 @@ CoreInternalOutcome SpeedValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpeedValue.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpeedValue.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SpeedValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpeedValue.Value` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpeedValue.Value` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetUint64();
         m_valueHasBeenSet = true;

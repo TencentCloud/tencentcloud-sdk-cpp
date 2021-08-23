@@ -41,7 +41,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mac"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.Mac` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.Mac` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mac = string(value["Mac"].GetString());
         m_macHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TokenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.TokenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.TokenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tokenId = string(value["TokenId"].GetString());
         m_tokenIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IMEI"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.IMEI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.IMEI` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iMEI = string(value["IMEI"].GetString());
         m_iMEIHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IDFA"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.IDFA` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.IDFA` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iDFA = string(value["IDFA"].GetString());
         m_iDFAHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IDFV"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Device.IDFV` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.IDFV` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iDFV = string(value["IDFV"].GetString());
         m_iDFVHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Device.IpType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.IpType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ipType = value["IpType"].GetUint64();
         m_ipTypeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome LiveStreamOcrFullTextRecognitionResult::Deserialize(const ra
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamOcrFullTextRecognitionResult.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamOcrFullTextRecognitionResult.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LiveStreamOcrFullTextRecognitionResult::Deserialize(const ra
     {
         if (!value["StartPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamOcrFullTextRecognitionResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamOcrFullTextRecognitionResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startPtsTime = value["StartPtsTime"].GetDouble();
         m_startPtsTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LiveStreamOcrFullTextRecognitionResult::Deserialize(const ra
     {
         if (!value["EndPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamOcrFullTextRecognitionResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamOcrFullTextRecognitionResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endPtsTime = value["EndPtsTime"].GetDouble();
         m_endPtsTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LiveStreamOcrFullTextRecognitionResult::Deserialize(const ra
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamOcrFullTextRecognitionResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamOcrFullTextRecognitionResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome LiveStreamOcrFullTextRecognitionResult::Deserialize(const ra
     if (value.HasMember("AreaCoordSet") && !value["AreaCoordSet"].IsNull())
     {
         if (!value["AreaCoordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamOcrFullTextRecognitionResult.AreaCoordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamOcrFullTextRecognitionResult.AreaCoordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

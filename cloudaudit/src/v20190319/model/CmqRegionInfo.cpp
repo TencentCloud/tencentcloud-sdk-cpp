@@ -35,7 +35,7 @@ CoreInternalOutcome CmqRegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmqRegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqRegionInfo.CmqRegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqRegionInfo.CmqRegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqRegionName = string(value["CmqRegionName"].GetString());
         m_cmqRegionNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CmqRegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmqRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqRegionInfo.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqRegionInfo.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqRegion = string(value["CmqRegion"].GetString());
         m_cmqRegionHasBeenSet = true;

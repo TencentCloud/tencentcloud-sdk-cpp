@@ -42,7 +42,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Available"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.Available` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.Available` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_available = value["Available"].GetBool();
         m_availableHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskUsage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.DiskUsage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.DiskUsage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskUsage = string(value["DiskUsage"].GetString());
         m_diskUsageHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.DiskChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.DiskChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskChargeType = string(value["DiskChargeType"].GetString());
         m_diskChargeTypeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.MaxDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.MaxDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxDiskSize = value["MaxDiskSize"].GetUint64();
         m_maxDiskSizeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.MinDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.MinDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minDiskSize = value["MinDiskSize"].GetUint64();
         m_minDiskSizeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceClass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.DeviceClass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.DeviceClass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceClass = string(value["DeviceClass"].GetString());
         m_deviceClassHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskConfig.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Route.AccessType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.AccessType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_accessType = value["AccessType"].GetInt64();
         m_accessTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Route.RouteId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.RouteId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = value["RouteId"].GetInt64();
         m_routeIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Route.VipType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.VipType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vipType = value["VipType"].GetInt64();
         m_vipTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VipList") && !value["VipList"].IsNull())
     {
         if (!value["VipList"].IsArray())
-            return CoreInternalOutcome(Error("response `Route.VipList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Route.VipList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VipList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Route.DomainPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.DomainPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_domainPort = value["DomainPort"].GetInt64();
         m_domainPortHasBeenSet = true;

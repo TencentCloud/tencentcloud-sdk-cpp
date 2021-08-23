@@ -43,16 +43,16 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["MachineCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineCount = rsp["MachineCount"].GetUint64();
         m_machineCountHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["AccountCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccountCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accountCount = rsp["AccountCount"].GetUint64();
         m_accountCountHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["PortCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PortCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PortCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_portCount = rsp["PortCount"].GetUint64();
         m_portCountHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["ProcessCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProcessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcessCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_processCount = rsp["ProcessCount"].GetUint64();
         m_processCountHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["SoftwareCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SoftwareCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SoftwareCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_softwareCount = rsp["SoftwareCount"].GetUint64();
         m_softwareCountHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["DatabaseCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DatabaseCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_databaseCount = rsp["DatabaseCount"].GetUint64();
         m_databaseCountHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["WebAppCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WebAppCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebAppCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_webAppCount = rsp["WebAppCount"].GetUint64();
         m_webAppCountHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["WebFrameCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WebFrameCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebFrameCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_webFrameCount = rsp["WebFrameCount"].GetUint64();
         m_webFrameCountHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["WebServiceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WebServiceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebServiceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_webServiceCount = rsp["WebServiceCount"].GetUint64();
         m_webServiceCountHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     {
         if (!rsp["WebLocationCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WebLocationCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebLocationCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_webLocationCount = rsp["WebLocationCount"].GetUint64();
         m_webLocationCountHasBeenSet = true;

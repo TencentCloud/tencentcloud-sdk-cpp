@@ -37,7 +37,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

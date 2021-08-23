@@ -39,7 +39,7 @@ CoreInternalOutcome VpcBindRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqueVpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcBindRecord.UniqueVpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcBindRecord.UniqueVpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqueVpcId = string(value["UniqueVpcId"].GetString());
         m_uniqueVpcIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VpcBindRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqueSubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcBindRecord.UniqueSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcBindRecord.UniqueSubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqueSubnetId = string(value["UniqueSubnetId"].GetString());
         m_uniqueSubnetIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VpcBindRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcBindRecord.RouterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcBindRecord.RouterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routerId = string(value["RouterId"].GetString());
         m_routerIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VpcBindRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcBindRecord.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcBindRecord.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome VpcBindRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcBindRecord.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcBindRecord.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome VpcBindRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcBindRecord.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcBindRecord.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

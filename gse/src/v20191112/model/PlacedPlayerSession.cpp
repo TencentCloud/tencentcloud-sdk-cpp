@@ -35,7 +35,7 @@ CoreInternalOutcome PlacedPlayerSession::Deserialize(const rapidjson::Value &val
     {
         if (!value["PlayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlacedPlayerSession.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlacedPlayerSession.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerId = string(value["PlayerId"].GetString());
         m_playerIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PlacedPlayerSession::Deserialize(const rapidjson::Value &val
     {
         if (!value["PlayerSessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlacedPlayerSession.PlayerSessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlacedPlayerSession.PlayerSessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerSessionId = string(value["PlayerSessionId"].GetString());
         m_playerSessionIdHasBeenSet = true;

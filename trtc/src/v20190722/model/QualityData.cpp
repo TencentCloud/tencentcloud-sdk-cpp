@@ -36,7 +36,7 @@ CoreInternalOutcome QualityData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Content") && !value["Content"].IsNull())
     {
         if (!value["Content"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityData.Content` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityData.Content` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Content"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome QualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QualityData.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityData.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome QualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QualityData.PeerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityData.PeerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerId = string(value["PeerId"].GetString());
         m_peerIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome QualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QualityData.DataType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityData.DataType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataType = string(value["DataType"].GetString());
         m_dataTypeHasBeenSet = true;

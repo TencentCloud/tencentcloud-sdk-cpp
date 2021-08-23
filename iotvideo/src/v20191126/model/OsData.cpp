@@ -35,7 +35,7 @@ CoreInternalOutcome OsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChipId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsData.ChipId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsData.ChipId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chipId = string(value["ChipId"].GetString());
         m_chipIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OsData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChipManufacture"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsData.ChipManufacture` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsData.ChipManufacture` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chipManufacture = string(value["ChipManufacture"].GetString());
         m_chipManufactureHasBeenSet = true;

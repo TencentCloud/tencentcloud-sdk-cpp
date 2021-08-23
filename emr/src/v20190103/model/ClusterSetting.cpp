@@ -47,7 +47,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceChargeType = string(value["InstanceChargeType"].GetString());
         m_instanceChargeTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SupportHA"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.SupportHA` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.SupportHA` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_supportHA = value["SupportHA"].GetBool();
         m_supportHAHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterSetting.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Placement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.Placement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.Placement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_placement.Deserialize(value["Placement"]);
@@ -97,7 +97,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VPCSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.VPCSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.VPCSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vPCSettings.Deserialize(value["VPCSettings"]);
@@ -114,7 +114,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.LoginSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.LoginSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_loginSettings.Deserialize(value["LoginSettings"]);
@@ -130,7 +130,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
     {
         if (!value["TagSpecification"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterSetting.TagSpecification` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.TagSpecification` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSpecification"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -144,7 +144,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaDB"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.MetaDB` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.MetaDB` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaDB.Deserialize(value["MetaDB"]);
@@ -161,7 +161,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.ResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.ResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resourceSpec.Deserialize(value["ResourceSpec"]);
@@ -178,7 +178,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIpAssigned"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.PublicIpAssigned` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.PublicIpAssigned` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAssigned = value["PublicIpAssigned"].GetBool();
         m_publicIpAssignedHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceChargePrepaid"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.InstanceChargePrepaid` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.InstanceChargePrepaid` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceChargePrepaid.Deserialize(value["InstanceChargePrepaid"]);
@@ -205,7 +205,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisasterRecoverGroupIds"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.DisasterRecoverGroupIds` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.DisasterRecoverGroupIds` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_disasterRecoverGroupIds = string(value["DisasterRecoverGroupIds"].GetString());
         m_disasterRecoverGroupIdsHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CbsEncryptFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.CbsEncryptFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.CbsEncryptFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_cbsEncryptFlag = value["CbsEncryptFlag"].GetBool();
         m_cbsEncryptFlagHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome ClusterSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemoteTcpDefaultPort"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterSetting.RemoteTcpDefaultPort` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterSetting.RemoteTcpDefaultPort` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_remoteTcpDefaultPort = value["RemoteTcpDefaultPort"].GetBool();
         m_remoteTcpDefaultPortHasBeenSet = true;

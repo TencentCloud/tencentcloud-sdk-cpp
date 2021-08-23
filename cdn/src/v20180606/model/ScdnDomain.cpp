@@ -43,7 +43,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Waf"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Waf` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Waf` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_waf = string(value["Waf"].GetString());
         m_wafHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Acl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Acl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Acl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acl = string(value["Acl"].GetString());
         m_aclHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CC"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.CC` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.CC` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cC = string(value["CC"].GetString());
         m_cCHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ddos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Ddos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Ddos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ddos = string(value["Ddos"].GetString());
         m_ddosHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AclRuleNumbers"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.AclRuleNumbers` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.AclRuleNumbers` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_aclRuleNumbers = value["AclRuleNumbers"].GetUint64();
         m_aclRuleNumbersHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bot"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Bot` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Bot` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bot = string(value["Bot"].GetString());
         m_botHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ScdnDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnDomain.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnDomain.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;

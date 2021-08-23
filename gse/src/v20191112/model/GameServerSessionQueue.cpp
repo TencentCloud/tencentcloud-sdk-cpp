@@ -39,7 +39,7 @@ CoreInternalOutcome GameServerSessionQueue::Deserialize(const rapidjson::Value &
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionQueue.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueue.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome GameServerSessionQueue::Deserialize(const rapidjson::Value &
     {
         if (!value["GameServerSessionQueueArn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionQueue.GameServerSessionQueueArn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueue.GameServerSessionQueueArn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gameServerSessionQueueArn = string(value["GameServerSessionQueueArn"].GetString());
         m_gameServerSessionQueueArnHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome GameServerSessionQueue::Deserialize(const rapidjson::Value &
     if (value.HasMember("Destinations") && !value["Destinations"].IsNull())
     {
         if (!value["Destinations"].IsArray())
-            return CoreInternalOutcome(Error("response `GameServerSessionQueue.Destinations` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueue.Destinations` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Destinations"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome GameServerSessionQueue::Deserialize(const rapidjson::Value &
     if (value.HasMember("PlayerLatencyPolicies") && !value["PlayerLatencyPolicies"].IsNull())
     {
         if (!value["PlayerLatencyPolicies"].IsArray())
-            return CoreInternalOutcome(Error("response `GameServerSessionQueue.PlayerLatencyPolicies` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueue.PlayerLatencyPolicies` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PlayerLatencyPolicies"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome GameServerSessionQueue::Deserialize(const rapidjson::Value &
     {
         if (!value["TimeoutInSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GameServerSessionQueue.TimeoutInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueue.TimeoutInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeoutInSeconds = value["TimeoutInSeconds"].GetUint64();
         m_timeoutInSecondsHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome GameServerSessionQueue::Deserialize(const rapidjson::Value &
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `GameServerSessionQueue.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GameServerSessionQueue.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

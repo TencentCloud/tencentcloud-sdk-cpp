@@ -38,7 +38,7 @@ CoreInternalOutcome StorageOrder::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageOrder.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageOrder.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome StorageOrder::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageOrder.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageOrder.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome StorageOrder::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StorageOrder.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageOrder.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome StorageOrder::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StorageOrder.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageOrder.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome StorageOrder::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StorageOrder.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageOrder.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;

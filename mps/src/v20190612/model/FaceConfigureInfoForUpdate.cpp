@@ -38,7 +38,7 @@ CoreInternalOutcome FaceConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome FaceConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceConfigureInfoForUpdate.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceConfigureInfoForUpdate.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FaceConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     if (value.HasMember("DefaultLibraryLabelSet") && !value["DefaultLibraryLabelSet"].IsNull())
     {
         if (!value["DefaultLibraryLabelSet"].IsArray())
-            return CoreInternalOutcome(Error("response `FaceConfigureInfoForUpdate.DefaultLibraryLabelSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FaceConfigureInfoForUpdate.DefaultLibraryLabelSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DefaultLibraryLabelSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome FaceConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     if (value.HasMember("UserDefineLibraryLabelSet") && !value["UserDefineLibraryLabelSet"].IsNull())
     {
         if (!value["UserDefineLibraryLabelSet"].IsArray())
-            return CoreInternalOutcome(Error("response `FaceConfigureInfoForUpdate.UserDefineLibraryLabelSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FaceConfigureInfoForUpdate.UserDefineLibraryLabelSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserDefineLibraryLabelSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome FaceConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["FaceLibrary"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceConfigureInfoForUpdate.FaceLibrary` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceConfigureInfoForUpdate.FaceLibrary` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceLibrary = string(value["FaceLibrary"].GetString());
         m_faceLibraryHasBeenSet = true;

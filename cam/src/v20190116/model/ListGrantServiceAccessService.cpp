@@ -35,7 +35,7 @@ CoreInternalOutcome ListGrantServiceAccessService::Deserialize(const rapidjson::
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessService.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessService.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ListGrantServiceAccessService::Deserialize(const rapidjson::
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;

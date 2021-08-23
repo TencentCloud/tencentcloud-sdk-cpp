@@ -36,7 +36,7 @@ CoreInternalOutcome UrlInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome UrlInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UrlInfo.Format` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlInfo.Format` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_format = value["Format"].GetInt64();
         m_formatHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome UrlInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;

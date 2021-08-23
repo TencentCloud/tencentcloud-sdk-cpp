@@ -37,7 +37,7 @@ CoreInternalOutcome DevicesBindInfoL7Listener::Deserialize(const rapidjson::Valu
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL7Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL7Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DevicesBindInfoL7Listener::Deserialize(const rapidjson::Valu
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL7Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL7Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DevicesBindInfoL7Listener::Deserialize(const rapidjson::Valu
     {
         if (!value["LoadBalancerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL7Listener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL7Listener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPort = value["LoadBalancerPort"].GetInt64();
         m_loadBalancerPortHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DevicesBindInfoL7Listener::Deserialize(const rapidjson::Valu
     if (value.HasMember("RuleSet") && !value["RuleSet"].IsNull())
     {
         if (!value["RuleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DevicesBindInfoL7Listener.RuleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoL7Listener.RuleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

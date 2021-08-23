@@ -34,7 +34,7 @@ CoreInternalOutcome DeviceCpuInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Rate") && !value["Rate"].IsNull())
     {
         if (!value["Rate"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceCpuInfo.Rate` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceCpuInfo.Rate` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rate"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome DeviceCpuInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Load") && !value["Load"].IsNull())
     {
         if (!value["Load"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceCpuInfo.Load` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceCpuInfo.Load` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Load"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome MaxAge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaxAge.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxAge.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MaxAge::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MaxAgeRules") && !value["MaxAgeRules"].IsNull())
     {
         if (!value["MaxAgeRules"].IsArray())
-            return CoreInternalOutcome(Error("response `MaxAge.MaxAgeRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MaxAge.MaxAgeRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MaxAgeRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome ApplicationInfoSearchCriteria::Deserialize(const rapidjson::
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInfoSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfoSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ApplicationInfoSearchCriteria::Deserialize(const rapidjson::
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInfoSearchCriteria.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfoSearchCriteria.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;

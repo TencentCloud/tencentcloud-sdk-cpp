@@ -38,7 +38,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomerGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.CustomerGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.CustomerGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerGatewayId = string(value["CustomerGatewayId"].GetString());
         m_customerGatewayIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomerGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.CustomerGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.CustomerGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerGatewayName = string(value["CustomerGatewayName"].GetString());
         m_customerGatewayNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipAddress = string(value["IpAddress"].GetString());
         m_ipAddressHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpnConnNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.VpnConnNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.VpnConnNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpnConnNum = value["VpnConnNum"].GetUint64();
         m_vpnConnNumHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Channel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channel = string(value["Channel"].GetString());
         m_channelHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.LogsetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetName = string(value["LogsetName"].GetString());
         m_logsetNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.IsDefault` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.IsDefault` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetUint64();
         m_isDefaultHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetSavePeriod"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.LogsetSavePeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.LogsetSavePeriod` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_logsetSavePeriod = value["LogsetSavePeriod"].GetUint64();
         m_logsetSavePeriodHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome LogSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSetInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSetInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

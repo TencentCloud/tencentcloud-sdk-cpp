@@ -52,16 +52,16 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -72,11 +72,11 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["AlgorithmSpecification"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmSpecification` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmSpecification` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_algorithmSpecification.Deserialize(rsp["AlgorithmSpecification"]);
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["TrainingJobName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingJobName = string(rsp["TrainingJobName"].GetString());
         m_trainingJobNameHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["HyperParameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HyperParameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HyperParameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hyperParameters = string(rsp["HyperParameters"].GetString());
         m_hyperParametersHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     if (rsp.HasMember("InputDataConfig") && !rsp["InputDataConfig"].IsNull())
     {
         if (!rsp["InputDataConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `InputDataConfig` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InputDataConfig` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["InputDataConfig"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -141,7 +141,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["OutputDataConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OutputDataConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputDataConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputDataConfig.Deserialize(rsp["OutputDataConfig"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["StoppingCondition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StoppingCondition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StoppingCondition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_stoppingCondition.Deserialize(rsp["StoppingCondition"]);
@@ -175,7 +175,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["ResourceConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resourceConfig.Deserialize(rsp["ResourceConfig"]);
@@ -192,7 +192,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["VpcConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VpcConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vpcConfig.Deserialize(rsp["VpcConfig"]);
@@ -209,7 +209,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["FailureReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailureReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailureReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failureReason = string(rsp["FailureReason"].GetString());
         m_failureReasonHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(rsp["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;
@@ -229,7 +229,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["TrainingStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingStartTime = string(rsp["TrainingStartTime"].GetString());
         m_trainingStartTimeHasBeenSet = true;
@@ -239,7 +239,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["TrainingEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingEndTime = string(rsp["TrainingEndTime"].GetString());
         m_trainingEndTimeHasBeenSet = true;
@@ -249,7 +249,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["ModelArtifacts"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ModelArtifacts` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModelArtifacts` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_modelArtifacts.Deserialize(rsp["ModelArtifacts"]);
@@ -266,7 +266,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["SecondaryStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecondaryStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecondaryStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secondaryStatus = string(rsp["SecondaryStatus"].GetString());
         m_secondaryStatusHasBeenSet = true;
@@ -275,7 +275,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     if (rsp.HasMember("SecondaryStatusTransitions") && !rsp["SecondaryStatusTransitions"].IsNull())
     {
         if (!rsp["SecondaryStatusTransitions"].IsArray())
-            return CoreInternalOutcome(Error("response `SecondaryStatusTransitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecondaryStatusTransitions` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SecondaryStatusTransitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -296,7 +296,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["RoleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleName = string(rsp["RoleName"].GetString());
         m_roleNameHasBeenSet = true;
@@ -306,7 +306,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["TrainingJobStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrainingJobStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingJobStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingJobStatus = string(rsp["TrainingJobStatus"].GetString());
         m_trainingJobStatusHasBeenSet = true;
@@ -316,7 +316,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["LogUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logUrl = string(rsp["LogUrl"].GetString());
         m_logUrlHasBeenSet = true;
@@ -326,7 +326,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(rsp["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

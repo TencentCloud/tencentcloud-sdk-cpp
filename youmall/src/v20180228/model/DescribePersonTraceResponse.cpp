@@ -37,16 +37,16 @@ CoreInternalOutcome DescribePersonTraceResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribePersonTraceResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribePersonTraceResponse::Deserialize(const string &paylo
     {
         if (!rsp["MallId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MallId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MallId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mallId = string(rsp["MallId"].GetString());
         m_mallIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribePersonTraceResponse::Deserialize(const string &paylo
     {
         if (!rsp["MallCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MallCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MallCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mallCode = string(rsp["MallCode"].GetString());
         m_mallCodeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribePersonTraceResponse::Deserialize(const string &paylo
     {
         if (!rsp["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(rsp["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribePersonTraceResponse::Deserialize(const string &paylo
     if (rsp.HasMember("TraceRouteSet") && !rsp["TraceRouteSet"].IsNull())
     {
         if (!rsp["TraceRouteSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TraceRouteSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TraceRouteSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TraceRouteSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -40,7 +40,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceVersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.InstanceVersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.InstanceVersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceVersionName = string(value["InstanceVersionName"].GetString());
         m_instanceVersionNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceVersionKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.InstanceVersionKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.InstanceVersionKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceVersionKey = string(value["InstanceVersionKey"].GetString());
         m_instanceVersionKeyHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxInstances"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.MaxInstances` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.MaxInstances` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxInstances = value["MaxInstances"].GetUint64();
         m_maxInstancesHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsertSpeed"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.InsertSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.InsertSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_insertSpeed = value["InsertSpeed"].GetUint64();
         m_insertSpeedHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OnlineStorageCapacity"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.OnlineStorageCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.OnlineStorageCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_onlineStorageCapacity = value["OnlineStorageCapacity"].GetUint64();
         m_onlineStorageCapacityHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ArchivingStorageCapacity"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DbauditTypesInfo.ArchivingStorageCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbauditTypesInfo.ArchivingStorageCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_archivingStorageCapacity = value["ArchivingStorageCapacity"].GetUint64();
         m_archivingStorageCapacityHasBeenSet = true;

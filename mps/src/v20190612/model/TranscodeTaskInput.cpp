@@ -45,7 +45,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RawParameter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.RawParameter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.RawParameter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rawParameter.Deserialize(value["RawParameter"]);
@@ -72,7 +72,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OverrideParameter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.OverrideParameter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.OverrideParameter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_overrideParameter.Deserialize(value["OverrideParameter"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -108,7 +108,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("MosaicSet") && !value["MosaicSet"].IsNull())
     {
         if (!value["MosaicSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MosaicSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -129,7 +129,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -166,7 +166,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OutputObjectPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputObjectPath = string(value["OutputObjectPath"].GetString());
         m_outputObjectPathHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SegmentObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.SegmentObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.SegmentObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentObjectName = string(value["SegmentObjectName"].GetString());
         m_segmentObjectNameHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ObjectNumberFormat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.ObjectNumberFormat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.ObjectNumberFormat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_objectNumberFormat.Deserialize(value["ObjectNumberFormat"]);
@@ -203,7 +203,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HeadTailParameter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.HeadTailParameter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.HeadTailParameter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_headTailParameter.Deserialize(value["HeadTailParameter"]);

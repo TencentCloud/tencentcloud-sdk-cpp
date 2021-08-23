@@ -35,7 +35,7 @@ CoreInternalOutcome ScdnTypeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttackType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTypeData.AttackType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTypeData.AttackType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attackType = string(value["AttackType"].GetString());
         m_attackTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScdnTypeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnTypeData.Value` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTypeData.Value` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetUint64();
         m_valueHasBeenSet = true;

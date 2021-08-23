@@ -35,7 +35,7 @@ CoreInternalOutcome PersonTraceRoute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonTraceRoute.TraceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTraceRoute.TraceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceId = string(value["TraceId"].GetString());
         m_traceIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome PersonTraceRoute::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TracePointSet") && !value["TracePointSet"].IsNull())
     {
         if (!value["TracePointSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PersonTraceRoute.TracePointSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PersonTraceRoute.TracePointSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TracePointSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

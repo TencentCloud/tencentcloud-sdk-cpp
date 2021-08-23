@@ -35,7 +35,7 @@ CoreInternalOutcome DDoSGeoIPBlockConfigRelation::Deserialize(const rapidjson::V
     {
         if (!value["GeoIPBlockConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DDoSGeoIPBlockConfigRelation.GeoIPBlockConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIPBlockConfigRelation.GeoIPBlockConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_geoIPBlockConfig.Deserialize(value["GeoIPBlockConfig"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome DDoSGeoIPBlockConfigRelation::Deserialize(const rapidjson::V
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `DDoSGeoIPBlockConfigRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIPBlockConfigRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

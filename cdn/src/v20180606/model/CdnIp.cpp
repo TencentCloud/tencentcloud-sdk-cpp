@@ -39,7 +39,7 @@ CoreInternalOutcome CdnIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIp.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIp.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CdnIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIp.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIp.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CdnIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIp.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIp.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CdnIp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("History") && !value["History"].IsNull())
     {
         if (!value["History"].IsArray())
-            return CoreInternalOutcome(Error("response `CdnIp.History` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CdnIp.History` is not array type"));
 
         const rapidjson::Value &tmpValue = value["History"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome CdnIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIp.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIp.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome CdnIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIp.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIp.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;

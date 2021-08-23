@@ -35,7 +35,7 @@ CoreInternalOutcome ClassicalLoadBalancerInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalLoadBalancerInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalLoadBalancerInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ClassicalLoadBalancerInfo::Deserialize(const rapidjson::Valu
     if (value.HasMember("LoadBalancerIds") && !value["LoadBalancerIds"].IsNull())
     {
         if (!value["LoadBalancerIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ClassicalLoadBalancerInfo.LoadBalancerIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClassicalLoadBalancerInfo.LoadBalancerIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

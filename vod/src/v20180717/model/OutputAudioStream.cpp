@@ -36,7 +36,7 @@ CoreInternalOutcome OutputAudioStream::Deserialize(const rapidjson::Value &value
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputAudioStream.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputAudioStream.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputAudioStream::Deserialize(const rapidjson::Value &value
     {
         if (!value["SampleRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputAudioStream.SampleRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputAudioStream.SampleRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sampleRate = value["SampleRate"].GetInt64();
         m_sampleRateHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OutputAudioStream::Deserialize(const rapidjson::Value &value
     {
         if (!value["AudioChannel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputAudioStream.AudioChannel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputAudioStream.AudioChannel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_audioChannel = value["AudioChannel"].GetInt64();
         m_audioChannelHasBeenSet = true;

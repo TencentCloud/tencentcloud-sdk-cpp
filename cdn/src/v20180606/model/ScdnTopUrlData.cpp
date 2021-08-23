@@ -37,7 +37,7 @@ CoreInternalOutcome ScdnTopUrlData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopUrlData.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopUrlData.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ScdnTopUrlData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopUrlData.Value` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopUrlData.Value` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetUint64();
         m_valueHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ScdnTopUrlData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopUrlData.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopUrlData.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ScdnTopUrlData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnTopUrlData.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnTopUrlData.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;

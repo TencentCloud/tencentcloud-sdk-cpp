@@ -45,7 +45,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BasicInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.BasicInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.BasicInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_basicInfo.Deserialize(value["BasicInfo"]);
@@ -62,7 +62,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -79,7 +79,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranscodeInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.TranscodeInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.TranscodeInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_transcodeInfo.Deserialize(value["TranscodeInfo"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AnimatedGraphicsInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.AnimatedGraphicsInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.AnimatedGraphicsInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_animatedGraphicsInfo.Deserialize(value["AnimatedGraphicsInfo"]);
@@ -113,7 +113,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SampleSnapshotInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.SampleSnapshotInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.SampleSnapshotInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sampleSnapshotInfo.Deserialize(value["SampleSnapshotInfo"]);
@@ -130,7 +130,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageSpriteInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.ImageSpriteInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.ImageSpriteInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageSpriteInfo.Deserialize(value["ImageSpriteInfo"]);
@@ -147,7 +147,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotByTimeOffsetInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.SnapshotByTimeOffsetInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.SnapshotByTimeOffsetInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_snapshotByTimeOffsetInfo.Deserialize(value["SnapshotByTimeOffsetInfo"]);
@@ -164,7 +164,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyFrameDescInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.KeyFrameDescInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.KeyFrameDescInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_keyFrameDescInfo.Deserialize(value["KeyFrameDescInfo"]);
@@ -181,7 +181,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdaptiveDynamicStreamingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.AdaptiveDynamicStreamingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.AdaptiveDynamicStreamingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_adaptiveDynamicStreamingInfo.Deserialize(value["AdaptiveDynamicStreamingInfo"]);
@@ -198,7 +198,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MiniProgramReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.MiniProgramReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.MiniProgramReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_miniProgramReviewInfo.Deserialize(value["MiniProgramReviewInfo"]);
@@ -215,7 +215,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubtitleInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.SubtitleInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.SubtitleInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_subtitleInfo.Deserialize(value["SubtitleInfo"]);
@@ -232,7 +232,7 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;

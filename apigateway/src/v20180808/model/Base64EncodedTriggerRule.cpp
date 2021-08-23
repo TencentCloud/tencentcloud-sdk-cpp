@@ -35,7 +35,7 @@ CoreInternalOutcome Base64EncodedTriggerRule::Deserialize(const rapidjson::Value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Base64EncodedTriggerRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Base64EncodedTriggerRule.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Base64EncodedTriggerRule::Deserialize(const rapidjson::Value
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsArray())
-            return CoreInternalOutcome(Error("response `Base64EncodedTriggerRule.Value` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Base64EncodedTriggerRule.Value` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Value"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome ScratchRepair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScratchRepair.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScratchRepair.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScratchRepair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ratio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ScratchRepair.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScratchRepair.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = value["Ratio"].GetDouble();
         m_ratioHasBeenSet = true;

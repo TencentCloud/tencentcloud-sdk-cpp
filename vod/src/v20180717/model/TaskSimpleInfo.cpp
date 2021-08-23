@@ -42,7 +42,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginProcessTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginProcessTime = string(value["BeginProcessTime"].GetString());
         m_beginProcessTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(value["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(value["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionContext = string(value["SessionContext"].GetString());
         m_sessionContextHasBeenSet = true;

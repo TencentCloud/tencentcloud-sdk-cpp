@@ -40,7 +40,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceSum = value["InstanceSum"].GetInt64();
         m_instanceSumHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindingStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.BindingStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.BindingStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindingStatus = value["BindingStatus"].GetInt64();
         m_bindingStatusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TagInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagInstance.TagStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagInstance.TagStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tagStatus = value["TagStatus"].GetInt64();
         m_tagStatusHasBeenSet = true;

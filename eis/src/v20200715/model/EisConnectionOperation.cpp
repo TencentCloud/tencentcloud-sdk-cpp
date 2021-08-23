@@ -36,7 +36,7 @@ CoreInternalOutcome EisConnectionOperation::Deserialize(const rapidjson::Value &
     {
         if (!value["OperationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectionOperation.OperationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectionOperation.OperationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationName = string(value["OperationName"].GetString());
         m_operationNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EisConnectionOperation::Deserialize(const rapidjson::Value &
     {
         if (!value["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectionOperation.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectionOperation.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(value["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EisConnectionOperation::Deserialize(const rapidjson::Value &
     {
         if (!value["IsTrigger"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EisConnectionOperation.IsTrigger` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectionOperation.IsTrigger` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isTrigger = value["IsTrigger"].GetBool();
         m_isTriggerHasBeenSet = true;

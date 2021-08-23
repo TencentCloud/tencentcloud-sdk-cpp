@@ -39,7 +39,7 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
     {
         if (!value["RouteId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.RouteId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.RouteId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = string(value["RouteId"].GetString());
         m_routeIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
     {
         if (!value["DestinationCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationCidrBlock = string(value["DestinationCidrBlock"].GetString());
         m_destinationCidrBlockHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
     {
         if (!value["RouteType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.RouteType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.RouteType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeType = string(value["RouteType"].GetString());
         m_routeTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
     if (value.HasMember("ASPath") && !value["ASPath"].IsNull())
     {
         if (!value["ASPath"].IsArray())
-            return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.ASPath` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.ASPath` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ASPath"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
     {
         if (!value["NextHop"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.NextHop` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.NextHop` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextHop = string(value["NextHop"].GetString());
         m_nextHopHasBeenSet = true;

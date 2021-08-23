@@ -34,7 +34,7 @@ CoreInternalOutcome DomainHTTPSConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["CertExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainHTTPSConfig.CertExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainHTTPSConfig.CertExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certExpireTime = string(value["CertExpireTime"].GetString());
         m_certExpireTimeHasBeenSet = true;

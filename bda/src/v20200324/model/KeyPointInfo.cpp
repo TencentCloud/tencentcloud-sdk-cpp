@@ -36,7 +36,7 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyPointType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyPointInfo.KeyPointType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPointInfo.KeyPointType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyPointType = string(value["KeyPointType"].GetString());
         m_keyPointTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeyPointInfo.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPointInfo.X` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetDouble();
         m_xHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `KeyPointInfo.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPointInfo.Y` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetDouble();
         m_yHasBeenSet = true;

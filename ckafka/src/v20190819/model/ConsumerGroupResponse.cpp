@@ -41,7 +41,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     if (value.HasMember("TopicList") && !value["TopicList"].IsNull())
     {
         if (!value["TopicList"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TopicList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.TopicList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopicList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     if (value.HasMember("GroupList") && !value["GroupList"].IsNull())
     {
         if (!value["GroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.GroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.GroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     {
         if (!value["TotalPartition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TotalPartition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.TotalPartition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalPartition = value["TotalPartition"].GetInt64();
         m_totalPartitionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     if (value.HasMember("PartitionListForMonitor") && !value["PartitionListForMonitor"].IsNull())
     {
         if (!value["PartitionListForMonitor"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.PartitionListForMonitor` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.PartitionListForMonitor` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PartitionListForMonitor"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     {
         if (!value["TotalTopic"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TotalTopic` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.TotalTopic` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalTopic = value["TotalTopic"].GetInt64();
         m_totalTopicHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     if (value.HasMember("TopicListForMonitor") && !value["TopicListForMonitor"].IsNull())
     {
         if (!value["TopicListForMonitor"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TopicListForMonitor` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.TopicListForMonitor` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopicListForMonitor"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &v
     if (value.HasMember("GroupListForMonitor") && !value["GroupListForMonitor"].IsNull())
     {
         if (!value["GroupListForMonitor"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumerGroupResponse.GroupListForMonitor` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupResponse.GroupListForMonitor` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupListForMonitor"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

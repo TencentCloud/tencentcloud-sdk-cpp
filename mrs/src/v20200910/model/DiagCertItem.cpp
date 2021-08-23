@@ -36,7 +36,7 @@ CoreInternalOutcome DiagCertItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagCertItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagCertItem.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DiagCertItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagCertItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagCertItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DiagCertItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsArray())
-            return CoreInternalOutcome(Error("response `DiagCertItem.Value` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DiagCertItem.Value` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Value"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome ConstraintRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Min"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConstraintRange.Min` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConstraintRange.Min` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_min = string(value["Min"].GetString());
         m_minHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConstraintRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Max"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConstraintRange.Max` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConstraintRange.Max` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_max = string(value["Max"].GetString());
         m_maxHasBeenSet = true;

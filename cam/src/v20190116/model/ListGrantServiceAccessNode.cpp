@@ -36,7 +36,7 @@ CoreInternalOutcome ListGrantServiceAccessNode::Deserialize(const rapidjson::Val
     {
         if (!value["Service"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessNode.Service` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessNode.Service` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_service.Deserialize(value["Service"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ListGrantServiceAccessNode::Deserialize(const rapidjson::Val
     if (value.HasMember("Action") && !value["Action"].IsNull())
     {
         if (!value["Action"].IsArray())
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessNode.Action` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessNode.Action` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Action"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome ListGrantServiceAccessNode::Deserialize(const rapidjson::Val
     if (value.HasMember("Policy") && !value["Policy"].IsNull())
     {
         if (!value["Policy"].IsArray())
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessNode.Policy` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessNode.Policy` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Policy"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome ProductMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationDate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductMetadata.CreationDate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductMetadata.CreationDate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_creationDate = value["CreationDate"].GetUint64();
         m_creationDateHasBeenSet = true;

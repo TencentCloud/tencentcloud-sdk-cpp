@@ -35,7 +35,7 @@ CoreInternalOutcome Execution::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Execution.JobType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Execution.JobType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobType = string(value["JobType"].GetString());
         m_jobTypeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Execution::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Args") && !value["Args"].IsNull())
     {
         if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Error("response `Execution.Args` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Execution.Args` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Args"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

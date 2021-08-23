@@ -42,7 +42,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.FileSystemName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.FileSystemName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemName = string(value["FileSystemName"].GetString());
         m_fileSystemNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemId = string(value["FileSystemId"].GetString());
         m_fileSystemIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.BlockSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.BlockSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockSize = value["BlockSize"].GetUint64();
         m_blockSizeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CapacityQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.CapacityQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.CapacityQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_capacityQuota = value["CapacityQuota"].GetUint64();
         m_capacityQuotaHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome FileSystem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileSystem.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystem.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;

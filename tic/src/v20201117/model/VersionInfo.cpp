@@ -39,7 +39,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = string(value["VersionId"].GetString());
         m_versionIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StackId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.StackId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.StackId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stackId = string(value["StackId"].GetString());
         m_stackIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

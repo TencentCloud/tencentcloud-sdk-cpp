@@ -35,7 +35,7 @@ CoreInternalOutcome ActionStatistic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ActionCount") && !value["ActionCount"].IsNull())
     {
         if (!value["ActionCount"].IsArray())
-            return CoreInternalOutcome(Error("response `ActionStatistic.ActionCount` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ActionStatistic.ActionCount` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ActionCount"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome ActionStatistic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ActionDuration") && !value["ActionDuration"].IsNull())
     {
         if (!value["ActionDuration"].IsArray())
-            return CoreInternalOutcome(Error("response `ActionStatistic.ActionDuration` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ActionStatistic.ActionDuration` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ActionDuration"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome ActionStatistic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ActionDurationRatio") && !value["ActionDurationRatio"].IsNull())
     {
         if (!value["ActionDurationRatio"].IsArray())
-            return CoreInternalOutcome(Error("response `ActionStatistic.ActionDurationRatio` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ActionStatistic.ActionDurationRatio` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ActionDurationRatio"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -49,7 +49,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(value["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EntrypointClass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.EntrypointClass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.EntrypointClass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_entrypointClass = string(value["EntrypointClass"].GetString());
         m_entrypointClassHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProgramArgs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.ProgramArgs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ProgramArgs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_programArgs = string(value["ProgramArgs"].GetString());
         m_programArgsHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.Version` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.Version` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_version = value["Version"].GetInt64();
         m_versionHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultParallelism"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.DefaultParallelism` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.DefaultParallelism` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultParallelism = value["DefaultParallelism"].GetUint64();
         m_defaultParallelismHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Properties") && !value["Properties"].IsNull())
     {
         if (!value["Properties"].IsArray())
-            return CoreInternalOutcome(Error("response `JobConfig.Properties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.Properties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -138,7 +138,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResourceRefDetails") && !value["ResourceRefDetails"].IsNull())
     {
         if (!value["ResourceRefDetails"].IsArray())
-            return CoreInternalOutcome(Error("response `JobConfig.ResourceRefDetails` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.ResourceRefDetails` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResourceRefDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -159,7 +159,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatorUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.CreatorUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CreatorUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creatorUin = string(value["CreatorUin"].GetString());
         m_creatorUinHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["COSBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.COSBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.COSBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cOSBucket = string(value["COSBucket"].GetString());
         m_cOSBucketHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogCollect"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.LogCollect` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.LogCollect` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_logCollect = value["LogCollect"].GetInt64();
         m_logCollectHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxParallelism"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.MaxParallelism` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.MaxParallelism` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxParallelism = value["MaxParallelism"].GetUint64();
         m_maxParallelismHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobManagerSpec"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.JobManagerSpec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JobManagerSpec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_jobManagerSpec = value["JobManagerSpec"].GetDouble();
         m_jobManagerSpecHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskManagerSpec"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `JobConfig.TaskManagerSpec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobConfig.TaskManagerSpec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_taskManagerSpec = value["TaskManagerSpec"].GetDouble();
         m_taskManagerSpecHasBeenSet = true;

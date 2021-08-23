@@ -46,7 +46,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.Spec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.Spec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spec = string(value["Spec"].GetString());
         m_specHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.StorageType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.StorageType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_storageType = value["StorageType"].GetUint64();
         m_storageTypeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RootSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.RootSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.RootSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rootSize = value["RootSize"].GetInt64();
         m_rootSizeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memSize = value["MemSize"].GetInt64();
         m_memSizeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetInt64();
         m_diskSizeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MultiDisks") && !value["MultiDisks"].IsNull())
     {
         if (!value["MultiDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `PriceResource.MultiDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.MultiDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MultiDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -136,7 +136,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.DiskCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.DiskCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskCnt = value["DiskCnt"].GetInt64();
         m_diskCntHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `PriceResource.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -176,7 +176,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.DiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.DiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskNum = value["DiskNum"].GetInt64();
         m_diskNumHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalDiskNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PriceResource.LocalDiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceResource.LocalDiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_localDiskNum = value["LocalDiskNum"].GetInt64();
         m_localDiskNumHasBeenSet = true;

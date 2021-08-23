@@ -40,7 +40,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EniIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.EniIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.EniIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eniIp = string(value["EniIp"].GetString());
         m_eniIpHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ReplicaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Restarted"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReplicaInfo.Restarted` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicaInfo.Restarted` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_restarted = value["Restarted"].GetUint64();
         m_restartedHasBeenSet = true;

@@ -44,7 +44,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Process.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Process.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetUint64();
         m_pidHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ppid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Process.Ppid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.Ppid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ppid = value["Ppid"].GetUint64();
         m_ppidHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.FullPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.FullPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullPath = string(value["FullPath"].GetString());
         m_fullPathHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Process::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Process.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Process.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

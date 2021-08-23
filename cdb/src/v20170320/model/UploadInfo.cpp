@@ -35,7 +35,7 @@ CoreInternalOutcome UploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllSliceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UploadInfo.AllSliceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadInfo.AllSliceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_allSliceNum = value["AllSliceNum"].GetInt64();
         m_allSliceNumHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome UploadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompleteNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UploadInfo.CompleteNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadInfo.CompleteNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_completeNum = value["CompleteNum"].GetInt64();
         m_completeNumHasBeenSet = true;

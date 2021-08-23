@@ -38,7 +38,7 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &v
     {
         if (!value["MainDiseaseHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiseaseMedicalHistory.MainDiseaseHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiseaseMedicalHistory.MainDiseaseHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mainDiseaseHistory = string(value["MainDiseaseHistory"].GetString());
         m_mainDiseaseHistoryHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &v
     {
         if (!value["AllergyHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiseaseMedicalHistory.AllergyHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiseaseMedicalHistory.AllergyHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_allergyHistory = string(value["AllergyHistory"].GetString());
         m_allergyHistoryHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &v
     {
         if (!value["InfectHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiseaseMedicalHistory.InfectHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiseaseMedicalHistory.InfectHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_infectHistory = string(value["InfectHistory"].GetString());
         m_infectHistoryHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &v
     {
         if (!value["OperationHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiseaseMedicalHistory.OperationHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiseaseMedicalHistory.OperationHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationHistory = string(value["OperationHistory"].GetString());
         m_operationHistoryHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &v
     {
         if (!value["TransfusionHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiseaseMedicalHistory.TransfusionHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiseaseMedicalHistory.TransfusionHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transfusionHistory = string(value["TransfusionHistory"].GetString());
         m_transfusionHistoryHasBeenSet = true;

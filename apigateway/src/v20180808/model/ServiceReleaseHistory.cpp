@@ -35,7 +35,7 @@ CoreInternalOutcome ServiceReleaseHistory::Deserialize(const rapidjson::Value &v
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServiceReleaseHistory.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceReleaseHistory.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ServiceReleaseHistory::Deserialize(const rapidjson::Value &v
     if (value.HasMember("VersionList") && !value["VersionList"].IsNull())
     {
         if (!value["VersionList"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceReleaseHistory.VersionList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceReleaseHistory.VersionList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VersionList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

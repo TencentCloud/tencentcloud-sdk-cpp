@@ -35,7 +35,7 @@ CoreInternalOutcome GroupOffsetResponse::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome GroupOffsetResponse::Deserialize(const rapidjson::Value &val
     if (value.HasMember("TopicList") && !value["TopicList"].IsNull())
     {
         if (!value["TopicList"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupOffsetResponse.TopicList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetResponse.TopicList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopicList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

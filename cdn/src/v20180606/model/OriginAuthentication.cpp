@@ -35,7 +35,7 @@ CoreInternalOutcome OriginAuthentication::Deserialize(const rapidjson::Value &va
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginAuthentication.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginAuthentication.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OriginAuthentication::Deserialize(const rapidjson::Value &va
     {
         if (!value["TypeA"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OriginAuthentication.TypeA` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginAuthentication.TypeA` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_typeA.Deserialize(value["TypeA"]);

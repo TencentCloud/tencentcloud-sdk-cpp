@@ -37,7 +37,7 @@ CoreInternalOutcome AccessVpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessVpc.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessVpc.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccessVpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessVpc.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessVpc.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AccessVpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessVpc.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessVpc.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AccessVpc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessVpc.AccessIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessVpc.AccessIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessIp = string(value["AccessIp"].GetString());
         m_accessIpHasBeenSet = true;

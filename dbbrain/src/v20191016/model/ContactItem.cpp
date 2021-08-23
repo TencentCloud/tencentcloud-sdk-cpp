@@ -36,7 +36,7 @@ CoreInternalOutcome ContactItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContactItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ContactItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ContactItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContactItem.Mail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContactItem.Mail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;

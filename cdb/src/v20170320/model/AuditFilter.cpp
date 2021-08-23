@@ -36,7 +36,7 @@ CoreInternalOutcome AuditFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AuditFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Compare"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditFilter.Compare` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditFilter.Compare` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compare = string(value["Compare"].GetString());
         m_compareHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AuditFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditFilter.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditFilter.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

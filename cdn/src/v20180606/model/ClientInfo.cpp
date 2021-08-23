@@ -37,7 +37,7 @@ CoreInternalOutcome ClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientInfo.ProvName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo.ProvName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provName = string(value["ProvName"].GetString());
         m_provNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Country"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientInfo.Country` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo.Country` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_country = string(value["Country"].GetString());
         m_countryHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;

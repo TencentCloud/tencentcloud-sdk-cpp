@@ -34,7 +34,7 @@ CoreInternalOutcome LoadBalancerInternetAccessible::Deserialize(const rapidjson:
     {
         if (!value["InternetMaxBandwidthOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerInternetAccessible.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerInternetAccessible.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetInt64();
         m_internetMaxBandwidthOutHasBeenSet = true;

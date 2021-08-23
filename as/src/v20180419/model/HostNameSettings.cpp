@@ -35,7 +35,7 @@ CoreInternalOutcome HostNameSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostNameSettings.HostName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostNameSettings.HostName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostName = string(value["HostName"].GetString());
         m_hostNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome HostNameSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostNameStyle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostNameSettings.HostNameStyle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostNameSettings.HostNameStyle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostNameStyle = string(value["HostNameStyle"].GetString());
         m_hostNameStyleHasBeenSet = true;

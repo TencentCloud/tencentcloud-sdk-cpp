@@ -35,7 +35,7 @@ CoreInternalOutcome CertificateAliasInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateAliasInfo.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateAliasInfo.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(value["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CertificateAliasInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateAliasInfo.CertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateAliasInfo.CertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateAlias = string(value["CertificateAlias"].GetString());
         m_certificateAliasHasBeenSet = true;

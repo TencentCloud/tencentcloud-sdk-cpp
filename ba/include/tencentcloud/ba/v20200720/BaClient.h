@@ -43,13 +43,13 @@ namespace TencentCloud
                 BaClient(const Credential &credential, const std::string &region);
                 BaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateWeappQRUrlResponse> CreateWeappQRUrlOutcome;
+                typedef Outcome<Core::Error, Model::CreateWeappQRUrlResponse> CreateWeappQRUrlOutcome;
                 typedef std::future<CreateWeappQRUrlOutcome> CreateWeappQRUrlOutcomeCallable;
                 typedef std::function<void(const BaClient*, const Model::CreateWeappQRUrlRequest&, CreateWeappQRUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWeappQRUrlAsyncHandler;
-                typedef Outcome<Error, Model::DescribeGetAuthInfoResponse> DescribeGetAuthInfoOutcome;
+                typedef Outcome<Core::Error, Model::DescribeGetAuthInfoResponse> DescribeGetAuthInfoOutcome;
                 typedef std::future<DescribeGetAuthInfoOutcome> DescribeGetAuthInfoOutcomeCallable;
                 typedef std::function<void(const BaClient*, const Model::DescribeGetAuthInfoRequest&, DescribeGetAuthInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGetAuthInfoAsyncHandler;
-                typedef Outcome<Error, Model::SyncIcpOrderWebInfoResponse> SyncIcpOrderWebInfoOutcome;
+                typedef Outcome<Core::Error, Model::SyncIcpOrderWebInfoResponse> SyncIcpOrderWebInfoOutcome;
                 typedef std::future<SyncIcpOrderWebInfoOutcome> SyncIcpOrderWebInfoOutcomeCallable;
                 typedef std::function<void(const BaClient*, const Model::SyncIcpOrderWebInfoRequest&, SyncIcpOrderWebInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncIcpOrderWebInfoAsyncHandler;
 

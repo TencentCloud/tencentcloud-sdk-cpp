@@ -35,7 +35,7 @@ CoreInternalOutcome DateCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DateCount.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DateCount.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DateCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DateCount.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DateCount.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;

@@ -45,7 +45,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.HostIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.HostIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostIp = string(value["HostIp"].GetString());
         m_hostIpHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.HostName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.HostName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostName = string(value["HostName"].GetString());
         m_hostNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.OsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.OsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osName = string(value["OsName"].GetString());
         m_osNameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.RiskNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.RiskNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskNum = value["RiskNum"].GetUint64();
         m_riskNumHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.ScanBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.ScanBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanBeginTime = string(value["ScanBeginTime"].GetString());
         m_scanBeginTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanEndTime = string(value["ScanEndTime"].GetString());
         m_scanEndTimeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanTaskDetails.FailType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.FailType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_failType = value["FailType"].GetUint64();
         m_failTypeHasBeenSet = true;

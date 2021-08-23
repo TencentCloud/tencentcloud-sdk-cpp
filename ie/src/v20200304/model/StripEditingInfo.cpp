@@ -35,7 +35,7 @@ CoreInternalOutcome StripEditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StripEditingInfo.Switch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripEditingInfo.Switch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_switch = value["Switch"].GetInt64();
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StripEditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StripEditingInfo.CustomInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StripEditingInfo.CustomInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customInfo = string(value["CustomInfo"].GetString());
         m_customInfoHasBeenSet = true;

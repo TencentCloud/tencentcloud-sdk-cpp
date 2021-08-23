@@ -36,16 +36,16 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["Pass"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Pass` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Pass` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_pass = rsp["Pass"].GetBool();
         m_passHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["VerifiedTimes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VerifiedTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifiedTimes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_verifiedTimes = rsp["VerifiedTimes"].GetUint64();
         m_verifiedTimesHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["LeftTimes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LeftTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LeftTimes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_leftTimes = rsp["LeftTimes"].GetUint64();
         m_leftTimesHasBeenSet = true;

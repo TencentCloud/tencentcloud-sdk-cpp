@@ -39,7 +39,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Va
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeE.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeE.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Va
     {
         if (!value["SignParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeE.SignParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeE.SignParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signParam = string(value["SignParam"].GetString());
         m_signParamHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Va
     {
         if (!value["AclSignParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeE.AclSignParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeE.AclSignParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aclSignParam = string(value["AclSignParam"].GetString());
         m_aclSignParamHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Va
     {
         if (!value["StartTimeParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeE.StartTimeParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeE.StartTimeParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeParam = string(value["StartTimeParam"].GetString());
         m_startTimeParamHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Va
     {
         if (!value["ExpireTimeParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeE.ExpireTimeParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeE.ExpireTimeParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTimeParam = string(value["ExpireTimeParam"].GetString());
         m_expireTimeParamHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Va
     {
         if (!value["TimeFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeE.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeE.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeFormat = string(value["TimeFormat"].GetString());
         m_timeFormatHasBeenSet = true;

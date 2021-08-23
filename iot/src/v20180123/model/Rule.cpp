@@ -45,7 +45,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Rule.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rule.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Query"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Rule.Query` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.Query` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_query.Deserialize(value["Query"]);
@@ -101,7 +101,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Actions") && !value["Actions"].IsNull())
     {
         if (!value["Actions"].IsArray())
-            return CoreInternalOutcome(Error("response `Rule.Actions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Rule.Actions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Actions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -122,7 +122,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Active"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Rule.Active` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.Active` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_active = value["Active"].GetUint64();
         m_activeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Deleted"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Rule.Deleted` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.Deleted` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deleted = value["Deleted"].GetUint64();
         m_deletedHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rule.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgOrder"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Rule.MsgOrder` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.MsgOrder` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgOrder = value["MsgOrder"].GetUint64();
         m_msgOrderHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Rule.DataType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rule.DataType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dataType = value["DataType"].GetUint64();
         m_dataTypeHasBeenSet = true;

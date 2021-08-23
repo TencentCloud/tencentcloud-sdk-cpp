@@ -43,7 +43,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.ProductModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.ProductModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productModel = string(value["ProductModel"].GetString());
         m_productModelHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productDescription = string(value["ProductDescription"].GetString());
         m_productDescriptionHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IotModelRevision"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.IotModelRevision` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.IotModelRevision` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iotModelRevision = value["IotModelRevision"].GetUint64();
         m_iotModelRevisionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FuncCode") && !value["FuncCode"].IsNull())
     {
         if (!value["FuncCode"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductBase.FuncCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.FuncCode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FuncCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -126,7 +126,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductCate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.ProductCate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.ProductCate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_productCate = value["ProductCate"].GetInt64();
         m_productCateHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ProductBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductBase.ProductRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductBase.ProductRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productRegion = string(value["ProductRegion"].GetString());
         m_productRegionHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome DBParamValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Param"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBParamValue.Param` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBParamValue.Param` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_param = string(value["Param"].GetString());
         m_paramHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DBParamValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBParamValue.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBParamValue.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

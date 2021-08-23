@@ -37,7 +37,7 @@ CoreInternalOutcome ExtensionFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CodeUri"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionFileInfo.CodeUri` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionFileInfo.CodeUri` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeUri = string(value["CodeUri"].GetString());
         m_codeUriHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ExtensionFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["UploadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionFileInfo.UploadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionFileInfo.UploadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uploadUrl = string(value["UploadUrl"].GetString());
         m_uploadUrlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ExtensionFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CustomKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtensionFileInfo.CustomKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionFileInfo.CustomKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customKey = string(value["CustomKey"].GetString());
         m_customKeyHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ExtensionFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaxSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExtensionFileInfo.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtensionFileInfo.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetUint64();
         m_maxSizeHasBeenSet = true;

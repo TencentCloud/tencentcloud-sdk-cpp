@@ -36,7 +36,7 @@ CoreInternalOutcome StreamConnectProjectInput::Deserialize(const rapidjson::Valu
     {
         if (!value["MainInput"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInput.MainInput` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInput.MainInput` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mainInput.Deserialize(value["MainInput"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome StreamConnectProjectInput::Deserialize(const rapidjson::Valu
     {
         if (!value["BackupInput"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInput.BackupInput` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInput.BackupInput` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_backupInput.Deserialize(value["BackupInput"]);
@@ -69,7 +69,7 @@ CoreInternalOutcome StreamConnectProjectInput::Deserialize(const rapidjson::Valu
     if (value.HasMember("Outputs") && !value["Outputs"].IsNull())
     {
         if (!value["Outputs"].IsArray())
-            return CoreInternalOutcome(Error("response `StreamConnectProjectInput.Outputs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectProjectInput.Outputs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Outputs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

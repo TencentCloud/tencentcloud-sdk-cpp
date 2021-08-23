@@ -46,7 +46,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Instid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Instid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Instid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instid = string(value["Instid"].GetString());
         m_instidHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Taskid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Taskid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Taskid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskid = string(value["Taskid"].GetString());
         m_taskidHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Result` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Result` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_result = value["Result"].GetInt64();
         m_resultHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Updatetime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Updatetime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Updatetime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatetime = string(value["Updatetime"].GetString());
         m_updatetimeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsIgnore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.IsIgnore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.IsIgnore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isIgnore = value["IsIgnore"].GetInt64();
         m_isIgnoreHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsChecked"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.IsChecked` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.IsChecked` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isChecked = value["IsChecked"].GetInt64();
         m_isCheckedHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.AssetInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.AssetInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetInfo = string(value["AssetInfo"].GetString());
         m_assetInfoHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.AssetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.AssetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetId = string(value["AssetId"].GetString());
         m_assetIdHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remarks"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckAssetItem.Remarks` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckAssetItem.Remarks` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remarks = string(value["Remarks"].GetString());
         m_remarksHasBeenSet = true;

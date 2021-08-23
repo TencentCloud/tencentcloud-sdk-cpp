@@ -36,7 +36,7 @@ CoreInternalOutcome MetricDataPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricDataPoint.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricDataPoint.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MetricDataPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricDataPoint.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricDataPoint.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MetricDataPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricDataPoint.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricDataPoint.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ActionCountStatistic::Deserialize(const rapidjson::Value &va
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActionCountStatistic.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionCountStatistic.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ActionCountStatistic::Deserialize(const rapidjson::Value &va
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionCountStatistic.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionCountStatistic.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

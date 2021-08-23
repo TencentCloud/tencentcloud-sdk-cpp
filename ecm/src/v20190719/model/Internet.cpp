@@ -35,7 +35,7 @@ CoreInternalOutcome Internet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PrivateIPAddressSet") && !value["PrivateIPAddressSet"].IsNull())
     {
         if (!value["PrivateIPAddressSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Internet.PrivateIPAddressSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Internet.PrivateIPAddressSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIPAddressSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome Internet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublicIPAddressSet") && !value["PublicIPAddressSet"].IsNull())
     {
         if (!value["PublicIPAddressSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Internet.PublicIPAddressSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Internet.PublicIPAddressSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIPAddressSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome Internet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceNetworkInfoSet") && !value["InstanceNetworkInfoSet"].IsNull())
     {
         if (!value["InstanceNetworkInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Internet.InstanceNetworkInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Internet.InstanceNetworkInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceNetworkInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

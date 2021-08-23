@@ -36,7 +36,7 @@ CoreInternalOutcome ModifyBundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyPrice"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ModifyBundle.ModifyPrice` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyBundle.ModifyPrice` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_modifyPrice.Deserialize(value["ModifyPrice"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome ModifyBundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyBundleState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyBundle.ModifyBundleState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyBundle.ModifyBundleState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyBundleState = string(value["ModifyBundleState"].GetString());
         m_modifyBundleStateHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ModifyBundle::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bundle"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ModifyBundle.Bundle` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyBundle.Bundle` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bundle.Deserialize(value["Bundle"]);

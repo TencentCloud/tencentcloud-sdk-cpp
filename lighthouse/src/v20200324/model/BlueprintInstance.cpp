@@ -36,7 +36,7 @@ CoreInternalOutcome BlueprintInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["Blueprint"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BlueprintInstance.Blueprint` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintInstance.Blueprint` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_blueprint.Deserialize(value["Blueprint"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome BlueprintInstance::Deserialize(const rapidjson::Value &value
     if (value.HasMember("SoftwareSet") && !value["SoftwareSet"].IsNull())
     {
         if (!value["SoftwareSet"].IsArray())
-            return CoreInternalOutcome(Error("response `BlueprintInstance.SoftwareSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BlueprintInstance.SoftwareSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SoftwareSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome BlueprintInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlueprintInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

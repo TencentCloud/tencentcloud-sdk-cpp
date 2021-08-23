@@ -34,7 +34,7 @@ CoreInternalOutcome HighlightsConfigureInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HighlightsConfigureInfo.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HighlightsConfigureInfo.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;

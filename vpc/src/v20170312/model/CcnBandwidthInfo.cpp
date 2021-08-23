@@ -39,7 +39,7 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CcnId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnBandwidthInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccnId = string(value["CcnId"].GetString());
         m_ccnIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnBandwidthInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnBandwidthInfo.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = string(value["ExpiredTime"].GetString());
         m_expiredTimeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionFlowControlId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnBandwidthInfo.RegionFlowControlId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.RegionFlowControlId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionFlowControlId = string(value["RegionFlowControlId"].GetString());
         m_regionFlowControlIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnBandwidthInfo.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = string(value["RenewFlag"].GetString());
         m_renewFlagHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CcnRegionBandwidthLimit"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CcnBandwidthInfo.CcnRegionBandwidthLimit` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.CcnRegionBandwidthLimit` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ccnRegionBandwidthLimit.Deserialize(value["CcnRegionBandwidthLimit"]);

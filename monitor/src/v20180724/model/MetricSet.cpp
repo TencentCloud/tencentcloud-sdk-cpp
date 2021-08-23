@@ -41,7 +41,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricSet.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricSet.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricSet.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitCname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricSet.UnitCname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.UnitCname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unitCname = string(value["UnitCname"].GetString());
         m_unitCnameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Period") && !value["Period"].IsNull())
     {
         if (!value["Period"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricSet.Period` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.Period` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Period"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -93,7 +93,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Periods") && !value["Periods"].IsNull())
     {
         if (!value["Periods"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricSet.Periods` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.Periods` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Periods"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Meaning"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MetricSet.Meaning` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.Meaning` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_meaning.Deserialize(value["Meaning"]);
@@ -130,7 +130,7 @@ CoreInternalOutcome MetricSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Dimensions") && !value["Dimensions"].IsNull())
     {
         if (!value["Dimensions"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricSet.Dimensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricSet.Dimensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Dimensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

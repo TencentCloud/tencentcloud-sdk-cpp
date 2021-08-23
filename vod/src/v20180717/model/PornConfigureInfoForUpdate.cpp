@@ -36,7 +36,7 @@ CoreInternalOutcome PornConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["ImgReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornConfigureInfoForUpdate.ImgReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornConfigureInfoForUpdate.ImgReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imgReviewInfo.Deserialize(value["ImgReviewInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome PornConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["AsrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornConfigureInfoForUpdate.AsrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornConfigureInfoForUpdate.AsrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrReviewInfo.Deserialize(value["AsrReviewInfo"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome PornConfigureInfoForUpdate::Deserialize(const rapidjson::Val
     {
         if (!value["OcrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornConfigureInfoForUpdate.OcrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornConfigureInfoForUpdate.OcrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrReviewInfo.Deserialize(value["OcrReviewInfo"]);

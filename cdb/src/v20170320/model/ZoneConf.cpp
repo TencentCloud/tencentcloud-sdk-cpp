@@ -36,7 +36,7 @@ CoreInternalOutcome ZoneConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DeployMode") && !value["DeployMode"].IsNull())
     {
         if (!value["DeployMode"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneConf.DeployMode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneConf.DeployMode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeployMode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome ZoneConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MasterZone") && !value["MasterZone"].IsNull())
     {
         if (!value["MasterZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneConf.MasterZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneConf.MasterZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MasterZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome ZoneConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SlaveZone") && !value["SlaveZone"].IsNull())
     {
         if (!value["SlaveZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneConf.SlaveZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneConf.SlaveZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SlaveZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome ZoneConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BackupZone") && !value["BackupZone"].IsNull())
     {
         if (!value["BackupZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneConf.BackupZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneConf.BackupZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BackupZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

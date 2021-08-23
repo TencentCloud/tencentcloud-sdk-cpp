@@ -37,7 +37,7 @@ CoreInternalOutcome ClsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsInfo.ClsRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsInfo.ClsRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsRegion = string(value["ClsRegion"].GetString());
         m_clsRegionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ClsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsLogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsInfo.ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsInfo.ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsLogsetId = string(value["ClsLogsetId"].GetString());
         m_clsLogsetIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ClsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsTopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsInfo.ClsTopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsInfo.ClsTopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsTopicId = string(value["ClsTopicId"].GetString());
         m_clsTopicIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ClsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

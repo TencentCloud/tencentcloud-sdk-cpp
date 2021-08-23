@@ -40,7 +40,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     {
         if (!value["Notification"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.Notification` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.Notification` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_notification.Deserialize(value["Notification"]);
@@ -97,7 +97,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome PrometheusAlertRuleDetail::Deserialize(const rapidjson::Valu
     {
         if (!value["Interval"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertRuleDetail.Interval` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertRuleDetail.Interval` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_interval = string(value["Interval"].GetString());
         m_intervalHasBeenSet = true;

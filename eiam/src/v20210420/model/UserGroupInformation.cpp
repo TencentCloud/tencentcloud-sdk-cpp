@@ -36,7 +36,7 @@ CoreInternalOutcome UserGroupInformation::Deserialize(const rapidjson::Value &va
     {
         if (!value["UserGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserGroupInformation.UserGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserGroupInformation.UserGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userGroupId = string(value["UserGroupId"].GetString());
         m_userGroupIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome UserGroupInformation::Deserialize(const rapidjson::Value &va
     {
         if (!value["UserGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserGroupInformation.UserGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserGroupInformation.UserGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userGroupName = string(value["UserGroupName"].GetString());
         m_userGroupNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome UserGroupInformation::Deserialize(const rapidjson::Value &va
     {
         if (!value["LastModifiedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserGroupInformation.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserGroupInformation.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedDate = string(value["LastModifiedDate"].GetString());
         m_lastModifiedDateHasBeenSet = true;

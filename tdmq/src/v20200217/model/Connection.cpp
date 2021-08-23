@@ -40,7 +40,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Connection.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Partitions"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Connection.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitions = value["Partitions"].GetInt64();
         m_partitionsHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Connection.ClientVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.ClientVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientVersion = string(value["ClientVersion"].GetString());
         m_clientVersionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProducerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Connection.ProducerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.ProducerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_producerName = string(value["ProducerName"].GetString());
         m_producerNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProducerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Connection.ProducerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.ProducerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_producerId = string(value["ProducerId"].GetString());
         m_producerIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AverageMsgSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Connection.AverageMsgSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.AverageMsgSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_averageMsgSize = string(value["AverageMsgSize"].GetString());
         m_averageMsgSizeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgThroughputIn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Connection.MsgThroughputIn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Connection.MsgThroughputIn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgThroughputIn = string(value["MsgThroughputIn"].GetString());
         m_msgThroughputInHasBeenSet = true;

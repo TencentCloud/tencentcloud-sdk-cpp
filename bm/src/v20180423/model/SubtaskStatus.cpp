@@ -35,7 +35,7 @@ CoreInternalOutcome SubtaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubtaskStatus.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtaskStatus.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SubtaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SubtaskStatus.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubtaskStatus.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = value["TaskStatus"].GetUint64();
         m_taskStatusHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome ReplicationRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRule.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ReplicationRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestNamespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRule.DestNamespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRule.DestNamespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destNamespace = string(value["DestNamespace"].GetString());
         m_destNamespaceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ReplicationRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Override"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ReplicationRule.Override` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRule.Override` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_override = value["Override"].GetBool();
         m_overrideHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ReplicationRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Filters") && !value["Filters"].IsNull())
     {
         if (!value["Filters"].IsArray())
-            return CoreInternalOutcome(Error("response `ReplicationRule.Filters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReplicationRule.Filters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Filters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

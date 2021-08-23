@@ -40,7 +40,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SkillGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupId = value["SkillGroupId"].GetInt64();
         m_skillGroupIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SkillGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupName = string(value["SkillGroupName"].GetString());
         m_skillGroupNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RoutePolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.RoutePolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.RoutePolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routePolicy = string(value["RoutePolicy"].GetString());
         m_routePolicyHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UsingLastSeat"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.UsingLastSeat` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.UsingLastSeat` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_usingLastSeat = value["UsingLastSeat"].GetInt64();
         m_usingLastSeatHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MaxConcurrency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.MaxConcurrency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.MaxConcurrency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxConcurrency = value["MaxConcurrency"].GetInt64();
         m_maxConcurrencyHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LastModifyTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupInfoItem.LastModifyTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.LastModifyTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifyTimestamp = value["LastModifyTimestamp"].GetInt64();
         m_lastModifyTimestampHasBeenSet = true;

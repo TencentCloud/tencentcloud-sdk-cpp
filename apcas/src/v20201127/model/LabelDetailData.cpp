@@ -35,7 +35,7 @@ CoreInternalOutcome LabelDetailData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LabelDetailData.Value` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelDetailData.Value` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_value.Deserialize(value["Value"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome LabelDetailData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LabelDetailData.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelDetailData.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;

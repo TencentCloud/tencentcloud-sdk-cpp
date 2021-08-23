@@ -35,7 +35,7 @@ CoreInternalOutcome StatisticItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatisticItem.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatisticItem.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StatisticItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sum"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StatisticItem.Sum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatisticItem.Sum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sum = value["Sum"].GetDouble();
         m_sumHasBeenSet = true;

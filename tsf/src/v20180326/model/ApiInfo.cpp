@@ -40,7 +40,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceId = string(value["MicroserviceId"].GetString());
         m_microserviceIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PathMapping"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.PathMapping` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.PathMapping` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pathMapping = string(value["PathMapping"].GetString());
         m_pathMappingHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

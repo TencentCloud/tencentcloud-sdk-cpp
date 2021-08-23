@@ -34,7 +34,7 @@ CoreInternalOutcome HlsSpecialParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowContinueDuration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HlsSpecialParam.FlowContinueDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HlsSpecialParam.FlowContinueDuration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_flowContinueDuration = value["FlowContinueDuration"].GetUint64();
         m_flowContinueDurationHasBeenSet = true;

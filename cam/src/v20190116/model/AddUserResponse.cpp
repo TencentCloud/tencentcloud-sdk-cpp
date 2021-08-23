@@ -39,16 +39,16 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     {
         if (!rsp["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = rsp["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     {
         if (!rsp["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(rsp["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     {
         if (!rsp["SecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretId = string(rsp["SecretId"].GetString());
         m_secretIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     {
         if (!rsp["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(rsp["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
     {
         if (!rsp["Uid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uid = rsp["Uid"].GetUint64();
         m_uidHasBeenSet = true;

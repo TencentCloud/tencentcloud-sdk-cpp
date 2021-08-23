@@ -35,16 +35,16 @@ CoreInternalOutcome ModifyPersonSampleResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -55,11 +55,11 @@ CoreInternalOutcome ModifyPersonSampleResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -67,7 +67,7 @@ CoreInternalOutcome ModifyPersonSampleResponse::Deserialize(const string &payloa
     {
         if (!rsp["Person"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Person` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Person` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_person.Deserialize(rsp["Person"]);
@@ -83,7 +83,7 @@ CoreInternalOutcome ModifyPersonSampleResponse::Deserialize(const string &payloa
     if (rsp.HasMember("FailFaceInfoSet") && !rsp["FailFaceInfoSet"].IsNull())
     {
         if (!rsp["FailFaceInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `FailFaceInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FailFaceInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["FailFaceInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

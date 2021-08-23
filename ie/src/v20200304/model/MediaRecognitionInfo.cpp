@@ -35,7 +35,7 @@ CoreInternalOutcome MediaRecognitionInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["FrameTagRec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaRecognitionInfo.FrameTagRec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaRecognitionInfo.FrameTagRec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_frameTagRec.Deserialize(value["FrameTagRec"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome MediaRecognitionInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["SubtitleRec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaRecognitionInfo.SubtitleRec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaRecognitionInfo.SubtitleRec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_subtitleRec.Deserialize(value["SubtitleRec"]);

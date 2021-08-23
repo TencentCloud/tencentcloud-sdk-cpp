@@ -39,7 +39,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PartitionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.PartitionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.PartitionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitionId = value["PartitionId"].GetInt64();
         m_partitionIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InclusiveBeginKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.InclusiveBeginKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.InclusiveBeginKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inclusiveBeginKey = string(value["InclusiveBeginKey"].GetString());
         m_inclusiveBeginKeyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExclusiveEndKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.ExclusiveEndKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.ExclusiveEndKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exclusiveEndKey = string(value["ExclusiveEndKey"].GetString());
         m_exclusiveEndKeyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastWriteTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PartitionInfo.LastWriteTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PartitionInfo.LastWriteTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastWriteTime = string(value["LastWriteTime"].GetString());
         m_lastWriteTimeHasBeenSet = true;

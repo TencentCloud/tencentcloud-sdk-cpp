@@ -40,7 +40,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["GPU"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.GPU` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.GPU` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gPU = value["GPU"].GetInt64();
         m_gPUHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CPU"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.CPU` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.CPU` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cPU = value["CPU"].GetInt64();
         m_cPUHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FPGA"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.FPGA` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.FPGA` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fPGA = value["FPGA"].GetInt64();
         m_fPGAHasBeenSet = true;

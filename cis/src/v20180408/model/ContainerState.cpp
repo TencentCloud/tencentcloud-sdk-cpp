@@ -38,7 +38,7 @@ CoreInternalOutcome ContainerState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerState.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerState.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ContainerState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerState.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerState.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ContainerState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerState.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerState.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ContainerState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerState.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerState.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(value["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ContainerState::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExitCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerState.ExitCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerState.ExitCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exitCode = value["ExitCode"].GetInt64();
         m_exitCodeHasBeenSet = true;

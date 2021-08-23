@@ -37,7 +37,7 @@ CoreInternalOutcome TranscodeTotalInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTotalInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTotalInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TranscodeTotalInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTotalInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTotalInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TranscodeTotalInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ModuleCodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTotalInfo.ModuleCodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTotalInfo.ModuleCodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleCodec = string(value["ModuleCodec"].GetString());
         m_moduleCodecHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TranscodeTotalInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTotalInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTotalInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(value["Resolution"].GetString());
         m_resolutionHasBeenSet = true;

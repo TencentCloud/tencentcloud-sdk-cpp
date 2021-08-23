@@ -37,7 +37,7 @@ CoreInternalOutcome AuthenticationTypeB::Deserialize(const rapidjson::Value &val
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeB.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeB.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AuthenticationTypeB::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeB.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeB.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetInt64();
         m_expireTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AuthenticationTypeB::Deserialize(const rapidjson::Value &val
     if (value.HasMember("FileExtensions") && !value["FileExtensions"].IsNull())
     {
         if (!value["FileExtensions"].IsArray())
-            return CoreInternalOutcome(Error("response `AuthenticationTypeB.FileExtensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeB.FileExtensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileExtensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome AuthenticationTypeB::Deserialize(const rapidjson::Value &val
     {
         if (!value["FilterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeB.FilterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeB.FilterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = string(value["FilterType"].GetString());
         m_filterTypeHasBeenSet = true;

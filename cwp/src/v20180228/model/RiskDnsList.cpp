@@ -53,7 +53,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.AccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.AccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accessCount = value["AccessCount"].GetUint64();
         m_accessCountHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.ProcessMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.ProcessMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processMd5 = string(value["ProcessMd5"].GetString());
         m_processMd5HasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GlobalRuleId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.GlobalRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.GlobalRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_globalRuleId = value["GlobalRuleId"].GetUint64();
         m_globalRuleIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserRuleId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.UserRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.UserRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_userRuleId = value["UserRuleId"].GetUint64();
         m_userRuleIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MergeTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.MergeTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.MergeTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mergeTime = string(value["MergeTime"].GetString());
         m_mergeTimeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.HostIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.HostIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostIp = string(value["HostIp"].GetString());
         m_hostIpHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reference"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Reference` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Reference` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reference = string(value["Reference"].GetString());
         m_referenceHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmdLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmdLine = string(value["CmdLine"].GetString());
         m_cmdLineHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetUint64();
         m_pidHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuggestScheme"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDnsList.SuggestScheme` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.SuggestScheme` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestScheme = string(value["SuggestScheme"].GetString());
         m_suggestSchemeHasBeenSet = true;
@@ -242,7 +242,7 @@ CoreInternalOutcome RiskDnsList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `RiskDnsList.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RiskDnsList.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

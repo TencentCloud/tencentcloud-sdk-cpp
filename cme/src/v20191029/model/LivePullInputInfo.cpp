@@ -34,7 +34,7 @@ CoreInternalOutcome LivePullInputInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["InputUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LivePullInputInfo.InputUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePullInputInfo.InputUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputUrl = string(value["InputUrl"].GetString());
         m_inputUrlHasBeenSet = true;

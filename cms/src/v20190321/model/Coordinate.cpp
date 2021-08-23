@@ -37,7 +37,7 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cx"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Coordinate.Cx` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Cx` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cx = value["Cx"].GetInt64();
         m_cxHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Coordinate.Cy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Cy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cy = value["Cy"].GetInt64();
         m_cyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Coordinate.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Coordinate.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome VodPornReviewSegmentItem::Deserialize(const rapidjson::Value
     {
         if (!value["PicUrlExpireTimeStamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodPornReviewSegmentItem.PicUrlExpireTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornReviewSegmentItem.PicUrlExpireTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTimeStamp = value["PicUrlExpireTimeStamp"].GetInt64();
         m_picUrlExpireTimeStampHasBeenSet = true;

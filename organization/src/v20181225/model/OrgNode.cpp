@@ -37,7 +37,7 @@ CoreInternalOutcome OrgNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgNode.NodeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNode.NodeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = value["NodeId"].GetUint64();
         m_nodeIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OrgNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNode.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNode.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OrgNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentNodeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgNode.ParentNodeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNode.ParentNodeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_parentNodeId = value["ParentNodeId"].GetUint64();
         m_parentNodeIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OrgNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrgNode.MemberCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNode.MemberCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memberCount = value["MemberCount"].GetUint64();
         m_memberCountHasBeenSet = true;

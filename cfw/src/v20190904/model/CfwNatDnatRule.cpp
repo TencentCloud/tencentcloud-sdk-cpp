@@ -39,7 +39,7 @@ CoreInternalOutcome CfwNatDnatRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CfwNatDnatRule.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfwNatDnatRule.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CfwNatDnatRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CfwNatDnatRule.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfwNatDnatRule.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAddress = string(value["PublicIpAddress"].GetString());
         m_publicIpAddressHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CfwNatDnatRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CfwNatDnatRule.PublicPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfwNatDnatRule.PublicPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_publicPort = value["PublicPort"].GetInt64();
         m_publicPortHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CfwNatDnatRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CfwNatDnatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfwNatDnatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CfwNatDnatRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivatePort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CfwNatDnatRule.PrivatePort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfwNatDnatRule.PrivatePort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_privatePort = value["PrivatePort"].GetInt64();
         m_privatePortHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CfwNatDnatRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CfwNatDnatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CfwNatDnatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

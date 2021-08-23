@@ -39,7 +39,7 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyPair.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPair.KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyPair.KeyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPair.KeyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyName = string(value["KeyName"].GetString());
         m_keyNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyPair.PublicKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPair.PublicKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicKey = string(value["PublicKey"].GetString());
         m_publicKeyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssociatedInstanceIds") && !value["AssociatedInstanceIds"].IsNull())
     {
         if (!value["AssociatedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `KeyPair.AssociatedInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KeyPair.AssociatedInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssociatedInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -82,7 +82,7 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyPair.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPair.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyPair.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyPair.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateKey = string(value["PrivateKey"].GetString());
         m_privateKeyHasBeenSet = true;

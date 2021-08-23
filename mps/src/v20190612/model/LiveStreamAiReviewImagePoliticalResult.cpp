@@ -42,7 +42,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["StartPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startPtsTime = value["StartPtsTime"].GetDouble();
         m_startPtsTimeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["EndPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endPtsTime = value["EndPtsTime"].GetDouble();
         m_endPtsTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     if (value.HasMember("AreaCoordSet") && !value["AreaCoordSet"].IsNull())
     {
         if (!value["AreaCoordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.AreaCoordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.AreaCoordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -115,7 +115,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePoliticalResult::Deserialize(const ra
     {
         if (!value["PicUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePoliticalResult.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePoliticalResult.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
         m_picUrlExpireTimeHasBeenSet = true;

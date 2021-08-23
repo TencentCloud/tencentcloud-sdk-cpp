@@ -37,7 +37,7 @@ CoreInternalOutcome LoginStatistic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatisticalType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginStatistic.StatisticalType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginStatistic.StatisticalType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statisticalType = string(value["StatisticalType"].GetString());
         m_statisticalTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LoginStatistic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatisticalCycle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginStatistic.StatisticalCycle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginStatistic.StatisticalCycle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statisticalCycle = string(value["StatisticalCycle"].GetString());
         m_statisticalCycleHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LoginStatistic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginStatistic.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginStatistic.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome LoginStatistic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginStatistic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginStatistic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

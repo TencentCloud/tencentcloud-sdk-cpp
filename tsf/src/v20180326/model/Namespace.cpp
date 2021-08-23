@@ -47,7 +47,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceCode = string(value["NamespaceCode"].GetString());
         m_namespaceCodeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceDesc = string(value["NamespaceDesc"].GetString());
         m_namespaceDescHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.IsDefault` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.IsDefault` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = string(value["IsDefault"].GetString());
         m_isDefaultHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceStatus = string(value["NamespaceStatus"].GetString());
         m_namespaceStatusHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeleteFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Namespace.DeleteFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.DeleteFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deleteFlag = value["DeleteFlag"].GetBool();
         m_deleteFlagHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ClusterList") && !value["ClusterList"].IsNull())
     {
         if (!value["ClusterList"].IsArray())
-            return CoreInternalOutcome(Error("response `Namespace.ClusterList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Namespace.ClusterList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClusterList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -157,7 +157,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceResourceType = string(value["NamespaceResourceType"].GetString());
         m_namespaceResourceTypeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.NamespaceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.NamespaceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceType = string(value["NamespaceType"].GetString());
         m_namespaceTypeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsHaEnable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Namespace.IsHaEnable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Namespace.IsHaEnable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isHaEnable = string(value["IsHaEnable"].GetString());
         m_isHaEnableHasBeenSet = true;

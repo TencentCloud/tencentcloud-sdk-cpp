@@ -35,7 +35,7 @@ CoreInternalOutcome AgeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Age"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AgeInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgeInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetInt64();
         m_ageHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AgeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AgeInfo.FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgeInfo.FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(value["FaceRect"]);

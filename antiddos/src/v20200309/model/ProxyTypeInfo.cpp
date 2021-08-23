@@ -34,7 +34,7 @@ CoreInternalOutcome ProxyTypeInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProxyPorts") && !value["ProxyPorts"].IsNull())
     {
         if (!value["ProxyPorts"].IsArray())
-            return CoreInternalOutcome(Error("response `ProxyTypeInfo.ProxyPorts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProxyTypeInfo.ProxyPorts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProxyPorts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome ProxyTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyTypeInfo.ProxyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyTypeInfo.ProxyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyType = string(value["ProxyType"].GetString());
         m_proxyTypeHasBeenSet = true;

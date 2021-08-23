@@ -36,7 +36,7 @@ CoreInternalOutcome CdnData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnData.Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnData.Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(value["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CdnData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetailData") && !value["DetailData"].IsNull())
     {
         if (!value["DetailData"].IsArray())
-            return CoreInternalOutcome(Error("response `CdnData.DetailData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CdnData.DetailData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome CdnData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SummarizedData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CdnData.SummarizedData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnData.SummarizedData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_summarizedData.Deserialize(value["SummarizedData"]);

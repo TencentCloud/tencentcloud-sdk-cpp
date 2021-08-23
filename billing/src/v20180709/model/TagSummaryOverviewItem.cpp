@@ -36,7 +36,7 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
     {
         if (!value["TagValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagSummaryOverviewItem.TagValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.TagValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValue = string(value["TagValue"].GetString());
         m_tagValueHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
     {
         if (!value["RealTotalCostRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCostRatio = string(value["RealTotalCostRatio"].GetString());
         m_realTotalCostRatioHasBeenSet = true;

@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
     {
         if (!rsp["TaskStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = string(rsp["TaskStatus"].GetString());
         m_taskStatusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
     {
         if (!rsp["ResultVideoUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResultVideoUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultVideoUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultVideoUrl = string(rsp["ResultVideoUrl"].GetString());
         m_resultVideoUrlHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
     {
         if (!rsp["ResultVideoMD5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResultVideoMD5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultVideoMD5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultVideoMD5 = string(rsp["ResultVideoMD5"].GetString());
         m_resultVideoMD5HasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
     {
         if (!rsp["VideoBasicInformation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoBasicInformation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoBasicInformation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoBasicInformation.Deserialize(rsp["VideoBasicInformation"]);
@@ -117,7 +117,7 @@ CoreInternalOutcome DescribeSegmentationTaskResponse::Deserialize(const string &
     {
         if (!rsp["ErrorMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMsg = string(rsp["ErrorMsg"].GetString());
         m_errorMsgHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome InstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceLog.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceLog.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceLog.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InstanceLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceLog.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

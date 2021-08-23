@@ -33,7 +33,7 @@ CoreInternalOutcome Indicator::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Indicators") && !value["Indicators"].IsNull())
     {
         if (!value["Indicators"].IsArray())
-            return CoreInternalOutcome(Error("response `Indicator.Indicators` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Indicator.Indicators` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Indicators"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

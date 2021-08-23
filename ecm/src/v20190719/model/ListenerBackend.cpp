@@ -37,7 +37,7 @@ CoreInternalOutcome ListenerBackend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerBackend.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerBackend.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ListenerBackend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerBackend.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerBackend.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ListenerBackend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ListenerBackend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerBackend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ListenerBackend::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `ListenerBackend.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ListenerBackend.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

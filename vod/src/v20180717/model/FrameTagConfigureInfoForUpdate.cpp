@@ -35,7 +35,7 @@ CoreInternalOutcome FrameTagConfigureInfoForUpdate::Deserialize(const rapidjson:
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrameTagConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FrameTagConfigureInfoForUpdate::Deserialize(const rapidjson:
     {
         if (!value["ScreenshotInterval"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FrameTagConfigureInfoForUpdate.ScreenshotInterval` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagConfigureInfoForUpdate.ScreenshotInterval` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_screenshotInterval = value["ScreenshotInterval"].GetDouble();
         m_screenshotIntervalHasBeenSet = true;

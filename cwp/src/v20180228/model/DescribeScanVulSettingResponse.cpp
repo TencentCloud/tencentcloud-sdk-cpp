@@ -42,16 +42,16 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["VulCategories"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulCategories` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulCategories` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulCategories = string(rsp["VulCategories"].GetString());
         m_vulCategoriesHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["VulLevels"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulLevels` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulLevels` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulLevels = string(rsp["VulLevels"].GetString());
         m_vulLevelsHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["TimerInterval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TimerInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerInterval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timerInterval = rsp["TimerInterval"].GetUint64();
         m_timerIntervalHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["TimerTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimerTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timerTime = string(rsp["TimerTime"].GetString());
         m_timerTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["VulEmergency"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulEmergency` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulEmergency` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulEmergency = rsp["VulEmergency"].GetUint64();
         m_vulEmergencyHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(rsp["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["EnableScan"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EnableScan` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnableScan` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_enableScan = rsp["EnableScan"].GetUint64();
         m_enableScanHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
     {
         if (!rsp["ClickTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClickTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClickTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clickTimeout = rsp["ClickTimeout"].GetUint64();
         m_clickTimeoutHasBeenSet = true;

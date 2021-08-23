@@ -67,16 +67,16 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -87,11 +87,11 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -99,7 +99,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["ErrorCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = rsp["ErrorCode"].GetInt64();
         m_errorCodeHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreditCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreditCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreditCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creditCode = string(rsp["CreditCode"].GetString());
         m_creditCodeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["OrgCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orgCode = string(rsp["OrgCode"].GetString());
         m_orgCodeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["OpenFrom"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenFrom` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenFrom` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openFrom = string(rsp["OpenFrom"].GetString());
         m_openFromHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["OpenTo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OpenTo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OpenTo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openTo = string(rsp["OpenTo"].GetString());
         m_openToHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["FrName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frName = string(rsp["FrName"].GetString());
         m_frNameHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["EnterpriseStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnterpriseStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnterpriseStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enterpriseStatus = string(rsp["EnterpriseStatus"].GetString());
         m_enterpriseStatusHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["OperateScopeAndForm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OperateScopeAndForm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperateScopeAndForm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operateScopeAndForm = string(rsp["OperateScopeAndForm"].GetString());
         m_operateScopeAndFormHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegCap"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegCap` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegCap` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regCap = string(rsp["RegCap"].GetString());
         m_regCapHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegCapCur"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegCapCur` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegCapCur` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regCapCur = string(rsp["RegCapCur"].GetString());
         m_regCapCurHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegOrg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegOrg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegOrg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regOrg = string(rsp["RegOrg"].GetString());
         m_regOrgHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["EsDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EsDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_esDate = string(rsp["EsDate"].GetString());
         m_esDateHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["EnterpriseType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnterpriseType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnterpriseType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enterpriseType = string(rsp["EnterpriseType"].GetString());
         m_enterpriseTypeHasBeenSet = true;
@@ -229,7 +229,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["CancelDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CancelDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CancelDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cancelDate = string(rsp["CancelDate"].GetString());
         m_cancelDateHasBeenSet = true;
@@ -239,7 +239,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["RevokeDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RevokeDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RevokeDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_revokeDate = string(rsp["RevokeDate"].GetString());
         m_revokeDateHasBeenSet = true;
@@ -249,7 +249,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["AbuItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbuItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbuItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_abuItem = string(rsp["AbuItem"].GetString());
         m_abuItemHasBeenSet = true;
@@ -259,7 +259,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["CbuItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CbuItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CbuItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cbuItem = string(rsp["CbuItem"].GetString());
         m_cbuItemHasBeenSet = true;
@@ -269,7 +269,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["ApprDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApprDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApprDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apprDate = string(rsp["ApprDate"].GetString());
         m_apprDateHasBeenSet = true;
@@ -279,7 +279,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(rsp["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -289,7 +289,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(rsp["City"].GetString());
         m_cityHasBeenSet = true;
@@ -299,7 +299,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["County"].IsString())
         {
-            return CoreInternalOutcome(Error("response `County` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `County` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_county = string(rsp["County"].GetString());
         m_countyHasBeenSet = true;
@@ -309,7 +309,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["AreaCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AreaCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AreaCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_areaCode = string(rsp["AreaCode"].GetString());
         m_areaCodeHasBeenSet = true;
@@ -319,7 +319,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["IndustryPhyCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryPhyCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryPhyCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_industryPhyCode = string(rsp["IndustryPhyCode"].GetString());
         m_industryPhyCodeHasBeenSet = true;
@@ -329,7 +329,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["IndustryPhyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryPhyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryPhyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_industryPhyName = string(rsp["IndustryPhyName"].GetString());
         m_industryPhyNameHasBeenSet = true;
@@ -339,7 +339,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["IndustryCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_industryCode = string(rsp["IndustryCode"].GetString());
         m_industryCodeHasBeenSet = true;
@@ -349,7 +349,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["IndustryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndustryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndustryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_industryName = string(rsp["IndustryName"].GetString());
         m_industryNameHasBeenSet = true;
@@ -359,7 +359,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["OperateScope"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OperateScope` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperateScope` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operateScope = string(rsp["OperateScope"].GetString());
         m_operateScopeHasBeenSet = true;
@@ -369,7 +369,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["VerifyRegNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyRegNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyRegNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyRegNo = string(rsp["VerifyRegNo"].GetString());
         m_verifyRegNoHasBeenSet = true;
@@ -379,7 +379,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regNo = string(rsp["RegNo"].GetString());
         m_regNoHasBeenSet = true;
@@ -389,7 +389,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["VerifyEnterpriseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyEnterpriseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyEnterpriseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyEnterpriseName = string(rsp["VerifyEnterpriseName"].GetString());
         m_verifyEnterpriseNameHasBeenSet = true;
@@ -399,7 +399,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["EnterpriseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnterpriseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnterpriseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enterpriseName = string(rsp["EnterpriseName"].GetString());
         m_enterpriseNameHasBeenSet = true;
@@ -409,7 +409,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["VerifyAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyAddress = string(rsp["VerifyAddress"].GetString());
         m_verifyAddressHasBeenSet = true;
@@ -419,7 +419,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -429,7 +429,7 @@ CoreInternalOutcome VerifyBizLicenseResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegNumResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RegNumResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegNumResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_regNumResult.Deserialize(rsp["RegNumResult"]);

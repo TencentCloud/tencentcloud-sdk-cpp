@@ -39,7 +39,7 @@ CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PredictInput.InputPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PredictInput.InputPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputPath = string(value["InputPath"].GetString());
         m_inputPathHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutputPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PredictInput.OutputPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PredictInput.OutputPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputPath = string(value["OutputPath"].GetString());
         m_outputPathHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputDataFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PredictInput.InputDataFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PredictInput.InputDataFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputDataFormat = string(value["InputDataFormat"].GetString());
         m_inputDataFormatHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutputDataFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PredictInput.OutputDataFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PredictInput.OutputDataFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputDataFormat = string(value["OutputDataFormat"].GetString());
         m_outputDataFormatHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BatchSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PredictInput.BatchSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PredictInput.BatchSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_batchSize = value["BatchSize"].GetUint64();
         m_batchSizeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SignatureName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PredictInput.SignatureName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PredictInput.SignatureName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signatureName = string(value["SignatureName"].GetString());
         m_signatureNameHasBeenSet = true;

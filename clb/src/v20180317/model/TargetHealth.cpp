@@ -38,7 +38,7 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetHealth.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TargetHealth.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TargetHealth.HealthStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.HealthStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_healthStatus = value["HealthStatus"].GetBool();
         m_healthStatusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetHealth.TargetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.TargetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetId = string(value["TargetId"].GetString());
         m_targetIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthStatusDetial"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetHealth.HealthStatusDetial` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.HealthStatusDetial` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_healthStatusDetial = string(value["HealthStatusDetial"].GetString());
         m_healthStatusDetialHasBeenSet = true;

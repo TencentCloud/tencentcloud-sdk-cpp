@@ -41,7 +41,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Backend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Backend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backend.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Backend.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backend.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
     {
         if (!value["PrivateIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `Backend.PrivateIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Backend.PrivateIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegisteredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Backend.RegisteredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backend.RegisteredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registeredTime = string(value["RegisteredTime"].GetString());
         m_registeredTimeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EniId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Backend.EniId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backend.EniId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eniId = string(value["EniId"].GetString());
         m_eniIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublicIpAddresses") && !value["PublicIpAddresses"].IsNull())
     {
         if (!value["PublicIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `Backend.PublicIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Backend.PublicIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -117,7 +117,7 @@ CoreInternalOutcome Backend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Backend.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backend.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;

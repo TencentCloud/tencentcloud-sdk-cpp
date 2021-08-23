@@ -37,7 +37,7 @@ CoreInternalOutcome GatewayQos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayQos.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayQos.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome GatewayQos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayQos.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayQos.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipAddress = string(value["IpAddress"].GetString());
         m_ipAddressHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GatewayQos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GatewayQos.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayQos.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome GatewayQos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayQos.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayQos.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

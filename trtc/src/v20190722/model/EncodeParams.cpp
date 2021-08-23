@@ -44,7 +44,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioSampleRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.AudioSampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.AudioSampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioSampleRate = value["AudioSampleRate"].GetUint64();
         m_audioSampleRateHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioBitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.AudioBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.AudioBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioBitrate = value["AudioBitrate"].GetUint64();
         m_audioBitrateHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioChannels"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.AudioChannels` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.AudioChannels` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioChannels = value["AudioChannels"].GetUint64();
         m_audioChannelsHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoWidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.VideoWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.VideoWidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoWidth = value["VideoWidth"].GetUint64();
         m_videoWidthHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoHeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.VideoHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.VideoHeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoHeight = value["VideoHeight"].GetUint64();
         m_videoHeightHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoBitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.VideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.VideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoBitrate = value["VideoBitrate"].GetUint64();
         m_videoBitrateHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoFramerate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.VideoFramerate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.VideoFramerate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoFramerate = value["VideoFramerate"].GetUint64();
         m_videoFramerateHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoGop"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.VideoGop` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.VideoGop` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoGop = value["VideoGop"].GetUint64();
         m_videoGopHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackgroundColor"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.BackgroundColor` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.BackgroundColor` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_backgroundColor = value["BackgroundColor"].GetUint64();
         m_backgroundColorHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackgroundImageId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.BackgroundImageId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.BackgroundImageId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_backgroundImageId = value["BackgroundImageId"].GetUint64();
         m_backgroundImageIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioCodec"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EncodeParams.AudioCodec` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncodeParams.AudioCodec` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioCodec = value["AudioCodec"].GetUint64();
         m_audioCodecHasBeenSet = true;

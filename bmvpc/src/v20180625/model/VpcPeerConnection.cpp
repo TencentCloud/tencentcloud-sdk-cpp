@@ -50,7 +50,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerVpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.PeerVpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.PeerVpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerVpcId = string(value["PeerVpcId"].GetString());
         m_peerVpcIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.PeerAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.PeerAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerAppId = string(value["PeerAppId"].GetString());
         m_peerAppIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcPeerConnectionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.VpcPeerConnectionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.VpcPeerConnectionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcPeerConnectionId = string(value["VpcPeerConnectionId"].GetString());
         m_vpcPeerConnectionIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcPeerConnectionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.VpcPeerConnectionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.VpcPeerConnectionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcPeerConnectionName = string(value["VpcPeerConnectionName"].GetString());
         m_vpcPeerConnectionNameHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcZone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.VpcZone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.VpcZone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcZone = string(value["VpcZone"].GetString());
         m_vpcZoneHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerVpcZone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.PeerVpcZone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.PeerVpcZone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerVpcZone = string(value["PeerVpcZone"].GetString());
         m_peerVpcZoneHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.PeerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.PeerUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_peerUin = value["PeerUin"].GetUint64();
         m_peerUinHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.PeerType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.PeerType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_peerType = value["PeerType"].GetUint64();
         m_peerTypeHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.PeerRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.PeerRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerRegion = string(value["PeerRegion"].GetString());
         m_peerRegionHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["DeleteFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.DeleteFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.DeleteFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deleteFlag = value["DeleteFlag"].GetUint64();
         m_deleteFlagHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcPeerConnection.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcPeerConnection.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

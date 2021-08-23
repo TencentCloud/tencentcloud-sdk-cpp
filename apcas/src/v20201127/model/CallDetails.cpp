@@ -35,7 +35,7 @@ CoreInternalOutcome CallDetails::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CallDetails.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallDetails.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome CallDetails::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CallDetailSet") && !value["CallDetailSet"].IsNull())
     {
         if (!value["CallDetailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CallDetails.CallDetailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CallDetails.CallDetailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CallDetailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

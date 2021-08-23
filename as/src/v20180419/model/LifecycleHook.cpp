@@ -43,7 +43,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifecycleHookId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.LifecycleHookId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.LifecycleHookId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifecycleHookId = string(value["LifecycleHookId"].GetString());
         m_lifecycleHookIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifecycleHookName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.LifecycleHookName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.LifecycleHookName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifecycleHookName = string(value["LifecycleHookName"].GetString());
         m_lifecycleHookNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.DefaultResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.DefaultResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultResult = string(value["DefaultResult"].GetString());
         m_defaultResultHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeartbeatTimeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.HeartbeatTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.HeartbeatTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_heartbeatTimeout = value["HeartbeatTimeout"].GetInt64();
         m_heartbeatTimeoutHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifecycleTransition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.LifecycleTransition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.LifecycleTransition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifecycleTransition = string(value["LifecycleTransition"].GetString());
         m_lifecycleTransitionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotificationMetadata"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.NotificationMetadata` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.NotificationMetadata` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notificationMetadata = string(value["NotificationMetadata"].GetString());
         m_notificationMetadataHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotificationTarget"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.NotificationTarget` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.NotificationTarget` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_notificationTarget.Deserialize(value["NotificationTarget"]);
@@ -140,7 +140,7 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifecycleTransitionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.LifecycleTransitionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.LifecycleTransitionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifecycleTransitionType = string(value["LifecycleTransitionType"].GetString());
         m_lifecycleTransitionTypeHasBeenSet = true;

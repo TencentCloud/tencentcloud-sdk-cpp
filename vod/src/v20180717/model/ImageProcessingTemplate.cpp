@@ -39,7 +39,7 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const rapidjson::Value 
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageProcessingTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const rapidjson::Value 
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageProcessingTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const rapidjson::Value 
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageProcessingTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const rapidjson::Value 
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageProcessingTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const rapidjson::Value 
     if (value.HasMember("Operations") && !value["Operations"].IsNull())
     {
         if (!value["Operations"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.Operations` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageProcessingTemplate.Operations` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Operations"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome ImageProcessingTemplate::Deserialize(const rapidjson::Value 
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageProcessingTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageProcessingTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

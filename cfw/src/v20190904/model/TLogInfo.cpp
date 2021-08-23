@@ -39,7 +39,7 @@ CoreInternalOutcome TLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TLogInfo.OutNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TLogInfo.OutNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_outNum = value["OutNum"].GetInt64();
         m_outNumHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HandleNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TLogInfo.HandleNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TLogInfo.HandleNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_handleNum = value["HandleNum"].GetInt64();
         m_handleNumHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TLogInfo.VulNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TLogInfo.VulNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vulNum = value["VulNum"].GetInt64();
         m_vulNumHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TLogInfo.NetworkNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TLogInfo.NetworkNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_networkNum = value["NetworkNum"].GetInt64();
         m_networkNumHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BanNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TLogInfo.BanNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TLogInfo.BanNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_banNum = value["BanNum"].GetInt64();
         m_banNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome TLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BruteForceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TLogInfo.BruteForceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TLogInfo.BruteForceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bruteForceNum = value["BruteForceNum"].GetInt64();
         m_bruteForceNumHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifeCycleRuleId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LifeCycleRule.LifeCycleRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.LifeCycleRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lifeCycleRuleId = value["LifeCycleRuleId"].GetUint64();
         m_lifeCycleRuleIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifeCycleRuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifeCycleRule.LifeCycleRuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.LifeCycleRuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifeCycleRuleName = string(value["LifeCycleRuleName"].GetString());
         m_lifeCycleRuleNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifeCycleRule.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Transitions") && !value["Transitions"].IsNull())
     {
         if (!value["Transitions"].IsArray())
-            return CoreInternalOutcome(Error("response `LifeCycleRule.Transitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.Transitions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Transitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LifeCycleRule.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifeCycleRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

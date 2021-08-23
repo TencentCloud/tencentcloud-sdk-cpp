@@ -36,7 +36,7 @@ CoreInternalOutcome DeviceStatusLogItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatusLogItem.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatusLogItem.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DeviceStatusLogItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatusLogItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatusLogItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DeviceStatusLogItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Data"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatusLogItem.Data` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatusLogItem.Data` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_data = string(value["Data"].GetString());
         m_dataHasBeenSet = true;

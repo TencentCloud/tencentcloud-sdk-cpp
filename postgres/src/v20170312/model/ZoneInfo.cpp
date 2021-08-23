@@ -38,7 +38,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneState = string(value["ZoneState"].GetString());
         m_zoneStateHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneSupportIpv6"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneSupportIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneSupportIpv6` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneSupportIpv6 = value["ZoneSupportIpv6"].GetUint64();
         m_zoneSupportIpv6HasBeenSet = true;

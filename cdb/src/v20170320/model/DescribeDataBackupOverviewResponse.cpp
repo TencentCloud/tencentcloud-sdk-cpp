@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     {
         if (!rsp["DataBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataBackupVolume = rsp["DataBackupVolume"].GetInt64();
         m_dataBackupVolumeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     {
         if (!rsp["DataBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataBackupCount = rsp["DataBackupCount"].GetInt64();
         m_dataBackupCountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     {
         if (!rsp["AutoBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoBackupVolume = rsp["AutoBackupVolume"].GetInt64();
         m_autoBackupVolumeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     {
         if (!rsp["AutoBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoBackupCount = rsp["AutoBackupCount"].GetInt64();
         m_autoBackupCountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     {
         if (!rsp["ManualBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManualBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_manualBackupVolume = rsp["ManualBackupVolume"].GetInt64();
         m_manualBackupVolumeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     {
         if (!rsp["ManualBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManualBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_manualBackupCount = rsp["ManualBackupCount"].GetInt64();
         m_manualBackupCountHasBeenSet = true;

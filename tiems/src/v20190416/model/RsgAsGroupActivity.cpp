@@ -45,7 +45,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RsgAsGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.RsgAsGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.RsgAsGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rsgAsGroupId = string(value["RsgAsGroupId"].GetString());
         m_rsgAsGroupIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ActivityType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.ActivityType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.ActivityType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityType = string(value["ActivityType"].GetString());
         m_activityTypeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StatusCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.StatusCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.StatusCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = string(value["StatusCode"].GetString());
         m_statusCodeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StatusMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMessage = string(value["StatusMessage"].GetString());
         m_statusMessageHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Cause"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.Cause` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.Cause` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cause = string(value["Cause"].GetString());
         m_causeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("RsgAsActivityRelatedInstance") && !value["RsgAsActivityRelatedInstance"].IsNull())
     {
         if (!value["RsgAsActivityRelatedInstance"].IsArray())
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.RsgAsActivityRelatedInstance` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.RsgAsActivityRelatedInstance` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RsgAsActivityRelatedInstance"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -165,7 +165,7 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StatusMessageSimplified"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroupActivity.StatusMessageSimplified` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroupActivity.StatusMessageSimplified` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMessageSimplified = string(value["StatusMessageSimplified"].GetString());
         m_statusMessageSimplifiedHasBeenSet = true;

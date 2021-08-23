@@ -36,7 +36,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvanced::Deserialize(const rapidjson:
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvanced.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvanced.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvanced::Deserialize(const rapidjson:
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvanced.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvanced.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OutputActivityAntiRushAdvanced::Deserialize(const rapidjson:
     {
         if (!value["Value"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OutputActivityAntiRushAdvanced.Value` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputActivityAntiRushAdvanced.Value` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_value.Deserialize(value["Value"]);

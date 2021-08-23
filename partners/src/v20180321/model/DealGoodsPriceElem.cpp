@@ -35,7 +35,7 @@ CoreInternalOutcome DealGoodsPriceElem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RealTotalCost"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DealGoodsPriceElem.RealTotalCost` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealGoodsPriceElem.RealTotalCost` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = value["RealTotalCost"].GetUint64();
         m_realTotalCostHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DealGoodsPriceElem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OriginalTotalCost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DealGoodsPriceElem.OriginalTotalCost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealGoodsPriceElem.OriginalTotalCost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_originalTotalCost = value["OriginalTotalCost"].GetInt64();
         m_originalTotalCostHasBeenSet = true;

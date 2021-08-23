@@ -38,7 +38,7 @@ CoreInternalOutcome ScoreItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiagItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScoreItem.DiagItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreItem.DiagItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagItem = string(value["DiagItem"].GetString());
         m_diagItemHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ScoreItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IssueType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScoreItem.IssueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreItem.IssueType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueType = string(value["IssueType"].GetString());
         m_issueTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ScoreItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopSeverity"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScoreItem.TopSeverity` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreItem.TopSeverity` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topSeverity = string(value["TopSeverity"].GetString());
         m_topSeverityHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ScoreItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScoreItem.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreItem.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ScoreItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreLost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScoreItem.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreItem.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scoreLost = value["ScoreLost"].GetInt64();
         m_scoreLostHasBeenSet = true;

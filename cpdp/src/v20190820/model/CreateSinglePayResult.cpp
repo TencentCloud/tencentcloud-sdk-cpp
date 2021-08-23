@@ -40,7 +40,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["HandleStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.HandleStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.HandleStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_handleStatus = string(value["HandleStatus"].GetString());
         m_handleStatusHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["HandleMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.HandleMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.HandleMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_handleMsg = string(value["HandleMsg"].GetString());
         m_handleMsgHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["BankSerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.BankSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.BankSerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankSerialNo = string(value["BankSerialNo"].GetString());
         m_bankSerialNoHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PayStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.PayStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.PayStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payStatus = string(value["PayStatus"].GetString());
         m_payStatusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["BankRetCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.BankRetCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.BankRetCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankRetCode = string(value["BankRetCode"].GetString());
         m_bankRetCodeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CreateSinglePayResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["BankRetMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateSinglePayResult.BankRetMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateSinglePayResult.BankRetMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankRetMsg = string(value["BankRetMsg"].GetString());
         m_bankRetMsgHasBeenSet = true;

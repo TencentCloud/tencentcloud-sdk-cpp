@@ -35,7 +35,7 @@ CoreInternalOutcome MoviePortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MoviePortrait.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoviePortrait.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MoviePortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MoviePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MoviePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetDouble();
         m_percentHasBeenSet = true;

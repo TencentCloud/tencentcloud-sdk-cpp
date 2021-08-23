@@ -40,7 +40,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Runtime.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Framework"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Runtime.Framework` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.Framework` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_framework = string(value["Framework"].GetString());
         m_frameworkHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Runtime.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Public"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Runtime.Public` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.Public` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_public = value["Public"].GetBool();
         m_publicHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheckOn"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Runtime.HealthCheckOn` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.HealthCheckOn` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_healthCheckOn = value["HealthCheckOn"].GetBool();
         m_healthCheckOnHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Runtime.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Runtime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Runtime.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Runtime.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SentenceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SentenceInfo.SentenceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.SentenceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sentenceId = value["SentenceId"].GetInt64();
         m_sentenceIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Words") && !value["Words"].IsNull())
     {
         if (!value["Words"].IsArray())
-            return CoreInternalOutcome(Error("response `SentenceInfo.Words` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.Words` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Words"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -69,7 +69,7 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronAccuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SentenceInfo.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.PronAccuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronAccuracy = value["PronAccuracy"].GetDouble();
         m_pronAccuracyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronFluency"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SentenceInfo.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.PronFluency` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronFluency = value["PronFluency"].GetDouble();
         m_pronFluencyHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PronCompletion"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SentenceInfo.PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.PronCompletion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pronCompletion = value["PronCompletion"].GetDouble();
         m_pronCompletionHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuggestedScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SentenceInfo.SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.SuggestedScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_suggestedScore = value["SuggestedScore"].GetDouble();
         m_suggestedScoreHasBeenSet = true;

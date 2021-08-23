@@ -43,13 +43,13 @@ namespace TencentCloud
                 TtsClient(const Credential &credential, const std::string &region);
                 TtsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateTtsTaskResponse> CreateTtsTaskOutcome;
+                typedef Outcome<Core::Error, Model::CreateTtsTaskResponse> CreateTtsTaskOutcome;
                 typedef std::future<CreateTtsTaskOutcome> CreateTtsTaskOutcomeCallable;
                 typedef std::function<void(const TtsClient*, const Model::CreateTtsTaskRequest&, CreateTtsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTtsTaskAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTtsTaskStatusResponse> DescribeTtsTaskStatusOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTtsTaskStatusResponse> DescribeTtsTaskStatusOutcome;
                 typedef std::future<DescribeTtsTaskStatusOutcome> DescribeTtsTaskStatusOutcomeCallable;
                 typedef std::function<void(const TtsClient*, const Model::DescribeTtsTaskStatusRequest&, DescribeTtsTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTtsTaskStatusAsyncHandler;
-                typedef Outcome<Error, Model::TextToVoiceResponse> TextToVoiceOutcome;
+                typedef Outcome<Core::Error, Model::TextToVoiceResponse> TextToVoiceOutcome;
                 typedef std::future<TextToVoiceOutcome> TextToVoiceOutcomeCallable;
                 typedef std::function<void(const TtsClient*, const Model::TextToVoiceRequest&, TextToVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToVoiceAsyncHandler;
 

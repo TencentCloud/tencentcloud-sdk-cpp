@@ -38,7 +38,7 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LabelType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.LabelType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeKeyDetail.LabelType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_labelType = string(value["LabelType"].GetString());
         m_labelTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Starter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Starter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeKeyDetail.Starter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_starter = string(value["Starter"].GetString());
         m_starterHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Order"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Order` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeKeyDetail.Order` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_order = value["Order"].GetInt64();
         m_orderHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeKeyDetail.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AttributeKeyDetail::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttributeKeyDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeKeyDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;

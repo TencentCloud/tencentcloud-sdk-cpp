@@ -40,7 +40,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecName"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.RecName` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.RecName` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_recName.Deserialize(value["RecName"]);
@@ -57,7 +57,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecNum"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.RecNum` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.RecNum` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_recNum.Deserialize(value["RecNum"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecAddr"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.RecAddr` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.RecAddr` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_recAddr.Deserialize(value["RecAddr"]);
@@ -91,7 +91,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SenderName"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.SenderName` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.SenderName` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_senderName.Deserialize(value["SenderName"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SenderNum"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.SenderNum` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.SenderNum` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_senderNum.Deserialize(value["SenderNum"]);
@@ -125,7 +125,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SenderAddr"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.SenderAddr` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.SenderAddr` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_senderAddr.Deserialize(value["SenderAddr"]);
@@ -142,7 +142,7 @@ CoreInternalOutcome TextWaybill::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaybillNum"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextWaybill.WaybillNum` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWaybill.WaybillNum` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_waybillNum.Deserialize(value["WaybillNum"]);

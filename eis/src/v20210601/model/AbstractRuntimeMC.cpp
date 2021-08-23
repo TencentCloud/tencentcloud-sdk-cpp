@@ -39,7 +39,7 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
     {
         if (!value["RuntimeId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AbstractRuntimeMC.RuntimeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.RuntimeId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runtimeId = value["RuntimeId"].GetInt64();
         m_runtimeIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
     {
         if (!value["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbstractRuntimeMC.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(value["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AbstractRuntimeMC.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbstractRuntimeMC.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbstractRuntimeMC.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
     {
         if (!value["Addr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbstractRuntimeMC.Addr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.Addr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addr = string(value["Addr"].GetString());
         m_addrHasBeenSet = true;

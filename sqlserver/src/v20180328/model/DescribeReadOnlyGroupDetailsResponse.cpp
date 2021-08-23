@@ -47,16 +47,16 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,11 +67,11 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["ReadOnlyGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyGroupId = string(rsp["ReadOnlyGroupId"].GetString());
         m_readOnlyGroupIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["ReadOnlyGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyGroupName = string(rsp["ReadOnlyGroupName"].GetString());
         m_readOnlyGroupNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(rsp["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(rsp["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["IsOfflineDelay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsOfflineDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsOfflineDelay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isOfflineDelay = rsp["IsOfflineDelay"].GetInt64();
         m_isOfflineDelayHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["ReadOnlyMaxDelayTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyMaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyMaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyMaxDelayTime = rsp["ReadOnlyMaxDelayTime"].GetInt64();
         m_readOnlyMaxDelayTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["MinReadOnlyInGroup"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MinReadOnlyInGroup` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MinReadOnlyInGroup` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minReadOnlyInGroup = rsp["MinReadOnlyInGroup"].GetInt64();
         m_minReadOnlyInGroupHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(rsp["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = rsp["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(rsp["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(rsp["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     if (rsp.HasMember("ReadOnlyInstanceSet") && !rsp["ReadOnlyInstanceSet"].IsNull())
     {
         if (!rsp["ReadOnlyInstanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ReadOnlyInstanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyInstanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ReadOnlyInstanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -209,7 +209,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome DescribeReadOnlyGroupDetailsResponse::Deserialize(const stri
     {
         if (!rsp["MasterInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MasterInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterInstanceId = string(rsp["MasterInstanceId"].GetString());
         m_masterInstanceIdHasBeenSet = true;

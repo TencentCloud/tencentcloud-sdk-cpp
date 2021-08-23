@@ -36,7 +36,7 @@ CoreInternalOutcome TagsInfoOfCluster::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfCluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfCluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TagsInfoOfCluster::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TagsInfoOfCluster.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfCluster.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome TagsInfoOfCluster::Deserialize(const rapidjson::Value &value
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfCluster.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfCluster.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);

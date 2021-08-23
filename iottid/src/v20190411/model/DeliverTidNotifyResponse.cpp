@@ -36,16 +36,16 @@ CoreInternalOutcome DeliverTidNotifyResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome DeliverTidNotifyResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome DeliverTidNotifyResponse::Deserialize(const string &payload)
     {
         if (!rsp["RemaindCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RemaindCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RemaindCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_remaindCount = rsp["RemaindCount"].GetUint64();
         m_remaindCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DeliverTidNotifyResponse::Deserialize(const string &payload)
     {
         if (!rsp["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(rsp["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DeliverTidNotifyResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProductKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productKey = string(rsp["ProductKey"].GetString());
         m_productKeyHasBeenSet = true;

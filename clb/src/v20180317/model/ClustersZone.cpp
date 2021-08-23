@@ -34,7 +34,7 @@ CoreInternalOutcome ClustersZone::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MasterZone") && !value["MasterZone"].IsNull())
     {
         if (!value["MasterZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ClustersZone.MasterZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClustersZone.MasterZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MasterZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome ClustersZone::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SlaveZone") && !value["SlaveZone"].IsNull())
     {
         if (!value["SlaveZone"].IsArray())
-            return CoreInternalOutcome(Error("response `ClustersZone.SlaveZone` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClustersZone.SlaveZone` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SlaveZone"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

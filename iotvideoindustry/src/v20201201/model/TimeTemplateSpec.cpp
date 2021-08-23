@@ -36,7 +36,7 @@ CoreInternalOutcome TimeTemplateSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DayofWeek"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateSpec.DayofWeek` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateSpec.DayofWeek` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dayofWeek = value["DayofWeek"].GetInt64();
         m_dayofWeekHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TimeTemplateSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateSpec.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateSpec.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TimeTemplateSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateSpec.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateSpec.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

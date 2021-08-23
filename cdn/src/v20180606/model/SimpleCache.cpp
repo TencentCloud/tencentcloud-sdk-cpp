@@ -38,7 +38,7 @@ CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CacheRules") && !value["CacheRules"].IsNull())
     {
         if (!value["CacheRules"].IsArray())
-            return CoreInternalOutcome(Error("response `SimpleCache.CacheRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SimpleCache.CacheRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CacheRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FollowOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleCache.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCache.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_followOrigin = string(value["FollowOrigin"].GetString());
         m_followOriginHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreCacheControl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleCache.IgnoreCacheControl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCache.IgnoreCacheControl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCacheControl = string(value["IgnoreCacheControl"].GetString());
         m_ignoreCacheControlHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreSetCookie"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleCache.IgnoreSetCookie` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCache.IgnoreSetCookie` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreSetCookie = string(value["IgnoreSetCookie"].GetString());
         m_ignoreSetCookieHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompareMaxAge"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleCache.CompareMaxAge` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCache.CompareMaxAge` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compareMaxAge = string(value["CompareMaxAge"].GetString());
         m_compareMaxAgeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Revalidate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SimpleCache.Revalidate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleCache.Revalidate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_revalidate.Deserialize(value["Revalidate"]);

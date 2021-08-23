@@ -37,7 +37,7 @@ CoreInternalOutcome CreateRedInvoiceResultData::Deserialize(const rapidjson::Val
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResultData.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResultData.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CreateRedInvoiceResultData::Deserialize(const rapidjson::Val
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResultData.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResultData.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CreateRedInvoiceResultData::Deserialize(const rapidjson::Val
     {
         if (!value["InvoiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResultData.InvoiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResultData.InvoiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceId = string(value["InvoiceId"].GetString());
         m_invoiceIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CreateRedInvoiceResultData::Deserialize(const rapidjson::Val
     {
         if (!value["OrderSn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceResultData.OrderSn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceResultData.OrderSn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderSn = string(value["OrderSn"].GetString());
         m_orderSnHasBeenSet = true;

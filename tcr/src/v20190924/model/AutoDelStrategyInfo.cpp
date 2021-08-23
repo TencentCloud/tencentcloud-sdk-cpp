@@ -39,7 +39,7 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfo.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfo.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfo.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfo.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfo.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfo.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Valid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfo.Valid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfo.Valid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_valid = value["Valid"].GetInt64();
         m_validHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoDelStrategyInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoDelStrategyInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;

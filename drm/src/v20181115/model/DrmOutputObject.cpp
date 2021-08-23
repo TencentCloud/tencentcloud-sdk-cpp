@@ -36,7 +36,7 @@ CoreInternalOutcome DrmOutputObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BucketName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrmOutputObject.BucketName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrmOutputObject.BucketName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucketName = string(value["BucketName"].GetString());
         m_bucketNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DrmOutputObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrmOutputObject.ObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrmOutputObject.ObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objectName = string(value["ObjectName"].GetString());
         m_objectNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DrmOutputObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Para"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DrmOutputObject.Para` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrmOutputObject.Para` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_para.Deserialize(value["Para"]);

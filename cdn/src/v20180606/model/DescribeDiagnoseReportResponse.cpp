@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["BaskInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BaskInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BaskInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_baskInfo.Deserialize(rsp["BaskInfo"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["CnameInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CnameInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CnameInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cnameInfo.Deserialize(rsp["CnameInfo"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["ClientInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClientInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clientInfo.Deserialize(rsp["ClientInfo"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["DnsInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DnsInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DnsInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dnsInfo.Deserialize(rsp["DnsInfo"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["NetworkInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_networkInfo.Deserialize(rsp["NetworkInfo"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["OcNodeInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OcNodeInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcNodeInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocNodeInfo.Deserialize(rsp["OcNodeInfo"]);
@@ -175,7 +175,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["MidNodeInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MidNodeInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MidNodeInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_midNodeInfo.Deserialize(rsp["MidNodeInfo"]);
@@ -192,7 +192,7 @@ CoreInternalOutcome DescribeDiagnoseReportResponse::Deserialize(const string &pa
     {
         if (!rsp["OriginInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OriginInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_originInfo.Deserialize(rsp["OriginInfo"]);

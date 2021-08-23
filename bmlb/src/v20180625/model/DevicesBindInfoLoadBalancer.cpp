@@ -42,7 +42,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["AppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetInt64();
         m_appIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["TgwSetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.TgwSetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.TgwSetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tgwSetType = string(value["TgwSetType"].GetString());
         m_tgwSetTypeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     {
         if (!value["Exclusive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.Exclusive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.Exclusive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exclusive = value["Exclusive"].GetInt64();
         m_exclusiveHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     if (value.HasMember("L4ListenerSet") && !value["L4ListenerSet"].IsNull())
     {
         if (!value["L4ListenerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.L4ListenerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.L4ListenerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["L4ListenerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -131,7 +131,7 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Va
     if (value.HasMember("L7ListenerSet") && !value["L7ListenerSet"].IsNull())
     {
         if (!value["L7ListenerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.L7ListenerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DevicesBindInfoLoadBalancer.L7ListenerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["L7ListenerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome OriginAuthenticationTypeA::Deserialize(const rapidjson::Valu
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OriginAuthenticationTypeA.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginAuthenticationTypeA.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;

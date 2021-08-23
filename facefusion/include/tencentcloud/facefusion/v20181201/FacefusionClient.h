@@ -45,16 +45,16 @@ namespace TencentCloud
                 FacefusionClient(const Credential &credential, const std::string &region);
                 FacefusionClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeMaterialListResponse> DescribeMaterialListOutcome;
+                typedef Outcome<Core::Error, Model::DescribeMaterialListResponse> DescribeMaterialListOutcome;
                 typedef std::future<DescribeMaterialListOutcome> DescribeMaterialListOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::DescribeMaterialListRequest&, DescribeMaterialListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaterialListAsyncHandler;
-                typedef Outcome<Error, Model::FaceFusionResponse> FaceFusionOutcome;
+                typedef Outcome<Core::Error, Model::FaceFusionResponse> FaceFusionOutcome;
                 typedef std::future<FaceFusionOutcome> FaceFusionOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FaceFusionRequest&, FaceFusionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceFusionAsyncHandler;
-                typedef Outcome<Error, Model::FaceFusionLiteResponse> FaceFusionLiteOutcome;
+                typedef Outcome<Core::Error, Model::FaceFusionLiteResponse> FaceFusionLiteOutcome;
                 typedef std::future<FaceFusionLiteOutcome> FaceFusionLiteOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FaceFusionLiteRequest&, FaceFusionLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceFusionLiteAsyncHandler;
-                typedef Outcome<Error, Model::FuseFaceResponse> FuseFaceOutcome;
+                typedef Outcome<Core::Error, Model::FuseFaceResponse> FuseFaceOutcome;
                 typedef std::future<FuseFaceOutcome> FuseFaceOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FuseFaceRequest&, FuseFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FuseFaceAsyncHandler;
 

@@ -49,7 +49,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["EventName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.EventName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.EventName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventName = string(value["EventName"].GetString());
         m_eventNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["DivulgeSoure"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.DivulgeSoure` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.DivulgeSoure` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_divulgeSoure = string(value["DivulgeSoure"].GetString());
         m_divulgeSoureHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["Asset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.Asset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.Asset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asset = string(value["Asset"].GetString());
         m_assetHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["RuleWord"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.RuleWord` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.RuleWord` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleWord = string(value["RuleWord"].GetString());
         m_ruleWordHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["ScanUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.ScanUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.ScanUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanUrl = string(value["ScanUrl"].GetString());
         m_scanUrlHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["ScanCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.ScanCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.ScanCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanCount = string(value["ScanCount"].GetString());
         m_scanCountHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["EventTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.EventTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.EventTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventTime = string(value["EventTime"].GetString());
         m_eventTimeHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["InsertTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.InsertTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.InsertTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = string(value["InsertTime"].GetString());
         m_insertTimeHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome SaDivulgeDataQueryPub::Deserialize(const rapidjson::Value &v
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPub.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPub.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

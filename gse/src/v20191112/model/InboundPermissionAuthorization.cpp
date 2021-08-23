@@ -37,7 +37,7 @@ CoreInternalOutcome InboundPermissionAuthorization::Deserialize(const rapidjson:
     {
         if (!value["FromPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InboundPermissionAuthorization.FromPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InboundPermissionAuthorization.FromPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fromPort = value["FromPort"].GetUint64();
         m_fromPortHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InboundPermissionAuthorization::Deserialize(const rapidjson:
     {
         if (!value["IpRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InboundPermissionAuthorization.IpRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InboundPermissionAuthorization.IpRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipRange = string(value["IpRange"].GetString());
         m_ipRangeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InboundPermissionAuthorization::Deserialize(const rapidjson:
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InboundPermissionAuthorization.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InboundPermissionAuthorization.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InboundPermissionAuthorization::Deserialize(const rapidjson:
     {
         if (!value["ToPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InboundPermissionAuthorization.ToPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InboundPermissionAuthorization.ToPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_toPort = value["ToPort"].GetUint64();
         m_toPortHasBeenSet = true;

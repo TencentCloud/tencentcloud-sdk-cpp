@@ -35,7 +35,7 @@ CoreInternalOutcome ImageSegments::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSegments.OffsetTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSegments.OffsetTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offsetTime = string(value["OffsetTime"].GetString());
         m_offsetTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ImageSegments::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageSegments.Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSegments.Result` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_result.Deserialize(value["Result"]);

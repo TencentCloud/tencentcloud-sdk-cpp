@@ -38,7 +38,7 @@ CoreInternalOutcome DescribePolicyGroupInfoEventCondition::Deserialize(const rap
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoEventCondition.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoEventCondition.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DescribePolicyGroupInfoEventCondition::Deserialize(const rap
     {
         if (!value["RuleId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoEventCondition.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoEventCondition.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = value["RuleId"].GetInt64();
         m_ruleIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DescribePolicyGroupInfoEventCondition::Deserialize(const rap
     {
         if (!value["EventShowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoEventCondition.EventShowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoEventCondition.EventShowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventShowName = string(value["EventShowName"].GetString());
         m_eventShowNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribePolicyGroupInfoEventCondition::Deserialize(const rap
     {
         if (!value["AlarmNotifyPeriod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoEventCondition.AlarmNotifyPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoEventCondition.AlarmNotifyPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNotifyPeriod = value["AlarmNotifyPeriod"].GetInt64();
         m_alarmNotifyPeriodHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribePolicyGroupInfoEventCondition::Deserialize(const rap
     {
         if (!value["AlarmNotifyType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoEventCondition.AlarmNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoEventCondition.AlarmNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNotifyType = value["AlarmNotifyType"].GetInt64();
         m_alarmNotifyTypeHasBeenSet = true;

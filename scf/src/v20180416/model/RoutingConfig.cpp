@@ -34,7 +34,7 @@ CoreInternalOutcome RoutingConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AdditionalVersionWeights") && !value["AdditionalVersionWeights"].IsNull())
     {
         if (!value["AdditionalVersionWeights"].IsArray())
-            return CoreInternalOutcome(Error("response `RoutingConfig.AdditionalVersionWeights` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RoutingConfig.AdditionalVersionWeights` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AdditionalVersionWeights"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome RoutingConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AddtionVersionMatchs") && !value["AddtionVersionMatchs"].IsNull())
     {
         if (!value["AddtionVersionMatchs"].IsArray())
-            return CoreInternalOutcome(Error("response `RoutingConfig.AddtionVersionMatchs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RoutingConfig.AddtionVersionMatchs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AddtionVersionMatchs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

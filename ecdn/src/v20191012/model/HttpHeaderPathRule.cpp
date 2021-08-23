@@ -38,7 +38,7 @@ CoreInternalOutcome HttpHeaderPathRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HeaderMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderPathRule.HeaderMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderPathRule.HeaderMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerMode = string(value["HeaderMode"].GetString());
         m_headerModeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome HttpHeaderPathRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HeaderName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderPathRule.HeaderName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderPathRule.HeaderName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerName = string(value["HeaderName"].GetString());
         m_headerNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome HttpHeaderPathRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HeaderValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderPathRule.HeaderValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderPathRule.HeaderValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerValue = string(value["HeaderValue"].GetString());
         m_headerValueHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome HttpHeaderPathRule::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderPathRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderPathRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome HttpHeaderPathRule::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpHeaderPathRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderPathRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

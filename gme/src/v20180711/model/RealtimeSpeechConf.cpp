@@ -35,7 +35,7 @@ CoreInternalOutcome RealtimeSpeechConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealtimeSpeechConf.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealtimeSpeechConf.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RealtimeSpeechConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Quality"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealtimeSpeechConf.Quality` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealtimeSpeechConf.Quality` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quality = string(value["Quality"].GetString());
         m_qualityHasBeenSet = true;

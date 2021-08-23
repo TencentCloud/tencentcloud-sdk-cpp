@@ -40,7 +40,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Cidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Cidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Cidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidr = string(value["Cidr"].GetString());
         m_cidrHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Target"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Target` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Target` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_target = string(value["Target"].GetString());
         m_targetHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CloudBaseRunVpcSubnet::Deserialize(const rapidjson::Value &v
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVpcSubnet.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVpcSubnet.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

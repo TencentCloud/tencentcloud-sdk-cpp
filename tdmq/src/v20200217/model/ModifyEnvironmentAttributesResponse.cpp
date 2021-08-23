@@ -37,16 +37,16 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
     {
         if (!rsp["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(rsp["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
     {
         if (!rsp["MsgTTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgTTL = rsp["MsgTTL"].GetUint64();
         m_msgTTLHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome ModifyEnvironmentAttributesResponse::Deserialize(const strin
     {
         if (!rsp["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(rsp["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;

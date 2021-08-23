@@ -37,7 +37,7 @@ CoreInternalOutcome ApplyPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyPayerinfoData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyPayerinfoData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ApplyPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyPayerinfoData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyPayerinfoData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerId = string(value["PayerId"].GetString());
         m_payerIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ApplyPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyPayerinfoData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyPayerinfoData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ApplyPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FailReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyPayerinfoData.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyPayerinfoData.FailReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failReason = string(value["FailReason"].GetString());
         m_failReasonHasBeenSet = true;

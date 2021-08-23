@@ -39,7 +39,7 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComparisonOperator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricAlarm.ComparisonOperator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.ComparisonOperator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comparisonOperator = string(value["ComparisonOperator"].GetString());
         m_comparisonOperatorHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricAlarm.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Threshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MetricAlarm.Threshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.Threshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_threshold = value["Threshold"].GetUint64();
         m_thresholdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MetricAlarm.Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContinuousTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MetricAlarm.ContinuousTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.ContinuousTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_continuousTime = value["ContinuousTime"].GetUint64();
         m_continuousTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Statistic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricAlarm.Statistic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.Statistic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statistic = string(value["Statistic"].GetString());
         m_statisticHasBeenSet = true;

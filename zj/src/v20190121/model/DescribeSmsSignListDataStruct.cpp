@@ -39,7 +39,7 @@ CoreInternalOutcome DescribeSmsSignListDataStruct::Deserialize(const rapidjson::
     {
         if (!value["SignId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsSignListDataStruct.SignId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsSignListDataStruct.SignId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_signId = value["SignId"].GetUint64();
         m_signIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DescribeSmsSignListDataStruct::Deserialize(const rapidjson::
     {
         if (!value["International"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsSignListDataStruct.International` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsSignListDataStruct.International` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_international = value["International"].GetUint64();
         m_internationalHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DescribeSmsSignListDataStruct::Deserialize(const rapidjson::
     {
         if (!value["StatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsSignListDataStruct.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsSignListDataStruct.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetInt64();
         m_statusCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeSmsSignListDataStruct::Deserialize(const rapidjson::
     {
         if (!value["ReviewReply"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsSignListDataStruct.ReviewReply` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsSignListDataStruct.ReviewReply` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reviewReply = string(value["ReviewReply"].GetString());
         m_reviewReplyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeSmsSignListDataStruct::Deserialize(const rapidjson::
     {
         if (!value["SignName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsSignListDataStruct.SignName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsSignListDataStruct.SignName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signName = string(value["SignName"].GetString());
         m_signNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeSmsSignListDataStruct::Deserialize(const rapidjson::
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsSignListDataStruct.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsSignListDataStruct.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;

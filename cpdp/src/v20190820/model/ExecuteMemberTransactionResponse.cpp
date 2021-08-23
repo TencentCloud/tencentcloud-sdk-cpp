@@ -36,16 +36,16 @@ CoreInternalOutcome ExecuteMemberTransactionResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome ExecuteMemberTransactionResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome ExecuteMemberTransactionResponse::Deserialize(const string &
     {
         if (!rsp["RequestType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestType = string(rsp["RequestType"].GetString());
         m_requestTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ExecuteMemberTransactionResponse::Deserialize(const string &
     {
         if (!rsp["FrontSequenceNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrontSequenceNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrontSequenceNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frontSequenceNumber = string(rsp["FrontSequenceNumber"].GetString());
         m_frontSequenceNumberHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ExecuteMemberTransactionResponse::Deserialize(const string &
     {
         if (!rsp["ReservedMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reservedMessage = string(rsp["ReservedMessage"].GetString());
         m_reservedMessageHasBeenSet = true;

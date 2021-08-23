@@ -39,7 +39,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjs
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResultItem.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjs
     {
         if (!value["WorkLoadKind"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.WorkLoadKind` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResultItem.WorkLoadKind` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workLoadKind = string(value["WorkLoadKind"].GetString());
         m_workLoadKindHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjs
     {
         if (!value["WorkLoadName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.WorkLoadName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResultItem.WorkLoadName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workLoadName = string(value["WorkLoadName"].GetString());
         m_workLoadNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjs
     {
         if (!value["Before"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.Before` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResultItem.Before` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_before = value["Before"].GetUint64();
         m_beforeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjs
     {
         if (!value["After"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.After` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResultItem.After` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_after = value["After"].GetUint64();
         m_afterHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjs
     if (value.HasMember("Pods") && !value["Pods"].IsNull())
     {
         if (!value["Pods"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.Pods` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResultItem.Pods` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Pods"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

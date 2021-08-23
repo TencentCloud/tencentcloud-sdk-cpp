@@ -41,7 +41,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(value["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["CreatedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.CreatedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdDate = string(value["CreatedDate"].GetString());
         m_createdDateHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["LastModifiedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedDate = string(value["LastModifiedDate"].GetString());
         m_lastModifiedDateHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["AppStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.AppStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.AppStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_appStatus = value["AppStatus"].GetBool();
         m_appStatusHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["Icon"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.Icon` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.Icon` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_icon = string(value["Icon"].GetString());
         m_iconHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ApplicationInformation::Deserialize(const rapidjson::Value &
     {
         if (!value["ClientId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationInformation.ClientId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationInformation.ClientId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientId = string(value["ClientId"].GetString());
         m_clientIdHasBeenSet = true;

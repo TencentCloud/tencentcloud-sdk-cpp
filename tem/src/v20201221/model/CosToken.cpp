@@ -42,7 +42,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.RequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.RequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestId = string(value["RequestId"].GetString());
         m_requestIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretId = string(value["TmpSecretId"].GetString());
         m_tmpSecretIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretKey = string(value["TmpSecretKey"].GetString());
         m_tmpSecretKeyHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.SessionToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.SessionToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionToken = string(value["SessionToken"].GetString());
         m_sessionTokenHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = string(value["ExpiredTime"].GetString());
         m_expiredTimeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosToken.FullPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosToken.FullPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullPath = string(value["FullPath"].GetString());
         m_fullPathHasBeenSet = true;

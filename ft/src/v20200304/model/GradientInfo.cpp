@@ -35,7 +35,7 @@ CoreInternalOutcome GradientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tempo"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `GradientInfo.Tempo` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GradientInfo.Tempo` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_tempo = value["Tempo"].GetDouble();
         m_tempoHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GradientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MorphTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `GradientInfo.MorphTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GradientInfo.MorphTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_morphTime = value["MorphTime"].GetDouble();
         m_morphTimeHasBeenSet = true;

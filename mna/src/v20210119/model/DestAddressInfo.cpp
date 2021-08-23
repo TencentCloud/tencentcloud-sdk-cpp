@@ -33,7 +33,7 @@ CoreInternalOutcome DestAddressInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DestIp") && !value["DestIp"].IsNull())
     {
         if (!value["DestIp"].IsArray())
-            return CoreInternalOutcome(Error("response `DestAddressInfo.DestIp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DestAddressInfo.DestIp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DestIp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

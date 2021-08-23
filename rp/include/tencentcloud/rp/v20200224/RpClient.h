@@ -39,7 +39,7 @@ namespace TencentCloud
                 RpClient(const Credential &credential, const std::string &region);
                 RpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::QueryRegisterProtectionResponse> QueryRegisterProtectionOutcome;
+                typedef Outcome<Core::Error, Model::QueryRegisterProtectionResponse> QueryRegisterProtectionOutcome;
                 typedef std::future<QueryRegisterProtectionOutcome> QueryRegisterProtectionOutcomeCallable;
                 typedef std::function<void(const RpClient*, const Model::QueryRegisterProtectionRequest&, QueryRegisterProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRegisterProtectionAsyncHandler;
 

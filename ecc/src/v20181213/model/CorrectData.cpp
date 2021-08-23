@@ -37,7 +37,7 @@ CoreInternalOutcome CorrectData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CorrectData.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CorrectData.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CorrectData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreCat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CorrectData.ScoreCat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CorrectData.ScoreCat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_scoreCat.Deserialize(value["ScoreCat"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome CorrectData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CorrectData.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CorrectData.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome CorrectData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SentenceComments") && !value["SentenceComments"].IsNull())
     {
         if (!value["SentenceComments"].IsArray())
-            return CoreInternalOutcome(Error("response `CorrectData.SentenceComments` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CorrectData.SentenceComments` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SentenceComments"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

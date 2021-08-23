@@ -41,7 +41,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Used"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.Used` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.Used` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_used = value["Used"].GetInt64();
         m_usedHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BuyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.BuyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.BuyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyTime = string(value["BuyTime"].GetString());
         m_buyTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LivePackageInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

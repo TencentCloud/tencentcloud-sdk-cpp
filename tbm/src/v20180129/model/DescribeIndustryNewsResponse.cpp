@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     {
         if (!rsp["NewsCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewsCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewsCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_newsCount = rsp["NewsCount"].GetUint64();
         m_newsCountHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     {
         if (!rsp["FromCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FromCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FromCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fromCount = rsp["FromCount"].GetUint64();
         m_fromCountHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     {
         if (!rsp["AdverseCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdverseCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdverseCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_adverseCount = rsp["AdverseCount"].GetUint64();
         m_adverseCountHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     if (rsp.HasMember("NewsSet") && !rsp["NewsSet"].IsNull())
     {
         if (!rsp["NewsSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NewsSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NewsSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["NewsSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     if (rsp.HasMember("DateCountSet") && !rsp["DateCountSet"].IsNull())
     {
         if (!rsp["DateCountSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DateCountSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DateCountSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DateCountSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

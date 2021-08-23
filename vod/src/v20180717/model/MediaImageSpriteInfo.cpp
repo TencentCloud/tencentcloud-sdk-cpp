@@ -33,7 +33,7 @@ CoreInternalOutcome MediaImageSpriteInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ImageSpriteSet") && !value["ImageSpriteSet"].IsNull())
     {
         if (!value["ImageSpriteSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaImageSpriteInfo.ImageSpriteSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaImageSpriteInfo.ImageSpriteSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageSpriteSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

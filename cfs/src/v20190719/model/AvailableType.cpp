@@ -35,7 +35,7 @@ CoreInternalOutcome AvailableType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Protocols") && !value["Protocols"].IsNull())
     {
         if (!value["Protocols"].IsArray())
-            return CoreInternalOutcome(Error("response `AvailableType.Protocols` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AvailableType.Protocols` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Protocols"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome AvailableType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableType.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableType.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AvailableType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Prepayment"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AvailableType.Prepayment` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableType.Prepayment` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_prepayment = value["Prepayment"].GetBool();
         m_prepaymentHasBeenSet = true;

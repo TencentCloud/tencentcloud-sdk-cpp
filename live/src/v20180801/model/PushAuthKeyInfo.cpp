@@ -38,7 +38,7 @@ CoreInternalOutcome PushAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushAuthKeyInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushAuthKeyInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PushAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PushAuthKeyInfo.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushAuthKeyInfo.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PushAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterAuthKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushAuthKeyInfo.MasterAuthKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushAuthKeyInfo.MasterAuthKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterAuthKey = string(value["MasterAuthKey"].GetString());
         m_masterAuthKeyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PushAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupAuthKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushAuthKeyInfo.BackupAuthKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushAuthKeyInfo.BackupAuthKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupAuthKey = string(value["BackupAuthKey"].GetString());
         m_backupAuthKeyHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PushAuthKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthDelta"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushAuthKeyInfo.AuthDelta` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushAuthKeyInfo.AuthDelta` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_authDelta = value["AuthDelta"].GetUint64();
         m_authDeltaHasBeenSet = true;

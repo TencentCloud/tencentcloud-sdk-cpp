@@ -38,7 +38,7 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cx"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Cx` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Cx` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cx = value["Cx"].GetDouble();
         m_cxHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Cy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Cy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cy = value["Cy"].GetDouble();
         m_cyHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Height` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Height` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetDouble();
         m_heightHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rotate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Rotate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetDouble();
         m_rotateHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RrectF.Width` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Width` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetDouble();
         m_widthHasBeenSet = true;

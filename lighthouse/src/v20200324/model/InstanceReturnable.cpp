@@ -37,7 +37,7 @@ CoreInternalOutcome InstanceReturnable::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceReturnable.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceReturnable.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InstanceReturnable::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsReturnable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `InstanceReturnable.IsReturnable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceReturnable.IsReturnable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isReturnable = value["IsReturnable"].GetBool();
         m_isReturnableHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InstanceReturnable::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReturnFailCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceReturnable.ReturnFailCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceReturnable.ReturnFailCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_returnFailCode = value["ReturnFailCode"].GetInt64();
         m_returnFailCodeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InstanceReturnable::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReturnFailMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceReturnable.ReturnFailMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceReturnable.ReturnFailMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_returnFailMessage = string(value["ReturnFailMessage"].GetString());
         m_returnFailMessageHasBeenSet = true;

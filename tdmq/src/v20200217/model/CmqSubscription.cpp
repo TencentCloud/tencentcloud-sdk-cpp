@@ -45,7 +45,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscriptionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.SubscriptionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.SubscriptionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscriptionName = string(value["SubscriptionName"].GetString());
         m_subscriptionNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscriptionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.SubscriptionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.SubscriptionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscriptionId = string(value["SubscriptionId"].GetString());
         m_subscriptionIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicOwner"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.TopicOwner` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.TopicOwner` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_topicOwner = value["TopicOwner"].GetUint64();
         m_topicOwnerHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgCount = value["MsgCount"].GetUint64();
         m_msgCountHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifyTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifyTime = value["LastModifyTime"].GetUint64();
         m_lastModifyTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BindingKey") && !value["BindingKey"].IsNull())
     {
         if (!value["BindingKey"].IsArray())
-            return CoreInternalOutcome(Error("response `CmqSubscription.BindingKey` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.BindingKey` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BindingKey"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Endpoint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.Endpoint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.Endpoint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endpoint = string(value["Endpoint"].GetString());
         m_endpointHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FilterTags") && !value["FilterTags"].IsNull())
     {
         if (!value["FilterTags"].IsArray())
-            return CoreInternalOutcome(Error("response `CmqSubscription.FilterTags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.FilterTags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FilterTags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -141,7 +141,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyStrategy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.NotifyStrategy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.NotifyStrategy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyStrategy = string(value["NotifyStrategy"].GetString());
         m_notifyStrategyHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome CmqSubscription::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyContentFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CmqSubscription.NotifyContentFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CmqSubscription.NotifyContentFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyContentFormat = string(value["NotifyContentFormat"].GetString());
         m_notifyContentFormatHasBeenSet = true;

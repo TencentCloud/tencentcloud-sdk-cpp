@@ -40,7 +40,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StepAll"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.StepAll` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.StepAll` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepAll = value["StepAll"].GetInt64();
         m_stepAllHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StepNow"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.StepNow` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.StepNow` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepNow = value["StepNow"].GetInt64();
         m_stepNowHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Progress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.Progress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.Progress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_progress = string(value["Progress"].GetString());
         m_progressHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CurrentStepProgress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.CurrentStepProgress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.CurrentStepProgress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentStepProgress = string(value["CurrentStepProgress"].GetString());
         m_currentStepProgressHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MasterSlaveDistance"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.MasterSlaveDistance` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.MasterSlaveDistance` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_masterSlaveDistance = value["MasterSlaveDistance"].GetInt64();
         m_masterSlaveDistanceHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SecondsBehindMaster"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.SecondsBehindMaster` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.SecondsBehindMaster` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_secondsBehindMaster = value["SecondsBehindMaster"].GetInt64();
         m_secondsBehindMasterHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome MigrateDetailInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("StepInfo") && !value["StepInfo"].IsNull())
     {
         if (!value["StepInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `MigrateDetailInfo.StepInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MigrateDetailInfo.StepInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StepInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -42,7 +42,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["SumReqAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.SumReqAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.SumReqAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sumReqAmount = string(value["SumReqAmount"].GetString());
         m_sumReqAmountHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["AvgFailureRate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.AvgFailureRate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.AvgFailureRate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_avgFailureRate = string(value["AvgFailureRate"].GetString());
         m_avgFailureRateHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["AvgTimeCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.AvgTimeCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.AvgTimeCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_avgTimeCost = string(value["AvgTimeCost"].GetString());
         m_avgTimeCostHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["MetricDataPointMap"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.MetricDataPointMap` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.MetricDataPointMap` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metricDataPointMap.Deserialize(value["MetricDataPointMap"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     if (value.HasMember("TopStatusCode") && !value["TopStatusCode"].IsNull())
     {
         if (!value["TopStatusCode"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.TopStatusCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.TopStatusCode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopStatusCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -128,7 +128,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     if (value.HasMember("TopTimeCost") && !value["TopTimeCost"].IsNull())
     {
         if (!value["TopTimeCost"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.TopTimeCost` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.TopTimeCost` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TopTimeCost"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -149,7 +149,7 @@ CoreInternalOutcome GroupUnitApiDailyUseStatistics::Deserialize(const rapidjson:
     {
         if (!value["Quantile"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GroupUnitApiDailyUseStatistics.Quantile` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupUnitApiDailyUseStatistics.Quantile` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_quantile.Deserialize(value["Quantile"]);

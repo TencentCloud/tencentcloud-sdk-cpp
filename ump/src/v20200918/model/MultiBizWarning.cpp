@@ -36,7 +36,7 @@ CoreInternalOutcome MultiBizWarning::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MultiBizWarning.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarning.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MultiBizWarning::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MonitoringArea") && !value["MonitoringArea"].IsNull())
     {
         if (!value["MonitoringArea"].IsArray())
-            return CoreInternalOutcome(Error("response `MultiBizWarning.MonitoringArea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarning.MonitoringArea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MonitoringArea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome MultiBizWarning::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WarningInfos") && !value["WarningInfos"].IsNull())
     {
         if (!value["WarningInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `MultiBizWarning.WarningInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarning.WarningInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WarningInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome AbsenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibraryIds"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbsenceInfo.LibraryIds` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbsenceInfo.LibraryIds` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libraryIds = string(value["LibraryIds"].GetString());
         m_libraryIdsHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AbsenceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbsenceInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbsenceInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;

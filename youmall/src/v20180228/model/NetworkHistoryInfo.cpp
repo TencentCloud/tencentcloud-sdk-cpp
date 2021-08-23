@@ -40,7 +40,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CompanyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.CompanyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.CompanyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = string(value["CompanyId"].GetString());
         m_companyIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShopId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = value["ShopId"].GetInt64();
         m_shopIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShopName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.ShopName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.ShopName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shopName = string(value["ShopName"].GetString());
         m_shopNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome NetworkHistoryInfo::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Infos") && !value["Infos"].IsNull())
     {
         if (!value["Infos"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkHistoryInfo.Infos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkHistoryInfo.Infos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Infos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

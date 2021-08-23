@@ -41,7 +41,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sdkappid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.Sdkappid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Sdkappid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkappid = string(value["Sdkappid"].GetString());
         m_sdkappidHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Appkey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.Appkey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Appkey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appkey = string(value["Appkey"].GetString());
         m_appkeyHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CloudAppid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.CloudAppid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.CloudAppid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cloudAppid = string(value["CloudAppid"].GetString());
         m_cloudAppidHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.BizType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.BizType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = value["BizType"].GetInt64();
         m_bizTypeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;

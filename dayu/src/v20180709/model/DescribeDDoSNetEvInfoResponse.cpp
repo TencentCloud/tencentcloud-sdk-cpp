@@ -49,16 +49,16 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -69,11 +69,11 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["Business"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Business` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Business` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_business = string(rsp["Business"].GetString());
         m_businessHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(rsp["Id"].GetString());
         m_idHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(rsp["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["TcpPacketSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TcpPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcpPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tcpPacketSum = rsp["TcpPacketSum"].GetUint64();
         m_tcpPacketSumHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["TcpKBSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TcpKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcpKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tcpKBSum = rsp["TcpKBSum"].GetUint64();
         m_tcpKBSumHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["UdpPacketSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UdpPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UdpPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_udpPacketSum = rsp["UdpPacketSum"].GetUint64();
         m_udpPacketSumHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["UdpKBSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UdpKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UdpKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_udpKBSum = rsp["UdpKBSum"].GetUint64();
         m_udpKBSumHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["IcmpPacketSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IcmpPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IcmpPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_icmpPacketSum = rsp["IcmpPacketSum"].GetUint64();
         m_icmpPacketSumHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["IcmpKBSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IcmpKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IcmpKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_icmpKBSum = rsp["IcmpKBSum"].GetUint64();
         m_icmpKBSumHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["OtherPacketSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OtherPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherPacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_otherPacketSum = rsp["OtherPacketSum"].GetUint64();
         m_otherPacketSumHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["OtherKBSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OtherKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherKBSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_otherKBSum = rsp["OtherKBSum"].GetUint64();
         m_otherKBSumHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["TotalTraffic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalTraffic = rsp["TotalTraffic"].GetUint64();
         m_totalTrafficHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["Mbps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Mbps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mbps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mbps = rsp["Mbps"].GetUint64();
         m_mbpsHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     {
         if (!rsp["Pps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Pps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Pps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pps = rsp["Pps"].GetUint64();
         m_ppsHasBeenSet = true;
@@ -230,7 +230,7 @@ CoreInternalOutcome DescribeDDoSNetEvInfoResponse::Deserialize(const string &pay
     if (rsp.HasMember("PcapUrl") && !rsp["PcapUrl"].IsNull())
     {
         if (!rsp["PcapUrl"].IsArray())
-            return CoreInternalOutcome(Error("response `PcapUrl` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PcapUrl` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["PcapUrl"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

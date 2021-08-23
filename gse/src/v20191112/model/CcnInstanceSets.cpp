@@ -38,7 +38,7 @@ CoreInternalOutcome CcnInstanceSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInstanceSets.AccountId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInstanceSets.AccountId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountId = string(value["AccountId"].GetString());
         m_accountIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CcnInstanceSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CcnId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInstanceSets.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInstanceSets.CcnId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccnId = string(value["CcnId"].GetString());
         m_ccnIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CcnInstanceSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInstanceSets.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInstanceSets.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CcnInstanceSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInstanceSets.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInstanceSets.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CcnInstanceSets::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnInstanceSets.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnInstanceSets.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;

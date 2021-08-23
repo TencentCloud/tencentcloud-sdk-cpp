@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeGetAuthInfoResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome DescribeGetAuthInfoResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeGetAuthInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsTenPayMasked"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IsTenPayMasked` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsTenPayMasked` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isTenPayMasked = string(rsp["IsTenPayMasked"].GetString());
         m_isTenPayMaskedHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeGetAuthInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["IsAuthenticated"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IsAuthenticated` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsAuthenticated` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isAuthenticated = string(rsp["IsAuthenticated"].GetString());
         m_isAuthenticatedHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeGetAuthInfoResponse::Deserialize(const string &paylo
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;

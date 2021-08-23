@@ -37,7 +37,7 @@ CoreInternalOutcome HorizontalAutoscaler::Deserialize(const rapidjson::Value &va
     {
         if (!value["MinReplicas"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HorizontalAutoscaler.MinReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HorizontalAutoscaler.MinReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minReplicas = value["MinReplicas"].GetInt64();
         m_minReplicasHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome HorizontalAutoscaler::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaxReplicas"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HorizontalAutoscaler.MaxReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HorizontalAutoscaler.MaxReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReplicas = value["MaxReplicas"].GetInt64();
         m_maxReplicasHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome HorizontalAutoscaler::Deserialize(const rapidjson::Value &va
     {
         if (!value["Metrics"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HorizontalAutoscaler.Metrics` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HorizontalAutoscaler.Metrics` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metrics = string(value["Metrics"].GetString());
         m_metricsHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome HorizontalAutoscaler::Deserialize(const rapidjson::Value &va
     {
         if (!value["Threshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HorizontalAutoscaler.Threshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HorizontalAutoscaler.Threshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_threshold = value["Threshold"].GetInt64();
         m_thresholdHasBeenSet = true;

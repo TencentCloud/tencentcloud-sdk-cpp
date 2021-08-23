@@ -40,7 +40,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.EventId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.EventId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = string(value["EventId"].GetString());
         m_eventIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = string(value["VersionId"].GetString());
         m_versionIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StackId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.StackId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.StackId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stackId = string(value["StackId"].GetString());
         m_stackIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

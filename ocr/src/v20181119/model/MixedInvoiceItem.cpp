@@ -38,7 +38,7 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MixedInvoiceItem.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixedInvoiceItem.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MixedInvoiceItem.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixedInvoiceItem.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MixedInvoiceItem.Rect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixedInvoiceItem.Rect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rect.Deserialize(value["Rect"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MixedInvoiceItem.Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MixedInvoiceItem.Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angle = value["Angle"].GetDouble();
         m_angleHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SingleInvoiceInfos") && !value["SingleInvoiceInfos"].IsNull())
     {
         if (!value["SingleInvoiceInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `MixedInvoiceItem.SingleInvoiceInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MixedInvoiceItem.SingleInvoiceInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SingleInvoiceInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -49,7 +49,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlueprintId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.BlueprintId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.BlueprintId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blueprintId = string(value["BlueprintId"].GetString());
         m_blueprintIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisplayTitle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.DisplayTitle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.DisplayTitle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayTitle = string(value["DisplayTitle"].GetString());
         m_displayTitleHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisplayVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.DisplayVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.DisplayVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayVersion = string(value["DisplayVersion"].GetString());
         m_displayVersionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.OsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.OsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osName = string(value["OsName"].GetString());
         m_osNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.Platform` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.Platform` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platform = string(value["Platform"].GetString());
         m_platformHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlatformType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.PlatformType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.PlatformType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_platformType = string(value["PlatformType"].GetString());
         m_platformTypeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlueprintType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.BlueprintType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.BlueprintType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blueprintType = string(value["BlueprintType"].GetString());
         m_blueprintTypeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageUrl = string(value["ImageUrl"].GetString());
         m_imageUrlHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequiredSystemDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.RequiredSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.RequiredSystemDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_requiredSystemDiskSize = value["RequiredSystemDiskSize"].GetInt64();
         m_requiredSystemDiskSizeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlueprintState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.BlueprintState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.BlueprintState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blueprintState = string(value["BlueprintState"].GetString());
         m_blueprintStateHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlueprintName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.BlueprintName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.BlueprintName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blueprintName = string(value["BlueprintName"].GetString());
         m_blueprintNameHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SupportAutomationTools"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.SupportAutomationTools` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.SupportAutomationTools` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_supportAutomationTools = value["SupportAutomationTools"].GetBool();
         m_supportAutomationToolsHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequiredMemorySize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.RequiredMemorySize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.RequiredMemorySize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_requiredMemorySize = value["RequiredMemorySize"].GetInt64();
         m_requiredMemorySizeHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Blueprint.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Blueprint.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;

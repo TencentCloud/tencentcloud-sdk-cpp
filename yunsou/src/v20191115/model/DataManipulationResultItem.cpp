@@ -36,7 +36,7 @@ CoreInternalOutcome DataManipulationResultItem::Deserialize(const rapidjson::Val
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResultItem.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResultItem.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DataManipulationResultItem::Deserialize(const rapidjson::Val
     {
         if (!value["DocId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResultItem.DocId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResultItem.DocId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_docId = string(value["DocId"].GetString());
         m_docIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DataManipulationResultItem::Deserialize(const rapidjson::Val
     {
         if (!value["Errno"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResultItem.Errno` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResultItem.Errno` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errno = value["Errno"].GetInt64();
         m_errnoHasBeenSet = true;

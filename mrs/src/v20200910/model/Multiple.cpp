@@ -37,7 +37,7 @@ CoreInternalOutcome Multiple::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `Multiple.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Multiple.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -51,7 +51,7 @@ CoreInternalOutcome Multiple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Multiple.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Multiple.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Multiple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Multiple.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Multiple.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Multiple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Multiple.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Multiple.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Multiple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Multiple.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Multiple.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome TopData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopData.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopData.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome TopData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetailData") && !value["DetailData"].IsNull())
     {
         if (!value["DetailData"].IsArray())
-            return CoreInternalOutcome(Error("response `TopData.DetailData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopData.DetailData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

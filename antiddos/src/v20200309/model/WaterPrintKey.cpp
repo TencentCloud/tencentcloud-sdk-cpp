@@ -38,7 +38,7 @@ CoreInternalOutcome WaterPrintKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintKey.KeyVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintKey.KeyVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyVersion = string(value["KeyVersion"].GetString());
         m_keyVersionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome WaterPrintKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintKey.KeyContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintKey.KeyContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyContent = string(value["KeyContent"].GetString());
         m_keyContentHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome WaterPrintKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintKey.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintKey.KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome WaterPrintKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyOpenStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintKey.KeyOpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintKey.KeyOpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_keyOpenStatus = value["KeyOpenStatus"].GetInt64();
         m_keyOpenStatusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome WaterPrintKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintKey.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintKey.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

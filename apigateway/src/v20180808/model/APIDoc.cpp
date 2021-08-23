@@ -36,7 +36,7 @@ CoreInternalOutcome APIDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiDocId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `APIDoc.ApiDocId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `APIDoc.ApiDocId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiDocId = string(value["ApiDocId"].GetString());
         m_apiDocIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome APIDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiDocName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `APIDoc.ApiDocName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `APIDoc.ApiDocName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiDocName = string(value["ApiDocName"].GetString());
         m_apiDocNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome APIDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiDocStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `APIDoc.ApiDocStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `APIDoc.ApiDocStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiDocStatus = string(value["ApiDocStatus"].GetString());
         m_apiDocStatusHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome SdkAppIdRecordUsage::Deserialize(const rapidjson::Value &val
     {
         if (!value["SdkAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdRecordUsage.SdkAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdRecordUsage.SdkAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkAppId = string(value["SdkAppId"].GetString());
         m_sdkAppIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SdkAppIdRecordUsage::Deserialize(const rapidjson::Value &val
     if (value.HasMember("Usages") && !value["Usages"].IsNull())
     {
         if (!value["Usages"].IsArray())
-            return CoreInternalOutcome(Error("response `SdkAppIdRecordUsage.Usages` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdRecordUsage.Usages` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Usages"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

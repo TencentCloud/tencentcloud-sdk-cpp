@@ -44,7 +44,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Resources") && !value["Resources"].IsNull())
     {
         if (!value["Resources"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.Resources` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.Resources` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Resources"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DropOptions"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DDosPolicy.DropOptions` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.DropOptions` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dropOptions.Deserialize(value["DropOptions"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PortLimits") && !value["PortLimits"].IsNull())
     {
         if (!value["PortLimits"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.PortLimits` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.PortLimits` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PortLimits"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -101,7 +101,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PacketFilters") && !value["PacketFilters"].IsNull())
     {
         if (!value["PacketFilters"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.PacketFilters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.PacketFilters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PacketFilters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IpBlackWhiteLists") && !value["IpBlackWhiteLists"].IsNull())
     {
         if (!value["IpBlackWhiteLists"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.IpBlackWhiteLists` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.IpBlackWhiteLists` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IpBlackWhiteLists"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -142,7 +142,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDosPolicy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(value["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDosPolicy.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(value["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDosPolicy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WaterPrint") && !value["WaterPrint"].IsNull())
     {
         if (!value["WaterPrint"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.WaterPrint` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.WaterPrint` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WaterPrint"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -191,7 +191,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WaterKey") && !value["WaterKey"].IsNull())
     {
         if (!value["WaterKey"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.WaterKey` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.WaterKey` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WaterKey"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -211,7 +211,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BoundResources") && !value["BoundResources"].IsNull())
     {
         if (!value["BoundResources"].IsArray())
-            return CoreInternalOutcome(Error("response `DDosPolicy.BoundResources` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.BoundResources` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BoundResources"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -225,7 +225,7 @@ CoreInternalOutcome DDosPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SceneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDosPolicy.SceneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDosPolicy.SceneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sceneId = string(value["SceneId"].GetString());
         m_sceneIdHasBeenSet = true;

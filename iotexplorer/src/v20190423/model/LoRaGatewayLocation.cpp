@@ -37,7 +37,7 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &val
     {
         if (!value["Accuracy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Accuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Accuracy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_accuracy = value["Accuracy"].GetDouble();
         m_accuracyHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &val
     {
         if (!value["Altitude"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Altitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Altitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_altitude = value["Altitude"].GetDouble();
         m_altitudeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &val
     {
         if (!value["Latitude"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Latitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Latitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_latitude = value["Latitude"].GetDouble();
         m_latitudeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &val
     {
         if (!value["Longitude"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayLocation.Longitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayLocation.Longitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_longitude = value["Longitude"].GetDouble();
         m_longitudeHasBeenSet = true;

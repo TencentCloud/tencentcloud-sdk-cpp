@@ -35,7 +35,7 @@ CoreInternalOutcome TargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SegmentInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TargetInfo.SegmentInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetInfo.SegmentInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_segmentInfo.Deserialize(value["SegmentInfo"]);

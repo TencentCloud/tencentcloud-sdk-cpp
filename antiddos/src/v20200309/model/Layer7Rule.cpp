@@ -37,7 +37,7 @@ CoreInternalOutcome Layer7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Layer7Rule.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Layer7Rule.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Layer7Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProxyTypeList") && !value["ProxyTypeList"].IsNull())
     {
         if (!value["ProxyTypeList"].IsArray())
-            return CoreInternalOutcome(Error("response `Layer7Rule.ProxyTypeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Layer7Rule.ProxyTypeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProxyTypeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome Layer7Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RealServers") && !value["RealServers"].IsNull())
     {
         if (!value["RealServers"].IsArray())
-            return CoreInternalOutcome(Error("response `Layer7Rule.RealServers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Layer7Rule.RealServers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RealServers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -86,7 +86,7 @@ CoreInternalOutcome Layer7Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceDetails") && !value["InstanceDetails"].IsNull())
     {
         if (!value["InstanceDetails"].IsArray())
-            return CoreInternalOutcome(Error("response `Layer7Rule.InstanceDetails` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Layer7Rule.InstanceDetails` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

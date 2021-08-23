@@ -39,7 +39,7 @@ CoreInternalOutcome KibanaNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KibanaNodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KibanaNodeInfo.KibanaNodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KibanaNodeInfo.KibanaNodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kibanaNodeType = string(value["KibanaNodeType"].GetString());
         m_kibanaNodeTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome KibanaNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KibanaNodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `KibanaNodeInfo.KibanaNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KibanaNodeInfo.KibanaNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kibanaNodeNum = value["KibanaNodeNum"].GetUint64();
         m_kibanaNodeNumHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome KibanaNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KibanaNodeCpuNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `KibanaNodeInfo.KibanaNodeCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KibanaNodeInfo.KibanaNodeCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kibanaNodeCpuNum = value["KibanaNodeCpuNum"].GetUint64();
         m_kibanaNodeCpuNumHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome KibanaNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KibanaNodeMemSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `KibanaNodeInfo.KibanaNodeMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KibanaNodeInfo.KibanaNodeMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kibanaNodeMemSize = value["KibanaNodeMemSize"].GetUint64();
         m_kibanaNodeMemSizeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome KibanaNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KibanaNodeDiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KibanaNodeInfo.KibanaNodeDiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KibanaNodeInfo.KibanaNodeDiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kibanaNodeDiskType = string(value["KibanaNodeDiskType"].GetString());
         m_kibanaNodeDiskTypeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome KibanaNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KibanaNodeDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `KibanaNodeInfo.KibanaNodeDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KibanaNodeInfo.KibanaNodeDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kibanaNodeDiskSize = value["KibanaNodeDiskSize"].GetUint64();
         m_kibanaNodeDiskSizeHasBeenSet = true;

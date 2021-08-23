@@ -41,7 +41,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["PublicIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIp = string(value["PublicIp"].GetString());
         m_publicIpHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["SecurityGroupCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AssociatedInstanceInfo.SecurityGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.SecurityGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupCount = value["SecurityGroupCount"].GetUint64();
         m_securityGroupCountHasBeenSet = true;

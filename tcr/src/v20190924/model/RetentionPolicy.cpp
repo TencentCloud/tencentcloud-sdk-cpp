@@ -39,7 +39,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetentionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.RetentionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.RetentionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retentionId = value["RetentionId"].GetInt64();
         m_retentionIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RetentionRuleList") && !value["RetentionRuleList"].IsNull())
     {
         if (!value["RetentionRuleList"].IsArray())
-            return CoreInternalOutcome(Error("response `RetentionPolicy.RetentionRuleList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.RetentionRuleList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RetentionRuleList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CronSetting"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.CronSetting` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.CronSetting` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cronSetting = string(value["CronSetting"].GetString());
         m_cronSettingHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Disabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.Disabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.Disabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disabled = value["Disabled"].GetBool();
         m_disabledHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NextExecutionTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.NextExecutionTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.NextExecutionTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextExecutionTime = string(value["NextExecutionTime"].GetString());
         m_nextExecutionTimeHasBeenSet = true;

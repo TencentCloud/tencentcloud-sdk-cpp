@@ -35,7 +35,7 @@ CoreInternalOutcome PeakFamilyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceFamily"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PeakFamilyInfo.InstanceFamily` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakFamilyInfo.InstanceFamily` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceFamily.Deserialize(value["InstanceFamily"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome PeakFamilyInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PeakBaseSet") && !value["PeakBaseSet"].IsNull())
     {
         if (!value["PeakBaseSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PeakFamilyInfo.PeakBaseSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PeakFamilyInfo.PeakBaseSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PeakBaseSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

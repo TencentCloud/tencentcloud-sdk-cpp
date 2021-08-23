@@ -46,7 +46,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     {
         if (!value["BizId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bizId = value["BizId"].GetUint64();
         m_bizIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     {
         if (!value["DauDataNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DauDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dauDataNum = value["DauDataNum"].GetUint64();
         m_dauDataNumHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("DauDataMainland") && !value["DauDataMainland"].IsNull())
     {
         if (!value["DauDataMainland"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataMainland` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DauDataMainland` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DauDataMainland"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -85,7 +85,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("DauDataOversea") && !value["DauDataOversea"].IsNull())
     {
         if (!value["DauDataOversea"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataOversea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DauDataOversea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DauDataOversea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -105,7 +105,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("DauDataSum") && !value["DauDataSum"].IsNull())
     {
         if (!value["DauDataSum"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataSum` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DauDataSum` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DauDataSum"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -126,7 +126,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     {
         if (!value["DurationDataNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DurationDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_durationDataNum = value["DurationDataNum"].GetUint64();
         m_durationDataNumHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("DurationDataMainland") && !value["DurationDataMainland"].IsNull())
     {
         if (!value["DurationDataMainland"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataMainland` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DurationDataMainland` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DurationDataMainland"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -155,7 +155,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("DurationDataOversea") && !value["DurationDataOversea"].IsNull())
     {
         if (!value["DurationDataOversea"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataOversea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DurationDataOversea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DurationDataOversea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -175,7 +175,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("DurationDataSum") && !value["DurationDataSum"].IsNull())
     {
         if (!value["DurationDataSum"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataSum` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.DurationDataSum` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DurationDataSum"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -196,7 +196,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     {
         if (!value["PcuDataNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.PcuDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pcuDataNum = value["PcuDataNum"].GetUint64();
         m_pcuDataNumHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("PcuDataMainland") && !value["PcuDataMainland"].IsNull())
     {
         if (!value["PcuDataMainland"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataMainland` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.PcuDataMainland` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PcuDataMainland"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -225,7 +225,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("PcuDataOversea") && !value["PcuDataOversea"].IsNull())
     {
         if (!value["PcuDataOversea"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataOversea` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.PcuDataOversea` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PcuDataOversea"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -245,7 +245,7 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
     if (value.HasMember("PcuDataSum") && !value["PcuDataSum"].IsNull())
     {
         if (!value["PcuDataSum"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataSum` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.PcuDataSum` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PcuDataSum"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome DbRollbackTimeInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DBName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbRollbackTimeInfo.DBName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbRollbackTimeInfo.DBName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBName = string(value["DBName"].GetString());
         m_dBNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DbRollbackTimeInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbRollbackTimeInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbRollbackTimeInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DbRollbackTimeInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbRollbackTimeInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbRollbackTimeInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

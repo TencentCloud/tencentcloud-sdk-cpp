@@ -37,7 +37,7 @@ CoreInternalOutcome SnapshotResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotResult.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotResult.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = string(value["ErrorCode"].GetString());
         m_errorCodeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SnapshotResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotResult.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotResult.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMessage = string(value["ErrorMessage"].GetString());
         m_errorMessageHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SnapshotResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotResult.Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotResult.Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetUint64();
         m_totalHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SnapshotResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Snapshots") && !value["Snapshots"].IsNull())
     {
         if (!value["Snapshots"].IsArray())
-            return CoreInternalOutcome(Error("response `SnapshotResult.Snapshots` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SnapshotResult.Snapshots` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Snapshots"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

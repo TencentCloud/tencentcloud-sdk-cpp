@@ -38,16 +38,16 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
     {
         if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = rsp["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
     {
         if (!rsp["Done"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Done` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Done` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_done = rsp["Done"].GetInt64();
         m_doneHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
     {
         if (!rsp["LifeState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LifeState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LifeState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifeState = string(rsp["LifeState"].GetString());
         m_lifeStateHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
     if (rsp.HasMember("Instances") && !rsp["Instances"].IsNull())
     {
         if (!rsp["Instances"].IsArray())
-            return CoreInternalOutcome(Error("response `Instances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Instances` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Instances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome GetUpgradeInstanceProgressResponse::Deserialize(const string
     {
         if (!rsp["ClusterStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clusterStatus.Deserialize(rsp["ClusterStatus"]);

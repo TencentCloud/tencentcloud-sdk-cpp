@@ -35,7 +35,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;

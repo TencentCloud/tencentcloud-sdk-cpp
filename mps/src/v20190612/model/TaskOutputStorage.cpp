@@ -35,7 +35,7 @@ CoreInternalOutcome TaskOutputStorage::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskOutputStorage.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOutputStorage.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TaskOutputStorage::Deserialize(const rapidjson::Value &value
     {
         if (!value["CosOutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskOutputStorage.CosOutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOutputStorage.CosOutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosOutputStorage.Deserialize(value["CosOutputStorage"]);

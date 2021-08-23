@@ -40,7 +40,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AclId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAcl.AclId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.AclId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aclId = string(value["AclId"].GetString());
         m_aclIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AclName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAcl.AclName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.AclName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aclName = string(value["AclName"].GetString());
         m_aclNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAcl.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipAcl.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipAcl.EipNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.EipNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eipNum = value["EipNum"].GetInt64();
         m_eipNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OutRules") && !value["OutRules"].IsNull())
     {
         if (!value["OutRules"].IsArray())
-            return CoreInternalOutcome(Error("response `EipAcl.OutRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.OutRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InRules") && !value["InRules"].IsNull())
     {
         if (!value["InRules"].IsArray())
-            return CoreInternalOutcome(Error("response `EipAcl.InRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EipAcl.InRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

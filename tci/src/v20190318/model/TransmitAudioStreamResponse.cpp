@@ -39,16 +39,16 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     {
         if (!rsp["AsrStat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AsrStat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsrStat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrStat.Deserialize(rsp["AsrStat"]);
@@ -87,7 +87,7 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     if (rsp.HasMember("Texts") && !rsp["Texts"].IsNull())
     {
         if (!rsp["Texts"].IsArray())
-            return CoreInternalOutcome(Error("response `Texts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Texts` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Texts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     if (rsp.HasMember("VocabAnalysisDetailInfo") && !rsp["VocabAnalysisDetailInfo"].IsNull())
     {
         if (!rsp["VocabAnalysisDetailInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `VocabAnalysisDetailInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VocabAnalysisDetailInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["VocabAnalysisDetailInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -127,7 +127,7 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     if (rsp.HasMember("VocabAnalysisStatInfo") && !rsp["VocabAnalysisStatInfo"].IsNull())
     {
         if (!rsp["VocabAnalysisStatInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `VocabAnalysisStatInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VocabAnalysisStatInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["VocabAnalysisStatInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -148,7 +148,7 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     {
         if (!rsp["AllTexts"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllTexts` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllTexts` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_allTexts = string(rsp["AllTexts"].GetString());
         m_allTextsHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
     {
         if (!rsp["AudioUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_audioUrl = string(rsp["AudioUrl"].GetString());
         m_audioUrlHasBeenSet = true;

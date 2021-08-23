@@ -39,7 +39,7 @@ CoreInternalOutcome ClsLogObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogObject.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogObject.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ClsLogObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogObject.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogObject.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ClsLogObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogObject.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogObject.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = string(value["Timestamp"].GetString());
         m_timestampHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ClsLogObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogObject.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogObject.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ClsLogObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Filename"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogObject.Filename` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogObject.Filename` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filename = string(value["Filename"].GetString());
         m_filenameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ClsLogObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsLogObject.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsLogObject.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;

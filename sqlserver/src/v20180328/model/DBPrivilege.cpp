@@ -35,7 +35,7 @@ CoreInternalOutcome DBPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DBName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBPrivilege.DBName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBPrivilege.DBName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBName = string(value["DBName"].GetString());
         m_dBNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DBPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Privilege"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBPrivilege.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBPrivilege.Privilege` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privilege = string(value["Privilege"].GetString());
         m_privilegeHasBeenSet = true;

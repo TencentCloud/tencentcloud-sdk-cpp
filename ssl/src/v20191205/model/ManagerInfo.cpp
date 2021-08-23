@@ -47,7 +47,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerFirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerFirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerFirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerFirstName = string(value["ManagerFirstName"].GetString());
         m_managerFirstNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerLastName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerLastName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerLastName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerLastName = string(value["ManagerLastName"].GetString());
         m_managerLastNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerPosition = string(value["ManagerPosition"].GetString());
         m_managerPositionHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerPhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerPhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerPhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerPhone = string(value["ManagerPhone"].GetString());
         m_managerPhoneHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerMail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerMail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerMail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerMail = string(value["ManagerMail"].GetString());
         m_managerMailHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerDepartment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerDepartment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerDepartment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerDepartment = string(value["ManagerDepartment"].GetString());
         m_managerDepartmentHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.DomainCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.DomainCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_domainCount = value["DomainCount"].GetInt64();
         m_domainCountHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.CertCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.CertCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_certCount = value["CertCount"].GetInt64();
         m_certCountHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ManagerId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ManagerId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ManagerId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_managerId = value["ManagerId"].GetInt64();
         m_managerIdHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubmitAuditTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.SubmitAuditTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.SubmitAuditTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_submitAuditTime = string(value["SubmitAuditTime"].GetString());
         m_submitAuditTimeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome ManagerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VerifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManagerInfo.VerifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManagerInfo.VerifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyTime = string(value["VerifyTime"].GetString());
         m_verifyTimeHasBeenSet = true;

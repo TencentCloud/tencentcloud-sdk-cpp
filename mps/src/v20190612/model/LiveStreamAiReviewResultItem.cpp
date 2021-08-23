@@ -38,7 +38,7 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const rapidjson::V
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewResultItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const rapidjson::V
     if (value.HasMember("ImagePornResultSet") && !value["ImagePornResultSet"].IsNull())
     {
         if (!value["ImagePornResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.ImagePornResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewResultItem.ImagePornResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImagePornResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const rapidjson::V
     if (value.HasMember("ImageTerrorismResultSet") && !value["ImageTerrorismResultSet"].IsNull())
     {
         if (!value["ImageTerrorismResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.ImageTerrorismResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewResultItem.ImageTerrorismResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageTerrorismResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -87,7 +87,7 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const rapidjson::V
     if (value.HasMember("ImagePoliticalResultSet") && !value["ImagePoliticalResultSet"].IsNull())
     {
         if (!value["ImagePoliticalResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.ImagePoliticalResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewResultItem.ImagePoliticalResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImagePoliticalResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const rapidjson::V
     if (value.HasMember("VoicePornResultSet") && !value["VoicePornResultSet"].IsNull())
     {
         if (!value["VoicePornResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.VoicePornResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewResultItem.VoicePornResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VoicePornResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

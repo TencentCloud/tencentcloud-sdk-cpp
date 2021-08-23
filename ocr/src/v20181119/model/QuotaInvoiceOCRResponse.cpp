@@ -41,16 +41,16 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceNum = string(rsp["InvoiceNum"].GetString());
         m_invoiceNumHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceCode = string(rsp["InvoiceCode"].GetString());
         m_invoiceCodeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Rate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Rate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Rate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rate = string(rsp["Rate"].GetString());
         m_rateHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["RateNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RateNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RateNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rateNum = string(rsp["RateNum"].GetString());
         m_rateNumHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceType = string(rsp["InvoiceType"].GetString());
         m_invoiceTypeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(rsp["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(rsp["City"].GetString());
         m_cityHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["HasStamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HasStamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HasStamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hasStamp = string(rsp["HasStamp"].GetString());
         m_hasStampHasBeenSet = true;

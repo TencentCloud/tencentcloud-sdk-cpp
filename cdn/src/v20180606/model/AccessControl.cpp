@@ -36,7 +36,7 @@ CoreInternalOutcome AccessControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessControl.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessControl.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AccessControl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AccessControlRules") && !value["AccessControlRules"].IsNull())
     {
         if (!value["AccessControlRules"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessControl.AccessControlRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessControl.AccessControlRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AccessControlRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome AccessControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReturnCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AccessControl.ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessControl.ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_returnCode = value["ReturnCode"].GetInt64();
         m_returnCodeHasBeenSet = true;

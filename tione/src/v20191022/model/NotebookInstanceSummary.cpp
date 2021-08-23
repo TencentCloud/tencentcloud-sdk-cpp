@@ -46,7 +46,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(value["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["NotebookInstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.NotebookInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.NotebookInstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notebookInstanceName = string(value["NotebookInstanceName"].GetString());
         m_notebookInstanceNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["NotebookInstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.NotebookInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.NotebookInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notebookInstanceStatus = string(value["NotebookInstanceStatus"].GetString());
         m_notebookInstanceStatusHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["StartupTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.StartupTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.StartupTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startupTime = string(value["StartupTime"].GetString());
         m_startupTimeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["Deadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.Deadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.Deadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadline = string(value["Deadline"].GetString());
         m_deadlineHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["StoppingCondition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.StoppingCondition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.StoppingCondition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_stoppingCondition.Deserialize(value["StoppingCondition"]);
@@ -143,7 +143,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["Prepay"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.Prepay` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.Prepay` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_prepay = value["Prepay"].GetBool();
         m_prepayHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["BillingLabel"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.BillingLabel` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.BillingLabel` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_billingLabel.Deserialize(value["BillingLabel"]);
@@ -170,7 +170,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["RuntimeInSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.RuntimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.RuntimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runtimeInSeconds = value["RuntimeInSeconds"].GetInt64();
         m_runtimeInSecondsHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value 
     {
         if (!value["RemainTimeInSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.RemainTimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookInstanceSummary.RemainTimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_remainTimeInSeconds = value["RemainTimeInSeconds"].GetInt64();
         m_remainTimeInSecondsHasBeenSet = true;

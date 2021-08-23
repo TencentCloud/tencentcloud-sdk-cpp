@@ -38,7 +38,7 @@ CoreInternalOutcome RealServerBindSetReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["RealServerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServerBindSetReq.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerBindSetReq.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerId = string(value["RealServerId"].GetString());
         m_realServerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RealServerBindSetReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["RealServerPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealServerBindSetReq.RealServerPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerBindSetReq.RealServerPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerPort = value["RealServerPort"].GetUint64();
         m_realServerPortHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RealServerBindSetReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["RealServerIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServerBindSetReq.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerBindSetReq.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerIP = string(value["RealServerIP"].GetString());
         m_realServerIPHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RealServerBindSetReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["RealServerWeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealServerBindSetReq.RealServerWeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerBindSetReq.RealServerWeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realServerWeight = value["RealServerWeight"].GetUint64();
         m_realServerWeightHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RealServerBindSetReq::Deserialize(const rapidjson::Value &va
     {
         if (!value["RealServerFailoverRole"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RealServerBindSetReq.RealServerFailoverRole` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealServerBindSetReq.RealServerFailoverRole` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerFailoverRole = string(value["RealServerFailoverRole"].GetString());
         m_realServerFailoverRoleHasBeenSet = true;

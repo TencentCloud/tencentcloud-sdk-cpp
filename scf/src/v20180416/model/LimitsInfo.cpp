@@ -35,7 +35,7 @@ CoreInternalOutcome LimitsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespacesCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LimitsInfo.NamespacesCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LimitsInfo.NamespacesCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_namespacesCount = value["NamespacesCount"].GetInt64();
         m_namespacesCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome LimitsInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
     {
         if (!value["Namespace"].IsArray())
-            return CoreInternalOutcome(Error("response `LimitsInfo.Namespace` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LimitsInfo.Namespace` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Namespace"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

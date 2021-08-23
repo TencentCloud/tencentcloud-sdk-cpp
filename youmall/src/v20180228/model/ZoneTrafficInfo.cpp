@@ -35,7 +35,7 @@ CoreInternalOutcome ZoneTrafficInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneTrafficInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneTrafficInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ZoneTrafficInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ZoneTrafficInfoDetailSet") && !value["ZoneTrafficInfoDetailSet"].IsNull())
     {
         if (!value["ZoneTrafficInfoDetailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneTrafficInfo.ZoneTrafficInfoDetailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneTrafficInfo.ZoneTrafficInfoDetailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ZoneTrafficInfoDetailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

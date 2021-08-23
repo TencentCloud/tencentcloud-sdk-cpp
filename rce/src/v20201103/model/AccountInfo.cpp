@@ -37,7 +37,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.AccountType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.AccountType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accountType = value["AccountType"].GetUint64();
         m_accountTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QQAccount"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.QQAccount` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.QQAccount` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_qQAccount.Deserialize(value["QQAccount"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WeChatAccount"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.WeChatAccount` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.WeChatAccount` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_weChatAccount.Deserialize(value["WeChatAccount"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtherAccount"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.OtherAccount` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.OtherAccount` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_otherAccount.Deserialize(value["OtherAccount"]);

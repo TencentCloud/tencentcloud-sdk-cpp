@@ -37,7 +37,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PostTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Data.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postTime = value["PostTime"].GetUint64();
         m_postTimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Data.Uid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.Uid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uid = string(value["Uid"].GetString());
         m_uidHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Data.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(value["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValueScore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Data.ValueScore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.ValueScore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_valueScore = value["ValueScore"].GetUint64();
         m_valueScoreHasBeenSet = true;

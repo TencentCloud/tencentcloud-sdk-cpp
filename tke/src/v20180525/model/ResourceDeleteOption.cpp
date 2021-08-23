@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceDeleteOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceDeleteOption.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDeleteOption.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResourceDeleteOption::Deserialize(const rapidjson::Value &va
     {
         if (!value["DeleteMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceDeleteOption.DeleteMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceDeleteOption.DeleteMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deleteMode = string(value["DeleteMode"].GetString());
         m_deleteModeHasBeenSet = true;

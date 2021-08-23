@@ -35,7 +35,7 @@ CoreInternalOutcome StopJobDescription::Deserialize(const rapidjson::Value &valu
     {
         if (!value["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StopJobDescription.JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StopJobDescription.JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(value["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StopJobDescription::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StopType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StopJobDescription.StopType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StopJobDescription.StopType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stopType = value["StopType"].GetInt64();
         m_stopTypeHasBeenSet = true;

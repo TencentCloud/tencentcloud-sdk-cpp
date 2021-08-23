@@ -40,7 +40,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["CountryAreaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.CountryAreaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.CountryAreaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_countryAreaName = string(value["CountryAreaName"].GetString());
         m_countryAreaNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["ProvinceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceName = string(value["ProvinceName"].GetString());
         m_provinceNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Code2xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.Code2xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.Code2xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_code2xx = value["Code2xx"].GetUint64();
         m_code2xxHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Code3xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.Code3xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.Code3xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_code3xx = value["Code3xx"].GetUint64();
         m_code3xxHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Code4xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.Code4xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.Code4xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_code4xx = value["Code4xx"].GetUint64();
         m_code4xxHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Code5xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.Code5xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlayCodeDataInfo.Code5xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_code5xx = value["Code5xx"].GetUint64();
         m_code5xxHasBeenSet = true;

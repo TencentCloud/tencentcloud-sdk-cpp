@@ -34,7 +34,7 @@ CoreInternalOutcome CloudBaseSecurityContext::Deserialize(const rapidjson::Value
     {
         if (!value["Capabilities"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseSecurityContext.Capabilities` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseSecurityContext.Capabilities` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_capabilities.Deserialize(value["Capabilities"]);

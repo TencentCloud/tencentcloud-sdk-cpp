@@ -43,7 +43,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["ParamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.ParamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.ParamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paramName = string(value["ParamName"].GetString());
         m_paramNameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["ValueType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.ValueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.ValueType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_valueType = string(value["ValueType"].GetString());
         m_valueTypeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["NeedRestart"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.NeedRestart` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.NeedRestart` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_needRestart = string(value["NeedRestart"].GetString());
         m_needRestartHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["DefaultValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultValue = string(value["DefaultValue"].GetString());
         m_defaultValueHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["CurrentValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentValue = string(value["CurrentValue"].GetString());
         m_currentValueHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["Tips"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Tips` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.Tips` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tips = string(value["Tips"].GetString());
         m_tipsHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["Min"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Min` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.Min` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_min = string(value["Min"].GetString());
         m_minHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["Max"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Max` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.Max` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_max = string(value["Max"].GetString());
         m_maxHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;

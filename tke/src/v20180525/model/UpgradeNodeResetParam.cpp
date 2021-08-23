@@ -37,7 +37,7 @@ CoreInternalOutcome UpgradeNodeResetParam::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceAdvancedSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UpgradeNodeResetParam.InstanceAdvancedSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeNodeResetParam.InstanceAdvancedSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceAdvancedSettings.Deserialize(value["InstanceAdvancedSettings"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome UpgradeNodeResetParam::Deserialize(const rapidjson::Value &v
     {
         if (!value["EnhancedService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UpgradeNodeResetParam.EnhancedService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeNodeResetParam.EnhancedService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_enhancedService.Deserialize(value["EnhancedService"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome UpgradeNodeResetParam::Deserialize(const rapidjson::Value &v
     {
         if (!value["LoginSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `UpgradeNodeResetParam.LoginSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeNodeResetParam.LoginSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_loginSettings.Deserialize(value["LoginSettings"]);
@@ -87,7 +87,7 @@ CoreInternalOutcome UpgradeNodeResetParam::Deserialize(const rapidjson::Value &v
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `UpgradeNodeResetParam.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UpgradeNodeResetParam.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

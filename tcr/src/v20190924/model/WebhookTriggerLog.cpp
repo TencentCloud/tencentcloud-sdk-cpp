@@ -41,7 +41,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["TriggerId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.TriggerId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.TriggerId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_triggerId = value["TriggerId"].GetInt64();
         m_triggerIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["EventType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.EventType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.EventType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventType = string(value["EventType"].GetString());
         m_eventTypeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["NotifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyType = string(value["NotifyType"].GetString());
         m_notifyTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome WebhookTriggerLog::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebhookTriggerLog.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebhookTriggerLog.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

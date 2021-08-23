@@ -36,7 +36,7 @@ CoreInternalOutcome SourceServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SourceServer.RealServer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceServer.RealServer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServer = string(value["RealServer"].GetString());
         m_realServerHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SourceServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RsType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SourceServer.RsType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceServer.RsType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rsType = value["RsType"].GetInt64();
         m_rsTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SourceServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SourceServer.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SourceServer.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;

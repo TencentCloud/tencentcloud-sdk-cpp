@@ -43,7 +43,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["Uid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uid = value["Uid"].GetUint64();
         m_uidHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["ConsoleLogin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.ConsoleLogin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.ConsoleLogin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_consoleLogin = value["ConsoleLogin"].GetUint64();
         m_consoleLoginHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["PhoneNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNum = string(value["PhoneNum"].GetString());
         m_phoneNumHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["CountryCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.CountryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.CountryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_countryCode = string(value["CountryCode"].GetString());
         m_countryCodeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["WeChatWorkUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.WeChatWorkUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.WeChatWorkUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_weChatWorkUserId = string(value["WeChatWorkUserId"].GetString());
         m_weChatWorkUserIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome WeChatWorkSubAccount::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeChatWorkSubAccount.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeChatWorkSubAccount.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

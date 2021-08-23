@@ -45,7 +45,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Business"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.Business` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.Business` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_business = string(value["Business"].GetString());
         m_businessHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqQps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.ReqQps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.ReqQps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reqQps = value["ReqQps"].GetUint64();
         m_reqQpsHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DropQps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.DropQps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.DropQps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dropQps = value["DropQps"].GetUint64();
         m_dropQpsHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttackStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.AttackStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.AttackStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attackStatus = value["AttackStatus"].GetUint64();
         m_attackStatusHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainList"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.DomainList` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.DomainList` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainList = string(value["DomainList"].GetString());
         m_domainListHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UriList"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.UriList` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.UriList` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uriList = string(value["UriList"].GetString());
         m_uriListHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome CCEventRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttackipList"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCEventRecord.AttackipList` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCEventRecord.AttackipList` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attackipList = string(value["AttackipList"].GetString());
         m_attackipListHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome RegisteredStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CunionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisteredStatus.CunionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisteredStatus.CunionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cunionId = string(value["CunionId"].GetString());
         m_cunionIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RegisteredStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsRegisted"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RegisteredStatus.IsRegisted` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisteredStatus.IsRegisted` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isRegisted = value["IsRegisted"].GetBool();
         m_isRegistedHasBeenSet = true;

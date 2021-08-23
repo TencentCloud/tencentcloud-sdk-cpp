@@ -37,7 +37,7 @@ CoreInternalOutcome MergeTableResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MergeTableResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeTableResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MergeTableResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MergeTableResult.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeTableResult.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome MergeTableResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Table"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MergeTableResult.Table` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeTableResult.Table` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_table.Deserialize(value["Table"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome MergeTableResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MergeTableResult.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeTableResult.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;

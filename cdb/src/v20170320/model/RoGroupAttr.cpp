@@ -38,7 +38,7 @@ CoreInternalOutcome RoGroupAttr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroupAttr.RoGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroupAttr.RoGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roGroupName = string(value["RoGroupName"].GetString());
         m_roGroupNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RoGroupAttr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoMaxDelayTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroupAttr.RoMaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroupAttr.RoMaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roMaxDelayTime = value["RoMaxDelayTime"].GetInt64();
         m_roMaxDelayTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RoGroupAttr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoOfflineDelay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroupAttr.RoOfflineDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroupAttr.RoOfflineDelay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roOfflineDelay = value["RoOfflineDelay"].GetInt64();
         m_roOfflineDelayHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RoGroupAttr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinRoInGroup"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoGroupAttr.MinRoInGroup` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroupAttr.MinRoInGroup` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minRoInGroup = value["MinRoInGroup"].GetInt64();
         m_minRoInGroupHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RoGroupAttr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WeightMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoGroupAttr.WeightMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoGroupAttr.WeightMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_weightMode = string(value["WeightMode"].GetString());
         m_weightModeHasBeenSet = true;

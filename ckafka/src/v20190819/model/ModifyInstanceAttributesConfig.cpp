@@ -36,7 +36,7 @@ CoreInternalOutcome ModifyInstanceAttributesConfig::Deserialize(const rapidjson:
     {
         if (!value["AutoCreateTopicEnable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ModifyInstanceAttributesConfig.AutoCreateTopicEnable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceAttributesConfig.AutoCreateTopicEnable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoCreateTopicEnable = value["AutoCreateTopicEnable"].GetBool();
         m_autoCreateTopicEnableHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ModifyInstanceAttributesConfig::Deserialize(const rapidjson:
     {
         if (!value["DefaultNumPartitions"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModifyInstanceAttributesConfig.DefaultNumPartitions` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceAttributesConfig.DefaultNumPartitions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultNumPartitions = value["DefaultNumPartitions"].GetInt64();
         m_defaultNumPartitionsHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ModifyInstanceAttributesConfig::Deserialize(const rapidjson:
     {
         if (!value["DefaultReplicationFactor"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModifyInstanceAttributesConfig.DefaultReplicationFactor` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceAttributesConfig.DefaultReplicationFactor` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultReplicationFactor = value["DefaultReplicationFactor"].GetInt64();
         m_defaultReplicationFactorHasBeenSet = true;

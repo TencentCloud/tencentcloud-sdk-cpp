@@ -42,7 +42,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FromSite"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.FromSite` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.FromSite` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fromSite = string(value["FromSite"].GetString());
         m_fromSiteHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PubTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.PubTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.PubTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pubTime = string(value["PubTime"].GetString());
         m_pubTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Flag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.Flag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.Flag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_flag = value["Flag"].GetUint64();
         m_flagHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Hot"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.Hot` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.Hot` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hot = value["Hot"].GetUint64();
         m_hotHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Level"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.Level` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.Level` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetUint64();
         m_levelHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Abstract"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.Abstract` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.Abstract` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_abstract = string(value["Abstract"].GetString());
         m_abstractHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome BrandReportArticle::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ArticleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BrandReportArticle.ArticleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BrandReportArticle.ArticleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_articleId = string(value["ArticleId"].GetString());
         m_articleIdHasBeenSet = true;

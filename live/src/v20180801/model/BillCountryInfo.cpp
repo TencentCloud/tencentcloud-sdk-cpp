@@ -35,7 +35,7 @@ CoreInternalOutcome BillCountryInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillCountryInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillCountryInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome BillCountryInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BandInfoList") && !value["BandInfoList"].IsNull())
     {
         if (!value["BandInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `BillCountryInfo.BandInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BillCountryInfo.BandInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BandInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome VoiceMessageStatisticsItem::Deserialize(const rapidjson::Val
     {
         if (!value["Dau"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VoiceMessageStatisticsItem.Dau` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceMessageStatisticsItem.Dau` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dau = value["Dau"].GetUint64();
         m_dauHasBeenSet = true;

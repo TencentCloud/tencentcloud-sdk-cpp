@@ -38,7 +38,7 @@ CoreInternalOutcome RefererAuthConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthConfig.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthConfig.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RefererAuthConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthConfig.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthConfig.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RefererAuthConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthConfig.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthConfig.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RefererAuthConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["AllowEmpty"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthConfig.AllowEmpty` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthConfig.AllowEmpty` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_allowEmpty = value["AllowEmpty"].GetInt64();
         m_allowEmptyHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RefererAuthConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Rules"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RefererAuthConfig.Rules` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RefererAuthConfig.Rules` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rules = string(value["Rules"].GetString());
         m_rulesHasBeenSet = true;

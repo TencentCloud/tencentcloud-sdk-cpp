@@ -36,7 +36,7 @@ CoreInternalOutcome RecordCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubdomainCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordCountInfo.SubdomainCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordCountInfo.SubdomainCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_subdomainCount = value["SubdomainCount"].GetUint64();
         m_subdomainCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RecordCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordCountInfo.ListCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordCountInfo.ListCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_listCount = value["ListCount"].GetUint64();
         m_listCountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RecordCountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordCountInfo.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordCountInfo.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;

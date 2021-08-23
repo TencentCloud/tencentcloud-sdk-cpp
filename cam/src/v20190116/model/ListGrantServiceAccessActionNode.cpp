@@ -35,7 +35,7 @@ CoreInternalOutcome ListGrantServiceAccessActionNode::Deserialize(const rapidjso
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessActionNode.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessActionNode.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ListGrantServiceAccessActionNode::Deserialize(const rapidjso
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListGrantServiceAccessActionNode.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListGrantServiceAccessActionNode.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeBrandSocialOpinionResponse::Deserialize(const string
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeBrandSocialOpinionResponse::Deserialize(const string
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeBrandSocialOpinionResponse::Deserialize(const string
     {
         if (!rsp["ArticleCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ArticleCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArticleCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_articleCount = rsp["ArticleCount"].GetUint64();
         m_articleCountHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeBrandSocialOpinionResponse::Deserialize(const string
     {
         if (!rsp["FromCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FromCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FromCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fromCount = rsp["FromCount"].GetUint64();
         m_fromCountHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeBrandSocialOpinionResponse::Deserialize(const string
     {
         if (!rsp["AdverseCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdverseCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdverseCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_adverseCount = rsp["AdverseCount"].GetUint64();
         m_adverseCountHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeBrandSocialOpinionResponse::Deserialize(const string
     if (rsp.HasMember("ArticleSet") && !rsp["ArticleSet"].IsNull())
     {
         if (!rsp["ArticleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ArticleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ArticleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ArticleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

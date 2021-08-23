@@ -44,7 +44,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScalingAdjustment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.ScalingAdjustment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.ScalingAdjustment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scalingAdjustment = string(value["ScalingAdjustment"].GetString());
         m_scalingAdjustmentHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScalingAdjustmentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.ScalingAdjustmentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.ScalingAdjustmentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scalingAdjustmentType = string(value["ScalingAdjustmentType"].GetString());
         m_scalingAdjustmentTypeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComparisonOperator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.ComparisonOperator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.ComparisonOperator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comparisonOperator = string(value["ComparisonOperator"].GetString());
         m_comparisonOperatorHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Threshold"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.Threshold` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.Threshold` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_threshold = string(value["Threshold"].GetString());
         m_thresholdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvaluationPeriods"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.EvaluationPeriods` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.EvaluationPeriods` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evaluationPeriods = string(value["EvaluationPeriods"].GetString());
         m_evaluationPeriodsHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyType = string(value["PolicyType"].GetString());
         m_policyTypeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetConfiguration"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.TargetConfiguration` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.TargetConfiguration` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetConfiguration.Deserialize(value["TargetConfiguration"]);

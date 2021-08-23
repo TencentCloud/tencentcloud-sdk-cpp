@@ -37,7 +37,7 @@ CoreInternalOutcome RGBAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["R"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RGBAInfo.R` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RGBAInfo.R` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_r = value["R"].GetInt64();
         m_rHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RGBAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["G"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RGBAInfo.G` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RGBAInfo.G` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_g = value["G"].GetInt64();
         m_gHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RGBAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["B"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RGBAInfo.B` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RGBAInfo.B` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_b = value["B"].GetInt64();
         m_bHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RGBAInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["A"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RGBAInfo.A` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RGBAInfo.A` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_a = value["A"].GetInt64();
         m_aHasBeenSet = true;

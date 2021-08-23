@@ -36,7 +36,7 @@ CoreInternalOutcome UploadFansInfoCosInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UploadFansInfoCosInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadFansInfoCosInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome UploadFansInfoCosInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UploadFansInfoCosInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadFansInfoCosInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome UploadFansInfoCosInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UploadFansInfoCosInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadFansInfoCosInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

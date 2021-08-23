@@ -34,7 +34,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextResultInput::Deserialize(const r
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextResultInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;

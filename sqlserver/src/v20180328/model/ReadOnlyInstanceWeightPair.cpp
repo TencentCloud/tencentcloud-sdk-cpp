@@ -35,7 +35,7 @@ CoreInternalOutcome ReadOnlyInstanceWeightPair::Deserialize(const rapidjson::Val
     {
         if (!value["ReadOnlyInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyInstanceWeightPair.ReadOnlyInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyInstanceWeightPair.ReadOnlyInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyInstanceId = string(value["ReadOnlyInstanceId"].GetString());
         m_readOnlyInstanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ReadOnlyInstanceWeightPair::Deserialize(const rapidjson::Val
     {
         if (!value["ReadOnlyWeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyInstanceWeightPair.ReadOnlyWeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyInstanceWeightPair.ReadOnlyWeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyWeight = value["ReadOnlyWeight"].GetInt64();
         m_readOnlyWeightHasBeenSet = true;

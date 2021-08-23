@@ -35,7 +35,7 @@ CoreInternalOutcome SmsSid::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Iccid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsSid.Iccid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsSid.Iccid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iccid = string(value["Iccid"].GetString());
         m_iccidHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SmsSid::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsSid.Sid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsSid.Sid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sid = string(value["Sid"].GetString());
         m_sidHasBeenSet = true;

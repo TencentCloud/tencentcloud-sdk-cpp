@@ -34,7 +34,7 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["InputType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GetEidTokenConfig.InputType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.InputType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputType = string(value["InputType"].GetString());
         m_inputTypeHasBeenSet = true;

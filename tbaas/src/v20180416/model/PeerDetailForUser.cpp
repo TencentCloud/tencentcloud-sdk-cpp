@@ -34,7 +34,7 @@ CoreInternalOutcome PeerDetailForUser::Deserialize(const rapidjson::Value &value
     {
         if (!value["PeerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeerDetailForUser.PeerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerDetailForUser.PeerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerName = string(value["PeerName"].GetString());
         m_peerNameHasBeenSet = true;

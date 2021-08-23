@@ -37,7 +37,7 @@ CoreInternalOutcome EipProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipProductInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipProductInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome EipProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipProductInfo.BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipProductInfo.BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(value["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome EipProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipProductInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipProductInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = string(value["DeviceType"].GetString());
         m_deviceTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome EipProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipProductInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipProductInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

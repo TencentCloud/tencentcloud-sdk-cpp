@@ -43,13 +43,13 @@ namespace TencentCloud
                 TicmClient(const Credential &credential, const std::string &region);
                 TicmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeVideoTaskResponse> DescribeVideoTaskOutcome;
+                typedef Outcome<Core::Error, Model::DescribeVideoTaskResponse> DescribeVideoTaskOutcome;
                 typedef std::future<DescribeVideoTaskOutcome> DescribeVideoTaskOutcomeCallable;
                 typedef std::function<void(const TicmClient*, const Model::DescribeVideoTaskRequest&, DescribeVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoTaskAsyncHandler;
-                typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
+                typedef Outcome<Core::Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const TicmClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
-                typedef Outcome<Error, Model::VideoModerationResponse> VideoModerationOutcome;
+                typedef Outcome<Core::Error, Model::VideoModerationResponse> VideoModerationOutcome;
                 typedef std::future<VideoModerationOutcome> VideoModerationOutcomeCallable;
                 typedef std::function<void(const TicmClient*, const Model::VideoModerationRequest&, VideoModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VideoModerationAsyncHandler;
 

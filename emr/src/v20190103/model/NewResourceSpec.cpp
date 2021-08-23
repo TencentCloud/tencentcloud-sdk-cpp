@@ -41,7 +41,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.MasterResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.MasterResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_masterResourceSpec.Deserialize(value["MasterResourceSpec"]);
@@ -58,7 +58,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoreResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.CoreResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.CoreResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coreResourceSpec.Deserialize(value["CoreResourceSpec"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.TaskResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.TaskResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskResourceSpec.Deserialize(value["TaskResourceSpec"]);
@@ -92,7 +92,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.MasterCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.MasterCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_masterCount = value["MasterCount"].GetInt64();
         m_masterCountHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoreCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.CoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.CoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_coreCount = value["CoreCount"].GetInt64();
         m_coreCountHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.TaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.TaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskCount = value["TaskCount"].GetInt64();
         m_taskCountHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommonResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.CommonResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.CommonResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_commonResourceSpec.Deserialize(value["CommonResourceSpec"]);
@@ -139,7 +139,7 @@ CoreInternalOutcome NewResourceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommonCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NewResourceSpec.CommonCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewResourceSpec.CommonCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_commonCount = value["CommonCount"].GetInt64();
         m_commonCountHasBeenSet = true;

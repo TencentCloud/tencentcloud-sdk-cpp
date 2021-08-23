@@ -38,7 +38,7 @@ CoreInternalOutcome ProjectEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntry.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntry.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ProjectEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntry.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntry.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ProjectEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntry.ProjectDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntry.ProjectDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectDesc = string(value["ProjectDesc"].GetString());
         m_projectDescHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ProjectEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntry.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntry.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ProjectEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntry.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntry.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;

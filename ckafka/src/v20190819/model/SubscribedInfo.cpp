@@ -37,7 +37,7 @@ CoreInternalOutcome SubscribedInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribedInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribedInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SubscribedInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Partition") && !value["Partition"].IsNull())
     {
         if (!value["Partition"].IsArray())
-            return CoreInternalOutcome(Error("response `SubscribedInfo.Partition` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubscribedInfo.Partition` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Partition"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome SubscribedInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PartitionOffset") && !value["PartitionOffset"].IsNull())
     {
         if (!value["PartitionOffset"].IsArray())
-            return CoreInternalOutcome(Error("response `SubscribedInfo.PartitionOffset` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubscribedInfo.PartitionOffset` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PartitionOffset"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome SubscribedInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribedInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribedInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;

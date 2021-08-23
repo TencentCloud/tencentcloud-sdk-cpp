@@ -35,7 +35,7 @@ CoreInternalOutcome DiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskInfo.DiskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskInfo.DiskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskName = string(value["DiskName"].GetString());
         m_diskNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DiskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Usage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiskInfo.Usage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskInfo.Usage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_usage = value["Usage"].GetDouble();
         m_usageHasBeenSet = true;

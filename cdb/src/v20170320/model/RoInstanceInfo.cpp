@@ -56,7 +56,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.MasterInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.MasterInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterInstanceId = string(value["MasterInstanceId"].GetString());
         m_masterInstanceIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.RoStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.RoStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roStatus = string(value["RoStatus"].GetString());
         m_roStatusHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OfflineTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offlineTime = string(value["OfflineTime"].GetString());
         m_offlineTimeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = value["InstanceType"].GetInt64();
         m_instanceTypeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HourFeeStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.HourFeeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.HourFeeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hourFeeStatus = value["HourFeeStatus"].GetInt64();
         m_hourFeeStatusHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.TaskStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.TaskStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = value["TaskStatus"].GetInt64();
         m_taskStatusHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Volume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Volume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Volume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_volume = value["Volume"].GetInt64();
         m_volumeHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetInt64();
         m_qpsHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.VpcId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.VpcId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = value["VpcId"].GetInt64();
         m_vpcIdHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.SubnetId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.SubnetId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = value["SubnetId"].GetInt64();
         m_subnetIdHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = string(value["DeviceType"].GetString());
         m_deviceTypeHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EngineVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineVersion = string(value["EngineVersion"].GetString());
         m_engineVersionHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeadlineTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.DeadlineTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.DeadlineTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadlineTime = string(value["DeadlineTime"].GetString());
         m_deadlineTimeHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome RoInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoInstanceInfo.PayType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoInstanceInfo.PayType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payType = value["PayType"].GetInt64();
         m_payTypeHasBeenSet = true;

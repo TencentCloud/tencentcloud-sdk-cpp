@@ -38,7 +38,7 @@ CoreInternalOutcome LogOutputConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutputType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogOutputConf.OutputType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogOutputConf.OutputType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputType = string(value["OutputType"].GetString());
         m_outputTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LogOutputConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsLogsetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogsetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogOutputConf.ClsLogsetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsLogsetName = string(value["ClsLogsetName"].GetString());
         m_clsLogsetNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LogOutputConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsLogTopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogOutputConf.ClsLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsLogTopicId = string(value["ClsLogTopicId"].GetString());
         m_clsLogTopicIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LogOutputConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsLogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogOutputConf.ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsLogsetId = string(value["ClsLogsetId"].GetString());
         m_clsLogsetIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LogOutputConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClsLogTopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogTopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogOutputConf.ClsLogTopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clsLogTopicName = string(value["ClsLogTopicName"].GetString());
         m_clsLogTopicNameHasBeenSet = true;

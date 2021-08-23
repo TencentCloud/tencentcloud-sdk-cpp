@@ -37,7 +37,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductMetadata"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.ProductMetadata` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.ProductMetadata` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_productMetadata.Deserialize(value["ProductMetadata"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductProperties"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.ProductProperties` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.ProductProperties` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_productProperties.Deserialize(value["ProductProperties"]);

@@ -37,7 +37,7 @@ CoreInternalOutcome SpotMixedAllocationPolicy::Deserialize(const rapidjson::Valu
     {
         if (!value["BaseCapacity"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpotMixedAllocationPolicy.BaseCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotMixedAllocationPolicy.BaseCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_baseCapacity = value["BaseCapacity"].GetUint64();
         m_baseCapacityHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SpotMixedAllocationPolicy::Deserialize(const rapidjson::Valu
     {
         if (!value["OnDemandPercentageAboveBaseCapacity"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpotMixedAllocationPolicy.OnDemandPercentageAboveBaseCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotMixedAllocationPolicy.OnDemandPercentageAboveBaseCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_onDemandPercentageAboveBaseCapacity = value["OnDemandPercentageAboveBaseCapacity"].GetUint64();
         m_onDemandPercentageAboveBaseCapacityHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SpotMixedAllocationPolicy::Deserialize(const rapidjson::Valu
     {
         if (!value["SpotAllocationStrategy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpotMixedAllocationPolicy.SpotAllocationStrategy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotMixedAllocationPolicy.SpotAllocationStrategy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spotAllocationStrategy = string(value["SpotAllocationStrategy"].GetString());
         m_spotAllocationStrategyHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SpotMixedAllocationPolicy::Deserialize(const rapidjson::Valu
     {
         if (!value["CompensateWithBaseInstance"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SpotMixedAllocationPolicy.CompensateWithBaseInstance` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotMixedAllocationPolicy.CompensateWithBaseInstance` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_compensateWithBaseInstance = value["CompensateWithBaseInstance"].GetBool();
         m_compensateWithBaseInstanceHasBeenSet = true;

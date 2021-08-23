@@ -37,16 +37,16 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["FaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = string(rsp["FaceId"].GetString());
         m_faceIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(rsp["FaceRect"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["SimilarPersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimilarPersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimilarPersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_similarPersonId = string(rsp["SimilarPersonId"].GetString());
         m_similarPersonIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["FaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
         m_faceModelVersionHasBeenSet = true;

@@ -66,7 +66,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["BusinessCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCodeName = string(value["BusinessCodeName"].GetString());
         m_businessCodeNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ProductCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ProductCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ProductCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productCodeName = string(value["ProductCodeName"].GetString());
         m_productCodeNameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["PayModeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.PayModeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.PayModeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payModeName = string(value["PayModeName"].GetString());
         m_payModeNameHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ActionTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ActionTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ActionTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionTypeName = string(value["ActionTypeName"].GetString());
         m_actionTypeNameHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["PayTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.PayTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.PayTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payTime = string(value["PayTime"].GetString());
         m_payTimeHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["FeeBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.FeeBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.FeeBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_feeBeginTime = string(value["FeeBeginTime"].GetString());
         m_feeBeginTimeHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["FeeEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.FeeEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.FeeEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_feeEndTime = string(value["FeeEndTime"].GetString());
         m_feeEndTimeHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ConfigDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ConfigDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ConfigDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configDesc = string(value["ConfigDesc"].GetString());
         m_configDescHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExtendField1"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ExtendField1` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ExtendField1` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendField1 = string(value["ExtendField1"].GetString());
         m_extendField1HasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExtendField2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ExtendField2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ExtendField2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendField2 = string(value["ExtendField2"].GetString());
         m_extendField2HasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = string(value["TotalCost"].GetString());
         m_totalCostHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["Discount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.Discount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.Discount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_discount = string(value["Discount"].GetString());
         m_discountHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReduceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ReduceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ReduceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reduceType = string(value["ReduceType"].GetString());
         m_reduceTypeHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
@@ -296,7 +296,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExtendField3"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ExtendField3` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ExtendField3` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendField3 = string(value["ExtendField3"].GetString());
         m_extendField3HasBeenSet = true;
@@ -306,7 +306,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExtendField4"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ExtendField4` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ExtendField4` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendField4 = string(value["ExtendField4"].GetString());
         m_extendField4HasBeenSet = true;
@@ -316,7 +316,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExtendField5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ExtendField5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ExtendField5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendField5 = string(value["ExtendField5"].GetString());
         m_extendField5HasBeenSet = true;
@@ -325,7 +325,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `BillResourceSummary.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -346,7 +346,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["PayerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.PayerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.PayerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerUin = string(value["PayerUin"].GetString());
         m_payerUinHasBeenSet = true;
@@ -356,7 +356,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["OwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = string(value["OwnerUin"].GetString());
         m_ownerUinHasBeenSet = true;
@@ -366,7 +366,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["OperateUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operateUin = string(value["OperateUin"].GetString());
         m_operateUinHasBeenSet = true;
@@ -376,7 +376,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["BusinessCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCode = string(value["BusinessCode"].GetString());
         m_businessCodeHasBeenSet = true;
@@ -386,7 +386,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ProductCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productCode = string(value["ProductCode"].GetString());
         m_productCodeHasBeenSet = true;
@@ -396,7 +396,7 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillResourceSummary.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome CoverTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CoverTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CoverTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CoverTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CoverTaskResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CoverTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CoverTaskResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ItemSet") && !value["ItemSet"].IsNull())
     {
         if (!value["ItemSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CoverTaskResult.ItemSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CoverTaskResult.ItemSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ItemSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

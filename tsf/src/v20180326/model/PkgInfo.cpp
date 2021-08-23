@@ -42,7 +42,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgName = string(value["PkgName"].GetString());
         m_pkgNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgType = string(value["PkgType"].GetString());
         m_pkgTypeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgVersion = string(value["PkgVersion"].GetString());
         m_pkgVersionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgDesc = string(value["PkgDesc"].GetString());
         m_pkgDescHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UploadTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.UploadTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.UploadTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uploadTime = string(value["UploadTime"].GetString());
         m_uploadTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Md5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.Md5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.Md5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5 = string(value["Md5"].GetString());
         m_md5HasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgPubStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgPubStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgPubStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pkgPubStatus = value["PkgPubStatus"].GetInt64();
         m_pkgPubStatusHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PkgBindInfo") && !value["PkgBindInfo"].IsNull())
     {
         if (!value["PkgBindInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `PkgInfo.PkgBindInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PkgInfo.PkgBindInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PkgBindInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

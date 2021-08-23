@@ -39,7 +39,7 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
     {
         if (!value["TradeSerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePaymentResultData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeSerialNo = string(value["TradeSerialNo"].GetString());
         m_tradeSerialNoHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePaymentResultData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
     {
         if (!value["TradeStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePaymentResultData.TradeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.TradeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tradeStatus = value["TradeStatus"].GetInt64();
         m_tradeStatusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePaymentResultData.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
     {
         if (!value["AgentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePaymentResultData.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.AgentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentId = string(value["AgentId"].GetString());
         m_agentIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome QuerySinglePaymentResultData::Deserialize(const rapidjson::V
     {
         if (!value["AgentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePaymentResultData.AgentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePaymentResultData.AgentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentName = string(value["AgentName"].GetString());
         m_agentNameHasBeenSet = true;

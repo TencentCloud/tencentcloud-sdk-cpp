@@ -35,7 +35,7 @@ CoreInternalOutcome CertIdRelatedWithLoadBalancers::Deserialize(const rapidjson:
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertIdRelatedWithLoadBalancers.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertIdRelatedWithLoadBalancers.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome CertIdRelatedWithLoadBalancers::Deserialize(const rapidjson:
     if (value.HasMember("LoadBalancers") && !value["LoadBalancers"].IsNull())
     {
         if (!value["LoadBalancers"].IsArray())
-            return CoreInternalOutcome(Error("response `CertIdRelatedWithLoadBalancers.LoadBalancers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CertIdRelatedWithLoadBalancers.LoadBalancers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

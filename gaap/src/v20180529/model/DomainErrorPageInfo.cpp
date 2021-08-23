@@ -42,7 +42,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ErrorPageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.ErrorPageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.ErrorPageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorPageId = string(value["ErrorPageId"].GetString());
         m_errorPageIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("ErrorNos") && !value["ErrorNos"].IsNull())
     {
         if (!value["ErrorNos"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.ErrorNos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.ErrorNos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ErrorNos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -85,7 +85,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["NewErrorNo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.NewErrorNo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.NewErrorNo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_newErrorNo = value["NewErrorNo"].GetInt64();
         m_newErrorNoHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("ClearHeaders") && !value["ClearHeaders"].IsNull())
     {
         if (!value["ClearHeaders"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.ClearHeaders` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.ClearHeaders` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClearHeaders"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("SetHeaders") && !value["SetHeaders"].IsNull())
     {
         if (!value["SetHeaders"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.SetHeaders` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.SetHeaders` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SetHeaders"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -128,7 +128,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Body"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.Body` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.Body` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_body = string(value["Body"].GetString());
         m_bodyHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainErrorPageInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

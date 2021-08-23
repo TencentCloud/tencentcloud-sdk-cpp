@@ -35,7 +35,7 @@ CoreInternalOutcome Hat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Style"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Hat.Style` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hat.Style` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_style.Deserialize(value["Style"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome Hat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Color"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Hat.Color` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hat.Color` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_color.Deserialize(value["Color"]);

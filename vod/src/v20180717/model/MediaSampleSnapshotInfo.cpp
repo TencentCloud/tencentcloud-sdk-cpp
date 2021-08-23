@@ -33,7 +33,7 @@ CoreInternalOutcome MediaSampleSnapshotInfo::Deserialize(const rapidjson::Value 
     if (value.HasMember("SampleSnapshotSet") && !value["SampleSnapshotSet"].IsNull())
     {
         if (!value["SampleSnapshotSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotInfo.SampleSnapshotSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotInfo.SampleSnapshotSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SampleSnapshotSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

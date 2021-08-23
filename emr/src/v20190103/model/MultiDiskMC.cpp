@@ -36,7 +36,7 @@ CoreInternalOutcome MultiDiskMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MultiDiskMC.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiDiskMC.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MultiDiskMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MultiDiskMC.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiDiskMC.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MultiDiskMC::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Volume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MultiDiskMC.Volume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiDiskMC.Volume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_volume = value["Volume"].GetInt64();
         m_volumeHasBeenSet = true;

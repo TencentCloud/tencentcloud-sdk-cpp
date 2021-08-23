@@ -49,7 +49,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["SourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.SourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.SourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceName = string(value["SourceName"].GetString());
         m_sourceNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     if (value.HasMember("UseUserIdList") && !value["UseUserIdList"].IsNull())
     {
         if (!value["UseUserIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.UseUserIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.UseUserIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UseUserIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     if (value.HasMember("UseUserOpenIdList") && !value["UseUserOpenIdList"].IsNull())
     {
         if (!value["UseUserOpenIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.UseUserOpenIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.UseUserOpenIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UseUserOpenIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     if (value.HasMember("TagList") && !value["TagList"].IsNull())
     {
         if (!value["TagList"].IsArray())
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.TagList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.TagList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -145,7 +145,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["SkipVerify"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.SkipVerify` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.SkipVerify` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_skipVerify = value["SkipVerify"].GetInt64();
         m_skipVerifyHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Friends"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.Friends` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.Friends` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_friends = value["Friends"].GetInt64();
         m_friendsHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["MsgId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.MsgId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.MsgId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_msgId = value["MsgId"].GetInt64();
         m_msgIdHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["ConfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configId = string(value["ConfigId"].GetString());
         m_configIdHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["QrCodeUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.QrCodeUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.QrCodeUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qrCodeUrl = string(value["QrCodeUrl"].GetString());
         m_qrCodeUrlHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["RecStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.RecStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.RecStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recStatus = value["RecStatus"].GetInt64();
         m_recStatusHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome ChannelCodeInnerDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelCodeInnerDetail.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelCodeInnerDetail.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;

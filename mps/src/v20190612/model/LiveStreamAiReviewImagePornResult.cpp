@@ -40,7 +40,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["StartPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startPtsTime = value["StartPtsTime"].GetDouble();
         m_startPtsTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["EndPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endPtsTime = value["EndPtsTime"].GetDouble();
         m_endPtsTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome LiveStreamAiReviewImagePornResult::Deserialize(const rapidjs
     {
         if (!value["PicUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImagePornResult.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImagePornResult.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
         m_picUrlExpireTimeHasBeenSet = true;

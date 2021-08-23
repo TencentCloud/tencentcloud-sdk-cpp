@@ -40,7 +40,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.LibId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.LibId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libId = string(value["LibId"].GetString());
         m_libIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.LibName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.LibName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libName = string(value["LibName"].GetString());
         m_libNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LibDetail.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibDetail.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;

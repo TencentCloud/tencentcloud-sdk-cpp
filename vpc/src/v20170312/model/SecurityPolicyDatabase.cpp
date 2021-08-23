@@ -35,7 +35,7 @@ CoreInternalOutcome SecurityPolicyDatabase::Deserialize(const rapidjson::Value &
     {
         if (!value["LocalCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicyDatabase.LocalCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyDatabase.LocalCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_localCidrBlock = string(value["LocalCidrBlock"].GetString());
         m_localCidrBlockHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SecurityPolicyDatabase::Deserialize(const rapidjson::Value &
     if (value.HasMember("RemoteCidrBlock") && !value["RemoteCidrBlock"].IsNull())
     {
         if (!value["RemoteCidrBlock"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityPolicyDatabase.RemoteCidrBlock` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyDatabase.RemoteCidrBlock` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RemoteCidrBlock"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -47,7 +47,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["AppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetInt64();
         m_appIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     if (value.HasMember("Vips") && !value["Vips"].IsNull())
     {
         if (!value["Vips"].IsArray())
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.Vips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.Vips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Vips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["Createtime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.Createtime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.Createtime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createtime = string(value["Createtime"].GetString());
         m_createtimeHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["PayMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = value["PayMode"].GetInt64();
         m_payModeHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome RedisCommonInstanceList::Deserialize(const rapidjson::Value 
     {
         if (!value["NetType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisCommonInstanceList.NetType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCommonInstanceList.NetType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_netType = value["NetType"].GetInt64();
         m_netTypeHasBeenSet = true;

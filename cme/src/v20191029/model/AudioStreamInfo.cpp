@@ -36,7 +36,7 @@ CoreInternalOutcome AudioStreamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AudioStreamInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioStreamInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetUint64();
         m_bitrateHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AudioStreamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SamplingRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AudioStreamInfo.SamplingRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioStreamInfo.SamplingRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_samplingRate = value["SamplingRate"].GetUint64();
         m_samplingRateHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AudioStreamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioStreamInfo.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioStreamInfo.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;

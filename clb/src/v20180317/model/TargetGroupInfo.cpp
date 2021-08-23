@@ -40,7 +40,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetGroupId = string(value["TargetGroupId"].GetString());
         m_targetGroupIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.TargetGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.TargetGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetGroupName = string(value["TargetGroupName"].GetString());
         m_targetGroupNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssociatedRule") && !value["AssociatedRule"].IsNull())
     {
         if (!value["AssociatedRule"].IsArray())
-            return CoreInternalOutcome(Error("response `TargetGroupInfo.AssociatedRule` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.AssociatedRule` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssociatedRule"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome MediaJoiningTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["File"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaJoiningTaskResult.File` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaJoiningTaskResult.File` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_file.Deserialize(value["File"]);

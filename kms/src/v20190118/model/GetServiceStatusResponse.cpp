@@ -39,16 +39,16 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     {
         if (!rsp["ServiceEnabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceEnabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_serviceEnabled = rsp["ServiceEnabled"].GetBool();
         m_serviceEnabledHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvalidType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InvalidType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvalidType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_invalidType = rsp["InvalidType"].GetInt64();
         m_invalidTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     {
         if (!rsp["UserLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UserLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_userLevel = rsp["UserLevel"].GetUint64();
         m_userLevelHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_proExpireTime = rsp["ProExpireTime"].GetUint64();
         m_proExpireTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProRenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_proRenewFlag = rsp["ProRenewFlag"].GetUint64();
         m_proRenewFlagHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proResourceId = string(rsp["ProResourceId"].GetString());
         m_proResourceIdHasBeenSet = true;

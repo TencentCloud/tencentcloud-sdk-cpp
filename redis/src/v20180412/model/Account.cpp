@@ -39,7 +39,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Account.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Account.AccountName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.AccountName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountName = string(value["AccountName"].GetString());
         m_accountNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Account.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Privilege"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Account.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.Privilege` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privilege = string(value["Privilege"].GetString());
         m_privilegeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReadonlyPolicy") && !value["ReadonlyPolicy"].IsNull())
     {
         if (!value["ReadonlyPolicy"].IsArray())
-            return CoreInternalOutcome(Error("response `Account.ReadonlyPolicy` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Account.ReadonlyPolicy` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReadonlyPolicy"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Account.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

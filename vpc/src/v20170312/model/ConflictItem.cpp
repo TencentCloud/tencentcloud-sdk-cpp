@@ -35,7 +35,7 @@ CoreInternalOutcome ConflictItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfilctId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConflictItem.ConfilctId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConflictItem.ConfilctId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_confilctId = string(value["ConfilctId"].GetString());
         m_confilctIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConflictItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConflictItem.DestinationItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConflictItem.DestinationItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationItem = string(value["DestinationItem"].GetString());
         m_destinationItemHasBeenSet = true;

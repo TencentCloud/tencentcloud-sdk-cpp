@@ -36,7 +36,7 @@ CoreInternalOutcome RegionDetected::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Category"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionDetected.Category` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionDetected.Category` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_category = string(value["Category"].GetString());
         m_categoryHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RegionDetected::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CategoryScore"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RegionDetected.CategoryScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionDetected.CategoryScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_categoryScore = value["CategoryScore"].GetDouble();
         m_categoryScoreHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RegionDetected::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RegionDetected.Location` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionDetected.Location` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_location.Deserialize(value["Location"]);

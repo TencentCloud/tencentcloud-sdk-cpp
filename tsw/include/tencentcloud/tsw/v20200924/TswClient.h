@@ -39,7 +39,7 @@ namespace TencentCloud
                 TswClient(const Credential &credential, const std::string &region);
                 TswClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeAgentShellResponse> DescribeAgentShellOutcome;
+                typedef Outcome<Core::Error, Model::DescribeAgentShellResponse> DescribeAgentShellOutcome;
                 typedef std::future<DescribeAgentShellOutcome> DescribeAgentShellOutcomeCallable;
                 typedef std::function<void(const TswClient*, const Model::DescribeAgentShellRequest&, DescribeAgentShellOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentShellAsyncHandler;
 

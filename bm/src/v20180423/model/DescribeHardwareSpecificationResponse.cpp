@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,18 +56,18 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("CpuInfoSet") && !rsp["CpuInfoSet"].IsNull())
     {
         if (!rsp["CpuInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CpuInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CpuInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["CpuInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -87,7 +87,7 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
     if (rsp.HasMember("MemSet") && !rsp["MemSet"].IsNull())
     {
         if (!rsp["MemSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MemSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MemSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["MemSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
     if (rsp.HasMember("DiskInfoSet") && !rsp["DiskInfoSet"].IsNull())
     {
         if (!rsp["DiskInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DiskInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DiskInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DiskInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

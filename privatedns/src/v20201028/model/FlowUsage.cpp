@@ -36,7 +36,7 @@ CoreInternalOutcome FlowUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FlowUsage.FlowType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowUsage.FlowType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowType = string(value["FlowType"].GetString());
         m_flowTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FlowUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FlowUsage.TotalQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowUsage.TotalQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalQuantity = value["TotalQuantity"].GetInt64();
         m_totalQuantityHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FlowUsage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailableQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FlowUsage.AvailableQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowUsage.AvailableQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_availableQuantity = value["AvailableQuantity"].GetInt64();
         m_availableQuantityHasBeenSet = true;

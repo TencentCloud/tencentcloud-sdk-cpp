@@ -37,7 +37,7 @@ CoreInternalOutcome BindDevInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDevInfo.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDevInfo.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BindDevInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDevInfo.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDevInfo.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BindDevInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDevInfo.DeviceModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDevInfo.DeviceModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceModel = string(value["DeviceModel"].GetString());
         m_deviceModelHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BindDevInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindDevInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindDevInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;

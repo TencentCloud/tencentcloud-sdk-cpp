@@ -44,7 +44,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = value["TaskStatus"].GetUint64();
         m_taskStatusHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppDetailInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.AppDetailInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.AppDetailInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_appDetailInfo.Deserialize(value["AppDetailInfo"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirusInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.VirusInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.VirusInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_virusInfo.Deserialize(value["VirusInfo"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.VulInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.VulInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vulInfo.Deserialize(value["VulInfo"]);
@@ -105,7 +105,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.AdInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.AdInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_adInfo.Deserialize(value["AdInfo"]);
@@ -122,7 +122,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.TaskTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.TaskTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskTime = value["TaskTime"].GetUint64();
         m_taskTimeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.StatusCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.StatusCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetUint64();
         m_statusCodeHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusRef"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.StatusRef` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.StatusRef` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusRef = string(value["StatusRef"].GetString());
         m_statusRefHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PermissionInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.PermissionInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.PermissionInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_permissionInfo.Deserialize(value["PermissionInfo"]);
@@ -179,7 +179,7 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SensitiveInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanSetInfo.SensitiveInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanSetInfo.SensitiveInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sensitiveInfo.Deserialize(value["SensitiveInfo"]);

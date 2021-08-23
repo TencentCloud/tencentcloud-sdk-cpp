@@ -33,7 +33,7 @@ CoreInternalOutcome AccessLogItems::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessLogItems.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessLogItems.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

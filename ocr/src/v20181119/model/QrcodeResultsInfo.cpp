@@ -36,7 +36,7 @@ CoreInternalOutcome QrcodeResultsInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QrcodeResultsInfo.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodeResultsInfo.TypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_typeName = string(value["TypeName"].GetString());
         m_typeNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome QrcodeResultsInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QrcodeResultsInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodeResultsInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome QrcodeResultsInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Position"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QrcodeResultsInfo.Position` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodeResultsInfo.Position` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_position.Deserialize(value["Position"]);

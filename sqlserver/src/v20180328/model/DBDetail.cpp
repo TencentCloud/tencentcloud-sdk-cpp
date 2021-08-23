@@ -40,7 +40,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Charset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBDetail.Charset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.Charset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_charset = string(value["Charset"].GetString());
         m_charsetHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBDetail.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DBDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Accounts") && !value["Accounts"].IsNull())
     {
         if (!value["Accounts"].IsArray())
-            return CoreInternalOutcome(Error("response `DBDetail.Accounts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.Accounts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Accounts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternalStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBDetail.InternalStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBDetail.InternalStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internalStatus = string(value["InternalStatus"].GetString());
         m_internalStatusHasBeenSet = true;

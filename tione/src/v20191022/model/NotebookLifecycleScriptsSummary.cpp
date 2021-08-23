@@ -36,7 +36,7 @@ CoreInternalOutcome NotebookLifecycleScriptsSummary::Deserialize(const rapidjson
     {
         if (!value["NotebookLifecycleScriptsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookLifecycleScriptsSummary.NotebookLifecycleScriptsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookLifecycleScriptsSummary.NotebookLifecycleScriptsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notebookLifecycleScriptsName = string(value["NotebookLifecycleScriptsName"].GetString());
         m_notebookLifecycleScriptsNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NotebookLifecycleScriptsSummary::Deserialize(const rapidjson
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookLifecycleScriptsSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookLifecycleScriptsSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NotebookLifecycleScriptsSummary::Deserialize(const rapidjson
     {
         if (!value["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotebookLifecycleScriptsSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookLifecycleScriptsSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(value["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;

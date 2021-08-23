@@ -35,7 +35,7 @@ CoreInternalOutcome MetricConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Operator") && !value["Operator"].IsNull())
     {
         if (!value["Operator"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricConfig.Operator` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricConfig.Operator` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Operator"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome MetricConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Period") && !value["Period"].IsNull())
     {
         if (!value["Period"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricConfig.Period` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricConfig.Period` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Period"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome MetricConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ContinuePeriod") && !value["ContinuePeriod"].IsNull())
     {
         if (!value["ContinuePeriod"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricConfig.ContinuePeriod` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricConfig.ContinuePeriod` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ContinuePeriod"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

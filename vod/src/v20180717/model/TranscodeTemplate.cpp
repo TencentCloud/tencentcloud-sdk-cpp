@@ -46,7 +46,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Definition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.Definition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.Definition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_definition = string(value["Definition"].GetString());
         m_definitionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["RemoveVideo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.RemoveVideo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.RemoveVideo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_removeVideo = value["RemoveVideo"].GetInt64();
         m_removeVideoHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["RemoveAudio"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.RemoveAudio` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.RemoveAudio` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_removeAudio = value["RemoveAudio"].GetInt64();
         m_removeAudioHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["VideoTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.VideoTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.VideoTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoTemplate.Deserialize(value["VideoTemplate"]);
@@ -133,7 +133,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["AudioTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.AudioTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.AudioTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioTemplate.Deserialize(value["AudioTemplate"]);
@@ -150,7 +150,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["TEHDConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.TEHDConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.TEHDConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tEHDConfig.Deserialize(value["TEHDConfig"]);
@@ -167,7 +167,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["ContainerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.ContainerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.ContainerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerType = string(value["ContainerType"].GetString());
         m_containerTypeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

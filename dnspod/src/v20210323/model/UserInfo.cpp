@@ -44,7 +44,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nick"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nick = string(value["Nick"].GetString());
         m_nickHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Telephone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Telephone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Telephone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_telephone = string(value["Telephone"].GetString());
         m_telephoneHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EmailVerified"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.EmailVerified` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.EmailVerified` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emailVerified = string(value["EmailVerified"].GetString());
         m_emailVerifiedHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TelephoneVerified"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.TelephoneVerified` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.TelephoneVerified` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_telephoneVerified = string(value["TelephoneVerified"].GetString());
         m_telephoneVerifiedHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserGrade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.UserGrade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.UserGrade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userGrade = string(value["UserGrade"].GetString());
         m_userGradeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.RealName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.RealName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realName = string(value["RealName"].GetString());
         m_realNameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WechatBinded"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.WechatBinded` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.WechatBinded` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wechatBinded = string(value["WechatBinded"].GetString());
         m_wechatBindedHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Uin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Uin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = value["Uin"].GetInt64();
         m_uinHasBeenSet = true;

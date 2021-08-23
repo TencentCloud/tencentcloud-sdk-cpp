@@ -46,16 +46,16 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(rsp["Id"].GetString());
         m_idHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(rsp["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = rsp["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = rsp["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["DoneTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DoneTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DoneTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_doneTime = rsp["DoneTime"].GetUint64();
         m_doneTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["ScheduleTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScheduleTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduleTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scheduleTime = rsp["ScheduleTime"].GetUint64();
         m_scheduleTimeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["RetCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RetCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_retCode = rsp["RetCode"].GetUint64();
         m_retCodeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(rsp["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["Percent"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Percent` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Percent` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_percent = rsp["Percent"].GetUint64();
         m_percentHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["AllDeviceCnt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceCnt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_allDeviceCnt = rsp["AllDeviceCnt"].GetUint64();
         m_allDeviceCntHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["DoneDeviceCnt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DoneDeviceCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DoneDeviceCnt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_doneDeviceCnt = rsp["DoneDeviceCnt"].GetUint64();
         m_doneDeviceCntHasBeenSet = true;

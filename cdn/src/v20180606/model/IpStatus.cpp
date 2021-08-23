@@ -38,7 +38,7 @@ CoreInternalOutcome IpStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpStatus.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatus.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome IpStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["District"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpStatus.District` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatus.District` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_district = string(value["District"].GetString());
         m_districtHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome IpStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpStatus.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatus.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome IpStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpStatus.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatus.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome IpStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome Part::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `Part.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Part.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -51,7 +51,7 @@ CoreInternalOutcome Part::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NormPart"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Part.NormPart` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Part.NormPart` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_normPart.Deserialize(value["NormPart"]);
@@ -68,7 +68,7 @@ CoreInternalOutcome Part::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Part.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Part.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Part::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Part.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Part.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Part::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Part.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Part.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

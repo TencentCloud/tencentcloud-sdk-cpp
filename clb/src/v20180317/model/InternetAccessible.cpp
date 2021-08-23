@@ -36,7 +36,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InternetChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetChargeType = string(value["InternetChargeType"].GetString());
         m_internetChargeTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InternetMaxBandwidthOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetInt64();
         m_internetMaxBandwidthOutHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BandwidthpkgSubType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.BandwidthpkgSubType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.BandwidthpkgSubType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthpkgSubType = string(value["BandwidthpkgSubType"].GetString());
         m_bandwidthpkgSubTypeHasBeenSet = true;

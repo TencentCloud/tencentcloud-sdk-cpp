@@ -37,7 +37,7 @@ CoreInternalOutcome DBCreateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DBName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBCreateInfo.DBName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBCreateInfo.DBName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dBName = string(value["DBName"].GetString());
         m_dBNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DBCreateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Charset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBCreateInfo.Charset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBCreateInfo.Charset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_charset = string(value["Charset"].GetString());
         m_charsetHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DBCreateInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Accounts") && !value["Accounts"].IsNull())
     {
         if (!value["Accounts"].IsArray())
-            return CoreInternalOutcome(Error("response `DBCreateInfo.Accounts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DBCreateInfo.Accounts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Accounts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome DBCreateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBCreateInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBCreateInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

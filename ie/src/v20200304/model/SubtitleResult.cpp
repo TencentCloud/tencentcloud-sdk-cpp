@@ -33,7 +33,7 @@ CoreInternalOutcome SubtitleResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubtitleItems") && !value["SubtitleItems"].IsNull())
     {
         if (!value["SubtitleItems"].IsArray())
-            return CoreInternalOutcome(Error("response `SubtitleResult.SubtitleItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubtitleResult.SubtitleItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubtitleItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome GroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome GroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome GroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupItem.MemberCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupItem.MemberCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memberCount = value["MemberCount"].GetInt64();
         m_memberCountHasBeenSet = true;

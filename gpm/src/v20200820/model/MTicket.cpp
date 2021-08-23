@@ -35,7 +35,7 @@ CoreInternalOutcome MTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MTicket.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MTicket.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchCode = string(value["MatchCode"].GetString());
         m_matchCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchTicketId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MTicket.MatchTicketId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MTicket.MatchTicketId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchTicketId = string(value["MatchTicketId"].GetString());
         m_matchTicketIdHasBeenSet = true;

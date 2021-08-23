@@ -34,7 +34,7 @@ CoreInternalOutcome ImageUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageFile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageUrl.ImageFile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageUrl.ImageFile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageFile = string(value["ImageFile"].GetString());
         m_imageFileHasBeenSet = true;

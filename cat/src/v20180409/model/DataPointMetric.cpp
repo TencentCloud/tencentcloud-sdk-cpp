@@ -35,7 +35,7 @@ CoreInternalOutcome DataPointMetric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataPointMetric.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataPointMetric.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DataPointMetric::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Points") && !value["Points"].IsNull())
     {
         if (!value["Points"].IsArray())
-            return CoreInternalOutcome(Error("response `DataPointMetric.Points` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataPointMetric.Points` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Points"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -39,7 +39,7 @@ CoreInternalOutcome CreateBatchPaymentBatchData::Deserialize(const rapidjson::Va
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentBatchData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentBatchData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CreateBatchPaymentBatchData::Deserialize(const rapidjson::Va
     {
         if (!value["TradeSerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentBatchData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentBatchData.TradeSerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeSerialNo = string(value["TradeSerialNo"].GetString());
         m_tradeSerialNoHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CreateBatchPaymentBatchData::Deserialize(const rapidjson::Va
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentBatchData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentBatchData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CreateBatchPaymentBatchData::Deserialize(const rapidjson::Va
     {
         if (!value["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentBatchData.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentBatchData.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CreateBatchPaymentBatchData::Deserialize(const rapidjson::Va
     {
         if (!value["AgentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentBatchData.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentBatchData.AgentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentId = string(value["AgentId"].GetString());
         m_agentIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CreateBatchPaymentBatchData::Deserialize(const rapidjson::Va
     {
         if (!value["AgentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentBatchData.AgentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentBatchData.AgentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentName = string(value["AgentName"].GetString());
         m_agentNameHasBeenSet = true;

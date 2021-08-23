@@ -33,7 +33,7 @@ CoreInternalOutcome MediaTranscodeInfo::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("TranscodeSet") && !value["TranscodeSet"].IsNull())
     {
         if (!value["TranscodeSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaTranscodeInfo.TranscodeSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeInfo.TranscodeSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TranscodeSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

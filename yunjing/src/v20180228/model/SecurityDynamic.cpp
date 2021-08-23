@@ -38,7 +38,7 @@ CoreInternalOutcome SecurityDynamic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityDynamic.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityDynamic.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SecurityDynamic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityDynamic.EventTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityDynamic.EventTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventTime = string(value["EventTime"].GetString());
         m_eventTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SecurityDynamic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityDynamic.EventType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityDynamic.EventType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventType = string(value["EventType"].GetString());
         m_eventTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SecurityDynamic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityDynamic.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityDynamic.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SecurityDynamic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityDynamic.SecurityLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityDynamic.SecurityLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityLevel = string(value["SecurityLevel"].GetString());
         m_securityLevelHasBeenSet = true;

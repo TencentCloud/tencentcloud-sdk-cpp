@@ -35,7 +35,7 @@ CoreInternalOutcome InputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson:
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputSendTrafficSecuritySmsMsg.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputSendTrafficSecuritySmsMsg.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome InputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson:
     if (value.HasMember("Mobiles") && !value["Mobiles"].IsNull())
     {
         if (!value["Mobiles"].IsArray())
-            return CoreInternalOutcome(Error("response `InputSendTrafficSecuritySmsMsg.Mobiles` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InputSendTrafficSecuritySmsMsg.Mobiles` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Mobiles"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

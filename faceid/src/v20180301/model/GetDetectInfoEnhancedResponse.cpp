@@ -38,16 +38,16 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
     {
         if (!rsp["Text"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Text` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Text` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_text.Deserialize(rsp["Text"]);
@@ -87,7 +87,7 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
     {
         if (!rsp["IdCardData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `IdCardData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdCardData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_idCardData.Deserialize(rsp["IdCardData"]);
@@ -104,7 +104,7 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
     {
         if (!rsp["BestFrame"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BestFrame` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BestFrame` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bestFrame.Deserialize(rsp["BestFrame"]);
@@ -121,7 +121,7 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
     {
         if (!rsp["VideoData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoData.Deserialize(rsp["VideoData"]);
@@ -138,7 +138,7 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
     {
         if (!rsp["Encryption"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Encryption` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Encryption` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_encryption.Deserialize(rsp["Encryption"]);

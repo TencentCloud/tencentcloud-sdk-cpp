@@ -41,7 +41,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneInfo.LaneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.LaneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_laneId = string(value["LaneId"].GetString());
         m_laneIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneInfo.LaneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.LaneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_laneName = string(value["LaneName"].GetString());
         m_laneNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaneInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaneInfo.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LaneGroupList") && !value["LaneGroupList"].IsNull())
     {
         if (!value["LaneGroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `LaneInfo.LaneGroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.LaneGroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LaneGroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Entrance"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `LaneInfo.Entrance` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.Entrance` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_entrance = value["Entrance"].GetBool();
         m_entranceHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NamespaceIdList") && !value["NamespaceIdList"].IsNull())
     {
         if (!value["NamespaceIdList"].IsArray())
-            return CoreInternalOutcome(Error("response `LaneInfo.NamespaceIdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.NamespaceIdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NamespaceIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

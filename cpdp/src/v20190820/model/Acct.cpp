@@ -40,7 +40,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctNo = string(value["SubAcctNo"].GetString());
         m_subAcctNoHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctProperty"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.SubAcctProperty` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.SubAcctProperty` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctProperty = string(value["SubAcctProperty"].GetString());
         m_subAcctPropertyHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranNetMemberCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranNetMemberCode = string(value["TranNetMemberCode"].GetString());
         m_tranNetMemberCodeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.SubAcctName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.SubAcctName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctName = string(value["SubAcctName"].GetString());
         m_subAcctNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcctAvailBal"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.AcctAvailBal` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.AcctAvailBal` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acctAvailBal = string(value["AcctAvailBal"].GetString());
         m_acctAvailBalHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CashAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.CashAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.CashAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashAmt = string(value["CashAmt"].GetString());
         m_cashAmtHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Acct::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaintenanceDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acct.MaintenanceDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acct.MaintenanceDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maintenanceDate = string(value["MaintenanceDate"].GetString());
         m_maintenanceDateHasBeenSet = true;

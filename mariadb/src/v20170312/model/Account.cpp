@@ -35,7 +35,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Account.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Account.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Account.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;

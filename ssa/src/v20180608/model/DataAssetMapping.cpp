@@ -51,7 +51,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetIp = string(value["AssetIp"].GetString());
         m_assetIpHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetName = string(value["AssetName"].GetString());
         m_assetNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Instid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Instid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Instid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instid = string(value["Instid"].GetString());
         m_instidHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetType = string(value["AssetType"].GetString());
         m_assetTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetRegionEn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetRegionEn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetRegionEn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetRegionEn = string(value["AssetRegionEn"].GetString());
         m_assetRegionEnHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetRegionCn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetRegionCn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetRegionCn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetRegionCn = string(value["AssetRegionCn"].GetString());
         m_assetRegionCnHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetNetwork"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetNetwork` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetNetwork` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetNetwork = string(value["AssetNetwork"].GetString());
         m_assetNetworkHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetStatusEn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetStatusEn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetStatusEn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetStatusEn = string(value["AssetStatusEn"].GetString());
         m_assetStatusEnHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetStatusCn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetStatusCn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetStatusCn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetStatusCn = string(value["AssetStatusCn"].GetString());
         m_assetStatusCnHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsWhite"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.IsWhite` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.IsWhite` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isWhite = string(value["IsWhite"].GetString());
         m_isWhiteHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tag") && !value["Tag"].IsNull())
     {
         if (!value["Tag"].IsArray())
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Tag` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Tag` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tag"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -190,7 +190,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Group") && !value["Group"].IsNull())
     {
         if (!value["Group"].IsArray())
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Group` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Group` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Group"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -204,7 +204,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Component"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.Component` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.Component` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_component = string(value["Component"].GetString());
         m_componentHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetInstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.AssetInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.AssetInstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetInstanceType = string(value["AssetInstanceType"].GetString());
         m_assetInstanceTypeHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome DataAssetMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsIntranet"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataAssetMapping.IsIntranet` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAssetMapping.IsIntranet` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isIntranet = value["IsIntranet"].GetUint64();
         m_isIntranetHasBeenSet = true;

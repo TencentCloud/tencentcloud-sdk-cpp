@@ -38,7 +38,7 @@ CoreInternalOutcome ForwardLoadBalancer::Deserialize(const rapidjson::Value &val
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForwardLoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardLoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ForwardLoadBalancer::Deserialize(const rapidjson::Value &val
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForwardLoadBalancer.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardLoadBalancer.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ForwardLoadBalancer::Deserialize(const rapidjson::Value &val
     if (value.HasMember("TargetAttributes") && !value["TargetAttributes"].IsNull())
     {
         if (!value["TargetAttributes"].IsArray())
-            return CoreInternalOutcome(Error("response `ForwardLoadBalancer.TargetAttributes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ForwardLoadBalancer.TargetAttributes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TargetAttributes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome ForwardLoadBalancer::Deserialize(const rapidjson::Value &val
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForwardLoadBalancer.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardLoadBalancer.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ForwardLoadBalancer::Deserialize(const rapidjson::Value &val
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForwardLoadBalancer.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardLoadBalancer.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

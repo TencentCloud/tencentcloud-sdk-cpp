@@ -37,7 +37,7 @@ CoreInternalOutcome StandardImageResult::Deserialize(const rapidjson::Value &val
     if (value.HasMember("ResultSet") && !value["ResultSet"].IsNull())
     {
         if (!value["ResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `StandardImageResult.ResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StandardImageResult.ResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome StandardImageResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Statistic"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StandardImageResult.Statistic` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardImageResult.Statistic` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_statistic.Deserialize(value["Statistic"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome StandardImageResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandardImageResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardImageResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome StandardImageResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandardImageResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardImageResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome StandardImageResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StandardImageResult.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardImageResult.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;

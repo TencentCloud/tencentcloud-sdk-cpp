@@ -41,7 +41,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.RecordInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.RecordInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recordInterval = value["RecordInterval"].GetInt64();
         m_recordIntervalHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.StorageTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.StorageTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageTime = value["StorageTime"].GetInt64();
         m_storageTimeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodSubAppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.VodSubAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.VodSubAppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vodSubAppId = value["VodSubAppId"].GetInt64();
         m_vodSubAppIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.VodFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.VodFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodFileName = string(value["VodFileName"].GetString());
         m_vodFileNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Procedure"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.Procedure` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.Procedure` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procedure = string(value["Procedure"].GetString());
         m_procedureHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.StorageMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.StorageMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageMode = string(value["StorageMode"].GetString());
         m_storageModeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordParam.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordParam.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_classId = value["ClassId"].GetInt64();
         m_classIdHasBeenSet = true;

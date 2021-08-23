@@ -41,7 +41,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     {
         if (!value["Note"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.Note` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.Note` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_note = string(value["Note"].GetString());
         m_noteHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     {
         if (!value["PartitionNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.PartitionNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.PartitionNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitionNum = value["PartitionNum"].GetInt64();
         m_partitionNumHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     {
         if (!value["EnableWhiteList"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.EnableWhiteList` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.EnableWhiteList` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enableWhiteList = value["EnableWhiteList"].GetInt64();
         m_enableWhiteListHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     if (value.HasMember("IpWhiteList") && !value["IpWhiteList"].IsNull())
     {
         if (!value["IpWhiteList"].IsArray())
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.IpWhiteList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.IpWhiteList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IpWhiteList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     {
         if (!value["Config"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.Config` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.Config` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_config.Deserialize(value["Config"]);
@@ -120,7 +120,7 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
     if (value.HasMember("Partitions") && !value["Partitions"].IsNull())
     {
         if (!value["Partitions"].IsArray())
-            return CoreInternalOutcome(Error("response `TopicAttributesResponse.Partitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.Partitions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Partitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

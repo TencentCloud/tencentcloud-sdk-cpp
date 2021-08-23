@@ -36,7 +36,7 @@ CoreInternalOutcome COSSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `COSSettings.CosSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `COSSettings.CosSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosSecretId = string(value["CosSecretId"].GetString());
         m_cosSecretIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome COSSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `COSSettings.CosSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `COSSettings.CosSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosSecretKey = string(value["CosSecretKey"].GetString());
         m_cosSecretKeyHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome COSSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogOnCosPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `COSSettings.LogOnCosPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `COSSettings.LogOnCosPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logOnCosPath = string(value["LogOnCosPath"].GetString());
         m_logOnCosPathHasBeenSet = true;

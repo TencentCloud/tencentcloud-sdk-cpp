@@ -36,7 +36,7 @@ CoreInternalOutcome BillingLabel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillingLabel.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillingLabel.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BillingLabel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VolumeSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillingLabel.VolumeSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillingLabel.VolumeSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_volumeSize = value["VolumeSize"].GetInt64();
         m_volumeSizeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BillingLabel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillingLabel.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillingLabel.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -39,7 +39,7 @@ namespace TencentCloud
                 DtfClient(const Credential &credential, const std::string &region);
                 DtfClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeTransactionsResponse> DescribeTransactionsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTransactionsResponse> DescribeTransactionsOutcome;
                 typedef std::future<DescribeTransactionsOutcome> DescribeTransactionsOutcomeCallable;
                 typedef std::function<void(const DtfClient*, const Model::DescribeTransactionsRequest&, DescribeTransactionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTransactionsAsyncHandler;
 

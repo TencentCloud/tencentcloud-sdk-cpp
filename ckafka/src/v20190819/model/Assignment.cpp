@@ -35,7 +35,7 @@ CoreInternalOutcome Assignment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Assignment.Version` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Assignment.Version` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_version = value["Version"].GetInt64();
         m_versionHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Assignment::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Topics") && !value["Topics"].IsNull())
     {
         if (!value["Topics"].IsArray())
-            return CoreInternalOutcome(Error("response `Assignment.Topics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Assignment.Topics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Topics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

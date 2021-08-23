@@ -37,7 +37,7 @@ CoreInternalOutcome DetectLabelItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectLabelItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectLabelItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DetectLabelItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectLabelItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectLabelItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DetectLabelItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstCategory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectLabelItem.FirstCategory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectLabelItem.FirstCategory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstCategory = string(value["FirstCategory"].GetString());
         m_firstCategoryHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DetectLabelItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecondCategory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectLabelItem.SecondCategory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectLabelItem.SecondCategory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secondCategory = string(value["SecondCategory"].GetString());
         m_secondCategoryHasBeenSet = true;

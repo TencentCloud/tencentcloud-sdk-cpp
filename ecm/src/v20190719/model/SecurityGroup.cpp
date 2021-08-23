@@ -39,7 +39,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupId = string(value["SecurityGroupId"].GetString());
         m_securityGroupIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.SecurityGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.SecurityGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupName = string(value["SecurityGroupName"].GetString());
         m_securityGroupNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecurityGroupDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.SecurityGroupDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.SecurityGroupDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupDesc = string(value["SecurityGroupDesc"].GetString());
         m_securityGroupDescHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetBool();
         m_isDefaultHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SecurityGroup.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

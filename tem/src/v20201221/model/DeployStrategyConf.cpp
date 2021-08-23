@@ -37,7 +37,7 @@ CoreInternalOutcome DeployStrategyConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TotalBatchCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployStrategyConf.TotalBatchCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployStrategyConf.TotalBatchCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalBatchCount = value["TotalBatchCount"].GetInt64();
         m_totalBatchCountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DeployStrategyConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BetaBatchNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployStrategyConf.BetaBatchNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployStrategyConf.BetaBatchNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_betaBatchNum = value["BetaBatchNum"].GetInt64();
         m_betaBatchNumHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DeployStrategyConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeployStrategyType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployStrategyConf.DeployStrategyType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployStrategyConf.DeployStrategyType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deployStrategyType = value["DeployStrategyType"].GetInt64();
         m_deployStrategyTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DeployStrategyConf::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BatchInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DeployStrategyConf.BatchInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployStrategyConf.BatchInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_batchInterval = value["BatchInterval"].GetInt64();
         m_batchIntervalHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MatchAttributes") && !value["MatchAttributes"].IsNull())
     {
         if (!value["MatchAttributes"].IsArray())
-            return CoreInternalOutcome(Error("response `Player.MatchAttributes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Player.MatchAttributes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MatchAttributes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Team"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.Team` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.Team` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_team = string(value["Team"].GetString());
         m_teamHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomPlayerStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Player.CustomPlayerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.CustomPlayerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_customPlayerStatus = value["CustomPlayerStatus"].GetUint64();
         m_customPlayerStatusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomProfile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Player.CustomProfile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Player.CustomProfile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customProfile = string(value["CustomProfile"].GetString());
         m_customProfileHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RegionLatencies") && !value["RegionLatencies"].IsNull())
     {
         if (!value["RegionLatencies"].IsArray())
-            return CoreInternalOutcome(Error("response `Player.RegionLatencies` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Player.RegionLatencies` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RegionLatencies"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

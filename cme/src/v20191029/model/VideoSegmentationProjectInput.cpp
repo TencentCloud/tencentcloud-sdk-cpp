@@ -35,7 +35,7 @@ CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const rapidjson::
     {
         if (!value["AspectRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoSegmentationProjectInput.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoSegmentationProjectInput.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aspectRatio = string(value["AspectRatio"].GetString());
         m_aspectRatioHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const rapidjson::
     {
         if (!value["ProcessModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoSegmentationProjectInput.ProcessModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoSegmentationProjectInput.ProcessModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processModel = string(value["ProcessModel"].GetString());
         m_processModelHasBeenSet = true;

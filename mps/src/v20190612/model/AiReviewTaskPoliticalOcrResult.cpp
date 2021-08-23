@@ -39,7 +39,7 @@ CoreInternalOutcome AiReviewTaskPoliticalOcrResult::Deserialize(const rapidjson:
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPoliticalOcrResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPoliticalOcrResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AiReviewTaskPoliticalOcrResult::Deserialize(const rapidjson:
     {
         if (!value["ErrCodeExt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPoliticalOcrResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPoliticalOcrResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errCodeExt = string(value["ErrCodeExt"].GetString());
         m_errCodeExtHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AiReviewTaskPoliticalOcrResult::Deserialize(const rapidjson:
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPoliticalOcrResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPoliticalOcrResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AiReviewTaskPoliticalOcrResult::Deserialize(const rapidjson:
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPoliticalOcrResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPoliticalOcrResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AiReviewTaskPoliticalOcrResult::Deserialize(const rapidjson:
     {
         if (!value["Input"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPoliticalOcrResult.Input` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPoliticalOcrResult.Input` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome AiReviewTaskPoliticalOcrResult::Deserialize(const rapidjson:
     {
         if (!value["Output"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPoliticalOcrResult.Output` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPoliticalOcrResult.Output` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_output.Deserialize(value["Output"]);

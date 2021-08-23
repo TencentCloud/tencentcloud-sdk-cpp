@@ -50,7 +50,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Channel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channel = string(value["Channel"].GetString());
         m_channelHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vpc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Vpc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Vpc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpc = string(value["Vpc"].GetString());
         m_vpcHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createDate = string(value["CreateDate"].GetString());
         m_createDateHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.ModifyDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.ModifyDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyDate = string(value["ModifyDate"].GetString());
         m_modifyDateHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Modifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Modifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Modifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifier = string(value["Modifier"].GetString());
         m_modifierHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.ServiceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.ServiceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_serviceNum = value["ServiceNum"].GetInt64();
         m_serviceNumHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunInstancesNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.RunInstancesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.RunInstancesNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runInstancesNum = value["RunInstancesNum"].GetInt64();
         m_runInstancesNumHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TcbEnvStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.TcbEnvStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.TcbEnvStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tcbEnvStatus = string(value["TcbEnvStatus"].GetString());
         m_tcbEnvStatusHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterStatus = string(value["ClusterStatus"].GetString());
         m_clusterStatusHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableTswTraceService"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TemNamespaceInfo.EnableTswTraceService` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.EnableTswTraceService` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableTswTraceService = value["EnableTswTraceService"].GetBool();
         m_enableTswTraceServiceHasBeenSet = true;

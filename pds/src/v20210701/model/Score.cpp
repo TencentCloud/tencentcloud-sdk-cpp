@@ -34,7 +34,7 @@ CoreInternalOutcome Score::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Star"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Score.Star` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Score.Star` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_star = value["Star"].GetInt64();
         m_starHasBeenSet = true;

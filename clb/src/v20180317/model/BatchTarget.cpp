@@ -39,7 +39,7 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchTarget.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BatchTarget.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchTarget.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EniIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchTarget.EniIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.EniIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eniIp = string(value["EniIp"].GetString());
         m_eniIpHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BatchTarget.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome BatchTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchTarget.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchTarget.LocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_locationId = string(value["LocationId"].GetString());
         m_locationIdHasBeenSet = true;

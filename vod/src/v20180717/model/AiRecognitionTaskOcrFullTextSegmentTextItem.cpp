@@ -36,7 +36,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(con
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(con
     if (value.HasMember("AreaCoordSet") && !value["AreaCoordSet"].IsNull())
     {
         if (!value["AreaCoordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.AreaCoordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.AreaCoordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(con
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;

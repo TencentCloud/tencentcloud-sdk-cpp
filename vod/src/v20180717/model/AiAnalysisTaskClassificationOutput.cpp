@@ -33,7 +33,7 @@ CoreInternalOutcome AiAnalysisTaskClassificationOutput::Deserialize(const rapidj
     if (value.HasMember("ClassificationSet") && !value["ClassificationSet"].IsNull())
     {
         if (!value["ClassificationSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiAnalysisTaskClassificationOutput.ClassificationSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskClassificationOutput.ClassificationSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClassificationSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

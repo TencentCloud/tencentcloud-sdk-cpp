@@ -39,7 +39,7 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSLProjectInfo.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSLProjectInfo.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SSLProjectInfo.OwnerUin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSLProjectInfo.OwnerUin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = value["OwnerUin"].GetInt64();
         m_ownerUinHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSLProjectInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSLProjectInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatorUin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SSLProjectInfo.CreatorUin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSLProjectInfo.CreatorUin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_creatorUin = value["CreatorUin"].GetInt64();
         m_creatorUinHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSLProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSLProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Info"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SSLProjectInfo.Info` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SSLProjectInfo.Info` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_info = string(value["Info"].GetString());
         m_infoHasBeenSet = true;

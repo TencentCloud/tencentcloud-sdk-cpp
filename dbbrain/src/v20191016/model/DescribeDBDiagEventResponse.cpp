@@ -44,16 +44,16 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,11 +64,11 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["DiagItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagItem = string(rsp["DiagItem"].GetString());
         m_diagItemHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["DiagType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagType = string(rsp["DiagType"].GetString());
         m_diagTypeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = rsp["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["Explanation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Explanation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Explanation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_explanation = string(rsp["Explanation"].GetString());
         m_explanationHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["Outline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outline = string(rsp["Outline"].GetString());
         m_outlineHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["Problem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Problem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Problem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_problem = string(rsp["Problem"].GetString());
         m_problemHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["Severity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Severity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Severity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_severity = rsp["Severity"].GetInt64();
         m_severityHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(rsp["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["Suggestions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Suggestions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Suggestions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestions = string(rsp["Suggestions"].GetString());
         m_suggestionsHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(rsp["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribeDBDiagEventResponse::Deserialize(const string &paylo
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

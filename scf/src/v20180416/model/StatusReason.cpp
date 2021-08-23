@@ -35,7 +35,7 @@ CoreInternalOutcome StatusReason::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusReason.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusReason.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = string(value["ErrorCode"].GetString());
         m_errorCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StatusReason::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusReason.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusReason.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMessage = string(value["ErrorMessage"].GetString());
         m_errorMessageHasBeenSet = true;

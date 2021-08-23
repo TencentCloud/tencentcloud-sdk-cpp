@@ -34,7 +34,7 @@ CoreInternalOutcome RepoIsExistResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsExist"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RepoIsExistResp.IsExist` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RepoIsExistResp.IsExist` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isExist = value["IsExist"].GetBool();
         m_isExistHasBeenSet = true;

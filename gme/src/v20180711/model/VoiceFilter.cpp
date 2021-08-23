@@ -35,7 +35,7 @@ CoreInternalOutcome VoiceFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilter.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilter.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VoiceFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilter.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilter.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome BFDInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProbeFailedTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BFDInfo.ProbeFailedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BFDInfo.ProbeFailedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_probeFailedTimes = value["ProbeFailedTimes"].GetInt64();
         m_probeFailedTimesHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BFDInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Interval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BFDInfo.Interval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BFDInfo.Interval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetInt64();
         m_intervalHasBeenSet = true;

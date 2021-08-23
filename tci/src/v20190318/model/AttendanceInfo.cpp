@@ -35,7 +35,7 @@ CoreInternalOutcome AttendanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Face"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AttendanceInfo.Face` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttendanceInfo.Face` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_face.Deserialize(value["Face"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome AttendanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttendanceInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttendanceInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;

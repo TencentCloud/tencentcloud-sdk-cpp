@@ -38,7 +38,7 @@ CoreInternalOutcome RoVipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoVipStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoVipInfo.RoVipStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoVipInfo.RoVipStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roVipStatus = value["RoVipStatus"].GetInt64();
         m_roVipStatusHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RoVipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoSubnetId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoVipInfo.RoSubnetId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoVipInfo.RoSubnetId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roSubnetId = value["RoSubnetId"].GetInt64();
         m_roSubnetIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RoVipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoVpcId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoVipInfo.RoVpcId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoVipInfo.RoVpcId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roVpcId = value["RoVpcId"].GetInt64();
         m_roVpcIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RoVipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoVport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoVipInfo.RoVport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoVipInfo.RoVport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roVport = value["RoVport"].GetInt64();
         m_roVportHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RoVipInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RoVipInfo.RoVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoVipInfo.RoVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roVip = string(value["RoVip"].GetString());
         m_roVipHasBeenSet = true;

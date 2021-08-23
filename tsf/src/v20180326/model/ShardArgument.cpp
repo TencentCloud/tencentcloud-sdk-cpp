@@ -35,7 +35,7 @@ CoreInternalOutcome ShardArgument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardKey"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShardArgument.ShardKey` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardArgument.ShardKey` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shardKey = value["ShardKey"].GetUint64();
         m_shardKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ShardArgument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardArgument.ShardValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardArgument.ShardValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardValue = string(value["ShardValue"].GetString());
         m_shardValueHasBeenSet = true;

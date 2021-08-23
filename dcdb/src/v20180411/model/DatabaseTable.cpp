@@ -34,7 +34,7 @@ CoreInternalOutcome DatabaseTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Table"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTable.Table` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTable.Table` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_table = string(value["Table"].GetString());
         m_tableHasBeenSet = true;

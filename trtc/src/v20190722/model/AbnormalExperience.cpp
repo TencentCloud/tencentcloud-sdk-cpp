@@ -38,7 +38,7 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbnormalExperience.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalExperience.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExperienceId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AbnormalExperience.ExperienceId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalExperience.ExperienceId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_experienceId = value["ExperienceId"].GetUint64();
         m_experienceIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RoomId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AbnormalExperience.RoomId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalExperience.RoomId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = string(value["RoomId"].GetString());
         m_roomIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AbnormalEventList") && !value["AbnormalEventList"].IsNull())
     {
         if (!value["AbnormalEventList"].IsArray())
-            return CoreInternalOutcome(Error("response `AbnormalExperience.AbnormalEventList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AbnormalExperience.AbnormalEventList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AbnormalEventList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EventTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AbnormalExperience.EventTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalExperience.EventTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventTime = value["EventTime"].GetUint64();
         m_eventTimeHasBeenSet = true;

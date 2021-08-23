@@ -45,7 +45,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.State` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.State` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetUint64();
         m_stateHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParametersType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.ParametersType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.ParametersType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parametersType = string(value["ParametersType"].GetString());
         m_parametersTypeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Parameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.Parameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.Parameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parameters = string(value["Parameters"].GetString());
         m_parametersHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.ResultType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.ResultType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultType = string(value["ResultType"].GetString());
         m_resultTypeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BatchCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.BatchCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.BatchCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_batchCount = value["BatchCount"].GetUint64();
         m_batchCountHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BatchOffset"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.BatchOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.BatchOffset` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_batchOffset = value["BatchOffset"].GetUint64();
         m_batchOffsetHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompleteTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProductTaskInfo.CompleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductTaskInfo.CompleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_completeTime = value["CompleteTime"].GetUint64();
         m_completeTimeHasBeenSet = true;

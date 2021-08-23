@@ -37,7 +37,7 @@ CoreInternalOutcome RuleQuery::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Field"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleQuery.Field` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleQuery.Field` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_field = string(value["Field"].GetString());
         m_fieldHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RuleQuery::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Condition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleQuery.Condition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleQuery.Condition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_condition = string(value["Condition"].GetString());
         m_conditionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RuleQuery::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Topic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleQuery.Topic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleQuery.Topic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topic = string(value["Topic"].GetString());
         m_topicHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RuleQuery::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleQuery.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleQuery.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;

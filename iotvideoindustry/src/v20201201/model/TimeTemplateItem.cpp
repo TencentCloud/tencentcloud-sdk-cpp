@@ -38,7 +38,7 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateItem.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateItem.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAllWeek"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateItem.IsAllWeek` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateItem.IsAllWeek` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isAllWeek = value["IsAllWeek"].GetInt64();
         m_isAllWeekHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimeTemplateItem.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateItem.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TimeTemplateSpecs") && !value["TimeTemplateSpecs"].IsNull())
     {
         if (!value["TimeTemplateSpecs"].IsArray())
-            return CoreInternalOutcome(Error("response `TimeTemplateItem.TimeTemplateSpecs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TimeTemplateItem.TimeTemplateSpecs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TimeTemplateSpecs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

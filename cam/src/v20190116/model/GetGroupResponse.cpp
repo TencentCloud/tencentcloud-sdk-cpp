@@ -39,16 +39,16 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     {
         if (!rsp["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = rsp["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     {
         if (!rsp["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(rsp["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     {
         if (!rsp["GroupNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupNum = rsp["GroupNum"].GetUint64();
         m_groupNumHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome GetGroupResponse::Deserialize(const string &payload)
     if (rsp.HasMember("UserInfo") && !rsp["UserInfo"].IsNull())
     {
         if (!rsp["UserInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `UserInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["UserInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

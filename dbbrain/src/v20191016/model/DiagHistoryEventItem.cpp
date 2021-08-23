@@ -43,7 +43,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["DiagType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.DiagType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.DiagType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagType = string(value["DiagType"].GetString());
         m_diagTypeHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Severity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.Severity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.Severity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_severity = value["Severity"].GetInt64();
         m_severityHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Outline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.Outline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.Outline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outline = string(value["Outline"].GetString());
         m_outlineHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["DiagItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.DiagItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.DiagItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagItem = string(value["DiagItem"].GetString());
         m_diagItemHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(value["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DiagHistoryEventItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagHistoryEventItem.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagHistoryEventItem.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

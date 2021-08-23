@@ -48,7 +48,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilFlag = value["EvilFlag"].GetInt64();
         m_evilFlagHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextData.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Common"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextData.Common` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Common` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_common.Deserialize(value["Common"]);
@@ -84,7 +84,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CustomResult") && !value["CustomResult"].IsNull())
     {
         if (!value["CustomResult"].IsArray())
-            return CoreInternalOutcome(Error("response `TextData.CustomResult` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextData.CustomResult` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CustomResult"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetailResult") && !value["DetailResult"].IsNull())
     {
         if (!value["DetailResult"].IsArray())
-            return CoreInternalOutcome(Error("response `TextData.DetailResult` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextData.DetailResult` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailResult"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -125,7 +125,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ID"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextData.ID` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.ID` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_iD.Deserialize(value["ID"]);
@@ -142,7 +142,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Res"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextData.Res` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Res` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_res.Deserialize(value["Res"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RiskDetails") && !value["RiskDetails"].IsNull())
     {
         if (!value["RiskDetails"].IsArray())
-            return CoreInternalOutcome(Error("response `TextData.RiskDetails` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextData.RiskDetails` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RiskDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -179,7 +179,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TextData.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = value["BizType"].GetUint64();
         m_bizTypeHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextData.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(value["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextData.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evilLabel = string(value["EvilLabel"].GetString());
         m_evilLabelHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextData.Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(value["Extra"].GetString());
         m_extraHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `TextData.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextData.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -232,7 +232,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TextData.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetUint64();
         m_scoreHasBeenSet = true;
@@ -242,7 +242,7 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;

@@ -45,7 +45,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChildNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.ChildNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.ChildNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_childNodeId = string(value["ChildNodeId"].GetString());
         m_childNodeIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoreNode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.CoreNode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.CoreNode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coreNode = string(value["CoreNode"].GetString());
         m_coreNodeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EdgeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.EdgeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.EdgeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_edgeType = string(value["EdgeType"].GetString());
         m_edgeTypeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.NodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeType = string(value["NodeType"].GetString());
         m_nodeTypeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PositionX"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.PositionX` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.PositionX` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_positionX = string(value["PositionX"].GetString());
         m_positionXHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PositionY"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.PositionY` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.PositionY` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_positionY = string(value["PositionY"].GetString());
         m_positionYHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GraphId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.GraphId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.GraphId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_graphId = string(value["GraphId"].GetString());
         m_graphIdHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.FlowId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.FlowId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flowId = string(value["FlowId"].GetString());
         m_flowIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.NodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeName = string(value["NodeName"].GetString());
         m_nodeNameHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskLogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFlowEdge.TaskLogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFlowEdge.TaskLogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskLogId = string(value["TaskLogId"].GetString());
         m_taskLogIdHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome RedirectLocalInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StdoutLocalPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedirectLocalInfo.StdoutLocalPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedirectLocalInfo.StdoutLocalPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stdoutLocalPath = string(value["StdoutLocalPath"].GetString());
         m_stdoutLocalPathHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RedirectLocalInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StderrLocalPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedirectLocalInfo.StderrLocalPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedirectLocalInfo.StderrLocalPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stderrLocalPath = string(value["StderrLocalPath"].GetString());
         m_stderrLocalPathHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RedirectLocalInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StdoutLocalFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedirectLocalInfo.StdoutLocalFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedirectLocalInfo.StdoutLocalFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stdoutLocalFileName = string(value["StdoutLocalFileName"].GetString());
         m_stdoutLocalFileNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RedirectLocalInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StderrLocalFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedirectLocalInfo.StderrLocalFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedirectLocalInfo.StderrLocalFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stderrLocalFileName = string(value["StderrLocalFileName"].GetString());
         m_stderrLocalFileNameHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome FileSystemDataSource::Deserialize(const rapidjson::Value &va
     {
         if (!value["DirectoryPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemDataSource.DirectoryPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemDataSource.DirectoryPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_directoryPath = string(value["DirectoryPath"].GetString());
         m_directoryPathHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FileSystemDataSource::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileSystemType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemDataSource.FileSystemType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemDataSource.FileSystemType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemType = string(value["FileSystemType"].GetString());
         m_fileSystemTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FileSystemDataSource::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileSystemAccessMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemDataSource.FileSystemAccessMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemDataSource.FileSystemAccessMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemAccessMode = string(value["FileSystemAccessMode"].GetString());
         m_fileSystemAccessModeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FileSystemDataSource::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileSystemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemDataSource.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemDataSource.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemId = string(value["FileSystemId"].GetString());
         m_fileSystemIdHasBeenSet = true;

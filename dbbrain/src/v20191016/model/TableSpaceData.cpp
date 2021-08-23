@@ -43,7 +43,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableSchema"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableSchema = string(value["TableSchema"].GetString());
         m_tableSchemaHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Engine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.Engine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.Engine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engine = string(value["Engine"].GetString());
         m_engineHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.DataLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.DataLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataLength = value["DataLength"].GetDouble();
         m_dataLengthHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IndexLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.IndexLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.IndexLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_indexLength = value["IndexLength"].GetDouble();
         m_indexLengthHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataFree"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.DataFree` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.DataFree` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataFree = value["DataFree"].GetDouble();
         m_dataFreeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalLength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.TotalLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.TotalLength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalLength = value["TotalLength"].GetDouble();
         m_totalLengthHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FragRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.FragRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.FragRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fragRatio = value["FragRatio"].GetDouble();
         m_fragRatioHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableRows"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.TableRows` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.TableRows` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tableRows = value["TableRows"].GetInt64();
         m_tableRowsHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhysicalFileSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceData.PhysicalFileSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceData.PhysicalFileSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_physicalFileSize = value["PhysicalFileSize"].GetDouble();
         m_physicalFileSizeHasBeenSet = true;

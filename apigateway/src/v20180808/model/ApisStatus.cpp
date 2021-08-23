@@ -35,7 +35,7 @@ CoreInternalOutcome ApisStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApisStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApisStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ApisStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ApiIdStatusSet") && !value["ApiIdStatusSet"].IsNull())
     {
         if (!value["ApiIdStatusSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ApisStatus.ApiIdStatusSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApisStatus.ApiIdStatusSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ApiIdStatusSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

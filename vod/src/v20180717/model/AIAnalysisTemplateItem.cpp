@@ -43,7 +43,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["ClassificationConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.ClassificationConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.ClassificationConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_classificationConfigure.Deserialize(value["ClassificationConfigure"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["TagConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.TagConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.TagConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tagConfigure.Deserialize(value["TagConfigure"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["CoverConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.CoverConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.CoverConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coverConfigure.Deserialize(value["CoverConfigure"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["FrameTagConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.FrameTagConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.FrameTagConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_frameTagConfigure.Deserialize(value["FrameTagConfigure"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["HighlightConfigure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.HighlightConfigure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.HighlightConfigure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_highlightConfigure.Deserialize(value["HighlightConfigure"]);
@@ -158,7 +158,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const rapidjson::Value &
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIAnalysisTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

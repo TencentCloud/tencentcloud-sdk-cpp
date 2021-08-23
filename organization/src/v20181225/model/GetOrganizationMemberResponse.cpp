@@ -40,16 +40,16 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = rsp["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["JoinTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JoinTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JoinTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_joinTime = string(rsp["JoinTime"].GetString());
         m_joinTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["NodeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NodeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = rsp["NodeId"].GetUint64();
         m_nodeIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["NodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeName = string(rsp["NodeName"].GetString());
         m_nodeNameHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome GetOrganizationMemberResponse::Deserialize(const string &pay
     {
         if (!rsp["ParentNodeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ParentNodeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParentNodeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_parentNodeId = rsp["ParentNodeId"].GetUint64();
         m_parentNodeIdHasBeenSet = true;

@@ -41,10 +41,10 @@ namespace TencentCloud
                 VmsClient(const Credential &credential, const std::string &region);
                 VmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::SendCodeVoiceResponse> SendCodeVoiceOutcome;
+                typedef Outcome<Core::Error, Model::SendCodeVoiceResponse> SendCodeVoiceOutcome;
                 typedef std::future<SendCodeVoiceOutcome> SendCodeVoiceOutcomeCallable;
                 typedef std::function<void(const VmsClient*, const Model::SendCodeVoiceRequest&, SendCodeVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCodeVoiceAsyncHandler;
-                typedef Outcome<Error, Model::SendTtsVoiceResponse> SendTtsVoiceOutcome;
+                typedef Outcome<Core::Error, Model::SendTtsVoiceResponse> SendTtsVoiceOutcome;
                 typedef std::future<SendTtsVoiceOutcome> SendTtsVoiceOutcomeCallable;
                 typedef std::function<void(const VmsClient*, const Model::SendTtsVoiceRequest&, SendTtsVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendTtsVoiceAsyncHandler;
 

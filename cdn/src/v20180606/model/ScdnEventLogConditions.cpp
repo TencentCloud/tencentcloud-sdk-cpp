@@ -36,7 +36,7 @@ CoreInternalOutcome ScdnEventLogConditions::Deserialize(const rapidjson::Value &
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnEventLogConditions.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnEventLogConditions.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ScdnEventLogConditions::Deserialize(const rapidjson::Value &
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnEventLogConditions.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnEventLogConditions.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ScdnEventLogConditions::Deserialize(const rapidjson::Value &
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnEventLogConditions.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnEventLogConditions.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

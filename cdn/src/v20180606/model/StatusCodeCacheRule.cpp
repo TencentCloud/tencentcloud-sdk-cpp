@@ -35,7 +35,7 @@ CoreInternalOutcome StatusCodeCacheRule::Deserialize(const rapidjson::Value &val
     {
         if (!value["StatusCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatusCodeCacheRule.StatusCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusCodeCacheRule.StatusCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = string(value["StatusCode"].GetString());
         m_statusCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StatusCodeCacheRule::Deserialize(const rapidjson::Value &val
     {
         if (!value["CacheTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StatusCodeCacheRule.CacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatusCodeCacheRule.CacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cacheTime = value["CacheTime"].GetInt64();
         m_cacheTimeHasBeenSet = true;

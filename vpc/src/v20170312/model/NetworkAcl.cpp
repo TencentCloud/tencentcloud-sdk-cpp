@@ -40,7 +40,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAcl.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkAclId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAcl.NetworkAclId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.NetworkAclId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkAclId = string(value["NetworkAclId"].GetString());
         m_networkAclIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkAclName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAcl.NetworkAclName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.NetworkAclName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkAclName = string(value["NetworkAclName"].GetString());
         m_networkAclNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkAcl.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubnetSet") && !value["SubnetSet"].IsNull())
     {
         if (!value["SubnetSet"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkAcl.SubnetSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.SubnetSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IngressEntries") && !value["IngressEntries"].IsNull())
     {
         if (!value["IngressEntries"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkAcl.IngressEntries` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.IngressEntries` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IngressEntries"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -119,7 +119,7 @@ CoreInternalOutcome NetworkAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EgressEntries") && !value["EgressEntries"].IsNull())
     {
         if (!value["EgressEntries"].IsArray())
-            return CoreInternalOutcome(Error("response `NetworkAcl.EgressEntries` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetworkAcl.EgressEntries` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EgressEntries"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

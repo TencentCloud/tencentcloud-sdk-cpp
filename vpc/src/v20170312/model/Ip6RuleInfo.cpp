@@ -37,7 +37,7 @@ CoreInternalOutcome Ip6RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport6"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Ip6RuleInfo.Vport6` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6RuleInfo.Vport6` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport6 = value["Vport6"].GetInt64();
         m_vport6HasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Ip6RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6RuleInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6RuleInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Ip6RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6RuleInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6RuleInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Ip6RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Ip6RuleInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6RuleInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["SampleRate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.SampleRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.SampleRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sampleRate = value["SampleRate"].GetDouble();
         m_sampleRateHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PornTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.PornTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.PornTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornTask.Deserialize(value["PornTask"]);
@@ -93,7 +93,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["TerrorismTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.TerrorismTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.TerrorismTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_terrorismTask.Deserialize(value["TerrorismTask"]);
@@ -110,7 +110,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PoliticalTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.PoliticalTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.PoliticalTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalTask.Deserialize(value["PoliticalTask"]);
@@ -127,7 +127,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PornAsrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.PornAsrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.PornAsrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornAsrTask.Deserialize(value["PornAsrTask"]);
@@ -144,7 +144,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PornOcrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.PornOcrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.PornOcrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornOcrTask.Deserialize(value["PornOcrTask"]);
@@ -161,7 +161,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PoliticalAsrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.PoliticalAsrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.PoliticalAsrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalAsrTask.Deserialize(value["PoliticalAsrTask"]);
@@ -178,7 +178,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["PoliticalOcrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.PoliticalOcrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.PoliticalOcrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalOcrTask.Deserialize(value["PoliticalOcrTask"]);
@@ -195,7 +195,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["TerrorismOcrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.TerrorismOcrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.TerrorismOcrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_terrorismOcrTask.Deserialize(value["TerrorismOcrTask"]);
@@ -212,7 +212,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["ProhibitedAsrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.ProhibitedAsrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.ProhibitedAsrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_prohibitedAsrTask.Deserialize(value["ProhibitedAsrTask"]);
@@ -229,7 +229,7 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const rapidjson::Value &v
     {
         if (!value["ProhibitedOcrTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiContentReviewResult.ProhibitedOcrTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiContentReviewResult.ProhibitedOcrTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_prohibitedOcrTask.Deserialize(value["ProhibitedOcrTask"]);

@@ -39,7 +39,7 @@ CoreInternalOutcome ApplyDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ApplyDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareData.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareData.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionId = string(value["TransactionId"].GetString());
         m_transactionIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ApplyDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ApplyDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeclareId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareData.DeclareId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareData.DeclareId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_declareId = string(value["DeclareId"].GetString());
         m_declareIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ApplyDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalDeclareId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareData.OriginalDeclareId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareData.OriginalDeclareId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalDeclareId = string(value["OriginalDeclareId"].GetString());
         m_originalDeclareIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ApplyDeclareData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerId = string(value["PayerId"].GetString());
         m_payerIdHasBeenSet = true;

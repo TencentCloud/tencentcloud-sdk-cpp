@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceCategoryItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceCategory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceCategoryItem.InstanceCategory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCategoryItem.InstanceCategory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCategory = string(value["InstanceCategory"].GetString());
         m_instanceCategoryHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome InstanceCategoryItem::Deserialize(const rapidjson::Value &va
     if (value.HasMember("InstanceFamilySet") && !value["InstanceFamilySet"].IsNull())
     {
         if (!value["InstanceFamilySet"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceCategoryItem.InstanceFamilySet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceCategoryItem.InstanceFamilySet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceFamilySet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -40,7 +40,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Index"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.Index` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.Index` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_index = string(value["Index"].GetString());
         m_indexHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Account"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.Account` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.Account` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_account = string(value["Account"].GetString());
         m_accountHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseEsInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseEsInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome WhiteboardPushBackupParam::Deserialize(const rapidjson::Valu
     {
         if (!value["PushUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboardPushBackupParam.PushUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboardPushBackupParam.PushUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushUserId = string(value["PushUserId"].GetString());
         m_pushUserIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome WhiteboardPushBackupParam::Deserialize(const rapidjson::Valu
     {
         if (!value["PushUserSig"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboardPushBackupParam.PushUserSig` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboardPushBackupParam.PushUserSig` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushUserSig = string(value["PushUserSig"].GetString());
         m_pushUserSigHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome LightResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LightLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LightResult.LightLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightResult.LightLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lightLevel = string(value["LightLevel"].GetString());
         m_lightLevelHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LightResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LightValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LightResult.LightValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightResult.LightValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lightValue = value["LightValue"].GetDouble();
         m_lightValueHasBeenSet = true;

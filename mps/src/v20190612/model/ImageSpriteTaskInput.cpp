@@ -38,7 +38,7 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["OutputObjectPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputObjectPath = string(value["OutputObjectPath"].GetString());
         m_outputObjectPathHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["WebVttObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTaskInput.WebVttObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.WebVttObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webVttObjectName = string(value["WebVttObjectName"].GetString());
         m_webVttObjectNameHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["ObjectNumberFormat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTaskInput.ObjectNumberFormat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.ObjectNumberFormat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_objectNumberFormat.Deserialize(value["ObjectNumberFormat"]);

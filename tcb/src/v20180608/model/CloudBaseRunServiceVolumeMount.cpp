@@ -38,7 +38,7 @@ CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const rapidjson:
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunServiceVolumeMount.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServiceVolumeMount.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const rapidjson:
     {
         if (!value["MountPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunServiceVolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServiceVolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPath = string(value["MountPath"].GetString());
         m_mountPathHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const rapidjson:
     {
         if (!value["ReadOnly"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunServiceVolumeMount.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServiceVolumeMount.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_readOnly = value["ReadOnly"].GetBool();
         m_readOnlyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const rapidjson:
     {
         if (!value["SubPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunServiceVolumeMount.SubPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServiceVolumeMount.SubPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subPath = string(value["SubPath"].GetString());
         m_subPathHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const rapidjson:
     {
         if (!value["MountPropagation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunServiceVolumeMount.MountPropagation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServiceVolumeMount.MountPropagation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPropagation = string(value["MountPropagation"].GetString());
         m_mountPropagationHasBeenSet = true;

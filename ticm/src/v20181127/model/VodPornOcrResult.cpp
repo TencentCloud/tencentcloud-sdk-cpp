@@ -39,7 +39,7 @@ CoreInternalOutcome VodPornOcrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPornOcrResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornOcrResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VodPornOcrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodPornOcrResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornOcrResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VodPornOcrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPornOcrResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornOcrResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VodPornOcrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodPornOcrResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornOcrResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome VodPornOcrResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodPornOcrResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPornOcrResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome VodPornOcrResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VodPornOcrResult.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VodPornOcrResult.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

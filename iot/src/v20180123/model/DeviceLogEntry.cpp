@@ -39,7 +39,7 @@ CoreInternalOutcome DeviceLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceLogEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceLogEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DeviceLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceLogEntry.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceLogEntry.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DeviceLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceLogEntry.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceLogEntry.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DeviceLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceLogEntry.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceLogEntry.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetUint64();
         m_timestampHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DeviceLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceLogEntry.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceLogEntry.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DeviceLogEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceLogEntry.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceLogEntry.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;

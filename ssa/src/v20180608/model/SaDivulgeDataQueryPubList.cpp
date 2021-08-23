@@ -35,7 +35,7 @@ CoreInternalOutcome SaDivulgeDataQueryPubList::Deserialize(const rapidjson::Valu
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPubList.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPubList.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SaDivulgeDataQueryPubList::Deserialize(const rapidjson::Valu
     if (value.HasMember("List") && !value["List"].IsNull())
     {
         if (!value["List"].IsArray())
-            return CoreInternalOutcome(Error("response `SaDivulgeDataQueryPubList.List` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SaDivulgeDataQueryPubList.List` is not array type"));
 
         const rapidjson::Value &tmpValue = value["List"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

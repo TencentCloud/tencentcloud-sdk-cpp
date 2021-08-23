@@ -35,7 +35,7 @@ CoreInternalOutcome BasicTargetGroupInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TargetGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BasicTargetGroupInfo.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BasicTargetGroupInfo.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetGroupId = string(value["TargetGroupId"].GetString());
         m_targetGroupIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BasicTargetGroupInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TargetGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BasicTargetGroupInfo.TargetGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BasicTargetGroupInfo.TargetGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetGroupName = string(value["TargetGroupName"].GetString());
         m_targetGroupNameHasBeenSet = true;

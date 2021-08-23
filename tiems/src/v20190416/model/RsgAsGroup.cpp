@@ -47,7 +47,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cluster"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.Cluster` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.Cluster` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cluster = string(value["Cluster"].GetString());
         m_clusterHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RsgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.RsgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.RsgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rsgId = string(value["RsgId"].GetString());
         m_rsgIdHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetUint64();
         m_maxSizeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.MinSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.MinSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minSize = value["MinSize"].GetUint64();
         m_minSizeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RsgAsGroup.DesiredSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RsgAsGroup.DesiredSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredSize = value["DesiredSize"].GetUint64();
         m_desiredSizeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SpecItemInfoList") && !value["SpecItemInfoList"].IsNull())
     {
         if (!value["SpecItemInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `SpecInfo.SpecItemInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.SpecItemInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SpecItemInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

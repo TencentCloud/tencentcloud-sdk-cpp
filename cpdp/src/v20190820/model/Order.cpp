@@ -43,7 +43,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AmountHasTax"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Order.AmountHasTax` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.AmountHasTax` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_amountHasTax = value["AmountHasTax"].GetDouble();
         m_amountHasTaxHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Discount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Order.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SellerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Order.SellerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.SellerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sellerName = string(value["SellerName"].GetString());
         m_sellerNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvoiceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Order.InvoiceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.InvoiceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceType = value["InvoiceType"].GetInt64();
         m_invoiceTypeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Order.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Amount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Order.Amount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.Amount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetDouble();
         m_amountHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Order.OrderDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.OrderDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderDate = string(value["OrderDate"].GetString());
         m_orderDateHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Order.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StoreNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Order.StoreNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Order.StoreNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storeNo = string(value["StoreNo"].GetString());
         m_storeNoHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Items") && !value["Items"].IsNull())
     {
         if (!value["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `Order.Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Order.Items` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

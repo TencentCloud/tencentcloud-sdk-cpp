@@ -34,7 +34,7 @@ CoreInternalOutcome Surgery::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SurgeryHistory"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Surgery.SurgeryHistory` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Surgery.SurgeryHistory` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_surgeryHistory.Deserialize(value["SurgeryHistory"]);

@@ -37,7 +37,7 @@ CoreInternalOutcome AccessConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["AccessRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessConfiguration.AccessRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessConfiguration.AccessRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessRegion = string(value["AccessRegion"].GetString());
         m_accessRegionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccessConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccessConfiguration.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessConfiguration.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AccessConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["Concurrent"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccessConfiguration.Concurrent` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessConfiguration.Concurrent` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_concurrent = value["Concurrent"].GetUint64();
         m_concurrentHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AccessConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["NetworkType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessConfiguration.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessConfiguration.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkType = string(value["NetworkType"].GetString());
         m_networkTypeHasBeenSet = true;

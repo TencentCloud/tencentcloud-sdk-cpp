@@ -41,7 +41,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome TranscodeTask2017::Deserialize(const rapidjson::Value &value
     if (value.HasMember("PlayInfoSet") && !value["PlayInfoSet"].IsNull())
     {
         if (!value["PlayInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TranscodeTask2017.PlayInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTask2017.PlayInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PlayInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

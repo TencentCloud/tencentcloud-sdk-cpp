@@ -36,7 +36,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.Progress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.Progress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_progress = string(value["Progress"].GetString());
         m_progressHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

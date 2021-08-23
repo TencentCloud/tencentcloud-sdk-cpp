@@ -37,7 +37,7 @@ CoreInternalOutcome FilterSubscription::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ConsumerHasCount"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FilterSubscription.ConsumerHasCount` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FilterSubscription.ConsumerHasCount` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_consumerHasCount = value["ConsumerHasCount"].GetBool();
         m_consumerHasCountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FilterSubscription::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ConsumerHasBacklog"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FilterSubscription.ConsumerHasBacklog` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FilterSubscription.ConsumerHasBacklog` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_consumerHasBacklog = value["ConsumerHasBacklog"].GetBool();
         m_consumerHasBacklogHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FilterSubscription::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ConsumerHasExpired"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FilterSubscription.ConsumerHasExpired` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FilterSubscription.ConsumerHasExpired` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_consumerHasExpired = value["ConsumerHasExpired"].GetBool();
         m_consumerHasExpiredHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome FilterSubscription::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("SubscriptionNames") && !value["SubscriptionNames"].IsNull())
     {
         if (!value["SubscriptionNames"].IsArray())
-            return CoreInternalOutcome(Error("response `FilterSubscription.SubscriptionNames` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FilterSubscription.SubscriptionNames` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubscriptionNames"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

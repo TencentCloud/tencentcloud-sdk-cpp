@@ -38,7 +38,7 @@ CoreInternalOutcome FleetUtilization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActiveGameServerSessionCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FleetUtilization.ActiveGameServerSessionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetUtilization.ActiveGameServerSessionCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_activeGameServerSessionCount = value["ActiveGameServerSessionCount"].GetUint64();
         m_activeGameServerSessionCountHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome FleetUtilization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActiveServerProcessCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FleetUtilization.ActiveServerProcessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetUtilization.ActiveServerProcessCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_activeServerProcessCount = value["ActiveServerProcessCount"].GetUint64();
         m_activeServerProcessCountHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome FleetUtilization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentPlayerSessionCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FleetUtilization.CurrentPlayerSessionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetUtilization.CurrentPlayerSessionCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_currentPlayerSessionCount = value["CurrentPlayerSessionCount"].GetUint64();
         m_currentPlayerSessionCountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome FleetUtilization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetUtilization.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetUtilization.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome FleetUtilization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaximumPlayerSessionCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FleetUtilization.MaximumPlayerSessionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetUtilization.MaximumPlayerSessionCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maximumPlayerSessionCount = value["MaximumPlayerSessionCount"].GetUint64();
         m_maximumPlayerSessionCountHasBeenSet = true;

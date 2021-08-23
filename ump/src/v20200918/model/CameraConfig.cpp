@@ -47,7 +47,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.GroupCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.GroupCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupCode = string(value["GroupCode"].GetString());
         m_groupCodeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MallId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.MallId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.MallId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mallId = value["MallId"].GetUint64();
         m_mallIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FloorId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.FloorId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.FloorId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_floorId = value["FloorId"].GetInt64();
         m_floorIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraId = value["CameraId"].GetUint64();
         m_cameraIdHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.CameraIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.CameraIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cameraIp = string(value["CameraIp"].GetString());
         m_cameraIpHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraMac"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.CameraMac` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.CameraMac` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cameraMac = string(value["CameraMac"].GetString());
         m_cameraMacHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.CameraType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.CameraType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraType = value["CameraType"].GetInt64();
         m_cameraTypeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraFeature"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.CameraFeature` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.CameraFeature` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraFeature = value["CameraFeature"].GetInt64();
         m_cameraFeatureHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.CameraState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.CameraState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraState = value["CameraState"].GetInt64();
         m_cameraStateHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.ZoneType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.ZoneType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneType = value["ZoneType"].GetInt64();
         m_zoneTypeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Config"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.Config` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.Config` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_config.Deserialize(value["Config"]);
@@ -174,7 +174,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraConfig.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraConfig.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;

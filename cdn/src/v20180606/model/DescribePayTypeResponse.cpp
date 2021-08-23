@@ -38,16 +38,16 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
     {
         if (!rsp["PayType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PayType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PayType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payType = string(rsp["PayType"].GetString());
         m_payTypeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
     {
         if (!rsp["BillingCycle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillingCycle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillingCycle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billingCycle = string(rsp["BillingCycle"].GetString());
         m_billingCycleHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
     {
         if (!rsp["StatType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StatType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StatType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statType = string(rsp["StatType"].GetString());
         m_statTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionType = string(rsp["RegionType"].GetString());
         m_regionTypeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentPayType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentPayType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentPayType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentPayType = string(rsp["CurrentPayType"].GetString());
         m_currentPayTypeHasBeenSet = true;

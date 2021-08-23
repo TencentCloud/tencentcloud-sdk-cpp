@@ -60,7 +60,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableInstanceId = string(value["TableInstanceId"].GetString());
         m_tableInstanceIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableType = string(value["TableType"].GetString());
         m_tableTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableIdlType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableIdlType = string(value["TableIdlType"].GetString());
         m_tableIdlTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupName = string(value["TableGroupName"].GetString());
         m_tableGroupNameHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyStruct"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.KeyStruct` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.KeyStruct` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyStruct = string(value["KeyStruct"].GetString());
         m_keyStructHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValueStruct"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ValueStruct` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ValueStruct` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_valueStruct = string(value["ValueStruct"].GetString());
         m_valueStructHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardingKeySet"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ShardingKeySet` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ShardingKeySet` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardingKeySet = string(value["ShardingKeySet"].GetString());
         m_shardingKeySetHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IndexStruct"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.IndexStruct` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.IndexStruct` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_indexStruct = string(value["IndexStruct"].GetString());
         m_indexStructHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListElementNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ListElementNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ListElementNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_listElementNum = value["ListElementNum"].GetUint64();
         m_listElementNumHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IdlFiles") && !value["IdlFiles"].IsNull())
     {
         if (!value["IdlFiles"].IsArray())
-            return CoreInternalOutcome(Error("response `TableInfoNew.IdlFiles` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.IdlFiles` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IdlFiles"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -210,7 +210,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReservedVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ReservedVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ReservedVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedVolume = value["ReservedVolume"].GetInt64();
         m_reservedVolumeHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReservedReadQps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ReservedReadQps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ReservedReadQps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedReadQps = value["ReservedReadQps"].GetInt64();
         m_reservedReadQpsHasBeenSet = true;
@@ -230,7 +230,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReservedWriteQps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ReservedWriteQps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ReservedWriteQps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedWriteQps = value["ReservedWriteQps"].GetInt64();
         m_reservedWriteQpsHasBeenSet = true;
@@ -240,7 +240,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.TableSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.TableSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tableSize = value["TableSize"].GetInt64();
         m_tableSizeHasBeenSet = true;
@@ -250,7 +250,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -260,7 +260,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -270,7 +270,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -280,7 +280,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.Memo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.Memo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memo = string(value["Memo"].GetString());
         m_memoHasBeenSet = true;
@@ -290,7 +290,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);
@@ -307,7 +307,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiAccessId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.ApiAccessId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ApiAccessId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiAccessId = string(value["ApiAccessId"].GetString());
         m_apiAccessIdHasBeenSet = true;
@@ -317,7 +317,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SortFieldNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.SortFieldNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.SortFieldNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sortFieldNum = value["SortFieldNum"].GetInt64();
         m_sortFieldNumHasBeenSet = true;
@@ -327,7 +327,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SortRule"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.SortRule` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.SortRule` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sortRule = value["SortRule"].GetInt64();
         m_sortRuleHasBeenSet = true;
@@ -337,7 +337,7 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DbClusterInfoStruct"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableInfoNew.DbClusterInfoStruct` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.DbClusterInfoStruct` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbClusterInfoStruct = string(value["DbClusterInfoStruct"].GetString());
         m_dbClusterInfoStructHasBeenSet = true;

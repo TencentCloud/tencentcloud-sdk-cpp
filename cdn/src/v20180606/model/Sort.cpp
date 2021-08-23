@@ -35,7 +35,7 @@ CoreInternalOutcome Sort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sort.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sort.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Sort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sequence"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sort.Sequence` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sort.Sequence` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sequence = string(value["Sequence"].GetString());
         m_sequenceHasBeenSet = true;

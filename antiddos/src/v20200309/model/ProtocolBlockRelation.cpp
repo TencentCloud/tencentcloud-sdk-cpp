@@ -35,7 +35,7 @@ CoreInternalOutcome ProtocolBlockRelation::Deserialize(const rapidjson::Value &v
     {
         if (!value["ProtocolBlockConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProtocolBlockRelation.ProtocolBlockConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockRelation.ProtocolBlockConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_protocolBlockConfig.Deserialize(value["ProtocolBlockConfig"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome ProtocolBlockRelation::Deserialize(const rapidjson::Value &v
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `ProtocolBlockRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

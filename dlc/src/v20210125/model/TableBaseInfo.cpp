@@ -36,7 +36,7 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableBaseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableBaseInfo.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatasourceConnectionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableBaseInfo.DatasourceConnectionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.DatasourceConnectionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_datasourceConnectionName = string(value["DatasourceConnectionName"].GetString());
         m_datasourceConnectionNameHasBeenSet = true;

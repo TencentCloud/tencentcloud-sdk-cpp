@@ -44,7 +44,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialId = string(value["MaterialId"].GetString());
         m_materialIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaterialType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.MaterialType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.MaterialType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialType = string(value["MaterialType"].GetString());
         m_materialTypeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Owner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.Owner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.Owner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClassPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classPath = string(value["ClassPath"].GetString());
         m_classPathHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("PresetTagSet") && !value["PresetTagSet"].IsNull())
     {
         if (!value["PresetTagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.PresetTagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.PresetTagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PresetTagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -140,7 +140,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -154,7 +154,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["PreviewUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_previewUrl = string(value["PreviewUrl"].GetString());
         m_previewUrlHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("TagInfoSet") && !value["TagInfoSet"].IsNull())
     {
         if (!value["TagInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.TagInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MaterialBasicInfo.TagInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Authorizee"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.Authorizee` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.Authorizee` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_authorizee.Deserialize(value["Authorizee"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("PermissionSet") && !value["PermissionSet"].IsNull())
     {
         if (!value["PermissionSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.PermissionSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.PermissionSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PermissionSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

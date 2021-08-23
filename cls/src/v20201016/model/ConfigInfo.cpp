@@ -42,7 +42,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configId = string(value["ConfigId"].GetString());
         m_configIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.LogFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.LogFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logFormat = string(value["LogFormat"].GetString());
         m_logFormatHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.LogType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.LogType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logType = string(value["LogType"].GetString());
         m_logTypeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtractRule"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.ExtractRule` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.ExtractRule` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_extractRule.Deserialize(value["ExtractRule"]);
@@ -98,7 +98,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ExcludePaths") && !value["ExcludePaths"].IsNull())
     {
         if (!value["ExcludePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `ConfigInfo.ExcludePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.ExcludePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ExcludePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -119,7 +119,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Output"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.Output` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.Output` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_output = string(value["Output"].GetString());
         m_outputHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

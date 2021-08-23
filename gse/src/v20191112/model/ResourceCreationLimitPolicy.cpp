@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceCreationLimitPolicy::Deserialize(const rapidjson::Va
     {
         if (!value["NewGameServerSessionsPerCreator"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_newGameServerSessionsPerCreator = value["NewGameServerSessionsPerCreator"].GetUint64();
         m_newGameServerSessionsPerCreatorHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResourceCreationLimitPolicy::Deserialize(const rapidjson::Va
     {
         if (!value["PolicyPeriodInMinutes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceCreationLimitPolicy.PolicyPeriodInMinutes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceCreationLimitPolicy.PolicyPeriodInMinutes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policyPeriodInMinutes = value["PolicyPeriodInMinutes"].GetUint64();
         m_policyPeriodInMinutesHasBeenSet = true;

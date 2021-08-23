@@ -35,7 +35,7 @@ CoreInternalOutcome SpecificationDataItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Specification"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecificationDataItem.Specification` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecificationDataItem.Specification` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specification = string(value["Specification"].GetString());
         m_specificationHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SpecificationDataItem::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `SpecificationDataItem.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SpecificationDataItem.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

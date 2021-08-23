@@ -44,7 +44,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionExpire"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.SessionExpire` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.SessionExpire` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionExpire = value["SessionExpire"].GetInt64();
         m_sessionExpireHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthSwitch = value["HealthSwitch"].GetInt64();
         m_healthSwitchHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntervalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_intervalTime = value["IntervalTime"].GetInt64();
         m_intervalTimeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthNum = value["HealthNum"].GetInt64();
         m_healthNumHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnhealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.UnhealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.UnhealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unhealthNum = value["UnhealthNum"].GetInt64();
         m_unhealthNumHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HttpCodes") && !value["HttpCodes"].IsNull())
     {
         if (!value["HttpCodes"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateL7Rule.HttpCodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.HttpCodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HttpCodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -127,7 +127,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCheckPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckPath = string(value["HttpCheckPath"].GetString());
         m_httpCheckPathHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCheckDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.HttpCheckDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.HttpCheckDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckDomain = string(value["HttpCheckDomain"].GetString());
         m_httpCheckDomainHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome CreateL7Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BalanceMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Rule.BalanceMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Rule.BalanceMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_balanceMode = string(value["BalanceMode"].GetString());
         m_balanceModeHasBeenSet = true;

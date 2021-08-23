@@ -36,7 +36,7 @@ CoreInternalOutcome SrcAddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcIpv4"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcAddressInfo.SrcIpv4` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcAddressInfo.SrcIpv4` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIpv4 = string(value["SrcIpv4"].GetString());
         m_srcIpv4HasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SrcAddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcPublicIpv4"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcAddressInfo.SrcPublicIpv4` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcAddressInfo.SrcPublicIpv4` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcPublicIpv4 = string(value["SrcPublicIpv4"].GetString());
         m_srcPublicIpv4HasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SrcAddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcIpv6"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcAddressInfo.SrcIpv6` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcAddressInfo.SrcIpv6` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIpv6 = string(value["SrcIpv6"].GetString());
         m_srcIpv6HasBeenSet = true;

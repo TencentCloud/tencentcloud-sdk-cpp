@@ -35,7 +35,7 @@ CoreInternalOutcome DescribeApplicationTriggerPersonalResp::Deserialize(const ra
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeApplicationTriggerPersonalResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeApplicationTriggerPersonalResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DescribeApplicationTriggerPersonalResp::Deserialize(const ra
     if (value.HasMember("TriggerInfo") && !value["TriggerInfo"].IsNull())
     {
         if (!value["TriggerInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeApplicationTriggerPersonalResp.TriggerInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeApplicationTriggerPersonalResp.TriggerInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TriggerInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

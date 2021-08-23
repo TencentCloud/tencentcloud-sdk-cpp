@@ -35,7 +35,7 @@ CoreInternalOutcome PeakNetworkRegionInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakNetworkRegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakNetworkRegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome PeakNetworkRegionInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("PeakNetworkSet") && !value["PeakNetworkSet"].IsNull())
     {
         if (!value["PeakNetworkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PeakNetworkRegionInfo.PeakNetworkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PeakNetworkRegionInfo.PeakNetworkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PeakNetworkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

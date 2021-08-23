@@ -35,7 +35,7 @@ CoreInternalOutcome ExclusiveCluster::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("L4Clusters") && !value["L4Clusters"].IsNull())
     {
         if (!value["L4Clusters"].IsArray())
-            return CoreInternalOutcome(Error("response `ExclusiveCluster.L4Clusters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExclusiveCluster.L4Clusters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["L4Clusters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome ExclusiveCluster::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("L7Clusters") && !value["L7Clusters"].IsNull())
     {
         if (!value["L7Clusters"].IsArray())
-            return CoreInternalOutcome(Error("response `ExclusiveCluster.L7Clusters` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExclusiveCluster.L7Clusters` is not array type"));
 
         const rapidjson::Value &tmpValue = value["L7Clusters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome ExclusiveCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassicalCluster"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ExclusiveCluster.ClassicalCluster` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExclusiveCluster.ClassicalCluster` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_classicalCluster.Deserialize(value["ClassicalCluster"]);

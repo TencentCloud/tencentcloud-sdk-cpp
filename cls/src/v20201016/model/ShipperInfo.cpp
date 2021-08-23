@@ -46,7 +46,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShipperId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.ShipperId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.ShipperId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shipperId = string(value["ShipperId"].GetString());
         m_shipperIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Prefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Prefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Prefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_prefix = string(value["Prefix"].GetString());
         m_prefixHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShipperName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.ShipperName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.ShipperName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shipperName = string(value["ShipperName"].GetString());
         m_shipperNameHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Interval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetUint64();
         m_intervalHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetUint64();
         m_maxSizeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Status` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Status` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetBool();
         m_statusHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FilterRules") && !value["FilterRules"].IsNull())
     {
         if (!value["FilterRules"].IsArray())
-            return CoreInternalOutcome(Error("response `ShipperInfo.FilterRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.FilterRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FilterRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -146,7 +146,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Partition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Partition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Partition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_partition = string(value["Partition"].GetString());
         m_partitionHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Compress"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Compress` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Compress` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_compress.Deserialize(value["Compress"]);
@@ -173,7 +173,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.Content` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.Content` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_content.Deserialize(value["Content"]);
@@ -190,7 +190,7 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShipperInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

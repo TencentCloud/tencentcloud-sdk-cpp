@@ -45,7 +45,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     if (value.HasMember("Args") && !value["Args"].IsNull())
     {
         if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.Args` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.Args` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Args"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["RunOrder"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.RunOrder` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.RunOrder` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runOrder = value["RunOrder"].GetInt64();
         m_runOrderHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["WhenRun"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.WhenRun` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.WhenRun` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_whenRun = string(value["WhenRun"].GetString());
         m_whenRunHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["CosFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.CosFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosFileName = string(value["CosFileName"].GetString());
         m_cosFileNameHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["CosFileURI"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosFileURI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.CosFileURI` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosFileURI = string(value["CosFileURI"].GetString());
         m_cosFileURIHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["CosSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.CosSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosSecretId = string(value["CosSecretId"].GetString());
         m_cosSecretIdHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["CosSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.CosSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosSecretKey = string(value["CosSecretKey"].GetString());
         m_cosSecretKeyHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PreExecuteFileSettings.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProtocolPort.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolPort.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolPort.TargetPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.TargetPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_targetPort = value["TargetPort"].GetInt64();
         m_targetPortHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodePort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolPort.NodePort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.NodePort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodePort = value["NodePort"].GetInt64();
         m_nodePortHasBeenSet = true;

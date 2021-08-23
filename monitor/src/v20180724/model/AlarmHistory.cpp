@@ -57,7 +57,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.AlarmId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.AlarmId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alarmId = string(value["AlarmId"].GetString());
         m_alarmIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.MonitorType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.MonitorType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_monitorType = string(value["MonitorType"].GetString());
         m_monitorTypeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmObject"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.AlarmObject` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.AlarmObject` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alarmObject = string(value["AlarmObject"].GetString());
         m_alarmObjectHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstOccurTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.FirstOccurTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.FirstOccurTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_firstOccurTime = value["FirstOccurTime"].GetInt64();
         m_firstOccurTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastOccurTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.LastOccurTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.LastOccurTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lastOccurTime = value["LastOccurTime"].GetInt64();
         m_lastOccurTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.AlarmStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.AlarmStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alarmStatus = string(value["AlarmStatus"].GetString());
         m_alarmStatusHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(value["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(value["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VPC"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.VPC` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.VPC` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vPC = string(value["VPC"].GetString());
         m_vPCHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceGroup") && !value["InstanceGroup"].IsNull())
     {
         if (!value["InstanceGroup"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmHistory.InstanceGroup` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.InstanceGroup` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceGroup"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -206,7 +206,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReceiverUids") && !value["ReceiverUids"].IsNull())
     {
         if (!value["ReceiverUids"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmHistory.ReceiverUids` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.ReceiverUids` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverUids"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -219,7 +219,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReceiverGroups") && !value["ReceiverGroups"].IsNull())
     {
         if (!value["ReceiverGroups"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmHistory.ReceiverGroups` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.ReceiverGroups` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverGroups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -232,7 +232,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NoticeWays") && !value["NoticeWays"].IsNull())
     {
         if (!value["NoticeWays"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmHistory.NoticeWays` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.NoticeWays` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NoticeWays"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -246,7 +246,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.OriginId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.OriginId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originId = string(value["OriginId"].GetString());
         m_originIdHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.AlarmType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.AlarmType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alarmType = string(value["AlarmType"].GetString());
         m_alarmTypeHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyExists"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.PolicyExists` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.PolicyExists` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_policyExists = value["PolicyExists"].GetInt64();
         m_policyExistsHasBeenSet = true;
@@ -295,7 +295,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MetricsInfo") && !value["MetricsInfo"].IsNull())
     {
         if (!value["MetricsInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmHistory.MetricsInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.MetricsInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MetricsInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -316,7 +316,7 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dimensions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistory.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dimensions = string(value["Dimensions"].GetString());
         m_dimensionsHasBeenSet = true;

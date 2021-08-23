@@ -35,7 +35,7 @@ CoreInternalOutcome Compression::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Compression.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Compression.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Compression::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CompressionRules") && !value["CompressionRules"].IsNull())
     {
         if (!value["CompressionRules"].IsArray())
-            return CoreInternalOutcome(Error("response `Compression.CompressionRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Compression.CompressionRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CompressionRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

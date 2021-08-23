@@ -47,16 +47,16 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,18 +67,18 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("ScanTaskDetailList") && !rsp["ScanTaskDetailList"].IsNull())
     {
         if (!rsp["ScanTaskDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `ScanTaskDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ScanTaskDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = rsp["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["ScanMachineCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanMachineCount = rsp["ScanMachineCount"].GetUint64();
         m_scanMachineCountHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["RiskMachineCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskMachineCount = rsp["RiskMachineCount"].GetUint64();
         m_riskMachineCountHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["ScanBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanBeginTime = string(rsp["ScanBeginTime"].GetString());
         m_scanBeginTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["ScanEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanEndTime = string(rsp["ScanEndTime"].GetString());
         m_scanEndTimeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["ScanTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanTime = rsp["ScanTime"].GetUint64();
         m_scanTimeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["ScanProgress"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanProgress` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanProgress` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanProgress = rsp["ScanProgress"].GetUint64();
         m_scanProgressHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["ScanLeftTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanLeftTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanLeftTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanLeftTime = rsp["ScanLeftTime"].GetUint64();
         m_scanLeftTimeHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     if (rsp.HasMember("ScanContent") && !rsp["ScanContent"].IsNull())
     {
         if (!rsp["ScanContent"].IsArray())
-            return CoreInternalOutcome(Error("response `ScanContent` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScanContent` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ScanContent"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -191,7 +191,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     if (rsp.HasMember("VulInfo") && !rsp["VulInfo"].IsNull())
     {
         if (!rsp["VulInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `VulInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VulInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["VulInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -212,7 +212,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["RiskEventCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RiskEventCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskEventCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskEventCount = rsp["RiskEventCount"].GetUint64();
         m_riskEventCountHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = rsp["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -232,7 +232,7 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
     {
         if (!rsp["StoppingAll"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `StoppingAll` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StoppingAll` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_stoppingAll = rsp["StoppingAll"].GetBool();
         m_stoppingAllHasBeenSet = true;

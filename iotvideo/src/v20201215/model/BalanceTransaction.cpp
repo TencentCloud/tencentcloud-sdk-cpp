@@ -39,7 +39,7 @@ CoreInternalOutcome BalanceTransaction::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AccountType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BalanceTransaction.AccountType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BalanceTransaction.AccountType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accountType = value["AccountType"].GetUint64();
         m_accountTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome BalanceTransaction::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BalanceTransaction.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BalanceTransaction.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome BalanceTransaction::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DealId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BalanceTransaction.DealId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BalanceTransaction.DealId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dealId = string(value["DealId"].GetString());
         m_dealIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome BalanceTransaction::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Amount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BalanceTransaction.Amount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BalanceTransaction.Amount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetUint64();
         m_amountHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome BalanceTransaction::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Balance"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BalanceTransaction.Balance` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BalanceTransaction.Balance` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_balance = value["Balance"].GetUint64();
         m_balanceHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome BalanceTransaction::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OperationTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BalanceTransaction.OperationTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BalanceTransaction.OperationTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_operationTime = value["OperationTime"].GetInt64();
         m_operationTimeHasBeenSet = true;

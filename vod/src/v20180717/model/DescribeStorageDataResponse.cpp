@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     {
         if (!rsp["MediaCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mediaCount = rsp["MediaCount"].GetUint64();
         m_mediaCountHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     {
         if (!rsp["TotalStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalStorage = rsp["TotalStorage"].GetUint64();
         m_totalStorageHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     {
         if (!rsp["InfrequentStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InfrequentStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InfrequentStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_infrequentStorage = rsp["InfrequentStorage"].GetUint64();
         m_infrequentStorageHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     {
         if (!rsp["StandardStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StandardStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_standardStorage = rsp["StandardStorage"].GetUint64();
         m_standardStorageHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     if (rsp.HasMember("StorageStat") && !rsp["StorageStat"].IsNull())
     {
         if (!rsp["StorageStat"].IsArray())
-            return CoreInternalOutcome(Error("response `StorageStat` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StorageStat` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["StorageStat"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

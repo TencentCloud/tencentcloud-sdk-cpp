@@ -52,7 +52,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.LoadBalancerPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.LoadBalancerPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPort = value["LoadBalancerPort"].GetUint64();
         m_loadBalancerPortHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.MaxBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.MaxBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidth = value["MaxBandwidth"].GetUint64();
         m_maxBandwidthHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.ListenerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.ListenerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerType = string(value["ListenerType"].GetString());
         m_listenerTypeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SslMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.SslMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.SslMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sslMode = value["SslMode"].GetInt64();
         m_sslModeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaId = string(value["CertCaId"].GetString());
         m_certCaIdHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTimestamp = string(value["AddTimestamp"].GetString());
         m_addTimestampHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidrBlock = string(value["VpcCidrBlock"].GetString());
         m_vpcCidrBlockHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LoadBalancerVips") && !value["LoadBalancerVips"].IsNull())
     {
         if (!value["LoadBalancerVips"].IsArray())
-            return CoreInternalOutcome(Error("response `L7ExListener.LoadBalancerVips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.LoadBalancerVips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerVips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -205,7 +205,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerName = string(value["LoadBalancerName"].GetString());
         m_loadBalancerNameHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LoadBalancerVipv6s") && !value["LoadBalancerVipv6s"].IsNull())
     {
         if (!value["LoadBalancerVipv6s"].IsArray())
-            return CoreInternalOutcome(Error("response `L7ExListener.LoadBalancerVipv6s` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.LoadBalancerVipv6s` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerVipv6s"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -228,7 +228,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpProtocolType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.IpProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.IpProtocolType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocolType = string(value["IpProtocolType"].GetString());
         m_ipProtocolTypeHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome L7ExListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindTrafficMirror"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `L7ExListener.BindTrafficMirror` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7ExListener.BindTrafficMirror` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_bindTrafficMirror = value["BindTrafficMirror"].GetBool();
         m_bindTrafficMirrorHasBeenSet = true;

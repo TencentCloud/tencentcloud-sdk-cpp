@@ -36,7 +36,7 @@ CoreInternalOutcome GroupProIspDataInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ProvinceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupProIspDataInfo.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupProIspDataInfo.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceName = string(value["ProvinceName"].GetString());
         m_provinceNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome GroupProIspDataInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupProIspDataInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupProIspDataInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome GroupProIspDataInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("DetailInfoList") && !value["DetailInfoList"].IsNull())
     {
         if (!value["DetailInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupProIspDataInfo.DetailInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupProIspDataInfo.DetailInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

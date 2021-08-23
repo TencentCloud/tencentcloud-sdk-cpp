@@ -38,7 +38,7 @@ CoreInternalOutcome KeyRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `KeyRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KeyRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -52,7 +52,7 @@ CoreInternalOutcome KeyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome KeyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullUrlCache"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyRule.FullUrlCache` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRule.FullUrlCache` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullUrlCache = string(value["FullUrlCache"].GetString());
         m_fullUrlCacheHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome KeyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreCase"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyRule.IgnoreCase` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRule.IgnoreCase` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCase = string(value["IgnoreCase"].GetString());
         m_ignoreCaseHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome KeyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryString"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `KeyRule.QueryString` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRule.QueryString` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_queryString.Deserialize(value["QueryString"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome KeyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleTag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyRule.RuleTag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRule.RuleTag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleTag = string(value["RuleTag"].GetString());
         m_ruleTagHasBeenSet = true;

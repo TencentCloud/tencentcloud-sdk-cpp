@@ -39,7 +39,7 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Input"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask.Input` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.Input` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Output"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTask.Output` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.Output` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_output.Deserialize(value["Output"]);

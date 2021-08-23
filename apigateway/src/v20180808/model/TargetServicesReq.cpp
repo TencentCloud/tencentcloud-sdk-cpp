@@ -38,7 +38,7 @@ CoreInternalOutcome TargetServicesReq::Deserialize(const rapidjson::Value &value
     {
         if (!value["VmIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetServicesReq.VmIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetServicesReq.VmIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vmIp = string(value["VmIp"].GetString());
         m_vmIpHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TargetServicesReq::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetServicesReq.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetServicesReq.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TargetServicesReq::Deserialize(const rapidjson::Value &value
     {
         if (!value["VmPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TargetServicesReq.VmPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetServicesReq.VmPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vmPort = value["VmPort"].GetInt64();
         m_vmPortHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TargetServicesReq::Deserialize(const rapidjson::Value &value
     {
         if (!value["HostIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetServicesReq.HostIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetServicesReq.HostIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostIp = string(value["HostIp"].GetString());
         m_hostIpHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TargetServicesReq::Deserialize(const rapidjson::Value &value
     {
         if (!value["DockerIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetServicesReq.DockerIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetServicesReq.DockerIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dockerIp = string(value["DockerIp"].GetString());
         m_dockerIpHasBeenSet = true;

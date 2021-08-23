@@ -46,7 +46,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["PayModeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.PayModeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.PayModeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payModeName = string(value["PayModeName"].GetString());
         m_payModeNameHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["BusinessCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCode = string(value["BusinessCode"].GetString());
         m_businessCodeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["BusinessCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCodeName = string(value["BusinessCodeName"].GetString());
         m_businessCodeNameHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["ConsumptionTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.ConsumptionTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ConsumptionTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumptionTypeName = string(value["ConsumptionTypeName"].GetString());
         m_consumptionTypeNameHasBeenSet = true;

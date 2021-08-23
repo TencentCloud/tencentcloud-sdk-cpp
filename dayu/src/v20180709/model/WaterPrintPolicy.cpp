@@ -37,7 +37,7 @@ CoreInternalOutcome WaterPrintPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TcpPortList") && !value["TcpPortList"].IsNull())
     {
         if (!value["TcpPortList"].IsArray())
-            return CoreInternalOutcome(Error("response `WaterPrintPolicy.TcpPortList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintPolicy.TcpPortList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TcpPortList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome WaterPrintPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UdpPortList") && !value["UdpPortList"].IsNull())
     {
         if (!value["UdpPortList"].IsArray())
-            return CoreInternalOutcome(Error("response `WaterPrintPolicy.UdpPortList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintPolicy.UdpPortList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UdpPortList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -64,7 +64,7 @@ CoreInternalOutcome WaterPrintPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Offset"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintPolicy.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintPolicy.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetUint64();
         m_offsetHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome WaterPrintPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemoveSwitch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintPolicy.RemoveSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintPolicy.RemoveSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_removeSwitch = value["RemoveSwitch"].GetUint64();
         m_removeSwitchHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome WaterPrintPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WaterPrintPolicy.OpenStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WaterPrintPolicy.OpenStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_openStatus = value["OpenStatus"].GetUint64();
         m_openStatusHasBeenSet = true;

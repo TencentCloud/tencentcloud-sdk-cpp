@@ -41,7 +41,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certName = string(value["CertName"].GetString());
         m_certNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertSN"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertSN` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertSN` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certSN = string(value["CertSN"].GetString());
         m_certSNHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IssuerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.IssuerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.IssuerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuerName = string(value["IssuerName"].GetString());
         m_issuerNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Subject"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.Subject` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.Subject` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subject = string(value["Subject"].GetString());
         m_subjectHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EffectiveTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.EffectiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.EffectiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_effectiveTime = value["EffectiveTime"].GetUint64();
         m_effectiveTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetUint64();
         m_expireTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certText = string(value["CertText"].GetString());
         m_certTextHasBeenSet = true;

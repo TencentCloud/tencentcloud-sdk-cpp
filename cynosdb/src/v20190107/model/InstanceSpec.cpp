@@ -37,7 +37,7 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceSpec.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceSpec.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxStorageSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceSpec.MaxStorageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MaxStorageSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStorageSize = value["MaxStorageSize"].GetUint64();
         m_maxStorageSizeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinStorageSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceSpec.MinStorageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MinStorageSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minStorageSize = value["MinStorageSize"].GetUint64();
         m_minStorageSizeHasBeenSet = true;

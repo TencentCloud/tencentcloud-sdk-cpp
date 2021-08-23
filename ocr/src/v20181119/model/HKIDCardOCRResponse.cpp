@@ -46,16 +46,16 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CnName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CnName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CnName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnName = string(rsp["CnName"].GetString());
         m_cnNameHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["EnName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enName = string(rsp["EnName"].GetString());
         m_enNameHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["TelexCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelexCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelexCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_telexCode = string(rsp["TelexCode"].GetString());
         m_telexCodeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Birthday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Birthday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Birthday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthday = string(rsp["Birthday"].GetString());
         m_birthdayHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Permanent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Permanent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Permanent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_permanent = rsp["Permanent"].GetInt64();
         m_permanentHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["IdNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idNum = string(rsp["IdNum"].GetString());
         m_idNumHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Symbol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Symbol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Symbol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_symbol = string(rsp["Symbol"].GetString());
         m_symbolHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["FirstIssueDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirstIssueDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirstIssueDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstIssueDate = string(rsp["FirstIssueDate"].GetString());
         m_firstIssueDateHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentIssueDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CurrentIssueDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentIssueDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentIssueDate = string(rsp["CurrentIssueDate"].GetString());
         m_currentIssueDateHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["FakeDetectResult"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FakeDetectResult` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FakeDetectResult` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fakeDetectResult = rsp["FakeDetectResult"].GetInt64();
         m_fakeDetectResultHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["HeadImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HeadImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headImage = string(rsp["HeadImage"].GetString());
         m_headImageHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
     if (rsp.HasMember("WarningCode") && !rsp["WarningCode"].IsNull())
     {
         if (!rsp["WarningCode"].IsArray())
-            return CoreInternalOutcome(Error("response `WarningCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WarningCode` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["WarningCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

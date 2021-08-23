@@ -36,7 +36,7 @@ CoreInternalOutcome PhysicalPosition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhysicalPosition.PosId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhysicalPosition.PosId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_posId = string(value["PosId"].GetString());
         m_posIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PhysicalPosition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RackId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhysicalPosition.RackId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhysicalPosition.RackId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rackId = string(value["RackId"].GetString());
         m_rackIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PhysicalPosition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SwitchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhysicalPosition.SwitchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhysicalPosition.SwitchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switchId = string(value["SwitchId"].GetString());
         m_switchIdHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
     {
         if (!value["Partitions"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ConsumersSchedule.Partitions` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.Partitions` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_partitions = value["Partitions"].GetUint64();
         m_partitionsHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
     {
         if (!value["NumberOfEntries"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ConsumersSchedule.NumberOfEntries` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.NumberOfEntries` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_numberOfEntries = value["NumberOfEntries"].GetUint64();
         m_numberOfEntriesHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
     {
         if (!value["MsgBacklog"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ConsumersSchedule.MsgBacklog` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.MsgBacklog` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgBacklog = value["MsgBacklog"].GetUint64();
         m_msgBacklogHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
     {
         if (!value["MsgRateOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumersSchedule.MsgRateOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.MsgRateOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRateOut = string(value["MsgRateOut"].GetString());
         m_msgRateOutHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
     {
         if (!value["MsgThroughputOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumersSchedule.MsgThroughputOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.MsgThroughputOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgThroughputOut = string(value["MsgThroughputOut"].GetString());
         m_msgThroughputOutHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
     {
         if (!value["MsgRateExpired"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumersSchedule.MsgRateExpired` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.MsgRateExpired` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRateExpired = string(value["MsgRateExpired"].GetString());
         m_msgRateExpiredHasBeenSet = true;

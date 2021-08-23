@@ -35,7 +35,7 @@ CoreInternalOutcome SectionTime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SectionTime.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SectionTime.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SectionTime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SectionTime.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SectionTime.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;

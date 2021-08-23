@@ -37,7 +37,7 @@ CoreInternalOutcome ParamConstraint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamConstraint.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamConstraint.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ParamConstraint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamConstraint.Enum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamConstraint.Enum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enum = string(value["Enum"].GetString());
         m_enumHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ParamConstraint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Range"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ParamConstraint.Range` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamConstraint.Range` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_range.Deserialize(value["Range"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome ParamConstraint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["String"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamConstraint.String` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamConstraint.String` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_string = string(value["String"].GetString());
         m_stringHasBeenSet = true;

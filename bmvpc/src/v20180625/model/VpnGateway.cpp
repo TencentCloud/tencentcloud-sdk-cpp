@@ -44,7 +44,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpnGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.VpnGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.VpnGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpnGatewayId = string(value["VpnGatewayId"].GetString());
         m_vpnGatewayIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpnGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.VpnGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.VpnGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpnGatewayName = string(value["VpnGatewayName"].GetString());
         m_vpnGatewayNameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidrBlock = string(value["VpcCidrBlock"].GetString());
         m_vpcCidrBlockHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetMaxBandwidthOut"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetUint64();
         m_internetMaxBandwidthOutHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAddress = string(value["PublicIpAddress"].GetString());
         m_publicIpAddressHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpnConnNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpnGateway.VpnConnNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.VpnConnNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpnConnNum = value["VpnConnNum"].GetUint64();
         m_vpnConnNumHasBeenSet = true;

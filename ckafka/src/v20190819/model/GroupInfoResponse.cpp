@@ -39,7 +39,7 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["ErrorCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoResponse.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoResponse.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = string(value["ErrorCode"].GetString());
         m_errorCodeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoResponse.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoResponse.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProtocolType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoResponse.ProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoResponse.ProtocolType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocolType = string(value["ProtocolType"].GetString());
         m_protocolTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoResponse.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoResponse.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Members") && !value["Members"].IsNull())
     {
         if (!value["Members"].IsArray())
-            return CoreInternalOutcome(Error("response `GroupInfoResponse.Members` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoResponse.Members` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Members"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["Group"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoResponse.Group` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoResponse.Group` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_group = string(value["Group"].GetString());
         m_groupHasBeenSet = true;

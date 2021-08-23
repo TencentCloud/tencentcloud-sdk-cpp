@@ -37,7 +37,7 @@ CoreInternalOutcome DatabaseTupleStatus::Deserialize(const rapidjson::Value &val
     {
         if (!value["PublishDatabase"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTupleStatus.PublishDatabase` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTupleStatus.PublishDatabase` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishDatabase = string(value["PublishDatabase"].GetString());
         m_publishDatabaseHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DatabaseTupleStatus::Deserialize(const rapidjson::Value &val
     {
         if (!value["SubscribeDatabase"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTupleStatus.SubscribeDatabase` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTupleStatus.SubscribeDatabase` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeDatabase = string(value["SubscribeDatabase"].GetString());
         m_subscribeDatabaseHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DatabaseTupleStatus::Deserialize(const rapidjson::Value &val
     {
         if (!value["LastSyncTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTupleStatus.LastSyncTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTupleStatus.LastSyncTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastSyncTime = string(value["LastSyncTime"].GetString());
         m_lastSyncTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DatabaseTupleStatus::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseTupleStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseTupleStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

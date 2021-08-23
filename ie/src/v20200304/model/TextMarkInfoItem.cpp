@@ -40,7 +40,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosX"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.PosX` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.PosX` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_posX = value["PosX"].GetInt64();
         m_posXHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PosY"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.PosY` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.PosY` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_posY = value["PosY"].GetInt64();
         m_posYHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FontSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.FontSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.FontSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fontSize = value["FontSize"].GetInt64();
         m_fontSizeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FontFile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.FontFile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.FontFile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fontFile = string(value["FontFile"].GetString());
         m_fontFileHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FontColor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.FontColor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.FontColor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fontColor = string(value["FontColor"].GetString());
         m_fontColorHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TextMarkInfoItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FontAlpha"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TextMarkInfoItem.FontAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextMarkInfoItem.FontAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fontAlpha = value["FontAlpha"].GetDouble();
         m_fontAlphaHasBeenSet = true;

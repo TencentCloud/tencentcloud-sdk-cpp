@@ -35,7 +35,7 @@ CoreInternalOutcome ErrorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorLog"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorInfo.ErrorLog` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorInfo.ErrorLog` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorLog = string(value["ErrorLog"].GetString());
         m_errorLogHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ErrorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HelpDoc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorInfo.HelpDoc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorInfo.HelpDoc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_helpDoc = string(value["HelpDoc"].GetString());
         m_helpDocHasBeenSet = true;

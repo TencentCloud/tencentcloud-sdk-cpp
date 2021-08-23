@@ -38,7 +38,7 @@ CoreInternalOutcome UnbindClientElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnbindClientElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnbindClientElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome UnbindClientElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnbindClientElem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnbindClientElem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome UnbindClientElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UnbindClientElem.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnbindClientElem.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome UnbindClientElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnbindClientElem.ApplyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnbindClientElem.ApplyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applyTime = string(value["ApplyTime"].GetString());
         m_applyTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome UnbindClientElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnbindClientElem.ActionTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnbindClientElem.ActionTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionTime = string(value["ActionTime"].GetString());
         m_actionTimeHasBeenSet = true;

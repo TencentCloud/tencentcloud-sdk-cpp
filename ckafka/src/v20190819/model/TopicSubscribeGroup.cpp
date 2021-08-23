@@ -37,7 +37,7 @@ CoreInternalOutcome TopicSubscribeGroup::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicSubscribeGroup.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSubscribeGroup.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TopicSubscribeGroup::Deserialize(const rapidjson::Value &val
     {
         if (!value["StatusCountInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicSubscribeGroup.StatusCountInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSubscribeGroup.StatusCountInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusCountInfo = string(value["StatusCountInfo"].GetString());
         m_statusCountInfoHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TopicSubscribeGroup::Deserialize(const rapidjson::Value &val
     if (value.HasMember("GroupsInfo") && !value["GroupsInfo"].IsNull())
     {
         if (!value["GroupsInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `TopicSubscribeGroup.GroupsInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopicSubscribeGroup.GroupsInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupsInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome TopicSubscribeGroup::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicSubscribeGroup.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicSubscribeGroup.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

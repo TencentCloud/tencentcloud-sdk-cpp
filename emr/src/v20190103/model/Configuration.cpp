@@ -35,7 +35,7 @@ CoreInternalOutcome Configuration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Classification"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Configuration.Classification` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Configuration.Classification` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classification = string(value["Classification"].GetString());
         m_classificationHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Configuration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Properties"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Configuration.Properties` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Configuration.Properties` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_properties = string(value["Properties"].GetString());
         m_propertiesHasBeenSet = true;

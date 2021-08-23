@@ -35,7 +35,7 @@ CoreInternalOutcome BgpPeer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Asn"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BgpPeer.Asn` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BgpPeer.Asn` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_asn = value["Asn"].GetInt64();
         m_asnHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BgpPeer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BgpPeer.AuthKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BgpPeer.AuthKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authKey = string(value["AuthKey"].GetString());
         m_authKeyHasBeenSet = true;

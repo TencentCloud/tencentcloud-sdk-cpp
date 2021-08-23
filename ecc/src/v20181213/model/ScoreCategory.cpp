@@ -39,7 +39,7 @@ CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Words"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScoreCategory.Words` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreCategory.Words` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_words.Deserialize(value["Words"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sentences"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScoreCategory.Sentences` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreCategory.Sentences` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sentences.Deserialize(value["Sentences"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Structure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScoreCategory.Structure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreCategory.Structure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_structure.Deserialize(value["Structure"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScoreCategory.Content` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreCategory.Content` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_content.Deserialize(value["Content"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ScoreCategory.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreCategory.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ScoreCategory.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreCategory.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percentage = value["Percentage"].GetDouble();
         m_percentageHasBeenSet = true;

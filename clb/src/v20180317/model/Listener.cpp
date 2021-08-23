@@ -51,7 +51,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Certificate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Listener.Certificate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Certificate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
@@ -98,7 +98,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheck"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Listener.HealthCheck` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.HealthCheck` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
@@ -115,7 +115,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheduler"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduler = string(value["Scheduler"].GetString());
         m_schedulerHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionExpireTime = value["SessionExpireTime"].GetInt64();
         m_sessionExpireTimeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SniSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.SniSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.SniSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sniSwitch = value["SniSwitch"].GetInt64();
         m_sniSwitchHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `Listener.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Listener.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -165,7 +165,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.EndPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.EndPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endPort = value["EndPort"].GetInt64();
         m_endPortHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.TargetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetType = string(value["TargetType"].GetString());
         m_targetTypeHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetGroup"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Listener.TargetGroup` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.TargetGroup` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetGroup.Deserialize(value["TargetGroup"]);
@@ -222,7 +222,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.SessionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.SessionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionType = string(value["SessionType"].GetString());
         m_sessionTypeHasBeenSet = true;
@@ -232,7 +232,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepaliveEnable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.KeepaliveEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.KeepaliveEnable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_keepaliveEnable = value["KeepaliveEnable"].GetInt64();
         m_keepaliveEnableHasBeenSet = true;
@@ -242,7 +242,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Toa"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Listener.Toa` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Toa` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_toa = value["Toa"].GetBool();
         m_toaHasBeenSet = true;
@@ -252,7 +252,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeregisterTargetRst"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Listener.DeregisterTargetRst` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.DeregisterTargetRst` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deregisterTargetRst = value["DeregisterTargetRst"].GetBool();
         m_deregisterTargetRstHasBeenSet = true;

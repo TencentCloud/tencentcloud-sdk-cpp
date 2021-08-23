@@ -38,7 +38,7 @@ CoreInternalOutcome Lymph::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Lymph.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lymph.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Lymph::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `Lymph.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Lymph.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome Lymph::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Part"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Lymph.Part` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lymph.Part` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_part.Deserialize(value["Part"]);
@@ -78,7 +78,7 @@ CoreInternalOutcome Lymph::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Lymph.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lymph.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Lymph::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransferNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Lymph.TransferNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lymph.TransferNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transferNum = value["TransferNum"].GetInt64();
         m_transferNumHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome NatFwFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwFilter.FilterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwFilter.FilterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = string(value["FilterType"].GetString());
         m_filterTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome NatFwFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilterContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwFilter.FilterContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwFilter.FilterContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filterContent = string(value["FilterContent"].GetString());
         m_filterContentHasBeenSet = true;

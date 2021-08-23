@@ -35,7 +35,7 @@ CoreInternalOutcome TicketThroughUnit::Deserialize(const rapidjson::Value &value
     {
         if (!value["DateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TicketThroughUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketThroughUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateKey = string(value["DateKey"].GetString());
         m_dateKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TicketThroughUnit::Deserialize(const rapidjson::Value &value
     {
         if (!value["Through"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TicketThroughUnit.Through` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TicketThroughUnit.Through` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_through = value["Through"].GetInt64();
         m_throughHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome Tag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Fid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Tag.Fid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Tag.Fid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fid = value["Fid"].GetInt64();
         m_fidHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Tag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Fname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Tag.Fname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Tag.Fname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fname = string(value["Fname"].GetString());
         m_fnameHasBeenSet = true;

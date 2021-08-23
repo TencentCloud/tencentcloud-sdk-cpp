@@ -48,7 +48,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reponame"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.Reponame` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.Reponame` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reponame = string(value["Reponame"].GetString());
         m_reponameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Repotype"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.Repotype` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.Repotype` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repotype = string(value["Repotype"].GetString());
         m_repotypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.TagCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tagCount = value["TagCount"].GetInt64();
         m_tagCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPublic"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.IsPublic` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.IsPublic` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isPublic = value["IsPublic"].GetInt64();
         m_isPublicHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsUserFavor"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.IsUserFavor` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.IsUserFavor` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isUserFavor = value["IsUserFavor"].GetBool();
         m_isUserFavorHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsQcloudOfficial"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.IsQcloudOfficial` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.IsQcloudOfficial` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isQcloudOfficial = value["IsQcloudOfficial"].GetBool();
         m_isQcloudOfficialHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FavorCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.FavorCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.FavorCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_favorCount = value["FavorCount"].GetInt64();
         m_favorCountHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PullCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.PullCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.PullCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pullCount = value["PullCount"].GetInt64();
         m_pullCountHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TcrRepoInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.TcrRepoInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.TcrRepoInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tcrRepoInfo.Deserialize(value["TcrRepoInfo"]);
@@ -175,7 +175,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TcrBindingId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.TcrBindingId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.TcrBindingId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tcrBindingId = value["TcrBindingId"].GetInt64();
         m_tcrBindingIdHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageRepository.ApplicationName` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.ApplicationName` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_applicationName.Deserialize(value["ApplicationName"]);

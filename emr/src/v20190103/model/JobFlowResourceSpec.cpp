@@ -41,7 +41,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["MasterCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.MasterCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.MasterCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_masterCount = value["MasterCount"].GetInt64();
         m_masterCountHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["MasterResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.MasterResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.MasterResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_masterResourceSpec.Deserialize(value["MasterResourceSpec"]);
@@ -68,7 +68,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["CoreCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.CoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.CoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_coreCount = value["CoreCount"].GetInt64();
         m_coreCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["CoreResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.CoreResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.CoreResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coreResourceSpec.Deserialize(value["CoreResourceSpec"]);
@@ -95,7 +95,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["TaskCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.TaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.TaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskCount = value["TaskCount"].GetInt64();
         m_taskCountHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["CommonCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.CommonCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.CommonCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_commonCount = value["CommonCount"].GetInt64();
         m_commonCountHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["TaskResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.TaskResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.TaskResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskResourceSpec.Deserialize(value["TaskResourceSpec"]);
@@ -132,7 +132,7 @@ CoreInternalOutcome JobFlowResourceSpec::Deserialize(const rapidjson::Value &val
     {
         if (!value["CommonResourceSpec"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `JobFlowResourceSpec.CommonResourceSpec` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobFlowResourceSpec.CommonResourceSpec` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_commonResourceSpec.Deserialize(value["CommonResourceSpec"]);

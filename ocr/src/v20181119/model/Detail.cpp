@@ -35,7 +35,7 @@ CoreInternalOutcome Detail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Detail.Result` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Detail.Result` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_result = value["Result"].GetInt64();
         m_resultHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Detail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Detail.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Detail.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;

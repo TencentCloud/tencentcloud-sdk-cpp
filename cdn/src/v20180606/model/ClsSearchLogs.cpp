@@ -36,7 +36,7 @@ CoreInternalOutcome ClsSearchLogs::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Context"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsSearchLogs.Context` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsSearchLogs.Context` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_context = string(value["Context"].GetString());
         m_contextHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ClsSearchLogs::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Listover"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClsSearchLogs.Listover` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsSearchLogs.Listover` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_listover = value["Listover"].GetBool();
         m_listoverHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ClsSearchLogs::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Results") && !value["Results"].IsNull())
     {
         if (!value["Results"].IsArray())
-            return CoreInternalOutcome(Error("response `ClsSearchLogs.Results` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClsSearchLogs.Results` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Results"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -51,7 +51,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtaVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.OtaVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.OtaVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_otaVersion = string(value["OtaVersion"].GetString());
         m_otaVersionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PubStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.PubStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.PubStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pubStatus = value["PubStatus"].GetUint64();
         m_pubStatusHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.VersionUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.VersionUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionUrl = string(value["VersionUrl"].GetString());
         m_versionUrlHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetUint64();
         m_fileSizeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Md5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.Md5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.Md5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5 = string(value["Md5"].GetString());
         m_md5HasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OldVersions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.OldVersions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.OldVersions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldVersions = string(value["OldVersions"].GetString());
         m_oldVersionsHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tids"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.Tids` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.Tids` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tids = string(value["Tids"].GetString());
         m_tidsHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GrayValue"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.GrayValue` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.GrayValue` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_grayValue = value["GrayValue"].GetUint64();
         m_grayValueHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.PublishTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.PublishTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_publishTime = value["PublishTime"].GetUint64();
         m_publishTimeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActiveCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.ActiveCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.ActiveCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activeCount = value["ActiveCount"].GetInt64();
         m_activeCountHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OnlineCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.OnlineCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.OnlineCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_onlineCount = value["OnlineCount"].GetInt64();
         m_onlineCountHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UploadTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.UploadTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.UploadTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uploadTime = value["UploadTime"].GetUint64();
         m_uploadTimeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTimes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.ModifyTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.ModifyTimes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTimes = value["ModifyTimes"].GetUint64();
         m_modifyTimesHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionData.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Contents"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VersionData.Contents` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.Contents` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_contents.Deserialize(value["Contents"]);
@@ -228,7 +228,7 @@ CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AliveInMonthCnt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VersionData.AliveInMonthCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionData.AliveInMonthCnt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_aliveInMonthCnt = value["AliveInMonthCnt"].GetUint64();
         m_aliveInMonthCntHasBeenSet = true;

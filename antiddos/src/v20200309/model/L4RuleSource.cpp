@@ -35,7 +35,7 @@ CoreInternalOutcome L4RuleSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L4RuleSource.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleSource.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome L4RuleSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4RuleSource.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4RuleSource.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;

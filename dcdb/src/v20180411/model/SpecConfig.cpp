@@ -35,7 +35,7 @@ CoreInternalOutcome SpecConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Machine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecConfig.Machine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfig.Machine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machine = string(value["Machine"].GetString());
         m_machineHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SpecConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SpecConfigInfos") && !value["SpecConfigInfos"].IsNull())
     {
         if (!value["SpecConfigInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `SpecConfig.SpecConfigInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SpecConfig.SpecConfigInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SpecConfigInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

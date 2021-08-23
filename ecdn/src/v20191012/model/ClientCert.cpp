@@ -37,7 +37,7 @@ CoreInternalOutcome ClientCert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Certificate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientCert.Certificate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientCert.Certificate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificate = string(value["Certificate"].GetString());
         m_certificateHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ClientCert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientCert.CertName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientCert.CertName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certName = string(value["CertName"].GetString());
         m_certNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ClientCert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientCert.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientCert.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ClientCert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeployTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientCert.DeployTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientCert.DeployTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deployTime = string(value["DeployTime"].GetString());
         m_deployTimeHasBeenSet = true;

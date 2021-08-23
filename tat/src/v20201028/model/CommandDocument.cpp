@@ -38,7 +38,7 @@ CoreInternalOutcome CommandDocument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommandDocument.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandDocument.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CommandDocument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommandType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommandDocument.CommandType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandDocument.CommandType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commandType = string(value["CommandType"].GetString());
         m_commandTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CommandDocument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CommandDocument.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandDocument.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetUint64();
         m_timeoutHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CommandDocument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkingDirectory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommandDocument.WorkingDirectory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandDocument.WorkingDirectory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workingDirectory = string(value["WorkingDirectory"].GetString());
         m_workingDirectoryHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CommandDocument::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommandDocument.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommandDocument.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;

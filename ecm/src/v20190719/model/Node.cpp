@@ -41,7 +41,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Node.ZoneInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.ZoneInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_zoneInfo.Deserialize(value["ZoneInfo"]);
@@ -58,7 +58,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Country"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Node.Country` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.Country` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_country.Deserialize(value["Country"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Node.Area` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.Area` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_area.Deserialize(value["Area"]);
@@ -92,7 +92,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Node.Province` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.Province` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_province.Deserialize(value["Province"]);
@@ -109,7 +109,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Node.City` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.City` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_city.Deserialize(value["City"]);
@@ -126,7 +126,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Node.RegionInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.RegionInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_regionInfo.Deserialize(value["RegionInfo"]);
@@ -142,7 +142,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ISPSet") && !value["ISPSet"].IsNull())
     {
         if (!value["ISPSet"].IsArray())
-            return CoreInternalOutcome(Error("response `Node.ISPSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Node.ISPSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ISPSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -163,7 +163,7 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ISPNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Node.ISPNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Node.ISPNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_iSPNum = value["ISPNum"].GetInt64();
         m_iSPNumHasBeenSet = true;

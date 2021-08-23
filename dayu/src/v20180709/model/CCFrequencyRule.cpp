@@ -42,7 +42,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CCFrequencyRuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.CCFrequencyRuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.CCFrequencyRuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cCFrequencyRuleId = string(value["CCFrequencyRuleId"].GetString());
         m_cCFrequencyRuleIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uri"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.Uri` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.Uri` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uri = string(value["Uri"].GetString());
         m_uriHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAgent = string(value["UserAgent"].GetString());
         m_userAgentHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cookie"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.Cookie` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.Cookie` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cookie = string(value["Cookie"].GetString());
         m_cookieHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(value["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.ReqNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.ReqNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reqNumber = value["ReqNumber"].GetUint64();
         m_reqNumberHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Act"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.Act` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.Act` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_act = string(value["Act"].GetString());
         m_actHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExeDuration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCFrequencyRule.ExeDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCFrequencyRule.ExeDuration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_exeDuration = value["ExeDuration"].GetUint64();
         m_exeDurationHasBeenSet = true;

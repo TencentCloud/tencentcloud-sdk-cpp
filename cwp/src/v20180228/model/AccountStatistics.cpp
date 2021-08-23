@@ -35,7 +35,7 @@ CoreInternalOutcome AccountStatistics::Deserialize(const rapidjson::Value &value
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountStatistics.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountStatistics.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AccountStatistics::Deserialize(const rapidjson::Value &value
     {
         if (!value["MachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccountStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineNum = value["MachineNum"].GetUint64();
         m_machineNumHasBeenSet = true;

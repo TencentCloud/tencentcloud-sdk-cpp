@@ -37,7 +37,7 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const rapidjson::Value &va
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryTotal.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const rapidjson::Value &va
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryTotal.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const rapidjson::Value &va
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryTotal.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const rapidjson::Value &va
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryTotal.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;

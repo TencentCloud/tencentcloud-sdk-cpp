@@ -36,7 +36,7 @@ CoreInternalOutcome PresetTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PresetTagInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetTagInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PresetTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PresetTagInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetTagInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PresetTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentTagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PresetTagInfo.ParentTagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetTagInfo.ParentTagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentTagId = string(value["ParentTagId"].GetString());
         m_parentTagIdHasBeenSet = true;

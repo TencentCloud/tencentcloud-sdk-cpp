@@ -36,7 +36,7 @@ CoreInternalOutcome LoadBalancerHealth::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerHealth.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerHealth.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome LoadBalancerHealth::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LoadBalancerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoadBalancerHealth.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerHealth.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerName = string(value["LoadBalancerName"].GetString());
         m_loadBalancerNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome LoadBalancerHealth::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Listeners") && !value["Listeners"].IsNull())
     {
         if (!value["Listeners"].IsArray())
-            return CoreInternalOutcome(Error("response `LoadBalancerHealth.Listeners` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerHealth.Listeners` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Listeners"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

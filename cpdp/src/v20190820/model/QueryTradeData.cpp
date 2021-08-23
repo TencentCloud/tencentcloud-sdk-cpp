@@ -50,7 +50,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeFileId = string(value["TradeFileId"].GetString());
         m_tradeFileIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeOrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeOrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeOrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeOrderId = string(value["TradeOrderId"].GetString());
         m_tradeOrderIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.FailReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failReason = string(value["FailReason"].GetString());
         m_failReasonHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerId = string(value["PayerId"].GetString());
         m_payerIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayeeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.PayeeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.PayeeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payeeName = string(value["PayeeName"].GetString());
         m_payeeNameHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayeeCountryCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.PayeeCountryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.PayeeCountryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payeeCountryCode = string(value["PayeeCountryCode"].GetString());
         m_payeeCountryCodeHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeType = string(value["TradeType"].GetString());
         m_tradeTypeHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeTime = string(value["TradeTime"].GetString());
         m_tradeTimeHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeCurrency = string(value["TradeCurrency"].GetString());
         m_tradeCurrencyHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeAmount = string(value["TradeAmount"].GetString());
         m_tradeAmountHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeName = string(value["TradeName"].GetString());
         m_tradeNameHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.TradeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.TradeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tradeCount = value["TradeCount"].GetInt64();
         m_tradeCountHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GoodsCarrier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.GoodsCarrier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.GoodsCarrier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_goodsCarrier = string(value["GoodsCarrier"].GetString());
         m_goodsCarrierHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceDetail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.ServiceDetail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.ServiceDetail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceDetail = string(value["ServiceDetail"].GetString());
         m_serviceDetailHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome QueryTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeData.ServiceTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeData.ServiceTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTime = string(value["ServiceTime"].GetString());
         m_serviceTimeHasBeenSet = true;

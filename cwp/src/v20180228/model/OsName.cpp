@@ -35,7 +35,7 @@ CoreInternalOutcome OsName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsName.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsName.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OsName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineOSType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OsName.MachineOSType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsName.MachineOSType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineOSType = value["MachineOSType"].GetUint64();
         m_machineOSTypeHasBeenSet = true;

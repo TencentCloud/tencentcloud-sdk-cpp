@@ -37,7 +37,7 @@ CoreInternalOutcome ReviewDataTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MainTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReviewDataTaskInfo.MainTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReviewDataTaskInfo.MainTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mainTaskId = string(value["MainTaskId"].GetString());
         m_mainTaskIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ReviewDataTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SubTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReviewDataTaskInfo.SubTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReviewDataTaskInfo.SubTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subTaskId = string(value["SubTaskId"].GetString());
         m_subTaskIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ReviewDataTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReviewDataTaskInfo.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReviewDataTaskInfo.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ReviewDataTaskInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReviewDataTaskInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReviewDataTaskInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;

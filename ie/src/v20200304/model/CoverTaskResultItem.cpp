@@ -35,7 +35,7 @@ CoreInternalOutcome CoverTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CoverTaskResultItem.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverTaskResultItem.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CoverTaskResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CoverTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

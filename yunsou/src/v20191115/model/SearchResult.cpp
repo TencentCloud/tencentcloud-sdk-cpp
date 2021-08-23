@@ -40,7 +40,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CostTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.CostTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.CostTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_costTime = value["CostTime"].GetUint64();
         m_costTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisplayNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.DisplayNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.DisplayNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_displayNum = value["DisplayNum"].GetUint64();
         m_displayNumHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Echo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.Echo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Echo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_echo = string(value["Echo"].GetString());
         m_echoHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EResultNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.EResultNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.EResultNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eResultNum = value["EResultNum"].GetUint64();
         m_eResultNumHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.ResultNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.ResultNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultNum = value["ResultNum"].GetUint64();
         m_resultNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResultList") && !value["ResultList"].IsNull())
     {
         if (!value["ResultList"].IsArray())
-            return CoreInternalOutcome(Error("response `SearchResult.ResultList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.ResultList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SegList") && !value["SegList"].IsNull())
     {
         if (!value["SegList"].IsArray())
-            return CoreInternalOutcome(Error("response `SearchResult.SegList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.SegList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const rapidjson
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailLanguageResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailLanguageResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const rapidjson
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailLanguageResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailLanguageResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const rapidjson
     {
         if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailLanguageResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailLanguageResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const rapidjson
     {
         if (!value["EndTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailLanguageResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailLanguageResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetDouble();
         m_endTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const rapidjson
     {
         if (!value["SubLabelCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailLanguageResult.SubLabelCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailLanguageResult.SubLabelCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subLabelCode = string(value["SubLabelCode"].GetString());
         m_subLabelCodeHasBeenSet = true;

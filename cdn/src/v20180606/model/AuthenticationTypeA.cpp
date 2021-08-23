@@ -38,7 +38,7 @@ CoreInternalOutcome AuthenticationTypeA::Deserialize(const rapidjson::Value &val
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeA.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeA.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AuthenticationTypeA::Deserialize(const rapidjson::Value &val
     {
         if (!value["SignParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeA.SignParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeA.SignParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signParam = string(value["SignParam"].GetString());
         m_signParamHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AuthenticationTypeA::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeA.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeA.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetInt64();
         m_expireTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AuthenticationTypeA::Deserialize(const rapidjson::Value &val
     if (value.HasMember("FileExtensions") && !value["FileExtensions"].IsNull())
     {
         if (!value["FileExtensions"].IsArray())
-            return CoreInternalOutcome(Error("response `AuthenticationTypeA.FileExtensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeA.FileExtensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileExtensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome AuthenticationTypeA::Deserialize(const rapidjson::Value &val
     {
         if (!value["FilterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthenticationTypeA.FilterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthenticationTypeA.FilterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = string(value["FilterType"].GetString());
         m_filterTypeHasBeenSet = true;

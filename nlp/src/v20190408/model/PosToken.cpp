@@ -37,7 +37,7 @@ CoreInternalOutcome PosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PosToken.Word` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PosToken.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_word = string(value["Word"].GetString());
         m_wordHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Length"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PosToken.Length` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PosToken.Length` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_length = value["Length"].GetInt64();
         m_lengthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginOffset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PosToken.BeginOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PosToken.BeginOffset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_beginOffset = value["BeginOffset"].GetInt64();
         m_beginOffsetHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PosToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PosToken.Pos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PosToken.Pos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pos = string(value["Pos"].GetString());
         m_posHasBeenSet = true;

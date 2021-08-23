@@ -35,7 +35,7 @@ CoreInternalOutcome TextFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextFile.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextFile.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TextFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Regex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextFile.Regex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextFile.Regex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regex = string(value["Regex"].GetString());
         m_regexHasBeenSet = true;

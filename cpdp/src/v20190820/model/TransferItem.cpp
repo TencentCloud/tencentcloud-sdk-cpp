@@ -44,7 +44,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InAcctType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.InAcctType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.InAcctType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inAcctType = string(value["InAcctType"].GetString());
         m_inAcctTypeHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranNetMemberCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranNetMemberCode = string(value["TranNetMemberCode"].GetString());
         m_tranNetMemberCodeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctNo = string(value["SubAcctNo"].GetString());
         m_subAcctNoHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.TranAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.TranAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranAmt = string(value["TranAmt"].GetString());
         m_tranAmtHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.InAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.InAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inAcctNo = string(value["InAcctNo"].GetString());
         m_inAcctNoHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InAcctName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.InAcctName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.InAcctName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inAcctName = string(value["InAcctName"].GetString());
         m_inAcctNameHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ccy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.Ccy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.Ccy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccy = string(value["Ccy"].GetString());
         m_ccyHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountingDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.AccountingDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.AccountingDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountingDate = string(value["AccountingDate"].GetString());
         m_accountingDateHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BankName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.BankName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.BankName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bankName = string(value["BankName"].GetString());
         m_bankNameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TransferItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrontSeqNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferItem.FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferItem.FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frontSeqNo = string(value["FrontSeqNo"].GetString());
         m_frontSeqNoHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ListFile"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingTaskResult.ListFile` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTaskResult.ListFile` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_listFile.Deserialize(value["ListFile"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ResultCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingTaskResult.ResultCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTaskResult.ResultCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCount = value["ResultCount"].GetInt64();
         m_resultCountHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["FirstFile"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingTaskResult.FirstFile` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTaskResult.FirstFile` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_firstFile.Deserialize(value["FirstFile"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["LastFile"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingTaskResult.LastFile` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTaskResult.LastFile` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_lastFile.Deserialize(value["LastFile"]);

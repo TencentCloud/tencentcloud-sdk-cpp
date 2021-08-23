@@ -35,7 +35,7 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Popular") && !value["Popular"].IsNull())
     {
         if (!value["Popular"].IsArray())
-            return CoreInternalOutcome(Error("response `EntityRelationSubject.Popular` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EntityRelationSubject.Popular` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Popular"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Id") && !value["Id"].IsNull())
     {
         if (!value["Id"].IsArray())
-            return CoreInternalOutcome(Error("response `EntityRelationSubject.Id` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EntityRelationSubject.Id` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Id"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
         if (!value["Name"].IsArray())
-            return CoreInternalOutcome(Error("response `EntityRelationSubject.Name` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EntityRelationSubject.Name` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Name"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

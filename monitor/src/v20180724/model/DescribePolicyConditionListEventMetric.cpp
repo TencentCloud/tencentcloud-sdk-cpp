@@ -37,7 +37,7 @@ CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const ra
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListEventMetric.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListEventMetric.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const ra
     {
         if (!value["EventShowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListEventMetric.EventShowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListEventMetric.EventShowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventShowName = string(value["EventShowName"].GetString());
         m_eventShowNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const ra
     {
         if (!value["NeedRecovered"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListEventMetric.NeedRecovered` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListEventMetric.NeedRecovered` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_needRecovered = value["NeedRecovered"].GetBool();
         m_needRecoveredHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const ra
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListEventMetric.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListEventMetric.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ServiceSubDomainMappings::Deserialize(const rapidjson::Value
     {
         if (!value["IsDefaultMapping"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceSubDomainMappings.IsDefaultMapping` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSubDomainMappings.IsDefaultMapping` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultMapping = value["IsDefaultMapping"].GetBool();
         m_isDefaultMappingHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ServiceSubDomainMappings::Deserialize(const rapidjson::Value
     if (value.HasMember("PathMappingSet") && !value["PathMappingSet"].IsNull())
     {
         if (!value["PathMappingSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceSubDomainMappings.PathMappingSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceSubDomainMappings.PathMappingSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PathMappingSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

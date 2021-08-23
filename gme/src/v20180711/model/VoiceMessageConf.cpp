@@ -35,7 +35,7 @@ CoreInternalOutcome VoiceMessageConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceMessageConf.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceMessageConf.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VoiceMessageConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Language"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceMessageConf.Language` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceMessageConf.Language` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_language = string(value["Language"].GetString());
         m_languageHasBeenSet = true;

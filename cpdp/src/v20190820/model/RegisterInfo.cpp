@@ -39,7 +39,7 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LegalPersonIdCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisterInfo.LegalPersonIdCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.LegalPersonIdCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPersonIdCode = string(value["LegalPersonIdCode"].GetString());
         m_legalPersonIdCodeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LegalPersonIdType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisterInfo.LegalPersonIdType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.LegalPersonIdType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPersonIdType = string(value["LegalPersonIdType"].GetString());
         m_legalPersonIdTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LegalPersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisterInfo.LegalPersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.LegalPersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPersonName = string(value["LegalPersonName"].GetString());
         m_legalPersonNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisterInfo.OrganizationCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.OrganizationCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationCode = string(value["OrganizationCode"].GetString());
         m_organizationCodeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisterInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationName = string(value["OrganizationName"].GetString());
         m_organizationNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrganizationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegisterInfo.OrganizationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.OrganizationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_organizationType = string(value["OrganizationType"].GetString());
         m_organizationTypeHasBeenSet = true;

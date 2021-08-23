@@ -39,7 +39,7 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Num"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaticInfo.Num` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Num` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_num = value["Num"].GetInt64();
         m_numHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticInfo.InsID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.InsID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_insID = string(value["InsID"].GetString());
         m_insIDHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticInfo.InsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.InsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_insName = string(value["InsName"].GetString());
         m_insNameHasBeenSet = true;

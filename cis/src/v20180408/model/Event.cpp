@@ -39,7 +39,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstSeen"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.FirstSeen` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.FirstSeen` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstSeen = string(value["FirstSeen"].GetString());
         m_firstSeenHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastSeen"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.LastSeen` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.LastSeen` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastSeen = string(value["LastSeen"].GetString());
         m_lastSeenHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.Count` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Count` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_count = string(value["Count"].GetString());
         m_countHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

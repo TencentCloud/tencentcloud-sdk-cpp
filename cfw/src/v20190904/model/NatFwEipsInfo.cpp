@@ -36,7 +36,7 @@ CoreInternalOutcome NatFwEipsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Eip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwEipsInfo.Eip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwEipsInfo.Eip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eip = string(value["Eip"].GetString());
         m_eipHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NatFwEipsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwEipsInfo.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwEipsInfo.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayId = string(value["NatGatewayId"].GetString());
         m_natGatewayIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NatFwEipsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwEipsInfo.NatGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwEipsInfo.NatGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayName = string(value["NatGatewayName"].GetString());
         m_natGatewayNameHasBeenSet = true;

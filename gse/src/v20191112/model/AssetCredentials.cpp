@@ -36,7 +36,7 @@ CoreInternalOutcome AssetCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetCredentials.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetCredentials.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretId = string(value["TmpSecretId"].GetString());
         m_tmpSecretIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AssetCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetCredentials.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetCredentials.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretKey = string(value["TmpSecretKey"].GetString());
         m_tmpSecretKeyHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AssetCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetCredentials.Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetCredentials.Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(value["Token"].GetString());
         m_tokenHasBeenSet = true;

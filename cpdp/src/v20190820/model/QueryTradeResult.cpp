@@ -35,7 +35,7 @@ CoreInternalOutcome QueryTradeResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeResult.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeResult.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome QueryTradeResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryTradeResult.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTradeResult.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;

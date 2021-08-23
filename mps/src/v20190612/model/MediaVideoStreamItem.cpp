@@ -41,7 +41,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["ColorPrimaries"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.ColorPrimaries` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.ColorPrimaries` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_colorPrimaries = string(value["ColorPrimaries"].GetString());
         m_colorPrimariesHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["ColorSpace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.ColorSpace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.ColorSpace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_colorSpace = string(value["ColorSpace"].GetString());
         m_colorSpaceHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["ColorTransfer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.ColorTransfer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.ColorTransfer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_colorTransfer = string(value["ColorTransfer"].GetString());
         m_colorTransferHasBeenSet = true;

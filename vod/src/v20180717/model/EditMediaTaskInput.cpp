@@ -36,7 +36,7 @@ CoreInternalOutcome EditMediaTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InputType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskInput.InputType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskInput.InputType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputType = string(value["InputType"].GetString());
         m_inputTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome EditMediaTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("FileInfoSet") && !value["FileInfoSet"].IsNull())
     {
         if (!value["FileInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `EditMediaTaskInput.FileInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskInput.FileInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome EditMediaTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("StreamInfoSet") && !value["StreamInfoSet"].IsNull())
     {
         if (!value["StreamInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `EditMediaTaskInput.StreamInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskInput.StreamInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StreamInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

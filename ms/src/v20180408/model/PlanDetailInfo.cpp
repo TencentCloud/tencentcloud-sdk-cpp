@@ -37,7 +37,7 @@ CoreInternalOutcome PlanDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanDetailInfo.IsDefault` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanDetailInfo.IsDefault` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetUint64();
         m_isDefaultHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PlanDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlanId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanDetailInfo.PlanId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanDetailInfo.PlanId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_planId = value["PlanId"].GetUint64();
         m_planIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PlanDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlanName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlanDetailInfo.PlanName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanDetailInfo.PlanName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_planName = string(value["PlanName"].GetString());
         m_planNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PlanDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlanInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PlanDetailInfo.PlanInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanDetailInfo.PlanInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_planInfo.Deserialize(value["PlanInfo"]);

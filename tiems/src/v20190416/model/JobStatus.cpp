@@ -39,7 +39,7 @@ CoreInternalOutcome JobStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome JobStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome JobStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredWorkers"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `JobStatus.DesiredWorkers` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobStatus.DesiredWorkers` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredWorkers = value["DesiredWorkers"].GetUint64();
         m_desiredWorkersHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome JobStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentWorkers"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `JobStatus.CurrentWorkers` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobStatus.CurrentWorkers` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_currentWorkers = value["CurrentWorkers"].GetUint64();
         m_currentWorkersHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome JobStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Replicas") && !value["Replicas"].IsNull())
     {
         if (!value["Replicas"].IsArray())
-            return CoreInternalOutcome(Error("response `JobStatus.Replicas` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JobStatus.Replicas` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Replicas"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome JobStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReplicaInfos") && !value["ReplicaInfos"].IsNull())
     {
         if (!value["ReplicaInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `JobStatus.ReplicaInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `JobStatus.ReplicaInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReplicaInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

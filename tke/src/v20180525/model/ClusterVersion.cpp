@@ -35,7 +35,7 @@ CoreInternalOutcome ClusterVersion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterVersion.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterVersion.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ClusterVersion::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Versions") && !value["Versions"].IsNull())
     {
         if (!value["Versions"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterVersion.Versions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterVersion.Versions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Versions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

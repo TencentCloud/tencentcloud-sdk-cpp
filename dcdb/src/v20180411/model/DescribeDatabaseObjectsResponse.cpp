@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     {
         if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(rsp["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     {
         if (!rsp["DbName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbName = string(rsp["DbName"].GetString());
         m_dbNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     if (rsp.HasMember("Tables") && !rsp["Tables"].IsNull())
     {
         if (!rsp["Tables"].IsArray())
-            return CoreInternalOutcome(Error("response `Tables` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tables` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tables"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     if (rsp.HasMember("Views") && !rsp["Views"].IsNull())
     {
         if (!rsp["Views"].IsArray())
-            return CoreInternalOutcome(Error("response `Views` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Views` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Views"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -130,7 +130,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     if (rsp.HasMember("Procs") && !rsp["Procs"].IsNull())
     {
         if (!rsp["Procs"].IsArray())
-            return CoreInternalOutcome(Error("response `Procs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Procs` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Procs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     if (rsp.HasMember("Funcs") && !rsp["Funcs"].IsNull())
     {
         if (!rsp["Funcs"].IsArray())
-            return CoreInternalOutcome(Error("response `Funcs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Funcs` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Funcs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

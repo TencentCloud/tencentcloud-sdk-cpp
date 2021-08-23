@@ -35,7 +35,7 @@ CoreInternalOutcome ScanVoiceResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanVoiceResult.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanVoiceResult.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(value["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScanVoiceResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanVoiceResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanVoiceResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;

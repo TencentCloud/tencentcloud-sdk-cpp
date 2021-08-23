@@ -36,7 +36,7 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
     if (value.HasMember("Business") && !value["Business"].IsNull())
     {
         if (!value["Business"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.Business` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryConditionValue.Business` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Business"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
     if (value.HasMember("Project") && !value["Project"].IsNull())
     {
         if (!value["Project"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.Project` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryConditionValue.Project` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Project"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
     if (value.HasMember("Region") && !value["Region"].IsNull())
     {
         if (!value["Region"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.Region` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryConditionValue.Region` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Region"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -96,7 +96,7 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
     if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
     {
         if (!value["PayMode"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.PayMode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryConditionValue.PayMode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PayMode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

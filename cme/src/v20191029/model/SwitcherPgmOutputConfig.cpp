@@ -38,7 +38,7 @@ CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SwitcherPgmOutputConfig.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherPgmOutputConfig.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitcherPgmOutputConfig.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherPgmOutputConfig.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitcherPgmOutputConfig.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherPgmOutputConfig.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["Fps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitcherPgmOutputConfig.Fps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherPgmOutputConfig.Fps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetUint64();
         m_fpsHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["BitRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SwitcherPgmOutputConfig.BitRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SwitcherPgmOutputConfig.BitRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bitRate = value["BitRate"].GetUint64();
         m_bitRateHasBeenSet = true;

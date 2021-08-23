@@ -38,7 +38,7 @@ CoreInternalOutcome HLFunction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableFaceDetect"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HLFunction.EnableFaceDetect` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HLFunction.EnableFaceDetect` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableFaceDetect = value["EnableFaceDetect"].GetBool();
         m_enableFaceDetectHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome HLFunction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableFaceExpression"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HLFunction.EnableFaceExpression` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HLFunction.EnableFaceExpression` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableFaceExpression = value["EnableFaceExpression"].GetBool();
         m_enableFaceExpressionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome HLFunction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableFaceIdent"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HLFunction.EnableFaceIdent` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HLFunction.EnableFaceIdent` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableFaceIdent = value["EnableFaceIdent"].GetBool();
         m_enableFaceIdentHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome HLFunction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableKeywordWonderfulTime"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HLFunction.EnableKeywordWonderfulTime` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HLFunction.EnableKeywordWonderfulTime` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableKeywordWonderfulTime = value["EnableKeywordWonderfulTime"].GetBool();
         m_enableKeywordWonderfulTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome HLFunction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableSmileWonderfulTime"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HLFunction.EnableSmileWonderfulTime` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HLFunction.EnableSmileWonderfulTime` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableSmileWonderfulTime = value["EnableSmileWonderfulTime"].GetBool();
         m_enableSmileWonderfulTimeHasBeenSet = true;

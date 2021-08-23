@@ -36,7 +36,7 @@ CoreInternalOutcome HttpCodeValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpCodeValue.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpCodeValue.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome HttpCodeValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Numbers"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HttpCodeValue.Numbers` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpCodeValue.Numbers` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_numbers = value["Numbers"].GetUint64();
         m_numbersHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome HttpCodeValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percentage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HttpCodeValue.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpCodeValue.Percentage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percentage = value["Percentage"].GetDouble();
         m_percentageHasBeenSet = true;

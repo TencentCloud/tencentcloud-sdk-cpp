@@ -37,7 +37,7 @@ CoreInternalOutcome SlaveInstanceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlaveInstanceInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveInstanceInfo.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SlaveInstanceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlaveInstanceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveInstanceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SlaveInstanceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlaveInstanceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveInstanceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SlaveInstanceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlaveInstanceInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveInstanceInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

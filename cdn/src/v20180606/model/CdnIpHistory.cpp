@@ -35,7 +35,7 @@ CoreInternalOutcome CdnIpHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIpHistory.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIpHistory.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CdnIpHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Datetime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdnIpHistory.Datetime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdnIpHistory.Datetime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_datetime = string(value["Datetime"].GetString());
         m_datetimeHasBeenSet = true;

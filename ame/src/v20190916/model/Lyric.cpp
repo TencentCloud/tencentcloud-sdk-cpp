@@ -36,7 +36,7 @@ CoreInternalOutcome Lyric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Lyric.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lyric.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Lyric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileNameExt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Lyric.FileNameExt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lyric.FileNameExt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileNameExt = string(value["FileNameExt"].GetString());
         m_fileNameExtHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Lyric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubItemType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Lyric.SubItemType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Lyric.SubItemType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subItemType = string(value["SubItemType"].GetString());
         m_subItemTypeHasBeenSet = true;

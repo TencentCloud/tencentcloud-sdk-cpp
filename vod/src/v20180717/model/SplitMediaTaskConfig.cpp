@@ -37,7 +37,7 @@ CoreInternalOutcome SplitMediaTaskConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskConfig.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskConfig.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SplitMediaTaskConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskConfig.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskConfig.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SplitMediaTaskConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["ProcedureName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskConfig.ProcedureName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskConfig.ProcedureName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procedureName = string(value["ProcedureName"].GetString());
         m_procedureNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SplitMediaTaskConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["OutputConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskConfig.OutputConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskConfig.OutputConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputConfig.Deserialize(value["OutputConfig"]);

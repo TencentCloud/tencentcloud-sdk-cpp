@@ -38,7 +38,7 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["StepNo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateStepDetailInfo.StepNo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateStepDetailInfo.StepNo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepNo = value["StepNo"].GetInt64();
         m_stepNoHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["StepName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateStepDetailInfo.StepName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateStepDetailInfo.StepName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepName = string(value["StepName"].GetString());
         m_stepNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["StepId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateStepDetailInfo.StepId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateStepDetailInfo.StepId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepId = string(value["StepId"].GetString());
         m_stepIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateStepDetailInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateStepDetailInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateStepDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateStepDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;

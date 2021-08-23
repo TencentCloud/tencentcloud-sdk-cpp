@@ -36,7 +36,7 @@ CoreInternalOutcome AttachDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AttachDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachedDiskCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachDetail.AttachedDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachDetail.AttachedDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attachedDiskCount = value["AttachedDiskCount"].GetUint64();
         m_attachedDiskCountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AttachDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAttachCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachDetail.MaxAttachCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachDetail.MaxAttachCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxAttachCount = value["MaxAttachCount"].GetUint64();
         m_maxAttachCountHasBeenSet = true;

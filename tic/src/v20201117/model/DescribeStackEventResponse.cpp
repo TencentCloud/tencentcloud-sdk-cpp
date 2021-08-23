@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["EventId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = string(rsp["EventId"].GetString());
         m_eventIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["VersionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = string(rsp["VersionId"].GetString());
         m_versionIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["StackId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stackId = string(rsp["StackId"].GetString());
         m_stackIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["EventMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventMessage = string(rsp["EventMessage"].GetString());
         m_eventMessageHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeStackEventResponse::Deserialize(const string &payloa
     {
         if (!rsp["ConsoleLog"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsoleLog` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsoleLog` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consoleLog = string(rsp["ConsoleLog"].GetString());
         m_consoleLogHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome ApiVersionArray::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiVersionArray.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiVersionArray.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ApiVersionArray::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiVersionArray.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiVersionArray.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ApiVersionArray::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiVersionArray.PkgVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiVersionArray.PkgVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgVersion = string(value["PkgVersion"].GetString());
         m_pkgVersionHasBeenSet = true;

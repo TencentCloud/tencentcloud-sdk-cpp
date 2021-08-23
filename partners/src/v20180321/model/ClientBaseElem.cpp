@@ -38,7 +38,7 @@ CoreInternalOutcome ClientBaseElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientBaseElem.AgentUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientBaseElem.AgentUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentUin = string(value["AgentUin"].GetString());
         m_agentUinHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ClientBaseElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientBaseElem.ClientUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientBaseElem.ClientUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientUin = string(value["ClientUin"].GetString());
         m_clientUinHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ClientBaseElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientRelateType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientBaseElem.ClientRelateType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientBaseElem.ClientRelateType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clientRelateType = value["ClientRelateType"].GetUint64();
         m_clientRelateTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ClientBaseElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentCooperationMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientBaseElem.AgentCooperationMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientBaseElem.AgentCooperationMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentCooperationMode = value["AgentCooperationMode"].GetUint64();
         m_agentCooperationModeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ClientBaseElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentCountry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientBaseElem.AgentCountry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientBaseElem.AgentCountry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentCountry = string(value["AgentCountry"].GetString());
         m_agentCountryHasBeenSet = true;

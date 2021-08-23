@@ -45,7 +45,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Interval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetUint64();
         m_intervalHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(value["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["District"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.District` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.District` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_district = value["District"].GetInt64();
         m_districtHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.Isp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.Isp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isp = value["Isp"].GetInt64();
         m_ispHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataPoints") && !value["DataPoints"].IsNull())
     {
         if (!value["DataPoints"].IsArray())
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.DataPoints` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.DataPoints` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataPoints"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -148,7 +148,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DistrictName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.DistrictName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.DistrictName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_districtName = string(value["DistrictName"].GetString());
         m_districtNameHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DistrictIspInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DistrictIspInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DistrictIspInfo.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;

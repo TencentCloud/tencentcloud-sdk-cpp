@@ -46,7 +46,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrateId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.MigrateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.MigrateId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_migrateId = value["MigrateId"].GetUint64();
         m_migrateIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.MigrateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.MigrateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_migrateName = string(value["MigrateName"].GetString());
         m_migrateNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.SourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.SourceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = value["SourceType"].GetInt64();
         m_sourceTypeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.CheckFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.CheckFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_checkFlag = value["CheckFlag"].GetUint64();
         m_checkFlagHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome MigrateTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrateDetail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MigrateTask.MigrateDetail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrateTask.MigrateDetail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_migrateDetail.Deserialize(value["MigrateDetail"]);

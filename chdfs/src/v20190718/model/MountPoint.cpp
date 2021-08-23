@@ -41,7 +41,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountPointId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.MountPointId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.MountPointId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPointId = string(value["MountPointId"].GetString());
         m_mountPointIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountPointName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.MountPointName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.MountPointName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPointName = string(value["MountPointName"].GetString());
         m_mountPointNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSystemId = string(value["FileSystemId"].GetString());
         m_fileSystemIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.AccessGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.AccessGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessGroupId = string(value["AccessGroupId"].GetString());
         m_accessGroupIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MountPoint.VpcType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MountPoint.VpcType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcType = value["VpcType"].GetUint64();
         m_vpcTypeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome MidQueryCondition::Deserialize(const rapidjson::Value &value
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MidQueryCondition.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MidQueryCondition.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MidQueryCondition::Deserialize(const rapidjson::Value &value
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MidQueryCondition.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MidQueryCondition.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MidQueryCondition::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsArray())
-            return CoreInternalOutcome(Error("response `MidQueryCondition.Value` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MidQueryCondition.Value` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Value"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

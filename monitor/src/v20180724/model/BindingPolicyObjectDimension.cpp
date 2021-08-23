@@ -37,7 +37,7 @@ CoreInternalOutcome BindingPolicyObjectDimension::Deserialize(const rapidjson::V
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindingPolicyObjectDimension.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindingPolicyObjectDimension.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BindingPolicyObjectDimension::Deserialize(const rapidjson::V
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BindingPolicyObjectDimension.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindingPolicyObjectDimension.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BindingPolicyObjectDimension::Deserialize(const rapidjson::V
     {
         if (!value["Dimensions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindingPolicyObjectDimension.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindingPolicyObjectDimension.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dimensions = string(value["Dimensions"].GetString());
         m_dimensionsHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BindingPolicyObjectDimension::Deserialize(const rapidjson::V
     {
         if (!value["EventDimensions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindingPolicyObjectDimension.EventDimensions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindingPolicyObjectDimension.EventDimensions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventDimensions = string(value["EventDimensions"].GetString());
         m_eventDimensionsHasBeenSet = true;

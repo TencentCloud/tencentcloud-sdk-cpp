@@ -41,7 +41,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataSource"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.DataSource` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.DataSource` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataSource = value["DataSource"].GetInt64();
         m_dataSourceHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModerationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.ModerationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.ModerationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moderationTime = string(value["ModerationTime"].GetString());
         m_moderationTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.UpdateUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.UpdateUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateUser = string(value["UpdateUser"].GetString());
         m_updateUserHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.ContentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.ContentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contentId = string(value["ContentId"].GetString());
         m_contentIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperEvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImsDetail.OperEvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImsDetail.OperEvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_operEvilType = value["OperEvilType"].GetInt64();
         m_operEvilTypeHasBeenSet = true;

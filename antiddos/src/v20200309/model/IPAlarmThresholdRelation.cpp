@@ -36,7 +36,7 @@ CoreInternalOutcome IPAlarmThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["AlarmType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IPAlarmThresholdRelation.AlarmType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPAlarmThresholdRelation.AlarmType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmType = value["AlarmType"].GetUint64();
         m_alarmTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome IPAlarmThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["AlarmThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IPAlarmThresholdRelation.AlarmThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPAlarmThresholdRelation.AlarmThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmThreshold = value["AlarmThreshold"].GetUint64();
         m_alarmThresholdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome IPAlarmThresholdRelation::Deserialize(const rapidjson::Value
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `IPAlarmThresholdRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IPAlarmThresholdRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

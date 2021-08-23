@@ -40,7 +40,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Active"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.Active` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.Active` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_active = value["Active"].GetUint64();
         m_activeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desired"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.Desired` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.Desired` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desired = value["Desired"].GetUint64();
         m_desiredHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Idle"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.Idle` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.Idle` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_idle = value["Idle"].GetUint64();
         m_idleHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxiNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.MaxiNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.MaxiNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxiNum = value["MaxiNum"].GetUint64();
         m_maxiNumHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MiniNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.MiniNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.MiniNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_miniNum = value["MiniNum"].GetUint64();
         m_miniNumHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pending"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.Pending` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.Pending` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pending = value["Pending"].GetUint64();
         m_pendingHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Terminating"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceCounts.Terminating` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceCounts.Terminating` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_terminating = value["Terminating"].GetUint64();
         m_terminatingHasBeenSet = true;

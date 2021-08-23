@@ -37,7 +37,7 @@ CoreInternalOutcome FunctionArg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CptId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FunctionArg.CptId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionArg.CptId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cptId = value["CptId"].GetUint64();
         m_cptIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FunctionArg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Issuer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionArg.Issuer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionArg.Issuer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuer = string(value["Issuer"].GetString());
         m_issuerHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FunctionArg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpirationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionArg.ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionArg.ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expirationDate = string(value["ExpirationDate"].GetString());
         m_expirationDateHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FunctionArg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClaimJson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FunctionArg.ClaimJson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FunctionArg.ClaimJson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_claimJson = string(value["ClaimJson"].GetString());
         m_claimJsonHasBeenSet = true;

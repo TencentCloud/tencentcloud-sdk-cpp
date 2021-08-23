@@ -37,7 +37,7 @@ CoreInternalOutcome StreamLayout::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LayoutParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamLayout.LayoutParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamLayout.LayoutParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_layoutParams.Deserialize(value["LayoutParams"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome StreamLayout::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputStreamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamLayout.InputStreamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamLayout.InputStreamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputStreamId = string(value["InputStreamId"].GetString());
         m_inputStreamIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome StreamLayout::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackgroundColor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamLayout.BackgroundColor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamLayout.BackgroundColor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backgroundColor = string(value["BackgroundColor"].GetString());
         m_backgroundColorHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome StreamLayout::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FillMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StreamLayout.FillMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamLayout.FillMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fillMode = value["FillMode"].GetInt64();
         m_fillModeHasBeenSet = true;

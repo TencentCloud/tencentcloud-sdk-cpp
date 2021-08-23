@@ -36,7 +36,7 @@ CoreInternalOutcome ScdnAclConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScdnAclConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ScriptData") && !value["ScriptData"].IsNull())
     {
         if (!value["ScriptData"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnAclConfig.ScriptData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclConfig.ScriptData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ScriptData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome ScdnAclConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorPage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclConfig.ErrorPage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclConfig.ErrorPage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_errorPage.Deserialize(value["ErrorPage"]);

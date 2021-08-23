@@ -43,16 +43,16 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["IsRenew"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsRenew` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsRenew` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isRenew = rsp["IsRenew"].GetBool();
         m_isRenewHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["ServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceId = string(rsp["ServiceId"].GetString());
         m_serviceIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["StorageRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageRegion = string(rsp["StorageRegion"].GetString());
         m_storageRegionHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(rsp["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["ChnNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChnNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChnNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_chnNum = rsp["ChnNum"].GetInt64();
         m_chnNumHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["AccessId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessId = string(rsp["AccessId"].GetString());
         m_accessIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = rsp["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = rsp["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     {
         if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome CreateStorageServiceResponse::Deserialize(const string &payl
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

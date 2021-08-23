@@ -42,7 +42,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ColTl"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextTable.ColTl` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.ColTl` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_colTl = value["ColTl"].GetInt64();
         m_colTlHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RowTl"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextTable.RowTl` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.RowTl` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rowTl = value["RowTl"].GetInt64();
         m_rowTlHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ColBr"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextTable.ColBr` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.ColBr` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_colBr = value["ColBr"].GetInt64();
         m_colBrHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RowBr"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextTable.RowBr` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.RowBr` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rowBr = value["RowBr"].GetInt64();
         m_rowBrHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextTable.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextTable.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextTable.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
     {
         if (!value["Polygon"].IsArray())
-            return CoreInternalOutcome(Error("response `TextTable.Polygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextTable.Polygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Polygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -132,7 +132,7 @@ CoreInternalOutcome TextTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextTable.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextTable.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(value["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;

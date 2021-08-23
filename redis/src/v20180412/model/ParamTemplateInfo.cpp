@@ -37,7 +37,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProductType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.ProductType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.ProductType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_productType = value["ProductType"].GetUint64();
         m_productTypeHasBeenSet = true;

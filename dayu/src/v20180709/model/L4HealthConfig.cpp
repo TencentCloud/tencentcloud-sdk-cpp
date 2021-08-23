@@ -41,7 +41,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirtualPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_virtualPort = value["VirtualPort"].GetUint64();
         m_virtualPortHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.Enable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.Enable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetUint64();
         m_enableHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeOut"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.TimeOut` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.TimeOut` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeOut = value["TimeOut"].GetUint64();
         m_timeOutHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Interval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetUint64();
         m_intervalHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KickNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.KickNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.KickNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kickNum = value["KickNum"].GetUint64();
         m_kickNumHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AliveNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.AliveNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.AliveNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_aliveNum = value["AliveNum"].GetUint64();
         m_aliveNumHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L4HealthConfig.KeepTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L4HealthConfig.KeepTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_keepTime = value["KeepTime"].GetUint64();
         m_keepTimeHasBeenSet = true;

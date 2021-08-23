@@ -37,7 +37,7 @@ CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlaySumInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlaySumInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlaySumInfo.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlaySumInfo.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = value["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TotalRequest"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlaySumInfo.TotalRequest` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlaySumInfo.TotalRequest` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalRequest = value["TotalRequest"].GetUint64();
         m_totalRequestHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AvgFluxPerSecond"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProIspPlaySumInfo.AvgFluxPerSecond` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProIspPlaySumInfo.AvgFluxPerSecond` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgFluxPerSecond = value["AvgFluxPerSecond"].GetDouble();
         m_avgFluxPerSecondHasBeenSet = true;

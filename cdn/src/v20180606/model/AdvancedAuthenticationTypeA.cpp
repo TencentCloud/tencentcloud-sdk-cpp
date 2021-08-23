@@ -44,7 +44,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["SignParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.SignParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.SignParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signParam = string(value["SignParam"].GetString());
         m_signParamHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["TimeParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.TimeParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.TimeParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeParam = string(value["TimeParam"].GetString());
         m_timeParamHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["ExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetInt64();
         m_expireTimeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["ExpireTimeRequired"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.ExpireTimeRequired` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.ExpireTimeRequired` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_expireTimeRequired = value["ExpireTimeRequired"].GetBool();
         m_expireTimeRequiredHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["TimeFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeFormat = string(value["TimeFormat"].GetString());
         m_timeFormatHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["FailCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.FailCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.FailCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_failCode = value["FailCode"].GetInt64();
         m_failCodeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["ExpireCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.ExpireCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.ExpireCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expireCode = value["ExpireCode"].GetInt64();
         m_expireCodeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -147,7 +147,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Va
     {
         if (!value["Transformation"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.Transformation` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeA.Transformation` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transformation = value["Transformation"].GetInt64();
         m_transformationHasBeenSet = true;

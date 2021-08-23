@@ -39,7 +39,7 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskTemplateView.TaskTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskTemplateView.TaskTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskTemplateId = string(value["TaskTemplateId"].GetString());
         m_taskTemplateIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskTemplateView.TaskTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskTemplateView.TaskTemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskTemplateName = string(value["TaskTemplateName"].GetString());
         m_taskTemplateNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTemplateDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskTemplateView.TaskTemplateDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskTemplateView.TaskTemplateDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskTemplateDescription = string(value["TaskTemplateDescription"].GetString());
         m_taskTemplateDescriptionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTemplateInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskTemplateView.TaskTemplateInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskTemplateView.TaskTemplateInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskTemplateInfo.Deserialize(value["TaskTemplateInfo"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskTemplateView.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskTemplateView.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TaskTemplateView::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskTemplateView.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskTemplateView.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

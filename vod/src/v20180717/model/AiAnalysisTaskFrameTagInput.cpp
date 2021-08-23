@@ -34,7 +34,7 @@ CoreInternalOutcome AiAnalysisTaskFrameTagInput::Deserialize(const rapidjson::Va
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AiAnalysisTaskFrameTagInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskFrameTagInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;

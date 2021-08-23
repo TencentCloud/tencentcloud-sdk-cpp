@@ -33,7 +33,7 @@ CoreInternalOutcome IngressRuleValue::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Paths") && !value["Paths"].IsNull())
     {
         if (!value["Paths"].IsArray())
-            return CoreInternalOutcome(Error("response `IngressRuleValue.Paths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IngressRuleValue.Paths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Paths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

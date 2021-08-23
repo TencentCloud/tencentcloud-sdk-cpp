@@ -39,7 +39,7 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Grade"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SymptomInfo.Grade` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Grade` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_grade.Deserialize(value["Grade"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Part"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SymptomInfo.Part` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Part` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_part.Deserialize(value["Part"]);
@@ -72,7 +72,7 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `SymptomInfo.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -86,7 +86,7 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Symptom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SymptomInfo.Symptom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Symptom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_symptom.Deserialize(value["Symptom"]);
@@ -102,7 +102,7 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Attrs") && !value["Attrs"].IsNull())
     {
         if (!value["Attrs"].IsArray())
-            return CoreInternalOutcome(Error("response `SymptomInfo.Attrs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Attrs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Attrs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -123,7 +123,7 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SymptomInfo.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;

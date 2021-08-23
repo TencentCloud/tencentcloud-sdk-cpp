@@ -38,7 +38,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcValue::Deserializ
     {
         if (!value["Default"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcValue.Default` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcValue.Default` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_default = string(value["Default"].GetString());
         m_defaultHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcValue::Deserializ
     {
         if (!value["Fixed"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcValue.Fixed` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcValue.Fixed` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fixed = string(value["Fixed"].GetString());
         m_fixedHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcValue::Deserializ
     {
         if (!value["Max"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcValue.Max` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcValue.Max` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_max = string(value["Max"].GetString());
         m_maxHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcValue::Deserializ
     {
         if (!value["Min"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcValue.Min` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcValue.Min` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_min = string(value["Min"].GetString());
         m_minHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcValue::Deserializ
     {
         if (!value["Need"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcValue.Need` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcValue.Need` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_need = value["Need"].GetBool();
         m_needHasBeenSet = true;

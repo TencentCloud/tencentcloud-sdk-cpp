@@ -45,7 +45,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Places") && !value["Places"].IsNull())
     {
         if (!value["Places"].IsArray())
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.Places` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.Places` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Places"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -85,7 +85,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(value["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsGlobal"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.IsGlobal` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.IsGlobal` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isGlobal = value["IsGlobal"].GetBool();
         m_isGlobalHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.HostIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.HostIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostIp = string(value["HostIp"].GetString());
         m_hostIpHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome LoginWhiteLists::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginWhiteLists.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteLists.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountCreateInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountCreateInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("DBPrivileges") && !value["DBPrivileges"].IsNull())
     {
         if (!value["DBPrivileges"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountCreateInfo.DBPrivileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.DBPrivileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBPrivileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountCreateInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["IsAdmin"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AccountCreateInfo.IsAdmin` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.IsAdmin` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAdmin = value["IsAdmin"].GetBool();
         m_isAdminHasBeenSet = true;

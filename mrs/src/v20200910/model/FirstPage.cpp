@@ -35,7 +35,7 @@ CoreInternalOutcome FirstPage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DischargeDiagnosis") && !value["DischargeDiagnosis"].IsNull())
     {
         if (!value["DischargeDiagnosis"].IsArray())
-            return CoreInternalOutcome(Error("response `FirstPage.DischargeDiagnosis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FirstPage.DischargeDiagnosis` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DischargeDiagnosis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome FirstPage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PathologicalDiagnosis"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FirstPage.PathologicalDiagnosis` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirstPage.PathologicalDiagnosis` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pathologicalDiagnosis.Deserialize(value["PathologicalDiagnosis"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome FirstPage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClinicalDiagnosis"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FirstPage.ClinicalDiagnosis` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirstPage.ClinicalDiagnosis` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clinicalDiagnosis.Deserialize(value["ClinicalDiagnosis"]);

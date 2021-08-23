@@ -35,7 +35,7 @@ CoreInternalOutcome ExternalContractUserInfo::Deserialize(const rapidjson::Value
     {
         if (!value["ExternalUserType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContractUserInfo.ExternalUserType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContractUserInfo.ExternalUserType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalUserType = string(value["ExternalUserType"].GetString());
         m_externalUserTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ExternalContractUserInfo::Deserialize(const rapidjson::Value
     {
         if (!value["ExternalUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContractUserInfo.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContractUserInfo.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalUserId = string(value["ExternalUserId"].GetString());
         m_externalUserIdHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome OperationDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OldInfo") && !value["OldInfo"].IsNull())
     {
         if (!value["OldInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `OperationDetail.OldInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OperationDetail.OldInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OldInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome OperationDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NewInfo") && !value["NewInfo"].IsNull())
     {
         if (!value["NewInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `OperationDetail.NewInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OperationDetail.NewInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NewInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

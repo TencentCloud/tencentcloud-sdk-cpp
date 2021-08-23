@@ -44,7 +44,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsyncContextTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.AsyncContextTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.AsyncContextTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asyncContextTaskId = string(value["AsyncContextTaskId"].GetString());
         m_asyncContextTaskIdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMessage = string(value["ErrorMessage"].GetString());
         m_errorMessageHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgLogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.PkgLogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.PkgLogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgLogId = string(value["PkgLogId"].GetString());
         m_pkgLogIdHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.Time` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.Time` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetInt64();
         m_timeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinishTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.FinishTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.FinishTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = value["FinishTime"].GetInt64();
         m_finishTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome AsyncContextTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsyncSearchTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncContextTask.AsyncSearchTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncContextTask.AsyncSearchTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asyncSearchTaskId = string(value["AsyncSearchTaskId"].GetString());
         m_asyncSearchTaskIdHasBeenSet = true;

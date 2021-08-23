@@ -35,7 +35,7 @@ CoreInternalOutcome ProvincePortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProvincePortrait.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvincePortrait.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ProvincePortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProvincePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvincePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetDouble();
         m_percentHasBeenSet = true;

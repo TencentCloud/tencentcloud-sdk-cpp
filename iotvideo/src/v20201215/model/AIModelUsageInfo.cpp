@@ -36,7 +36,7 @@ CoreInternalOutcome AIModelUsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AIModelUsageInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIModelUsageInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AIModelUsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AIModelUsageInfo.Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIModelUsageInfo.Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetUint64();
         m_totalHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AIModelUsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Used"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AIModelUsageInfo.Used` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIModelUsageInfo.Used` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_used = value["Used"].GetUint64();
         m_usedHasBeenSet = true;

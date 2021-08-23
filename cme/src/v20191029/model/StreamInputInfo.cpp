@@ -37,7 +37,7 @@ CoreInternalOutcome StreamInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamInputInfo.InputType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamInputInfo.InputType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputType = string(value["InputType"].GetString());
         m_inputTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome StreamInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodPullInputInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamInputInfo.VodPullInputInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamInputInfo.VodPullInputInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vodPullInputInfo.Deserialize(value["VodPullInputInfo"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome StreamInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LivePullInputInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamInputInfo.LivePullInputInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamInputInfo.LivePullInputInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_livePullInputInfo.Deserialize(value["LivePullInputInfo"]);
@@ -81,7 +81,7 @@ CoreInternalOutcome StreamInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RtmpPushInputInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamInputInfo.RtmpPushInputInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamInputInfo.RtmpPushInputInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rtmpPushInputInfo.Deserialize(value["RtmpPushInputInfo"]);

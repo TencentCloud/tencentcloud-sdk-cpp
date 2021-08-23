@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     {
         if (!rsp["Acl"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Acl` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_acl.Deserialize(rsp["Acl"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     {
         if (!rsp["Waf"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Waf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Waf` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_waf.Deserialize(rsp["Waf"]);
@@ -105,7 +105,7 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     {
         if (!rsp["CC"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CC` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CC` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cC.Deserialize(rsp["CC"]);
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     {
         if (!rsp["Ddos"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Ddos` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ddos` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ddos.Deserialize(rsp["Ddos"]);
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     {
         if (!rsp["Bot"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Bot` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bot` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bot.Deserialize(rsp["Bot"]);
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeScdnConfigResponse::Deserialize(const string &payloa
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome TaskStepInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Step"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStepInfo.Step` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStepInfo.Step` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_step = string(value["Step"].GetString());
         m_stepHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TaskStepInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LifeState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStepInfo.LifeState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStepInfo.LifeState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifeState = string(value["LifeState"].GetString());
         m_lifeStateHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TaskStepInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStepInfo.StartAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStepInfo.StartAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startAt = string(value["StartAt"].GetString());
         m_startAtHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TaskStepInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStepInfo.EndAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStepInfo.EndAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endAt = string(value["EndAt"].GetString());
         m_endAtHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TaskStepInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailedMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStepInfo.FailedMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStepInfo.FailedMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failedMsg = string(value["FailedMsg"].GetString());
         m_failedMsgHasBeenSet = true;

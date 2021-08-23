@@ -50,7 +50,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.EventId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.EventId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = string(value["EventId"].GetString());
         m_eventIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Username"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.Username` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Username` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_username = string(value["Username"].GetString());
         m_usernameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.EventTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.EventTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventTime = string(value["EventTime"].GetString());
         m_eventTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CloudAuditEvent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.CloudAuditEvent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.CloudAuditEvent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cloudAuditEvent = string(value["CloudAuditEvent"].GetString());
         m_cloudAuditEventHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceTypeCn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.ResourceTypeCn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.ResourceTypeCn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceTypeCn = string(value["ResourceTypeCn"].GetString());
         m_resourceTypeCnHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Event.ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = value["ErrorCode"].GetInt64();
         m_errorCodeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.EventName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.EventName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventName = string(value["EventName"].GetString());
         m_eventNameHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.SecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.SecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretId = string(value["SecretId"].GetString());
         m_secretIdHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventSource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.EventSource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.EventSource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventSource = string(value["EventSource"].GetString());
         m_eventSourceHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.RequestID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.RequestID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestID = string(value["RequestID"].GetString());
         m_requestIDHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceRegion = string(value["ResourceRegion"].GetString());
         m_resourceRegionHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Event.AccountID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.AccountID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_accountID = value["AccountID"].GetInt64();
         m_accountIDHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceIPAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.SourceIPAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.SourceIPAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceIPAddress = string(value["SourceIPAddress"].GetString());
         m_sourceIPAddressHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventNameCn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.EventNameCn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.EventNameCn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventNameCn = string(value["EventNameCn"].GetString());
         m_eventNameCnHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resources"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Event.Resources` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Resources` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resources.Deserialize(value["Resources"]);
@@ -207,7 +207,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.EventRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.EventRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventRegion = string(value["EventRegion"].GetString());
         m_eventRegionHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome Event::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Event.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Event.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;

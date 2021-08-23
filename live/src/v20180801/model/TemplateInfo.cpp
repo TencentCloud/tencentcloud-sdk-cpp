@@ -54,7 +54,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vcodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Vcodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Vcodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vcodec = string(value["Vcodec"].GetString());
         m_vcodecHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoBitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.VideoBitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.VideoBitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_videoBitrate = value["VideoBitrate"].GetInt64();
         m_videoBitrateHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Acodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Acodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Acodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acodec = string(value["Acodec"].GetString());
         m_acodecHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioBitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.AudioBitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AudioBitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_audioBitrate = value["AudioBitrate"].GetInt64();
         m_audioBitrateHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gop"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Gop` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Gop` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gop = value["Gop"].GetInt64();
         m_gopHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rotate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetInt64();
         m_rotateHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Profile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Profile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Profile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_profile = string(value["Profile"].GetString());
         m_profileHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BitrateToOrig"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.BitrateToOrig` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.BitrateToOrig` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrateToOrig = value["BitrateToOrig"].GetInt64();
         m_bitrateToOrigHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeightToOrig"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.HeightToOrig` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.HeightToOrig` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_heightToOrig = value["HeightToOrig"].GetInt64();
         m_heightToOrigHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FpsToOrig"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.FpsToOrig` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.FpsToOrig` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fpsToOrig = value["FpsToOrig"].GetInt64();
         m_fpsToOrigHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedVideo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.NeedVideo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.NeedVideo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needVideo = value["NeedVideo"].GetInt64();
         m_needVideoHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedAudio"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.NeedAudio` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.NeedAudio` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needAudio = value["NeedAudio"].GetInt64();
         m_needAudioHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AiTransCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.AiTransCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AiTransCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_aiTransCode = value["AiTransCode"].GetInt64();
         m_aiTransCodeHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdaptBitratePercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.AdaptBitratePercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AdaptBitratePercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_adaptBitratePercent = value["AdaptBitratePercent"].GetDouble();
         m_adaptBitratePercentHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShortEdgeAsHeight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.ShortEdgeAsHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.ShortEdgeAsHeight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shortEdgeAsHeight = value["ShortEdgeAsHeight"].GetInt64();
         m_shortEdgeAsHeightHasBeenSet = true;

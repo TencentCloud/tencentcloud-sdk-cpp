@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     {
         if (!rsp["ProxyCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_proxyCount = rsp["ProxyCount"].GetInt64();
         m_proxyCountHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     if (rsp.HasMember("Proxy") && !rsp["Proxy"].IsNull())
     {
         if (!rsp["Proxy"].IsArray())
-            return CoreInternalOutcome(Error("response `Proxy` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Proxy` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Proxy"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     {
         if (!rsp["RedisCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_redisCount = rsp["RedisCount"].GetInt64();
         m_redisCountHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     if (rsp.HasMember("Redis") && !rsp["Redis"].IsNull())
     {
         if (!rsp["Redis"].IsArray())
-            return CoreInternalOutcome(Error("response `Redis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Redis` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Redis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -131,7 +131,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     {
         if (!rsp["TendisCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TendisCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TendisCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tendisCount = rsp["TendisCount"].GetInt64();
         m_tendisCountHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     if (rsp.HasMember("Tendis") && !rsp["Tendis"].IsNull())
     {
         if (!rsp["Tendis"].IsArray())
-            return CoreInternalOutcome(Error("response `Tendis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tendis` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tendis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

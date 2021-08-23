@@ -39,7 +39,7 @@ CoreInternalOutcome FileSystemClient::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CfsVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemClient.CfsVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemClient.CfsVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cfsVip = string(value["CfsVip"].GetString());
         m_cfsVipHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome FileSystemClient::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemClient.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemClient.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FileSystemClient::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemClient.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemClient.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FileSystemClient::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemClient.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemClient.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome FileSystemClient::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemClient.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemClient.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome FileSystemClient::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountDirectory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSystemClient.MountDirectory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSystemClient.MountDirectory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountDirectory = string(value["MountDirectory"].GetString());
         m_mountDirectoryHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome IngressRulePath::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressRulePath.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRulePath.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IngressRulePath::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Backend"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `IngressRulePath.Backend` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRulePath.Backend` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_backend.Deserialize(value["Backend"]);

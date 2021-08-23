@@ -38,7 +38,7 @@ CoreInternalOutcome MediaReplacementInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MediaType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaReplacementInfo.MediaType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaReplacementInfo.MediaType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaType = string(value["MediaType"].GetString());
         m_mediaTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MediaReplacementInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaReplacementInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaReplacementInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialId = string(value["MaterialId"].GetString());
         m_materialIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MediaReplacementInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MediaUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaReplacementInfo.MediaUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaReplacementInfo.MediaUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaUrl = string(value["MediaUrl"].GetString());
         m_mediaUrlHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MediaReplacementInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaReplacementInfo.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaReplacementInfo.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MediaReplacementInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["PreprocessOperation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaReplacementInfo.PreprocessOperation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaReplacementInfo.PreprocessOperation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_preprocessOperation.Deserialize(value["PreprocessOperation"]);

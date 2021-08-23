@@ -36,7 +36,7 @@ CoreInternalOutcome PlayerLatency::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerLatency.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerLatency.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerId = string(value["PlayerId"].GetString());
         m_playerIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PlayerLatency::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionIdentifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerLatency.RegionIdentifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerLatency.RegionIdentifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionIdentifier = string(value["RegionIdentifier"].GetString());
         m_regionIdentifierHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PlayerLatency::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatencyInMilliseconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayerLatency.LatencyInMilliseconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerLatency.LatencyInMilliseconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_latencyInMilliseconds = value["LatencyInMilliseconds"].GetUint64();
         m_latencyInMillisecondsHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SSLMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSLMode = string(value["SSLMode"].GetString());
         m_sSLModeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaId = string(value["CertCaId"].GetString());
         m_certCaIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certName = string(value["CertName"].GetString());
         m_certNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certKey = string(value["CertKey"].GetString());
         m_certKeyHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certContent = string(value["CertContent"].GetString());
         m_certContentHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertCaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertCaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaName = string(value["CertCaName"].GetString());
         m_certCaNameHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertificateInput.CertCaContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.CertCaContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaContent = string(value["CertCaContent"].GetString());
         m_certCaContentHasBeenSet = true;

@@ -48,7 +48,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AppId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetInt64();
         m_appIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeletedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.DeletedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.DeletedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deletedTime = string(value["DeletedTime"].GetString());
         m_deletedTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceGrpId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.InstanceGrpId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.InstanceGrpId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGrpId = string(value["InstanceGrpId"].GetString());
         m_instanceGrpIdHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["WanDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.WanDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.WanDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanDomain = string(value["WanDomain"].GetString());
         m_wanDomainHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["WanIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.WanIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.WanIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanIP = string(value["WanIP"].GetString());
         m_wanIPHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["WanPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.WanPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.WanPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wanPort = value["WanPort"].GetInt64();
         m_wanPortHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     {
         if (!value["WanStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.WanStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.WanStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wanStatus = string(value["WanStatus"].GetString());
         m_wanStatusHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("InstanceSet") && !value["InstanceSet"].IsNull())
     {
         if (!value["InstanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CynosdbInstanceGrp.InstanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.InstanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

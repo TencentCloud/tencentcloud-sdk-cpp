@@ -36,7 +36,7 @@ CoreInternalOutcome ChatArchivingMsgTypeVideo::Deserialize(const rapidjson::Valu
     {
         if (!value["PlayLength"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingMsgTypeVideo.PlayLength` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingMsgTypeVideo.PlayLength` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_playLength = value["PlayLength"].GetUint64();
         m_playLengthHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ChatArchivingMsgTypeVideo::Deserialize(const rapidjson::Valu
     {
         if (!value["FileSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingMsgTypeVideo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingMsgTypeVideo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetUint64();
         m_fileSizeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ChatArchivingMsgTypeVideo::Deserialize(const rapidjson::Valu
     {
         if (!value["CosKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChatArchivingMsgTypeVideo.CosKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChatArchivingMsgTypeVideo.CosKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosKey = string(value["CosKey"].GetString());
         m_cosKeyHasBeenSet = true;

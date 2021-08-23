@@ -35,7 +35,7 @@ CoreInternalOutcome AssetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetList.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetList.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AssetList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("List") && !value["List"].IsNull())
     {
         if (!value["List"].IsArray())
-            return CoreInternalOutcome(Error("response `AssetList.List` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AssetList.List` is not array type"));
 
         const rapidjson::Value &tmpValue = value["List"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

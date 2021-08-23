@@ -46,7 +46,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.ItemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.ItemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemId = string(value["ItemId"].GetString());
         m_itemIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppPkgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppPkgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppPkgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appPkgName = string(value["AppPkgName"].GetString());
         m_appPkgNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appVersion = string(value["AppVersion"].GetString());
         m_appVersionHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appMd5 = string(value["AppMd5"].GetString());
         m_appMd5HasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appSize = value["AppSize"].GetUint64();
         m_appSizeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.ScanCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.ScanCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanCode = value["ScanCode"].GetUint64();
         m_scanCodeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = value["TaskStatus"].GetUint64();
         m_taskStatusHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.TaskTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.TaskTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskTime = value["TaskTime"].GetUint64();
         m_taskTimeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppIconUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppIconUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppIconUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appIconUrl = string(value["AppIconUrl"].GetString());
         m_appIconUrlHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppSid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.AppSid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.AppSid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appSid = string(value["AppSid"].GetString());
         m_appSidHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SafeType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.SafeType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.SafeType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_safeType = value["SafeType"].GetUint64();
         m_safeTypeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome AppScanSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppScanSet.VulCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppScanSet.VulCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulCount = value["VulCount"].GetUint64();
         m_vulCountHasBeenSet = true;

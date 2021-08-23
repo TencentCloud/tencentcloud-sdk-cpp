@@ -45,7 +45,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DealId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.DealId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.DealId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dealId = string(value["DealId"].GetString());
         m_dealIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DealName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.DealName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.DealName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dealName = string(value["DealName"].GetString());
         m_dealNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GoodsNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.GoodsNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.GoodsNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_goodsNum = value["GoodsNum"].GetInt64();
         m_goodsNumHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creater"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.Creater` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.Creater` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creater = string(value["Creater"].GetString());
         m_createrHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.CreatTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.CreatTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creatTime = string(value["CreatTime"].GetString());
         m_creatTimeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OverdueTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.OverdueTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.OverdueTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_overdueTime = string(value["OverdueTime"].GetString());
         m_overdueTimeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TradeDealDetail.Price` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.Price` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetInt64();
         m_priceHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceIds") && !value["InstanceIds"].IsNull())
     {
         if (!value["InstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `TradeDealDetail.InstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TradeDealDetail.InstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

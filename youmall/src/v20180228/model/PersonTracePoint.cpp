@@ -41,7 +41,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MallAreaId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.MallAreaId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.MallAreaId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mallAreaId = value["MallAreaId"].GetUint64();
         m_mallAreaIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShopId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.ShopId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.ShopId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = value["ShopId"].GetUint64();
         m_shopIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MallAreaType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.MallAreaType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.MallAreaType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mallAreaType = value["MallAreaType"].GetUint64();
         m_mallAreaTypeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceEventType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.TraceEventType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.TraceEventType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_traceEventType = value["TraceEventType"].GetUint64();
         m_traceEventTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceEventTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.TraceEventTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.TraceEventTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceEventTime = string(value["TraceEventTime"].GetString());
         m_traceEventTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CapPic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.CapPic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.CapPic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_capPic = string(value["CapPic"].GetString());
         m_capPicHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShoppingBagType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.ShoppingBagType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.ShoppingBagType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shoppingBagType = value["ShoppingBagType"].GetUint64();
         m_shoppingBagTypeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShoppingBagCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonTracePoint.ShoppingBagCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTracePoint.ShoppingBagCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shoppingBagCount = value["ShoppingBagCount"].GetUint64();
         m_shoppingBagCountHasBeenSet = true;

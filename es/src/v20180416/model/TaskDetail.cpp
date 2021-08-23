@@ -37,7 +37,7 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TaskDetail.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetDouble();
         m_progressHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskDetail.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(value["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubTasks") && !value["SubTasks"].IsNull())
     {
         if (!value["SubTasks"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskDetail.SubTasks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.SubTasks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubTasks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

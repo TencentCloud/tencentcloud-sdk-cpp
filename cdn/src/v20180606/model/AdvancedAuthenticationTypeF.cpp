@@ -38,7 +38,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeF::Deserialize(const rapidjson::Va
     {
         if (!value["SignParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeF.SignParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeF.SignParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_signParam = string(value["SignParam"].GetString());
         m_signParamHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeF::Deserialize(const rapidjson::Va
     {
         if (!value["TimeParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeF.TimeParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeF.TimeParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeParam = string(value["TimeParam"].GetString());
         m_timeParamHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeF::Deserialize(const rapidjson::Va
     {
         if (!value["TransactionParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeF.TransactionParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeF.TransactionParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionParam = string(value["TransactionParam"].GetString());
         m_transactionParamHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeF::Deserialize(const rapidjson::Va
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeF.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeF.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AdvancedAuthenticationTypeF::Deserialize(const rapidjson::Va
     {
         if (!value["BackupSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeF.BackupSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedAuthenticationTypeF.BackupSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupSecretKey = string(value["BackupSecretKey"].GetString());
         m_backupSecretKeyHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome DomainBatchLogSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["LogId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchLogSet.LogId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchLogSet.LogId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_logId = value["LogId"].GetInt64();
         m_logIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DomainBatchLogSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["Number"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchLogSet.Number` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchLogSet.Number` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_number = value["Number"].GetInt64();
         m_numberHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DomainBatchLogSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchLogSet.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchLogSet.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DomainBatchLogSet::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainBatchLogSet.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainBatchLogSet.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;

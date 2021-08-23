@@ -39,7 +39,7 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RebateInfoElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RebateInfoElem.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RebateMonth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RebateInfoElem.RebateMonth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RebateInfoElem.RebateMonth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rebateMonth = string(value["RebateMonth"].GetString());
         m_rebateMonthHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Amt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RebateInfoElem.Amt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RebateInfoElem.Amt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_amt = value["Amt"].GetUint64();
         m_amtHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonthSales"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RebateInfoElem.MonthSales` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RebateInfoElem.MonthSales` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_monthSales = value["MonthSales"].GetUint64();
         m_monthSalesHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QuarterSales"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RebateInfoElem.QuarterSales` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RebateInfoElem.QuarterSales` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_quarterSales = value["QuarterSales"].GetUint64();
         m_quarterSalesHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExceptionFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RebateInfoElem.ExceptionFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RebateInfoElem.ExceptionFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exceptionFlag = string(value["ExceptionFlag"].GetString());
         m_exceptionFlagHasBeenSet = true;

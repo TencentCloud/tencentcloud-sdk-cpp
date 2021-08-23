@@ -38,7 +38,7 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &
     if (value.HasMember("NationCountryInnerList") && !value["NationCountryInnerList"].IsNull())
     {
         if (!value["NationCountryInnerList"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainAccessRegionDict.NationCountryInnerList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainAccessRegionDict.NationCountryInnerList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NationCountryInnerList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &
     if (value.HasMember("ProxyList") && !value["ProxyList"].IsNull())
     {
         if (!value["ProxyList"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainAccessRegionDict.ProxyList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainAccessRegionDict.ProxyList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProxyList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainAccessRegionDict.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainAccessRegionDict.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &
     {
         if (!value["GeographicalZoneInnerCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainAccessRegionDict.GeographicalZoneInnerCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainAccessRegionDict.GeographicalZoneInnerCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_geographicalZoneInnerCode = string(value["GeographicalZoneInnerCode"].GetString());
         m_geographicalZoneInnerCodeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &
     {
         if (!value["ContinentInnerCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainAccessRegionDict.ContinentInnerCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainAccessRegionDict.ContinentInnerCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_continentInnerCode = string(value["ContinentInnerCode"].GetString());
         m_continentInnerCodeHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainAccessRegionDict.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainAccessRegionDict.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;

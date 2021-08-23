@@ -35,7 +35,7 @@ CoreInternalOutcome RouteTableAssociation::Deserialize(const rapidjson::Value &v
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTableAssociation.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTableAssociation.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RouteTableAssociation::Deserialize(const rapidjson::Value &v
     {
         if (!value["RouteTableId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteTableAssociation.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteTableAssociation.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeTableId = string(value["RouteTableId"].GetString());
         m_routeTableIdHasBeenSet = true;

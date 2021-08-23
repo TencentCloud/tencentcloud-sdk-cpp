@@ -36,7 +36,7 @@ CoreInternalOutcome NodePoolOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddToNodePool"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NodePoolOption.AddToNodePool` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePoolOption.AddToNodePool` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_addToNodePool = value["AddToNodePool"].GetBool();
         m_addToNodePoolHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome NodePoolOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodePoolId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodePoolOption.NodePoolId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePoolOption.NodePoolId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodePoolId = string(value["NodePoolId"].GetString());
         m_nodePoolIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NodePoolOption::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InheritConfigurationFromNodePool"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NodePoolOption.InheritConfigurationFromNodePool` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodePoolOption.InheritConfigurationFromNodePool` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_inheritConfigurationFromNodePool = value["InheritConfigurationFromNodePool"].GetBool();
         m_inheritConfigurationFromNodePoolHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome Xlog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Xlog.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Xlog.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Xlog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Xlog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Xlog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Xlog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Xlog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Xlog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Xlog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternalAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Xlog.InternalAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Xlog.InternalAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internalAddr = string(value["InternalAddr"].GetString());
         m_internalAddrHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Xlog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Xlog.ExternalAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Xlog.ExternalAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalAddr = string(value["ExternalAddr"].GetString());
         m_externalAddrHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Xlog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Xlog.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Xlog.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;

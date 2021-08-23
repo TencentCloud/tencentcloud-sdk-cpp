@@ -37,7 +37,7 @@ CoreInternalOutcome LogSearchContext::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Offset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSearchContext.Offset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSearchContext.Offset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offset = string(value["Offset"].GetString());
         m_offsetHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LogSearchContext::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Limit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogSearchContext.Limit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSearchContext.Limit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_limit = value["Limit"].GetUint64();
         m_limitHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LogSearchContext::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSearchContext.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSearchContext.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome LogSearchContext::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogSearchContext.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogSearchContext.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

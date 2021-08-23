@@ -38,7 +38,7 @@ CoreInternalOutcome TranscodePlayInfo2017::Deserialize(const rapidjson::Value &v
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodePlayInfo2017.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodePlayInfo2017.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TranscodePlayInfo2017::Deserialize(const rapidjson::Value &v
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodePlayInfo2017.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodePlayInfo2017.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TranscodePlayInfo2017::Deserialize(const rapidjson::Value &v
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodePlayInfo2017.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodePlayInfo2017.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TranscodePlayInfo2017::Deserialize(const rapidjson::Value &v
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodePlayInfo2017.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodePlayInfo2017.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TranscodePlayInfo2017::Deserialize(const rapidjson::Value &v
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TranscodePlayInfo2017.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodePlayInfo2017.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

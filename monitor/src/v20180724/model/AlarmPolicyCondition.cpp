@@ -35,7 +35,7 @@ CoreInternalOutcome AlarmPolicyCondition::Deserialize(const rapidjson::Value &va
     {
         if (!value["IsUnionRule"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyCondition.IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyCondition.IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isUnionRule = value["IsUnionRule"].GetInt64();
         m_isUnionRuleHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AlarmPolicyCondition::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicyCondition.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyCondition.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

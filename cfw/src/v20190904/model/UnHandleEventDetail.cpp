@@ -35,7 +35,7 @@ CoreInternalOutcome UnHandleEventDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["EventName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnHandleEventDetail.EventName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnHandleEventDetail.EventName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventName = string(value["EventName"].GetString());
         m_eventNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome UnHandleEventDetail::Deserialize(const rapidjson::Value &val
     {
         if (!value["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UnHandleEventDetail.Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnHandleEventDetail.Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetUint64();
         m_totalHasBeenSet = true;

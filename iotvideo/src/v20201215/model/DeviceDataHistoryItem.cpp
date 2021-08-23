@@ -35,7 +35,7 @@ CoreInternalOutcome DeviceDataHistoryItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceDataHistoryItem.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceDataHistoryItem.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeviceDataHistoryItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceDataHistoryItem.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceDataHistoryItem.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

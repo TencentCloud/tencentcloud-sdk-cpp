@@ -39,7 +39,7 @@ CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentGroup.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentGroup.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentGroup.IsDefault` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentGroup.IsDefault` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetUint64();
         m_isDefaultHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentGroup.TaskNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentGroup.TaskNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskNum = value["TaskNum"].GetUint64();
         m_taskNumHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GroupDetail") && !value["GroupDetail"].IsNull())
     {
         if (!value["GroupDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `AgentGroup.GroupDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AgentGroup.GroupDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -99,7 +99,7 @@ CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxGroupNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AgentGroup.MaxGroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentGroup.MaxGroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxGroupNum = value["MaxGroupNum"].GetUint64();
         m_maxGroupNumHasBeenSet = true;

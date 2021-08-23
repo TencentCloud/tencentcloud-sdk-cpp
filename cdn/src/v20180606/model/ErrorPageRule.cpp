@@ -36,7 +36,7 @@ CoreInternalOutcome ErrorPageRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ErrorPageRule.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorPageRule.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetInt64();
         m_statusCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ErrorPageRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ErrorPageRule.RedirectCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorPageRule.RedirectCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_redirectCode = value["RedirectCode"].GetInt64();
         m_redirectCodeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ErrorPageRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorPageRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorPageRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectUrl = string(value["RedirectUrl"].GetString());
         m_redirectUrlHasBeenSet = true;

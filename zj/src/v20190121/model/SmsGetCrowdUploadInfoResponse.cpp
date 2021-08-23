@@ -38,7 +38,7 @@ CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const rapidjson::
     {
         if (!value["ExpiredTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdUploadInfoResponse.ExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdUploadInfoResponse.ExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = value["ExpiredTime"].GetUint64();
         m_expiredTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const rapidjson::
     {
         if (!value["SessionToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdUploadInfoResponse.SessionToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdUploadInfoResponse.SessionToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionToken = string(value["SessionToken"].GetString());
         m_sessionTokenHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const rapidjson::
     {
         if (!value["TmpSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdUploadInfoResponse.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdUploadInfoResponse.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretId = string(value["TmpSecretId"].GetString());
         m_tmpSecretIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const rapidjson::
     {
         if (!value["TmpSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdUploadInfoResponse.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdUploadInfoResponse.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretKey = string(value["TmpSecretKey"].GetString());
         m_tmpSecretKeyHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const rapidjson::
     {
         if (!value["CosInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdUploadInfoResponse.CosInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdUploadInfoResponse.CosInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosInfo.Deserialize(value["CosInfo"]);

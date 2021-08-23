@@ -36,7 +36,7 @@ CoreInternalOutcome ExternalContactSimpleInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["ExternalUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactSimpleInfo.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactSimpleInfo.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalUserId = string(value["ExternalUserId"].GetString());
         m_externalUserIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ExternalContactSimpleInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactSimpleInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactSimpleInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ExternalContactSimpleInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["SalesName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactSimpleInfo.SalesName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactSimpleInfo.SalesName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_salesName = string(value["SalesName"].GetString());
         m_salesNameHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome MediaQualityRestorationTaskResult::Deserialize(const rapidjs
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaQualityRestorationTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaQualityRestorationTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MediaQualityRestorationTaskResult::Deserialize(const rapidjs
     if (value.HasMember("SubTaskResult") && !value["SubTaskResult"].IsNull())
     {
         if (!value["SubTaskResult"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaQualityRestorationTaskResult.SubTaskResult` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaQualityRestorationTaskResult.SubTaskResult` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubTaskResult"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

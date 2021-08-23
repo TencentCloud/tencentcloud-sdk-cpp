@@ -38,7 +38,7 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["AddressTemplateGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateGroup.AddressTemplateGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateGroup.AddressTemplateGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressTemplateGroupName = string(value["AddressTemplateGroupName"].GetString());
         m_addressTemplateGroupNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["AddressTemplateGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateGroup.AddressTemplateGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateGroup.AddressTemplateGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressTemplateGroupId = string(value["AddressTemplateGroupId"].GetString());
         m_addressTemplateGroupIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const rapidjson::Value &va
     if (value.HasMember("AddressTemplateIdSet") && !value["AddressTemplateIdSet"].IsNull())
     {
         if (!value["AddressTemplateIdSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AddressTemplateGroup.AddressTemplateIdSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateGroup.AddressTemplateIdSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AddressTemplateIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -71,7 +71,7 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const rapidjson::Value &va
     if (value.HasMember("AddressTemplateSet") && !value["AddressTemplateSet"].IsNull())
     {
         if (!value["AddressTemplateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AddressTemplateGroup.AddressTemplateSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateGroup.AddressTemplateSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AddressTemplateSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

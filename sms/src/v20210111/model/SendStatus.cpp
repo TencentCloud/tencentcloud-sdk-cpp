@@ -40,7 +40,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(value["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Fee"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.Fee` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.Fee` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fee = value["Fee"].GetUint64();
         m_feeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionContext = string(value["SessionContext"].GetString());
         m_sessionContextHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome SendStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsoCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendStatus.IsoCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendStatus.IsoCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isoCode = string(value["IsoCode"].GetString());
         m_isoCodeHasBeenSet = true;

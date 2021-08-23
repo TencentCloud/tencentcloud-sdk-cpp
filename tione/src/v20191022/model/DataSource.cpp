@@ -35,7 +35,7 @@ CoreInternalOutcome DataSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosDataSource"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataSource.CosDataSource` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataSource.CosDataSource` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosDataSource.Deserialize(value["CosDataSource"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome DataSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSystemDataSource"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataSource.FileSystemDataSource` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataSource.FileSystemDataSource` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fileSystemDataSource.Deserialize(value["FileSystemDataSource"]);

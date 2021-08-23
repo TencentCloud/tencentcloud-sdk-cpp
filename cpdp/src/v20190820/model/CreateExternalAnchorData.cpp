@@ -34,7 +34,7 @@ CoreInternalOutcome CreateExternalAnchorData::Deserialize(const rapidjson::Value
     {
         if (!value["AnchorId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateExternalAnchorData.AnchorId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateExternalAnchorData.AnchorId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_anchorId = string(value["AnchorId"].GetString());
         m_anchorIdHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome VideoSuperResolution::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoSuperResolution.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoSuperResolution.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VideoSuperResolution::Deserialize(const rapidjson::Value &va
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VideoSuperResolution.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoSuperResolution.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;

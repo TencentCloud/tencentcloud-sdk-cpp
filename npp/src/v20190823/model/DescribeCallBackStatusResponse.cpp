@@ -40,16 +40,16 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["ErrorCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = string(rsp["ErrorCode"].GetString());
         m_errorCodeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(rsp["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(rsp["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["CallId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callId = string(rsp["CallId"].GetString());
         m_callIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(rsp["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["Dst"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Dst` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Dst` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dst = string(rsp["Dst"].GetString());
         m_dstHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeCallBackStatusResponse::Deserialize(const string &pa
     {
         if (!rsp["CallStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callStatus = string(rsp["CallStatus"].GetString());
         m_callStatusHasBeenSet = true;

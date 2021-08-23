@@ -44,7 +44,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskInstanceIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.TaskInstanceIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.TaskInstanceIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskInstanceIndex = value["TaskInstanceIndex"].GetInt64();
         m_taskInstanceIndexHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskInstanceState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.TaskInstanceState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.TaskInstanceState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskInstanceState = string(value["TaskInstanceState"].GetString());
         m_taskInstanceStateHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExitCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.ExitCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.ExitCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exitCode = value["ExitCode"].GetInt64();
         m_exitCodeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StateReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.StateReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.StateReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stateReason = string(value["StateReason"].GetString());
         m_stateReasonHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComputeNodeInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.ComputeNodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.ComputeNodeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_computeNodeInstanceId = string(value["ComputeNodeInstanceId"].GetString());
         m_computeNodeInstanceIdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaunchTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.LaunchTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.LaunchTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_launchTime = string(value["LaunchTime"].GetString());
         m_launchTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunningTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.RunningTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.RunningTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runningTime = string(value["RunningTime"].GetString());
         m_runningTimeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.RedirectInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.RedirectInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_redirectInfo.Deserialize(value["RedirectInfo"]);
@@ -151,7 +151,7 @@ CoreInternalOutcome TaskInstanceView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StateDetailedReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceView.StateDetailedReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceView.StateDetailedReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stateDetailedReason = string(value["StateDetailedReason"].GetString());
         m_stateDetailedReasonHasBeenSet = true;

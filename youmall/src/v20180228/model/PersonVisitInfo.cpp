@@ -42,7 +42,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.PersonId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.PersonId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_personId = value["PersonId"].GetUint64();
         m_personIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VisitId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.VisitId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.VisitId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_visitId = value["VisitId"].GetUint64();
         m_visitIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.InTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.InTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_inTime = value["InTime"].GetUint64();
         m_inTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CapturedPicture"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.CapturedPicture` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.CapturedPicture` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_capturedPicture = string(value["CapturedPicture"].GetString());
         m_capturedPictureHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaskType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.MaskType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.MaskType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maskType = value["MaskType"].GetUint64();
         m_maskTypeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GlassType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.GlassType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.GlassType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_glassType = value["GlassType"].GetUint64();
         m_glassTypeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HairType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.HairType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.HairType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hairType = value["HairType"].GetUint64();
         m_hairTypeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CapturedPictureUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.CapturedPictureUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.CapturedPictureUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_capturedPictureUrl = string(value["CapturedPictureUrl"].GetString());
         m_capturedPictureUrlHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SceneInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PersonVisitInfo.SceneInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonVisitInfo.SceneInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sceneInfo.Deserialize(value["SceneInfo"]);

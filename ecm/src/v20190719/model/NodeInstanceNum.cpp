@@ -35,7 +35,7 @@ CoreInternalOutcome NodeInstanceNum::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodeInstanceNum.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInstanceNum.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeNum = value["NodeNum"].GetInt64();
         m_nodeNumHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome NodeInstanceNum::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodeInstanceNum.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInstanceNum.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceNum = value["InstanceNum"].GetInt64();
         m_instanceNumHasBeenSet = true;

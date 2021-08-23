@@ -34,7 +34,7 @@ CoreInternalOutcome Database::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DbName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Database.DbName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Database.DbName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dbName = string(value["DbName"].GetString());
         m_dbNameHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ChartHistogram::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChartHistogram.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChartHistogram.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ChartHistogram::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Children") && !value["Children"].IsNull())
     {
         if (!value["Children"].IsArray())
-            return CoreInternalOutcome(Error("response `ChartHistogram.Children` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ChartHistogram.Children` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

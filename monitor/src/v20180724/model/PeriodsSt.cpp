@@ -35,7 +35,7 @@ CoreInternalOutcome PeriodsSt::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeriodsSt.Period` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeriodsSt.Period` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_period = string(value["Period"].GetString());
         m_periodHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome PeriodsSt::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StatType") && !value["StatType"].IsNull())
     {
         if (!value["StatType"].IsArray())
-            return CoreInternalOutcome(Error("response `PeriodsSt.StatType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PeriodsSt.StatType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StatType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

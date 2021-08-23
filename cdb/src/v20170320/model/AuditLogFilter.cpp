@@ -41,7 +41,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Host") && !value["Host"].IsNull())
     {
         if (!value["Host"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditLogFilter.Host` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.Host` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Host"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("User") && !value["User"].IsNull())
     {
         if (!value["User"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditLogFilter.User` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.User` is not array type"));
 
         const rapidjson::Value &tmpValue = value["User"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DBName") && !value["DBName"].IsNull())
     {
         if (!value["DBName"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditLogFilter.DBName` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.DBName` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBName"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TableName") && !value["TableName"].IsNull())
     {
         if (!value["TableName"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditLogFilter.TableName` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.TableName` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TableName"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -93,7 +93,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PolicyName") && !value["PolicyName"].IsNull())
     {
         if (!value["PolicyName"].IsArray())
-            return CoreInternalOutcome(Error("response `AuditLogFilter.PolicyName` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.PolicyName` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolicyName"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sql"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLogFilter.Sql` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.Sql` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sql = string(value["Sql"].GetString());
         m_sqlHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SqlType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLogFilter.SqlType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.SqlType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sqlType = string(value["SqlType"].GetString());
         m_sqlTypeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuditLogFilter.ExecTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.ExecTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_execTime = value["ExecTime"].GetInt64();
         m_execTimeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AffectRows"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuditLogFilter.AffectRows` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.AffectRows` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_affectRows = value["AffectRows"].GetInt64();
         m_affectRowsHasBeenSet = true;

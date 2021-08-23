@@ -41,7 +41,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.WorkGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.WorkGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_workGroupId = value["WorkGroupId"].GetInt64();
         m_workGroupIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.WorkGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.WorkGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workGroupName = string(value["WorkGroupName"].GetString());
         m_workGroupNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkGroupDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.WorkGroupDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.WorkGroupDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workGroupDescription = string(value["WorkGroupDescription"].GetString());
         m_workGroupDescriptionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.UserNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.UserNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_userNum = value["UserNum"].GetInt64();
         m_userNumHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UserSet") && !value["UserSet"].IsNull())
     {
         if (!value["UserSet"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.UserSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.UserSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PolicySet") && !value["PolicySet"].IsNull())
     {
         if (!value["PolicySet"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.PolicySet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.PolicySet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolicySet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome WorkGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkGroupInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkGroupInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

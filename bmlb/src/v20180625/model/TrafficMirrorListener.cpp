@@ -51,7 +51,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["LoadBalancerPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.LoadBalancerPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.LoadBalancerPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPort = value["LoadBalancerPort"].GetUint64();
         m_loadBalancerPortHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["MaxBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.MaxBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.MaxBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidth = value["MaxBandwidth"].GetUint64();
         m_maxBandwidthHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["ListenerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.ListenerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.ListenerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerType = string(value["ListenerType"].GetString());
         m_listenerTypeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["SslMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.SslMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.SslMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sslMode = value["SslMode"].GetInt64();
         m_sslModeHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["CertCaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaId = string(value["CertCaId"].GetString());
         m_certCaIdHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["AddTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.AddTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTimestamp = string(value["AddTimestamp"].GetString());
         m_addTimestampHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["VpcCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.VpcCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidrBlock = string(value["VpcCidrBlock"].GetString());
         m_vpcCidrBlockHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     if (value.HasMember("LoadBalancerVips") && !value["LoadBalancerVips"].IsNull())
     {
         if (!value["LoadBalancerVips"].IsArray())
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.LoadBalancerVips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.LoadBalancerVips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerVips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -204,7 +204,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["LoadBalancerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerName = string(value["LoadBalancerName"].GetString());
         m_loadBalancerNameHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     if (value.HasMember("LoadBalancerVipv6s") && !value["LoadBalancerVipv6s"].IsNull())
     {
         if (!value["LoadBalancerVipv6s"].IsArray())
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.LoadBalancerVipv6s` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.LoadBalancerVipv6s` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LoadBalancerVipv6s"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -227,7 +227,7 @@ CoreInternalOutcome TrafficMirrorListener::Deserialize(const rapidjson::Value &v
     {
         if (!value["IpProtocolType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorListener.IpProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorListener.IpProtocolType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocolType = string(value["IpProtocolType"].GetString());
         m_ipProtocolTypeHasBeenSet = true;

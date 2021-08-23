@@ -37,7 +37,7 @@ CoreInternalOutcome ISPCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProviderName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ISPCounter.ProviderName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ISPCounter.ProviderName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_providerName = string(value["ProviderName"].GetString());
         m_providerNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ISPCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProviderNodeNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ISPCounter.ProviderNodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ISPCounter.ProviderNodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_providerNodeNum = value["ProviderNodeNum"].GetInt64();
         m_providerNodeNumHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ISPCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvederInstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ISPCounter.ProvederInstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ISPCounter.ProvederInstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_provederInstanceNum = value["ProvederInstanceNum"].GetInt64();
         m_provederInstanceNumHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ISPCounter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ZoneInstanceInfoSet") && !value["ZoneInstanceInfoSet"].IsNull())
     {
         if (!value["ZoneInstanceInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ISPCounter.ZoneInstanceInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ISPCounter.ZoneInstanceInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ZoneInstanceInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

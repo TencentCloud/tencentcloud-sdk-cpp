@@ -54,16 +54,16 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -74,11 +74,11 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["VulType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VulType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vulType = rsp["VulType"].GetInt64();
         m_vulTypeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["SubVulType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubVulType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubVulType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subVulType = string(rsp["SubVulType"].GetString());
         m_subVulTypeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["CvssScore"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CvssScore` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CvssScore` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cvssScore = string(rsp["CvssScore"].GetString());
         m_cvssScoreHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Cvss"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cvss` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cvss` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cvss = string(rsp["Cvss"].GetString());
         m_cvssHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Cve"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cve` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cve` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cve = string(rsp["Cve"].GetString());
         m_cveHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Cnvd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cnvd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cnvd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnvd = string(rsp["Cnvd"].GetString());
         m_cnvdHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Cnnvd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cnnvd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cnnvd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnnvd = string(rsp["Cnnvd"].GetString());
         m_cnnvdHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(rsp["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Reference"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Reference` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Reference` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reference = string(rsp["Reference"].GetString());
         m_referenceHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Repair"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Repair` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Repair` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repair = string(rsp["Repair"].GetString());
         m_repairHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["ReleaseTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseTime = string(rsp["ReleaseTime"].GetString());
         m_releaseTimeHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(rsp["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = rsp["Level"].GetInt64();
         m_levelHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = rsp["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["ImpactAsset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactAsset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactAsset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_impactAsset = string(rsp["ImpactAsset"].GetString());
         m_impactAssetHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["ImpactAssetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactAssetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactAssetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_impactAssetName = string(rsp["ImpactAssetName"].GetString());
         m_impactAssetNameHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["IsAssetDeleted"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsAssetDeleted` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsAssetDeleted` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAssetDeleted = rsp["IsAssetDeleted"].GetBool();
         m_isAssetDeletedHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(rsp["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["VulUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulUrl = string(rsp["VulUrl"].GetString());
         m_vulUrlHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome DescribeVulDetailResponse::Deserialize(const string &payload
     {
         if (!rsp["SsaAssetCategory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SsaAssetCategory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SsaAssetCategory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ssaAssetCategory = rsp["SsaAssetCategory"].GetInt64();
         m_ssaAssetCategoryHasBeenSet = true;

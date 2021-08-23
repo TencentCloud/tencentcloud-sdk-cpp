@@ -35,7 +35,7 @@ CoreInternalOutcome OriginPullTimeout::Deserialize(const rapidjson::Value &value
     {
         if (!value["ConnectTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OriginPullTimeout.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginPullTimeout.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_connectTimeout = value["ConnectTimeout"].GetUint64();
         m_connectTimeoutHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OriginPullTimeout::Deserialize(const rapidjson::Value &value
     {
         if (!value["ReceiveTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OriginPullTimeout.ReceiveTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginPullTimeout.ReceiveTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_receiveTimeout = value["ReceiveTimeout"].GetUint64();
         m_receiveTimeoutHasBeenSet = true;

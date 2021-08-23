@@ -37,7 +37,7 @@ CoreInternalOutcome AuditSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuditSummary.AuditStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditSummary.AuditStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_auditStatus = value["AuditStatus"].GetInt64();
         m_auditStatusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AuditSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosBucketName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditSummary.CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditSummary.CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosBucketName = string(value["CosBucketName"].GetString());
         m_cosBucketNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AuditSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditSummary.AuditName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditSummary.AuditName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditName = string(value["AuditName"].GetString());
         m_auditNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AuditSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogFilePrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditSummary.LogFilePrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditSummary.LogFilePrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logFilePrefix = string(value["LogFilePrefix"].GetString());
         m_logFilePrefixHasBeenSet = true;

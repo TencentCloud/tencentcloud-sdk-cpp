@@ -55,7 +55,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = value["DomainId"].GetUint64();
         m_domainIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CNAMESpeedup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.CNAMESpeedup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.CNAMESpeedup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cNAMESpeedup = string(value["CNAMESpeedup"].GetString());
         m_cNAMESpeedupHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DNSStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.DNSStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.DNSStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dNSStatus = string(value["DNSStatus"].GetString());
         m_dNSStatusHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Grade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.Grade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.Grade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grade = string(value["Grade"].GetString());
         m_gradeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.GroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetUint64();
         m_groupIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SearchEnginePush"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.SearchEnginePush` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.SearchEnginePush` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_searchEnginePush = string(value["SearchEnginePush"].GetString());
         m_searchEnginePushHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Punycode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.Punycode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.Punycode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_punycode = string(value["Punycode"].GetString());
         m_punycodeHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EffectiveDNS") && !value["EffectiveDNS"].IsNull())
     {
         if (!value["EffectiveDNS"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainListItem.EffectiveDNS` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.EffectiveDNS` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EffectiveDNS"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -178,7 +178,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GradeLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.GradeLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.GradeLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gradeLevel = value["GradeLevel"].GetUint64();
         m_gradeLevelHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GradeTitle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.GradeTitle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.GradeTitle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gradeTitle = string(value["GradeTitle"].GetString());
         m_gradeTitleHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsVip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.IsVip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.IsVip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isVip = string(value["IsVip"].GetString());
         m_isVipHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipStartAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.VipStartAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.VipStartAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vipStartAt = string(value["VipStartAt"].GetString());
         m_vipStartAtHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipEndAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.VipEndAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.VipEndAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vipEndAt = string(value["VipEndAt"].GetString());
         m_vipEndAtHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VipAutoRenew"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.VipAutoRenew` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.VipAutoRenew` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vipAutoRenew = string(value["VipAutoRenew"].GetString());
         m_vipAutoRenewHasBeenSet = true;
@@ -238,7 +238,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.RecordCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.RecordCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_recordCount = value["RecordCount"].GetUint64();
         m_recordCountHasBeenSet = true;
@@ -248,7 +248,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;
@@ -258,7 +258,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -268,7 +268,7 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainListItem.Owner` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.Owner` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_owner = string(value["Owner"].GetString());
         m_ownerHasBeenSet = true;

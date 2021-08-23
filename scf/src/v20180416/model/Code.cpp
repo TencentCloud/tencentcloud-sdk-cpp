@@ -47,7 +47,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosBucketName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosBucketName = string(value["CosBucketName"].GetString());
         m_cosBucketNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.CosObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.CosObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosObjectName = string(value["CosObjectName"].GetString());
         m_cosObjectNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZipFile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.ZipFile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.ZipFile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zipFile = string(value["ZipFile"].GetString());
         m_zipFileHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosBucketRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.CosBucketRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.CosBucketRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosBucketRegion = string(value["CosBucketRegion"].GetString());
         m_cosBucketRegionHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DemoId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.DemoId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.DemoId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_demoId = string(value["DemoId"].GetString());
         m_demoIdHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TempCosObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.TempCosObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.TempCosObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tempCosObjectName = string(value["TempCosObjectName"].GetString());
         m_tempCosObjectNameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitUrl = string(value["GitUrl"].GetString());
         m_gitUrlHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitUserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitUserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitUserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitUserName = string(value["GitUserName"].GetString());
         m_gitUserNameHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitPassword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitPassword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitPassword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitPassword = string(value["GitPassword"].GetString());
         m_gitPasswordHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitPasswordSecret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitPasswordSecret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitPasswordSecret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitPasswordSecret = string(value["GitPasswordSecret"].GetString());
         m_gitPasswordSecretHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitBranch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitBranch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitBranch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitBranch = string(value["GitBranch"].GetString());
         m_gitBranchHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitDirectory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitDirectory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitDirectory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitDirectory = string(value["GitDirectory"].GetString());
         m_gitDirectoryHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitCommitId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitCommitId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitCommitId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitCommitId = string(value["GitCommitId"].GetString());
         m_gitCommitIdHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitUserNameSecret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Code.GitUserNameSecret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Code.GitUserNameSecret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gitUserNameSecret = string(value["GitUserNameSecret"].GetString());
         m_gitUserNameSecretHasBeenSet = true;

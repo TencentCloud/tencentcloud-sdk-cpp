@@ -35,7 +35,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MachineInfo.MachineNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineInfo.MachineNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_machineNum = value["MachineNum"].GetInt64();
         m_machineNumHasBeenSet = true;

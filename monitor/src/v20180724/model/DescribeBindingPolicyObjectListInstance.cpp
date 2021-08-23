@@ -37,7 +37,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstance::Deserialize(const r
     {
         if (!value["UniqueId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstance.UniqueId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstance.UniqueId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqueId = string(value["UniqueId"].GetString());
         m_uniqueIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstance::Deserialize(const r
     {
         if (!value["Dimensions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstance.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstance.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dimensions = string(value["Dimensions"].GetString());
         m_dimensionsHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstance::Deserialize(const r
     {
         if (!value["IsShielded"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstance.IsShielded` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstance.IsShielded` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isShielded = value["IsShielded"].GetInt64();
         m_isShieldedHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstance::Deserialize(const r
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBindingPolicyObjectListInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;

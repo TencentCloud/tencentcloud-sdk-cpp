@@ -43,7 +43,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceFamilyConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceFamilyConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceFamilyConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceFamilyConfig.Deserialize(value["InstanceFamilyConfig"]);
@@ -60,7 +60,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Vcpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Vcpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Vcpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vcpu = value["Vcpu"].GetInt64();
         m_vcpuHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Frequency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Frequency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Frequency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frequency = string(value["Frequency"].GetString());
         m_frequencyHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CpuModelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.CpuModelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.CpuModelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuModelName = string(value["CpuModelName"].GetString());
         m_cpuModelNameHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceFamilyTypeConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceFamilyTypeConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceFamilyTypeConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceFamilyTypeConfig.Deserialize(value["InstanceFamilyTypeConfig"]);
@@ -127,7 +127,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExtInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extInfo = string(value["ExtInfo"].GetString());
         m_extInfoHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Vgpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Vgpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Vgpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_vgpu = value["Vgpu"].GetDouble();
         m_vgpuHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["GpuModelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.GpuModelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.GpuModelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gpuModelName = string(value["GpuModelName"].GetString());
         m_gpuModelNameHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
     {
         if (!value["ProtectBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceSpecification.ProtectBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.ProtectBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectBandwidth = value["ProtectBandwidth"].GetUint64();
         m_protectBandwidthHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
     {
         if (!value["ProtectCountLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceSpecification.ProtectCountLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.ProtectCountLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectCountLimit = value["ProtectCountLimit"].GetUint64();
         m_protectCountLimitHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
     {
         if (!value["ProtectIPNumberLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceSpecification.ProtectIPNumberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.ProtectIPNumberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectIPNumberLimit = value["ProtectIPNumberLimit"].GetUint64();
         m_protectIPNumberLimitHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
     {
         if (!value["AutoRenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceSpecification.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
         m_autoRenewFlagHasBeenSet = true;

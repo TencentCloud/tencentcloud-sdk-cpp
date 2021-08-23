@@ -54,7 +54,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.SpecCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.SpecCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specCode = string(value["SpecCode"].GetString());
         m_specCodeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.DefaultStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.DefaultStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_defaultStorage = value["DefaultStorage"].GetUint64();
         m_defaultStorageHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MaxStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MaxStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStorage = value["MaxStorage"].GetUint64();
         m_maxStorageHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MinStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MinStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minStorage = value["MinStorage"].GetUint64();
         m_minStorageHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Conns"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.Conns` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.Conns` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_conns = value["Conns"].GetUint64();
         m_connsHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MongoVersionCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MongoVersionCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MongoVersionCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mongoVersionCode = string(value["MongoVersionCode"].GetString());
         m_mongoVersionCodeHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MongoVersionValue"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MongoVersionValue` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MongoVersionValue` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mongoVersionValue = value["MongoVersionValue"].GetUint64();
         m_mongoVersionValueHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EngineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.EngineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.EngineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineName = string(value["EngineName"].GetString());
         m_engineNameHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.ClusterType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.ClusterType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = value["ClusterType"].GetUint64();
         m_clusterTypeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinNodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MinNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MinNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minNodeNum = value["MinNodeNum"].GetUint64();
         m_minNodeNumHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxNodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MaxNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MaxNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxNodeNum = value["MaxNodeNum"].GetUint64();
         m_maxNodeNumHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinReplicateSetNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MinReplicateSetNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MinReplicateSetNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minReplicateSetNum = value["MinReplicateSetNum"].GetUint64();
         m_minReplicateSetNumHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxReplicateSetNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MaxReplicateSetNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MaxReplicateSetNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReplicateSetNum = value["MaxReplicateSetNum"].GetUint64();
         m_maxReplicateSetNumHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinReplicateSetNodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MinReplicateSetNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MinReplicateSetNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minReplicateSetNodeNum = value["MinReplicateSetNodeNum"].GetUint64();
         m_minReplicateSetNodeNumHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxReplicateSetNodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItem.MaxReplicateSetNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItem.MaxReplicateSetNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReplicateSetNodeNum = value["MaxReplicateSetNodeNum"].GetUint64();
         m_maxReplicateSetNodeNumHasBeenSet = true;

@@ -44,7 +44,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HitFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = value["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Duration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Duration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_duration = string(value["Duration"].GetString());
         m_durationHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResult.Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(value["Extra"].GetString());
         m_extraHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TextResults") && !value["TextResults"].IsNull())
     {
         if (!value["TextResults"].IsArray())
-            return CoreInternalOutcome(Error("response `AudioResult.TextResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.TextResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TextResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -143,7 +143,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MoanResults") && !value["MoanResults"].IsNull())
     {
         if (!value["MoanResults"].IsArray())
-            return CoreInternalOutcome(Error("response `AudioResult.MoanResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.MoanResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MoanResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -163,7 +163,7 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LanguageResults") && !value["LanguageResults"].IsNull())
     {
         if (!value["LanguageResults"].IsArray())
-            return CoreInternalOutcome(Error("response `AudioResult.LanguageResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AudioResult.LanguageResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LanguageResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

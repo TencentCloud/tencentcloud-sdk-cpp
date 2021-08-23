@@ -38,7 +38,7 @@ CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const rapidjson::Value 
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnRegionBandwidthLimit.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimit.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const rapidjson::Value 
     {
         if (!value["BandwidthLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CcnRegionBandwidthLimit.BandwidthLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimit.BandwidthLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthLimit = value["BandwidthLimit"].GetUint64();
         m_bandwidthLimitHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const rapidjson::Value 
     {
         if (!value["IsBm"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CcnRegionBandwidthLimit.IsBm` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimit.IsBm` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isBm = value["IsBm"].GetBool();
         m_isBmHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const rapidjson::Value 
     {
         if (!value["DstRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnRegionBandwidthLimit.DstRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimit.DstRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstRegion = string(value["DstRegion"].GetString());
         m_dstRegionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const rapidjson::Value 
     {
         if (!value["DstIsBm"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CcnRegionBandwidthLimit.DstIsBm` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimit.DstIsBm` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_dstIsBm = value["DstIsBm"].GetBool();
         m_dstIsBmHasBeenSet = true;

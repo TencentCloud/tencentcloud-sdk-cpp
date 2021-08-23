@@ -43,13 +43,13 @@ namespace TencentCloud
                 ImsClient(const Credential &credential, const std::string &region);
                 ImsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeImageStatResponse> DescribeImageStatOutcome;
+                typedef Outcome<Core::Error, Model::DescribeImageStatResponse> DescribeImageStatOutcome;
                 typedef std::future<DescribeImageStatOutcome> DescribeImageStatOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::DescribeImageStatRequest&, DescribeImageStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageStatAsyncHandler;
-                typedef Outcome<Error, Model::DescribeImsListResponse> DescribeImsListOutcome;
+                typedef Outcome<Core::Error, Model::DescribeImsListResponse> DescribeImsListOutcome;
                 typedef std::future<DescribeImsListOutcome> DescribeImsListOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::DescribeImsListRequest&, DescribeImsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImsListAsyncHandler;
-                typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
+                typedef Outcome<Core::Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const ImsClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
 

@@ -37,7 +37,7 @@ CoreInternalOutcome MediaCuttingOutForm::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingOutForm.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingOutForm.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MediaCuttingOutForm::Deserialize(const rapidjson::Value &val
     {
         if (!value["FillType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingOutForm.FillType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingOutForm.FillType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fillType = string(value["FillType"].GetString());
         m_fillTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MediaCuttingOutForm::Deserialize(const rapidjson::Value &val
     {
         if (!value["SpriteRowCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingOutForm.SpriteRowCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingOutForm.SpriteRowCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_spriteRowCount = value["SpriteRowCount"].GetInt64();
         m_spriteRowCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome MediaCuttingOutForm::Deserialize(const rapidjson::Value &val
     {
         if (!value["SpriteColumnCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingOutForm.SpriteColumnCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingOutForm.SpriteColumnCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_spriteColumnCount = value["SpriteColumnCount"].GetInt64();
         m_spriteColumnCountHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DayStreamPlayInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Bandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DayStreamPlayInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetDouble();
         m_bandwidthHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Flux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DayStreamPlayInfo.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_flux = value["Flux"].GetDouble();
         m_fluxHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Request"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Request` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DayStreamPlayInfo.Request` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_request = value["Request"].GetUint64();
         m_requestHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DayStreamPlayInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Online"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DayStreamPlayInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DayStreamPlayInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_online = value["Online"].GetUint64();
         m_onlineHasBeenSet = true;

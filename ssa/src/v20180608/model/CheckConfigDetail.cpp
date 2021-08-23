@@ -47,7 +47,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["CheckName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.CheckName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.CheckName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checkName = string(value["CheckName"].GetString());
         m_checkNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["Doc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.Doc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.Doc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_doc = string(value["Doc"].GetString());
         m_docHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["ErrorCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.ErrorCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.ErrorCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorCount = value["ErrorCount"].GetInt64();
         m_errorCountHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["IsPass"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.IsPass` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.IsPass` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isPass = value["IsPass"].GetInt64();
         m_isPassHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["SafeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.SafeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.SafeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_safeCount = value["SafeCount"].GetInt64();
         m_safeCountHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["IgnoreCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.IgnoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.IgnoreCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCount = value["IgnoreCount"].GetInt64();
         m_ignoreCountHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["RiskCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.RiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.RiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_riskCount = value["RiskCount"].GetInt64();
         m_riskCountHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["NameEn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.NameEn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.NameEn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nameEn = string(value["NameEn"].GetString());
         m_nameEnHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["AssetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.AssetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetType = string(value["AssetType"].GetString());
         m_assetTypeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["ResCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.ResCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.ResCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resCount = value["ResCount"].GetInt64();
         m_resCountHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome CheckConfigDetail::Deserialize(const rapidjson::Value &value
     {
         if (!value["IsIgnore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckConfigDetail.IsIgnore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckConfigDetail.IsIgnore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isIgnore = value["IsIgnore"].GetInt64();
         m_isIgnoreHasBeenSet = true;

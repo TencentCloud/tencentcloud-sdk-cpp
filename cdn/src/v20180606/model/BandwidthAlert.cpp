@@ -37,7 +37,7 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthAlert.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BpsThreshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BandwidthAlert.BpsThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.BpsThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bpsThreshold = value["BpsThreshold"].GetInt64();
         m_bpsThresholdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CounterMeasure"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthAlert.CounterMeasure` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.CounterMeasure` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_counterMeasure = string(value["CounterMeasure"].GetString());
         m_counterMeasureHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastTriggerTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthAlert.LastTriggerTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.LastTriggerTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastTriggerTime = string(value["LastTriggerTime"].GetString());
         m_lastTriggerTimeHasBeenSet = true;

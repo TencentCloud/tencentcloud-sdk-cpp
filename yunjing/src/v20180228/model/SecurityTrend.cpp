@@ -35,7 +35,7 @@ CoreInternalOutcome SecurityTrend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityTrend.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityTrend.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SecurityTrend::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityTrend.EventNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityTrend.EventNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventNum = value["EventNum"].GetUint64();
         m_eventNumHasBeenSet = true;

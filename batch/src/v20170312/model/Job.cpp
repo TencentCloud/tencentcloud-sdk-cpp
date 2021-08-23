@@ -41,7 +41,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tasks") && !value["Tasks"].IsNull())
     {
         if (!value["Tasks"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.Tasks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.Tasks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tasks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.JobName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.JobName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobName = string(value["JobName"].GetString());
         m_jobNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.JobDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.JobDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobDescription = string(value["JobDescription"].GetString());
         m_jobDescriptionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Priority"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Job.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetUint64();
         m_priorityHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Dependences") && !value["Dependences"].IsNull())
     {
         if (!value["Dependences"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.Dependences` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.Dependences` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Dependences"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Notifications") && !value["Notifications"].IsNull())
     {
         if (!value["Notifications"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.Notifications` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.Notifications` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Notifications"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -132,7 +132,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskExecutionDependOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.TaskExecutionDependOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.TaskExecutionDependOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskExecutionDependOn = string(value["TaskExecutionDependOn"].GetString());
         m_taskExecutionDependOnHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StateIfCreateCvmFailed"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.StateIfCreateCvmFailed` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.StateIfCreateCvmFailed` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stateIfCreateCvmFailed = string(value["StateIfCreateCvmFailed"].GetString());
         m_stateIfCreateCvmFailedHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

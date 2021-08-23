@@ -36,7 +36,7 @@ CoreInternalOutcome MachineTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MachineTag.Rid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineTag.Rid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rid = value["Rid"].GetInt64();
         m_ridHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MachineTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineTag.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineTag.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MachineTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MachineTag.TagId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineTag.TagId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = value["TagId"].GetUint64();
         m_tagIdHasBeenSet = true;

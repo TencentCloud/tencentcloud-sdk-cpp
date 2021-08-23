@@ -42,7 +42,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiagType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.DiagType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.DiagType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagType = string(value["DiagType"].GetString());
         m_diagTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Outline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Outline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Outline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outline = string(value["Outline"].GetString());
         m_outlineHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Severity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Severity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Severity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_severity = value["Severity"].GetInt64();
         m_severityHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreLost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scoreLost = value["ScoreLost"].GetInt64();
         m_scoreLostHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metric"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Metric` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Metric` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metric = string(value["Metric"].GetString());
         m_metricHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

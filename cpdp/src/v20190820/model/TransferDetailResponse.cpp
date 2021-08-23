@@ -36,7 +36,7 @@ CoreInternalOutcome TransferDetailResponse::Deserialize(const rapidjson::Value &
     {
         if (!value["MerchantDetailNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailResponse.MerchantDetailNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailResponse.MerchantDetailNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantDetailNo = string(value["MerchantDetailNo"].GetString());
         m_merchantDetailNoHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TransferDetailResponse::Deserialize(const rapidjson::Value &
     {
         if (!value["DetailId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailResponse.DetailId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailResponse.DetailId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detailId = string(value["DetailId"].GetString());
         m_detailIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TransferDetailResponse::Deserialize(const rapidjson::Value &
     {
         if (!value["DetailStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailResponse.DetailStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailResponse.DetailStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detailStatus = string(value["DetailStatus"].GetString());
         m_detailStatusHasBeenSet = true;

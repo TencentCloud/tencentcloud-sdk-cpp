@@ -41,7 +41,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["BusinessTypeDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.BusinessTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.BusinessTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessTypeDesc = string(value["BusinessTypeDesc"].GetString());
         m_businessTypeDescHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["AccidentTypeDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.AccidentTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.AccidentTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accidentTypeDesc = string(value["AccidentTypeDesc"].GetString());
         m_accidentTypeDescHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["BusinessID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.BusinessID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.BusinessID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_businessID = value["BusinessID"].GetInt64();
         m_businessIDHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["EventStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.EventStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.EventStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventStatus = value["EventStatus"].GetInt64();
         m_eventStatusHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["AffectResource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.AffectResource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.AffectResource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_affectResource = string(value["AffectResource"].GetString());
         m_affectResourceHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["OccurTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.OccurTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.OccurTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_occurTime = string(value["OccurTime"].GetString());
         m_occurTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeAccidentEventListAlarms.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccidentEventListAlarms.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

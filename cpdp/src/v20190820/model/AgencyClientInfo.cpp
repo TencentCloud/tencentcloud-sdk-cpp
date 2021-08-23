@@ -37,7 +37,7 @@ CoreInternalOutcome AgencyClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgencyClientName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgencyClientInfo.AgencyClientName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgencyClientInfo.AgencyClientName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agencyClientName = string(value["AgencyClientName"].GetString());
         m_agencyClientNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AgencyClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgencyClientGlobalType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgencyClientInfo.AgencyClientGlobalType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgencyClientInfo.AgencyClientGlobalType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agencyClientGlobalType = string(value["AgencyClientGlobalType"].GetString());
         m_agencyClientGlobalTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AgencyClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgencyClientGlobalId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgencyClientInfo.AgencyClientGlobalId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgencyClientInfo.AgencyClientGlobalId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agencyClientGlobalId = string(value["AgencyClientGlobalId"].GetString());
         m_agencyClientGlobalIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AgencyClientInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgencyClientMobile"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgencyClientInfo.AgencyClientMobile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgencyClientInfo.AgencyClientMobile` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agencyClientMobile = string(value["AgencyClientMobile"].GetString());
         m_agencyClientMobileHasBeenSet = true;

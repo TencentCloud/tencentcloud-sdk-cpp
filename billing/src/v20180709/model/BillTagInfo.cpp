@@ -35,7 +35,7 @@ CoreInternalOutcome BillTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTagInfo.TagKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTagInfo.TagKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagKey = string(value["TagKey"].GetString());
         m_tagKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BillTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTagInfo.TagValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTagInfo.TagValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValue = string(value["TagValue"].GetString());
         m_tagValueHasBeenSet = true;

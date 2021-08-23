@@ -37,7 +37,7 @@ CoreInternalOutcome DiagnoseUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseUnit.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseUnit.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DiagnoseUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseUnit.KeyText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseUnit.KeyText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyText = string(value["KeyText"].GetString());
         m_keyTextHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DiagnoseUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseUnit.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseUnit.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DiagnoseUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValueText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiagnoseUnit.ValueText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiagnoseUnit.ValueText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_valueText = string(value["ValueText"].GetString());
         m_valueTextHasBeenSet = true;

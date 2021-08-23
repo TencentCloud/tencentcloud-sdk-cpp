@@ -40,7 +40,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     if (value.HasMember("RecordList") && !value["RecordList"].IsNull())
     {
         if (!value["RecordList"].IsArray())
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.RecordList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.RecordList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RecordList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["DomainGrade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.DomainGrade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.DomainGrade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainGrade = string(value["DomainGrade"].GetString());
         m_domainGradeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome ModifyRecordBatchDetail::Deserialize(const rapidjson::Value 
     {
         if (!value["DomainId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ModifyRecordBatchDetail.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifyRecordBatchDetail.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = value["DomainId"].GetUint64();
         m_domainIdHasBeenSet = true;

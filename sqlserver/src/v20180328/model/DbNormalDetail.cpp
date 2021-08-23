@@ -51,7 +51,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsSubscribed"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsSubscribed` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsSubscribed` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isSubscribed = string(value["IsSubscribed"].GetString());
         m_isSubscribedHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CollationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.CollationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.CollationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_collationName = string(value["CollationName"].GetString());
         m_collationNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAutoCleanupOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsAutoCleanupOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsAutoCleanupOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isAutoCleanupOn = string(value["IsAutoCleanupOn"].GetString());
         m_isAutoCleanupOnHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsBrokerEnabled"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsBrokerEnabled` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsBrokerEnabled` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isBrokerEnabled = string(value["IsBrokerEnabled"].GetString());
         m_isBrokerEnabledHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsCdcEnabled"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsCdcEnabled` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsCdcEnabled` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isCdcEnabled = string(value["IsCdcEnabled"].GetString());
         m_isCdcEnabledHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDbChainingOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsDbChainingOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsDbChainingOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isDbChainingOn = string(value["IsDbChainingOn"].GetString());
         m_isDbChainingOnHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsEncrypted"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsEncrypted` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsEncrypted` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isEncrypted = string(value["IsEncrypted"].GetString());
         m_isEncryptedHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsFulltextEnabled"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsFulltextEnabled` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsFulltextEnabled` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isFulltextEnabled = string(value["IsFulltextEnabled"].GetString());
         m_isFulltextEnabledHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsMirroring"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsMirroring` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsMirroring` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isMirroring = string(value["IsMirroring"].GetString());
         m_isMirroringHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPublished"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsPublished` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsPublished` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isPublished = string(value["IsPublished"].GetString());
         m_isPublishedHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsReadCommittedSnapshotOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsReadCommittedSnapshotOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsReadCommittedSnapshotOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isReadCommittedSnapshotOn = string(value["IsReadCommittedSnapshotOn"].GetString());
         m_isReadCommittedSnapshotOnHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsTrustworthyOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.IsTrustworthyOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsTrustworthyOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isTrustworthyOn = string(value["IsTrustworthyOn"].GetString());
         m_isTrustworthyOnHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MirroringState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.MirroringState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.MirroringState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mirroringState = string(value["MirroringState"].GetString());
         m_mirroringStateHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecoveryModelDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.RecoveryModelDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.RecoveryModelDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recoveryModelDesc = string(value["RecoveryModelDesc"].GetString());
         m_recoveryModelDescHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetentionPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.RetentionPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.RetentionPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_retentionPeriod = string(value["RetentionPeriod"].GetString());
         m_retentionPeriodHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StateDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.StateDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.StateDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stateDesc = string(value["StateDesc"].GetString());
         m_stateDescHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserAccessDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DbNormalDetail.UserAccessDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.UserAccessDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAccessDesc = string(value["UserAccessDesc"].GetString());
         m_userAccessDescHasBeenSet = true;

@@ -51,25 +51,25 @@ namespace TencentCloud
                 MspClient(const Credential &credential, const std::string &region);
                 MspClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DeregisterMigrationTaskResponse> DeregisterMigrationTaskOutcome;
+                typedef Outcome<Core::Error, Model::DeregisterMigrationTaskResponse> DeregisterMigrationTaskOutcome;
                 typedef std::future<DeregisterMigrationTaskOutcome> DeregisterMigrationTaskOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::DeregisterMigrationTaskRequest&, DeregisterMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterMigrationTaskAsyncHandler;
-                typedef Outcome<Error, Model::DescribeMigrationTaskResponse> DescribeMigrationTaskOutcome;
+                typedef Outcome<Core::Error, Model::DescribeMigrationTaskResponse> DescribeMigrationTaskOutcome;
                 typedef std::future<DescribeMigrationTaskOutcome> DescribeMigrationTaskOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::DescribeMigrationTaskRequest&, DescribeMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationTaskAsyncHandler;
-                typedef Outcome<Error, Model::ListMigrationProjectResponse> ListMigrationProjectOutcome;
+                typedef Outcome<Core::Error, Model::ListMigrationProjectResponse> ListMigrationProjectOutcome;
                 typedef std::future<ListMigrationProjectOutcome> ListMigrationProjectOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::ListMigrationProjectRequest&, ListMigrationProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListMigrationProjectAsyncHandler;
-                typedef Outcome<Error, Model::ListMigrationTaskResponse> ListMigrationTaskOutcome;
+                typedef Outcome<Core::Error, Model::ListMigrationTaskResponse> ListMigrationTaskOutcome;
                 typedef std::future<ListMigrationTaskOutcome> ListMigrationTaskOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::ListMigrationTaskRequest&, ListMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListMigrationTaskAsyncHandler;
-                typedef Outcome<Error, Model::ModifyMigrationTaskBelongToProjectResponse> ModifyMigrationTaskBelongToProjectOutcome;
+                typedef Outcome<Core::Error, Model::ModifyMigrationTaskBelongToProjectResponse> ModifyMigrationTaskBelongToProjectOutcome;
                 typedef std::future<ModifyMigrationTaskBelongToProjectOutcome> ModifyMigrationTaskBelongToProjectOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::ModifyMigrationTaskBelongToProjectRequest&, ModifyMigrationTaskBelongToProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationTaskBelongToProjectAsyncHandler;
-                typedef Outcome<Error, Model::ModifyMigrationTaskStatusResponse> ModifyMigrationTaskStatusOutcome;
+                typedef Outcome<Core::Error, Model::ModifyMigrationTaskStatusResponse> ModifyMigrationTaskStatusOutcome;
                 typedef std::future<ModifyMigrationTaskStatusOutcome> ModifyMigrationTaskStatusOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::ModifyMigrationTaskStatusRequest&, ModifyMigrationTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationTaskStatusAsyncHandler;
-                typedef Outcome<Error, Model::RegisterMigrationTaskResponse> RegisterMigrationTaskOutcome;
+                typedef Outcome<Core::Error, Model::RegisterMigrationTaskResponse> RegisterMigrationTaskOutcome;
                 typedef std::future<RegisterMigrationTaskOutcome> RegisterMigrationTaskOutcomeCallable;
                 typedef std::function<void(const MspClient*, const Model::RegisterMigrationTaskRequest&, RegisterMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterMigrationTaskAsyncHandler;
 

@@ -35,7 +35,7 @@ CoreInternalOutcome ReleaseService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReleaseService.ReleaseDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReleaseService.ReleaseDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseDesc = string(value["ReleaseDesc"].GetString());
         m_releaseDescHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ReleaseService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReleaseService.ReleaseVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReleaseService.ReleaseVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseVersion = string(value["ReleaseVersion"].GetString());
         m_releaseVersionHasBeenSet = true;

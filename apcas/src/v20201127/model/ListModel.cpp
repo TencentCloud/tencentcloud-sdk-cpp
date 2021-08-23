@@ -39,7 +39,7 @@ CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ID"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ListModel.ID` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListModel.ID` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iD = value["ID"].GetUint64();
         m_iDHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListModel.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListModel.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ListModel.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListModel.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ListModel.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListModel.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Available"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ListModel.Available` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListModel.Available` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_available = value["Available"].GetUint64();
         m_availableHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListModel.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListModel.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;

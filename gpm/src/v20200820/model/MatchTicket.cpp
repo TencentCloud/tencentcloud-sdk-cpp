@@ -43,7 +43,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.MatchCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchCode = string(value["MatchCode"].GetString());
         m_matchCodeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.MatchResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.MatchResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchResult = string(value["MatchResult"].GetString());
         m_matchResultHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.MatchType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.MatchType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchType = string(value["MatchType"].GetString());
         m_matchTypeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Players") && !value["Players"].IsNull())
     {
         if (!value["Players"].IsArray())
-            return CoreInternalOutcome(Error("response `MatchTicket.Players` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.Players` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Players"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusMessage = string(value["StatusMessage"].GetString());
         m_statusMessageHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.StatusReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.StatusReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusReason = string(value["StatusReason"].GetString());
         m_statusReasonHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome MatchTicket::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchTicket.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchTicket.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

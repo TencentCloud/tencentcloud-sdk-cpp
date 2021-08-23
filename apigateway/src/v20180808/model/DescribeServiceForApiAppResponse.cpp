@@ -54,16 +54,16 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -74,11 +74,11 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["ServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceId = string(rsp["ServiceId"].GetString());
         m_serviceIdHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     if (rsp.HasMember("AvailableEnvironments") && !rsp["AvailableEnvironments"].IsNull())
     {
         if (!rsp["AvailableEnvironments"].IsArray())
-            return CoreInternalOutcome(Error("response `AvailableEnvironments` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AvailableEnvironments` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AvailableEnvironments"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(rsp["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["ServiceDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceDesc = string(rsp["ServiceDesc"].GetString());
         m_serviceDescHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(rsp["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(rsp["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(rsp["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["ExclusiveSetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExclusiveSetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExclusiveSetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exclusiveSetName = string(rsp["ExclusiveSetName"].GetString());
         m_exclusiveSetNameHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     if (rsp.HasMember("NetTypes") && !rsp["NetTypes"].IsNull())
     {
         if (!rsp["NetTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `NetTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["NetTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -182,7 +182,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["InternalSubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternalSubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternalSubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internalSubDomain = string(rsp["InternalSubDomain"].GetString());
         m_internalSubDomainHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["OuterSubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OuterSubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OuterSubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outerSubDomain = string(rsp["OuterSubDomain"].GetString());
         m_outerSubDomainHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["InnerHttpPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InnerHttpPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InnerHttpPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_innerHttpPort = rsp["InnerHttpPort"].GetInt64();
         m_innerHttpPortHasBeenSet = true;
@@ -212,7 +212,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["InnerHttpsPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InnerHttpsPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InnerHttpsPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_innerHttpsPort = rsp["InnerHttpsPort"].GetInt64();
         m_innerHttpsPortHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["ApiTotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_apiTotalCount = rsp["ApiTotalCount"].GetInt64();
         m_apiTotalCountHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     if (rsp.HasMember("ApiIdStatusSet") && !rsp["ApiIdStatusSet"].IsNull())
     {
         if (!rsp["ApiIdStatusSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiIdStatusSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiIdStatusSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ApiIdStatusSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -252,7 +252,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["UsagePlanTotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_usagePlanTotalCount = rsp["UsagePlanTotalCount"].GetInt64();
         m_usagePlanTotalCountHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     if (rsp.HasMember("UsagePlanList") && !rsp["UsagePlanList"].IsNull())
     {
         if (!rsp["UsagePlanList"].IsArray())
-            return CoreInternalOutcome(Error("response `UsagePlanList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["UsagePlanList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -282,7 +282,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["IpVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipVersion = string(rsp["IpVersion"].GetString());
         m_ipVersionHasBeenSet = true;
@@ -292,7 +292,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["UserType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userType = string(rsp["UserType"].GetString());
         m_userTypeHasBeenSet = true;
@@ -302,7 +302,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     {
         if (!rsp["SetId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SetId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SetId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_setId = rsp["SetId"].GetInt64();
         m_setIdHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome DescribeServiceForApiAppResponse::Deserialize(const string &
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -45,7 +45,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["ResolutionAdaptive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
         m_resolutionAdaptiveHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Fps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Fps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Fps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetUint64();
         m_fpsHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["Quality"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_quality = value["Quality"].GetDouble();
         m_qualityHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const rapidjson::Value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicsTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

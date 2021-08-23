@@ -36,7 +36,7 @@ CoreInternalOutcome AIModelApplication::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIModelApplication.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIModelApplication.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AIModelApplication::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AIModelApplication.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIModelApplication.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AIModelApplication::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AIModelApplication.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIModelApplication.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;

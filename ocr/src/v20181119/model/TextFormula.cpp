@@ -34,7 +34,7 @@ CoreInternalOutcome TextFormula::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextFormula.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextFormula.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;

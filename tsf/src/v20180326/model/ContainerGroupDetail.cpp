@@ -70,7 +70,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceNum = value["InstanceNum"].GetInt64();
         m_instanceNumHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["CurrentNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentNum = value["CurrentNum"].GetInt64();
         m_currentNumHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Reponame"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.Reponame` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.Reponame` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reponame = string(value["Reponame"].GetString());
         m_reponameHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["LbIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.LbIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.LbIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lbIp = string(value["LbIp"].GetString());
         m_lbIpHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ClusterIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ClusterIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ClusterIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterIp = string(value["ClusterIp"].GetString());
         m_clusterIpHasBeenSet = true;
@@ -230,7 +230,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["NodePort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.NodePort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.NodePort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodePort = value["NodePort"].GetInt64();
         m_nodePortHasBeenSet = true;
@@ -240,7 +240,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["CpuLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.CpuLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.CpuLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuLimit = string(value["CpuLimit"].GetString());
         m_cpuLimitHasBeenSet = true;
@@ -250,7 +250,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["MemLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MemLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.MemLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memLimit = string(value["MemLimit"].GetString());
         m_memLimitHasBeenSet = true;
@@ -260,7 +260,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["AccessType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.AccessType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.AccessType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accessType = value["AccessType"].GetUint64();
         m_accessTypeHasBeenSet = true;
@@ -270,7 +270,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["UpdateType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.UpdateType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.UpdateType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateType = value["UpdateType"].GetInt64();
         m_updateTypeHasBeenSet = true;
@@ -280,7 +280,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["UpdateIvl"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.UpdateIvl` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.UpdateIvl` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateIvl = value["UpdateIvl"].GetInt64();
         m_updateIvlHasBeenSet = true;
@@ -289,7 +289,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     if (value.HasMember("ProtocolPorts") && !value["ProtocolPorts"].IsNull())
     {
         if (!value["ProtocolPorts"].IsArray())
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ProtocolPorts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ProtocolPorts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProtocolPorts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -309,7 +309,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Envs") && !value["Envs"].IsNull())
     {
         if (!value["Envs"].IsArray())
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.Envs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.Envs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Envs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -330,7 +330,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -340,7 +340,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -350,7 +350,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -360,7 +360,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["MicroserviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MicroserviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.MicroserviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceType = string(value["MicroserviceType"].GetString());
         m_microserviceTypeHasBeenSet = true;
@@ -370,7 +370,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["CpuRequest"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.CpuRequest` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.CpuRequest` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuRequest = string(value["CpuRequest"].GetString());
         m_cpuRequestHasBeenSet = true;
@@ -380,7 +380,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["MemRequest"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MemRequest` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.MemRequest` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memRequest = string(value["MemRequest"].GetString());
         m_memRequestHasBeenSet = true;
@@ -390,7 +390,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -400,7 +400,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["GroupResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupResourceType = string(value["GroupResourceType"].GetString());
         m_groupResourceTypeHasBeenSet = true;
@@ -410,7 +410,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;
@@ -420,7 +420,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["UpdatedTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.UpdatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.UpdatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = value["UpdatedTime"].GetInt64();
         m_updatedTimeHasBeenSet = true;
@@ -430,7 +430,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaxSurge"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MaxSurge` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.MaxSurge` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maxSurge = string(value["MaxSurge"].GetString());
         m_maxSurgeHasBeenSet = true;
@@ -440,7 +440,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["MaxUnavailable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.MaxUnavailable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.MaxUnavailable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maxUnavailable = string(value["MaxUnavailable"].GetString());
         m_maxUnavailableHasBeenSet = true;
@@ -450,7 +450,7 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
     {
         if (!value["HealthCheckSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContainerGroupDetail.HealthCheckSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.HealthCheckSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_healthCheckSettings.Deserialize(value["HealthCheckSettings"]);

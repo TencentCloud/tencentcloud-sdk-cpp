@@ -38,7 +38,7 @@ CoreInternalOutcome DescribeDomains::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Result") && !value["Result"].IsNull())
     {
         if (!value["Result"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeDomains.Result` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeDomains.Result` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Result"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome DescribeDomains::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SearchTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeDomains.SearchTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDomains.SearchTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_searchTotal = value["SearchTotal"].GetInt64();
         m_searchTotalHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeDomains::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeDomains.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDomains.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeDomains::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllowMonitoringCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeDomains.AllowMonitoringCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDomains.AllowMonitoringCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_allowMonitoringCount = value["AllowMonitoringCount"].GetInt64();
         m_allowMonitoringCountHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeDomains::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentMonitoringCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeDomains.CurrentMonitoringCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDomains.CurrentMonitoringCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentMonitoringCount = value["CurrentMonitoringCount"].GetInt64();
         m_currentMonitoringCountHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeDomains::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllowMaxAddDomain"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeDomains.AllowMaxAddDomain` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDomains.AllowMaxAddDomain` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_allowMaxAddDomain = value["AllowMaxAddDomain"].GetInt64();
         m_allowMaxAddDomainHasBeenSet = true;

@@ -56,7 +56,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScaleTier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.ScaleTier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.ScaleTier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scaleTier = string(value["ScaleTier"].GetString());
         m_scaleTierHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.MasterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.MasterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterType = string(value["MasterType"].GetString());
         m_masterTypeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.WorkerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.WorkerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workerType = string(value["WorkerType"].GetString());
         m_workerTypeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParameterServerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.ParameterServerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.ParameterServerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parameterServerType = string(value["ParameterServerType"].GetString());
         m_parameterServerTypeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkerCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Job.WorkerCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.WorkerCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_workerCount = value["WorkerCount"].GetUint64();
         m_workerCountHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParameterServerCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Job.ParameterServerCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.ParameterServerCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_parameterServerCount = value["ParameterServerCount"].GetUint64();
         m_parameterServerCountHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PackageDir") && !value["PackageDir"].IsNull())
     {
         if (!value["PackageDir"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.PackageDir` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.PackageDir` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PackageDir"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -188,7 +188,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Command") && !value["Command"].IsNull())
     {
         if (!value["Command"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.Command` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.Command` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Command"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -201,7 +201,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Args") && !value["Args"].IsNull())
     {
         if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.Args` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.Args` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Args"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -215,7 +215,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cluster"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.Cluster` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Cluster` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cluster = string(value["Cluster"].GetString());
         m_clusterHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuntimeVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runtimeVersion = string(value["RuntimeVersion"].GetString());
         m_runtimeVersionHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DelTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.DelTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.DelTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_delTime = string(value["DelTime"].GetString());
         m_delTimeHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Job.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Debug"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Job.Debug` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Debug` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_debug = value["Debug"].GetBool();
         m_debugHasBeenSet = true;
@@ -274,7 +274,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuntimeConf") && !value["RuntimeConf"].IsNull())
     {
         if (!value["RuntimeConf"].IsArray())
-            return CoreInternalOutcome(Error("response `Job.RuntimeConf` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Job.RuntimeConf` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuntimeConf"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -288,7 +288,7 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Job.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Job.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

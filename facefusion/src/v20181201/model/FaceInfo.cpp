@@ -37,7 +37,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.X` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.X` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetInt64();
         m_xHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.Y` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.Y` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetInt64();
         m_yHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;

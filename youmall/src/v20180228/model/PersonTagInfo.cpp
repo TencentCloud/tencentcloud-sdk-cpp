@@ -36,7 +36,7 @@ CoreInternalOutcome PersonTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OldType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonTagInfo.OldType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTagInfo.OldType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_oldType = value["OldType"].GetInt64();
         m_oldTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PersonTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonTagInfo.NewType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTagInfo.NewType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_newType = value["NewType"].GetInt64();
         m_newTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PersonTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PersonTagInfo.PersonId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonTagInfo.PersonId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personId = value["PersonId"].GetInt64();
         m_personIdHasBeenSet = true;

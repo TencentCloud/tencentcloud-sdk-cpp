@@ -40,7 +40,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrizeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.PrizeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.PrizeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_prizeId = string(value["PrizeId"].GetString());
         m_prizeIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrizeBat"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.PrizeBat` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.PrizeBat` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_prizeBat = value["PrizeBat"].GetUint64();
         m_prizeBatHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrizeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.PrizeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.PrizeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_prizeName = string(value["PrizeName"].GetString());
         m_prizeNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedStock"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.UsedStock` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.UsedStock` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_usedStock = value["UsedStock"].GetUint64();
         m_usedStockHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemainStock"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.RemainStock` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.RemainStock` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_remainStock = value["RemainStock"].GetUint64();
         m_remainStockHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PoolIdx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.PoolIdx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.PoolIdx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_poolIdx = value["PoolIdx"].GetUint64();
         m_poolIdxHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PoolName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectStock.PoolName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStock.PoolName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_poolName = string(value["PoolName"].GetString());
         m_poolNameHasBeenSet = true;

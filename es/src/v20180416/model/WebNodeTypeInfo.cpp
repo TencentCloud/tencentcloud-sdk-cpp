@@ -35,7 +35,7 @@ CoreInternalOutcome WebNodeTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WebNodeTypeInfo.NodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebNodeTypeInfo.NodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeNum = value["NodeNum"].GetUint64();
         m_nodeNumHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome WebNodeTypeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebNodeTypeInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebNodeTypeInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeType = string(value["NodeType"].GetString());
         m_nodeTypeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome PrometheusJobTargets::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `PrometheusJobTargets.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrometheusJobTargets.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome PrometheusJobTargets::Deserialize(const rapidjson::Value &va
     {
         if (!value["JobName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusJobTargets.JobName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusJobTargets.JobName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobName = string(value["JobName"].GetString());
         m_jobNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PrometheusJobTargets::Deserialize(const rapidjson::Value &va
     {
         if (!value["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusJobTargets.Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusJobTargets.Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetUint64();
         m_totalHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome PrometheusJobTargets::Deserialize(const rapidjson::Value &va
     {
         if (!value["Up"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusJobTargets.Up` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusJobTargets.Up` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_up = value["Up"].GetUint64();
         m_upHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const rapidjson::Value 
     {
         if (!value["BinlogDiskAvailable"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceUsageMonitorSet.BinlogDiskAvailable` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceUsageMonitorSet.BinlogDiskAvailable` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_binlogDiskAvailable.Deserialize(value["BinlogDiskAvailable"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const rapidjson::Value 
     {
         if (!value["CpuUsageRate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceUsageMonitorSet.CpuUsageRate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceUsageMonitorSet.CpuUsageRate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cpuUsageRate.Deserialize(value["CpuUsageRate"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const rapidjson::Value 
     {
         if (!value["MemAvailable"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceUsageMonitorSet.MemAvailable` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceUsageMonitorSet.MemAvailable` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_memAvailable.Deserialize(value["MemAvailable"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const rapidjson::Value 
     {
         if (!value["DataDiskAvailable"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceUsageMonitorSet.DataDiskAvailable` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceUsageMonitorSet.DataDiskAvailable` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dataDiskAvailable.Deserialize(value["DataDiskAvailable"]);

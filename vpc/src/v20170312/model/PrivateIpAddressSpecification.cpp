@@ -40,7 +40,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["Primary"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.Primary` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.Primary` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_primary = value["Primary"].GetBool();
         m_primaryHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["PublicIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAddress = string(value["PublicIpAddress"].GetString());
         m_publicIpAddressHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["AddressId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.AddressId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressId = string(value["AddressId"].GetString());
         m_addressIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["IsWanIpBlocked"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.IsWanIpBlocked` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.IsWanIpBlocked` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isWanIpBlocked = value["IsWanIpBlocked"].GetBool();
         m_isWanIpBlockedHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PrivateIpAddressSpecification::Deserialize(const rapidjson::
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateIpAddressSpecification.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIpAddressSpecification.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;

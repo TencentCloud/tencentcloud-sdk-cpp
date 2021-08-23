@@ -37,7 +37,7 @@ CoreInternalOutcome StreamControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamControl.StreamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamControl.StreamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamId = string(value["StreamId"].GetString());
         m_streamIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome StreamControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisableRecord"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `StreamControl.DisableRecord` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamControl.DisableRecord` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disableRecord = value["DisableRecord"].GetBool();
         m_disableRecordHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome StreamControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisableAudio"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `StreamControl.DisableAudio` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamControl.DisableAudio` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disableAudio = value["DisableAudio"].GetBool();
         m_disableAudioHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome StreamControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PullSmallVideo"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `StreamControl.PullSmallVideo` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamControl.PullSmallVideo` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_pullSmallVideo = value["PullSmallVideo"].GetBool();
         m_pullSmallVideoHasBeenSet = true;

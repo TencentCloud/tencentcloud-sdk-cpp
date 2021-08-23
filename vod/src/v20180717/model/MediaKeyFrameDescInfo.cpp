@@ -33,7 +33,7 @@ CoreInternalOutcome MediaKeyFrameDescInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("KeyFrameDescSet") && !value["KeyFrameDescSet"].IsNull())
     {
         if (!value["KeyFrameDescSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaKeyFrameDescInfo.KeyFrameDescSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaKeyFrameDescInfo.KeyFrameDescSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeyFrameDescSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

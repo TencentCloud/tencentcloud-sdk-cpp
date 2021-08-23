@@ -36,7 +36,7 @@ CoreInternalOutcome EditMediaFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaFileInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaFileInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EditMediaFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `EditMediaFileInfo.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaFileInfo.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EditMediaFileInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `EditMediaFileInfo.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaFileInfo.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     if (value.HasMember("ReceiverGroupList") && !value["ReceiverGroupList"].IsNull())
     {
         if (!value["ReceiverGroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiverGroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiverGroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverGroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     if (value.HasMember("ReceiverUserList") && !value["ReceiverUserList"].IsNull())
     {
         if (!value["ReceiverUserList"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiverUserList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiverUserList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverUserList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["ReceiverType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_receiverType = string(value["ReceiverType"].GetString());
         m_receiverTypeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     if (value.HasMember("NotifyWay") && !value["NotifyWay"].IsNull())
     {
         if (!value["NotifyWay"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.NotifyWay` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.NotifyWay` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotifyWay"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -115,7 +115,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     if (value.HasMember("UidList") && !value["UidList"].IsNull())
     {
         if (!value["UidList"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.UidList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.UidList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UidList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["RoundNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.RoundNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.RoundNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roundNumber = value["RoundNumber"].GetInt64();
         m_roundNumberHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["RoundInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.RoundInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.RoundInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roundInterval = value["RoundInterval"].GetInt64();
         m_roundIntervalHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["PersonInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.PersonInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.PersonInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personInterval = value["PersonInterval"].GetInt64();
         m_personIntervalHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["NeedSendNotice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.NeedSendNotice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.NeedSendNotice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needSendNotice = value["NeedSendNotice"].GetInt64();
         m_needSendNoticeHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     if (value.HasMember("SendFor") && !value["SendFor"].IsNull())
     {
         if (!value["SendFor"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.SendFor` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.SendFor` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SendFor"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -181,7 +181,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     if (value.HasMember("RecoverNotify") && !value["RecoverNotify"].IsNull())
     {
         if (!value["RecoverNotify"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.RecoverNotify` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.RecoverNotify` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RecoverNotify"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -195,7 +195,7 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const rapid
     {
         if (!value["ReceiveLanguage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiveLanguage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiveLanguage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_receiveLanguage = string(value["ReceiveLanguage"].GetString());
         m_receiveLanguageHasBeenSet = true;

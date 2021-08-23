@@ -40,7 +40,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgAvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.AvgAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.AvgAvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgAvailRatio = value["AvgAvailRatio"].GetDouble();
         m_avgAvailRatioHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceName = string(value["ProvinceName"].GetString());
         m_provinceNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mapkey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.Mapkey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.Mapkey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mapkey = string(value["Mapkey"].GetString());
         m_mapkeyHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeStamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.TimeStamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.TimeStamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeStamp = string(value["TimeStamp"].GetString());
         m_timeStampHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IspDetail") && !value["IspDetail"].IsNull())
     {
         if (!value["IspDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `ProvinceDetail.IspDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.IspDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IspDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime = value["AvgTime"].GetDouble();
         m_avgTimeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProvinceDetail.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProvinceDetail.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;

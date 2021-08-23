@@ -37,7 +37,7 @@ CoreInternalOutcome RecordReplayProjectInput::Deserialize(const rapidjson::Value
     {
         if (!value["PullStreamUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordReplayProjectInput.PullStreamUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordReplayProjectInput.PullStreamUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pullStreamUrl = string(value["PullStreamUrl"].GetString());
         m_pullStreamUrlHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RecordReplayProjectInput::Deserialize(const rapidjson::Value
     {
         if (!value["MaterialOwner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordReplayProjectInput.MaterialOwner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordReplayProjectInput.MaterialOwner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_materialOwner.Deserialize(value["MaterialOwner"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome RecordReplayProjectInput::Deserialize(const rapidjson::Value
     {
         if (!value["MaterialClassPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordReplayProjectInput.MaterialClassPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordReplayProjectInput.MaterialClassPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialClassPath = string(value["MaterialClassPath"].GetString());
         m_materialClassPathHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome RecordReplayProjectInput::Deserialize(const rapidjson::Value
     {
         if (!value["PushStreamUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordReplayProjectInput.PushStreamUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordReplayProjectInput.PushStreamUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushStreamUrl = string(value["PushStreamUrl"].GetString());
         m_pushStreamUrlHasBeenSet = true;

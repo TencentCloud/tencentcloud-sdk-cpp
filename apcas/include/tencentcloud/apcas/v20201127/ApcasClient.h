@@ -51,25 +51,25 @@ namespace TencentCloud
                 ApcasClient(const Credential &credential, const std::string &region);
                 ApcasClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::GetTaskDetailResponse> GetTaskDetailOutcome;
+                typedef Outcome<Core::Error, Model::GetTaskDetailResponse> GetTaskDetailOutcome;
                 typedef std::future<GetTaskDetailOutcome> GetTaskDetailOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::GetTaskDetailRequest&, GetTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskDetailAsyncHandler;
-                typedef Outcome<Error, Model::GetTaskListResponse> GetTaskListOutcome;
+                typedef Outcome<Core::Error, Model::GetTaskListResponse> GetTaskListOutcome;
                 typedef std::future<GetTaskListOutcome> GetTaskListOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::GetTaskListRequest&, GetTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskListAsyncHandler;
-                typedef Outcome<Error, Model::PredictRatingResponse> PredictRatingOutcome;
+                typedef Outcome<Core::Error, Model::PredictRatingResponse> PredictRatingOutcome;
                 typedef std::future<PredictRatingOutcome> PredictRatingOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::PredictRatingRequest&, PredictRatingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PredictRatingAsyncHandler;
-                typedef Outcome<Error, Model::QueryCallDetailsResponse> QueryCallDetailsOutcome;
+                typedef Outcome<Core::Error, Model::QueryCallDetailsResponse> QueryCallDetailsOutcome;
                 typedef std::future<QueryCallDetailsOutcome> QueryCallDetailsOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::QueryCallDetailsRequest&, QueryCallDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallDetailsAsyncHandler;
-                typedef Outcome<Error, Model::QueryCallStatResponse> QueryCallStatOutcome;
+                typedef Outcome<Core::Error, Model::QueryCallStatResponse> QueryCallStatOutcome;
                 typedef std::future<QueryCallStatOutcome> QueryCallStatOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::QueryCallStatRequest&, QueryCallStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallStatAsyncHandler;
-                typedef Outcome<Error, Model::QueryGeneralStatResponse> QueryGeneralStatOutcome;
+                typedef Outcome<Core::Error, Model::QueryGeneralStatResponse> QueryGeneralStatOutcome;
                 typedef std::future<QueryGeneralStatOutcome> QueryGeneralStatOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::QueryGeneralStatRequest&, QueryGeneralStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryGeneralStatAsyncHandler;
-                typedef Outcome<Error, Model::UploadIdResponse> UploadIdOutcome;
+                typedef Outcome<Core::Error, Model::UploadIdResponse> UploadIdOutcome;
                 typedef std::future<UploadIdOutcome> UploadIdOutcomeCallable;
                 typedef std::function<void(const ApcasClient*, const Model::UploadIdRequest&, UploadIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadIdAsyncHandler;
 

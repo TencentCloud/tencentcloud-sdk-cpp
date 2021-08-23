@@ -35,7 +35,7 @@ CoreInternalOutcome ParamModifyResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["Param"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamModifyResult.Param` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamModifyResult.Param` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_param = string(value["Param"].GetString());
         m_paramHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ParamModifyResult::Deserialize(const rapidjson::Value &value
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParamModifyResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamModifyResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;

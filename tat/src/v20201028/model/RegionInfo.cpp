@@ -36,7 +36,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionState = string(value["RegionState"].GetString());
         m_regionStateHasBeenSet = true;

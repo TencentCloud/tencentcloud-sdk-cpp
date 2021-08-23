@@ -43,7 +43,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableActionClass"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableActionClass` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableActionClass` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableActionClass = value["EnableActionClass"].GetBool();
         m_enableActionClassHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableFaceDetect"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableFaceDetect` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableFaceDetect` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableFaceDetect = value["EnableFaceDetect"].GetBool();
         m_enableFaceDetectHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableFaceExpression"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableFaceExpression` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableFaceExpression` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableFaceExpression = value["EnableFaceExpression"].GetBool();
         m_enableFaceExpressionHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableFaceIdentify"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableFaceIdentify` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableFaceIdentify` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableFaceIdentify = value["EnableFaceIdentify"].GetBool();
         m_enableFaceIdentifyHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableGesture"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableGesture` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableGesture` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableGesture = value["EnableGesture"].GetBool();
         m_enableGestureHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableHandTracking"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableHandTracking` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableHandTracking` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableHandTracking = value["EnableHandTracking"].GetBool();
         m_enableHandTrackingHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableLightJudge"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableLightJudge` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableLightJudge` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableLightJudge = value["EnableLightJudge"].GetBool();
         m_enableLightJudgeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableStudentBodyMovements"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableStudentBodyMovements` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableStudentBodyMovements` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableStudentBodyMovements = value["EnableStudentBodyMovements"].GetBool();
         m_enableStudentBodyMovementsHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableTeacherBodyMovements"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableTeacherBodyMovements` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableTeacherBodyMovements` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableTeacherBodyMovements = value["EnableTeacherBodyMovements"].GetBool();
         m_enableTeacherBodyMovementsHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value
     {
         if (!value["EnableTeacherOutScreen"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableTeacherOutScreen` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTaskFunction.EnableTeacherOutScreen` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableTeacherOutScreen = value["EnableTeacherOutScreen"].GetBool();
         m_enableTeacherOutScreenHasBeenSet = true;

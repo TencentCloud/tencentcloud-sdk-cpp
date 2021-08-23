@@ -39,7 +39,7 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContact.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContact.ExternalUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalUserId = string(value["ExternalUserId"].GetString());
         m_externalUserIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExternalContact.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContact.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContact.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContact.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExternalContact.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContact.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContact.UnionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContact.UnionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unionId = string(value["UnionId"].GetString());
         m_unionIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContact.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContact.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;

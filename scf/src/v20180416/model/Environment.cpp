@@ -33,7 +33,7 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Variables") && !value["Variables"].IsNull())
     {
         if (!value["Variables"].IsArray())
-            return CoreInternalOutcome(Error("response `Environment.Variables` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Environment.Variables` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Variables"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

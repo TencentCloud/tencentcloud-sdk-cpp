@@ -35,7 +35,7 @@ CoreInternalOutcome BackupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Db"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupItem.Db` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupItem.Db` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_db = string(value["Db"].GetString());
         m_dbHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BackupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Table"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupItem.Table` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupItem.Table` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_table = string(value["Table"].GetString());
         m_tableHasBeenSet = true;

@@ -47,7 +47,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["DeployStrategyConf"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.DeployStrategyConf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.DeployStrategyConf` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_deployStrategyConf.Deserialize(value["DeployStrategyConf"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["BetaBatchDetail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.BetaBatchDetail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.BetaBatchDetail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_betaBatchDetail.Deserialize(value["BetaBatchDetail"]);
@@ -110,7 +110,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     if (value.HasMember("OtherBatchDetail") && !value["OtherBatchDetail"].IsNull())
     {
         if (!value["OtherBatchDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.OtherBatchDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.OtherBatchDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OtherBatchDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -131,7 +131,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["OldVersionPodList"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.OldVersionPodList` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.OldVersionPodList` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_oldVersionPodList.Deserialize(value["OldVersionPodList"]);
@@ -148,7 +148,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["CurrentBatchIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.CurrentBatchIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.CurrentBatchIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentBatchIndex = value["CurrentBatchIndex"].GetInt64();
         m_currentBatchIndexHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["ErrorMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMessage = string(value["ErrorMessage"].GetString());
         m_errorMessageHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["CurrentBatchStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.CurrentBatchStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.CurrentBatchStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentBatchStatus = string(value["CurrentBatchStatus"].GetString());
         m_currentBatchStatusHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["NewDeployVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.NewDeployVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.NewDeployVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newDeployVersion = string(value["NewDeployVersion"].GetString());
         m_newDeployVersionHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["OldDeployVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.OldDeployVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.OldDeployVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldDeployVersion = string(value["OldDeployVersion"].GetString());
         m_oldDeployVersionHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["NewVersionPackageInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.NewVersionPackageInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.NewVersionPackageInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newVersionPackageInfo = string(value["NewVersionPackageInfo"].GetString());
         m_newVersionPackageInfoHasBeenSet = true;
@@ -208,7 +208,7 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
     {
         if (!value["NextBatchStartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.NextBatchStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemDeployApplicationDetailInfo.NextBatchStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nextBatchStartTime = value["NextBatchStartTime"].GetInt64();
         m_nextBatchStartTimeHasBeenSet = true;

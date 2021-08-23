@@ -49,7 +49,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvData.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvData.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SystemDisk"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.SystemDisk` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.SystemDisk` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_systemDisk.Deserialize(value["SystemDisk"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
     {
         if (!value["DataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvData.DataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvData.DataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -106,7 +106,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirtualPrivateCloud"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.VirtualPrivateCloud` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.VirtualPrivateCloud` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_virtualPrivateCloud.Deserialize(value["VirtualPrivateCloud"]);
@@ -123,7 +123,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetAccessible"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.InternetAccessible` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InternetAccessible` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_internetAccessible.Deserialize(value["InternetAccessible"]);
@@ -140,7 +140,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvData.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.LoginSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.LoginSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_loginSettings.Deserialize(value["LoginSettings"]);
@@ -166,7 +166,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvData.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvData.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -180,7 +180,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnhancedService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.EnhancedService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.EnhancedService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_enhancedService.Deserialize(value["EnhancedService"]);
@@ -197,7 +197,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvData.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceChargeType = string(value["InstanceChargeType"].GetString());
         m_instanceChargeTypeHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceMarketOptions"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.InstanceMarketOptions` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InstanceMarketOptions` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceMarketOptions.Deserialize(value["InstanceMarketOptions"]);
@@ -223,7 +223,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceTypes") && !value["InstanceTypes"].IsNull())
     {
         if (!value["InstanceTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvData.InstanceTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InstanceTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -237,7 +237,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceTypeOptions"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EnvData.InstanceTypeOptions` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvData.InstanceTypeOptions` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceTypeOptions.Deserialize(value["InstanceTypeOptions"]);
@@ -253,7 +253,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Zones") && !value["Zones"].IsNull())
     {
         if (!value["Zones"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvData.Zones` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvData.Zones` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Zones"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -266,7 +266,7 @@ CoreInternalOutcome EnvData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VirtualPrivateClouds") && !value["VirtualPrivateClouds"].IsNull())
     {
         if (!value["VirtualPrivateClouds"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvData.VirtualPrivateClouds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvData.VirtualPrivateClouds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VirtualPrivateClouds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

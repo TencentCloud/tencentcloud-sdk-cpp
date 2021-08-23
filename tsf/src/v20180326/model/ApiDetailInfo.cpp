@@ -54,7 +54,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.MicroserviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceId = string(value["MicroserviceId"].GetString());
         m_microserviceIdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.MicroserviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.MicroserviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceName = string(value["MicroserviceName"].GetString());
         m_microserviceNameHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PathMapping"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.PathMapping` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.PathMapping` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pathMapping = string(value["PathMapping"].GetString());
         m_pathMappingHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.UsableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.UsableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usableStatus = string(value["UsableStatus"].GetString());
         m_usableStatusHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.ReleaseStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.ReleaseStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseStatus = string(value["ReleaseStatus"].GetString());
         m_releaseStatusHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RateLimitStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.RateLimitStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.RateLimitStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rateLimitStatus = string(value["RateLimitStatus"].GetString());
         m_rateLimitStatusHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MockStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.MockStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.MockStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mockStatus = string(value["MockStatus"].GetString());
         m_mockStatusHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleasedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.ReleasedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.ReleasedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releasedTime = string(value["ReleasedTime"].GetString());
         m_releasedTimeHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetInt64();
         m_timeoutHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.ApiType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.ApiType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiType = string(value["ApiType"].GetString());
         m_apiTypeHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome KeyRegexInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyRegexInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRegexInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome KeyRegexInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Regex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KeyRegexInfo.Regex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KeyRegexInfo.Regex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regex = string(value["Regex"].GetString());
         m_regexHasBeenSet = true;

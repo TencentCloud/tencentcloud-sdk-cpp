@@ -36,7 +36,7 @@ CoreInternalOutcome AiSampleFailFaceInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Index"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AiSampleFailFaceInfo.Index` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFailFaceInfo.Index` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_index = value["Index"].GetUint64();
         m_indexHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AiSampleFailFaceInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiSampleFailFaceInfo.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFailFaceInfo.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AiSampleFailFaceInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleFailFaceInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFailFaceInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

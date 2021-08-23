@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     {
         if (!rsp["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(rsp["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     {
         if (!rsp["TotalBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalBandwidth = rsp["TotalBandwidth"].GetDouble();
         m_totalBandwidthHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     {
         if (!rsp["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = rsp["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     {
         if (!rsp["TotalRequest"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalRequest` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalRequest` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalRequest = rsp["TotalRequest"].GetUint64();
         m_totalRequestHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     {
         if (!rsp["TotalOnline"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalOnline` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalOnline` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalOnline = rsp["TotalOnline"].GetUint64();
         m_totalOnlineHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     if (rsp.HasMember("DomainInfoList") && !rsp["DomainInfoList"].IsNull())
     {
         if (!rsp["DomainInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DomainInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -43,7 +43,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FreqId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.FreqId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.FreqId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_freqId = string(value["FreqId"].GetString());
         m_freqIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FreqName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.FreqName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.FreqName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_freqName = string(value["FreqName"].GetString());
         m_freqNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ChannelsDataUp") && !value["ChannelsDataUp"].IsNull())
     {
         if (!value["ChannelsDataUp"].IsArray())
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsDataUp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.ChannelsDataUp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ChannelsDataUp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -85,7 +85,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ChannelsDataRX1") && !value["ChannelsDataRX1"].IsNull())
     {
         if (!value["ChannelsDataRX1"].IsArray())
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsDataRX1` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.ChannelsDataRX1` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ChannelsDataRX1"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ChannelsDataRX2") && !value["ChannelsDataRX2"].IsNull())
     {
         if (!value["ChannelsDataRX2"].IsArray())
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsDataRX2` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.ChannelsDataRX2` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ChannelsDataRX2"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -111,7 +111,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ChannelsJoinUp") && !value["ChannelsJoinUp"].IsNull())
     {
         if (!value["ChannelsJoinUp"].IsArray())
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsJoinUp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.ChannelsJoinUp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ChannelsJoinUp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ChannelsJoinRX1") && !value["ChannelsJoinRX1"].IsNull())
     {
         if (!value["ChannelsJoinRX1"].IsArray())
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsJoinRX1` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.ChannelsJoinRX1` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ChannelsJoinRX1"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ChannelsJoinRX2") && !value["ChannelsJoinRX2"].IsNull())
     {
         if (!value["ChannelsJoinRX2"].IsArray())
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsJoinRX2` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.ChannelsJoinRX2` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ChannelsJoinRX2"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -151,7 +151,7 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaFrequencyEntry.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;

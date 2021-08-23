@@ -51,7 +51,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Vul.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SiteId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Vul.SiteId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.SiteId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_siteId = value["SiteId"].GetUint64();
         m_siteIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Vul.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Level` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Level` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_level = string(value["Level"].GetString());
         m_levelHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Html"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Html` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Html` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_html = string(value["Html"].GetString());
         m_htmlHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nickname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Nickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Nickname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickname = string(value["Nickname"].GetString());
         m_nicknameHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Harm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Harm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Harm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_harm = string(value["Harm"].GetString());
         m_harmHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Describe"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Describe` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Describe` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_describe = string(value["Describe"].GetString());
         m_describeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Solution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Solution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Solution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_solution = string(value["Solution"].GetString());
         m_solutionHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["From"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.From` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.From` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_from = string(value["From"].GetString());
         m_fromHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Parameter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Parameter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Parameter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parameter = string(value["Parameter"].GetString());
         m_parameterHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsReported"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Vul.IsReported` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.IsReported` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isReported = value["IsReported"].GetUint64();
         m_isReportedHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Appid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Vul.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appid = value["Appid"].GetUint64();
         m_appidHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome Vul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vul.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vul.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;

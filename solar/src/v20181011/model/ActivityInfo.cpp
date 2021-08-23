@@ -40,7 +40,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityTitle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.ActivityTitle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.ActivityTitle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityTitle = string(value["ActivityTitle"].GetString());
         m_activityTitleHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.ActivityDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.ActivityDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityDesc = string(value["ActivityDesc"].GetString());
         m_activityDescHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityCover"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.ActivityCover` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.ActivityCover` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityCover = string(value["ActivityCover"].GetString());
         m_activityCoverHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.ActivityType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.ActivityType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityType = string(value["ActivityType"].GetString());
         m_activityTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityId = string(value["ActivityId"].GetString());
         m_activityIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ActivityInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonalConfig"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityInfo.PersonalConfig` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityInfo.PersonalConfig` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personalConfig = string(value["PersonalConfig"].GetString());
         m_personalConfigHasBeenSet = true;

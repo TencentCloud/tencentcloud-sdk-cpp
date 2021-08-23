@@ -47,7 +47,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Service"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.Service` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.Service` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_service = string(value["Service"].GetString());
         m_serviceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QQ"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.QQ` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.QQ` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qQ = string(value["QQ"].GetString());
         m_qQHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QQTag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.QQTag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.QQTag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qQTag = string(value["QQTag"].GetString());
         m_qQTagHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.CertMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.CertMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certMd5 = string(value["CertMd5"].GetString());
         m_certMd5HasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.PackageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.PackageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageName = string(value["PackageName"].GetString());
         m_packageNameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileMd5 = string(value["FileMd5"].GetString());
         m_fileMd5HasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scene"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.Scene` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.Scene` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scene = string(value["Scene"].GetString());
         m_sceneHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(value["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Imei"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.Imei` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.Imei` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imei = string(value["Imei"].GetString());
         m_imeiHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Wechat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.Wechat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.Wechat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wechat = string(value["Wechat"].GetString());
         m_wechatHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WechatTag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BRIRequest.WechatTag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BRIRequest.WechatTag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wechatTag = string(value["WechatTag"].GetString());
         m_wechatTagHasBeenSet = true;

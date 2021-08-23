@@ -38,7 +38,7 @@ CoreInternalOutcome TagDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagDetailInfo.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagDetailInfo.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TagDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizTagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagDetailInfo.BizTagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagDetailInfo.BizTagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizTagId = string(value["BizTagId"].GetString());
         m_bizTagIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TagDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagDetailInfo.TagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagDetailInfo.TagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = string(value["TagId"].GetString());
         m_tagIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TagDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TagDetailInfo.Sort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagDetailInfo.Sort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sort = value["Sort"].GetUint64();
         m_sortHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TagDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TagDetailInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagDetailInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;

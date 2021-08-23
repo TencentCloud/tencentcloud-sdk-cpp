@@ -42,7 +42,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["ErrCodeExt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errCodeExt = string(value["ErrCodeExt"].GetString());
         m_errCodeExtHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["Input"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.Input` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.Input` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["Output"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.Output` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.Output` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_output.Deserialize(value["Output"]);
@@ -116,7 +116,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["BeginProcessTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginProcessTime = string(value["BeginProcessTime"].GetString());
         m_beginProcessTimeHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome MediaProcessTaskTranscodeResult::Deserialize(const rapidjson
     {
         if (!value["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskTranscodeResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskTranscodeResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(value["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;

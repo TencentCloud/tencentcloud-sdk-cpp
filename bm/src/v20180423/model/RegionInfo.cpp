@@ -37,7 +37,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetUint64();
         m_regionIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionDescription = string(value["RegionDescription"].GetString());
         m_regionDescriptionHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ZoneInfoSet") && !value["ZoneInfoSet"].IsNull())
     {
         if (!value["ZoneInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `RegionInfo.ZoneInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.ZoneInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ZoneInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome AuthorizationInfoSearchCriteria::Deserialize(const rapidjson
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfoSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfoSearchCriteria.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;

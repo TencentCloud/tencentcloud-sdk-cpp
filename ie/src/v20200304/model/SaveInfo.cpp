@@ -35,7 +35,7 @@ CoreInternalOutcome SaveInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SaveInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaveInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SaveInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SaveInfo.CosInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SaveInfo.CosInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosInfo.Deserialize(value["CosInfo"]);

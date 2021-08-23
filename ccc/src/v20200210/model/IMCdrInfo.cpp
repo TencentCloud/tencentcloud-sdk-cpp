@@ -40,7 +40,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.EndStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.EndStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endStatus = value["EndStatus"].GetInt64();
         m_endStatusHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nickname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.Nickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.Nickname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickname = string(value["Nickname"].GetString());
         m_nicknameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.StaffId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.StaffId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffId = string(value["StaffId"].GetString());
         m_staffIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IMCdrInfo.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetInt64();
         m_timestampHasBeenSet = true;

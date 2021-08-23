@@ -36,7 +36,7 @@ CoreInternalOutcome SentenceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sentence"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceItem.Sentence` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceItem.Sentence` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sentence = string(value["Sentence"].GetString());
         m_sentenceHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SentenceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParaID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SentenceItem.ParaID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceItem.ParaID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_paraID = value["ParaID"].GetInt64();
         m_paraIDHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SentenceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SentenceID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SentenceItem.SentenceID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceItem.SentenceID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sentenceID = value["SentenceID"].GetInt64();
         m_sentenceIDHasBeenSet = true;

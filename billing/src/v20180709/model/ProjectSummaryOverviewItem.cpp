@@ -41,7 +41,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["RealTotalCostRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCostRatio = string(value["RealTotalCostRatio"].GetString());
         m_realTotalCostRatioHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ProjectSummaryOverviewItem::Deserialize(const rapidjson::Val
     {
         if (!value["BillMonth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billMonth = string(value["BillMonth"].GetString());
         m_billMonthHasBeenSet = true;

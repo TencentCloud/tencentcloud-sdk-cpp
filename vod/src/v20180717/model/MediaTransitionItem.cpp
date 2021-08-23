@@ -35,7 +35,7 @@ CoreInternalOutcome MediaTransitionItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaTransitionItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTransitionItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MediaTransitionItem::Deserialize(const rapidjson::Value &val
     if (value.HasMember("Transitions") && !value["Transitions"].IsNull())
     {
         if (!value["Transitions"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaTransitionItem.Transitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaTransitionItem.Transitions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Transitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

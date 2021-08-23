@@ -41,16 +41,16 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["TmpToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TmpToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TmpToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpToken = string(rsp["TmpToken"].GetString());
         m_tmpTokenHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["TmpSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretId = string(rsp["TmpSecretId"].GetString());
         m_tmpSecretIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["TmpSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretKey = string(rsp["TmpSecretKey"].GetString());
         m_tmpSecretKeyHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(rsp["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(rsp["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(rsp["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = rsp["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DownloadHelmChartResponse::Deserialize(const string &payload
     {
         if (!rsp["ExpiredTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = rsp["ExpiredTime"].GetInt64();
         m_expiredTimeHasBeenSet = true;

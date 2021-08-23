@@ -37,16 +37,16 @@ CoreInternalOutcome GetReturnCodeHistoryResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,18 +57,18 @@ CoreInternalOutcome GetReturnCodeHistoryResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("Details") && !rsp["Details"].IsNull())
     {
         if (!rsp["Details"].IsArray())
-            return CoreInternalOutcome(Error("response `Details` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Details` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Details"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome GetReturnCodeHistoryResponse::Deserialize(const string &payl
     if (rsp.HasMember("Summary") && !rsp["Summary"].IsNull())
     {
         if (!rsp["Summary"].IsArray())
-            return CoreInternalOutcome(Error("response `Summary` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Summary` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Summary"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome GetReturnCodeHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(rsp["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome GetReturnCodeHistoryResponse::Deserialize(const string &payl
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

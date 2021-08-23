@@ -37,7 +37,7 @@ CoreInternalOutcome DevTokenInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevTokenInfo.AccessId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevTokenInfo.AccessId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessId = string(value["AccessId"].GetString());
         m_accessIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DevTokenInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevTokenInfo.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevTokenInfo.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DevTokenInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevTokenInfo.AccessToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevTokenInfo.AccessToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessToken = string(value["AccessToken"].GetString());
         m_accessTokenHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DevTokenInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevTokenInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevTokenInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetUint64();
         m_expireTimeHasBeenSet = true;

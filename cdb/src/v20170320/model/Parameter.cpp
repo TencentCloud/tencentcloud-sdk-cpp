@@ -35,7 +35,7 @@ CoreInternalOutcome Parameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Parameter.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Parameter.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Parameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Parameter.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Parameter.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentValue = string(value["CurrentValue"].GetString());
         m_currentValueHasBeenSet = true;

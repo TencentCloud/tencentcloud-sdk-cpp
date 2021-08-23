@@ -45,7 +45,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Basic"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.Basic` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.Basic` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_basic.Deserialize(value["Basic"]);
@@ -61,7 +61,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Sites") && !value["Sites"].IsNull())
     {
         if (!value["Sites"].IsArray())
-            return CoreInternalOutcome(Error("response `MonitorsDetail.Sites` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.Sites` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Sites"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -82,7 +82,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SiteNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.SiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.SiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_siteNumber = value["SiteNumber"].GetUint64();
         m_siteNumberHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ImpactSites") && !value["ImpactSites"].IsNull())
     {
         if (!value["ImpactSites"].IsArray())
-            return CoreInternalOutcome(Error("response `MonitorsDetail.ImpactSites` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.ImpactSites` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImpactSites"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -112,7 +112,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImpactSiteNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.ImpactSiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.ImpactSiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_impactSiteNumber = value["ImpactSiteNumber"].GetUint64();
         m_impactSiteNumberHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsHighNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.VulsHighNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.VulsHighNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsHighNumber = value["VulsHighNumber"].GetUint64();
         m_vulsHighNumberHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsMiddleNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.VulsMiddleNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.VulsMiddleNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsMiddleNumber = value["VulsMiddleNumber"].GetUint64();
         m_vulsMiddleNumberHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsLowNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.VulsLowNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.VulsLowNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsLowNumber = value["VulsLowNumber"].GetUint64();
         m_vulsLowNumberHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsNoticeNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.VulsNoticeNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.VulsNoticeNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsNoticeNumber = value["VulsNoticeNumber"].GetUint64();
         m_vulsNoticeNumberHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetUint64();
         m_progressHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PageCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageCount = value["PageCount"].GetUint64();
         m_pageCountHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.ContentNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorsDetail.ContentNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_contentNumber = value["ContentNumber"].GetUint64();
         m_contentNumberHasBeenSet = true;

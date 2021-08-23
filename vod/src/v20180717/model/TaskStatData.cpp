@@ -36,7 +36,7 @@ CoreInternalOutcome TaskStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatData.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatData.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TaskStatData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Summary") && !value["Summary"].IsNull())
     {
         if (!value["Summary"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskStatData.Summary` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskStatData.Summary` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Summary"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome TaskStatData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Details") && !value["Details"].IsNull())
     {
         if (!value["Details"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskStatData.Details` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskStatData.Details` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Details"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

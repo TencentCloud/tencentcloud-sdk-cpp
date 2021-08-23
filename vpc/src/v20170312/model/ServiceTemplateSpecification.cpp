@@ -35,7 +35,7 @@ CoreInternalOutcome ServiceTemplateSpecification::Deserialize(const rapidjson::V
     {
         if (!value["ServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplateSpecification.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateSpecification.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceId = string(value["ServiceId"].GetString());
         m_serviceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ServiceTemplateSpecification::Deserialize(const rapidjson::V
     {
         if (!value["ServiceGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceTemplateSpecification.ServiceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateSpecification.ServiceGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceGroupId = string(value["ServiceGroupId"].GetString());
         m_serviceGroupIdHasBeenSet = true;

@@ -45,16 +45,16 @@ namespace TencentCloud
                 VmClient(const Credential &credential, const std::string &region);
                 VmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CancelTaskResponse> CancelTaskOutcome;
+                typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const VmClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
-                typedef Outcome<Error, Model::CreateVideoModerationTaskResponse> CreateVideoModerationTaskOutcome;
+                typedef Outcome<Core::Error, Model::CreateVideoModerationTaskResponse> CreateVideoModerationTaskOutcome;
                 typedef std::future<CreateVideoModerationTaskOutcome> CreateVideoModerationTaskOutcomeCallable;
                 typedef std::function<void(const VmClient*, const Model::CreateVideoModerationTaskRequest&, CreateVideoModerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoModerationTaskAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const VmClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const VmClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
 

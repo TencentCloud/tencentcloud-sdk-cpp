@@ -36,7 +36,7 @@ CoreInternalOutcome ContainerLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerLog.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerLog.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ContainerLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Log"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerLog.Log` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerLog.Log` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_log = string(value["Log"].GetString());
         m_logHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ContainerLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerLog.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerLog.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;

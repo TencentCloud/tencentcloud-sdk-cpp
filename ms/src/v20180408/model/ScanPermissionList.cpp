@@ -33,7 +33,7 @@ CoreInternalOutcome ScanPermissionList::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("PermissionList") && !value["PermissionList"].IsNull())
     {
         if (!value["PermissionList"].IsArray())
-            return CoreInternalOutcome(Error("response `ScanPermissionList.PermissionList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScanPermissionList.PermissionList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PermissionList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

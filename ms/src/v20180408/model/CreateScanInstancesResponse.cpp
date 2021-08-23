@@ -38,16 +38,16 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     {
         if (!rsp["ItemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ItemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ItemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemId = string(rsp["ItemId"].GetString());
         m_itemIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     {
         if (!rsp["Progress"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = rsp["Progress"].GetUint64();
         m_progressHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     if (rsp.HasMember("AppMd5s") && !rsp["AppMd5s"].IsNull())
     {
         if (!rsp["AppMd5s"].IsArray())
-            return CoreInternalOutcome(Error("response `AppMd5s` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AppMd5s` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AppMd5s"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     {
         if (!rsp["LimitCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LimitCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LimitCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_limitCount = rsp["LimitCount"].GetUint64();
         m_limitCountHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     {
         if (!rsp["LimitTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LimitTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LimitTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_limitTime = rsp["LimitTime"].GetUint64();
         m_limitTimeHasBeenSet = true;

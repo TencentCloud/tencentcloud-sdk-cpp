@@ -36,7 +36,7 @@ CoreInternalOutcome EmailSender::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EmailSender.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmailSender.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emailAddress = string(value["EmailAddress"].GetString());
         m_emailAddressHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EmailSender::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EmailSenderName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EmailSender.EmailSenderName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmailSender.EmailSenderName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emailSenderName = string(value["EmailSenderName"].GetString());
         m_emailSenderNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EmailSender::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTimestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EmailSender.CreatedTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmailSender.CreatedTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createdTimestamp = value["CreatedTimestamp"].GetUint64();
         m_createdTimestampHasBeenSet = true;

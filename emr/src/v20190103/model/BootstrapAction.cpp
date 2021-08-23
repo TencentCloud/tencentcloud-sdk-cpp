@@ -36,7 +36,7 @@ CoreInternalOutcome BootstrapAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BootstrapAction.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BootstrapAction.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BootstrapAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WhenRun"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BootstrapAction.WhenRun` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BootstrapAction.WhenRun` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_whenRun = string(value["WhenRun"].GetString());
         m_whenRunHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome BootstrapAction::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Args") && !value["Args"].IsNull())
     {
         if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Error("response `BootstrapAction.Args` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BootstrapAction.Args` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Args"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

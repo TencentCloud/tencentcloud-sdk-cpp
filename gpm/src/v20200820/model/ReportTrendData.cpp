@@ -38,7 +38,7 @@ CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TotalList") && !value["TotalList"].IsNull())
     {
         if (!value["TotalList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReportTrendData.TotalList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReportTrendData.TotalList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TotalList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -51,7 +51,7 @@ CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CancelList") && !value["CancelList"].IsNull())
     {
         if (!value["CancelList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReportTrendData.CancelList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReportTrendData.CancelList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CancelList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -64,7 +64,7 @@ CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SuccessList") && !value["SuccessList"].IsNull())
     {
         if (!value["SuccessList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReportTrendData.SuccessList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReportTrendData.SuccessList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SuccessList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FailList") && !value["FailList"].IsNull())
     {
         if (!value["FailList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReportTrendData.FailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReportTrendData.FailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -90,7 +90,7 @@ CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TimeoutList") && !value["TimeoutList"].IsNull())
     {
         if (!value["TimeoutList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReportTrendData.TimeoutList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReportTrendData.TimeoutList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TimeoutList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TimeList") && !value["TimeList"].IsNull())
     {
         if (!value["TimeList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReportTrendData.TimeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReportTrendData.TimeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TimeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

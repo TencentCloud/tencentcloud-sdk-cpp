@@ -38,7 +38,7 @@ CoreInternalOutcome CloudBaseRunVersionFlowItem::Deserialize(const rapidjson::Va
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVersionFlowItem.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVersionFlowItem.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CloudBaseRunVersionFlowItem::Deserialize(const rapidjson::Va
     {
         if (!value["FlowRatio"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVersionFlowItem.FlowRatio` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVersionFlowItem.FlowRatio` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowRatio = value["FlowRatio"].GetInt64();
         m_flowRatioHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CloudBaseRunVersionFlowItem::Deserialize(const rapidjson::Va
     {
         if (!value["UrlParam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVersionFlowItem.UrlParam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVersionFlowItem.UrlParam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_urlParam.Deserialize(value["UrlParam"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome CloudBaseRunVersionFlowItem::Deserialize(const rapidjson::Va
     {
         if (!value["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVersionFlowItem.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVersionFlowItem.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CloudBaseRunVersionFlowItem::Deserialize(const rapidjson::Va
     {
         if (!value["IsDefaultPriority"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVersionFlowItem.IsDefaultPriority` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVersionFlowItem.IsDefaultPriority` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultPriority = value["IsDefaultPriority"].GetBool();
         m_isDefaultPriorityHasBeenSet = true;

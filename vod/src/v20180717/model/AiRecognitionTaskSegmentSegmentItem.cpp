@@ -40,7 +40,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["SegmentUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.SegmentUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.SegmentUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentUrl = string(value["SegmentUrl"].GetString());
         m_segmentUrlHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["CovImgUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.CovImgUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_covImgUrl = string(value["CovImgUrl"].GetString());
         m_covImgUrlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const rapid
     {
         if (!value["SpecialInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.SpecialInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskSegmentSegmentItem.SpecialInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specialInfo = string(value["SpecialInfo"].GetString());
         m_specialInfoHasBeenSet = true;

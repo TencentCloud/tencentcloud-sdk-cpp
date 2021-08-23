@@ -46,7 +46,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigReleaseId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ConfigReleaseId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ConfigReleaseId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configReleaseId = string(value["ConfigReleaseId"].GetString());
         m_configReleaseIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configId = string(value["ConfigId"].GetString());
         m_configIdHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configName = string(value["ConfigName"].GetString());
         m_configNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ConfigVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ConfigVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configVersion = string(value["ConfigVersion"].GetString());
         m_configVersionHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseTime = string(value["ReleaseTime"].GetString());
         m_releaseTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ReleaseDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ReleaseDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseDesc = string(value["ReleaseDesc"].GetString());
         m_releaseDescHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigRelease.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;

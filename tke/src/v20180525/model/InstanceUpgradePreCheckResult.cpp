@@ -36,7 +36,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const rapidjson::
     {
         if (!value["CheckPass"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResult.CheckPass` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResult.CheckPass` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_checkPass = value["CheckPass"].GetBool();
         m_checkPassHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const rapidjson::
     if (value.HasMember("Items") && !value["Items"].IsNull())
     {
         if (!value["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResult.Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResult.Items` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const rapidjson::
     if (value.HasMember("SinglePods") && !value["SinglePods"].IsNull())
     {
         if (!value["SinglePods"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResult.SinglePods` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradePreCheckResult.SinglePods` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SinglePods"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

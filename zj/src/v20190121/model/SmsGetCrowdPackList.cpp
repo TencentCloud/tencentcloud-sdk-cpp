@@ -42,7 +42,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["ID"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.ID` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.ID` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iD = value["ID"].GetUint64();
         m_iDHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["PhoneNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.PhoneNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.PhoneNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNum = value["PhoneNum"].GetInt64();
         m_phoneNumHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["MD5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.MD5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.MD5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mD5 = string(value["MD5"].GetString());
         m_mD5HasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome SmsGetCrowdPackList::Deserialize(const rapidjson::Value &val
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsGetCrowdPackList.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsGetCrowdPackList.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;

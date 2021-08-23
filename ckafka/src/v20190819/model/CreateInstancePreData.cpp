@@ -36,7 +36,7 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &v
     {
         if (!value["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateInstancePreData.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInstancePreData.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowId = value["FlowId"].GetInt64();
         m_flowIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &v
     if (value.HasMember("DealNames") && !value["DealNames"].IsNull())
     {
         if (!value["DealNames"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateInstancePreData.DealNames` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateInstancePreData.DealNames` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DealNames"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInstancePreData.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInstancePreData.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

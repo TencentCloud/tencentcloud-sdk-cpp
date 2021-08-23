@@ -36,7 +36,7 @@ CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const rapidjson::Val
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceFamilyItem.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceFamilyItem.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const rapidjson::Val
     {
         if (!value["Order"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceFamilyItem.Order` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceFamilyItem.Order` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_order = value["Order"].GetInt64();
         m_orderHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const rapidjson::Val
     if (value.HasMember("InstanceTypes") && !value["InstanceTypes"].IsNull())
     {
         if (!value["InstanceTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `ReservedInstanceFamilyItem.InstanceTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceFamilyItem.InstanceTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

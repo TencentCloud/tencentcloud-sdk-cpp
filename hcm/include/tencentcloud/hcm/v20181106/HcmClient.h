@@ -39,7 +39,7 @@ namespace TencentCloud
                 HcmClient(const Credential &credential, const std::string &region);
                 HcmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::EvaluationResponse> EvaluationOutcome;
+                typedef Outcome<Core::Error, Model::EvaluationResponse> EvaluationOutcome;
                 typedef std::future<EvaluationOutcome> EvaluationOutcomeCallable;
                 typedef std::function<void(const HcmClient*, const Model::EvaluationRequest&, EvaluationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EvaluationAsyncHandler;
 

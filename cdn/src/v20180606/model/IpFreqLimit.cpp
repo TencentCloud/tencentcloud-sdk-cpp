@@ -35,7 +35,7 @@ CoreInternalOutcome IpFreqLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpFreqLimit.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpFreqLimit.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IpFreqLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IpFreqLimit.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpFreqLimit.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetInt64();
         m_qpsHasBeenSet = true;

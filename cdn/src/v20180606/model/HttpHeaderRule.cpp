@@ -36,7 +36,7 @@ CoreInternalOutcome HttpHeaderRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeaderMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderRule.HeaderMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderRule.HeaderMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerMode = string(value["HeaderMode"].GetString());
         m_headerModeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome HttpHeaderRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeaderName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderRule.HeaderName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderRule.HeaderName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerName = string(value["HeaderName"].GetString());
         m_headerNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome HttpHeaderRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeaderValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpHeaderRule.HeaderValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpHeaderRule.HeaderValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_headerValue = string(value["HeaderValue"].GetString());
         m_headerValueHasBeenSet = true;

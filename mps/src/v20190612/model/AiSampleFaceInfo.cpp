@@ -35,7 +35,7 @@ CoreInternalOutcome AiSampleFaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleFaceInfo.FaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFaceInfo.FaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = string(value["FaceId"].GetString());
         m_faceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AiSampleFaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleFaceInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleFaceInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

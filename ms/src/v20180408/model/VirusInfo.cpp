@@ -36,7 +36,7 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SafeType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VirusInfo.SafeType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.SafeType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_safeType = value["SafeType"].GetInt64();
         m_safeTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirusName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirusInfo.VirusName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.VirusName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_virusName = string(value["VirusName"].GetString());
         m_virusNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirusInfo.VirusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.VirusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_virusDesc = string(value["VirusDesc"].GetString());
         m_virusDescHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome BusinessLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessLogV2.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessLogV2.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome BusinessLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessLogV2.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessLogV2.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome BusinessLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BusinessLogV2.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessLogV2.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetUint64();
         m_timestampHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome BusinessLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessLogV2.InstanceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessLogV2.InstanceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceIp = string(value["InstanceIp"].GetString());
         m_instanceIpHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome BusinessLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessLogV2.LogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessLogV2.LogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logId = string(value["LogId"].GetString());
         m_logIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome BusinessLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BusinessLogV2.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BusinessLogV2.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;

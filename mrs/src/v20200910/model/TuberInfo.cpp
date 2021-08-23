@@ -66,7 +66,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Type` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Type` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_type.Deserialize(value["Type"]);
@@ -83,7 +83,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Part"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Part` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Part` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_part.Deserialize(value["Part"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Size") && !value["Size"].IsNull())
     {
         if (!value["Size"].IsArray())
-            return CoreInternalOutcome(Error("response `TuberInfo.Size` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Size` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Size"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Multiple"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Multiple` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Multiple` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_multiple.Deserialize(value["Multiple"]);
@@ -137,7 +137,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AspectRatio"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.AspectRatio` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.AspectRatio` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aspectRatio.Deserialize(value["AspectRatio"]);
@@ -154,7 +154,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Edge"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Edge` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Edge` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_edge.Deserialize(value["Edge"]);
@@ -171,7 +171,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InnerEcho"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.InnerEcho` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.InnerEcho` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_innerEcho.Deserialize(value["InnerEcho"]);
@@ -188,7 +188,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RearEcho"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.RearEcho` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.RearEcho` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rearEcho.Deserialize(value["RearEcho"]);
@@ -205,7 +205,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Elastic"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Elastic` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Elastic` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_elastic.Deserialize(value["Elastic"]);
@@ -222,7 +222,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Shape"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Shape` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Shape` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_shape.Deserialize(value["Shape"]);
@@ -239,7 +239,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShapeAttr"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.ShapeAttr` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.ShapeAttr` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_shapeAttr.Deserialize(value["ShapeAttr"]);
@@ -256,7 +256,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkinMedulla"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.SkinMedulla` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.SkinMedulla` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_skinMedulla.Deserialize(value["SkinMedulla"]);
@@ -273,7 +273,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Trend"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Trend` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Trend` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_trend.Deserialize(value["Trend"]);
@@ -290,7 +290,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Calcification"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Calcification` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Calcification` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_calcification.Deserialize(value["Calcification"]);
@@ -307,7 +307,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Envelope"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Envelope` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Envelope` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_envelope.Deserialize(value["Envelope"]);
@@ -324,7 +324,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enhancement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Enhancement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Enhancement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_enhancement.Deserialize(value["Enhancement"]);
@@ -341,7 +341,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LymphEnlargement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.LymphEnlargement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.LymphEnlargement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_lymphEnlargement.Deserialize(value["LymphEnlargement"]);
@@ -358,7 +358,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LymphDoor"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.LymphDoor` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.LymphDoor` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_lymphDoor.Deserialize(value["LymphDoor"]);
@@ -375,7 +375,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Activity"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Activity` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Activity` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_activity.Deserialize(value["Activity"]);
@@ -392,7 +392,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Operation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Operation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_operation.Deserialize(value["Operation"]);
@@ -409,7 +409,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CDFI"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.CDFI` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.CDFI` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cDFI.Deserialize(value["CDFI"]);
@@ -425,7 +425,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `TuberInfo.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -439,7 +439,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SizeStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.SizeStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.SizeStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sizeStatus.Deserialize(value["SizeStatus"]);
@@ -456,7 +456,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InnerEchoDistribution"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.InnerEchoDistribution` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.InnerEchoDistribution` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_innerEchoDistribution.Deserialize(value["InnerEchoDistribution"]);
@@ -472,7 +472,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InnerEchoType") && !value["InnerEchoType"].IsNull())
     {
         if (!value["InnerEchoType"].IsArray())
-            return CoreInternalOutcome(Error("response `TuberInfo.InnerEchoType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.InnerEchoType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InnerEchoType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -493,7 +493,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Outline"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Outline` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Outline` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outline.Deserialize(value["Outline"]);
@@ -510,7 +510,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Structure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Structure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Structure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_structure.Deserialize(value["Structure"]);
@@ -527,7 +527,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Density"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Density` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Density` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_density.Deserialize(value["Density"]);
@@ -544,7 +544,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vas"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Vas` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Vas` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vas.Deserialize(value["Vas"]);
@@ -561,7 +561,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cysticwall"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Cysticwall` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Cysticwall` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cysticwall.Deserialize(value["Cysticwall"]);
@@ -578,7 +578,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Capsule"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Capsule` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Capsule` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_capsule.Deserialize(value["Capsule"]);
@@ -595,7 +595,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsthmusThicknese"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.IsthmusThicknese` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.IsthmusThicknese` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_isthmusThicknese.Deserialize(value["IsthmusThicknese"]);
@@ -612,7 +612,7 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TuberInfo.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;

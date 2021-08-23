@@ -35,7 +35,7 @@ CoreInternalOutcome BackupDownloadTaskStatus::Deserialize(const rapidjson::Value
     {
         if (!value["ReplicaSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTaskStatus.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTaskStatus.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetId = string(value["ReplicaSetId"].GetString());
         m_replicaSetIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BackupDownloadTaskStatus::Deserialize(const rapidjson::Value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTaskStatus.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTaskStatus.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome CaptchaOperDataTryTimesDistributeUnit::Deserialize(const rap
     {
         if (!value["TryCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesDistributeUnit.TryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataTryTimesDistributeUnit.TryCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tryCount = value["TryCount"].GetInt64();
         m_tryCountHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CaptchaOperDataTryTimesDistributeUnit::Deserialize(const rap
     {
         if (!value["UserCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesDistributeUnit.UserCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataTryTimesDistributeUnit.UserCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_userCount = value["UserCount"].GetInt64();
         m_userCountHasBeenSet = true;

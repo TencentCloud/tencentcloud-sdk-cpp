@@ -41,7 +41,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["PicUrlExpireTimeStamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.PicUrlExpireTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.PicUrlExpireTimeStamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTimeStamp = value["PicUrlExpireTimeStamp"].GetInt64();
         m_picUrlExpireTimeStampHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const rapidjson::
     {
         if (!value["PicUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaContentReviewSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
         m_picUrlExpireTimeHasBeenSet = true;

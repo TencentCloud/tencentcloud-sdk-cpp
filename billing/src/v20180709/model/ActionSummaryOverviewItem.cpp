@@ -41,7 +41,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["ActionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.ActionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionType = string(value["ActionType"].GetString());
         m_actionTypeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["ActionTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.ActionTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.ActionTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionTypeName = string(value["ActionTypeName"].GetString());
         m_actionTypeNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["RealTotalCostRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.RealTotalCostRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCostRatio = string(value["RealTotalCostRatio"].GetString());
         m_realTotalCostRatioHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ActionSummaryOverviewItem::Deserialize(const rapidjson::Valu
     {
         if (!value["BillMonth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActionSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billMonth = string(value["BillMonth"].GetString());
         m_billMonthHasBeenSet = true;

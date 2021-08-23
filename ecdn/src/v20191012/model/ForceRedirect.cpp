@@ -36,7 +36,7 @@ CoreInternalOutcome ForceRedirect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForceRedirect.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForceRedirect.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ForceRedirect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForceRedirect.RedirectType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForceRedirect.RedirectType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectType = string(value["RedirectType"].GetString());
         m_redirectTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ForceRedirect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectStatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ForceRedirect.RedirectStatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForceRedirect.RedirectStatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_redirectStatusCode = value["RedirectStatusCode"].GetInt64();
         m_redirectStatusCodeHasBeenSet = true;

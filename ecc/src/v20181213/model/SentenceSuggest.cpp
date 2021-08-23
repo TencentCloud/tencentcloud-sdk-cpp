@@ -40,7 +40,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceSuggest.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceSuggest.ErrorType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.ErrorType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorType = string(value["ErrorType"].GetString());
         m_errorTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Origin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceSuggest.Origin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.Origin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_origin = string(value["Origin"].GetString());
         m_originHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Replace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceSuggest.Replace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.Replace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replace = string(value["Replace"].GetString());
         m_replaceHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SentenceSuggest.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ErrorPosition") && !value["ErrorPosition"].IsNull())
     {
         if (!value["ErrorPosition"].IsArray())
-            return CoreInternalOutcome(Error("response `SentenceSuggest.ErrorPosition` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.ErrorPosition` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ErrorPosition"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -102,7 +102,7 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ErrorCoordinates") && !value["ErrorCoordinates"].IsNull())
     {
         if (!value["ErrorCoordinates"].IsArray())
-            return CoreInternalOutcome(Error("response `SentenceSuggest.ErrorCoordinates` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SentenceSuggest.ErrorCoordinates` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ErrorCoordinates"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const rapidjson::Value &
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneFlowAndAvrStayTime.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneFlowAndAvrStayTime.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const rapidjson::Value &
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneFlowAndAvrStayTime.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneFlowAndAvrStayTime.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const rapidjson::Value &
     {
         if (!value["FlowCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneFlowAndAvrStayTime.FlowCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneFlowAndAvrStayTime.FlowCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_flowCount = value["FlowCount"].GetUint64();
         m_flowCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const rapidjson::Value &
     {
         if (!value["AvrStayTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneFlowAndAvrStayTime.AvrStayTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneFlowAndAvrStayTime.AvrStayTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_avrStayTime = value["AvrStayTime"].GetUint64();
         m_avrStayTimeHasBeenSet = true;

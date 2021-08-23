@@ -37,7 +37,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EngineVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamTemplateInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineVersion = string(value["EngineVersion"].GetString());
         m_engineVersionHasBeenSet = true;

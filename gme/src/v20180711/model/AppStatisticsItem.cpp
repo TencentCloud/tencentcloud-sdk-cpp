@@ -37,7 +37,7 @@ CoreInternalOutcome AppStatisticsItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["RealtimeSpeechStatisticsItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AppStatisticsItem.RealtimeSpeechStatisticsItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.RealtimeSpeechStatisticsItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_realtimeSpeechStatisticsItem.Deserialize(value["RealtimeSpeechStatisticsItem"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome AppStatisticsItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["VoiceMessageStatisticsItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AppStatisticsItem.VoiceMessageStatisticsItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.VoiceMessageStatisticsItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_voiceMessageStatisticsItem.Deserialize(value["VoiceMessageStatisticsItem"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome AppStatisticsItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["VoiceFilterStatisticsItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AppStatisticsItem.VoiceFilterStatisticsItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.VoiceFilterStatisticsItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_voiceFilterStatisticsItem.Deserialize(value["VoiceFilterStatisticsItem"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome AppStatisticsItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppStatisticsItem.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;

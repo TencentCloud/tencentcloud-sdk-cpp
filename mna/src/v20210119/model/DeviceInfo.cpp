@@ -38,7 +38,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vendor"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.Vendor` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.Vendor` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vendor = value["Vendor"].GetUint64();
         m_vendorHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OS"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.OS` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.OS` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_oS = value["OS"].GetUint64();
         m_oSHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNum = string(value["PhoneNum"].GetString());
         m_phoneNumHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Wireless"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.Wireless` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.Wireless` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_wireless = value["Wireless"].GetUint64();
         m_wirelessHasBeenSet = true;

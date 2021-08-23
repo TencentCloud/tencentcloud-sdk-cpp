@@ -36,7 +36,7 @@ CoreInternalOutcome ErrStaffItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffEmail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrStaffItem.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrStaffItem.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffEmail = string(value["StaffEmail"].GetString());
         m_staffEmailHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ErrStaffItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrStaffItem.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrStaffItem.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ErrStaffItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrStaffItem.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrStaffItem.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

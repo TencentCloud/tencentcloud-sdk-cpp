@@ -38,7 +38,7 @@ CoreInternalOutcome MailConfiguration::Deserialize(const rapidjson::Value &value
     {
         if (!value["SendMail"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MailConfiguration.SendMail` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MailConfiguration.SendMail` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sendMail = value["SendMail"].GetInt64();
         m_sendMailHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MailConfiguration::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Region") && !value["Region"].IsNull())
     {
         if (!value["Region"].IsArray())
-            return CoreInternalOutcome(Error("response `MailConfiguration.Region` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MailConfiguration.Region` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Region"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome MailConfiguration::Deserialize(const rapidjson::Value &value
     if (value.HasMember("HealthStatus") && !value["HealthStatus"].IsNull())
     {
         if (!value["HealthStatus"].IsArray())
-            return CoreInternalOutcome(Error("response `MailConfiguration.HealthStatus` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MailConfiguration.HealthStatus` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HealthStatus"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome MailConfiguration::Deserialize(const rapidjson::Value &value
     if (value.HasMember("ContactPerson") && !value["ContactPerson"].IsNull())
     {
         if (!value["ContactPerson"].IsArray())
-            return CoreInternalOutcome(Error("response `MailConfiguration.ContactPerson` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MailConfiguration.ContactPerson` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ContactPerson"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -86,7 +86,7 @@ CoreInternalOutcome MailConfiguration::Deserialize(const rapidjson::Value &value
     if (value.HasMember("ContactGroup") && !value["ContactGroup"].IsNull())
     {
         if (!value["ContactGroup"].IsArray())
-            return CoreInternalOutcome(Error("response `MailConfiguration.ContactGroup` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MailConfiguration.ContactGroup` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ContactGroup"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

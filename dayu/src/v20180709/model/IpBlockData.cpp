@@ -38,7 +38,7 @@ CoreInternalOutcome IpBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpBlockData.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpBlockData.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome IpBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpBlockData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpBlockData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome IpBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpBlockData.BlockTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpBlockData.BlockTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blockTime = string(value["BlockTime"].GetString());
         m_blockTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome IpBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnBlockTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpBlockData.UnBlockTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpBlockData.UnBlockTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unBlockTime = string(value["UnBlockTime"].GetString());
         m_unBlockTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome IpBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpBlockData.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpBlockData.ActionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionType = string(value["ActionType"].GetString());
         m_actionTypeHasBeenSet = true;

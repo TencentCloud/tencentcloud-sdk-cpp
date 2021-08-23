@@ -53,7 +53,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PushDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushDomain = string(value["PushDomain"].GetString());
         m_pushDomainHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginPushTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.BeginPushTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.BeginPushTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginPushTime = string(value["BeginPushTime"].GetString());
         m_beginPushTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(value["Resolution"].GetString());
         m_resolutionHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VCodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.VCodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.VCodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vCodec = string(value["VCodec"].GetString());
         m_vCodecHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ACodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.ACodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.ACodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aCodec = string(value["ACodec"].GetString());
         m_aCodecHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sequence"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.Sequence` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.Sequence` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sequence = string(value["Sequence"].GetString());
         m_sequenceHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoFps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.VideoFps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.VideoFps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoFps = value["VideoFps"].GetUint64();
         m_videoFpsHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.VideoRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.VideoRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoRate = value["VideoRate"].GetUint64();
         m_videoRateHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioFps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.AudioFps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.AudioFps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioFps = value["AudioFps"].GetUint64();
         m_audioFpsHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.AudioRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.AudioRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioRate = value["AudioRate"].GetUint64();
         m_audioRateHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalTs"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.LocalTs` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.LocalTs` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_localTs = value["LocalTs"].GetUint64();
         m_localTsHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoTs"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.VideoTs` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.VideoTs` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTs = value["VideoTs"].GetUint64();
         m_videoTsHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioTs"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.AudioTs` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.AudioTs` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioTs = value["AudioTs"].GetUint64();
         m_audioTsHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaVideoRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.MetaVideoRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.MetaVideoRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_metaVideoRate = value["MetaVideoRate"].GetUint64();
         m_metaVideoRateHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaAudioRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.MetaAudioRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.MetaAudioRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_metaAudioRate = value["MetaAudioRate"].GetUint64();
         m_metaAudioRateHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MateFps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.MateFps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.MateFps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mateFps = value["MateFps"].GetUint64();
         m_mateFpsHasBeenSet = true;
@@ -243,7 +243,7 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushQualityData.StreamParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.StreamParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamParam = string(value["StreamParam"].GetString());
         m_streamParamHasBeenSet = true;

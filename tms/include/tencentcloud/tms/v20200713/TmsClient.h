@@ -45,16 +45,16 @@ namespace TencentCloud
                 TmsClient(const Credential &credential, const std::string &region);
                 TmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::AccountTipoffAccessResponse> AccountTipoffAccessOutcome;
+                typedef Outcome<Core::Error, Model::AccountTipoffAccessResponse> AccountTipoffAccessOutcome;
                 typedef std::future<AccountTipoffAccessOutcome> AccountTipoffAccessOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::AccountTipoffAccessRequest&, AccountTipoffAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AccountTipoffAccessAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTextLibResponse> DescribeTextLibOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTextLibResponse> DescribeTextLibOutcome;
                 typedef std::future<DescribeTextLibOutcome> DescribeTextLibOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::DescribeTextLibRequest&, DescribeTextLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTextLibAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTextStatResponse> DescribeTextStatOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTextStatResponse> DescribeTextStatOutcome;
                 typedef std::future<DescribeTextStatOutcome> DescribeTextStatOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::DescribeTextStatRequest&, DescribeTextStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTextStatAsyncHandler;
-                typedef Outcome<Error, Model::TextModerationResponse> TextModerationOutcome;
+                typedef Outcome<Core::Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 

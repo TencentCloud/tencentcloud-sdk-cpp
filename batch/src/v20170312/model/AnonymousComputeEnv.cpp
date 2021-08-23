@@ -37,7 +37,7 @@ CoreInternalOutcome AnonymousComputeEnv::Deserialize(const rapidjson::Value &val
     {
         if (!value["EnvType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AnonymousComputeEnv.EnvType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnonymousComputeEnv.EnvType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envType = string(value["EnvType"].GetString());
         m_envTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AnonymousComputeEnv::Deserialize(const rapidjson::Value &val
     {
         if (!value["EnvData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AnonymousComputeEnv.EnvData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnonymousComputeEnv.EnvData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_envData.Deserialize(value["EnvData"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome AnonymousComputeEnv::Deserialize(const rapidjson::Value &val
     if (value.HasMember("MountDataDisks") && !value["MountDataDisks"].IsNull())
     {
         if (!value["MountDataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `AnonymousComputeEnv.MountDataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AnonymousComputeEnv.MountDataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MountDataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome AnonymousComputeEnv::Deserialize(const rapidjson::Value &val
     {
         if (!value["AgentRunningMode"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AnonymousComputeEnv.AgentRunningMode` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AnonymousComputeEnv.AgentRunningMode` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_agentRunningMode.Deserialize(value["AgentRunningMode"]);

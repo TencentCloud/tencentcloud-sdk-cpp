@@ -41,7 +41,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["ParamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.ParamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.ParamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paramName = string(value["ParamName"].GetString());
         m_paramNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["ValueType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.ValueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.ValueType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_valueType = string(value["ValueType"].GetString());
         m_valueTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["NeedRestart"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.NeedRestart` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.NeedRestart` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_needRestart = string(value["NeedRestart"].GetString());
         m_needRestartHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["DefaultValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultValue = string(value["DefaultValue"].GetString());
         m_defaultValueHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["CurrentValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentValue = string(value["CurrentValue"].GetString());
         m_currentValueHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["Tips"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.Tips` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.Tips` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tips = string(value["Tips"].GetString());
         m_tipsHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     if (value.HasMember("TextValue") && !value["TextValue"].IsNull())
     {
         if (!value["TextValue"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceTextParam.TextValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.TextValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TextValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTextParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTextParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

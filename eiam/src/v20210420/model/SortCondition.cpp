@@ -35,7 +35,7 @@ CoreInternalOutcome SortCondition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SortKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SortCondition.SortKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SortCondition.SortKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sortKey = string(value["SortKey"].GetString());
         m_sortKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SortCondition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SortOrder"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SortCondition.SortOrder` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SortCondition.SortOrder` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sortOrder = string(value["SortOrder"].GetString());
         m_sortOrderHasBeenSet = true;

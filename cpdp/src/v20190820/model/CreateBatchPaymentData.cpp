@@ -35,7 +35,7 @@ CoreInternalOutcome CreateBatchPaymentData::Deserialize(const rapidjson::Value &
     {
         if (!value["BatchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentData.BatchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentData.BatchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchId = string(value["BatchId"].GetString());
         m_batchIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome CreateBatchPaymentData::Deserialize(const rapidjson::Value &
     if (value.HasMember("BatchInfoList") && !value["BatchInfoList"].IsNull())
     {
         if (!value["BatchInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `CreateBatchPaymentData.BatchInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CreateBatchPaymentData.BatchInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BatchInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

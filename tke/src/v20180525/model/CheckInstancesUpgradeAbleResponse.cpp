@@ -37,16 +37,16 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
     {
         if (!rsp["ClusterVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterVersion = string(rsp["ClusterVersion"].GetString());
         m_clusterVersionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
     {
         if (!rsp["LatestVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LatestVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LatestVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestVersion = string(rsp["LatestVersion"].GetString());
         m_latestVersionHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
     if (rsp.HasMember("UpgradeAbleInstances") && !rsp["UpgradeAbleInstances"].IsNull())
     {
         if (!rsp["UpgradeAbleInstances"].IsArray())
-            return CoreInternalOutcome(Error("response `UpgradeAbleInstances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UpgradeAbleInstances` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["UpgradeAbleInstances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
     {
         if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = rsp["Total"].GetInt64();
         m_totalHasBeenSet = true;

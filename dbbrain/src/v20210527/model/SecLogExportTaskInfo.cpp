@@ -43,7 +43,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["AsyncRequestId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.AsyncRequestId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.AsyncRequestId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_asyncRequestId = value["AsyncRequestId"].GetUint64();
         m_asyncRequestIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Progress"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetUint64();
         m_progressHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["LogStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.LogStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.LogStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logStartTime = string(value["LogStartTime"].GetString());
         m_logStartTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["LogEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.LogEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.LogEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logEndTime = string(value["LogEndTime"].GetString());
         m_logEndTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TotalSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.TotalSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.TotalSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalSize = value["TotalSize"].GetUint64();
         m_totalSizeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome SecLogExportTaskInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("DangerLevels") && !value["DangerLevels"].IsNull())
     {
         if (!value["DangerLevels"].IsArray())
-            return CoreInternalOutcome(Error("response `SecLogExportTaskInfo.DangerLevels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecLogExportTaskInfo.DangerLevels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DangerLevels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -41,7 +41,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["ImageLayer"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageLayer` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.ImageLayer` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_imageLayer = value["ImageLayer"].GetInt64();
         m_imageLayerHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["InputType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.InputType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.InputType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_inputType = value["InputType"].GetInt64();
         m_inputTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["ImageHeight"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageHeight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.ImageHeight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_imageHeight = value["ImageHeight"].GetDouble();
         m_imageHeightHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["ImageWidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.ImageWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.ImageWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_imageWidth = value["ImageWidth"].GetDouble();
         m_imageWidthHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["LocationX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.LocationX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.LocationX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_locationX = value["LocationX"].GetDouble();
         m_locationXHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["LocationY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.LocationY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.LocationY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_locationY = value["LocationY"].GetDouble();
         m_locationYHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["Color"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.Color` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.Color` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_color = string(value["Color"].GetString());
         m_colorHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
     {
         if (!value["WatermarkId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixLayoutParams.WatermarkId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.WatermarkId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_watermarkId = value["WatermarkId"].GetInt64();
         m_watermarkIdHasBeenSet = true;

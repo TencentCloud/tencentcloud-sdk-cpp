@@ -36,7 +36,7 @@ CoreInternalOutcome TaskRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Expression"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskRule.Expression` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRule.Expression` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expression = string(value["Expression"].GetString());
         m_expressionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepeatInterval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskRule.RepeatInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskRule.RepeatInterval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_repeatInterval = value["RepeatInterval"].GetUint64();
         m_repeatIntervalHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceTimeSeries.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceTimeSeries.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableSchema"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceTimeSeries.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceTimeSeries.TableSchema` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableSchema = string(value["TableSchema"].GetString());
         m_tableSchemaHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const rapidjson::Value &va
     {
         if (!value["Engine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceTimeSeries.Engine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceTimeSeries.Engine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engine = string(value["Engine"].GetString());
         m_engineHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const rapidjson::Value &va
     {
         if (!value["SeriesData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TableSpaceTimeSeries.SeriesData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableSpaceTimeSeries.SeriesData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_seriesData.Deserialize(value["SeriesData"]);

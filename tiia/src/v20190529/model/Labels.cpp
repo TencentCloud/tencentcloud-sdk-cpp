@@ -35,7 +35,7 @@ CoreInternalOutcome Labels::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Labels.FirstLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Labels.FirstLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstLabel = string(value["FirstLabel"].GetString());
         m_firstLabelHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Labels::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecondLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Labels.SecondLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Labels.SecondLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secondLabel = string(value["SecondLabel"].GetString());
         m_secondLabelHasBeenSet = true;

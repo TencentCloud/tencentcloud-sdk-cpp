@@ -43,7 +43,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxQps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.MaxQps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.MaxQps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxQps = value["MaxQps"].GetUint64();
         m_maxQpsHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.UsableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.UsableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usableStatus = string(value["UsableStatus"].GetString());
         m_usableStatusHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.RuleContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.RuleContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleContent = string(value["RuleContent"].GetString());
         m_ruleContentHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsfRuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.TsfRuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.TsfRuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsfRuleId = string(value["TsfRuleId"].GetString());
         m_tsfRuleIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRateLimitRule.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;

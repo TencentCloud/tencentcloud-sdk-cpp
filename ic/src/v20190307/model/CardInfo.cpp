@@ -61,7 +61,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Iccid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Iccid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Iccid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iccid = string(value["Iccid"].GetString());
         m_iccidHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Msisdn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Msisdn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Msisdn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msisdn = string(value["Msisdn"].GetString());
         m_msisdnHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Imsi"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Imsi` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Imsi` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imsi = string(value["Imsi"].GetString());
         m_imsiHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Imei"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Imei` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Imei` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imei = string(value["Imei"].GetString());
         m_imeiHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sdkappid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Sdkappid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Sdkappid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkappid = string(value["Sdkappid"].GetString());
         m_sdkappidHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Teleoperator"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Teleoperator` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Teleoperator` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_teleoperator = value["Teleoperator"].GetInt64();
         m_teleoperatorHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CardStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.CardStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.CardStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cardStatus = value["CardStatus"].GetInt64();
         m_cardStatusHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.NetworkStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.NetworkStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_networkStatus = value["NetworkStatus"].GetInt64();
         m_networkStatusHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivitedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.ActivitedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.ActivitedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activitedTime = string(value["ActivitedTime"].GetString());
         m_activitedTimeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PoolId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.PoolId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.PoolId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_poolId = string(value["PoolId"].GetString());
         m_poolIdHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataUsedInPeriod"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.DataUsedInPeriod` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.DataUsedInPeriod` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataUsedInPeriod = value["DataUsedInPeriod"].GetDouble();
         m_dataUsedInPeriodHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataTotalInPeriod"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.DataTotalInPeriod` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.DataTotalInPeriod` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_dataTotalInPeriod = value["DataTotalInPeriod"].GetDouble();
         m_dataTotalInPeriodHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductExpiredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.ProductExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.ProductExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productExpiredTime = string(value["ProductExpiredTime"].GetString());
         m_productExpiredTimeHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -241,7 +241,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PreorderCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.PreorderCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.PreorderCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_preorderCnt = value["PreorderCnt"].GetInt64();
         m_preorderCntHasBeenSet = true;
@@ -251,7 +251,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsActivated"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.IsActivated` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.IsActivated` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isActivated = value["IsActivated"].GetInt64();
         m_isActivatedHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -271,7 +271,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoRenew"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.AutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.AutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenew = value["AutoRenew"].GetInt64();
         m_autoRenewHasBeenSet = true;
@@ -281,7 +281,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -291,7 +291,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllowArrears"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.AllowArrears` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.AllowArrears` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_allowArrears = value["AllowArrears"].GetInt64();
         m_allowArrearsHasBeenSet = true;
@@ -301,7 +301,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedSms"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.NeedSms` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.NeedSms` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needSms = value["NeedSms"].GetInt64();
         m_needSmsHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Provider"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.Provider` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.Provider` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_provider = value["Provider"].GetInt64();
         m_providerHasBeenSet = true;
@@ -321,7 +321,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificationState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.CertificationState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.CertificationState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_certificationState = value["CertificationState"].GetInt64();
         m_certificationStateHasBeenSet = true;
@@ -331,7 +331,7 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtherData"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CardInfo.OtherData` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardInfo.OtherData` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_otherData = value["OtherData"].GetDouble();
         m_otherDataHasBeenSet = true;

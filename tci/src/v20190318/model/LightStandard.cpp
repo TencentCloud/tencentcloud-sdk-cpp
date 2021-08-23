@@ -35,7 +35,7 @@ CoreInternalOutcome LightStandard::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LightStandard.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightStandard.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome LightStandard::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Range") && !value["Range"].IsNull())
     {
         if (!value["Range"].IsArray())
-            return CoreInternalOutcome(Error("response `LightStandard.Range` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LightStandard.Range` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Range"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

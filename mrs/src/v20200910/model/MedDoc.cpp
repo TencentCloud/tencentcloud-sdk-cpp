@@ -41,7 +41,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Advice"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.Advice` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.Advice` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_advice.Deserialize(value["Advice"]);
@@ -57,7 +57,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Diagnosis") && !value["Diagnosis"].IsNull())
     {
         if (!value["Diagnosis"].IsArray())
-            return CoreInternalOutcome(Error("response `MedDoc.Diagnosis` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.Diagnosis` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Diagnosis"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiseaseMedicalHistory"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.DiseaseMedicalHistory` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.DiseaseMedicalHistory` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_diseaseMedicalHistory.Deserialize(value["DiseaseMedicalHistory"]);
@@ -95,7 +95,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonalMedicalHistory"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.PersonalMedicalHistory` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.PersonalMedicalHistory` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_personalMedicalHistory.Deserialize(value["PersonalMedicalHistory"]);
@@ -112,7 +112,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObstericalMedicalHistory"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.ObstericalMedicalHistory` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.ObstericalMedicalHistory` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_obstericalMedicalHistory.Deserialize(value["ObstericalMedicalHistory"]);
@@ -129,7 +129,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FamilyMedicalHistory"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.FamilyMedicalHistory` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.FamilyMedicalHistory` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_familyMedicalHistory.Deserialize(value["FamilyMedicalHistory"]);
@@ -146,7 +146,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MenstrualMedicalHistory"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.MenstrualMedicalHistory` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.MenstrualMedicalHistory` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_menstrualMedicalHistory.Deserialize(value["MenstrualMedicalHistory"]);
@@ -163,7 +163,7 @@ CoreInternalOutcome MedDoc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TreatmentRecord"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MedDoc.TreatmentRecord` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MedDoc.TreatmentRecord` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_treatmentRecord.Deserialize(value["TreatmentRecord"]);

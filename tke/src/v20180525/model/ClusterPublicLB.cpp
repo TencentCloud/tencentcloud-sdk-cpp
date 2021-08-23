@@ -37,7 +37,7 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterPublicLB.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterPublicLB.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AllowFromCidrs") && !value["AllowFromCidrs"].IsNull())
     {
         if (!value["AllowFromCidrs"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterPublicLB.AllowFromCidrs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterPublicLB.AllowFromCidrs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AllowFromCidrs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityPolicies") && !value["SecurityPolicies"].IsNull())
     {
         if (!value["SecurityPolicies"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterPublicLB.SecurityPolicies` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterPublicLB.SecurityPolicies` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityPolicies"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtraParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterPublicLB.ExtraParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterPublicLB.ExtraParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extraParam = string(value["ExtraParam"].GetString());
         m_extraParamHasBeenSet = true;

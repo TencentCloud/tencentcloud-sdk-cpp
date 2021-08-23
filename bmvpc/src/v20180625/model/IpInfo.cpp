@@ -35,7 +35,7 @@ CoreInternalOutcome IpInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome IpInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Ips") && !value["Ips"].IsNull())
     {
         if (!value["Ips"].IsArray())
-            return CoreInternalOutcome(Error("response `IpInfo.Ips` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IpInfo.Ips` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Ips"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

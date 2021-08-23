@@ -41,7 +41,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -58,7 +58,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageSpriteInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.ImageSpriteInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.ImageSpriteInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageSpriteInfo.Deserialize(value["ImageSpriteInfo"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaterialUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.MaterialUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.MaterialUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialUrl = string(value["MaterialUrl"].GetString());
         m_materialUrlHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(value["Resolution"].GetString());
         m_resolutionHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaterialStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.MaterialStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.MaterialStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_materialStatus.Deserialize(value["MaterialStatus"]);
@@ -122,7 +122,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.OriginalUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.OriginalUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalUrl = string(value["OriginalUrl"].GetString());
         m_originalUrlHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodFileId = string(value["VodFileId"].GetString());
         m_vodFileIdHasBeenSet = true;

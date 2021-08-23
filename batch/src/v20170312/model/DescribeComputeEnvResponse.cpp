@@ -45,16 +45,16 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(rsp["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["EnvName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envName = string(rsp["EnvName"].GetString());
         m_envNameHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["Placement"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Placement` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_placement.Deserialize(rsp["Placement"]);
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     if (rsp.HasMember("ComputeNodeSet") && !rsp["ComputeNodeSet"].IsNull())
     {
         if (!rsp["ComputeNodeSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ComputeNodeSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ComputeNodeSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -144,7 +144,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["ComputeNodeMetrics"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_computeNodeMetrics.Deserialize(rsp["ComputeNodeMetrics"]);
@@ -161,7 +161,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["DesiredComputeNodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DesiredComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DesiredComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredComputeNodeCount = rsp["DesiredComputeNodeCount"].GetUint64();
         m_desiredComputeNodeCountHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["EnvType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envType = string(rsp["EnvType"].GetString());
         m_envTypeHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(rsp["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["NextAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NextAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NextAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextAction = string(rsp["NextAction"].GetString());
         m_nextActionHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     {
         if (!rsp["AttachedComputeNodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AttachedComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttachedComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_attachedComputeNodeCount = rsp["AttachedComputeNodeCount"].GetUint64();
         m_attachedComputeNodeCountHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

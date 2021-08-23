@@ -35,7 +35,7 @@ CoreInternalOutcome PlayDataInfoByStream::Deserialize(const rapidjson::Value &va
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayDataInfoByStream.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayDataInfoByStream.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PlayDataInfoByStream::Deserialize(const rapidjson::Value &va
     {
         if (!value["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PlayDataInfoByStream.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayDataInfoByStream.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = value["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;

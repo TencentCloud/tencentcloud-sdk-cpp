@@ -38,7 +38,7 @@ CoreInternalOutcome RawWatermarkParameter::Deserialize(const rapidjson::Value &v
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawWatermarkParameter.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawWatermarkParameter.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RawWatermarkParameter::Deserialize(const rapidjson::Value &v
     {
         if (!value["CoordinateOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawWatermarkParameter.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawWatermarkParameter.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coordinateOrigin = string(value["CoordinateOrigin"].GetString());
         m_coordinateOriginHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RawWatermarkParameter::Deserialize(const rapidjson::Value &v
     {
         if (!value["XPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawWatermarkParameter.XPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawWatermarkParameter.XPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xPos = string(value["XPos"].GetString());
         m_xPosHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RawWatermarkParameter::Deserialize(const rapidjson::Value &v
     {
         if (!value["YPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawWatermarkParameter.YPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawWatermarkParameter.YPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yPos = string(value["YPos"].GetString());
         m_yPosHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RawWatermarkParameter::Deserialize(const rapidjson::Value &v
     {
         if (!value["ImageTemplate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RawWatermarkParameter.ImageTemplate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawWatermarkParameter.ImageTemplate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageTemplate.Deserialize(value["ImageTemplate"]);

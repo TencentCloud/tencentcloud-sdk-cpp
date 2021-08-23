@@ -40,7 +40,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableDedicatedMaster"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.EnableDedicatedMaster` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.EnableDedicatedMaster` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableDedicatedMaster = value["EnableDedicatedMaster"].GetBool();
         m_enableDedicatedMasterHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterNodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.MasterNodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.MasterNodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterNodeType = string(value["MasterNodeType"].GetString());
         m_masterNodeTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterNodeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.MasterNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.MasterNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_masterNodeNum = value["MasterNodeNum"].GetUint64();
         m_masterNodeNumHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterNodeCpuNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.MasterNodeCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.MasterNodeCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_masterNodeCpuNum = value["MasterNodeCpuNum"].GetUint64();
         m_masterNodeCpuNumHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterNodeMemSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.MasterNodeMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.MasterNodeMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_masterNodeMemSize = value["MasterNodeMemSize"].GetUint64();
         m_masterNodeMemSizeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterNodeDiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.MasterNodeDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.MasterNodeDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_masterNodeDiskSize = value["MasterNodeDiskSize"].GetUint64();
         m_masterNodeDiskSizeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterNodeDiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MasterNodeInfo.MasterNodeDiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MasterNodeInfo.MasterNodeDiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterNodeDiskType = string(value["MasterNodeDiskType"].GetString());
         m_masterNodeDiskTypeHasBeenSet = true;

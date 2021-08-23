@@ -42,7 +42,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LineNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.LineNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.LineNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lineNo = string(value["LineNo"].GetString());
         m_lineNoHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.Spec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.Spec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spec = string(value["Spec"].GetString());
         m_specHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quantity"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.Quantity` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.Quantity` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quantity = string(value["Quantity"].GetString());
         m_quantityHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.UnitPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.UnitPrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unitPrice = string(value["UnitPrice"].GetString());
         m_unitPriceHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AmountWithoutTax"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.AmountWithoutTax` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.AmountWithoutTax` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_amountWithoutTax = string(value["AmountWithoutTax"].GetString());
         m_amountWithoutTaxHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaxRate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.TaxRate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.TaxRate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxRate = string(value["TaxRate"].GetString());
         m_taxRateHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaxAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceItem.TaxAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.TaxAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxAmount = string(value["TaxAmount"].GetString());
         m_taxAmountHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome DynamicPodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DynamicPodSpec.RequestCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicPodSpec.RequestCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_requestCpu = value["RequestCpu"].GetDouble();
         m_requestCpuHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DynamicPodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LimitCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DynamicPodSpec.LimitCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicPodSpec.LimitCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_limitCpu = value["LimitCpu"].GetDouble();
         m_limitCpuHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DynamicPodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestMemory"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DynamicPodSpec.RequestMemory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicPodSpec.RequestMemory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_requestMemory = value["RequestMemory"].GetDouble();
         m_requestMemoryHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DynamicPodSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LimitMemory"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DynamicPodSpec.LimitMemory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicPodSpec.LimitMemory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_limitMemory = value["LimitMemory"].GetDouble();
         m_limitMemoryHasBeenSet = true;

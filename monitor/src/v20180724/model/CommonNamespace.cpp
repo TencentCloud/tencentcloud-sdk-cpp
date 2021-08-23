@@ -41,7 +41,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Config"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.Config` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.Config` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_config = string(value["Config"].GetString());
         m_configHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AvailableRegions") && !value["AvailableRegions"].IsNull())
     {
         if (!value["AvailableRegions"].IsArray())
-            return CoreInternalOutcome(Error("response `CommonNamespace.AvailableRegions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.AvailableRegions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AvailableRegions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SortId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.SortId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.SortId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sortId = value["SortId"].GetInt64();
         m_sortIdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DashboardId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonNamespace.DashboardId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonNamespace.DashboardId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dashboardId = string(value["DashboardId"].GetString());
         m_dashboardIdHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.BizGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.BizGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizGroupId = string(value["BizGroupId"].GetString());
         m_bizGroupIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.TagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.TagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = string(value["TagId"].GetString());
         m_tagIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizTagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.BizTagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.BizTagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizTagId = string(value["BizTagId"].GetString());
         m_bizTagIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome WeComTagDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizTagIdStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeComTagDetail.BizTagIdStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeComTagDetail.BizTagIdStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizTagIdStr = string(value["BizTagIdStr"].GetString());
         m_bizTagIdStrHasBeenSet = true;

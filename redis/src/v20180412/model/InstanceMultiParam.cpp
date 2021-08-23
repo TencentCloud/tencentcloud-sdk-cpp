@@ -41,7 +41,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ParamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.ParamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.ParamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paramName = string(value["ParamName"].GetString());
         m_paramNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ValueType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.ValueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.ValueType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_valueType = string(value["ValueType"].GetString());
         m_valueTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["NeedRestart"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.NeedRestart` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.NeedRestart` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_needRestart = string(value["NeedRestart"].GetString());
         m_needRestartHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DefaultValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultValue = string(value["DefaultValue"].GetString());
         m_defaultValueHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CurrentValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentValue = string(value["CurrentValue"].GetString());
         m_currentValueHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Tips"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.Tips` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.Tips` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tips = string(value["Tips"].GetString());
         m_tipsHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("EnumValue") && !value["EnumValue"].IsNull())
     {
         if (!value["EnumValue"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.EnumValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.EnumValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnumValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

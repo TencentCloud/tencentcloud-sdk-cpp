@@ -35,7 +35,7 @@ CoreInternalOutcome OtherMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaterialUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OtherMaterial.MaterialUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherMaterial.MaterialUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialUrl = string(value["MaterialUrl"].GetString());
         m_materialUrlHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OtherMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OtherMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodFileId = string(value["VodFileId"].GetString());
         m_vodFileIdHasBeenSet = true;

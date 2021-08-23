@@ -34,7 +34,7 @@ CoreInternalOutcome DimensionsDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Isp") && !value["Isp"].IsNull())
     {
         if (!value["Isp"].IsArray())
-            return CoreInternalOutcome(Error("response `DimensionsDetail.Isp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DimensionsDetail.Isp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Isp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome DimensionsDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Province") && !value["Province"].IsNull())
     {
         if (!value["Province"].IsArray())
-            return CoreInternalOutcome(Error("response `DimensionsDetail.Province` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DimensionsDetail.Province` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Province"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

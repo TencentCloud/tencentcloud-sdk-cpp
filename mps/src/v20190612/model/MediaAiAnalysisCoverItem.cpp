@@ -35,7 +35,7 @@ CoreInternalOutcome MediaAiAnalysisCoverItem::Deserialize(const rapidjson::Value
     {
         if (!value["CoverPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisCoverItem.CoverPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisCoverItem.CoverPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverPath = string(value["CoverPath"].GetString());
         m_coverPathHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaAiAnalysisCoverItem::Deserialize(const rapidjson::Value
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisCoverItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisCoverItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

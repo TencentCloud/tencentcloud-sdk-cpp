@@ -46,7 +46,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceDetail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.InstanceDetail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.InstanceDetail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceDetail.Deserialize(value["InstanceDetail"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecificationLimit"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.SpecificationLimit` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.SpecificationLimit` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_specificationLimit.Deserialize(value["SpecificationLimit"]);
@@ -80,7 +80,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Usage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.Usage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.Usage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_usage.Deserialize(value["Usage"]);
@@ -97,7 +97,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.Region` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.Region` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_region.Deserialize(value["Region"]);
@@ -114,7 +114,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = string(value["ExpiredTime"].GetString());
         m_expiredTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.PackInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.PackInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_packInfo.Deserialize(value["PackInfo"]);
@@ -170,7 +170,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EipProductInfos") && !value["EipProductInfos"].IsNull())
     {
         if (!value["EipProductInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `BGPInstance.EipProductInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.EipProductInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EipProductInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -191,7 +191,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BoundStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.BoundStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.BoundStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_boundStatus = string(value["BoundStatus"].GetString());
         m_boundStatusHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DDoSLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.DDoSLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.DDoSLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dDoSLevel = string(value["DDoSLevel"].GetString());
         m_dDoSLevelHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CCEnable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstance.CCEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.CCEnable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cCEnable = value["CCEnable"].GetInt64();
         m_cCEnableHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome SlotReplacementInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlotReplacementInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotReplacementInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SlotReplacementInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReplacementType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlotReplacementInfo.ReplacementType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotReplacementInfo.ReplacementType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replacementType = string(value["ReplacementType"].GetString());
         m_replacementTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SlotReplacementInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MediaReplacementInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SlotReplacementInfo.MediaReplacementInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotReplacementInfo.MediaReplacementInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaReplacementInfo.Deserialize(value["MediaReplacementInfo"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome SlotReplacementInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["TextReplacementInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SlotReplacementInfo.TextReplacementInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotReplacementInfo.TextReplacementInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_textReplacementInfo.Deserialize(value["TextReplacementInfo"]);

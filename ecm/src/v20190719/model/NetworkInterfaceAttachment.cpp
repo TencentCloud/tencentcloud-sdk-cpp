@@ -37,7 +37,7 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Val
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterfaceAttachment.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterfaceAttachment.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Val
     {
         if (!value["DeviceIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterfaceAttachment.DeviceIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterfaceAttachment.DeviceIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceIndex = value["DeviceIndex"].GetUint64();
         m_deviceIndexHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Val
     {
         if (!value["InstanceAccountId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterfaceAttachment.InstanceAccountId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterfaceAttachment.InstanceAccountId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceAccountId = string(value["InstanceAccountId"].GetString());
         m_instanceAccountIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Val
     {
         if (!value["AttachTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInterfaceAttachment.AttachTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInterfaceAttachment.AttachTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attachTime = string(value["AttachTime"].GetString());
         m_attachTimeHasBeenSet = true;

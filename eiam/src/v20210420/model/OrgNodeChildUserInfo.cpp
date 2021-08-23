@@ -36,7 +36,7 @@ CoreInternalOutcome OrgNodeChildUserInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["OrgNodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildUserInfo.OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildUserInfo.OrgNodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orgNodeId = string(value["OrgNodeId"].GetString());
         m_orgNodeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OrgNodeChildUserInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("UserInfo") && !value["UserInfo"].IsNull())
     {
         if (!value["UserInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `OrgNodeChildUserInfo.UserInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildUserInfo.UserInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome OrgNodeChildUserInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TotalUserNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OrgNodeChildUserInfo.TotalUserNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrgNodeChildUserInfo.TotalUserNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalUserNum = value["TotalUserNum"].GetInt64();
         m_totalUserNumHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome TriggerInvokePara::Deserialize(const rapidjson::Value &value
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokePara.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokePara.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TriggerInvokePara::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokePara.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokePara.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TriggerInvokePara::Deserialize(const rapidjson::Value &value
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokePara.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokePara.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TriggerInvokePara::Deserialize(const rapidjson::Value &value
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokePara.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokePara.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TriggerInvokePara::Deserialize(const rapidjson::Value &value
     {
         if (!value["ContainerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokePara.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokePara.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerName = string(value["ContainerName"].GetString());
         m_containerNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome TriggerInvokePara::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClusterRegion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokePara.ClusterRegion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokePara.ClusterRegion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterRegion = value["ClusterRegion"].GetInt64();
         m_clusterRegionHasBeenSet = true;

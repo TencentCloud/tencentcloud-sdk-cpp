@@ -44,7 +44,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.AuditStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AuditStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditStatus = string(value["AuditStatus"].GetString());
         m_auditStatusHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.UserUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.UserUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userUin = string(value["UserUin"].GetString());
         m_userUinHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.IsDefault` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.IsDefault` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = string(value["IsDefault"].GetString());
         m_isDefaultHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.AuditReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AuditReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditReason = string(value["AuditReason"].GetString());
         m_auditReasonHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.CertificateInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.CertificateInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_certificateInfo.Deserialize(value["CertificateInfo"]);
@@ -131,7 +131,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContactInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.ContactInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.ContactInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_contactInfo.Deserialize(value["ContactInfo"]);
@@ -148,7 +148,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsValidTemplate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.IsValidTemplate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.IsValidTemplate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isValidTemplate = value["IsValidTemplate"].GetInt64();
         m_isValidTemplateHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvalidReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TemplateInfo.InvalidReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.InvalidReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invalidReason = string(value["InvalidReason"].GetString());
         m_invalidReasonHasBeenSet = true;

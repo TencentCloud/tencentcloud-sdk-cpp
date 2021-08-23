@@ -39,7 +39,7 @@ CoreInternalOutcome AiReviewTaskPornResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPornResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPornResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AiReviewTaskPornResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ErrCodeExt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPornResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPornResult.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errCodeExt = string(value["ErrCodeExt"].GetString());
         m_errCodeExtHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AiReviewTaskPornResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPornResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPornResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AiReviewTaskPornResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPornResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPornResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AiReviewTaskPornResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Input"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPornResult.Input` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPornResult.Input` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome AiReviewTaskPornResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Output"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiReviewTaskPornResult.Output` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewTaskPornResult.Output` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_output.Deserialize(value["Output"]);

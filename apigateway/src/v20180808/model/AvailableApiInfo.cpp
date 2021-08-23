@@ -40,7 +40,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.ApiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.ApiName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiName = string(value["ApiName"].GetString());
         m_apiNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.ApiType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.ApiType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiType = string(value["ApiType"].GetString());
         m_apiTypeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttachedOtherPlugin"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.AttachedOtherPlugin` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.AttachedOtherPlugin` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_attachedOtherPlugin = value["AttachedOtherPlugin"].GetBool();
         m_attachedOtherPluginHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome AvailableApiInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsAttached"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AvailableApiInfo.IsAttached` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableApiInfo.IsAttached` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAttached = value["IsAttached"].GetBool();
         m_isAttachedHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome VpcLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LimitType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcLimit.LimitType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcLimit.LimitType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_limitType = string(value["LimitType"].GetString());
         m_limitTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VpcLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LimitValue"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcLimit.LimitValue` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcLimit.LimitValue` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_limitValue = value["LimitValue"].GetUint64();
         m_limitValueHasBeenSet = true;

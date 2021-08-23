@@ -55,7 +55,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["AlarmStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.AlarmStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.AlarmStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alarmStatus = string(value["AlarmStatus"].GetString());
         m_alarmStatusHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["GroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = value["GroupId"].GetInt64();
         m_groupIdHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["FirstOccurTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.FirstOccurTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.FirstOccurTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstOccurTime = string(value["FirstOccurTime"].GetString());
         m_firstOccurTimeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["LastOccurTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.LastOccurTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.LastOccurTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastOccurTime = string(value["LastOccurTime"].GetString());
         m_lastOccurTimeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["ObjName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.ObjName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.ObjName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objName = string(value["ObjName"].GetString());
         m_objNameHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["ObjId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.ObjId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.ObjId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objId = string(value["ObjId"].GetString());
         m_objIdHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(value["ViewName"].GetString());
         m_viewNameHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Vpc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Vpc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Vpc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpc = string(value["Vpc"].GetString());
         m_vpcHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["MetricId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_metricId = value["MetricId"].GetInt64();
         m_metricIdHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["AlarmType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.AlarmType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.AlarmType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmType = value["AlarmType"].GetInt64();
         m_alarmTypeHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     {
         if (!value["Dimensions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.Dimensions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dimensions = string(value["Dimensions"].GetString());
         m_dimensionsHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     if (value.HasMember("NotifyWay") && !value["NotifyWay"].IsNull())
     {
         if (!value["NotifyWay"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.NotifyWay` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.NotifyWay` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotifyWay"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -267,7 +267,7 @@ CoreInternalOutcome DescribeBasicAlarmListAlarms::Deserialize(const rapidjson::V
     if (value.HasMember("InstanceGroup") && !value["InstanceGroup"].IsNull())
     {
         if (!value["InstanceGroup"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeBasicAlarmListAlarms.InstanceGroup` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeBasicAlarmListAlarms.InstanceGroup` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceGroup"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome EventMessage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EventMessage.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventMessage.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome EventMessage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EventMessage.Time` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventMessage.Time` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetUint64();
         m_timeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome EventMessage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EventMessage.EventId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventMessage.EventId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetUint64();
         m_eventIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome EventMessage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParamOne"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventMessage.ParamOne` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventMessage.ParamOne` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_paramOne = value["ParamOne"].GetInt64();
         m_paramOneHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome EventMessage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParamTwo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EventMessage.ParamTwo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventMessage.ParamTwo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_paramTwo = value["ParamTwo"].GetInt64();
         m_paramTwoHasBeenSet = true;

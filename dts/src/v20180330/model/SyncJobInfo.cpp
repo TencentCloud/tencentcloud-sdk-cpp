@@ -48,7 +48,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(value["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.JobName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.JobName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobName = string(value["JobName"].GetString());
         m_jobNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SyncOption"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.SyncOption` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.SyncOption` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_syncOption.Deserialize(value["SyncOption"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcAccessType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.SrcAccessType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.SrcAccessType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcAccessType = string(value["SrcAccessType"].GetString());
         m_srcAccessTypeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcDatabaseType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.SrcDatabaseType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.SrcDatabaseType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcDatabaseType = string(value["SrcDatabaseType"].GetString());
         m_srcDatabaseTypeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.SrcInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.SrcInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_srcInfo.Deserialize(value["SrcInfo"]);
@@ -122,7 +122,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstAccessType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.DstAccessType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DstAccessType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstAccessType = string(value["DstAccessType"].GetString());
         m_dstAccessTypeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstDatabaseType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.DstDatabaseType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DstDatabaseType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstDatabaseType = string(value["DstDatabaseType"].GetString());
         m_dstDatabaseTypeHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.DstInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DstInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dstInfo.Deserialize(value["DstInfo"]);
@@ -159,7 +159,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Detail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.Detail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.Detail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_detail.Deserialize(value["Detail"]);
@@ -176,7 +176,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.DatabaseInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.DatabaseInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseInfo = string(value["DatabaseInfo"].GetString());
         m_databaseInfoHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SyncJobInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

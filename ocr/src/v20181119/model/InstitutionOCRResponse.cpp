@@ -38,16 +38,16 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["RegId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regId = string(rsp["RegId"].GetString());
         m_regIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["ValidDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ValidDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ValidDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validDate = string(rsp["ValidDate"].GetString());
         m_validDateHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(rsp["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome InstitutionOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["LegalPerson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LegalPerson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LegalPerson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPerson = string(rsp["LegalPerson"].GetString());
         m_legalPersonHasBeenSet = true;

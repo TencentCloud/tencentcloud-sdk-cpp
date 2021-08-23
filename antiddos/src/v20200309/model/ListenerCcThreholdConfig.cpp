@@ -37,7 +37,7 @@ CoreInternalOutcome ListenerCcThreholdConfig::Deserialize(const rapidjson::Value
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerCcThreholdConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerCcThreholdConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ListenerCcThreholdConfig::Deserialize(const rapidjson::Value
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ListenerCcThreholdConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerCcThreholdConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ListenerCcThreholdConfig::Deserialize(const rapidjson::Value
     {
         if (!value["CCEnable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ListenerCcThreholdConfig.CCEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerCcThreholdConfig.CCEnable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cCEnable = value["CCEnable"].GetInt64();
         m_cCEnableHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ListenerCcThreholdConfig::Deserialize(const rapidjson::Value
     {
         if (!value["CCThreshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ListenerCcThreholdConfig.CCThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ListenerCcThreholdConfig.CCThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cCThreshold = value["CCThreshold"].GetInt64();
         m_cCThresholdHasBeenSet = true;

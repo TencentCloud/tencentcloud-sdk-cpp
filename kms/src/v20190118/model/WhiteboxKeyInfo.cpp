@@ -45,7 +45,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.KeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatorUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.CreatorUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.CreatorUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_creatorUin = value["CreatorUin"].GetUint64();
         m_creatorUinHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.OwnerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.OwnerUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = value["OwnerUin"].GetUint64();
         m_ownerUinHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Algorithm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_algorithm = string(value["Algorithm"].GetString());
         m_algorithmHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EncryptKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.EncryptKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.EncryptKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_encryptKey = string(value["EncryptKey"].GetString());
         m_encryptKeyHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DecryptKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.DecryptKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.DecryptKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_decryptKey = string(value["DecryptKey"].GetString());
         m_decryptKeyHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceFingerprintBind"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.DeviceFingerprintBind` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WhiteboxKeyInfo.DeviceFingerprintBind` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deviceFingerprintBind = value["DeviceFingerprintBind"].GetBool();
         m_deviceFingerprintBindHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CdcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalGateway.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.CdcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cdcId = string(value["CdcId"].GetString());
         m_cdcIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UniqLocalGwId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalGateway.UniqLocalGwId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.UniqLocalGwId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniqLocalGwId = string(value["UniqLocalGwId"].GetString());
         m_uniqLocalGwIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalGateway.LocalGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.LocalGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_localGatewayName = string(value["LocalGatewayName"].GetString());
         m_localGatewayNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocalGwIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalGateway.LocalGwIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.LocalGwIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_localGwIp = string(value["LocalGwIp"].GetString());
         m_localGwIpHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LocalGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

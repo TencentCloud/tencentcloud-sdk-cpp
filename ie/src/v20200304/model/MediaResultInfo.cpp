@@ -36,7 +36,7 @@ CoreInternalOutcome MediaResultInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaResultInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaResultInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MediaResultInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResultVideoInfoSet") && !value["ResultVideoInfoSet"].IsNull())
     {
         if (!value["ResultVideoInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaResultInfo.ResultVideoInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaResultInfo.ResultVideoInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultVideoInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome MediaResultInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResultAudioInfoSet") && !value["ResultAudioInfoSet"].IsNull())
     {
         if (!value["ResultAudioInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaResultInfo.ResultAudioInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaResultInfo.ResultAudioInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultAudioInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

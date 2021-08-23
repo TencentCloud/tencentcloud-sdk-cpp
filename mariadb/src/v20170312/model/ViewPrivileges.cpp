@@ -36,7 +36,7 @@ CoreInternalOutcome ViewPrivileges::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewPrivileges.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewPrivileges.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ViewPrivileges::Deserialize(const rapidjson::Value &value)
     {
         if (!value["View"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewPrivileges.View` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewPrivileges.View` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_view = string(value["View"].GetString());
         m_viewHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ViewPrivileges::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
     {
         if (!value["Privileges"].IsArray())
-            return CoreInternalOutcome(Error("response `ViewPrivileges.Privileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ViewPrivileges.Privileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Privileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

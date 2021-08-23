@@ -35,7 +35,7 @@ CoreInternalOutcome SimpleModule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleModule.ModuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleModule.ModuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleId = string(value["ModuleId"].GetString());
         m_moduleIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SimpleModule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleModule.ModuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleModule.ModuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleName = string(value["ModuleName"].GetString());
         m_moduleNameHasBeenSet = true;

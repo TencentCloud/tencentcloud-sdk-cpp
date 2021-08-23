@@ -38,7 +38,7 @@ CoreInternalOutcome SignKeyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignKeyword.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignKeyword.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SignKeyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetCoordX"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignKeyword.OffsetCoordX` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignKeyword.OffsetCoordX` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offsetCoordX = string(value["OffsetCoordX"].GetString());
         m_offsetCoordXHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SignKeyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetCoordY"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignKeyword.OffsetCoordY` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignKeyword.OffsetCoordY` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offsetCoordY = string(value["OffsetCoordY"].GetString());
         m_offsetCoordYHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SignKeyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageWidth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignKeyword.ImageWidth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignKeyword.ImageWidth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageWidth = string(value["ImageWidth"].GetString());
         m_imageWidthHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SignKeyword::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageHeight"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SignKeyword.ImageHeight` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SignKeyword.ImageHeight` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageHeight = string(value["ImageHeight"].GetString());
         m_imageHeightHasBeenSet = true;

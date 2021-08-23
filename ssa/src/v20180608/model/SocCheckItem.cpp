@@ -37,7 +37,7 @@ CoreInternalOutcome SocCheckItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocCheckItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocCheckItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SocCheckItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LevelId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocCheckItem.LevelId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocCheckItem.LevelId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_levelId = string(value["LevelId"].GetString());
         m_levelIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SocCheckItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuccessCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SocCheckItem.SuccessCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocCheckItem.SuccessCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_successCount = value["SuccessCount"].GetInt64();
         m_successCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SocCheckItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SocCheckItem.FailCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocCheckItem.FailCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_failCount = value["FailCount"].GetInt64();
         m_failCountHasBeenSet = true;

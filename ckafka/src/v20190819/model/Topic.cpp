@@ -36,7 +36,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Note"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.Note` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.Note` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_note = string(value["Note"].GetString());
         m_noteHasBeenSet = true;

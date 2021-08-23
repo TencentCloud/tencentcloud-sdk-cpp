@@ -41,7 +41,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationCidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.DestinationCidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationCidrBlock = string(value["DestinationCidrBlock"].GetString());
         m_destinationCidrBlockHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.GatewayType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.GatewayType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayType = string(value["GatewayType"].GetString());
         m_gatewayTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayId = string(value["GatewayId"].GetString());
         m_gatewayIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteItemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.RouteItemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.RouteItemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeItemId = string(value["RouteItemId"].GetString());
         m_routeItemIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.RouteDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.RouteDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeDescription = string(value["RouteDescription"].GetString());
         m_routeDescriptionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Route.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Route.RouteType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.RouteType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeType = string(value["RouteType"].GetString());
         m_routeTypeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Route.RouteId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Route.RouteId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = value["RouteId"].GetUint64();
         m_routeIdHasBeenSet = true;

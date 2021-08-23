@@ -35,7 +35,7 @@ CoreInternalOutcome SlaveInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["First"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SlaveInfo.First` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveInfo.First` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_first.Deserialize(value["First"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome SlaveInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Second"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SlaveInfo.Second` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveInfo.Second` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_second.Deserialize(value["Second"]);

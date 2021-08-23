@@ -39,7 +39,7 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Acl.ResourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl.ResourceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = value["ResourceType"].GetInt64();
         m_resourceTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acl.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Principal"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acl.Principal` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl.Principal` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_principal = string(value["Principal"].GetString());
         m_principalHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Acl.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operation"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Acl.Operation` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl.Operation` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_operation = value["Operation"].GetInt64();
         m_operationHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PermissionType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Acl.PermissionType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Acl.PermissionType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_permissionType = value["PermissionType"].GetInt64();
         m_permissionTypeHasBeenSet = true;

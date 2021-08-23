@@ -45,16 +45,16 @@ namespace TencentCloud
                 StsClient(const Credential &credential, const std::string &region);
                 StsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::AssumeRoleResponse> AssumeRoleOutcome;
+                typedef Outcome<Core::Error, Model::AssumeRoleResponse> AssumeRoleOutcome;
                 typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::AssumeRoleRequest&, AssumeRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleAsyncHandler;
-                typedef Outcome<Error, Model::AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLOutcome;
+                typedef Outcome<Core::Error, Model::AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLOutcome;
                 typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::AssumeRoleWithSAMLRequest&, AssumeRoleWithSAMLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleWithSAMLAsyncHandler;
-                typedef Outcome<Error, Model::GetFederationTokenResponse> GetFederationTokenOutcome;
+                typedef Outcome<Core::Error, Model::GetFederationTokenResponse> GetFederationTokenOutcome;
                 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::GetFederationTokenRequest&, GetFederationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFederationTokenAsyncHandler;
-                typedef Outcome<Error, Model::QueryApiKeyResponse> QueryApiKeyOutcome;
+                typedef Outcome<Core::Error, Model::QueryApiKeyResponse> QueryApiKeyOutcome;
                 typedef std::future<QueryApiKeyOutcome> QueryApiKeyOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::QueryApiKeyRequest&, QueryApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryApiKeyAsyncHandler;
 

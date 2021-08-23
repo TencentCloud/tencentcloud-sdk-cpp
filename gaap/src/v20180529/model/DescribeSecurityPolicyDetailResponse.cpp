@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
     {
         if (!rsp["ProxyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyId = string(rsp["ProxyId"].GetString());
         m_proxyIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
     {
         if (!rsp["DefaultAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefaultAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefaultAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultAction = string(rsp["DefaultAction"].GetString());
         m_defaultActionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
     {
         if (!rsp["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(rsp["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeSecurityPolicyDetailResponse::Deserialize(const stri
     if (rsp.HasMember("RuleList") && !rsp["RuleList"].IsNull())
     {
         if (!rsp["RuleList"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RuleList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

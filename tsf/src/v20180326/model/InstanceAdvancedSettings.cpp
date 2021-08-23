@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["MountTarget"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.MountTarget` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.MountTarget` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountTarget = string(value["MountTarget"].GetString());
         m_mountTargetHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["DockerGraphPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DockerGraphPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.DockerGraphPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dockerGraphPath = string(value["DockerGraphPath"].GetString());
         m_dockerGraphPathHasBeenSet = true;

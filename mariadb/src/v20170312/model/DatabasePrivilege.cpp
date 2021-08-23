@@ -34,7 +34,7 @@ CoreInternalOutcome DatabasePrivilege::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
     {
         if (!value["Privileges"].IsArray())
-            return CoreInternalOutcome(Error("response `DatabasePrivilege.Privileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DatabasePrivilege.Privileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Privileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome DatabasePrivilege::Deserialize(const rapidjson::Value &value
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabasePrivilege.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabasePrivilege.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;

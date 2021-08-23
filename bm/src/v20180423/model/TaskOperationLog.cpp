@@ -37,7 +37,7 @@ CoreInternalOutcome TaskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStep"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskOperationLog.TaskStep` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOperationLog.TaskStep` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskStep = string(value["TaskStep"].GetString());
         m_taskStepHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TaskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskOperationLog.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOperationLog.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TaskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperationDetail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskOperationLog.OperationDetail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOperationLog.OperationDetail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationDetail = string(value["OperationDetail"].GetString());
         m_operationDetailHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TaskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskOperationLog.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskOperationLog.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationTime = string(value["OperationTime"].GetString());
         m_operationTimeHasBeenSet = true;

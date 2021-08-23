@@ -35,7 +35,7 @@ CoreInternalOutcome Trace::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Images") && !value["Images"].IsNull())
     {
         if (!value["Images"].IsArray())
-            return CoreInternalOutcome(Error("response `Trace.Images` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Trace.Images` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Images"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome Trace::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Urls") && !value["Urls"].IsNull())
     {
         if (!value["Urls"].IsArray())
-            return CoreInternalOutcome(Error("response `Trace.Urls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Trace.Urls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Urls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome Trace::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BodyRects") && !value["BodyRects"].IsNull())
     {
         if (!value["BodyRects"].IsArray())
-            return CoreInternalOutcome(Error("response `Trace.BodyRects` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Trace.BodyRects` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BodyRects"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

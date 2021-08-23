@@ -53,7 +53,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Activity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.Activity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.Activity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activity = value["Activity"].GetInt64();
         m_activityHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudienceUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.AudienceUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.AudienceUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_audienceUserId = string(value["AudienceUserId"].GetString());
         m_audienceUserIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Avatar"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.Avatar` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.Avatar` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_avatar = string(value["Avatar"].GetString());
         m_avatarHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastActiveTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.LastActiveTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.LastActiveTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastActiveTime = string(value["LastActiveTime"].GetString());
         m_lastActiveTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MarkFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.MarkFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.MarkFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_markFlag = string(value["MarkFlag"].GetString());
         m_markFlagHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonthActive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.MonthActive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.MonthActive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_monthActive = value["MonthActive"].GetInt64();
         m_monthActiveHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonthRecommend"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.MonthRecommend` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.MonthRecommend` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_monthRecommend = value["MonthRecommend"].GetInt64();
         m_monthRecommendHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.RealName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.RealName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realName = string(value["RealName"].GetString());
         m_realNameHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RelChannelFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.RelChannelFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.RelChannelFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_relChannelFlag = value["RelChannelFlag"].GetInt64();
         m_relChannelFlagHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.Sex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.Sex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sex = value["Sex"].GetInt64();
         m_sexHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spread"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.Spread` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.Spread` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_spread = value["Spread"].GetInt64();
         m_spreadHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WeekActive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.WeekActive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.WeekActive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weekActive = value["WeekActive"].GetInt64();
         m_weekActiveHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WeekRecommend"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.WeekRecommend` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.WeekRecommend` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weekRecommend = value["WeekRecommend"].GetInt64();
         m_weekRecommendHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WxCity"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.WxCity` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.WxCity` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wxCity = string(value["WxCity"].GetString());
         m_wxCityHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WxCountry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.WxCountry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.WxCountry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wxCountry = string(value["WxCountry"].GetString());
         m_wxCountryHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WxNickname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.WxNickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.WxNickname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wxNickname = string(value["WxNickname"].GetString());
         m_wxNicknameHasBeenSet = true;
@@ -243,7 +243,7 @@ CoreInternalOutcome CustomerInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WxProvince"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerInfo.WxProvince` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerInfo.WxProvince` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wxProvince = string(value["WxProvince"].GetString());
         m_wxProvinceHasBeenSet = true;

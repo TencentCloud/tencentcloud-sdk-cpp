@@ -49,7 +49,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.AddressId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressId = string(value["AddressId"].GetString());
         m_addressIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.AddressName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.AddressName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressName = string(value["AddressName"].GetString());
         m_addressNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.AddressStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.AddressStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressStatus = string(value["AddressStatus"].GetString());
         m_addressStatusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressIp = string(value["AddressIp"].GetString());
         m_addressIpHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkInterfaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceId = string(value["NetworkInterfaceId"].GetString());
         m_networkInterfaceIdHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateAddressIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.PrivateAddressIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.PrivateAddressIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateAddressIp = string(value["PrivateAddressIp"].GetString());
         m_privateAddressIpHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsArrears"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Address.IsArrears` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.IsArrears` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isArrears = value["IsArrears"].GetBool();
         m_isArrearsHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsBlocked"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Address.IsBlocked` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.IsBlocked` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isBlocked = value["IsBlocked"].GetBool();
         m_isBlockedHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsEipDirectConnection"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Address.IsEipDirectConnection` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.IsEipDirectConnection` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isEipDirectConnection = value["IsEipDirectConnection"].GetBool();
         m_isEipDirectConnectionHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.AddressType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.AddressType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressType = string(value["AddressType"].GetString());
         m_addressTypeHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CascadeRelease"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Address.CascadeRelease` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.CascadeRelease` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_cascadeRelease = value["CascadeRelease"].GetBool();
         m_cascadeReleaseHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetServiceProvider"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.InternetServiceProvider` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.InternetServiceProvider` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetServiceProvider = string(value["InternetServiceProvider"].GetString());
         m_internetServiceProviderHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Address.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetUint64();
         m_bandwidthHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome FaceProtect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceUsmRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceProtect.FaceUsmRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceProtect.FaceUsmRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faceUsmRatio = value["FaceUsmRatio"].GetDouble();
         m_faceUsmRatioHasBeenSet = true;

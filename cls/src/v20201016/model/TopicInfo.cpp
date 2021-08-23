@@ -45,7 +45,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logsetId = string(value["LogsetId"].GetString());
         m_logsetIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PartitionCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.PartitionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.PartitionCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitionCount = value["PartitionCount"].GetInt64();
         m_partitionCountHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Index"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.Index` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Index` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_index = value["Index"].GetBool();
         m_indexHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.Status` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Status` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetBool();
         m_statusHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TopicInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -135,7 +135,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoSplit"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.AutoSplit` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.AutoSplit` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoSplit = value["AutoSplit"].GetBool();
         m_autoSplitHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSplitPartitions"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.MaxSplitPartitions` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.MaxSplitPartitions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSplitPartitions = value["MaxSplitPartitions"].GetInt64();
         m_maxSplitPartitionsHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.StorageType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.StorageType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageType = string(value["StorageType"].GetString());
         m_storageTypeHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopicInfo.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Period` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetInt64();
         m_periodHasBeenSet = true;

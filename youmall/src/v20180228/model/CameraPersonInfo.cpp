@@ -39,7 +39,7 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TempId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraPersonInfo.TempId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraPersonInfo.TempId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tempId = string(value["TempId"].GetString());
         m_tempIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraPersonInfo.FaceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraPersonInfo.FaceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = value["FaceId"].GetInt64();
         m_faceIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraPersonInfo.IdType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraPersonInfo.IdType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_idType = value["IdType"].GetInt64();
         m_idTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FacePic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CameraPersonInfo.FacePic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraPersonInfo.FacePic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_facePic = string(value["FacePic"].GetString());
         m_facePicHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraPersonInfo.Time` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraPersonInfo.Time` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetInt64();
         m_timeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CameraPersonInfo.PersonInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraPersonInfo.PersonInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_personInfo.Deserialize(value["PersonInfo"]);

@@ -51,7 +51,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.SourceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.SourceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceIp = string(value["SourceIp"].GetString());
         m_sourceIpHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.TargetIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.TargetIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetIp = string(value["TargetIp"].GetString());
         m_targetIpHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Strategy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Strategy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Strategy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = string(value["Strategy"].GetString());
         m_strategyHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = value["SourceType"].GetUint64();
         m_sourceTypeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direction"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetUint64();
         m_directionHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.TargetType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.TargetType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_targetType = value["TargetType"].GetUint64();
         m_targetTypeHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.LogId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.LogId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logId = string(value["LogId"].GetString());
         m_logIdHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.City` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.City` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_city = value["City"].GetUint64();
         m_cityHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Country"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.Country` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.Country` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_country = value["Country"].GetUint64();
         m_countryHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CloudCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.CloudCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.CloudCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cloudCode = string(value["CloudCode"].GetString());
         m_cloudCodeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsRegion"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.IsRegion` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.IsRegion` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isRegion = value["IsRegion"].GetUint64();
         m_isRegionHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.CityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.CityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cityName = string(value["CityName"].GetString());
         m_cityNameHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome RuleInfoData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CountryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInfoData.CountryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfoData.CountryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_countryName = string(value["CountryName"].GetString());
         m_countryNameHasBeenSet = true;

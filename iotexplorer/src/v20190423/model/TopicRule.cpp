@@ -38,7 +38,7 @@ CoreInternalOutcome TopicRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TopicRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sql"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRule.Sql` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRule.Sql` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sql = string(value["Sql"].GetString());
         m_sqlHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TopicRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TopicRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Actions"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TopicRule.Actions` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRule.Actions` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actions = string(value["Actions"].GetString());
         m_actionsHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TopicRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleDisabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TopicRule.RuleDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopicRule.RuleDisabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_ruleDisabled = value["RuleDisabled"].GetBool();
         m_ruleDisabledHasBeenSet = true;

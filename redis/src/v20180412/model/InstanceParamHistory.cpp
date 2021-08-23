@@ -38,7 +38,7 @@ CoreInternalOutcome InstanceParamHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["ParamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceParamHistory.ParamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceParamHistory.ParamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paramName = string(value["ParamName"].GetString());
         m_paramNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome InstanceParamHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["PreValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceParamHistory.PreValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceParamHistory.PreValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_preValue = string(value["PreValue"].GetString());
         m_preValueHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome InstanceParamHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["NewValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceParamHistory.NewValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceParamHistory.NewValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newValue = string(value["NewValue"].GetString());
         m_newValueHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome InstanceParamHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceParamHistory.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceParamHistory.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome InstanceParamHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceParamHistory.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceParamHistory.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

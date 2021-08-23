@@ -36,7 +36,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullText"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.FullText` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.FullText` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fullText.Deserialize(value["FullText"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyValue"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.KeyValue` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.KeyValue` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_keyValue.Deserialize(value["KeyValue"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleInfo.Tag` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.Tag` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tag.Deserialize(value["Tag"]);

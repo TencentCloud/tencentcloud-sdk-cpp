@@ -37,7 +37,7 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfo.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Bitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetUint64();
         m_bitrateHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SampleRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfo.SampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.SampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sampleRate = value["SampleRate"].GetUint64();
         m_sampleRateHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AudioChannel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioTemplateInfo.AudioChannel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.AudioChannel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_audioChannel = value["AudioChannel"].GetInt64();
         m_audioChannelHasBeenSet = true;

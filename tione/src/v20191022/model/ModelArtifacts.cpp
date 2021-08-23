@@ -34,7 +34,7 @@ CoreInternalOutcome ModelArtifacts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosModelArtifacts"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ModelArtifacts.CosModelArtifacts` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModelArtifacts.CosModelArtifacts` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosModelArtifacts = string(value["CosModelArtifacts"].GetString());
         m_cosModelArtifactsHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome SearchItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SearchType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchItem.SearchType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchItem.SearchType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_searchType = string(value["SearchType"].GetString());
         m_searchTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SearchItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SearchValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchItem.SearchValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchItem.SearchValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_searchValue = string(value["SearchValue"].GetString());
         m_searchValueHasBeenSet = true;

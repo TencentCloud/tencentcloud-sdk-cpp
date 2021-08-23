@@ -37,7 +37,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const r
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const r
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const r
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const r
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextSegmentItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextSegmentItem.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;

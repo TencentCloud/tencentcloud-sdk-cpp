@@ -43,7 +43,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BookingFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bookingFlag = string(value["BookingFlag"].GetString());
         m_bookingFlagHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TranStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TranStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranStatus = string(value["TranStatus"].GetString());
         m_tranStatusHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TranAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TranAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranAmt = string(value["TranAmt"].GetString());
         m_tranAmtHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TranDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TranDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranDate = string(value["TranDate"].GetString());
         m_tranDateHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.TranTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.TranTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranTime = string(value["TranTime"].GetString());
         m_tranTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrontSeqNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frontSeqNo = string(value["FrontSeqNo"].GetString());
         m_frontSeqNoHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BookingType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.BookingType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.BookingType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bookingType = string(value["BookingType"].GetString());
         m_bookingTypeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InSubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.InSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.InSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inSubAcctNo = string(value["InSubAcctNo"].GetString());
         m_inSubAcctNoHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutSubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.OutSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.OutSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outSubAcctNo = string(value["OutSubAcctNo"].GetString());
         m_outSubAcctNoHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

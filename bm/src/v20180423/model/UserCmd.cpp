@@ -41,7 +41,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.AutoId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.AutoId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoId = value["AutoId"].GetUint64();
         m_autoIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmdId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.CmdId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.CmdId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmdId = string(value["CmdId"].GetString());
         m_cmdIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome UserCmd::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserCmd.OsType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserCmd.OsType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osType = string(value["OsType"].GetString());
         m_osTypeHasBeenSet = true;

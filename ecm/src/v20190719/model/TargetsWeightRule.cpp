@@ -36,7 +36,7 @@ CoreInternalOutcome TargetsWeightRule::Deserialize(const rapidjson::Value &value
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetsWeightRule.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetsWeightRule.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TargetsWeightRule::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `TargetsWeightRule.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TargetsWeightRule.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome TargetsWeightRule::Deserialize(const rapidjson::Value &value
     {
         if (!value["Weight"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TargetsWeightRule.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetsWeightRule.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetInt64();
         m_weightHasBeenSet = true;

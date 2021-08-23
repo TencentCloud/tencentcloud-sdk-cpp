@@ -40,7 +40,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeployGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.DeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.DeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deployGroupId = string(value["DeployGroupId"].GetString());
         m_deployGroupIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeployGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.DeployGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.DeployGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deployGroupName = string(value["DeployGroupName"].GetString());
         m_deployGroupNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["GroupStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.GroupStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.GroupStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupStatus = string(value["GroupStatus"].GetString());
         m_groupStatusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayDeployGroup.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayDeployGroup.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;

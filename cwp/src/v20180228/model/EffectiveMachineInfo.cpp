@@ -39,7 +39,7 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MachinePublicIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.MachinePublicIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.MachinePublicIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machinePublicIp = string(value["MachinePublicIp"].GetString());
         m_machinePublicIpHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["MachinePrivateIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.MachinePrivateIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.MachinePrivateIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machinePrivateIp = string(value["MachinePrivateIp"].GetString());
         m_machinePrivateIpHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("MachineTag") && !value["MachineTag"].IsNull())
     {
         if (!value["MachineTag"].IsArray())
-            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.MachineTag` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.MachineTag` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MachineTag"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;

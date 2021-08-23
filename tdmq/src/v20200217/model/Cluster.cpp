@@ -50,7 +50,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPointNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.EndPointNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.EndPointNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endPointNum = value["EndPointNum"].GetInt64();
         m_endPointNumHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Healthy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.Healthy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.Healthy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthy = value["Healthy"].GetInt64();
         m_healthyHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthyInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.HealthyInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.HealthyInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_healthyInfo = string(value["HealthyInfo"].GetString());
         m_healthyInfoHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxNamespaceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.MaxNamespaceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxNamespaceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxNamespaceNum = value["MaxNamespaceNum"].GetInt64();
         m_maxNamespaceNumHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxTopicNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.MaxTopicNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxTopicNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxTopicNum = value["MaxTopicNum"].GetInt64();
         m_maxTopicNumHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxQps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.MaxQps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxQps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxQps = value["MaxQps"].GetInt64();
         m_maxQpsHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MessageRetentionTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.MessageRetentionTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.MessageRetentionTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_messageRetentionTime = value["MessageRetentionTime"].GetInt64();
         m_messageRetentionTimeHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxStorageCapacity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.MaxStorageCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.MaxStorageCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStorageCapacity = value["MaxStorageCapacity"].GetInt64();
         m_maxStorageCapacityHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicEndPoint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.PublicEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.PublicEndPoint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicEndPoint = string(value["PublicEndPoint"].GetString());
         m_publicEndPointHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcEndPoint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.VpcEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.VpcEndPoint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcEndPoint = string(value["VpcEndPoint"].GetString());
         m_vpcEndPointHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.NamespaceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.NamespaceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceNum = value["NamespaceNum"].GetInt64();
         m_namespaceNumHasBeenSet = true;

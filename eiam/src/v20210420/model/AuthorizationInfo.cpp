@@ -39,7 +39,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EntityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.EntityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.EntityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_entityName = string(value["EntityName"].GetString());
         m_entityNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["EntityId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.EntityId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.EntityId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_entityId = string(value["EntityId"].GetString());
         m_entityIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["LastModifiedDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.LastModifiedDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedDate = string(value["LastModifiedDate"].GetString());
         m_lastModifiedDateHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["AuthorizationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationInfo.AuthorizationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationInfo.AuthorizationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authorizationId = string(value["AuthorizationId"].GetString());
         m_authorizationIdHasBeenSet = true;

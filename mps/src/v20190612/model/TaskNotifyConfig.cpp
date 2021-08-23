@@ -40,7 +40,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmqModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.CmqModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.CmqModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqModel = string(value["CmqModel"].GetString());
         m_cmqModelHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmqRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqRegion = string(value["CmqRegion"].GetString());
         m_cmqRegionHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.QueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueName = string(value["QueueName"].GetString());
         m_queueNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.NotifyMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyMode = string(value["NotifyMode"].GetString());
         m_notifyModeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyType = string(value["NotifyType"].GetString());
         m_notifyTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskNotifyConfig.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.NotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notifyUrl = string(value["NotifyUrl"].GetString());
         m_notifyUrlHasBeenSet = true;

@@ -40,16 +40,16 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["ReturnCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReturnCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReturnCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_returnCode = rsp["ReturnCode"].GetUint64();
         m_returnCodeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(rsp["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["Confidence"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Confidence` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Confidence` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = rsp["Confidence"].GetUint64();
         m_confidenceHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     if (rsp.HasMember("ThreatTypes") && !rsp["ThreatTypes"].IsNull())
     {
         if (!rsp["ThreatTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `ThreatTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ThreatTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ThreatTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     if (rsp.HasMember("Intelligences") && !rsp["Intelligences"].IsNull())
     {
         if (!rsp["Intelligences"].IsArray())
-            return CoreInternalOutcome(Error("response `Intelligences` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Intelligences` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Intelligences"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -155,7 +155,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     {
         if (!rsp["Context"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_context = string(rsp["Context"].GetString());
         m_contextHasBeenSet = true;

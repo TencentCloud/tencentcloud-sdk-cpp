@@ -35,7 +35,7 @@ CoreInternalOutcome GitConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepositoryUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GitConfig.RepositoryUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GitConfig.RepositoryUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryUrl = string(value["RepositoryUrl"].GetString());
         m_repositoryUrlHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GitConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Branch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GitConfig.Branch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GitConfig.Branch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_branch = string(value["Branch"].GetString());
         m_branchHasBeenSet = true;

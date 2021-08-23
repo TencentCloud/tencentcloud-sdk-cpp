@@ -34,7 +34,7 @@ CoreInternalOutcome KuaishouPublishInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KuaishouPublishInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KuaishouPublishInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineWanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.MachineWanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.MachineWanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineWanIp = string(value["MachineWanIp"].GetString());
         m_machineWanIpHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.MachineRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.MachineRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineRegion = string(value["MachineRegion"].GetString());
         m_machineRegionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TagMachine::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagMachine.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagMachine.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;

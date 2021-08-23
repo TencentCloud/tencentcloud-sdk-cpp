@@ -37,7 +37,7 @@ CoreInternalOutcome CosDataSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDataSource.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDataSource.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CosDataSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyPrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDataSource.KeyPrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDataSource.KeyPrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyPrefix = string(value["KeyPrefix"].GetString());
         m_keyPrefixHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CosDataSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataDistributionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDataSource.DataDistributionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDataSource.DataDistributionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataDistributionType = string(value["DataDistributionType"].GetString());
         m_dataDistributionTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CosDataSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDataSource.DataType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDataSource.DataType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataType = string(value["DataType"].GetString());
         m_dataTypeHasBeenSet = true;

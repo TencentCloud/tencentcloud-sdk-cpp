@@ -36,7 +36,7 @@ CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["Input"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskSegmentInfo.Input` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskSegmentInfo.Input` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["Output"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskSegmentInfo.Output` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskSegmentInfo.Output` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_output.Deserialize(value["Output"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["ProcedureTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SplitMediaTaskSegmentInfo.ProcedureTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskSegmentInfo.ProcedureTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procedureTaskId = string(value["ProcedureTaskId"].GetString());
         m_procedureTaskIdHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome AlgorithmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyUsage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmInfo.KeyUsage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmInfo.KeyUsage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyUsage = string(value["KeyUsage"].GetString());
         m_keyUsageHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AlgorithmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Algorithm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmInfo.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmInfo.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_algorithm = string(value["Algorithm"].GetString());
         m_algorithmHasBeenSet = true;

@@ -43,7 +43,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastCheckTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.LastCheckTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.LastCheckTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastCheckTime = string(value["LastCheckTime"].GetString());
         m_lastCheckTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsIgnored"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.IsIgnored` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.IsIgnored` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isIgnored = value["IsIgnored"].GetUint64();
         m_isIgnoredHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.RiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.RiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskCount = value["RiskCount"].GetUint64();
         m_riskCountHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsChecked"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.IsChecked` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.IsChecked` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isChecked = value["IsChecked"].GetUint64();
         m_isCheckedHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.AssetTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.AssetTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_assetTotal = value["AssetTotal"].GetInt64();
         m_assetTotalHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remarks"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataCheck.Remarks` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataCheck.Remarks` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remarks = string(value["Remarks"].GetString());
         m_remarksHasBeenSet = true;

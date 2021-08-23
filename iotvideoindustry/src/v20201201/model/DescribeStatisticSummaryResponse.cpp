@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     {
         if (!rsp["RecordingDevice"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordingDevice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordingDevice` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_recordingDevice = rsp["RecordingDevice"].GetUint64();
         m_recordingDeviceHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     {
         if (!rsp["NonRecordingDevice"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NonRecordingDevice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NonRecordingDevice` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nonRecordingDevice = rsp["NonRecordingDevice"].GetUint64();
         m_nonRecordingDeviceHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     {
         if (!rsp["WatchFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WatchFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WatchFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_watchFlux = rsp["WatchFlux"].GetDouble();
         m_watchFluxHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     {
         if (!rsp["StorageUsage"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StorageUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_storageUsage = rsp["StorageUsage"].GetDouble();
         m_storageUsageHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     {
         if (!rsp["P2PFluxTotal"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `P2PFluxTotal` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `P2PFluxTotal` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_p2PFluxTotal = rsp["P2PFluxTotal"].GetDouble();
         m_p2PFluxTotalHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     {
         if (!rsp["P2PPeakValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `P2PPeakValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `P2PPeakValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_p2PPeakValue = rsp["P2PPeakValue"].GetDouble();
         m_p2PPeakValueHasBeenSet = true;

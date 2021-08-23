@@ -34,7 +34,7 @@ CoreInternalOutcome EipConfigIn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipConfigIn.EipStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipConfigIn.EipStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipStatus = string(value["EipStatus"].GetString());
         m_eipStatusHasBeenSet = true;

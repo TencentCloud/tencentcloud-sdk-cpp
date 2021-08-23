@@ -39,7 +39,7 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentRole.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRole.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(value["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentRole.RoleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRole.RoleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleName = string(value["RoleName"].GetString());
         m_roleNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Permissions") && !value["Permissions"].IsNull())
     {
         if (!value["Permissions"].IsArray())
-            return CoreInternalOutcome(Error("response `EnvironmentRole.Permissions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRole.Permissions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Permissions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoleDescribe"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentRole.RoleDescribe` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRole.RoleDescribe` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roleDescribe = string(value["RoleDescribe"].GetString());
         m_roleDescribeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentRole.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRole.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentRole.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRole.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

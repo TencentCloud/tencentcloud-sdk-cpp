@@ -38,7 +38,7 @@ CoreInternalOutcome ResourceTemplateHeader::Deserialize(const rapidjson::Value &
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTemplateHeader.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTemplateHeader.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ResourceTemplateHeader::Deserialize(const rapidjson::Value &
     {
         if (!value["Example"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTemplateHeader.Example` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTemplateHeader.Example` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_example = string(value["Example"].GetString());
         m_exampleHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ResourceTemplateHeader::Deserialize(const rapidjson::Value &
     {
         if (!value["KeyArray"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTemplateHeader.KeyArray` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTemplateHeader.KeyArray` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyArray = string(value["KeyArray"].GetString());
         m_keyArrayHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ResourceTemplateHeader::Deserialize(const rapidjson::Value &
     {
         if (!value["TemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTemplateHeader.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTemplateHeader.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ResourceTemplateHeader::Deserialize(const rapidjson::Value &
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTemplateHeader.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTemplateHeader.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;

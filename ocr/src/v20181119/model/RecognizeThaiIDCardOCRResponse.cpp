@@ -41,16 +41,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["ID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iD = string(rsp["ID"].GetString());
         m_iDHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["ThaiName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ThaiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThaiName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thaiName = string(rsp["ThaiName"].GetString());
         m_thaiNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["EnFirstName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnFirstName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnFirstName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enFirstName = string(rsp["EnFirstName"].GetString());
         m_enFirstNameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Birthday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Birthday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Birthday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthday = string(rsp["Birthday"].GetString());
         m_birthdayHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["IssueDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueDate = string(rsp["IssueDate"].GetString());
         m_issueDateHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["ExpirationDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpirationDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expirationDate = string(rsp["ExpirationDate"].GetString());
         m_expirationDateHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["EnLastName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnLastName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnLastName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enLastName = string(rsp["EnLastName"].GetString());
         m_enLastNameHasBeenSet = true;

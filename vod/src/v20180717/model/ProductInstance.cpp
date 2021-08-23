@@ -42,7 +42,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.ProductType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.ProductType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productType = string(value["ProductType"].GetString());
         m_productTypeHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.ProductInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.ProductInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productInstanceId = string(value["ProductInstanceId"].GetString());
         m_productInstanceIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastConsumeDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.LastConsumeDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.LastConsumeDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastConsumeDate = string(value["LastConsumeDate"].GetString());
         m_lastConsumeDateHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BindStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.BindStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.BindStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bindStatus = value["BindStatus"].GetInt64();
         m_bindStatusHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProductInstanceResourceSet") && !value["ProductInstanceResourceSet"].IsNull())
     {
         if (!value["ProductInstanceResourceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductInstance.ProductInstanceResourceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.ProductInstanceResourceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProductInstanceResourceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -122,7 +122,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductInstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.ProductInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.ProductInstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productInstanceStatus = string(value["ProductInstanceStatus"].GetString());
         m_productInstanceStatusHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefundStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInstance.RefundStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.RefundStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_refundStatus = string(value["RefundStatus"].GetString());
         m_refundStatusHasBeenSet = true;

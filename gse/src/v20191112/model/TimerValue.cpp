@@ -37,7 +37,7 @@ CoreInternalOutcome TimerValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Day"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerValue.Day` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerValue.Day` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_day = value["Day"].GetInt64();
         m_dayHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TimerValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FromDay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerValue.FromDay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerValue.FromDay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fromDay = value["FromDay"].GetInt64();
         m_fromDayHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TimerValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ToDay"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerValue.ToDay` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerValue.ToDay` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_toDay = value["ToDay"].GetInt64();
         m_toDayHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome TimerValue::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WeekDays") && !value["WeekDays"].IsNull())
     {
         if (!value["WeekDays"].IsArray())
-            return CoreInternalOutcome(Error("response `TimerValue.WeekDays` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TimerValue.WeekDays` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WeekDays"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

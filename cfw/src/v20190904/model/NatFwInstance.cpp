@@ -38,7 +38,7 @@ CoreInternalOutcome NatFwInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatinsId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwInstance.NatinsId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwInstance.NatinsId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natinsId = string(value["NatinsId"].GetString());
         m_natinsIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome NatFwInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatinsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwInstance.NatinsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwInstance.NatinsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natinsName = string(value["NatinsName"].GetString());
         m_natinsNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome NatFwInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatFwInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome NatFwInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FwMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NatFwInstance.FwMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwInstance.FwMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fwMode = value["FwMode"].GetInt64();
         m_fwModeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome NatFwInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NatFwInstance.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatFwInstance.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

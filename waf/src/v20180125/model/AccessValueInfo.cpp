@@ -37,7 +37,7 @@ CoreInternalOutcome AccessValueInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessValueInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessValueInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccessValueInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tokenizer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessValueInfo.Tokenizer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessValueInfo.Tokenizer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tokenizer = string(value["Tokenizer"].GetString());
         m_tokenizerHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AccessValueInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SqlFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AccessValueInfo.SqlFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessValueInfo.SqlFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_sqlFlag = value["SqlFlag"].GetBool();
         m_sqlFlagHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AccessValueInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContainZH"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AccessValueInfo.ContainZH` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessValueInfo.ContainZH` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_containZH = value["ContainZH"].GetBool();
         m_containZHHasBeenSet = true;

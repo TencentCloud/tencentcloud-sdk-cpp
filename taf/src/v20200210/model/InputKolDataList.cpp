@@ -38,7 +38,7 @@ CoreInternalOutcome InputKolDataList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InputKolDataList.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputKolDataList.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome InputKolDataList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputKolDataList.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputKolDataList.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome InputKolDataList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputKolDataList.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputKolDataList.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome InputKolDataList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputKolDataList.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputKolDataList.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome InputKolDataList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputKolDataList.AgentInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputKolDataList.AgentInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentInfo = string(value["AgentInfo"].GetString());
         m_agentInfoHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome VpcQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcQuota.TypeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcQuota.TypeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_typeId = value["TypeId"].GetUint64();
         m_typeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VpcQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcQuota.Quota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcQuota.Quota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_quota = value["Quota"].GetUint64();
         m_quotaHasBeenSet = true;

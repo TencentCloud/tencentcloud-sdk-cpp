@@ -41,7 +41,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["MountTarget"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.MountTarget` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.MountTarget` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountTarget = string(value["MountTarget"].GetString());
         m_mountTargetHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["DockerGraphPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DockerGraphPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.DockerGraphPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dockerGraphPath = string(value["DockerGraphPath"].GetString());
         m_dockerGraphPathHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["UserScript"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.UserScript` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.UserScript` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userScript = string(value["UserScript"].GetString());
         m_userScriptHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["Unschedulable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.Unschedulable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.Unschedulable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unschedulable = value["Unschedulable"].GetInt64();
         m_unschedulableHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
     {
         if (!value["DataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.DataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["ExtraArgs"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.ExtraArgs` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.ExtraArgs` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_extraArgs.Deserialize(value["ExtraArgs"]);
@@ -138,7 +138,7 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
     {
         if (!value["DesiredPodNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DesiredPodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.DesiredPodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredPodNumber = value["DesiredPodNumber"].GetInt64();
         m_desiredPodNumberHasBeenSet = true;

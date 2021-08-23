@@ -37,7 +37,7 @@ CoreInternalOutcome Step::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Step.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Step.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Step::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExecutionStep"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Step.ExecutionStep` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Step.ExecutionStep` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_executionStep.Deserialize(value["ExecutionStep"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome Step::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionOnFailure"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Step.ActionOnFailure` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Step.ActionOnFailure` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionOnFailure = string(value["ActionOnFailure"].GetString());
         m_actionOnFailureHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome Step::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Step.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Step.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;

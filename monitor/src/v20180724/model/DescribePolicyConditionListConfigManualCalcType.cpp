@@ -34,7 +34,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcType::Deserialize
     if (value.HasMember("Keys") && !value["Keys"].IsNull())
     {
         if (!value["Keys"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcType.Keys` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcType.Keys` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keys"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcType::Deserialize
     {
         if (!value["Need"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcType.Need` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualCalcType.Need` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_need = value["Need"].GetBool();
         m_needHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SrcTableClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.SrcTableClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.SrcTableClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcTableClusterId = string(value["SrcTableClusterId"].GetString());
         m_srcTableClusterIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SrcTableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.SrcTableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.SrcTableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcTableGroupId = string(value["SrcTableGroupId"].GetString());
         m_srcTableGroupIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SrcTableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.SrcTableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.SrcTableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcTableName = string(value["SrcTableName"].GetString());
         m_srcTableNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DstTableClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.DstTableClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.DstTableClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstTableClusterId = string(value["DstTableClusterId"].GetString());
         m_dstTableClusterIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DstTableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.DstTableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.DstTableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstTableGroupId = string(value["DstTableGroupId"].GetString());
         m_dstTableGroupIdHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DstTableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.DstTableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.DstTableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstTableName = string(value["DstTableName"].GetString());
         m_dstTableNameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SrcTableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.SrcTableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.SrcTableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcTableInstanceId = string(value["SrcTableInstanceId"].GetString());
         m_srcTableInstanceIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DstTableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompareTablesInfo.DstTableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompareTablesInfo.DstTableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstTableInstanceId = string(value["DstTableInstanceId"].GetString());
         m_dstTableInstanceIdHasBeenSet = true;

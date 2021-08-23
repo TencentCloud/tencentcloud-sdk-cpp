@@ -44,7 +44,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Ports") && !value["Ports"].IsNull())
     {
         if (!value["Ports"].IsArray())
-            return CoreInternalOutcome(Error("response `EksService.Ports` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EksService.Ports` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Ports"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Yaml"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.Yaml` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.Yaml` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yaml = string(value["Yaml"].GetString());
         m_yamlHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ClusterIp") && !value["ClusterIp"].IsNull())
     {
         if (!value["ClusterIp"].IsArray())
-            return CoreInternalOutcome(Error("response `EksService.ClusterIp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EksService.ClusterIp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClusterIp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.ExternalIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.ExternalIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalIp = string(value["ExternalIp"].GetString());
         m_externalIpHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksService.LoadBalanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksService.LoadBalanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalanceId = string(value["LoadBalanceId"].GetString());
         m_loadBalanceIdHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PortMappings") && !value["PortMappings"].IsNull())
     {
         if (!value["PortMappings"].IsArray())
-            return CoreInternalOutcome(Error("response `EksService.PortMappings` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EksService.PortMappings` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PortMappings"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

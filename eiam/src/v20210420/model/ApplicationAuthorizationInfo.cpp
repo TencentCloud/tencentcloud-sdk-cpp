@@ -35,7 +35,7 @@ CoreInternalOutcome ApplicationAuthorizationInfo::Deserialize(const rapidjson::V
     if (value.HasMember("ApplicationAccounts") && !value["ApplicationAccounts"].IsNull())
     {
         if (!value["ApplicationAccounts"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationAuthorizationInfo.ApplicationAccounts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAuthorizationInfo.ApplicationAccounts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ApplicationAccounts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome ApplicationAuthorizationInfo::Deserialize(const rapidjson::V
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationAuthorizationInfo.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAuthorizationInfo.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ApplicationAuthorizationInfo::Deserialize(const rapidjson::V
     {
         if (!value["InheritedForm"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ApplicationAuthorizationInfo.InheritedForm` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAuthorizationInfo.InheritedForm` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_inheritedForm.Deserialize(value["InheritedForm"]);

@@ -35,7 +35,7 @@ CoreInternalOutcome CreateCameraAlertsCoverAlert::Deserialize(const rapidjson::V
     {
         if (!value["Cover"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertsCoverAlert.Cover` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertsCoverAlert.Cover` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_cover = value["Cover"].GetBool();
         m_coverHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CreateCameraAlertsCoverAlert::Deserialize(const rapidjson::V
     {
         if (!value["CoverConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CreateCameraAlertsCoverAlert.CoverConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateCameraAlertsCoverAlert.CoverConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_coverConfidence = value["CoverConfidence"].GetDouble();
         m_coverConfidenceHasBeenSet = true;

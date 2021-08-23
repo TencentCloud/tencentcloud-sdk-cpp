@@ -55,7 +55,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CatTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.CatTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.CatTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_catTypeName = string(value["CatTypeName"].GetString());
         m_catTypeNameHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverIp = string(value["ServerIp"].GetString());
         m_serverIpHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.TotalTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.TotalTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalTime = value["TotalTime"].GetUint64();
         m_totalTimeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ResultType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ResultType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultType = value["ResultType"].GetUint64();
         m_resultTypeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCode = value["ResultCode"].GetUint64();
         m_resultCodeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqPkgSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ReqPkgSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ReqPkgSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reqPkgSize = value["ReqPkgSize"].GetUint64();
         m_reqPkgSizeHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RspPkgSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.RspPkgSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.RspPkgSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rspPkgSize = value["RspPkgSize"].GetUint64();
         m_rspPkgSizeHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ReqMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ReqMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reqMsg = string(value["ReqMsg"].GetString());
         m_reqMsgHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RespMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.RespMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.RespMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_respMsg = string(value["RespMsg"].GetString());
         m_respMsgHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.CityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.CityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cityName = string(value["CityName"].GetString());
         m_cityNameHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatLog.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParseTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ParseTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ParseTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_parseTime = value["ParseTime"].GetUint64();
         m_parseTimeHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConnectTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ConnectTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ConnectTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_connectTime = value["ConnectTime"].GetUint64();
         m_connectTimeHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.SendTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.SendTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sendTime = value["SendTime"].GetUint64();
         m_sendTimeHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WaitTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.WaitTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.WaitTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_waitTime = value["WaitTime"].GetUint64();
         m_waitTimeHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReceiveTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatLog.ReceiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatLog.ReceiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_receiveTime = value["ReceiveTime"].GetUint64();
         m_receiveTimeHasBeenSet = true;

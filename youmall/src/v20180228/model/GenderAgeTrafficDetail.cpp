@@ -36,7 +36,7 @@ CoreInternalOutcome GenderAgeTrafficDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Gender"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GenderAgeTrafficDetail.Gender` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderAgeTrafficDetail.Gender` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetUint64();
         m_genderHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome GenderAgeTrafficDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["AgeGap"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GenderAgeTrafficDetail.AgeGap` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderAgeTrafficDetail.AgeGap` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ageGap = string(value["AgeGap"].GetString());
         m_ageGapHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome GenderAgeTrafficDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["TrafficCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GenderAgeTrafficDetail.TrafficCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderAgeTrafficDetail.TrafficCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficCount = value["TrafficCount"].GetUint64();
         m_trafficCountHasBeenSet = true;

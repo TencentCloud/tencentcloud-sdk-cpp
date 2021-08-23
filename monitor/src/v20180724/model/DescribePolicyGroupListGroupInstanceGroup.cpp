@@ -40,7 +40,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["InstanceGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGroupId = value["InstanceGroupId"].GetInt64();
         m_instanceGroupIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(value["ViewName"].GetString());
         m_viewNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["LastEditUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastEditUin = string(value["LastEditUin"].GetString());
         m_lastEditUinHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["InstanceSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceSum = value["InstanceSum"].GetInt64();
         m_instanceSumHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     {
         if (!value["InsertTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroupInstanceGroup.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyGroupListGroupInstanceGroup.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = value["InsertTime"].GetInt64();
         m_insertTimeHasBeenSet = true;

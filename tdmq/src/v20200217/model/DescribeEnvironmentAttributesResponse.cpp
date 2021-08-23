@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["MsgTTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgTTL = rsp["MsgTTL"].GetUint64();
         m_msgTTLHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["RateInByte"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RateInByte` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RateInByte` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rateInByte = rsp["RateInByte"].GetUint64();
         m_rateInByteHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["RateInSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RateInSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RateInSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rateInSize = rsp["RateInSize"].GetUint64();
         m_rateInSizeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["RetentionHours"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RetentionHours` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionHours` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_retentionHours = rsp["RetentionHours"].GetUint64();
         m_retentionHoursHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["RetentionSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RetentionSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_retentionSize = rsp["RetentionSize"].GetUint64();
         m_retentionSizeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(rsp["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["Replicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Replicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Replicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_replicas = rsp["Replicas"].GetUint64();
         m_replicasHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;

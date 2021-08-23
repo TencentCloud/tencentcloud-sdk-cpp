@@ -35,7 +35,7 @@ CoreInternalOutcome MuteSlice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MuteBtm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MuteSlice.MuteBtm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MuteSlice.MuteBtm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_muteBtm = value["MuteBtm"].GetInt64();
         m_muteBtmHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MuteSlice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MuteEtm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MuteSlice.MuteEtm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MuteSlice.MuteEtm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_muteEtm = value["MuteEtm"].GetInt64();
         m_muteEtmHasBeenSet = true;

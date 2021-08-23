@@ -38,7 +38,7 @@ CoreInternalOutcome ResourceTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTag.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTag.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceRegion = string(value["ResourceRegion"].GetString());
         m_resourceRegionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ResourceTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTag.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTag.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ResourceTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourcePrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTag.ResourcePrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTag.ResourcePrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourcePrefix = string(value["ResourcePrefix"].GetString());
         m_resourcePrefixHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ResourceTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceTag.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceTag.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ResourceTag::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `ResourceTag.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResourceTag.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -44,7 +44,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["ResolutionAdaptive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
         m_resolutionAdaptiveHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const rapidjson::V
     {
         if (!value["FillType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fillType = string(value["FillType"].GetString());
         m_fillTypeHasBeenSet = true;

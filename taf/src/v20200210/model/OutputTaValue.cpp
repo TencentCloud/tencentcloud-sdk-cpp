@@ -35,7 +35,7 @@ CoreInternalOutcome OutputTaValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsCheck"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputTaValue.IsCheck` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputTaValue.IsCheck` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isCheck = value["IsCheck"].GetInt64();
         m_isCheckHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OutputTaValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsMatch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputTaValue.IsMatch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputTaValue.IsMatch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isMatch = value["IsMatch"].GetInt64();
         m_isMatchHasBeenSet = true;

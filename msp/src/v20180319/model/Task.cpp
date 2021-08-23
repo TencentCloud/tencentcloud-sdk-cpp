@@ -43,7 +43,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.MigrationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.MigrationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_migrationType = string(value["MigrationType"].GetString());
         m_migrationTypeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.SrcInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.SrcInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_srcInfo.Deserialize(value["SrcInfo"]);
@@ -120,7 +120,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrationTimeLine"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.MigrationTimeLine` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.MigrationTimeLine` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_migrationTimeLine.Deserialize(value["MigrationTimeLine"]);
@@ -137,7 +137,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Updated"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.Updated` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.Updated` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updated = string(value["Updated"].GetString());
         m_updatedHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.DstInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.DstInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dstInfo.Deserialize(value["DstInfo"]);

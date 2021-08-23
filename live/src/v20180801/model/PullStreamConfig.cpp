@@ -41,7 +41,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configId = string(value["ConfigId"].GetString());
         m_configIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FromUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.FromUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.FromUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fromUrl = string(value["FromUrl"].GetString());
         m_fromUrlHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ToUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.ToUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.ToUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_toUrl = string(value["ToUrl"].GetString());
         m_toUrlHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AreaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.AreaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.AreaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_areaName = string(value["AreaName"].GetString());
         m_areaNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome PullStreamConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullStreamConfig.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullStreamConfig.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

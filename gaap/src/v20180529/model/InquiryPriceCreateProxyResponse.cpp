@@ -41,16 +41,16 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["ProxyDailyPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProxyDailyPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyDailyPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_proxyDailyPrice = rsp["ProxyDailyPrice"].GetDouble();
         m_proxyDailyPriceHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     if (rsp.HasMember("BandwidthUnitPrice") && !rsp["BandwidthUnitPrice"].IsNull())
     {
         if (!rsp["BandwidthUnitPrice"].IsArray())
-            return CoreInternalOutcome(Error("response `BandwidthUnitPrice` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BandwidthUnitPrice` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["BandwidthUnitPrice"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["DiscountProxyDailyPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountProxyDailyPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountProxyDailyPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountProxyDailyPrice = rsp["DiscountProxyDailyPrice"].GetDouble();
         m_discountProxyDailyPriceHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["Currency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Currency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Currency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currency = string(rsp["Currency"].GetString());
         m_currencyHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["FlowUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FlowUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_flowUnitPrice = rsp["FlowUnitPrice"].GetDouble();
         m_flowUnitPriceHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["DiscountFlowUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountFlowUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountFlowUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountFlowUnitPrice = rsp["DiscountFlowUnitPrice"].GetDouble();
         m_discountFlowUnitPriceHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["Cn2BandwidthPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cn2BandwidthPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cn2BandwidthPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cn2BandwidthPrice = rsp["Cn2BandwidthPrice"].GetDouble();
         m_cn2BandwidthPriceHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
     {
         if (!rsp["Cn2BandwidthPriceWithDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cn2BandwidthPriceWithDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cn2BandwidthPriceWithDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cn2BandwidthPriceWithDiscount = rsp["Cn2BandwidthPriceWithDiscount"].GetDouble();
         m_cn2BandwidthPriceWithDiscountHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome StaticStorageInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["StaticDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticStorageInfo.StaticDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.StaticDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staticDomain = string(value["StaticDomain"].GetString());
         m_staticDomainHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome StaticStorageInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["DefaultDirName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticStorageInfo.DefaultDirName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.DefaultDirName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultDirName = string(value["DefaultDirName"].GetString());
         m_defaultDirNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome StaticStorageInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticStorageInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome StaticStorageInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticStorageInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome StaticStorageInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticStorageInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;

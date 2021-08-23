@@ -37,7 +37,7 @@ CoreInternalOutcome AspectRatio::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `AspectRatio.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AspectRatio.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -51,7 +51,7 @@ CoreInternalOutcome AspectRatio::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Number"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AspectRatio.Number` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AspectRatio.Number` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_number = string(value["Number"].GetString());
         m_numberHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AspectRatio::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Relation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AspectRatio.Relation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AspectRatio.Relation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relation = string(value["Relation"].GetString());
         m_relationHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AspectRatio::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AspectRatio.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AspectRatio.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AspectRatio::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AspectRatio.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AspectRatio.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

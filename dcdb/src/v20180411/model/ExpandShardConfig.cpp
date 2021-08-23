@@ -35,7 +35,7 @@ CoreInternalOutcome ExpandShardConfig::Deserialize(const rapidjson::Value &value
     if (value.HasMember("ShardInstanceIds") && !value["ShardInstanceIds"].IsNull())
     {
         if (!value["ShardInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ExpandShardConfig.ShardInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExpandShardConfig.ShardInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShardInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome ExpandShardConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["ShardMemory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpandShardConfig.ShardMemory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpandShardConfig.ShardMemory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shardMemory = value["ShardMemory"].GetInt64();
         m_shardMemoryHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ExpandShardConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["ShardStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpandShardConfig.ShardStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpandShardConfig.ShardStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shardStorage = value["ShardStorage"].GetInt64();
         m_shardStorageHasBeenSet = true;

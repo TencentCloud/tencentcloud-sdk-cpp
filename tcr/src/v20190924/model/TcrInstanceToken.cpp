@@ -39,7 +39,7 @@ CoreInternalOutcome TcrInstanceToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrInstanceToken.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrInstanceToken.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TcrInstanceToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrInstanceToken.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrInstanceToken.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TcrInstanceToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrInstanceToken.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrInstanceToken.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryId = string(value["RegistryId"].GetString());
         m_registryIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TcrInstanceToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TcrInstanceToken.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrInstanceToken.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TcrInstanceToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrInstanceToken.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrInstanceToken.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome TcrInstanceToken::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredAt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TcrInstanceToken.ExpiredAt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrInstanceToken.ExpiredAt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredAt = value["ExpiredAt"].GetInt64();
         m_expiredAtHasBeenSet = true;

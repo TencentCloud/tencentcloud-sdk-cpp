@@ -37,7 +37,7 @@ CoreInternalOutcome VatInvoiceUserInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceUserInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceUserInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome VatInvoiceUserInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaxId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceUserInfo.TaxId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceUserInfo.TaxId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxId = string(value["TaxId"].GetString());
         m_taxIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VatInvoiceUserInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AddrTel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceUserInfo.AddrTel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceUserInfo.AddrTel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addrTel = string(value["AddrTel"].GetString());
         m_addrTelHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VatInvoiceUserInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FinancialAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VatInvoiceUserInfo.FinancialAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceUserInfo.FinancialAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_financialAccount = string(value["FinancialAccount"].GetString());
         m_financialAccountHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const rapidj
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisFrameTagSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisFrameTagSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const rapidj
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisFrameTagSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisFrameTagSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const rapidj
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaAiAnalysisFrameTagSegmentItem.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisFrameTagSegmentItem.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

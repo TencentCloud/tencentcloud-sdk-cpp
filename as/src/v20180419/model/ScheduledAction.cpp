@@ -43,7 +43,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScheduledActionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.ScheduledActionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.ScheduledActionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduledActionId = string(value["ScheduledActionId"].GetString());
         m_scheduledActionIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScheduledActionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.ScheduledActionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.ScheduledActionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduledActionName = string(value["ScheduledActionName"].GetString());
         m_scheduledActionNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Recurrence"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.Recurrence` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.Recurrence` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recurrence = string(value["Recurrence"].GetString());
         m_recurrenceHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetUint64();
         m_maxSizeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredCapacity"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.DesiredCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.DesiredCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredCapacity = value["DesiredCapacity"].GetUint64();
         m_desiredCapacityHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.MinSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.MinSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minSize = value["MinSize"].GetUint64();
         m_minSizeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScheduledAction.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

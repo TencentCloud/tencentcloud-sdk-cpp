@@ -37,7 +37,7 @@ CoreInternalOutcome StreamConnectOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectOutput.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectOutput.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome StreamConnectOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectOutput.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectOutput.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome StreamConnectOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectOutput.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectOutput.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome StreamConnectOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["PushUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectOutput.PushUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectOutput.PushUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushUrl = string(value["PushUrl"].GetString());
         m_pushUrlHasBeenSet = true;

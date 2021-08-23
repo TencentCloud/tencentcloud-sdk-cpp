@@ -37,7 +37,7 @@ CoreInternalOutcome AddressTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressTemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplate.AddressTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplate.AddressTemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressTemplateName = string(value["AddressTemplateName"].GetString());
         m_addressTemplateNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AddressTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplate.AddressTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplate.AddressTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressTemplateId = string(value["AddressTemplateId"].GetString());
         m_addressTemplateIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AddressTemplate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AddressSet") && !value["AddressSet"].IsNull())
     {
         if (!value["AddressSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AddressTemplate.AddressSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplate.AddressSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AddressSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome AddressTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplate.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplate.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

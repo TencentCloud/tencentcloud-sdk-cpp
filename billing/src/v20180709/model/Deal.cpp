@@ -55,7 +55,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Payer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.Payer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Payer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payer = string(value["Payer"].GetString());
         m_payerHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.Creator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Creator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealTotalCost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.RealTotalCost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.RealTotalCost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = value["RealTotalCost"].GetInt64();
         m_realTotalCostHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VoucherDecline"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.VoucherDecline` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.VoucherDecline` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_voucherDecline = value["VoucherDecline"].GetInt64();
         m_voucherDeclineHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GoodsCategoryId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Deal.GoodsCategoryId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.GoodsCategoryId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_goodsCategoryId = value["GoodsCategoryId"].GetInt64();
         m_goodsCategoryIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProductInfo") && !value["ProductInfo"].IsNull())
     {
         if (!value["ProductInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `Deal.ProductInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Deal.ProductInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProductInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -165,7 +165,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeSpan"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.TimeSpan` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.TimeSpan` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = value["TimeSpan"].GetDouble();
         m_timeSpanHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeUnit = string(value["TimeUnit"].GetString());
         m_timeUnitHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Currency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.Currency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Currency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currency = string(value["Currency"].GetString());
         m_currencyHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Policy"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.Policy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Policy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_policy = value["Policy"].GetDouble();
         m_policyHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.Price` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Price` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetDouble();
         m_priceHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Deal.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = value["TotalCost"].GetDouble();
         m_totalCostHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productCode = string(value["ProductCode"].GetString());
         m_productCodeHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubProductCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.SubProductCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.SubProductCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subProductCode = string(value["SubProductCode"].GetString());
         m_subProductCodeHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BigDealId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.BigDealId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.BigDealId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bigDealId = string(value["BigDealId"].GetString());
         m_bigDealIdHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Formula"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.Formula` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.Formula` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_formula = string(value["Formula"].GetString());
         m_formulaHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefReturnDeals"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.RefReturnDeals` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.RefReturnDeals` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_refReturnDeals = string(value["RefReturnDeals"].GetString());
         m_refReturnDealsHasBeenSet = true;
@@ -275,7 +275,7 @@ CoreInternalOutcome Deal::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Deal.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Deal.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;

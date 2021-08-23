@@ -37,7 +37,7 @@ CoreInternalOutcome TripleContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Popular"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TripleContent.Popular` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TripleContent.Popular` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_popular = value["Popular"].GetInt64();
         m_popularHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TripleContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TripleContent.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TripleContent.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TripleContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Order"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TripleContent.Order` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TripleContent.Order` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_order = value["Order"].GetInt64();
         m_orderHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TripleContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TripleContent.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TripleContent.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

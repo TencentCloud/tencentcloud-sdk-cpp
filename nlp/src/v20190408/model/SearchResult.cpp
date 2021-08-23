@@ -37,7 +37,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsExist"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.IsExist` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.IsExist` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isExist = value["IsExist"].GetUint64();
         m_isExistHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MatchText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.MatchText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.MatchText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchText = string(value["MatchText"].GetString());
         m_matchTextHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResult.Pos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Pos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pos = string(value["Pos"].GetString());
         m_posHasBeenSet = true;

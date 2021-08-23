@@ -39,7 +39,7 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ipv6Address.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Primary"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Ipv6Address.Primary` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.Primary` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_primary = value["Primary"].GetBool();
         m_primaryHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ipv6Address.AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.AddressId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressId = string(value["AddressId"].GetString());
         m_addressIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ipv6Address.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsWanIpBlocked"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Ipv6Address.IsWanIpBlocked` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.IsWanIpBlocked` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isWanIpBlocked = value["IsWanIpBlocked"].GetBool();
         m_isWanIpBlockedHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ipv6Address.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;

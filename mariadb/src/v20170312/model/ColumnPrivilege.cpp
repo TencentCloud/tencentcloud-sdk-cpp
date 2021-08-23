@@ -37,7 +37,7 @@ CoreInternalOutcome ColumnPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ColumnPrivilege.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ColumnPrivilege.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ColumnPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Table"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ColumnPrivilege.Table` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ColumnPrivilege.Table` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_table = string(value["Table"].GetString());
         m_tableHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ColumnPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Column"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ColumnPrivilege.Column` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ColumnPrivilege.Column` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_column = string(value["Column"].GetString());
         m_columnHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ColumnPrivilege::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
     {
         if (!value["Privileges"].IsArray())
-            return CoreInternalOutcome(Error("response `ColumnPrivilege.Privileges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ColumnPrivilege.Privileges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Privileges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

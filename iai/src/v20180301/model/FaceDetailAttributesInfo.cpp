@@ -49,7 +49,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Age"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetInt64();
         m_ageHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Beauty"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Beauty` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Beauty` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_beauty = value["Beauty"].GetInt64();
         m_beautyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Emotion"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Emotion` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Emotion` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_emotion.Deserialize(value["Emotion"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Eye"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Eye` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Eye` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eye.Deserialize(value["Eye"]);
@@ -103,7 +103,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Eyebrow"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Eyebrow` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Eyebrow` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyebrow.Deserialize(value["Eyebrow"]);
@@ -120,7 +120,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Gender"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Gender` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Gender` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gender.Deserialize(value["Gender"]);
@@ -137,7 +137,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Hair"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Hair` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Hair` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hair.Deserialize(value["Hair"]);
@@ -154,7 +154,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Hat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Hat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Hat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hat.Deserialize(value["Hat"]);
@@ -171,7 +171,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["HeadPose"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.HeadPose` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.HeadPose` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_headPose.Deserialize(value["HeadPose"]);
@@ -188,7 +188,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Mask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Mask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Mask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mask.Deserialize(value["Mask"]);
@@ -205,7 +205,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Mouth"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Mouth` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Mouth` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mouth.Deserialize(value["Mouth"]);
@@ -222,7 +222,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Moustache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Moustache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Moustache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_moustache.Deserialize(value["Moustache"]);
@@ -239,7 +239,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Nose"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Nose` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Nose` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_nose.Deserialize(value["Nose"]);
@@ -256,7 +256,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Shape"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Shape` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Shape` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_shape.Deserialize(value["Shape"]);
@@ -273,7 +273,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Skin"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Skin` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Skin` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_skin.Deserialize(value["Skin"]);
@@ -290,7 +290,7 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value
     {
         if (!value["Smile"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailAttributesInfo.Smile` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailAttributesInfo.Smile` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_smile = value["Smile"].GetInt64();
         m_smileHasBeenSet = true;

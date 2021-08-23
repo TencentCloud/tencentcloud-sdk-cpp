@@ -44,16 +44,16 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,18 +64,18 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("ProIspInfoList") && !rsp["ProIspInfoList"].IsNull())
     {
         if (!rsp["ProIspInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `ProIspInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProIspInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ProIspInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalCodeAll"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCodeAll` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCodeAll` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCodeAll = rsp["TotalCodeAll"].GetUint64();
         m_totalCodeAllHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalCode4xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCode4xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCode4xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCode4xx = rsp["TotalCode4xx"].GetUint64();
         m_totalCode4xxHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalCode5xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCode5xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCode5xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCode5xx = rsp["TotalCode5xx"].GetUint64();
         m_totalCode5xxHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     if (rsp.HasMember("TotalCodeList") && !rsp["TotalCodeList"].IsNull())
     {
         if (!rsp["TotalCodeList"].IsArray())
-            return CoreInternalOutcome(Error("response `TotalCodeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TotalCodeList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TotalCodeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["PageNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PageNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PageNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageNum = rsp["PageNum"].GetUint64();
         m_pageNumHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["PageSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PageSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageSize = rsp["PageSize"].GetUint64();
         m_pageSizeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalPage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalPage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalPage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalPage = rsp["TotalPage"].GetUint64();
         m_totalPageHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalNum = rsp["TotalNum"].GetUint64();
         m_totalNumHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalCode2xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCode2xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCode2xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCode2xx = rsp["TotalCode2xx"].GetUint64();
         m_totalCode2xxHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     {
         if (!rsp["TotalCode3xx"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCode3xx` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCode3xx` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCode3xx = rsp["TotalCode3xx"].GetUint64();
         m_totalCode3xxHasBeenSet = true;

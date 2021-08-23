@@ -36,7 +36,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Base64"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageInfo.Base64` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.Base64` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_base64 = string(value["Base64"].GetString());
         m_base64HasBeenSet = true;

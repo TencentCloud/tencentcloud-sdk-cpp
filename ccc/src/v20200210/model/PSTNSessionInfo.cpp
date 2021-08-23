@@ -44,7 +44,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.SessionID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.SessionID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionID = string(value["SessionID"].GetString());
         m_sessionIDHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.RoomID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.RoomID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomID = string(value["RoomID"].GetString());
         m_roomIDHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Caller"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.Caller` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.Caller` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_caller = string(value["Caller"].GetString());
         m_callerHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Callee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.Callee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.Callee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callee = string(value["Callee"].GetString());
         m_calleeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.StartTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.StartTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTimestamp = string(value["StartTimestamp"].GetString());
         m_startTimestampHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcceptTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.AcceptTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.AcceptTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acceptTimestamp = string(value["AcceptTimestamp"].GetString());
         m_acceptTimestampHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffEmail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffEmail = string(value["StaffEmail"].GetString());
         m_staffEmailHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffNumber = string(value["StaffNumber"].GetString());
         m_staffNumberHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.SessionStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.SessionStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionStatus = string(value["SessionStatus"].GetString());
         m_sessionStatusHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direction"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetInt64();
         m_directionHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome PSTNSessionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RingTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PSTNSessionInfo.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSessionInfo.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ringTimestamp = value["RingTimestamp"].GetInt64();
         m_ringTimestampHasBeenSet = true;

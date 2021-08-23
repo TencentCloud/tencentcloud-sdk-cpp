@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceNameSettings::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceNameSettings.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNameSettings.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceNameSettings::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceNameStyle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceNameSettings.InstanceNameStyle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNameSettings.InstanceNameStyle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceNameStyle = string(value["InstanceNameStyle"].GetString());
         m_instanceNameStyleHasBeenSet = true;

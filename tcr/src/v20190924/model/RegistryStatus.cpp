@@ -36,7 +36,7 @@ CoreInternalOutcome RegistryStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegistryStatus.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegistryStatus.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryId = string(value["RegistryId"].GetString());
         m_registryIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RegistryStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegistryStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegistryStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome RegistryStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
     {
         if (!value["Conditions"].IsArray())
-            return CoreInternalOutcome(Error("response `RegistryStatus.Conditions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RegistryStatus.Conditions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Conditions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

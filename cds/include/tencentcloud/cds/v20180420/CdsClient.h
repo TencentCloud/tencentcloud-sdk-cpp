@@ -49,22 +49,22 @@ namespace TencentCloud
                 CdsClient(const Credential &credential, const std::string &region);
                 CdsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeDasbImageIdsResponse> DescribeDasbImageIdsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDasbImageIdsResponse> DescribeDasbImageIdsOutcome;
                 typedef std::future<DescribeDasbImageIdsOutcome> DescribeDasbImageIdsOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::DescribeDasbImageIdsRequest&, DescribeDasbImageIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDasbImageIdsAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDbauditInstanceTypeResponse> DescribeDbauditInstanceTypeOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDbauditInstanceTypeResponse> DescribeDbauditInstanceTypeOutcome;
                 typedef std::future<DescribeDbauditInstanceTypeOutcome> DescribeDbauditInstanceTypeOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::DescribeDbauditInstanceTypeRequest&, DescribeDbauditInstanceTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbauditInstanceTypeAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDbauditInstancesResponse> DescribeDbauditInstancesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDbauditInstancesResponse> DescribeDbauditInstancesOutcome;
                 typedef std::future<DescribeDbauditInstancesOutcome> DescribeDbauditInstancesOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::DescribeDbauditInstancesRequest&, DescribeDbauditInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbauditInstancesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDbauditUsedRegionsResponse> DescribeDbauditUsedRegionsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDbauditUsedRegionsResponse> DescribeDbauditUsedRegionsOutcome;
                 typedef std::future<DescribeDbauditUsedRegionsOutcome> DescribeDbauditUsedRegionsOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::DescribeDbauditUsedRegionsRequest&, DescribeDbauditUsedRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbauditUsedRegionsAsyncHandler;
-                typedef Outcome<Error, Model::InquiryPriceDbauditInstanceResponse> InquiryPriceDbauditInstanceOutcome;
+                typedef Outcome<Core::Error, Model::InquiryPriceDbauditInstanceResponse> InquiryPriceDbauditInstanceOutcome;
                 typedef std::future<InquiryPriceDbauditInstanceOutcome> InquiryPriceDbauditInstanceOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::InquiryPriceDbauditInstanceRequest&, InquiryPriceDbauditInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceDbauditInstanceAsyncHandler;
-                typedef Outcome<Error, Model::ModifyDbauditInstancesRenewFlagResponse> ModifyDbauditInstancesRenewFlagOutcome;
+                typedef Outcome<Core::Error, Model::ModifyDbauditInstancesRenewFlagResponse> ModifyDbauditInstancesRenewFlagOutcome;
                 typedef std::future<ModifyDbauditInstancesRenewFlagOutcome> ModifyDbauditInstancesRenewFlagOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::ModifyDbauditInstancesRenewFlagRequest&, ModifyDbauditInstancesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDbauditInstancesRenewFlagAsyncHandler;
 

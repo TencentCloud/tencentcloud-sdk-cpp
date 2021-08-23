@@ -35,7 +35,7 @@ CoreInternalOutcome ConsumptionSummaryTrend::Deserialize(const rapidjson::Value 
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionSummaryTrend.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionSummaryTrend.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConsumptionSummaryTrend::Deserialize(const rapidjson::Value 
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionSummaryTrend.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionSummaryTrend.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

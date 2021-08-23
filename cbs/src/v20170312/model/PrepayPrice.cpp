@@ -42,7 +42,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = value["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = value["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalPriceHigh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.OriginalPriceHigh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.OriginalPriceHigh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalPriceHigh = string(value["OriginalPriceHigh"].GetString());
         m_originalPriceHighHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiscountPriceHigh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.DiscountPriceHigh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.DiscountPriceHigh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_discountPriceHigh = string(value["DiscountPriceHigh"].GetString());
         m_discountPriceHighHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.UnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPrice = value["UnitPrice"].GetDouble();
         m_unitPriceHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChargeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.ChargeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.ChargeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chargeUnit = string(value["ChargeUnit"].GetString());
         m_chargeUnitHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPriceDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPriceDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.UnitPriceDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceDiscount = value["UnitPriceDiscount"].GetDouble();
         m_unitPriceDiscountHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPriceHigh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPriceHigh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.UnitPriceHigh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceHigh = string(value["UnitPriceHigh"].GetString());
         m_unitPriceHighHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPriceDiscountHigh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrepayPrice.UnitPriceDiscountHigh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.UnitPriceDiscountHigh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unitPriceDiscountHigh = string(value["UnitPriceDiscountHigh"].GetString());
         m_unitPriceDiscountHighHasBeenSet = true;

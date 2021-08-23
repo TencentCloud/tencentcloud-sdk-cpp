@@ -42,16 +42,16 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(rsp["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(rsp["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(rsp["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Keywords") && !rsp["Keywords"].IsNull())
     {
         if (!rsp["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -117,7 +117,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = rsp["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("DetailResults") && !rsp["DetailResults"].IsNull())
     {
         if (!rsp["DetailResults"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["DetailResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -146,7 +146,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("RiskDetails") && !rsp["RiskDetails"].IsNull())
     {
         if (!rsp["RiskDetails"].IsArray())
-            return CoreInternalOutcome(Error("response `RiskDetails` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RiskDetails` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RiskDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -167,7 +167,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(rsp["Extra"].GetString());
         m_extraHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(rsp["DataId"].GetString());
         m_dataIdHasBeenSet = true;

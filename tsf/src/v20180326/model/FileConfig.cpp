@@ -49,7 +49,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configId = string(value["ConfigId"].GetString());
         m_configIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configName = string(value["ConfigName"].GetString());
         m_configNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configVersion = string(value["ConfigVersion"].GetString());
         m_configVersionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigVersionDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigVersionDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigVersionDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configVersionDesc = string(value["ConfigVersionDesc"].GetString());
         m_configVersionDescHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigFileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigFileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigFileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configFileName = string(value["ConfigFileName"].GetString());
         m_configFileNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigFileValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigFileValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigFileValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configFileValue = string(value["ConfigFileValue"].GetString());
         m_configFileValueHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigFileCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigFileCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigFileCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configFileCode = string(value["ConfigFileCode"].GetString());
         m_configFileCodeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeleteFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.DeleteFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.DeleteFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deleteFlag = value["DeleteFlag"].GetBool();
         m_deleteFlagHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigVersionCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigVersionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigVersionCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_configVersionCount = value["ConfigVersionCount"].GetInt64();
         m_configVersionCountHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastUpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastUpdateTime = string(value["LastUpdateTime"].GetString());
         m_lastUpdateTimeHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigFilePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigFilePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigFilePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configFilePath = string(value["ConfigFilePath"].GetString());
         m_configFilePathHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigPostCmd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigPostCmd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigPostCmd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configPostCmd = string(value["ConfigPostCmd"].GetString());
         m_configPostCmdHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigFileValueLength"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FileConfig.ConfigFileValueLength` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileConfig.ConfigFileValueLength` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_configFileValueLength = value["ConfigFileValueLength"].GetUint64();
         m_configFileValueLengthHasBeenSet = true;

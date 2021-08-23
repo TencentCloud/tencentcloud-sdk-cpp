@@ -39,7 +39,7 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerUid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerDetailInfo.ServerUid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.ServerUid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverUid = string(value["ServerUid"].GetString());
         m_serverUidHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerDetailInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemoryRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerDetailInfo.MemoryRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.MemoryRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memoryRate = value["MemoryRate"].GetInt64();
         m_memoryRateHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerDetailInfo.DiskRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.DiskRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskRate = value["DiskRate"].GetInt64();
         m_diskRateHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerDetailInfo.ReadNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.ReadNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readNum = value["ReadNum"].GetInt64();
         m_readNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WriteNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServerDetailInfo.WriteNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.WriteNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_writeNum = value["WriteNum"].GetInt64();
         m_writeNumHasBeenSet = true;

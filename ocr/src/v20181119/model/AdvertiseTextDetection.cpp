@@ -37,7 +37,7 @@ CoreInternalOutcome AdvertiseTextDetection::Deserialize(const rapidjson::Value &
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvertiseTextDetection.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvertiseTextDetection.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AdvertiseTextDetection::Deserialize(const rapidjson::Value &
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AdvertiseTextDetection.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvertiseTextDetection.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AdvertiseTextDetection::Deserialize(const rapidjson::Value &
     if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
     {
         if (!value["Polygon"].IsArray())
-            return CoreInternalOutcome(Error("response `AdvertiseTextDetection.Polygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdvertiseTextDetection.Polygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Polygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome AdvertiseTextDetection::Deserialize(const rapidjson::Value &
     {
         if (!value["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvertiseTextDetection.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvertiseTextDetection.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(value["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;

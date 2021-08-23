@@ -37,7 +37,7 @@ CoreInternalOutcome Scaler::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxReplicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Scaler.MaxReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Scaler.MaxReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReplicas = value["MaxReplicas"].GetUint64();
         m_maxReplicasHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Scaler::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinReplicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Scaler.MinReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Scaler.MinReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minReplicas = value["MinReplicas"].GetUint64();
         m_minReplicasHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Scaler::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartReplicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Scaler.StartReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Scaler.StartReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startReplicas = value["StartReplicas"].GetUint64();
         m_startReplicasHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome Scaler::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HpaMetrics") && !value["HpaMetrics"].IsNull())
     {
         if (!value["HpaMetrics"].IsArray())
-            return CoreInternalOutcome(Error("response `Scaler.HpaMetrics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Scaler.HpaMetrics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HpaMetrics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

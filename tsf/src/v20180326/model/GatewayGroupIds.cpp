@@ -35,7 +35,7 @@ CoreInternalOutcome GatewayGroupIds::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayDeployGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupIds.GatewayDeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupIds.GatewayDeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayDeployGroupId = string(value["GatewayDeployGroupId"].GetString());
         m_gatewayDeployGroupIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GatewayGroupIds::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayGroupIds.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayGroupIds.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;

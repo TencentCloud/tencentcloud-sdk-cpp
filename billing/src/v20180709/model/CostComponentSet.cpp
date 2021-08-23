@@ -45,7 +45,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComponentCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.ComponentCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.ComponentCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_componentCodeName = string(value["ComponentCodeName"].GetString());
         m_componentCodeNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.ItemCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.ItemCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemCodeName = string(value["ItemCodeName"].GetString());
         m_itemCodeNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SinglePrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.SinglePrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.SinglePrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_singlePrice = string(value["SinglePrice"].GetString());
         m_singlePriceHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PriceUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.PriceUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.PriceUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_priceUnit = string(value["PriceUnit"].GetString());
         m_priceUnitHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.UsedAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.UsedAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usedAmount = string(value["UsedAmount"].GetString());
         m_usedAmountHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedAmountUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.UsedAmountUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.UsedAmountUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usedAmountUnit = string(value["UsedAmountUnit"].GetString());
         m_usedAmountUnitHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.Cost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.Cost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cost = string(value["Cost"].GetString());
         m_costHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Discount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.Discount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.Discount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_discount = string(value["Discount"].GetString());
         m_discountHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.RealCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.RealCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realCost = string(value["RealCost"].GetString());
         m_realCostHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CostComponentSet.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome MetricObjectMeaning::Deserialize(const rapidjson::Value &val
     {
         if (!value["En"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricObjectMeaning.En` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricObjectMeaning.En` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_en = string(value["En"].GetString());
         m_enHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MetricObjectMeaning::Deserialize(const rapidjson::Value &val
     {
         if (!value["Zh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetricObjectMeaning.Zh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetricObjectMeaning.Zh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zh = string(value["Zh"].GetString());
         m_zhHasBeenSet = true;

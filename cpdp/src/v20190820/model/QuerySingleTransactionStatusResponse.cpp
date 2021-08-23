@@ -45,16 +45,16 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["TxnReturnCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TxnReturnCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TxnReturnCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_txnReturnCode = string(rsp["TxnReturnCode"].GetString());
         m_txnReturnCodeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["TxnReturnMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TxnReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TxnReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_txnReturnMsg = string(rsp["TxnReturnMsg"].GetString());
         m_txnReturnMsgHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["CnsmrSeqNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CnsmrSeqNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CnsmrSeqNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cnsmrSeqNo = string(rsp["CnsmrSeqNo"].GetString());
         m_cnsmrSeqNoHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["BookingFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bookingFlag = string(rsp["BookingFlag"].GetString());
         m_bookingFlagHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["TranStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranStatus = string(rsp["TranStatus"].GetString());
         m_tranStatusHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["TranAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranAmt = string(rsp["TranAmt"].GetString());
         m_tranAmtHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["TranDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranDate = string(rsp["TranDate"].GetString());
         m_tranDateHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["TranTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranTime = string(rsp["TranTime"].GetString());
         m_tranTimeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["InSubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inSubAcctNo = string(rsp["InSubAcctNo"].GetString());
         m_inSubAcctNoHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["OutSubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutSubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outSubAcctNo = string(rsp["OutSubAcctNo"].GetString());
         m_outSubAcctNoHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["FailMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failMsg = string(rsp["FailMsg"].GetString());
         m_failMsgHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome QuerySingleTransactionStatusResponse::Deserialize(const stri
     {
         if (!rsp["OldTranFrontSeqNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OldTranFrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OldTranFrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldTranFrontSeqNo = string(rsp["OldTranFrontSeqNo"].GetString());
         m_oldTranFrontSeqNoHasBeenSet = true;

@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,18 +58,18 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("Events") && !rsp["Events"].IsNull())
     {
         if (!rsp["Events"].IsArray())
-            return CoreInternalOutcome(Error("response `Events` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Events` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Events"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
     {
         if (!rsp["Context"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_context = string(rsp["Context"].GetString());
         m_contextHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
     {
         if (!rsp["Listover"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Listover` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listover` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_listover = rsp["Listover"].GetBool();
         m_listoverHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
     {
         if (!rsp["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = rsp["Total"].GetUint64();
         m_totalHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeCloudStorageEventsResponse::Deserialize(const string
     {
         if (!rsp["VideoURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoURL = string(rsp["VideoURL"].GetString());
         m_videoURLHasBeenSet = true;

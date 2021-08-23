@@ -37,7 +37,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceCert"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.DeviceCert` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.DeviceCert` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceCert = string(value["DeviceCert"].GetString());
         m_deviceCertHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DevicePrivateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.DevicePrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.DevicePrivateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devicePrivateKey = string(value["DevicePrivateKey"].GetString());
         m_devicePrivateKeyHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DevicePsk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devicePsk = string(value["DevicePsk"].GetString());
         m_devicePskHasBeenSet = true;

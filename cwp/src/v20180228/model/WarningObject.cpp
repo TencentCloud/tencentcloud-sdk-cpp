@@ -38,7 +38,7 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WarningObject.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WarningObject.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisablePhoneWarning"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WarningObject.DisablePhoneWarning` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WarningObject.DisablePhoneWarning` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_disablePhoneWarning = value["DisablePhoneWarning"].GetUint64();
         m_disablePhoneWarningHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WarningObject.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WarningObject.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WarningObject.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WarningObject.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ControlBits"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WarningObject.ControlBits` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WarningObject.ControlBits` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_controlBits = string(value["ControlBits"].GetString());
         m_controlBitsHasBeenSet = true;

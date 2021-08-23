@@ -54,7 +54,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.KeepTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.KeepTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_keepTime = value["KeepTime"].GetUint64();
         m_keepTimeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = value["SourceType"].GetUint64();
         m_sourceTypeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LbType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.LbType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.LbType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lbType = value["LbType"].GetUint64();
         m_lbTypeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceList") && !value["SourceList"].IsNull())
     {
         if (!value["SourceList"].IsArray())
-            return CoreInternalOutcome(Error("response `L7RuleEntry.SourceList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.SourceList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -124,7 +124,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepEnable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.KeepEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.KeepEnable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_keepEnable = value["KeepEnable"].GetUint64();
         m_keepEnableHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CCThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.CCThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.CCThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cCThreshold = value["CCThreshold"].GetUint64();
         m_cCThresholdHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateKey = string(value["PrivateKey"].GetString());
         m_privateKeyHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CCEnable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.CCEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.CCEnable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cCEnable = value["CCEnable"].GetUint64();
         m_cCEnableHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpsToHttpEnable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.HttpsToHttpEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.HttpsToHttpEnable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_httpsToHttpEnable = value["HttpsToHttpEnable"].GetUint64();
         m_httpsToHttpEnableHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.CertType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.CertType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_certType = value["CertType"].GetUint64();
         m_certTypeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cert"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.Cert` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.Cert` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cert = string(value["Cert"].GetString());
         m_certHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CCLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.CCLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.CCLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cCLevel = string(value["CCLevel"].GetString());
         m_cCLevelHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CCStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.CCStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.CCStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cCStatus = value["CCStatus"].GetUint64();
         m_cCStatusHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirtualPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_virtualPort = value["VirtualPort"].GetUint64();
         m_virtualPortHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SSLId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.SSLId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.SSLId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSLId = string(value["SSLId"].GetString());
         m_sSLIdHasBeenSet = true;
@@ -264,7 +264,7 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `L7RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `L7RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

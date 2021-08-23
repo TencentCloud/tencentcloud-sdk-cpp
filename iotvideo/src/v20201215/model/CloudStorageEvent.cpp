@@ -37,7 +37,7 @@ CoreInternalOutcome CloudStorageEvent::Deserialize(const rapidjson::Value &value
     {
         if (!value["StartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageEvent.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageEvent.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CloudStorageEvent::Deserialize(const rapidjson::Value &value
     {
         if (!value["EndTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageEvent.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageEvent.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetUint64();
         m_endTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CloudStorageEvent::Deserialize(const rapidjson::Value &value
     {
         if (!value["Thumbnail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageEvent.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageEvent.Thumbnail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thumbnail = string(value["Thumbnail"].GetString());
         m_thumbnailHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CloudStorageEvent::Deserialize(const rapidjson::Value &value
     {
         if (!value["EventId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageEvent.EventId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageEvent.EventId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = string(value["EventId"].GetString());
         m_eventIdHasBeenSet = true;

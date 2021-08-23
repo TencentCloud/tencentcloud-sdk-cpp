@@ -38,7 +38,7 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const rapidjson::Value &va
     if (value.HasMember("InstanceIds") && !value["InstanceIds"].IsNull())
     {
         if (!value["InstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ExistedInstancesPara.InstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesPara.InstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -52,7 +52,7 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const rapidjson::Value &va
     {
         if (!value["InstanceAdvancedSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesPara.InstanceAdvancedSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesPara.InstanceAdvancedSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceAdvancedSettings.Deserialize(value["InstanceAdvancedSettings"]);
@@ -69,7 +69,7 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const rapidjson::Value &va
     {
         if (!value["EnhancedService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesPara.EnhancedService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesPara.EnhancedService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_enhancedService.Deserialize(value["EnhancedService"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const rapidjson::Value &va
     {
         if (!value["LoginSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesPara.LoginSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesPara.LoginSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_loginSettings.Deserialize(value["LoginSettings"]);
@@ -102,7 +102,7 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const rapidjson::Value &va
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ExistedInstancesPara.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesPara.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -116,7 +116,7 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const rapidjson::Value &va
     {
         if (!value["HostName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExistedInstancesPara.HostName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExistedInstancesPara.HostName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostName = string(value["HostName"].GetString());
         m_hostNameHasBeenSet = true;

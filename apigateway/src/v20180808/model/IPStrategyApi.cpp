@@ -40,7 +40,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.ApiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.ApiName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiName = string(value["ApiName"].GetString());
         m_apiNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.ApiType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.ApiType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiType = string(value["ApiType"].GetString());
         m_apiTypeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtherIPStrategyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.OtherIPStrategyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.OtherIPStrategyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_otherIPStrategyId = string(value["OtherIPStrategyId"].GetString());
         m_otherIPStrategyIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome IPStrategyApi::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtherEnvironmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPStrategyApi.OtherEnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategyApi.OtherEnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_otherEnvironmentName = string(value["OtherEnvironmentName"].GetString());
         m_otherEnvironmentNameHasBeenSet = true;

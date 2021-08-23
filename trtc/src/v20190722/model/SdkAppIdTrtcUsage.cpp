@@ -39,7 +39,7 @@ CoreInternalOutcome SdkAppIdTrtcUsage::Deserialize(const rapidjson::Value &value
     {
         if (!value["TimeKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcUsage.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcUsage.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeKey = string(value["TimeKey"].GetString());
         m_timeKeyHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SdkAppIdTrtcUsage::Deserialize(const rapidjson::Value &value
     {
         if (!value["AudioTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcUsage.AudioTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcUsage.AudioTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioTime = value["AudioTime"].GetUint64();
         m_audioTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SdkAppIdTrtcUsage::Deserialize(const rapidjson::Value &value
     {
         if (!value["AudioVideoTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcUsage.AudioVideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcUsage.AudioVideoTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioVideoTime = value["AudioVideoTime"].GetUint64();
         m_audioVideoTimeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SdkAppIdTrtcUsage::Deserialize(const rapidjson::Value &value
     {
         if (!value["VideoTimeSd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcUsage.VideoTimeSd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcUsage.VideoTimeSd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTimeSd = value["VideoTimeSd"].GetUint64();
         m_videoTimeSdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SdkAppIdTrtcUsage::Deserialize(const rapidjson::Value &value
     {
         if (!value["VideoTimeHd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcUsage.VideoTimeHd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcUsage.VideoTimeHd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTimeHd = value["VideoTimeHd"].GetUint64();
         m_videoTimeHdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SdkAppIdTrtcUsage::Deserialize(const rapidjson::Value &value
     {
         if (!value["VideoTimeHdp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcUsage.VideoTimeHdp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcUsage.VideoTimeHdp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTimeHdp = value["VideoTimeHdp"].GetUint64();
         m_videoTimeHdpHasBeenSet = true;

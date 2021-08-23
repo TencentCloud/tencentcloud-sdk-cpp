@@ -35,7 +35,7 @@ CoreInternalOutcome SharePermission::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SharePermission.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SharePermission.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SharePermission::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SharePermission.AccountId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SharePermission.AccountId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountId = string(value["AccountId"].GetString());
         m_accountIdHasBeenSet = true;

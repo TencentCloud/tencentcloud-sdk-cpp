@@ -38,7 +38,7 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeRunPodPage.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRunPodPage.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Limit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeRunPodPage.Limit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRunPodPage.Limit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_limit = value["Limit"].GetInt64();
         m_limitHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeRunPodPage.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRunPodPage.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeRunPodPage.RequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeRunPodPage.RequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestId = string(value["RequestId"].GetString());
         m_requestIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("PodList") && !value["PodList"].IsNull())
     {
         if (!value["PodList"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeRunPodPage.PodList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeRunPodPage.PodList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PodList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

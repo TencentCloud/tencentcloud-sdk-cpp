@@ -49,7 +49,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.SpecId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.SpecId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_specId = value["SpecId"].GetInt64();
         m_specIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.MachineTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MachineTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineTypeName = string(value["MachineTypeName"].GetString());
         m_machineTypeNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CPU"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.CPU` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.CPU` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cPU = value["CPU"].GetInt64();
         m_cPUHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.MinStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MinStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minStorage = value["MinStorage"].GetInt64();
         m_minStorageHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.MaxStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MaxStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStorage = value["MaxStorage"].GetInt64();
         m_maxStorageHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QPS"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.QPS` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.QPS` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_qPS = value["QPS"].GetInt64();
         m_qPSHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuitInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.SuitInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.SuitInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suitInfo = string(value["SuitInfo"].GetString());
         m_suitInfoHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetInt64();
         m_pidHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PostPid") && !value["PostPid"].IsNull())
     {
         if (!value["PostPid"].IsArray())
-            return CoreInternalOutcome(Error("response `SpecInfo.PostPid` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.PostPid` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PostPid"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -182,7 +182,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayModeStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.PayModeStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.PayModeStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payModeStatus = string(value["PayModeStatus"].GetString());
         m_payModeStatusHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MultiZonesStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecInfo.MultiZonesStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MultiZonesStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_multiZonesStatus = string(value["MultiZonesStatus"].GetString());
         m_multiZonesStatusHasBeenSet = true;

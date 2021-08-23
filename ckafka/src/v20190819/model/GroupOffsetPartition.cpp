@@ -39,7 +39,7 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &va
     {
         if (!value["Partition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetPartition.Partition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetPartition.Partition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partition = value["Partition"].GetInt64();
         m_partitionHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &va
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetPartition.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetPartition.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &va
     {
         if (!value["Metadata"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetPartition.Metadata` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetPartition.Metadata` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metadata = string(value["Metadata"].GetString());
         m_metadataHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &va
     {
         if (!value["ErrorCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetPartition.ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetPartition.ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = value["ErrorCode"].GetInt64();
         m_errorCodeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &va
     {
         if (!value["LogEndOffset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetPartition.LogEndOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetPartition.LogEndOffset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_logEndOffset = value["LogEndOffset"].GetInt64();
         m_logEndOffsetHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &va
     {
         if (!value["Lag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GroupOffsetPartition.Lag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupOffsetPartition.Lag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lag = value["Lag"].GetInt64();
         m_lagHasBeenSet = true;

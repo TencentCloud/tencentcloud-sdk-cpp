@@ -37,7 +37,7 @@ CoreInternalOutcome SpecialCostItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReportDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecialCostItem.ReportDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecialCostItem.ReportDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reportDate = string(value["ReportDate"].GetString());
         m_reportDateHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SpecialCostItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecialCostItem.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecialCostItem.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SpecialCostItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecialCostItem.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecialCostItem.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SpecialCostItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecialCostItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecialCostItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome ConfigListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UconfigId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigListItem.UconfigId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigListItem.UconfigId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uconfigId = string(value["UconfigId"].GetString());
         m_uconfigIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ConfigListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigListItem.ConfigType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigListItem.ConfigType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configType = string(value["ConfigType"].GetString());
         m_configTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ConfigListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigListItem.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigListItem.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configName = string(value["ConfigName"].GetString());
         m_configNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ConfigListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConfigContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigListItem.ConfigContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigListItem.ConfigContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_configContent = string(value["ConfigContent"].GetString());
         m_configContentHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ConfigListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigListItem.CreateTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigListItem.CreateTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTimestamp = string(value["CreateTimestamp"].GetString());
         m_createTimestampHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ConfigListItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConfigListItem.UpdateTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigListItem.UpdateTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTimestamp = string(value["UpdateTimestamp"].GetString());
         m_updateTimestampHasBeenSet = true;

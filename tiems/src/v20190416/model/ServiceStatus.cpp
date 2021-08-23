@@ -40,7 +40,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DesiredReplicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServiceStatus.DesiredReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.DesiredReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_desiredReplicas = value["DesiredReplicas"].GetUint64();
         m_desiredReplicasHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentReplicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServiceStatus.CurrentReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.CurrentReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_currentReplicas = value["CurrentReplicas"].GetUint64();
         m_currentReplicasHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
     {
         if (!value["Conditions"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceStatus.Conditions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.Conditions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Conditions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Replicas") && !value["Replicas"].IsNull())
     {
         if (!value["Replicas"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceStatus.Replicas` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.Replicas` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Replicas"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReplicaInfos") && !value["ReplicaInfos"].IsNull())
     {
         if (!value["ReplicaInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceStatus.ReplicaInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.ReplicaInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReplicaInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

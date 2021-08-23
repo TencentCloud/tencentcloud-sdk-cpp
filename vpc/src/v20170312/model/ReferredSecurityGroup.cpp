@@ -35,7 +35,7 @@ CoreInternalOutcome ReferredSecurityGroup::Deserialize(const rapidjson::Value &v
     {
         if (!value["SecurityGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReferredSecurityGroup.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReferredSecurityGroup.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupId = string(value["SecurityGroupId"].GetString());
         m_securityGroupIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ReferredSecurityGroup::Deserialize(const rapidjson::Value &v
     if (value.HasMember("ReferredSecurityGroupIds") && !value["ReferredSecurityGroupIds"].IsNull())
     {
         if (!value["ReferredSecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ReferredSecurityGroup.ReferredSecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReferredSecurityGroup.ReferredSecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReferredSecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

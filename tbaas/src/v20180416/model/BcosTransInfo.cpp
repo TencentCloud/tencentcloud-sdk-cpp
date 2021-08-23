@@ -40,7 +40,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.BlockNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.BlockNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blockNumber = value["BlockNumber"].GetInt64();
         m_blockNumberHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.BlockTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.BlockTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blockTimestamp = string(value["BlockTimestamp"].GetString());
         m_blockTimestampHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.TransHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.TransHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transHash = string(value["TransHash"].GetString());
         m_transHashHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransFrom"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.TransFrom` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.TransFrom` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transFrom = string(value["TransFrom"].GetString());
         m_transFromHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransTo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.TransTo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.TransTo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transTo = string(value["TransTo"].GetString());
         m_transToHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosTransInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosTransInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

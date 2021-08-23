@@ -37,7 +37,7 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioTrackItem.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTrackItem.SourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = string(value["SourceType"].GetString());
         m_sourceTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceMedia"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioTrackItem.SourceMedia` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTrackItem.SourceMedia` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMedia = string(value["SourceMedia"].GetString());
         m_sourceMediaHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceMediaStartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioTrackItem.SourceMediaStartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTrackItem.SourceMediaStartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sourceMediaStartTime = value["SourceMediaStartTime"].GetDouble();
         m_sourceMediaStartTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioTrackItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;

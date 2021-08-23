@@ -40,7 +40,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextDetectionEn.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextDetectionEn.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Polygon") && !value["Polygon"].IsNull())
     {
         if (!value["Polygon"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetectionEn.Polygon` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.Polygon` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Polygon"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvancedInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextDetectionEn.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advancedInfo = string(value["AdvancedInfo"].GetString());
         m_advancedInfoHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WordCoordPoint") && !value["WordCoordPoint"].IsNull())
     {
         if (!value["WordCoordPoint"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetectionEn.WordCoordPoint` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.WordCoordPoint` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WordCoordPoint"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CandWord") && !value["CandWord"].IsNull())
     {
         if (!value["CandWord"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetectionEn.CandWord` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.CandWord` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CandWord"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -129,7 +129,7 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Words") && !value["Words"].IsNull())
     {
         if (!value["Words"].IsArray())
-            return CoreInternalOutcome(Error("response `TextDetectionEn.Words` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextDetectionEn.Words` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Words"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome InvocationTaskBasicInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["InvocationTaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvocationTaskBasicInfo.InvocationTaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvocationTaskBasicInfo.InvocationTaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invocationTaskId = string(value["InvocationTaskId"].GetString());
         m_invocationTaskIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InvocationTaskBasicInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["TaskStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvocationTaskBasicInfo.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvocationTaskBasicInfo.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = string(value["TaskStatus"].GetString());
         m_taskStatusHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome InvocationTaskBasicInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvocationTaskBasicInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvocationTaskBasicInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

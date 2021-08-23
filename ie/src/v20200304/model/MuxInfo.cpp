@@ -35,7 +35,7 @@ CoreInternalOutcome MuxInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeleteStream"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MuxInfo.DeleteStream` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MuxInfo.DeleteStream` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deleteStream = string(value["DeleteStream"].GetString());
         m_deleteStreamHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MuxInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlvFlags"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MuxInfo.FlvFlags` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MuxInfo.FlvFlags` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flvFlags = string(value["FlvFlags"].GetString());
         m_flvFlagsHasBeenSet = true;

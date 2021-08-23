@@ -37,7 +37,7 @@ CoreInternalOutcome CreatePolicyGroupEventCondition::Deserialize(const rapidjson
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreatePolicyGroupEventCondition.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatePolicyGroupEventCondition.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CreatePolicyGroupEventCondition::Deserialize(const rapidjson
     {
         if (!value["AlarmNotifyType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreatePolicyGroupEventCondition.AlarmNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatePolicyGroupEventCondition.AlarmNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNotifyType = value["AlarmNotifyType"].GetInt64();
         m_alarmNotifyTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CreatePolicyGroupEventCondition::Deserialize(const rapidjson
     {
         if (!value["AlarmNotifyPeriod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreatePolicyGroupEventCondition.AlarmNotifyPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatePolicyGroupEventCondition.AlarmNotifyPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmNotifyPeriod = value["AlarmNotifyPeriod"].GetInt64();
         m_alarmNotifyPeriodHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CreatePolicyGroupEventCondition::Deserialize(const rapidjson
     {
         if (!value["RuleId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreatePolicyGroupEventCondition.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatePolicyGroupEventCondition.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = value["RuleId"].GetInt64();
         m_ruleIdHasBeenSet = true;

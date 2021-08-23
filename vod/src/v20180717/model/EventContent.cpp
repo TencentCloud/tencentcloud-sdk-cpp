@@ -49,7 +49,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventHandle"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventContent.EventHandle` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.EventHandle` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventHandle = string(value["EventHandle"].GetString());
         m_eventHandleHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventContent.EventType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.EventType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventType = string(value["EventType"].GetString());
         m_eventTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUploadEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.FileUploadEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.FileUploadEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fileUploadEvent.Deserialize(value["FileUploadEvent"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcedureStateChangeEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.ProcedureStateChangeEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.ProcedureStateChangeEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_procedureStateChangeEvent.Deserialize(value["ProcedureStateChangeEvent"]);
@@ -103,7 +103,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileDeleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.FileDeleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.FileDeleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_fileDeleteEvent.Deserialize(value["FileDeleteEvent"]);
@@ -120,7 +120,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PullCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.PullCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.PullCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pullCompleteEvent.Deserialize(value["PullCompleteEvent"]);
@@ -137,7 +137,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EditMediaCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.EditMediaCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.EditMediaCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_editMediaCompleteEvent.Deserialize(value["EditMediaCompleteEvent"]);
@@ -154,7 +154,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SplitMediaCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.SplitMediaCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.SplitMediaCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_splitMediaCompleteEvent.Deserialize(value["SplitMediaCompleteEvent"]);
@@ -171,7 +171,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComposeMediaCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.ComposeMediaCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.ComposeMediaCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_composeMediaCompleteEvent.Deserialize(value["ComposeMediaCompleteEvent"]);
@@ -188,7 +188,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClipCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.ClipCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.ClipCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_clipCompleteEvent.Deserialize(value["ClipCompleteEvent"]);
@@ -205,7 +205,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranscodeCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.TranscodeCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.TranscodeCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_transcodeCompleteEvent.Deserialize(value["TranscodeCompleteEvent"]);
@@ -222,7 +222,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateImageSpriteCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.CreateImageSpriteCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.CreateImageSpriteCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_createImageSpriteCompleteEvent.Deserialize(value["CreateImageSpriteCompleteEvent"]);
@@ -239,7 +239,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConcatCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.ConcatCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.ConcatCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_concatCompleteEvent.Deserialize(value["ConcatCompleteEvent"]);
@@ -256,7 +256,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotByTimeOffsetCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.SnapshotByTimeOffsetCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.SnapshotByTimeOffsetCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_snapshotByTimeOffsetCompleteEvent.Deserialize(value["SnapshotByTimeOffsetCompleteEvent"]);
@@ -273,7 +273,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WechatPublishCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.WechatPublishCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.WechatPublishCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_wechatPublishCompleteEvent.Deserialize(value["WechatPublishCompleteEvent"]);
@@ -290,7 +290,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WechatMiniProgramPublishCompleteEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.WechatMiniProgramPublishCompleteEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.WechatMiniProgramPublishCompleteEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_wechatMiniProgramPublishCompleteEvent.Deserialize(value["WechatMiniProgramPublishCompleteEvent"]);

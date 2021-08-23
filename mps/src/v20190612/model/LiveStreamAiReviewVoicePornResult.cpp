@@ -38,7 +38,7 @@ CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const rapidjs
     {
         if (!value["StartPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewVoicePornResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewVoicePornResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startPtsTime = value["StartPtsTime"].GetDouble();
         m_startPtsTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const rapidjs
     {
         if (!value["EndPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewVoicePornResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewVoicePornResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endPtsTime = value["EndPtsTime"].GetDouble();
         m_endPtsTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const rapidjs
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewVoicePornResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewVoicePornResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const rapidjs
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewVoicePornResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewVoicePornResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const rapidjs
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewVoicePornResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewVoicePornResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;

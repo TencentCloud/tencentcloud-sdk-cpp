@@ -34,7 +34,7 @@ CoreInternalOutcome CompressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompressInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompressInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;

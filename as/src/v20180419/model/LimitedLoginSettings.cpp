@@ -33,7 +33,7 @@ CoreInternalOutcome LimitedLoginSettings::Deserialize(const rapidjson::Value &va
     if (value.HasMember("KeyIds") && !value["KeyIds"].IsNull())
     {
         if (!value["KeyIds"].IsArray())
-            return CoreInternalOutcome(Error("response `LimitedLoginSettings.KeyIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LimitedLoginSettings.KeyIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeyIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

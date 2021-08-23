@@ -34,7 +34,7 @@ CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullUrlCache"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheKey.FullUrlCache` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheKey.FullUrlCache` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullUrlCache = string(value["FullUrlCache"].GetString());
         m_fullUrlCacheHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["TranscodeTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.TranscodeTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.TranscodeTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_transcodeTask.Deserialize(value["TranscodeTask"]);
@@ -67,7 +67,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["AnimatedGraphicTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.AnimatedGraphicTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.AnimatedGraphicTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_animatedGraphicTask.Deserialize(value["AnimatedGraphicTask"]);
@@ -84,7 +84,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["SnapshotByTimeOffsetTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.SnapshotByTimeOffsetTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.SnapshotByTimeOffsetTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_snapshotByTimeOffsetTask.Deserialize(value["SnapshotByTimeOffsetTask"]);
@@ -101,7 +101,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["SampleSnapshotTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.SampleSnapshotTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.SampleSnapshotTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sampleSnapshotTask.Deserialize(value["SampleSnapshotTask"]);
@@ -118,7 +118,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ImageSpriteTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.ImageSpriteTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.ImageSpriteTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageSpriteTask.Deserialize(value["ImageSpriteTask"]);
@@ -135,7 +135,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["AdaptiveDynamicStreamingTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.AdaptiveDynamicStreamingTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.AdaptiveDynamicStreamingTask` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_adaptiveDynamicStreamingTask.Deserialize(value["AdaptiveDynamicStreamingTask"]);

@@ -51,7 +51,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["ListenerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.ListenerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.ListenerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_listenerPort = value["ListenerPort"].GetInt64();
         m_listenerPortHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstancePort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.InstancePort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.InstancePort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instancePort = value["InstancePort"].GetInt64();
         m_instancePortHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["SessionExpire"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.SessionExpire` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.SessionExpire` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionExpire = value["SessionExpire"].GetInt64();
         m_sessionExpireHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["HealthSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthSwitch = value["HealthSwitch"].GetInt64();
         m_healthSwitchHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["TimeOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.TimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.TimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeOut = value["TimeOut"].GetInt64();
         m_timeOutHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["IntervalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_intervalTime = value["IntervalTime"].GetInt64();
         m_intervalTimeHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["HealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthNum = value["HealthNum"].GetInt64();
         m_healthNumHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["UnhealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.UnhealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.UnhealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unhealthNum = value["UnhealthNum"].GetInt64();
         m_unhealthNumHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["HttpHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.HttpHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.HttpHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpHash = string(value["HttpHash"].GetString());
         m_httpHashHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["HttpCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.HttpCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.HttpCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_httpCode = value["HttpCode"].GetInt64();
         m_httpCodeHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["HttpCheckPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckPath = string(value["HttpCheckPath"].GetString());
         m_httpCheckPathHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["SSLMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.SSLMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sSLMode = string(value["SSLMode"].GetString());
         m_sSLModeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["CertCaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaId = string(value["CertCaId"].GetString());
         m_certCaIdHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome ClassicalListener::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassicalListener.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassicalListener.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

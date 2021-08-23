@@ -36,7 +36,7 @@ CoreInternalOutcome CSVSerde::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Escape"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CSVSerde.Escape` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSVSerde.Escape` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_escape = string(value["Escape"].GetString());
         m_escapeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CSVSerde::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quote"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CSVSerde.Quote` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSVSerde.Quote` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quote = string(value["Quote"].GetString());
         m_quoteHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CSVSerde::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Separator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CSVSerde.Separator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CSVSerde.Separator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_separator = string(value["Separator"].GetString());
         m_separatorHasBeenSet = true;

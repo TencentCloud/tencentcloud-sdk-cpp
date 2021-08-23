@@ -38,7 +38,7 @@ CoreInternalOutcome EsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinAliveInstances"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EsInfo.MinAliveInstances` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsInfo.MinAliveInstances` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minAliveInstances = value["MinAliveInstances"].GetInt64();
         m_minAliveInstancesHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome EsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAliveInstances"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EsInfo.MaxAliveInstances` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsInfo.MaxAliveInstances` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxAliveInstances = value["MaxAliveInstances"].GetInt64();
         m_maxAliveInstancesHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome EsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EsStrategy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EsInfo.EsStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsInfo.EsStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_esStrategy = value["EsStrategy"].GetInt64();
         m_esStrategyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome EsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Threshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EsInfo.Threshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsInfo.Threshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_threshold = value["Threshold"].GetUint64();
         m_thresholdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome EsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EsInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EsInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionId = string(value["VersionId"].GetString());
         m_versionIdHasBeenSet = true;

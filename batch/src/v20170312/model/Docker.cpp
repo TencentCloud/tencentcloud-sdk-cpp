@@ -37,7 +37,7 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Docker.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Docker.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Docker.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Docker.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Docker.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Docker.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Docker.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Docker.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;

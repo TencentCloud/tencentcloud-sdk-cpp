@@ -39,7 +39,7 @@ CoreInternalOutcome AsyncEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokeRequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncEvent.InvokeRequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncEvent.InvokeRequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokeRequestId = string(value["InvokeRequestId"].GetString());
         m_invokeRequestIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AsyncEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncEvent.InvokeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncEvent.InvokeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokeType = string(value["InvokeType"].GetString());
         m_invokeTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AsyncEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qualifier"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncEvent.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncEvent.Qualifier` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qualifier = string(value["Qualifier"].GetString());
         m_qualifierHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AsyncEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncEvent.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncEvent.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AsyncEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncEvent.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncEvent.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AsyncEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsyncEvent.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsyncEvent.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

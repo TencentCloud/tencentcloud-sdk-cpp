@@ -37,7 +37,7 @@ CoreInternalOutcome LineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LineId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LineGroupInfo.LineId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LineGroupInfo.LineId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lineId = string(value["LineId"].GetString());
         m_lineIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LineGroupInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LineGroupInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LineGroupInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LineGroupInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome LineGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LineList") && !value["LineList"].IsNull())
     {
         if (!value["LineList"].IsArray())
-            return CoreInternalOutcome(Error("response `LineGroupInfo.LineList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LineGroupInfo.LineList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LineList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

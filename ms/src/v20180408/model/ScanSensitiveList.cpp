@@ -33,7 +33,7 @@ CoreInternalOutcome ScanSensitiveList::Deserialize(const rapidjson::Value &value
     if (value.HasMember("SensitiveList") && !value["SensitiveList"].IsNull())
     {
         if (!value["SensitiveList"].IsArray())
-            return CoreInternalOutcome(Error("response `ScanSensitiveList.SensitiveList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScanSensitiveList.SensitiveList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SensitiveList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -45,7 +45,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["ReservedInstancesId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.ReservedInstancesId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.ReservedInstancesId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reservedInstancesId = string(value["ReservedInstancesId"].GetString());
         m_reservedInstancesIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetInt64();
         m_instanceCountHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProductDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productDescription = string(value["ProductDescription"].GetString());
         m_productDescriptionHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["CurrencyCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.CurrencyCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.CurrencyCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currencyCode = string(value["CurrencyCode"].GetString());
         m_currencyCodeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["OfferingType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.OfferingType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.OfferingType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offeringType = string(value["OfferingType"].GetString());
         m_offeringTypeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome ReservedInstances::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstances.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstances.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;

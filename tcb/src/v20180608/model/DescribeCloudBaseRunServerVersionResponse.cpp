@@ -65,16 +65,16 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -85,11 +85,11 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -97,7 +97,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(rsp["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(rsp["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["DockerfilePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DockerfilePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DockerfilePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dockerfilePath = string(rsp["DockerfilePath"].GetString());
         m_dockerfilePathHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["BuildDir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BuildDir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BuildDir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buildDir = string(rsp["BuildDir"].GetString());
         m_buildDirHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = rsp["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["Mem"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Mem` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mem` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = rsp["Mem"].GetInt64();
         m_memHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["MinNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MinNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MinNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minNum = rsp["MinNum"].GetInt64();
         m_minNumHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["MaxNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxNum = rsp["MaxNum"].GetInt64();
         m_maxNumHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["PolicyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyType = string(rsp["PolicyType"].GetString());
         m_policyTypeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["PolicyThreshold"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PolicyThreshold` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyThreshold` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_policyThreshold = rsp["PolicyThreshold"].GetDouble();
         m_policyThresholdHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["EnvParams"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EnvParams` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EnvParams` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envParams = string(rsp["EnvParams"].GetString());
         m_envParamsHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(rsp["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(rsp["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["VersionIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionIP = string(rsp["VersionIP"].GetString());
         m_versionIPHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["VersionPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VersionPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_versionPort = rsp["VersionPort"].GetInt64();
         m_versionPortHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["PackageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageName = string(rsp["PackageName"].GetString());
         m_packageNameHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["PackageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageVersion = string(rsp["PackageVersion"].GetString());
         m_packageVersionHasBeenSet = true;
@@ -277,7 +277,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["UploadType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UploadType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uploadType = string(rsp["UploadType"].GetString());
         m_uploadTypeHasBeenSet = true;
@@ -287,7 +287,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["RepoType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RepoType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RepoType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoType = string(rsp["RepoType"].GetString());
         m_repoTypeHasBeenSet = true;
@@ -297,7 +297,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["Repo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Repo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Repo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repo = string(rsp["Repo"].GetString());
         m_repoHasBeenSet = true;
@@ -307,7 +307,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["Branch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Branch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Branch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_branch = string(rsp["Branch"].GetString());
         m_branchHasBeenSet = true;
@@ -317,7 +317,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["ServerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverName = string(rsp["ServerName"].GetString());
         m_serverNameHasBeenSet = true;
@@ -327,7 +327,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["IsPublic"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsPublic` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsPublic` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPublic = rsp["IsPublic"].GetBool();
         m_isPublicHasBeenSet = true;
@@ -337,7 +337,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(rsp["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -346,7 +346,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     if (rsp.HasMember("SubnetIds") && !rsp["SubnetIds"].IsNull())
     {
         if (!rsp["SubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -360,7 +360,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["CustomLogs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomLogs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomLogs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customLogs = string(rsp["CustomLogs"].GetString());
         m_customLogsHasBeenSet = true;
@@ -370,7 +370,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["ContainerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ContainerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_containerPort = rsp["ContainerPort"].GetInt64();
         m_containerPortHasBeenSet = true;
@@ -380,7 +380,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["InitialDelaySeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InitialDelaySeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InitialDelaySeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_initialDelaySeconds = rsp["InitialDelaySeconds"].GetInt64();
         m_initialDelaySecondsHasBeenSet = true;
@@ -390,7 +390,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["ImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageUrl = string(rsp["ImageUrl"].GetString());
         m_imageUrlHasBeenSet = true;
@@ -400,7 +400,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["CpuSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CpuSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CpuSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cpuSize = rsp["CpuSize"].GetDouble();
         m_cpuSizeHasBeenSet = true;
@@ -410,7 +410,7 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
     {
         if (!rsp["MemSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MemSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MemSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memSize = rsp["MemSize"].GetDouble();
         m_memSizeHasBeenSet = true;

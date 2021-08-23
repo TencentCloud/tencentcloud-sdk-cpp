@@ -36,7 +36,7 @@ CoreInternalOutcome TaskInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInput.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInput.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(value["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskInput.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInput.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Input"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskInput.Input` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInput.Input` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);

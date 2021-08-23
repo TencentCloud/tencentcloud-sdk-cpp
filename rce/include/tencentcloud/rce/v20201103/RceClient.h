@@ -39,7 +39,7 @@ namespace TencentCloud
                 RceClient(const Credential &credential, const std::string &region);
                 RceClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ManageMarketingRiskResponse> ManageMarketingRiskOutcome;
+                typedef Outcome<Core::Error, Model::ManageMarketingRiskResponse> ManageMarketingRiskOutcome;
                 typedef std::future<ManageMarketingRiskOutcome> ManageMarketingRiskOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::ManageMarketingRiskRequest&, ManageMarketingRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageMarketingRiskAsyncHandler;
 

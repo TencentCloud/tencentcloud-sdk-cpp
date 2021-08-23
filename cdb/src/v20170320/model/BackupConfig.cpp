@@ -37,7 +37,7 @@ CoreInternalOutcome BackupConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicationMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupConfig.ReplicationMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupConfig.ReplicationMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicationMode = string(value["ReplicationMode"].GetString());
         m_replicationModeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BackupConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BackupConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupConfig.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupConfig.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BackupConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BackupConfig.Vport` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupConfig.Vport` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetUint64();
         m_vportHasBeenSet = true;

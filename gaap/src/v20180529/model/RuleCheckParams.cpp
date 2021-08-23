@@ -42,7 +42,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DelayLoop"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.DelayLoop` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.DelayLoop` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_delayLoop = value["DelayLoop"].GetUint64();
         m_delayLoopHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConnectTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_connectTimeout = value["ConnectTimeout"].GetUint64();
         m_connectTimeoutHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StatusCode") && !value["StatusCode"].IsNull())
     {
         if (!value["StatusCode"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleCheckParams.StatusCode` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.StatusCode` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StatusCode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -95,7 +95,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailedCountInter"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.FailedCountInter` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.FailedCountInter` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_failedCountInter = value["FailedCountInter"].GetUint64();
         m_failedCountInterHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailedThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.FailedThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.FailedThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_failedThreshold = value["FailedThreshold"].GetUint64();
         m_failedThresholdHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockInter"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RuleCheckParams.BlockInter` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCheckParams.BlockInter` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockInter = value["BlockInter"].GetUint64();
         m_blockInterHasBeenSet = true;

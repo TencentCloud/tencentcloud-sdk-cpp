@@ -36,7 +36,7 @@ CoreInternalOutcome WeiboPublishInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeiboPublishInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeiboPublishInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome WeiboPublishInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeiboPublishInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeiboPublishInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome WeiboPublishInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Visible"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeiboPublishInfo.Visible` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeiboPublishInfo.Visible` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_visible = string(value["Visible"].GetString());
         m_visibleHasBeenSet = true;

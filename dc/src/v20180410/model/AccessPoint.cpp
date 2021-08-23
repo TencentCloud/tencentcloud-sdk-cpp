@@ -44,7 +44,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessPointName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.AccessPointName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AccessPointName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessPointName = string(value["AccessPointName"].GetString());
         m_accessPointNameHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessPointId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.AccessPointId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AccessPointId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessPointId = string(value["AccessPointId"].GetString());
         m_accessPointIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LineOperator") && !value["LineOperator"].IsNull())
     {
         if (!value["LineOperator"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessPoint.LineOperator` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.LineOperator` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LineOperator"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -97,7 +97,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AvailablePortType") && !value["AvailablePortType"].IsNull())
     {
         if (!value["AvailablePortType"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessPoint.AvailablePortType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AvailablePortType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AvailablePortType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Coordinate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.Coordinate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Coordinate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coordinate.Deserialize(value["Coordinate"]);
@@ -137,7 +137,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessPointType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessPoint.AccessPointType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AccessPointType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessPointType = string(value["AccessPointType"].GetString());
         m_accessPointTypeHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome MiniSite::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SiteId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MiniSite.SiteId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniSite.SiteId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_siteId = value["SiteId"].GetUint64();
         m_siteIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MiniSite::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MiniSite.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniSite.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

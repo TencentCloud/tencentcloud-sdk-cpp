@@ -36,7 +36,7 @@ CoreInternalOutcome InputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome InputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BucketInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputInfo.BucketInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputInfo.BucketInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucketInfo = string(value["BucketInfo"].GetString());
         m_bucketInfoHasBeenSet = true;

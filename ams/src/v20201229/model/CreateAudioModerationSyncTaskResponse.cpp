@@ -41,16 +41,16 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         if (!rsp["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(rsp["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         if (!rsp["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(rsp["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         if (!rsp["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(rsp["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         if (!rsp["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(rsp["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         if (!rsp["AsrText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AsrText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AsrText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_asrText = string(rsp["AsrText"].GetString());
         m_asrTextHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     if (rsp.HasMember("TextResults") && !rsp["TextResults"].IsNull())
     {
         if (!rsp["TextResults"].IsArray())
-            return CoreInternalOutcome(Error("response `TextResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TextResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -152,7 +152,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     if (rsp.HasMember("MoanResults") && !rsp["MoanResults"].IsNull())
     {
         if (!rsp["MoanResults"].IsArray())
-            return CoreInternalOutcome(Error("response `MoanResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MoanResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["MoanResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

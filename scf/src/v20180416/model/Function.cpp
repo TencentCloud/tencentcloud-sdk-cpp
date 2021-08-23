@@ -47,7 +47,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.ModTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.ModTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modTime = string(value["ModTime"].GetString());
         m_modTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Runtime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.Runtime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.Runtime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runtime = string(value["Runtime"].GetString());
         m_runtimeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FunctionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.FunctionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.FunctionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionName = string(value["FunctionName"].GetString());
         m_functionNameHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FunctionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.FunctionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.FunctionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionId = string(value["FunctionId"].GetString());
         m_functionIdHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Function.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Function.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -157,7 +157,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Function.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StatusReasons") && !value["StatusReasons"].IsNull())
     {
         if (!value["StatusReasons"].IsArray())
-            return CoreInternalOutcome(Error("response `Function.StatusReasons` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Function.StatusReasons` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StatusReasons"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -187,7 +187,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalProvisionedConcurrencyMem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Function.TotalProvisionedConcurrencyMem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.TotalProvisionedConcurrencyMem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalProvisionedConcurrencyMem = value["TotalProvisionedConcurrencyMem"].GetUint64();
         m_totalProvisionedConcurrencyMemHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReservedConcurrencyMem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Function.ReservedConcurrencyMem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.ReservedConcurrencyMem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedConcurrencyMem = value["ReservedConcurrencyMem"].GetUint64();
         m_reservedConcurrencyMemHasBeenSet = true;

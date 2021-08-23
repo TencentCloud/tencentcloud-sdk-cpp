@@ -48,7 +48,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Calls"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.Calls` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.Calls` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_calls = value["Calls"].GetInt64();
         m_callsHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CallsGrids") && !value["CallsGrids"].IsNull())
     {
         if (!value["CallsGrids"].IsArray())
-            return CoreInternalOutcome(Error("response `NormalQueryItem.CallsGrids` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.CallsGrids` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CallsGrids"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CostTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.CostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.CostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_costTime = value["CostTime"].GetDouble();
         m_costTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rows"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.Rows` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.Rows` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rows = value["Rows"].GetInt64();
         m_rowsHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinCostTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.MinCostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.MinCostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minCostTime = value["MinCostTime"].GetDouble();
         m_minCostTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxCostTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.MaxCostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.MaxCostTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxCostTime = value["MaxCostTime"].GetDouble();
         m_maxCostTimeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.FirstTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.FirstTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstTime = string(value["FirstTime"].GetString());
         m_firstTimeHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.LastTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.LastTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastTime = string(value["LastTime"].GetString());
         m_lastTimeHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SharedReadBlks"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.SharedReadBlks` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.SharedReadBlks` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sharedReadBlks = value["SharedReadBlks"].GetInt64();
         m_sharedReadBlksHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SharedWriteBlks"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.SharedWriteBlks` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.SharedWriteBlks` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sharedWriteBlks = value["SharedWriteBlks"].GetInt64();
         m_sharedWriteBlksHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadCostTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.ReadCostTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.ReadCostTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_readCostTime = value["ReadCostTime"].GetInt64();
         m_readCostTimeHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WriteCostTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.WriteCostTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.WriteCostTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_writeCostTime = value["WriteCostTime"].GetInt64();
         m_writeCostTimeHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NormalQuery"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormalQueryItem.NormalQuery` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormalQueryItem.NormalQuery` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_normalQuery = string(value["NormalQuery"].GetString());
         m_normalQueryHasBeenSet = true;

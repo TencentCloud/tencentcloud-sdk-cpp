@@ -37,7 +37,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomerGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.CustomerGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.CustomerGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerGatewayId = string(value["CustomerGatewayId"].GetString());
         m_customerGatewayIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomerGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.CustomerGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.CustomerGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customerGatewayName = string(value["CustomerGatewayName"].GetString());
         m_customerGatewayNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipAddress = string(value["IpAddress"].GetString());
         m_ipAddressHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomerGateway.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

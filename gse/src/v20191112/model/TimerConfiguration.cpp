@@ -37,7 +37,7 @@ CoreInternalOutcome TimerConfiguration::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimerConfiguration.TimerType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerConfiguration.TimerType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timerType = value["TimerType"].GetInt64();
         m_timerTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TimerConfiguration::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimerValue"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TimerConfiguration.TimerValue` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerConfiguration.TimerValue` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_timerValue.Deserialize(value["TimerValue"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome TimerConfiguration::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimerConfiguration.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerConfiguration.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TimerConfiguration::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimerConfiguration.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimerConfiguration.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

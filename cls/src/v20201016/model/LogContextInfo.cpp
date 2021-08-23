@@ -39,7 +39,7 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Source"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogContextInfo.Source` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.Source` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_source = string(value["Source"].GetString());
         m_sourceHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Filename"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogContextInfo.Filename` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.Filename` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filename = string(value["Filename"].GetString());
         m_filenameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogContextInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogContextInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.PkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pkgId = string(value["PkgId"].GetString());
         m_pkgIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PkgLogId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LogContextInfo.PkgLogId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.PkgLogId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pkgLogId = value["PkgLogId"].GetInt64();
         m_pkgLogIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LogContextInfo.BTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.BTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bTime = value["BTime"].GetInt64();
         m_bTimeHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome PeakBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeakCpuNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PeakBase.PeakCpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakBase.PeakCpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_peakCpuNum = value["PeakCpuNum"].GetInt64();
         m_peakCpuNumHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PeakBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeakMemoryNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PeakBase.PeakMemoryNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakBase.PeakMemoryNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_peakMemoryNum = value["PeakMemoryNum"].GetInt64();
         m_peakMemoryNumHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PeakBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeakStorageNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PeakBase.PeakStorageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakBase.PeakStorageNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_peakStorageNum = value["PeakStorageNum"].GetInt64();
         m_peakStorageNumHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PeakBase::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakBase.RecordTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakBase.RecordTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordTime = string(value["RecordTime"].GetString());
         m_recordTimeHasBeenSet = true;

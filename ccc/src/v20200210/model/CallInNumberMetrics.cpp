@@ -36,7 +36,7 @@ CoreInternalOutcome CallInNumberMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["Number"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallInNumberMetrics.Number` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInNumberMetrics.Number` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_number = string(value["Number"].GetString());
         m_numberHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CallInNumberMetrics::Deserialize(const rapidjson::Value &val
     {
         if (!value["Metrics"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CallInNumberMetrics.Metrics` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInNumberMetrics.Metrics` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metrics.Deserialize(value["Metrics"]);
@@ -62,7 +62,7 @@ CoreInternalOutcome CallInNumberMetrics::Deserialize(const rapidjson::Value &val
     if (value.HasMember("SkillGroupMetrics") && !value["SkillGroupMetrics"].IsNull())
     {
         if (!value["SkillGroupMetrics"].IsArray())
-            return CoreInternalOutcome(Error("response `CallInNumberMetrics.SkillGroupMetrics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CallInNumberMetrics.SkillGroupMetrics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SkillGroupMetrics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

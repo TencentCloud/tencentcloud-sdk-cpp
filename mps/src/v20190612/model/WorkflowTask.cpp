@@ -43,7 +43,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WorkflowTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WorkflowTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowTask.InputInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.InputInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_inputInfo.Deserialize(value["InputInfo"]);
@@ -100,7 +100,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WorkflowTask.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -116,7 +116,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MediaProcessResultSet") && !value["MediaProcessResultSet"].IsNull())
     {
         if (!value["MediaProcessResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkflowTask.MediaProcessResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.MediaProcessResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MediaProcessResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -136,7 +136,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AiContentReviewResultSet") && !value["AiContentReviewResultSet"].IsNull())
     {
         if (!value["AiContentReviewResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkflowTask.AiContentReviewResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.AiContentReviewResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AiContentReviewResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -156,7 +156,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AiAnalysisResultSet") && !value["AiAnalysisResultSet"].IsNull())
     {
         if (!value["AiAnalysisResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkflowTask.AiAnalysisResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.AiAnalysisResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AiAnalysisResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -176,7 +176,7 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AiRecognitionResultSet") && !value["AiRecognitionResultSet"].IsNull())
     {
         if (!value["AiRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `WorkflowTask.AiRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.AiRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AiRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

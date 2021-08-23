@@ -43,16 +43,16 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(rsp["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certName = string(rsp["CertName"].GetString());
         m_certNameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certType = string(rsp["CertType"].GetString());
         m_certTypeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certContent = string(rsp["CertContent"].GetString());
         m_certContentHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certDomain = string(rsp["CertDomain"].GetString());
         m_certDomainHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     if (rsp.HasMember("CertSubjectDomain") && !rsp["CertSubjectDomain"].IsNull())
     {
         if (!rsp["CertSubjectDomain"].IsArray())
-            return CoreInternalOutcome(Error("response `CertSubjectDomain` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CertSubjectDomain` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["CertSubjectDomain"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertUploadTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertUploadTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertUploadTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certUploadTime = string(rsp["CertUploadTime"].GetString());
         m_certUploadTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertBeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertBeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certBeginTime = string(rsp["CertBeginTime"].GetString());
         m_certBeginTimeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         if (!rsp["CertEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certEndTime = string(rsp["CertEndTime"].GetString());
         m_certEndTimeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     if (rsp.HasMember("CertLoadBalancerSet") && !rsp["CertLoadBalancerSet"].IsNull())
     {
         if (!rsp["CertLoadBalancerSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CertLoadBalancerSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CertLoadBalancerSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["CertLoadBalancerSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome RollbackTables::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTables.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTables.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome RollbackTables::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Table") && !value["Table"].IsNull())
     {
         if (!value["Table"].IsArray())
-            return CoreInternalOutcome(Error("response `RollbackTables.Table` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RollbackTables.Table` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Table"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

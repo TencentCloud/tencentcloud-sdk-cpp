@@ -47,7 +47,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableInstanceId = string(value["TableInstanceId"].GetString());
         m_tableInstanceIdHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableIdlType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableIdlType = string(value["TableIdlType"].GetString());
         m_tableIdlTypeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["TableType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableType = string(value["TableType"].GetString());
         m_tableTypeHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["ListElementNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.ListElementNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.ListElementNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_listElementNum = value["ListElementNum"].GetInt64();
         m_listElementNumHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["ReservedVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.ReservedVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.ReservedVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedVolume = value["ReservedVolume"].GetInt64();
         m_reservedVolumeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["ReservedReadQps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.ReservedReadQps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.ReservedReadQps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedReadQps = value["ReservedReadQps"].GetInt64();
         m_reservedReadQpsHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["ReservedWriteQps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.ReservedWriteQps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.ReservedWriteQps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_reservedWriteQps = value["ReservedWriteQps"].GetInt64();
         m_reservedWriteQpsHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["Memo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.Memo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.Memo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memo = string(value["Memo"].GetString());
         m_memoHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileExtType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.FileExtType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileExtType = string(value["FileExtType"].GetString());
         m_fileExtTypeHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome SelectedTableInfoNew::Deserialize(const rapidjson::Value &va
     {
         if (!value["FileContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableInfoNew.FileContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableInfoNew.FileContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileContent = string(value["FileContent"].GetString());
         m_fileContentHasBeenSet = true;

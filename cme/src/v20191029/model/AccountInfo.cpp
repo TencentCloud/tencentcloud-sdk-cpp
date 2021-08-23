@@ -37,7 +37,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nick"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nick = string(value["Nick"].GetString());
         m_nickHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

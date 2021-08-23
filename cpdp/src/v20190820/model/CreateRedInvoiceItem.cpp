@@ -38,7 +38,7 @@ CoreInternalOutcome CreateRedInvoiceItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceItem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceItem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CreateRedInvoiceItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["CallbackUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceItem.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceItem.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackUrl = string(value["CallbackUrl"].GetString());
         m_callbackUrlHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CreateRedInvoiceItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["OrderSn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceItem.OrderSn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceItem.OrderSn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderSn = string(value["OrderSn"].GetString());
         m_orderSnHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CreateRedInvoiceItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["RedSerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceItem.RedSerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceItem.RedSerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redSerialNo = string(value["RedSerialNo"].GetString());
         m_redSerialNoHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CreateRedInvoiceItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["StoreNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRedInvoiceItem.StoreNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRedInvoiceItem.StoreNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storeNo = string(value["StoreNo"].GetString());
         m_storeNoHasBeenSet = true;

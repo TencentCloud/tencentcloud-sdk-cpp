@@ -46,16 +46,16 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["TransactionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionId = string(rsp["TransactionId"].GetString());
         m_transactionIdHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["TransactionHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionHash = string(rsp["TransactionHash"].GetString());
         m_transactionHashHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["CreateOrgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateOrgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateOrgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createOrgName = string(rsp["CreateOrgName"].GetString());
         m_createOrgNameHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["TransactionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionType = string(rsp["TransactionType"].GetString());
         m_transactionTypeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["TransactionStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionStatus = string(rsp["TransactionStatus"].GetString());
         m_transactionStatusHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["TransactionData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransactionData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransactionData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionData = string(rsp["TransactionData"].GetString());
         m_transactionDataHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["BlockId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BlockId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockId = rsp["BlockId"].GetUint64();
         m_blockIdHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["BlockHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlockHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blockHash = string(rsp["BlockHash"].GetString());
         m_blockHashHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["BlockHeight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BlockHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockHeight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockHeight = rsp["BlockHeight"].GetUint64();
         m_blockHeightHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["ChannelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelName = string(rsp["ChannelName"].GetString());
         m_channelNameHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     {
         if (!rsp["ContractName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractName = string(rsp["ContractName"].GetString());
         m_contractNameHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome GetTransactionDetailForUserResponse::Deserialize(const strin
     if (rsp.HasMember("EndorserOrgList") && !rsp["EndorserOrgList"].IsNull())
     {
         if (!rsp["EndorserOrgList"].IsArray())
-            return CoreInternalOutcome(Error("response `EndorserOrgList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EndorserOrgList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["EndorserOrgList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

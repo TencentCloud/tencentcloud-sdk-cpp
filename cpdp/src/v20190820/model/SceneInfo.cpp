@@ -36,7 +36,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LocaleCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.LocaleCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.LocaleCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_localeCode = string(value["LocaleCode"].GetString());
         m_localeCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionCode = string(value["RegionCode"].GetString());
         m_regionCodeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SceneInfo.UserClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneInfo.UserClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userClientIp = string(value["UserClientIp"].GetString());
         m_userClientIpHasBeenSet = true;

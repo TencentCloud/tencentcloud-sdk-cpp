@@ -40,7 +40,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.UserDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.UserDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userDescription = string(value["UserDescription"].GetString());
         m_userDescriptionHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PolicySet") && !value["PolicySet"].IsNull())
     {
         if (!value["PolicySet"].IsArray())
-            return CoreInternalOutcome(Error("response `UserInfo.PolicySet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.PolicySet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolicySet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Creator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WorkGroupSet") && !value["WorkGroupSet"].IsNull())
     {
         if (!value["WorkGroupSet"].IsArray())
-            return CoreInternalOutcome(Error("response `UserInfo.WorkGroupSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.WorkGroupSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WorkGroupSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsOwner"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `UserInfo.IsOwner` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.IsOwner` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isOwner = value["IsOwner"].GetBool();
         m_isOwnerHasBeenSet = true;

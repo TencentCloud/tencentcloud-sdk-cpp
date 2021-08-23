@@ -46,7 +46,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.TypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_typeName = string(value["TypeName"].GetString());
         m_typeNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinBuyNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.MinBuyNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.MinBuyNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minBuyNum = value["MinBuyNum"].GetInt64();
         m_minBuyNumHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxBuyNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.MaxBuyNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.MaxBuyNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBuyNum = value["MaxBuyNum"].GetInt64();
         m_maxBuyNumHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Saleout"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.Saleout` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.Saleout` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_saleout = value["Saleout"].GetBool();
         m_saleoutHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Engine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.Engine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.Engine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engine = string(value["Engine"].GetString());
         m_engineHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TotalSize") && !value["TotalSize"].IsNull())
     {
         if (!value["TotalSize"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductConf.TotalSize` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.TotalSize` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TotalSize"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -128,7 +128,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ShardSize") && !value["ShardSize"].IsNull())
     {
         if (!value["ShardSize"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductConf.ShardSize` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.ShardSize` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShardSize"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -141,7 +141,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReplicaNum") && !value["ReplicaNum"].IsNull())
     {
         if (!value["ReplicaNum"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductConf.ReplicaNum` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.ReplicaNum` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReplicaNum"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -154,7 +154,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ShardNum") && !value["ShardNum"].IsNull())
     {
         if (!value["ShardNum"].IsArray())
-            return CoreInternalOutcome(Error("response `ProductConf.ShardNum` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.ShardNum` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShardNum"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -168,7 +168,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableRepicaReadOnly"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ProductConf.EnableRepicaReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductConf.EnableRepicaReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableRepicaReadOnly = value["EnableRepicaReadOnly"].GetBool();
         m_enableRepicaReadOnlyHasBeenSet = true;

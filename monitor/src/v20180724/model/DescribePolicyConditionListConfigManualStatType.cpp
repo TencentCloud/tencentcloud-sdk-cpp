@@ -41,7 +41,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p5 = string(value["P5"].GetString());
         m_p5HasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P10"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P10` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P10` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p10 = string(value["P10"].GetString());
         m_p10HasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P60"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P60` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P60` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p60 = string(value["P60"].GetString());
         m_p60HasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P300"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P300` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P300` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p300 = string(value["P300"].GetString());
         m_p300HasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P600"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P600` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P600` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p600 = string(value["P600"].GetString());
         m_p600HasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P1800"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P1800` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P1800` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p1800 = string(value["P1800"].GetString());
         m_p1800HasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P3600"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P3600` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P3600` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p3600 = string(value["P3600"].GetString());
         m_p3600HasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     {
         if (!value["P86400"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualStatType.P86400` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManualStatType.P86400` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_p86400 = string(value["P86400"].GetString());
         m_p86400HasBeenSet = true;

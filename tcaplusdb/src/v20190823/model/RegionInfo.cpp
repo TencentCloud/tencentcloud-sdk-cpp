@@ -37,7 +37,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionAbbr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionAbbr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionAbbr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionAbbr = string(value["RegionAbbr"].GetString());
         m_regionAbbrHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetUint64();
         m_regionIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6Enable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RegionInfo.Ipv6Enable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.Ipv6Enable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6Enable = value["Ipv6Enable"].GetUint64();
         m_ipv6EnableHasBeenSet = true;

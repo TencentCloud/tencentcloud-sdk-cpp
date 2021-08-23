@@ -48,16 +48,16 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -68,11 +68,11 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["SchemeColor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchemeColor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemeColor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_schemeColor = string(rsp["SchemeColor"].GetString());
         m_schemeColorHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["Language"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Language` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Language` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_language = rsp["Language"].GetInt64();
         m_languageHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["SceneType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SceneType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SceneType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sceneType = rsp["SceneType"].GetInt64();
         m_sceneTypeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["EvilInterceptGrade"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EvilInterceptGrade` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EvilInterceptGrade` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilInterceptGrade = rsp["EvilInterceptGrade"].GetInt64();
         m_evilInterceptGradeHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["SmartVerify"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SmartVerify` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmartVerify` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_smartVerify = rsp["SmartVerify"].GetInt64();
         m_smartVerifyHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["SmartEngine"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SmartEngine` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmartEngine` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_smartEngine = rsp["SmartEngine"].GetInt64();
         m_smartEngineHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["CapType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CapType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CapType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_capType = rsp["CapType"].GetInt64();
         m_capTypeHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(rsp["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["DomainLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainLimit = string(rsp["DomainLimit"].GetString());
         m_domainLimitHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     if (rsp.HasMember("MailAlarm") && !rsp["MailAlarm"].IsNull())
     {
         if (!rsp["MailAlarm"].IsArray())
-            return CoreInternalOutcome(Error("response `MailAlarm` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MailAlarm` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["MailAlarm"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -183,7 +183,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["TrafficThreshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficThreshold = rsp["TrafficThreshold"].GetInt64();
         m_trafficThresholdHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["EncryptKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EncryptKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EncryptKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_encryptKey = string(rsp["EncryptKey"].GetString());
         m_encryptKeyHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["TopFullScreen"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TopFullScreen` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopFullScreen` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_topFullScreen = rsp["TopFullScreen"].GetInt64();
         m_topFullScreenHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["CaptchaCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CaptchaCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_captchaCode = rsp["CaptchaCode"].GetInt64();
         m_captchaCodeHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         if (!rsp["CaptchaMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_captchaMsg = string(rsp["CaptchaMsg"].GetString());
         m_captchaMsgHasBeenSet = true;

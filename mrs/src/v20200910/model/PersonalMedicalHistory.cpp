@@ -38,7 +38,7 @@ CoreInternalOutcome PersonalMedicalHistory::Deserialize(const rapidjson::Value &
     {
         if (!value["BirthPlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonalMedicalHistory.BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonalMedicalHistory.BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birthPlace = string(value["BirthPlace"].GetString());
         m_birthPlaceHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PersonalMedicalHistory::Deserialize(const rapidjson::Value &
     {
         if (!value["LivePlace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonalMedicalHistory.LivePlace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonalMedicalHistory.LivePlace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_livePlace = string(value["LivePlace"].GetString());
         m_livePlaceHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PersonalMedicalHistory::Deserialize(const rapidjson::Value &
     {
         if (!value["Job"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonalMedicalHistory.Job` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonalMedicalHistory.Job` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_job = string(value["Job"].GetString());
         m_jobHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PersonalMedicalHistory::Deserialize(const rapidjson::Value &
     {
         if (!value["SmokeHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonalMedicalHistory.SmokeHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonalMedicalHistory.SmokeHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_smokeHistory = string(value["SmokeHistory"].GetString());
         m_smokeHistoryHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PersonalMedicalHistory::Deserialize(const rapidjson::Value &
     {
         if (!value["AlcoholicHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonalMedicalHistory.AlcoholicHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonalMedicalHistory.AlcoholicHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alcoholicHistory = string(value["AlcoholicHistory"].GetString());
         m_alcoholicHistoryHasBeenSet = true;

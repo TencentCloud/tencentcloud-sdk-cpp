@@ -39,7 +39,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -69,7 +69,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     {
         if (!value["OutputObjectPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputObjectPath = string(value["OutputObjectPath"].GetString());
         m_outputObjectPathHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     {
         if (!value["SubStreamObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.SubStreamObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.SubStreamObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subStreamObjectName = string(value["SubStreamObjectName"].GetString());
         m_subStreamObjectNameHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
     {
         if (!value["SegmentObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.SegmentObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.SegmentObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentObjectName = string(value["SegmentObjectName"].GetString());
         m_segmentObjectNameHasBeenSet = true;

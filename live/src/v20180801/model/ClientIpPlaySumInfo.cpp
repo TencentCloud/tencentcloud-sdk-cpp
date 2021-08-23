@@ -39,7 +39,7 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIpPlaySumInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIpPlaySumInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalFlux"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIpPlaySumInfo.TotalFlux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalFlux = value["TotalFlux"].GetDouble();
         m_totalFluxHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalRequest"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.TotalRequest` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIpPlaySumInfo.TotalRequest` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalRequest = value["TotalRequest"].GetUint64();
         m_totalRequestHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalFailedRequest"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.TotalFailedRequest` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIpPlaySumInfo.TotalFailedRequest` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalFailedRequest = value["TotalFailedRequest"].GetUint64();
         m_totalFailedRequestHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CountryArea"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.CountryArea` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIpPlaySumInfo.CountryArea` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_countryArea = string(value["CountryArea"].GetString());
         m_countryAreaHasBeenSet = true;

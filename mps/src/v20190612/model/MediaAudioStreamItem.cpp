@@ -37,7 +37,7 @@ CoreInternalOutcome MediaAudioStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaAudioStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAudioStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MediaAudioStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["SamplingRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaAudioStreamItem.SamplingRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAudioStreamItem.SamplingRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_samplingRate = value["SamplingRate"].GetInt64();
         m_samplingRateHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MediaAudioStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaAudioStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAudioStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome MediaAudioStreamItem::Deserialize(const rapidjson::Value &va
     {
         if (!value["Channel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaAudioStreamItem.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaAudioStreamItem.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_channel = value["Channel"].GetInt64();
         m_channelHasBeenSet = true;

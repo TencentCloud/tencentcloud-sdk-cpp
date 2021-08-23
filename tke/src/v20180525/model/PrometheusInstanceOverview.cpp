@@ -42,7 +42,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["COSBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.COSBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.COSBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cOSBucket = string(value["COSBucket"].GetString());
         m_cOSBucketHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["GrafanaURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.GrafanaURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.GrafanaURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grafanaURL = string(value["GrafanaURL"].GetString());
         m_grafanaURLHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["BoundTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.BoundTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.BoundTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_boundTotal = value["BoundTotal"].GetUint64();
         m_boundTotalHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
     {
         if (!value["BoundNormal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.BoundNormal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstanceOverview.BoundNormal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_boundNormal = value["BoundNormal"].GetUint64();
         m_boundNormalHasBeenSet = true;

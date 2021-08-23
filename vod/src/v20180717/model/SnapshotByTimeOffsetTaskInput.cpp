@@ -37,7 +37,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const rapidjson::
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const rapidjson::
     if (value.HasMember("ExtTimeOffsetSet") && !value["ExtTimeOffsetSet"].IsNull())
     {
         if (!value["ExtTimeOffsetSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.ExtTimeOffsetSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTaskInput.ExtTimeOffsetSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ExtTimeOffsetSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const rapidjson::
     if (value.HasMember("TimeOffsetSet") && !value["TimeOffsetSet"].IsNull())
     {
         if (!value["TimeOffsetSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.TimeOffsetSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTaskInput.TimeOffsetSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TimeOffsetSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -72,7 +72,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const rapidjson::
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

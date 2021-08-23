@@ -43,13 +43,13 @@ namespace TencentCloud
                 RkpClient(const Credential &credential, const std::string &region);
                 RkpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::GetOpenIdResponse> GetOpenIdOutcome;
+                typedef Outcome<Core::Error, Model::GetOpenIdResponse> GetOpenIdOutcome;
                 typedef std::future<GetOpenIdOutcome> GetOpenIdOutcomeCallable;
                 typedef std::function<void(const RkpClient*, const Model::GetOpenIdRequest&, GetOpenIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOpenIdAsyncHandler;
-                typedef Outcome<Error, Model::GetTokenResponse> GetTokenOutcome;
+                typedef Outcome<Core::Error, Model::GetTokenResponse> GetTokenOutcome;
                 typedef std::future<GetTokenOutcome> GetTokenOutcomeCallable;
                 typedef std::function<void(const RkpClient*, const Model::GetTokenRequest&, GetTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTokenAsyncHandler;
-                typedef Outcome<Error, Model::QueryDevAndRiskResponse> QueryDevAndRiskOutcome;
+                typedef Outcome<Core::Error, Model::QueryDevAndRiskResponse> QueryDevAndRiskOutcome;
                 typedef std::future<QueryDevAndRiskOutcome> QueryDevAndRiskOutcomeCallable;
                 typedef std::function<void(const RkpClient*, const Model::QueryDevAndRiskRequest&, QueryDevAndRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDevAndRiskAsyncHandler;
 

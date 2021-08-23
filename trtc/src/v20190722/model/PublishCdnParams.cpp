@@ -35,7 +35,7 @@ CoreInternalOutcome PublishCdnParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PublishCdnParams.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishCdnParams.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bizId = value["BizId"].GetUint64();
         m_bizIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome PublishCdnParams::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PublishCdnUrls") && !value["PublishCdnUrls"].IsNull())
     {
         if (!value["PublishCdnUrls"].IsArray())
-            return CoreInternalOutcome(Error("response `PublishCdnParams.PublishCdnUrls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PublishCdnParams.PublishCdnUrls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublishCdnUrls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

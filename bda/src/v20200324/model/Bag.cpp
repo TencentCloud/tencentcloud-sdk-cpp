@@ -35,7 +35,7 @@ CoreInternalOutcome Bag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Bag.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bag.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Bag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Probability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Bag.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bag.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_probability = value["Probability"].GetDouble();
         m_probabilityHasBeenSet = true;

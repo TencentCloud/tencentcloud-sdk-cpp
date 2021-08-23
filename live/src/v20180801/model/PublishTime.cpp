@@ -34,7 +34,7 @@ CoreInternalOutcome PublishTime::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishTime.PublishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishTime.PublishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishTime = string(value["PublishTime"].GetString());
         m_publishTimeHasBeenSet = true;

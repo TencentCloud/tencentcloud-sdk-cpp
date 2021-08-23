@@ -43,13 +43,13 @@ namespace TencentCloud
                 EisClient(const Credential &credential, const std::string &region);
                 EisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeEisConnectorConfigResponse> DescribeEisConnectorConfigOutcome;
+                typedef Outcome<Core::Error, Model::DescribeEisConnectorConfigResponse> DescribeEisConnectorConfigOutcome;
                 typedef std::future<DescribeEisConnectorConfigOutcome> DescribeEisConnectorConfigOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::DescribeEisConnectorConfigRequest&, DescribeEisConnectorConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEisConnectorConfigAsyncHandler;
-                typedef Outcome<Error, Model::ListEisConnectorOperationsResponse> ListEisConnectorOperationsOutcome;
+                typedef Outcome<Core::Error, Model::ListEisConnectorOperationsResponse> ListEisConnectorOperationsOutcome;
                 typedef std::future<ListEisConnectorOperationsOutcome> ListEisConnectorOperationsOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::ListEisConnectorOperationsRequest&, ListEisConnectorOperationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEisConnectorOperationsAsyncHandler;
-                typedef Outcome<Error, Model::ListEisConnectorsResponse> ListEisConnectorsOutcome;
+                typedef Outcome<Core::Error, Model::ListEisConnectorsResponse> ListEisConnectorsOutcome;
                 typedef std::future<ListEisConnectorsOutcome> ListEisConnectorsOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::ListEisConnectorsRequest&, ListEisConnectorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEisConnectorsAsyncHandler;
 

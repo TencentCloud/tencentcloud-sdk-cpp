@@ -36,7 +36,7 @@ CoreInternalOutcome DeviceCommLogItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCommLogItem.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCommLogItem.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DeviceCommLogItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCommLogItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCommLogItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DeviceCommLogItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Data"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCommLogItem.Data` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCommLogItem.Data` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_data = string(value["Data"].GetString());
         m_dataHasBeenSet = true;

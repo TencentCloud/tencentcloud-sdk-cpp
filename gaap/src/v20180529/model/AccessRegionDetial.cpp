@@ -37,7 +37,7 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessRegionDetial.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessRegionDetial.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ConcurrentList") && !value["ConcurrentList"].IsNull())
     {
         if (!value["ConcurrentList"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessRegionDetial.ConcurrentList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.ConcurrentList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ConcurrentList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -69,7 +69,7 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("BandwidthList") && !value["BandwidthList"].IsNull())
     {
         if (!value["BandwidthList"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessRegionDetial.BandwidthList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDetial.BandwidthList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BandwidthList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -45,7 +45,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerId = string(value["PayerId"].GetString());
         m_payerIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FailReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.FailReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failReason = string(value["FailReason"].GetString());
         m_failReasonHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerType = string(value["PayerType"].GetString());
         m_payerTypeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerName = string(value["PayerName"].GetString());
         m_payerNameHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerIdType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerIdType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerIdType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerIdType = string(value["PayerIdType"].GetString());
         m_payerIdTypeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerIdNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerIdNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerIdNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerIdNo = string(value["PayerIdNo"].GetString());
         m_payerIdNoHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerContactNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerContactNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerContactNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerContactNumber = string(value["PayerContactNumber"].GetString());
         m_payerContactNumberHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerEmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerEmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerEmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerEmailAddress = string(value["PayerEmailAddress"].GetString());
         m_payerEmailAddressHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerCountryCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerCountryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerCountryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerCountryCode = string(value["PayerCountryCode"].GetString());
         m_payerCountryCodeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome QueryPayerinfoData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PayerContactName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryPayerinfoData.PayerContactName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryPayerinfoData.PayerContactName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerContactName = string(value["PayerContactName"].GetString());
         m_payerContactNameHasBeenSet = true;

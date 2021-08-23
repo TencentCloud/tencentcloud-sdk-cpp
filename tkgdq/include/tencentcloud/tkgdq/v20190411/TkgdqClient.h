@@ -43,13 +43,13 @@ namespace TencentCloud
                 TkgdqClient(const Credential &credential, const std::string &region);
                 TkgdqClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeEntityResponse> DescribeEntityOutcome;
+                typedef Outcome<Core::Error, Model::DescribeEntityResponse> DescribeEntityOutcome;
                 typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
                 typedef std::function<void(const TkgdqClient*, const Model::DescribeEntityRequest&, DescribeEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityAsyncHandler;
-                typedef Outcome<Error, Model::DescribeRelationResponse> DescribeRelationOutcome;
+                typedef Outcome<Core::Error, Model::DescribeRelationResponse> DescribeRelationOutcome;
                 typedef std::future<DescribeRelationOutcome> DescribeRelationOutcomeCallable;
                 typedef std::function<void(const TkgdqClient*, const Model::DescribeRelationRequest&, DescribeRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelationAsyncHandler;
-                typedef Outcome<Error, Model::DescribeTripleResponse> DescribeTripleOutcome;
+                typedef Outcome<Core::Error, Model::DescribeTripleResponse> DescribeTripleOutcome;
                 typedef std::future<DescribeTripleOutcome> DescribeTripleOutcomeCallable;
                 typedef std::function<void(const TkgdqClient*, const Model::DescribeTripleRequest&, DescribeTripleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTripleAsyncHandler;
 

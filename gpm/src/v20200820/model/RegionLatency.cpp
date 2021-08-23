@@ -35,7 +35,7 @@ CoreInternalOutcome RegionLatency::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionLatency.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionLatency.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RegionLatency::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Latency"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RegionLatency.Latency` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionLatency.Latency` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_latency = value["Latency"].GetUint64();
         m_latencyHasBeenSet = true;

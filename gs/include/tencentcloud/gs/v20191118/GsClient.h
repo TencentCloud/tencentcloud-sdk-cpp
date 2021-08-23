@@ -49,22 +49,22 @@ namespace TencentCloud
                 GsClient(const Credential &credential, const std::string &region);
                 GsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateSessionResponse> CreateSessionOutcome;
+                typedef Outcome<Core::Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
-                typedef Outcome<Error, Model::DescribeInstancesCountResponse> DescribeInstancesCountOutcome;
+                typedef Outcome<Core::Error, Model::DescribeInstancesCountResponse> DescribeInstancesCountOutcome;
                 typedef std::future<DescribeInstancesCountOutcome> DescribeInstancesCountOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeInstancesCountRequest&, DescribeInstancesCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesCountAsyncHandler;
-                typedef Outcome<Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
+                typedef Outcome<Core::Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
                 typedef std::future<SaveGameArchiveOutcome> SaveGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SaveGameArchiveRequest&, SaveGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveGameArchiveAsyncHandler;
-                typedef Outcome<Error, Model::StopGameResponse> StopGameOutcome;
+                typedef Outcome<Core::Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
-                typedef Outcome<Error, Model::SwitchGameArchiveResponse> SwitchGameArchiveOutcome;
+                typedef Outcome<Core::Error, Model::SwitchGameArchiveResponse> SwitchGameArchiveOutcome;
                 typedef std::future<SwitchGameArchiveOutcome> SwitchGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SwitchGameArchiveRequest&, SwitchGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchGameArchiveAsyncHandler;
-                typedef Outcome<Error, Model::TrylockWorkerResponse> TrylockWorkerOutcome;
+                typedef Outcome<Core::Error, Model::TrylockWorkerResponse> TrylockWorkerOutcome;
                 typedef std::future<TrylockWorkerOutcome> TrylockWorkerOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::TrylockWorkerRequest&, TrylockWorkerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TrylockWorkerAsyncHandler;
 

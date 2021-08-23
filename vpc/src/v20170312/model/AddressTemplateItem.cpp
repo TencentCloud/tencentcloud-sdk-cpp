@@ -35,7 +35,7 @@ CoreInternalOutcome AddressTemplateItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["From"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateItem.From` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateItem.From` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_from = string(value["From"].GetString());
         m_fromHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AddressTemplateItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["To"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddressTemplateItem.To` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateItem.To` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_to = string(value["To"].GetString());
         m_toHasBeenSet = true;

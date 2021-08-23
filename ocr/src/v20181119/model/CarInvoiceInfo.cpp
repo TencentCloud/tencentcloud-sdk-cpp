@@ -37,7 +37,7 @@ CoreInternalOutcome CarInvoiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CarInvoiceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarInvoiceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CarInvoiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CarInvoiceInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarInvoiceInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CarInvoiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CarInvoiceInfo.Rect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarInvoiceInfo.Rect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rect.Deserialize(value["Rect"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome CarInvoiceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Polygon"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CarInvoiceInfo.Polygon` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CarInvoiceInfo.Polygon` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_polygon.Deserialize(value["Polygon"]);

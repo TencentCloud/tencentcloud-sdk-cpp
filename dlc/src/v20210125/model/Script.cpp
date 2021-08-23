@@ -39,7 +39,7 @@ CoreInternalOutcome Script::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScriptId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Script.ScriptId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Script.ScriptId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scriptId = string(value["ScriptId"].GetString());
         m_scriptIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Script::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScriptName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Script.ScriptName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Script.ScriptName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scriptName = string(value["ScriptName"].GetString());
         m_scriptNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Script::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScriptDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Script.ScriptDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Script.ScriptDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scriptDesc = string(value["ScriptDesc"].GetString());
         m_scriptDescHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Script::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Script.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Script.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Script::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SQLStatement"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Script.SQLStatement` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Script.SQLStatement` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sQLStatement = string(value["SQLStatement"].GetString());
         m_sQLStatementHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Script::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Script.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Script.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;

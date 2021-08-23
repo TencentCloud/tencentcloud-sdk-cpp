@@ -38,7 +38,7 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaClassInfo.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_classId = value["ClassId"].GetInt64();
         m_classIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaClassInfo.ParentId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.ParentId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_parentId = value["ParentId"].GetInt64();
         m_parentIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaClassInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_className = string(value["ClassName"].GetString());
         m_classNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MediaClassInfo.Level` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.Level` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetUint64();
         m_levelHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubClassIdSet") && !value["SubClassIdSet"].IsNull())
     {
         if (!value["SubClassIdSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaClassInfo.SubClassIdSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.SubClassIdSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubClassIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

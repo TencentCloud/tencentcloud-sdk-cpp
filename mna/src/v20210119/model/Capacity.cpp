@@ -35,7 +35,7 @@ CoreInternalOutcome Capacity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CTCCToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Capacity.CTCCToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Capacity.CTCCToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cTCCToken = string(value["CTCCToken"].GetString());
         m_cTCCTokenHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Capacity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Capacity.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Capacity.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;

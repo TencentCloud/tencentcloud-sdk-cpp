@@ -37,7 +37,7 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const rapidjson::Value 
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVolumeMount.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVolumeMount.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const rapidjson::Value 
     {
         if (!value["MountPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountPath = string(value["MountPath"].GetString());
         m_mountPathHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const rapidjson::Value 
     {
         if (!value["ReadOnly"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunVolumeMount.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVolumeMount.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_readOnly = value["ReadOnly"].GetBool();
         m_readOnlyHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const rapidjson::Value 
     if (value.HasMember("NfsVolumes") && !value["NfsVolumes"].IsNull())
     {
         if (!value["NfsVolumes"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseRunVolumeMount.NfsVolumes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVolumeMount.NfsVolumes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NfsVolumes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

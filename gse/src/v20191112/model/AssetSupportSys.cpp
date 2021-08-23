@@ -37,7 +37,7 @@ CoreInternalOutcome AssetSupportSys::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetSupportSys.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetSupportSys.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AssetSupportSys::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetSupportSys.OsType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetSupportSys.OsType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osType = string(value["OsType"].GetString());
         m_osTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AssetSupportSys::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsBit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AssetSupportSys.OsBit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetSupportSys.OsBit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_osBit = value["OsBit"].GetInt64();
         m_osBitHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AssetSupportSys::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AssetSupportSys.OsVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetSupportSys.OsVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osVersion = string(value["OsVersion"].GetString());
         m_osVersionHasBeenSet = true;

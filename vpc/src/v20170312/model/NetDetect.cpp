@@ -46,7 +46,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetName = string(value["SubnetName"].GetString());
         m_subnetNameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetDetectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.NetDetectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.NetDetectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netDetectId = string(value["NetDetectId"].GetString());
         m_netDetectIdHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetDetectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.NetDetectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.NetDetectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netDetectName = string(value["NetDetectName"].GetString());
         m_netDetectNameHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetectDestinationIp") && !value["DetectDestinationIp"].IsNull())
     {
         if (!value["DetectDestinationIp"].IsArray())
-            return CoreInternalOutcome(Error("response `NetDetect.DetectDestinationIp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.DetectDestinationIp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetectDestinationIp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetectSourceIp") && !value["DetectSourceIp"].IsNull())
     {
         if (!value["DetectSourceIp"].IsArray())
-            return CoreInternalOutcome(Error("response `NetDetect.DetectSourceIp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.DetectSourceIp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetectSourceIp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -132,7 +132,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NextHopType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.NextHopType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.NextHopType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextHopType = string(value["NextHopType"].GetString());
         m_nextHopTypeHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NextHopDestination"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.NextHopDestination` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.NextHopDestination` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextHopDestination = string(value["NextHopDestination"].GetString());
         m_nextHopDestinationHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NextHopName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.NextHopName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.NextHopName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nextHopName = string(value["NextHopName"].GetString());
         m_nextHopNameHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetDetectDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.NetDetectDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.NetDetectDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netDetectDescription = string(value["NetDetectDescription"].GetString());
         m_netDetectDescriptionHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome NetDetect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetDetect.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetDetect.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

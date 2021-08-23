@@ -53,7 +53,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceChargeType = string(value["InstanceChargeType"].GetString());
         m_instanceChargeTypeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["NetworkCard"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.NetworkCard` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.NetworkCard` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_networkCard = value["NetworkCard"].GetInt64();
         m_networkCardHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Externals"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Externals` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Externals` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_externals.Deserialize(value["Externals"]);
@@ -110,7 +110,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["TypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.TypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_typeName = string(value["TypeName"].GetString());
         m_typeNameHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     if (value.HasMember("LocalDiskTypeList") && !value["LocalDiskTypeList"].IsNull())
     {
         if (!value["LocalDiskTypeList"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.LocalDiskTypeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.LocalDiskTypeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LocalDiskTypeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -170,7 +170,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Price"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Price` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Price` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_price.Deserialize(value["Price"]);
@@ -197,7 +197,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["SoldOutReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.SoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.SoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_soldOutReason = string(value["SoldOutReason"].GetString());
         m_soldOutReasonHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.InstanceBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_instanceBandwidth = value["InstanceBandwidth"].GetDouble();
         m_instanceBandwidthHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstancePps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstancePps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.InstancePps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instancePps = value["InstancePps"].GetInt64();
         m_instancePpsHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["StorageBlockAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.StorageBlockAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.StorageBlockAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageBlockAmount = value["StorageBlockAmount"].GetInt64();
         m_storageBlockAmountHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["CpuType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.CpuType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.CpuType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuType = string(value["CpuType"].GetString());
         m_cpuTypeHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Gpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Gpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Gpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gpu = value["Gpu"].GetInt64();
         m_gpuHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Fpga"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Fpga` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Fpga` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fpga = value["Fpga"].GetInt64();
         m_fpgaHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeQuotaItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

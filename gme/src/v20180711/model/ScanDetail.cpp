@@ -38,7 +38,7 @@ CoreInternalOutcome ScanDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ScanDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanDetail.Rate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanDetail.Rate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rate = string(value["Rate"].GetString());
         m_rateHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ScanDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeyWord"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanDetail.KeyWord` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanDetail.KeyWord` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyWord = string(value["KeyWord"].GetString());
         m_keyWordHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ScanDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanDetail.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanDetail.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ScanDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScanDetail.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanDetail.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetUint64();
         m_endTimeHasBeenSet = true;

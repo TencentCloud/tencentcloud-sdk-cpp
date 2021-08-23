@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceChargePrepaid::Deserialize(const rapidjson::Value &v
     {
         if (!value["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceChargePrepaid.Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceChargePrepaid.Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceChargePrepaid::Deserialize(const rapidjson::Value &v
     {
         if (!value["RenewFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = string(value["RenewFlag"].GetString());
         m_renewFlagHasBeenSet = true;

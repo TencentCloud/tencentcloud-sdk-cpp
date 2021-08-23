@@ -36,7 +36,7 @@ CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputSendTrafficSecuritySmsMsg.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputSendTrafficSecuritySmsMsg.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputSendTrafficSecuritySmsMsg.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputSendTrafficSecuritySmsMsg.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson
     if (value.HasMember("Value") && !value["Value"].IsNull())
     {
         if (!value["Value"].IsArray())
-            return CoreInternalOutcome(Error("response `OutputSendTrafficSecuritySmsMsg.Value` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OutputSendTrafficSecuritySmsMsg.Value` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Value"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

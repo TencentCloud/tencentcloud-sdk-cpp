@@ -49,7 +49,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cluster"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Cluster` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Cluster` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cluster = string(value["Cluster"].GetString());
         m_clusterHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Model"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Model` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Model` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_model = string(value["Model"].GetString());
         m_modelHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuntimeVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runtimeVersion = string(value["RuntimeVersion"].GetString());
         m_runtimeVersionHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServingUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.ServingUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.ServingUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_servingUrl = string(value["ServingUrl"].GetString());
         m_servingUrlHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Model.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.ServType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.ServType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_servType = string(value["ServType"].GetString());
         m_servTypeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Expose"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Expose` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Expose` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expose = string(value["Expose"].GetString());
         m_exposeHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Replicas"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Model.Replicas` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Replicas` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_replicas = value["Replicas"].GetUint64();
         m_replicasHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DelTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Model.DelTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Model.DelTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_delTime = string(value["DelTime"].GetString());
         m_delTimeHasBeenSet = true;

@@ -41,16 +41,16 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(rsp["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = rsp["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(rsp["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(rsp["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["PolicyDocument"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PolicyDocument` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDocument` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyDocument = string(rsp["PolicyDocument"].GetString());
         m_policyDocumentHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["PresetAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PresetAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresetAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_presetAlias = string(rsp["PresetAlias"].GetString());
         m_presetAliasHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
     {
         if (!rsp["IsServiceLinkedRolePolicy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IsServiceLinkedRolePolicy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsServiceLinkedRolePolicy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isServiceLinkedRolePolicy = rsp["IsServiceLinkedRolePolicy"].GetUint64();
         m_isServiceLinkedRolePolicyHasBeenSet = true;

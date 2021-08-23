@@ -33,7 +33,7 @@ CoreInternalOutcome MediaAnimatedGraphicsInfo::Deserialize(const rapidjson::Valu
     if (value.HasMember("AnimatedGraphicsSet") && !value["AnimatedGraphicsSet"].IsNull())
     {
         if (!value["AnimatedGraphicsSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaAnimatedGraphicsInfo.AnimatedGraphicsSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaAnimatedGraphicsInfo.AnimatedGraphicsSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AnimatedGraphicsSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

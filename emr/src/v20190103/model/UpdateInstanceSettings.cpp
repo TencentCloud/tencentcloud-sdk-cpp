@@ -37,7 +37,7 @@ CoreInternalOutcome UpdateInstanceSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UpdateInstanceSettings.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateInstanceSettings.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome UpdateInstanceSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["CPUCores"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UpdateInstanceSettings.CPUCores` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateInstanceSettings.CPUCores` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cPUCores = value["CPUCores"].GetUint64();
         m_cPUCoresHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome UpdateInstanceSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateInstanceSettings.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateInstanceSettings.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome UpdateInstanceSettings::Deserialize(const rapidjson::Value &
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateInstanceSettings.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateInstanceSettings.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;

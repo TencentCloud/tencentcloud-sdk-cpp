@@ -41,7 +41,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(value["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefaultMapping"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.IsDefaultMapping` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.IsDefaultMapping` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefaultMapping = value["IsDefaultMapping"].GetBool();
         m_isDefaultMappingHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.NetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.NetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netType = string(value["NetType"].GetString());
         m_netTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsForcedHttps"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.IsForcedHttps` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.IsForcedHttps` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isForcedHttps = value["IsForcedHttps"].GetBool();
         m_isForcedHttpsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistrationStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DomainSetList.RegistrationStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainSetList.RegistrationStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_registrationStatus = value["RegistrationStatus"].GetBool();
         m_registrationStatusHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome BackendServiceInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackendServiceInfo.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackendServiceInfo.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BackendServiceInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackendServiceInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackendServiceInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

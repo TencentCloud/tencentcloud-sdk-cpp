@@ -35,7 +35,7 @@ CoreInternalOutcome ComposeMediaTaskInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Tracks") && !value["Tracks"].IsNull())
     {
         if (!value["Tracks"].IsArray())
-            return CoreInternalOutcome(Error("response `ComposeMediaTaskInput.Tracks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaTaskInput.Tracks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tracks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome ComposeMediaTaskInput::Deserialize(const rapidjson::Value &v
     {
         if (!value["Canvas"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaTaskInput.Canvas` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaTaskInput.Canvas` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_canvas.Deserialize(value["Canvas"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome ComposeMediaTaskInput::Deserialize(const rapidjson::Value &v
     {
         if (!value["Output"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaTaskInput.Output` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaTaskInput.Output` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_output.Deserialize(value["Output"]);

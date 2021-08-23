@@ -39,7 +39,7 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Va
     {
         if (!value["InstanceID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeProgressItem.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceID = string(value["InstanceID"].GetString());
         m_instanceIDHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Va
     {
         if (!value["LifeState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.LifeState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeProgressItem.LifeState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lifeState = string(value["LifeState"].GetString());
         m_lifeStateHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Va
     {
         if (!value["StartAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.StartAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeProgressItem.StartAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startAt = string(value["StartAt"].GetString());
         m_startAtHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Va
     {
         if (!value["EndAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.EndAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeProgressItem.EndAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endAt = string(value["EndAt"].GetString());
         m_endAtHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Va
     {
         if (!value["CheckResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.CheckResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeProgressItem.CheckResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_checkResult.Deserialize(value["CheckResult"]);
@@ -95,7 +95,7 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Va
     if (value.HasMember("Detail") && !value["Detail"].IsNull())
     {
         if (!value["Detail"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.Detail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeProgressItem.Detail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Detail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

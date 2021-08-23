@@ -39,7 +39,7 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebCallback.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallbackType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebCallback.CallbackType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebCallback.CallbackType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackType = string(value["CallbackType"].GetString());
         m_callbackTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebCallback.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Headers") && !value["Headers"].IsNull())
     {
         if (!value["Headers"].IsArray())
-            return CoreInternalOutcome(Error("response `WebCallback.Headers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Headers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Headers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -82,7 +82,7 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Body"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WebCallback.Body` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Body` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_body = string(value["Body"].GetString());
         m_bodyHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Index"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WebCallback.Index` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Index` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_index = value["Index"].GetInt64();
         m_indexHasBeenSet = true;

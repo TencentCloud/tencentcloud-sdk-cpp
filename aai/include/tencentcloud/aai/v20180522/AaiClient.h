@@ -45,16 +45,16 @@ namespace TencentCloud
                 AaiClient(const Credential &credential, const std::string &region);
                 AaiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ChatResponse> ChatOutcome;
+                typedef Outcome<Core::Error, Model::ChatResponse> ChatOutcome;
                 typedef std::future<ChatOutcome> ChatOutcomeCallable;
                 typedef std::function<void(const AaiClient*, const Model::ChatRequest&, ChatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatAsyncHandler;
-                typedef Outcome<Error, Model::SentenceRecognitionResponse> SentenceRecognitionOutcome;
+                typedef Outcome<Core::Error, Model::SentenceRecognitionResponse> SentenceRecognitionOutcome;
                 typedef std::future<SentenceRecognitionOutcome> SentenceRecognitionOutcomeCallable;
                 typedef std::function<void(const AaiClient*, const Model::SentenceRecognitionRequest&, SentenceRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceRecognitionAsyncHandler;
-                typedef Outcome<Error, Model::SimultaneousInterpretingResponse> SimultaneousInterpretingOutcome;
+                typedef Outcome<Core::Error, Model::SimultaneousInterpretingResponse> SimultaneousInterpretingOutcome;
                 typedef std::future<SimultaneousInterpretingOutcome> SimultaneousInterpretingOutcomeCallable;
                 typedef std::function<void(const AaiClient*, const Model::SimultaneousInterpretingRequest&, SimultaneousInterpretingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SimultaneousInterpretingAsyncHandler;
-                typedef Outcome<Error, Model::TextToVoiceResponse> TextToVoiceOutcome;
+                typedef Outcome<Core::Error, Model::TextToVoiceResponse> TextToVoiceOutcome;
                 typedef std::future<TextToVoiceOutcome> TextToVoiceOutcomeCallable;
                 typedef std::function<void(const AaiClient*, const Model::TextToVoiceRequest&, TextToVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToVoiceAsyncHandler;
 

@@ -39,7 +39,7 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value 
     {
         if (!value["Eyebrow"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityCompleteness.Eyebrow` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityCompleteness.Eyebrow` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eyebrow = value["Eyebrow"].GetInt64();
         m_eyebrowHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value 
     {
         if (!value["Eye"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityCompleteness.Eye` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityCompleteness.Eye` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eye = value["Eye"].GetInt64();
         m_eyeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value 
     {
         if (!value["Nose"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityCompleteness.Nose` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityCompleteness.Nose` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nose = value["Nose"].GetInt64();
         m_noseHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value 
     {
         if (!value["Cheek"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityCompleteness.Cheek` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityCompleteness.Cheek` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cheek = value["Cheek"].GetInt64();
         m_cheekHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value 
     {
         if (!value["Mouth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityCompleteness.Mouth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityCompleteness.Mouth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mouth = value["Mouth"].GetInt64();
         m_mouthHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value 
     {
         if (!value["Chin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceQualityCompleteness.Chin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceQualityCompleteness.Chin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_chin = value["Chin"].GetInt64();
         m_chinHasBeenSet = true;

@@ -47,16 +47,16 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,11 +67,11 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["MaxEnvNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxEnvNum = rsp["MaxEnvNum"].GetInt64();
         m_maxEnvNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentEnvNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentEnvNum = rsp["CurrentEnvNum"].GetInt64();
         m_currentEnvNumHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["MaxFreeEnvNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxFreeEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxFreeEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxFreeEnvNum = rsp["MaxFreeEnvNum"].GetInt64();
         m_maxFreeEnvNumHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentFreeEnvNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentFreeEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentFreeEnvNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentFreeEnvNum = rsp["CurrentFreeEnvNum"].GetInt64();
         m_currentFreeEnvNumHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["MaxDeleteTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxDeleteTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxDeleteTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxDeleteTotal = rsp["MaxDeleteTotal"].GetInt64();
         m_maxDeleteTotalHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentDeleteTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentDeleteTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentDeleteTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentDeleteTotal = rsp["CurrentDeleteTotal"].GetInt64();
         m_currentDeleteTotalHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["MaxDeleteMonthly"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxDeleteMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxDeleteMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxDeleteMonthly = rsp["MaxDeleteMonthly"].GetInt64();
         m_maxDeleteMonthlyHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentDeleteMonthly"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentDeleteMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentDeleteMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentDeleteMonthly = rsp["CurrentDeleteMonthly"].GetInt64();
         m_currentDeleteMonthlyHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["MaxFreeTrialNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxFreeTrialNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxFreeTrialNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxFreeTrialNum = rsp["MaxFreeTrialNum"].GetInt64();
         m_maxFreeTrialNumHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentFreeTrialNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentFreeTrialNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentFreeTrialNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentFreeTrialNum = rsp["CurrentFreeTrialNum"].GetInt64();
         m_currentFreeTrialNumHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["ChangePayTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChangePayTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChangePayTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_changePayTotal = rsp["ChangePayTotal"].GetInt64();
         m_changePayTotalHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentChangePayTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentChangePayTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentChangePayTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentChangePayTotal = rsp["CurrentChangePayTotal"].GetInt64();
         m_currentChangePayTotalHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["ChangePayMonthly"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ChangePayMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChangePayMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_changePayMonthly = rsp["ChangePayMonthly"].GetInt64();
         m_changePayMonthlyHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentChangePayMonthly"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentChangePayMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentChangePayMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentChangePayMonthly = rsp["CurrentChangePayMonthly"].GetInt64();
         m_currentChangePayMonthlyHasBeenSet = true;

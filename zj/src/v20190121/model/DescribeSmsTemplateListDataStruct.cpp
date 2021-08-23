@@ -39,7 +39,7 @@ CoreInternalOutcome DescribeSmsTemplateListDataStruct::Deserialize(const rapidjs
     {
         if (!value["TemplateId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsTemplateListDataStruct.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsTemplateListDataStruct.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetUint64();
         m_templateIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DescribeSmsTemplateListDataStruct::Deserialize(const rapidjs
     {
         if (!value["International"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsTemplateListDataStruct.International` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsTemplateListDataStruct.International` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_international = value["International"].GetUint64();
         m_internationalHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DescribeSmsTemplateListDataStruct::Deserialize(const rapidjs
     {
         if (!value["StatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsTemplateListDataStruct.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsTemplateListDataStruct.StatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_statusCode = value["StatusCode"].GetInt64();
         m_statusCodeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeSmsTemplateListDataStruct::Deserialize(const rapidjs
     {
         if (!value["ReviewReply"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsTemplateListDataStruct.ReviewReply` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsTemplateListDataStruct.ReviewReply` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reviewReply = string(value["ReviewReply"].GetString());
         m_reviewReplyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeSmsTemplateListDataStruct::Deserialize(const rapidjs
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsTemplateListDataStruct.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsTemplateListDataStruct.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeSmsTemplateListDataStruct::Deserialize(const rapidjs
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeSmsTemplateListDataStruct.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeSmsTemplateListDataStruct.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;

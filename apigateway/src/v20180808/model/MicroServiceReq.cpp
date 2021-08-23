@@ -36,7 +36,7 @@ CoreInternalOutcome MicroServiceReq::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MicroServiceReq.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MicroServiceReq.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MicroServiceReq::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MicroServiceReq.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MicroServiceReq.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MicroServiceReq::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MicroServiceReq.MicroServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MicroServiceReq.MicroServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microServiceName = string(value["MicroServiceName"].GetString());
         m_microServiceNameHasBeenSet = true;

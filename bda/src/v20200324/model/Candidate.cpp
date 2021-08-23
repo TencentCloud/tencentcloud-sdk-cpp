@@ -36,7 +36,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Candidate.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TraceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Candidate.TraceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.TraceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_traceId = string(value["TraceId"].GetString());
         m_traceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Candidate.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;

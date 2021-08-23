@@ -36,7 +36,7 @@ CoreInternalOutcome ResetInstanceBlueprint::Deserialize(const rapidjson::Value &
     {
         if (!value["BlueprintInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResetInstanceBlueprint.BlueprintInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResetInstanceBlueprint.BlueprintInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_blueprintInfo.Deserialize(value["BlueprintInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome ResetInstanceBlueprint::Deserialize(const rapidjson::Value &
     {
         if (!value["IsResettable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ResetInstanceBlueprint.IsResettable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResetInstanceBlueprint.IsResettable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isResettable = value["IsResettable"].GetBool();
         m_isResettableHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ResetInstanceBlueprint::Deserialize(const rapidjson::Value &
     {
         if (!value["NonResettableMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResetInstanceBlueprint.NonResettableMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResetInstanceBlueprint.NonResettableMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nonResettableMessage = string(value["NonResettableMessage"].GetString());
         m_nonResettableMessageHasBeenSet = true;

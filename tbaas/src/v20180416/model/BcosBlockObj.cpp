@@ -41,7 +41,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.BlockHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.BlockHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blockHash = string(value["BlockHash"].GetString());
         m_blockHashHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.BlockNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.BlockNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blockNumber = value["BlockNumber"].GetInt64();
         m_blockNumberHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.BlockTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.BlockTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blockTimestamp = string(value["BlockTimestamp"].GetString());
         m_blockTimestampHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sealer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.Sealer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.Sealer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sealer = string(value["Sealer"].GetString());
         m_sealerHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SealerIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.SealerIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.SealerIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sealerIndex = value["SealerIndex"].GetInt64();
         m_sealerIndexHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.TransCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.TransCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transCount = value["TransCount"].GetInt64();
         m_transCountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BcosBlockObj.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BcosBlockObj.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

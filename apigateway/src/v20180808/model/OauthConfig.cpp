@@ -36,7 +36,7 @@ CoreInternalOutcome OauthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OauthConfig.PublicKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OauthConfig.PublicKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicKey = string(value["PublicKey"].GetString());
         m_publicKeyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OauthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TokenLocation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OauthConfig.TokenLocation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OauthConfig.TokenLocation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tokenLocation = string(value["TokenLocation"].GetString());
         m_tokenLocationHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OauthConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginRedirectUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OauthConfig.LoginRedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OauthConfig.LoginRedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loginRedirectUrl = string(value["LoginRedirectUrl"].GetString());
         m_loginRedirectUrlHasBeenSet = true;

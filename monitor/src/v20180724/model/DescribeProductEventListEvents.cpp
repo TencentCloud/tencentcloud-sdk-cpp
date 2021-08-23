@@ -54,7 +54,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["EventCName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.EventCName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.EventCName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventCName = string(value["EventCName"].GetString());
         m_eventCNameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["EventEName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.EventEName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.EventEName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventEName = string(value["EventEName"].GetString());
         m_eventENameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["EventName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.EventName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.EventName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventName = string(value["EventName"].GetString());
         m_eventNameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["ProductCName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.ProductCName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.ProductCName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productCName = string(value["ProductCName"].GetString());
         m_productCNameHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["ProductEName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.ProductEName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.ProductEName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productEName = string(value["ProductEName"].GetString());
         m_productENameHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["SupportAlarm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.SupportAlarm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.SupportAlarm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_supportAlarm = value["SupportAlarm"].GetInt64();
         m_supportAlarmHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     if (value.HasMember("Dimensions") && !value["Dimensions"].IsNull())
     {
         if (!value["Dimensions"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.Dimensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.Dimensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Dimensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -233,7 +233,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     if (value.HasMember("AdditionMsg") && !value["AdditionMsg"].IsNull())
     {
         if (!value["AdditionMsg"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.AdditionMsg` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.AdditionMsg` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AdditionMsg"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -254,7 +254,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["IsAlarmConfig"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.IsAlarmConfig` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.IsAlarmConfig` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isAlarmConfig = value["IsAlarmConfig"].GetInt64();
         m_isAlarmConfigHasBeenSet = true;
@@ -263,7 +263,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     if (value.HasMember("GroupInfo") && !value["GroupInfo"].IsNull())
     {
         if (!value["GroupInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.GroupInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.GroupInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -284,7 +284,7 @@ CoreInternalOutcome DescribeProductEventListEvents::Deserialize(const rapidjson:
     {
         if (!value["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListEvents.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListEvents.ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(value["ViewName"].GetString());
         m_viewNameHasBeenSet = true;

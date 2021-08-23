@@ -41,7 +41,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BodyPosture"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.BodyPosture` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.BodyPosture` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bodyPosture.Deserialize(value["BodyPosture"]);
@@ -58,7 +58,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Handup"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.Handup` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.Handup` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_handup.Deserialize(value["Handup"]);
@@ -75,7 +75,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LookHead"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.LookHead` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.LookHead` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_lookHead.Deserialize(value["LookHead"]);
@@ -92,7 +92,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Writing"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.Writing` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.Writing` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_writing.Deserialize(value["Writing"]);
@@ -109,7 +109,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Top"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.Top` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.Top` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_top = value["Top"].GetInt64();
         m_topHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome ActionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActionInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActionInfo.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

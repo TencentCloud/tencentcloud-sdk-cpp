@@ -36,7 +36,7 @@ CoreInternalOutcome OmittedDuration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OmittedDuration.VideoTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OmittedDuration.VideoTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTime = value["VideoTime"].GetInt64();
         m_videoTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OmittedDuration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PauseTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OmittedDuration.PauseTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OmittedDuration.PauseTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pauseTime = value["PauseTime"].GetInt64();
         m_pauseTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OmittedDuration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResumeTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OmittedDuration.ResumeTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OmittedDuration.ResumeTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resumeTime = value["ResumeTime"].GetInt64();
         m_resumeTimeHasBeenSet = true;

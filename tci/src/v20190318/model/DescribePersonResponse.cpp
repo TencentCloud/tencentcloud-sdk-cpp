@@ -44,16 +44,16 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,18 +64,18 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("FaceSet") && !rsp["FaceSet"].IsNull())
     {
         if (!rsp["FaceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `FaceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FaceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["FaceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["JobNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobNumber = string(rsp["JobNumber"].GetString());
         m_jobNumberHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["LibraryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibraryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibraryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libraryId = string(rsp["LibraryId"].GetString());
         m_libraryIdHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["Mail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Mail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mail = string(rsp["Mail"].GetString());
         m_mailHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["Male"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Male` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Male` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_male = rsp["Male"].GetInt64();
         m_maleHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(rsp["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["PersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personName = string(rsp["PersonName"].GetString());
         m_personNameHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(rsp["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["StudentNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StudentNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StudentNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_studentNumber = string(rsp["StudentNumber"].GetString());
         m_studentNumberHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome DescribePersonResponse::Deserialize(const string &payload)
     {
         if (!rsp["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(rsp["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

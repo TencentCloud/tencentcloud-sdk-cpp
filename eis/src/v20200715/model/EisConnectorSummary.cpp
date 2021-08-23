@@ -39,7 +39,7 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ConnectorName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectorSummary.ConnectorName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectorSummary.ConnectorName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_connectorName = string(value["ConnectorName"].GetString());
         m_connectorNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["DisplayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectorSummary.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectorSummary.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_displayName = string(value["DisplayName"].GetString());
         m_displayNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["Company"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectorSummary.Company` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectorSummary.Company` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_company = string(value["Company"].GetString());
         m_companyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["Product"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectorSummary.Product` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectorSummary.Product` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_product = string(value["Product"].GetString());
         m_productHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["ConnectorVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EisConnectorSummary.ConnectorVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectorSummary.ConnectorVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_connectorVersion = string(value["ConnectorVersion"].GetString());
         m_connectorVersionHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EisConnectorSummary.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EisConnectorSummary.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;

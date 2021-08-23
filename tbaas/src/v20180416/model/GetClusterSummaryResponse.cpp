@@ -48,16 +48,16 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -68,11 +68,11 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -80,7 +80,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["TotalChannelCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalChannelCount = rsp["TotalChannelCount"].GetUint64();
         m_totalChannelCountHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["MyChannelCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MyChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MyChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_myChannelCount = rsp["MyChannelCount"].GetUint64();
         m_myChannelCountHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["JoinChannelCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `JoinChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JoinChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_joinChannelCount = rsp["JoinChannelCount"].GetUint64();
         m_joinChannelCountHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["TotalPeerCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalPeerCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalPeerCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalPeerCount = rsp["TotalPeerCount"].GetUint64();
         m_totalPeerCountHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["MyPeerCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MyPeerCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MyPeerCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_myPeerCount = rsp["MyPeerCount"].GetUint64();
         m_myPeerCountHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["OrderCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OrderCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderCount = rsp["OrderCount"].GetUint64();
         m_orderCountHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["TotalGroupCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalGroupCount = rsp["TotalGroupCount"].GetUint64();
         m_totalGroupCountHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["MyGroupCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MyGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MyGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_myGroupCount = rsp["MyGroupCount"].GetUint64();
         m_myGroupCountHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["TotalChaincodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalChaincodeCount = rsp["TotalChaincodeCount"].GetUint64();
         m_totalChaincodeCountHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["RecentChaincodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecentChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecentChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_recentChaincodeCount = rsp["RecentChaincodeCount"].GetUint64();
         m_recentChaincodeCountHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["MyChaincodeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MyChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MyChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_myChaincodeCount = rsp["MyChaincodeCount"].GetUint64();
         m_myChaincodeCountHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["TotalCertCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TotalCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCertCount = rsp["TotalCertCount"].GetUint64();
         m_totalCertCountHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["TlsCertCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TlsCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TlsCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tlsCertCount = rsp["TlsCertCount"].GetUint64();
         m_tlsCertCountHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["PeerCertCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PeerCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeerCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_peerCertCount = rsp["PeerCertCount"].GetUint64();
         m_peerCertCountHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     {
         if (!rsp["ClientCertCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clientCertCount = rsp["ClientCertCount"].GetUint64();
         m_clientCertCountHasBeenSet = true;

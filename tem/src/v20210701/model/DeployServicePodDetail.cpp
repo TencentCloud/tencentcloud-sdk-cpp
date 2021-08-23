@@ -39,7 +39,7 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["PodId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployServicePodDetail.PodId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServicePodDetail.PodId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podId = string(value["PodId"].GetString());
         m_podIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
     if (value.HasMember("PodStatus") && !value["PodStatus"].IsNull())
     {
         if (!value["PodStatus"].IsArray())
-            return CoreInternalOutcome(Error("response `DeployServicePodDetail.PodStatus` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeployServicePodDetail.PodStatus` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PodStatus"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -62,7 +62,7 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["PodVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployServicePodDetail.PodVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServicePodDetail.PodVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podVersion = string(value["PodVersion"].GetString());
         m_podVersionHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployServicePodDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServicePodDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployServicePodDetail.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServicePodDetail.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
     {
         if (!value["Webshell"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployServicePodDetail.Webshell` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeployServicePodDetail.Webshell` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webshell = string(value["Webshell"].GetString());
         m_webshellHasBeenSet = true;

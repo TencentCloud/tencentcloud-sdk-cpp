@@ -41,7 +41,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.LibId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.LibId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libId = string(value["LibId"].GetString());
         m_libIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.LibName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.LibName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libName = string(value["LibName"].GetString());
         m_libNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `OcrTextDetail.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -94,7 +94,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetUint64();
         m_scoreHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.Location` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.Location` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_location.Deserialize(value["Location"]);
@@ -121,7 +121,7 @@ CoreInternalOutcome OcrTextDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OcrTextDetail.Rate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OcrTextDetail.Rate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rate = value["Rate"].GetUint64();
         m_rateHasBeenSet = true;

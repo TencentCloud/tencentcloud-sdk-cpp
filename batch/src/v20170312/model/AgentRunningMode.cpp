@@ -36,7 +36,7 @@ CoreInternalOutcome AgentRunningMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scene"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentRunningMode.Scene` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentRunningMode.Scene` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scene = string(value["Scene"].GetString());
         m_sceneHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AgentRunningMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentRunningMode.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentRunningMode.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AgentRunningMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Session"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgentRunningMode.Session` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgentRunningMode.Session` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_session = string(value["Session"].GetString());
         m_sessionHasBeenSet = true;

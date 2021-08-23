@@ -37,7 +37,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(value["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneState = string(value["ZoneState"].GetString());
         m_zoneStateHasBeenSet = true;

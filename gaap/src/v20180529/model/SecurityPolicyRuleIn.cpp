@@ -38,7 +38,7 @@ CoreInternalOutcome SecurityPolicyRuleIn::Deserialize(const rapidjson::Value &va
     {
         if (!value["SourceCidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicyRuleIn.SourceCidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyRuleIn.SourceCidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceCidr = string(value["SourceCidr"].GetString());
         m_sourceCidrHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SecurityPolicyRuleIn::Deserialize(const rapidjson::Value &va
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicyRuleIn.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyRuleIn.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SecurityPolicyRuleIn::Deserialize(const rapidjson::Value &va
     {
         if (!value["AliasName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicyRuleIn.AliasName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyRuleIn.AliasName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aliasName = string(value["AliasName"].GetString());
         m_aliasNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SecurityPolicyRuleIn::Deserialize(const rapidjson::Value &va
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicyRuleIn.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyRuleIn.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SecurityPolicyRuleIn::Deserialize(const rapidjson::Value &va
     {
         if (!value["DestPortRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicyRuleIn.DestPortRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicyRuleIn.DestPortRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destPortRange = string(value["DestPortRange"].GetString());
         m_destPortRangeHasBeenSet = true;

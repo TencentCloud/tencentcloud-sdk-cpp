@@ -40,7 +40,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MiniAppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.MiniAppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.MiniAppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_miniAppName = string(value["MiniAppName"].GetString());
         m_miniAppNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MiniAppLogo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.MiniAppLogo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.MiniAppLogo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_miniAppLogo = string(value["MiniAppLogo"].GetString());
         m_miniAppLogoHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MiniAdminUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.MiniAdminUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.MiniAdminUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_miniAdminUrl = string(value["MiniAdminUrl"].GetString());
         m_miniAdminUrlHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome MiniAppCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MiniAppCodeInfo.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MiniAppCodeInfo.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;

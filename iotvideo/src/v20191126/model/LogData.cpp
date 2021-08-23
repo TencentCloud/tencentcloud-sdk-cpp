@@ -38,7 +38,7 @@ CoreInternalOutcome LogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Occurtime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogData.Occurtime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogData.Occurtime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_occurtime = value["Occurtime"].GetUint64();
         m_occurtimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome LogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogData.LogType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogData.LogType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_logType = value["LogType"].GetUint64();
         m_logTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome LogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataObject"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogData.DataObject` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogData.DataObject` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataObject = string(value["DataObject"].GetString());
         m_dataObjectHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome LogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OldValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogData.OldValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogData.OldValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldValue = string(value["OldValue"].GetString());
         m_oldValueHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome LogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogData.NewValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogData.NewValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newValue = string(value["NewValue"].GetString());
         m_newValueHasBeenSet = true;

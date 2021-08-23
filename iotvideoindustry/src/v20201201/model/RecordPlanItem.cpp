@@ -39,7 +39,7 @@ CoreInternalOutcome RecordPlanItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlanId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordPlanItem.PlanId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordPlanItem.PlanId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_planId = string(value["PlanId"].GetString());
         m_planIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RecordPlanItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordPlanItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordPlanItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RecordPlanItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordPlanItem.TimeTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordPlanItem.TimeTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeTemplateId = string(value["TimeTemplateId"].GetString());
         m_timeTemplateIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RecordPlanItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeTemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordPlanItem.TimeTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordPlanItem.TimeTemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeTemplateName = string(value["TimeTemplateName"].GetString());
         m_timeTemplateNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RecordPlanItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordPlanItem.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordPlanItem.EventId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventId = value["EventId"].GetInt64();
         m_eventIdHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome RecordPlanItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Devices") && !value["Devices"].IsNull())
     {
         if (!value["Devices"].IsArray())
-            return CoreInternalOutcome(Error("response `RecordPlanItem.Devices` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RecordPlanItem.Devices` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Devices"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome DeviceNetInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Conn") && !value["Conn"].IsNull())
     {
         if (!value["Conn"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceNetInfo.Conn` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.Conn` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Conn"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome DeviceNetInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PackageIn") && !value["PackageIn"].IsNull())
     {
         if (!value["PackageIn"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceNetInfo.PackageIn` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.PackageIn` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PackageIn"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -63,7 +63,7 @@ CoreInternalOutcome DeviceNetInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PackageOut") && !value["PackageOut"].IsNull())
     {
         if (!value["PackageOut"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceNetInfo.PackageOut` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.PackageOut` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PackageOut"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome DeviceNetInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FlowIn") && !value["FlowIn"].IsNull())
     {
         if (!value["FlowIn"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceNetInfo.FlowIn` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.FlowIn` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FlowIn"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome DeviceNetInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FlowOut") && !value["FlowOut"].IsNull())
     {
         if (!value["FlowOut"].IsArray())
-            return CoreInternalOutcome(Error("response `DeviceNetInfo.FlowOut` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.FlowOut` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FlowOut"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

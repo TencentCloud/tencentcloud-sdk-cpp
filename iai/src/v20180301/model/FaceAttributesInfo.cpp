@@ -45,7 +45,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Age"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Age` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_age = value["Age"].GetInt64();
         m_ageHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Expression"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Expression` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Expression` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expression = value["Expression"].GetInt64();
         m_expressionHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Glass"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Glass` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Glass` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_glass = value["Glass"].GetBool();
         m_glassHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Pitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Pitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Pitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pitch = value["Pitch"].GetInt64();
         m_pitchHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Yaw"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Yaw` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Yaw` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_yaw = value["Yaw"].GetInt64();
         m_yawHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Roll"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Roll` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Roll` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roll = value["Roll"].GetInt64();
         m_rollHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Beauty"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Beauty` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Beauty` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_beauty = value["Beauty"].GetInt64();
         m_beautyHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Hat"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Hat` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Hat` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_hat = value["Hat"].GetBool();
         m_hatHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mask"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Mask` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Mask` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_mask = value["Mask"].GetBool();
         m_maskHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Hair"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.Hair` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.Hair` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hair.Deserialize(value["Hair"]);
@@ -162,7 +162,7 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EyeOpen"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `FaceAttributesInfo.EyeOpen` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceAttributesInfo.EyeOpen` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_eyeOpen = value["EyeOpen"].GetBool();
         m_eyeOpenHasBeenSet = true;

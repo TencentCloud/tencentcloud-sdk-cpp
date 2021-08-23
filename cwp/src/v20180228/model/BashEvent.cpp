@@ -52,7 +52,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hostip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Hostip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Hostip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostip = string(value["Hostip"].GetString());
         m_hostipHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Platform` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Platform` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_platform = value["Platform"].GetUint64();
         m_platformHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BashCmd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.BashCmd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.BashCmd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bashCmd = string(value["BashCmd"].GetString());
         m_bashCmdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.RuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.RuleId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = value["RuleId"].GetUint64();
         m_ruleIdHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.RuleLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.RuleLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleLevel = value["RuleLevel"].GetUint64();
         m_ruleLevelHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectBy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.DetectBy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.DetectBy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_detectBy = value["DetectBy"].GetUint64();
         m_detectByHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Pid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Pid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pid = string(value["Pid"].GetString());
         m_pidHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Exe"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.Exe` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.Exe` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exe = string(value["Exe"].GetString());
         m_exeHasBeenSet = true;
@@ -212,7 +212,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleCategory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.RuleCategory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.RuleCategory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleCategory = value["RuleCategory"].GetUint64();
         m_ruleCategoryHasBeenSet = true;
@@ -232,7 +232,7 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegexBashCmd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BashEvent.RegexBashCmd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BashEvent.RegexBashCmd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regexBashCmd = string(value["RegexBashCmd"].GetString());
         m_regexBashCmdHasBeenSet = true;

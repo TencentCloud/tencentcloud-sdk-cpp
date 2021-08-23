@@ -42,7 +42,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheck"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Listener.HealthCheck` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.HealthCheck` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
@@ -89,7 +89,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheduler"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduler = string(value["Scheduler"].GetString());
         m_schedulerHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Listener.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionExpireTime = value["SessionExpireTime"].GetInt64();
         m_sessionExpireTimeHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Listener.SessionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Listener.SessionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionType = string(value["SessionType"].GetString());
         m_sessionTypeHasBeenSet = true;

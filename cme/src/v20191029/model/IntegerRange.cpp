@@ -35,7 +35,7 @@ CoreInternalOutcome IntegerRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LowerBound"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IntegerRange.LowerBound` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IntegerRange.LowerBound` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lowerBound = value["LowerBound"].GetInt64();
         m_lowerBoundHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IntegerRange::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpperBound"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IntegerRange.UpperBound` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IntegerRange.UpperBound` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_upperBound = value["UpperBound"].GetInt64();
         m_upperBoundHasBeenSet = true;

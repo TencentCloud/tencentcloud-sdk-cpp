@@ -37,7 +37,7 @@ CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const rapidjson:
     {
         if (!value["CrowdId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsCrowdData.CrowdId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsCrowdData.CrowdId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_crowdId = value["CrowdId"].GetUint64();
         m_crowdIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const rapidjson:
     {
         if (!value["CrowdName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsCrowdData.CrowdName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsCrowdData.CrowdName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_crowdName = string(value["CrowdName"].GetString());
         m_crowdNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const rapidjson:
     {
         if (!value["CrowdCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsCrowdData.CrowdCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsCrowdData.CrowdCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_crowdCount = value["CrowdCount"].GetUint64();
         m_crowdCountHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const rapidjson:
     if (value.HasMember("TemplateList") && !value["TemplateList"].IsNull())
     {
         if (!value["TemplateList"].IsArray())
-            return CoreInternalOutcome(Error("response `SmsCampaignStatisticsCrowdData.TemplateList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SmsCampaignStatisticsCrowdData.TemplateList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TemplateList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome Desc::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Desc.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Desc.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Desc::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Organ") && !value["Organ"].IsNull())
     {
         if (!value["Organ"].IsArray())
-            return CoreInternalOutcome(Error("response `Desc.Organ` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Desc.Organ` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Organ"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome Desc::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tuber") && !value["Tuber"].IsNull())
     {
         if (!value["Tuber"].IsArray())
-            return CoreInternalOutcome(Error("response `Desc.Tuber` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Desc.Tuber` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tuber"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

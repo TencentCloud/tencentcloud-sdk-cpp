@@ -36,7 +36,7 @@ CoreInternalOutcome DeviceCertificate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCertificate.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCertificate.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DeviceCertificate::Deserialize(const rapidjson::Value &value
     {
         if (!value["Certificate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCertificate.Certificate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCertificate.Certificate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificate = string(value["Certificate"].GetString());
         m_certificateHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DeviceCertificate::Deserialize(const rapidjson::Value &value
     {
         if (!value["WhiteBoxSoUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCertificate.WhiteBoxSoUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCertificate.WhiteBoxSoUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_whiteBoxSoUrl = string(value["WhiteBoxSoUrl"].GetString());
         m_whiteBoxSoUrlHasBeenSet = true;

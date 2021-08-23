@@ -37,7 +37,7 @@ CoreInternalOutcome AiReviewPoliticalTaskOutput::Deserialize(const rapidjson::Va
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiReviewPoliticalTaskOutput.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewPoliticalTaskOutput.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AiReviewPoliticalTaskOutput::Deserialize(const rapidjson::Va
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewPoliticalTaskOutput.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewPoliticalTaskOutput.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AiReviewPoliticalTaskOutput::Deserialize(const rapidjson::Va
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiReviewPoliticalTaskOutput.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiReviewPoliticalTaskOutput.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AiReviewPoliticalTaskOutput::Deserialize(const rapidjson::Va
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiReviewPoliticalTaskOutput.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiReviewPoliticalTaskOutput.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

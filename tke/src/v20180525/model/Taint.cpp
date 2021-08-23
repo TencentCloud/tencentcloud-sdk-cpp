@@ -36,7 +36,7 @@ CoreInternalOutcome Taint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Taint.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Taint.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Taint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Taint.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Taint.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Taint::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Effect"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Taint.Effect` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Taint.Effect` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_effect = string(value["Effect"].GetString());
         m_effectHasBeenSet = true;

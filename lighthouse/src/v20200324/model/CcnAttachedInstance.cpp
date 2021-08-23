@@ -38,7 +38,7 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["CcnId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnAttachedInstance.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.CcnId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccnId = string(value["CcnId"].GetString());
         m_ccnIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
     if (value.HasMember("CidrBlock") && !value["CidrBlock"].IsNull())
     {
         if (!value["CidrBlock"].IsArray())
-            return CoreInternalOutcome(Error("response `CcnAttachedInstance.CidrBlock` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.CidrBlock` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CidrBlock"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnAttachedInstance.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["AttachedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnAttachedInstance.AttachedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.AttachedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attachedTime = string(value["AttachedTime"].GetString());
         m_attachedTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CcnAttachedInstance.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

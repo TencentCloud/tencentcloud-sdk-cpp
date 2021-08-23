@@ -40,16 +40,16 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["StorageBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageBucket = string(rsp["StorageBucket"].GetString());
         m_storageBucketHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["StorageRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageRegion = string(rsp["StorageRegion"].GetString());
         m_storageRegionHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["StoragePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StoragePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StoragePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storagePath = string(rsp["StoragePath"].GetString());
         m_storagePathHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["SecretID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretID = string(rsp["SecretID"].GetString());
         m_secretIDHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(rsp["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(rsp["Token"].GetString());
         m_tokenHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome CreateCOSCredentialsResponse::Deserialize(const string &payl
     {
         if (!rsp["ExpiredTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = rsp["ExpiredTime"].GetUint64();
         m_expiredTimeHasBeenSet = true;

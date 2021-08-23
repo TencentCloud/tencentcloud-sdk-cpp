@@ -35,7 +35,7 @@ CoreInternalOutcome MaterialFaceList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialFaceList.FaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialFaceList.FaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = string(value["FaceId"].GetString());
         m_faceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MaterialFaceList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MaterialFaceList.FaceInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialFaceList.FaceInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceInfo.Deserialize(value["FaceInfo"]);

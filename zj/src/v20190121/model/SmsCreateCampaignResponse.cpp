@@ -34,7 +34,7 @@ CoreInternalOutcome SmsCreateCampaignResponse::Deserialize(const rapidjson::Valu
     {
         if (!value["CampaignId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SmsCreateCampaignResponse.CampaignId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SmsCreateCampaignResponse.CampaignId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_campaignId = value["CampaignId"].GetInt64();
         m_campaignIdHasBeenSet = true;

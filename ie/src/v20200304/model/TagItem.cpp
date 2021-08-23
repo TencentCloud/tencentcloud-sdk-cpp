@@ -37,7 +37,7 @@ CoreInternalOutcome TagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagItem.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TagItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagItem.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TagItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Categorys") && !value["Categorys"].IsNull())
     {
         if (!value["Categorys"].IsArray())
-            return CoreInternalOutcome(Error("response `TagItem.Categorys` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagItem.Categorys` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Categorys"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome TagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagItem.Ext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagItem.Ext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ext = string(value["Ext"].GetString());
         m_extHasBeenSet = true;

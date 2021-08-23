@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceRebootTime::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceRebootTime.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceRebootTime.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceRebootTime::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimeInSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceRebootTime.TimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceRebootTime.TimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeInSeconds = value["TimeInSeconds"].GetInt64();
         m_timeInSecondsHasBeenSet = true;

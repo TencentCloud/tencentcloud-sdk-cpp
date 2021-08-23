@@ -35,7 +35,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
     {
         if (!value["SegmentSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SegmentSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SegmentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     {
         if (!value["SubtitlePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.SubtitlePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SubtitlePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subtitlePath = string(value["SubtitlePath"].GetString());
         m_subtitlePathHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrFullTextResultOutput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);

@@ -37,7 +37,7 @@ CoreInternalOutcome ItemPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.UnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ItemPrice.UnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_unitPrice = value["UnitPrice"].GetDouble();
         m_unitPriceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ItemPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChargeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.ChargeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ItemPrice.ChargeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chargeUnit = string(value["ChargeUnit"].GetString());
         m_chargeUnitHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ItemPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ItemPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = value["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ItemPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ItemPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = value["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NodeInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;

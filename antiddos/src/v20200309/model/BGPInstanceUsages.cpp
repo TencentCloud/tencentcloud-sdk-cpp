@@ -36,7 +36,7 @@ CoreInternalOutcome BGPInstanceUsages::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProtectCountUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceUsages.ProtectCountUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceUsages.ProtectCountUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectCountUsage = value["ProtectCountUsage"].GetUint64();
         m_protectCountUsageHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BGPInstanceUsages::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProtectIPNumberUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceUsages.ProtectIPNumberUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceUsages.ProtectIPNumberUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectIPNumberUsage = value["ProtectIPNumberUsage"].GetUint64();
         m_protectIPNumberUsageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BGPInstanceUsages::Deserialize(const rapidjson::Value &value
     {
         if (!value["Last7DayAttackCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPInstanceUsages.Last7DayAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceUsages.Last7DayAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_last7DayAttackCount = value["Last7DayAttackCount"].GetUint64();
         m_last7DayAttackCountHasBeenSet = true;

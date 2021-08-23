@@ -36,7 +36,7 @@ CoreInternalOutcome Env::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Env.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Env.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Env::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Env.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Env.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Env::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValueFrom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Env.ValueFrom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Env.ValueFrom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_valueFrom.Deserialize(value["ValueFrom"]);

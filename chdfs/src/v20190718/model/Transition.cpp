@@ -35,7 +35,7 @@ CoreInternalOutcome Transition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Days"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Transition.Days` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transition.Days` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_days = value["Days"].GetUint64();
         m_daysHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Transition::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Transition.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transition.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;

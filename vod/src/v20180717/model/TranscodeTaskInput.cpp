@@ -39,7 +39,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("MosaicSet") && !value["MosaicSet"].IsNull())
     {
         if (!value["MosaicSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MosaicSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("HeadTailSet") && !value["HeadTailSet"].IsNull())
     {
         if (!value["HeadTailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.HeadTailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.HeadTailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HeadTailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TranscodeTaskInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;

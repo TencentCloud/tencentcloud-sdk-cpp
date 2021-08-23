@@ -36,7 +36,7 @@ CoreInternalOutcome FamilyMedicalHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["RelativeHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FamilyMedicalHistory.RelativeHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FamilyMedicalHistory.RelativeHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relativeHistory = string(value["RelativeHistory"].GetString());
         m_relativeHistoryHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FamilyMedicalHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["RelativeCancerHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FamilyMedicalHistory.RelativeCancerHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FamilyMedicalHistory.RelativeCancerHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relativeCancerHistory = string(value["RelativeCancerHistory"].GetString());
         m_relativeCancerHistoryHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FamilyMedicalHistory::Deserialize(const rapidjson::Value &va
     {
         if (!value["GeneticHistory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FamilyMedicalHistory.GeneticHistory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FamilyMedicalHistory.GeneticHistory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_geneticHistory = string(value["GeneticHistory"].GetString());
         m_geneticHistoryHasBeenSet = true;

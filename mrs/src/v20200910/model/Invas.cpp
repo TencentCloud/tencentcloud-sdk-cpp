@@ -36,7 +36,7 @@ CoreInternalOutcome Invas::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `Invas.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Invas.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome Invas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Part"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Invas.Part` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Invas.Part` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_part.Deserialize(value["Part"]);
@@ -67,7 +67,7 @@ CoreInternalOutcome Invas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Positive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Invas.Positive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Invas.Positive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_positive = string(value["Positive"].GetString());
         m_positiveHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome Invas::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Invas.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Invas.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;

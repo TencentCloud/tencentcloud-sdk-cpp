@@ -37,7 +37,7 @@ CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const rapidjso
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupsInboundAndOutbound.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupsInboundAndOutbound.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const rapidjso
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupsInboundAndOutbound.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupsInboundAndOutbound.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const rapidjso
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupsInboundAndOutbound.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupsInboundAndOutbound.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const rapidjso
     {
         if (!value["Proto"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupsInboundAndOutbound.Proto` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupsInboundAndOutbound.Proto` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proto = string(value["Proto"].GetString());
         m_protoHasBeenSet = true;

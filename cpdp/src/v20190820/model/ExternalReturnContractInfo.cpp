@@ -43,7 +43,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnAgreementId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnAgreementId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnAgreementId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnAgreementId = string(value["ExternalReturnAgreementId"].GetString());
         m_externalReturnAgreementIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractEffectiveTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractEffectiveTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractEffectiveTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractEffectiveTimestamp = string(value["ExternalReturnContractEffectiveTimestamp"].GetString());
         m_externalReturnContractEffectiveTimestampHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractTerminationTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractTerminationTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractTerminationTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractTerminationTimestamp = string(value["ExternalReturnContractTerminationTimestamp"].GetString());
         m_externalReturnContractTerminationTimestampHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractStatus = string(value["ExternalReturnContractStatus"].GetString());
         m_externalReturnContractStatusHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnRequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnRequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnRequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnRequestId = string(value["ExternalReturnRequestId"].GetString());
         m_externalReturnRequestIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractSignedTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractSignedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractSignedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractSignedTimestamp = string(value["ExternalReturnContractSignedTimestamp"].GetString());
         m_externalReturnContractSignedTimestampHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractExpiredTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractExpiredTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractExpiredTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractExpiredTimestamp = string(value["ExternalReturnContractExpiredTimestamp"].GetString());
         m_externalReturnContractExpiredTimestampHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractData = string(value["ExternalReturnContractData"].GetString());
         m_externalReturnContractDataHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractTerminationRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractTerminationRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractTerminationRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractTerminationRemark = string(value["ExternalReturnContractTerminationRemark"].GetString());
         m_externalReturnContractTerminationRemarkHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Val
     {
         if (!value["ExternalReturnContractTerminationMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalReturnContractInfo.ExternalReturnContractTerminationMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalReturnContractInfo.ExternalReturnContractTerminationMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnContractTerminationMode = string(value["ExternalReturnContractTerminationMode"].GetString());
         m_externalReturnContractTerminationModeHasBeenSet = true;

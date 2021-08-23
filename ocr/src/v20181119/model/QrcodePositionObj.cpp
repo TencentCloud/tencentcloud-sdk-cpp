@@ -37,7 +37,7 @@ CoreInternalOutcome QrcodePositionObj::Deserialize(const rapidjson::Value &value
     {
         if (!value["LeftTop"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QrcodePositionObj.LeftTop` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodePositionObj.LeftTop` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_leftTop.Deserialize(value["LeftTop"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome QrcodePositionObj::Deserialize(const rapidjson::Value &value
     {
         if (!value["RightTop"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QrcodePositionObj.RightTop` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodePositionObj.RightTop` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rightTop.Deserialize(value["RightTop"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome QrcodePositionObj::Deserialize(const rapidjson::Value &value
     {
         if (!value["RightBottom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QrcodePositionObj.RightBottom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodePositionObj.RightBottom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rightBottom.Deserialize(value["RightBottom"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome QrcodePositionObj::Deserialize(const rapidjson::Value &value
     {
         if (!value["LeftBottom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `QrcodePositionObj.LeftBottom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodePositionObj.LeftBottom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_leftBottom.Deserialize(value["LeftBottom"]);

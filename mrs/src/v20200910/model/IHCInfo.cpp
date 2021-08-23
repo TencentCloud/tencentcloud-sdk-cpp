@@ -36,7 +36,7 @@ CoreInternalOutcome IHCInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `IHCInfo.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `IHCInfo.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome IHCInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IHCInfo.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IHCInfo.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome IHCInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IHCInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IHCInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome IHCInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `IHCInfo.Value` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IHCInfo.Value` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_value.Deserialize(value["Value"]);

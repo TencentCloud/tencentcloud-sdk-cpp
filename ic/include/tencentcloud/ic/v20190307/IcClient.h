@@ -51,25 +51,25 @@ namespace TencentCloud
                 IcClient(const Credential &credential, const std::string &region);
                 IcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeAppResponse> DescribeAppOutcome;
+                typedef Outcome<Core::Error, Model::DescribeAppResponse> DescribeAppOutcome;
                 typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::DescribeAppRequest&, DescribeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAsyncHandler;
-                typedef Outcome<Error, Model::DescribeCardResponse> DescribeCardOutcome;
+                typedef Outcome<Core::Error, Model::DescribeCardResponse> DescribeCardOutcome;
                 typedef std::future<DescribeCardOutcome> DescribeCardOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::DescribeCardRequest&, DescribeCardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCardAsyncHandler;
-                typedef Outcome<Error, Model::DescribeCardsResponse> DescribeCardsOutcome;
+                typedef Outcome<Core::Error, Model::DescribeCardsResponse> DescribeCardsOutcome;
                 typedef std::future<DescribeCardsOutcome> DescribeCardsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::DescribeCardsRequest&, DescribeCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCardsAsyncHandler;
-                typedef Outcome<Error, Model::ModifyUserCardRemarkResponse> ModifyUserCardRemarkOutcome;
+                typedef Outcome<Core::Error, Model::ModifyUserCardRemarkResponse> ModifyUserCardRemarkOutcome;
                 typedef std::future<ModifyUserCardRemarkOutcome> ModifyUserCardRemarkOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::ModifyUserCardRemarkRequest&, ModifyUserCardRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserCardRemarkAsyncHandler;
-                typedef Outcome<Error, Model::RenewCardsResponse> RenewCardsOutcome;
+                typedef Outcome<Core::Error, Model::RenewCardsResponse> RenewCardsOutcome;
                 typedef std::future<RenewCardsOutcome> RenewCardsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::RenewCardsRequest&, RenewCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewCardsAsyncHandler;
-                typedef Outcome<Error, Model::SendMultiSmsResponse> SendMultiSmsOutcome;
+                typedef Outcome<Core::Error, Model::SendMultiSmsResponse> SendMultiSmsOutcome;
                 typedef std::future<SendMultiSmsOutcome> SendMultiSmsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::SendMultiSmsRequest&, SendMultiSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMultiSmsAsyncHandler;
-                typedef Outcome<Error, Model::SendSmsResponse> SendSmsOutcome;
+                typedef Outcome<Core::Error, Model::SendSmsResponse> SendSmsOutcome;
                 typedef std::future<SendSmsOutcome> SendSmsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::SendSmsRequest&, SendSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendSmsAsyncHandler;
 

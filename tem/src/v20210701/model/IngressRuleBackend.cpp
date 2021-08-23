@@ -35,7 +35,7 @@ CoreInternalOutcome IngressRuleBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IngressRuleBackend.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRuleBackend.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(value["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IngressRuleBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ServicePort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IngressRuleBackend.ServicePort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IngressRuleBackend.ServicePort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_servicePort = value["ServicePort"].GetInt64();
         m_servicePortHasBeenSet = true;

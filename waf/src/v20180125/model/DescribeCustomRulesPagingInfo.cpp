@@ -35,7 +35,7 @@ CoreInternalOutcome DescribeCustomRulesPagingInfo::Deserialize(const rapidjson::
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesPagingInfo.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesPagingInfo.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DescribeCustomRulesPagingInfo::Deserialize(const rapidjson::
     {
         if (!value["Limit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeCustomRulesPagingInfo.Limit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesPagingInfo.Limit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_limit = value["Limit"].GetInt64();
         m_limitHasBeenSet = true;

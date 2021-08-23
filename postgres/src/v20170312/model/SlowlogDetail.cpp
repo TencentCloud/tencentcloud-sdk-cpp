@@ -36,7 +36,7 @@ CoreInternalOutcome SlowlogDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowlogDetail.TotalTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogDetail.TotalTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalTime = value["TotalTime"].GetDouble();
         m_totalTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SlowlogDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCalls"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowlogDetail.TotalCalls` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogDetail.TotalCalls` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCalls = value["TotalCalls"].GetInt64();
         m_totalCallsHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome SlowlogDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NormalQueries") && !value["NormalQueries"].IsNull())
     {
         if (!value["NormalQueries"].IsArray())
-            return CoreInternalOutcome(Error("response `SlowlogDetail.NormalQueries` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SlowlogDetail.NormalQueries` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NormalQueries"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

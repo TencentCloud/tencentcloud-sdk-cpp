@@ -42,7 +42,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.ImageId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.ImageId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = value["ImageId"].GetUint64();
         m_imageIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PreviewUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_previewUrl = string(value["PreviewUrl"].GetString());
         m_previewUrlHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ThumbUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.ThumbUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.ThumbUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thumbUrl = string(value["ThumbUrl"].GetString());
         m_thumbUrlHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vendor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.Vendor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.Vendor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vendor = string(value["Vendor"].GetString());
         m_vendorHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keywords"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.Keywords` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.Keywords` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keywords = string(value["Keywords"].GetString());
         m_keywordsHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ImageItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;

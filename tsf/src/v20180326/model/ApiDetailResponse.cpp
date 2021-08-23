@@ -39,7 +39,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Request") && !value["Request"].IsNull())
     {
         if (!value["Request"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.Request` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.Request` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Request"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Response") && !value["Response"].IsNull())
     {
         if (!value["Response"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.Response` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.Response` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Response"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Definitions") && !value["Definitions"].IsNull())
     {
         if (!value["Definitions"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.Definitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.Definitions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Definitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -100,7 +100,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["RequestContentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.RequestContentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.RequestContentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestContentType = string(value["RequestContentType"].GetString());
         m_requestContentTypeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["CanRun"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.CanRun` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.CanRun` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_canRun = value["CanRun"].GetBool();
         m_canRunHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiDetailResponse.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiDetailResponse.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

@@ -42,7 +42,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["MediaCuttingTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.MediaCuttingTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.MediaCuttingTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaCuttingTaskResult.Deserialize(value["MediaCuttingTaskResult"]);
@@ -119,7 +119,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["MediaJoiningTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.MediaJoiningTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.MediaJoiningTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaJoiningTaskResult.Deserialize(value["MediaJoiningTaskResult"]);
@@ -136,7 +136,7 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const rapidjson::Value &
     {
         if (!value["MediaRecognitionTaskResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.MediaRecognitionTaskResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskResult.MediaRecognitionTaskResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mediaRecognitionTaskResult.Deserialize(value["MediaRecognitionTaskResult"]);

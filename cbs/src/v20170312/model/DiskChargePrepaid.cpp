@@ -36,7 +36,7 @@ CoreInternalOutcome DiskChargePrepaid::Deserialize(const rapidjson::Value &value
     {
         if (!value["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DiskChargePrepaid.Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskChargePrepaid.Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DiskChargePrepaid::Deserialize(const rapidjson::Value &value
     {
         if (!value["RenewFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = string(value["RenewFlag"].GetString());
         m_renewFlagHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DiskChargePrepaid::Deserialize(const rapidjson::Value &value
     {
         if (!value["CurInstanceDeadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskChargePrepaid.CurInstanceDeadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskChargePrepaid.CurInstanceDeadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_curInstanceDeadline = string(value["CurInstanceDeadline"].GetString());
         m_curInstanceDeadlineHasBeenSet = true;

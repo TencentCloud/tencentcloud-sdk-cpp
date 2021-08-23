@@ -38,7 +38,7 @@ CoreInternalOutcome CloudBaseRunImageInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["RepositoryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageInfo.RepositoryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageInfo.RepositoryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryName = string(value["RepositoryName"].GetString());
         m_repositoryNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CloudBaseRunImageInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsPublic"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageInfo.IsPublic` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageInfo.IsPublic` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPublic = value["IsPublic"].GetBool();
         m_isPublicHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CloudBaseRunImageInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageInfo.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageInfo.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CloudBaseRunImageInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServerAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageInfo.ServerAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageInfo.ServerAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverAddr = string(value["ServerAddr"].GetString());
         m_serverAddrHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CloudBaseRunImageInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["ImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageInfo.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageInfo.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageUrl = string(value["ImageUrl"].GetString());
         m_imageUrlHasBeenSet = true;

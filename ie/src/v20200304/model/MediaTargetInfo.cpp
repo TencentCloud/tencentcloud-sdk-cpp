@@ -37,7 +37,7 @@ CoreInternalOutcome MediaTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTargetInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTargetInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MediaTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTargetInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTargetInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MediaTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetVideoInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaTargetInfo.TargetVideoInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTargetInfo.TargetVideoInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetVideoInfo.Deserialize(value["TargetVideoInfo"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome MediaTargetInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultListSaveType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaTargetInfo.ResultListSaveType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaTargetInfo.ResultListSaveType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultListSaveType = string(value["ResultListSaveType"].GetString());
         m_resultListSaveTypeHasBeenSet = true;

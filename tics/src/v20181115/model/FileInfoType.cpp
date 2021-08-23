@@ -51,7 +51,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.DetectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.DetectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectId = string(value["DetectId"].GetString());
         m_detectIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectPriority"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.DetectPriority` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.DetectPriority` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectPriority = string(value["DetectPriority"].GetString());
         m_detectPriorityHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnginePriority"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.EnginePriority` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.EnginePriority` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_enginePriority = string(value["EnginePriority"].GetString());
         m_enginePriorityHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileExist"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.FileExist` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.FileExist` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileExist = string(value["FileExist"].GetString());
         m_fileExistHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileForceUpload"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.FileForceUpload` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.FileForceUpload` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileForceUpload = string(value["FileForceUpload"].GetString());
         m_fileForceUploadHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.FileSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.FileSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = string(value["FileSize"].GetString());
         m_fileSizeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileupTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.FileupTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.FileupTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileupTime = string(value["FileupTime"].GetString());
         m_fileupTimeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullVirusName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.FullVirusName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.FullVirusName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullVirusName = string(value["FullVirusName"].GetString());
         m_fullVirusNameHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdcPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.IdcPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.IdcPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idcPosition = string(value["IdcPosition"].GetString());
         m_idcPositionHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Md5Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.Md5Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.Md5Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5Type = string(value["Md5Type"].GetString());
         m_md5TypeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeExist"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.PeExist` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.PeExist` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peExist = string(value["PeExist"].GetString());
         m_peExistHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeForceUpload"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.PeForceUpload` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.PeForceUpload` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peForceUpload = string(value["PeForceUpload"].GetString());
         m_peForceUploadHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SafeLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.SafeLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.SafeLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_safeLevel = string(value["SafeLevel"].GetString());
         m_safeLevelHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanModiTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.ScanModiTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.ScanModiTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanModiTime = string(value["ScanModiTime"].GetString());
         m_scanModiTimeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubdetectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.SubdetectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.SubdetectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subdetectId = string(value["SubdetectId"].GetString());
         m_subdetectIdHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserDefName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.UserDefName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.UserDefName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userDefName = string(value["UserDefName"].GetString());
         m_userDefNameHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirusType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.VirusType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.VirusType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_virusType = string(value["VirusType"].GetString());
         m_virusTypeHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome FileInfoType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WhiteScore"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfoType.WhiteScore` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoType.WhiteScore` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_whiteScore = string(value["WhiteScore"].GetString());
         m_whiteScoreHasBeenSet = true;

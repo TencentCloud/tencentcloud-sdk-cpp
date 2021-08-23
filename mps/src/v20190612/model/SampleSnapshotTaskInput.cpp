@@ -38,7 +38,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     {
         if (!value["OutputStorage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.OutputStorage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     {
         if (!value["OutputObjectPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.OutputObjectPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outputObjectPath = string(value["OutputObjectPath"].GetString());
         m_outputObjectPathHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     {
         if (!value["ObjectNumberFormat"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.ObjectNumberFormat` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.ObjectNumberFormat` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_objectNumberFormat.Deserialize(value["ObjectNumberFormat"]);

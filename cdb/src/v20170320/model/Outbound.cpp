@@ -39,7 +39,7 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outbound.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outbound.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outbound.CidrIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outbound.CidrIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrIp = string(value["CidrIp"].GetString());
         m_cidrIpHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PortRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outbound.PortRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outbound.PortRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_portRange = string(value["PortRange"].GetString());
         m_portRangeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outbound.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outbound.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outbound.Dir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outbound.Dir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dir = string(value["Dir"].GetString());
         m_dirHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Outbound.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Outbound.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;

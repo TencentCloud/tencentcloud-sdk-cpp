@@ -44,16 +44,16 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,11 +64,11 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["BeginProcessTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginProcessTime = string(rsp["BeginProcessTime"].GetString());
         m_beginProcessTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["FinishTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FinishTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishTime = string(rsp["FinishTime"].GetString());
         m_finishTimeHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["PornResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornResult.Deserialize(rsp["PornResult"]);
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["TerrorismResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TerrorismResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TerrorismResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_terrorismResult.Deserialize(rsp["TerrorismResult"]);
@@ -140,7 +140,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["PoliticalResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticalResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticalResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalResult.Deserialize(rsp["PoliticalResult"]);
@@ -157,7 +157,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["PoliticalOcrResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticalOcrResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticalOcrResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalOcrResult.Deserialize(rsp["PoliticalOcrResult"]);
@@ -174,7 +174,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["PornAsrResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornAsrResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornAsrResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornAsrResult.Deserialize(rsp["PornAsrResult"]);
@@ -191,7 +191,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["PoliticalAsrResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PoliticalAsrResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoliticalAsrResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_politicalAsrResult.Deserialize(rsp["PoliticalAsrResult"]);
@@ -208,7 +208,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["PornOcrResult"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PornOcrResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PornOcrResult` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pornOcrResult.Deserialize(rsp["PornOcrResult"]);
@@ -225,7 +225,7 @@ CoreInternalOutcome DescribeVideoTaskResponse::Deserialize(const string &payload
     {
         if (!rsp["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(rsp["MetaData"]);

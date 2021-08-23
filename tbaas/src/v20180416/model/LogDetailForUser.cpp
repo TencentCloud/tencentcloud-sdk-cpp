@@ -35,7 +35,7 @@ CoreInternalOutcome LogDetailForUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LineNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LogDetailForUser.LineNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogDetailForUser.LineNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lineNumber = value["LineNumber"].GetUint64();
         m_lineNumberHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LogDetailForUser::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogDetailForUser.LogMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogDetailForUser.LogMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logMessage = string(value["LogMessage"].GetString());
         m_logMessageHasBeenSet = true;

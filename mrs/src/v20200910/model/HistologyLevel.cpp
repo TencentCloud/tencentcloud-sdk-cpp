@@ -36,7 +36,7 @@ CoreInternalOutcome HistologyLevel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Grade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistologyLevel.Grade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistologyLevel.Grade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grade = string(value["Grade"].GetString());
         m_gradeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome HistologyLevel::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `HistologyLevel.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HistologyLevel.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome HistologyLevel::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistologyLevel.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistologyLevel.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;

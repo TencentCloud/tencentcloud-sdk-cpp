@@ -39,7 +39,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManual::Deserialize(const r
     {
         if (!value["CalcType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManual.CalcType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManual.CalcType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_calcType.Deserialize(value["CalcType"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManual::Deserialize(const r
     {
         if (!value["CalcValue"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManual.CalcValue` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManual.CalcValue` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_calcValue.Deserialize(value["CalcValue"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManual::Deserialize(const r
     {
         if (!value["ContinueTime"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManual.ContinueTime` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManual.ContinueTime` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_continueTime.Deserialize(value["ContinueTime"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManual::Deserialize(const r
     {
         if (!value["Period"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManual.Period` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManual.Period` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_period.Deserialize(value["Period"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManual::Deserialize(const r
     {
         if (!value["PeriodNum"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManual.PeriodNum` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManual.PeriodNum` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_periodNum.Deserialize(value["PeriodNum"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribePolicyConditionListConfigManual::Deserialize(const r
     {
         if (!value["StatType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManual.StatType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListConfigManual.StatType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_statType.Deserialize(value["StatType"]);

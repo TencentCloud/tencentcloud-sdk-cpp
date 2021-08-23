@@ -34,7 +34,7 @@ CoreInternalOutcome RouteFilterPrefix::Deserialize(const rapidjson::Value &value
     {
         if (!value["Cidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RouteFilterPrefix.Cidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RouteFilterPrefix.Cidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidr = string(value["Cidr"].GetString());
         m_cidrHasBeenSet = true;

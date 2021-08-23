@@ -36,7 +36,7 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const rapidjson::Value &
     {
         if (!value["UseMixCropCenter"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixControlParams.UseMixCropCenter` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixControlParams.UseMixCropCenter` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_useMixCropCenter = value["UseMixCropCenter"].GetInt64();
         m_useMixCropCenterHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const rapidjson::Value &
     {
         if (!value["AllowCopy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixControlParams.AllowCopy` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixControlParams.AllowCopy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_allowCopy = value["AllowCopy"].GetInt64();
         m_allowCopyHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const rapidjson::Value &
     {
         if (!value["PassInputSei"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CommonMixControlParams.PassInputSei` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixControlParams.PassInputSei` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_passInputSei = value["PassInputSei"].GetInt64();
         m_passInputSeiHasBeenSet = true;

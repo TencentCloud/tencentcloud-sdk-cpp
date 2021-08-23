@@ -35,7 +35,7 @@ CoreInternalOutcome DocumentSDK::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DocumentURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DocumentSDK.DocumentURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DocumentSDK.DocumentURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_documentURL = string(value["DocumentURL"].GetString());
         m_documentURLHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DocumentSDK::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SdkURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DocumentSDK.SdkURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DocumentSDK.SdkURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkURL = string(value["SdkURL"].GetString());
         m_sdkURLHasBeenSet = true;

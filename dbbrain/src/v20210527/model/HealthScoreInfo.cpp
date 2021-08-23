@@ -36,7 +36,7 @@ CoreInternalOutcome HealthScoreInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IssueTypes") && !value["IssueTypes"].IsNull())
     {
         if (!value["IssueTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `HealthScoreInfo.IssueTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HealthScoreInfo.IssueTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IssueTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome HealthScoreInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventsTotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthScoreInfo.EventsTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthScoreInfo.EventsTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eventsTotalCount = value["EventsTotalCount"].GetInt64();
         m_eventsTotalCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome HealthScoreInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthScore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthScoreInfo.HealthScore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthScoreInfo.HealthScore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthScore = value["HealthScore"].GetInt64();
         m_healthScoreHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome HealthScoreInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthScoreInfo.HealthLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthScoreInfo.HealthLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_healthLevel = string(value["HealthLevel"].GetString());
         m_healthLevelHasBeenSet = true;

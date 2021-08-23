@@ -42,7 +42,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Http2xx") && !value["Http2xx"].IsNull())
     {
         if (!value["Http2xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.Http2xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.Http2xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Http2xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Http3xx") && !value["Http3xx"].IsNull())
     {
         if (!value["Http3xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.Http3xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.Http3xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Http3xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Http404") && !value["Http404"].IsNull())
     {
         if (!value["Http404"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.Http404` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.Http404` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Http404"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Http4xx") && !value["Http4xx"].IsNull())
     {
         if (!value["Http4xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.Http4xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.Http4xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Http4xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -94,7 +94,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Http5xx") && !value["Http5xx"].IsNull())
     {
         if (!value["Http5xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.Http5xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.Http5xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Http5xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceHttp2xx") && !value["SourceHttp2xx"].IsNull())
     {
         if (!value["SourceHttp2xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp2xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.SourceHttp2xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceHttp2xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceHttp3xx") && !value["SourceHttp3xx"].IsNull())
     {
         if (!value["SourceHttp3xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp3xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.SourceHttp3xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceHttp3xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -133,7 +133,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceHttp404") && !value["SourceHttp404"].IsNull())
     {
         if (!value["SourceHttp404"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp404` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.SourceHttp404` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceHttp404"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -146,7 +146,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceHttp4xx") && !value["SourceHttp4xx"].IsNull())
     {
         if (!value["SourceHttp4xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp4xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.SourceHttp4xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceHttp4xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -159,7 +159,7 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceHttp5xx") && !value["SourceHttp5xx"].IsNull())
     {
         if (!value["SourceHttp5xx"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp5xx` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpStatusMap.SourceHttp5xx` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceHttp5xx"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

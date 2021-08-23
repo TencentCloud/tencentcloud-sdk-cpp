@@ -35,7 +35,7 @@ CoreInternalOutcome LineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LineInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LineInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LineId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LineInfo.LineId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LineInfo.LineId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lineId = string(value["LineId"].GetString());
         m_lineIdHasBeenSet = true;

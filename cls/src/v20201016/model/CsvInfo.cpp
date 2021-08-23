@@ -38,7 +38,7 @@ CoreInternalOutcome CsvInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrintKey"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CsvInfo.PrintKey` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CsvInfo.PrintKey` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_printKey = value["PrintKey"].GetBool();
         m_printKeyHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CsvInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keys") && !value["Keys"].IsNull())
     {
         if (!value["Keys"].IsArray())
-            return CoreInternalOutcome(Error("response `CsvInfo.Keys` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CsvInfo.Keys` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keys"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome CsvInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Delimiter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CsvInfo.Delimiter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CsvInfo.Delimiter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_delimiter = string(value["Delimiter"].GetString());
         m_delimiterHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CsvInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EscapeChar"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CsvInfo.EscapeChar` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CsvInfo.EscapeChar` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_escapeChar = string(value["EscapeChar"].GetString());
         m_escapeCharHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CsvInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NonExistingField"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CsvInfo.NonExistingField` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CsvInfo.NonExistingField` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nonExistingField = string(value["NonExistingField"].GetString());
         m_nonExistingFieldHasBeenSet = true;

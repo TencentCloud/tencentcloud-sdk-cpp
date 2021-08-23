@@ -41,7 +41,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("LineIPList") && !value["LineIPList"].IsNull())
     {
         if (!value["LineIPList"].IsArray())
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.LineIPList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.LineIPList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LineIPList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -71,7 +71,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome SchedulingDomainInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["UsrDomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomainInfo.UsrDomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomainInfo.UsrDomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usrDomainName = string(value["UsrDomainName"].GetString());
         m_usrDomainNameHasBeenSet = true;

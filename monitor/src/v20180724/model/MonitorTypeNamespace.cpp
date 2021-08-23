@@ -35,7 +35,7 @@ CoreInternalOutcome MonitorTypeNamespace::Deserialize(const rapidjson::Value &va
     {
         if (!value["MonitorType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorTypeNamespace.MonitorType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorTypeNamespace.MonitorType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_monitorType = string(value["MonitorType"].GetString());
         m_monitorTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome MonitorTypeNamespace::Deserialize(const rapidjson::Value &va
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorTypeNamespace.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorTypeNamespace.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;

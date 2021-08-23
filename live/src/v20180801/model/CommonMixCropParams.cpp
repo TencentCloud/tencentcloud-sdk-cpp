@@ -37,7 +37,7 @@ CoreInternalOutcome CommonMixCropParams::Deserialize(const rapidjson::Value &val
     {
         if (!value["CropWidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixCropParams.CropWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixCropParams.CropWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cropWidth = value["CropWidth"].GetDouble();
         m_cropWidthHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CommonMixCropParams::Deserialize(const rapidjson::Value &val
     {
         if (!value["CropHeight"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixCropParams.CropHeight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixCropParams.CropHeight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cropHeight = value["CropHeight"].GetDouble();
         m_cropHeightHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CommonMixCropParams::Deserialize(const rapidjson::Value &val
     {
         if (!value["CropStartLocationX"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixCropParams.CropStartLocationX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixCropParams.CropStartLocationX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cropStartLocationX = value["CropStartLocationX"].GetDouble();
         m_cropStartLocationXHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CommonMixCropParams::Deserialize(const rapidjson::Value &val
     {
         if (!value["CropStartLocationY"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CommonMixCropParams.CropStartLocationY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixCropParams.CropStartLocationY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cropStartLocationY = value["CropStartLocationY"].GetDouble();
         m_cropStartLocationYHasBeenSet = true;

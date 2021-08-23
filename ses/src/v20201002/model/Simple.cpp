@@ -35,7 +35,7 @@ CoreInternalOutcome Simple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Html"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Simple.Html` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Simple.Html` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_html = string(value["Html"].GetString());
         m_htmlHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Simple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Simple.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Simple.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;

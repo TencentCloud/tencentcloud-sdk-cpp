@@ -48,7 +48,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Containers") && !value["Containers"].IsNull())
     {
         if (!value["Containers"].IsArray())
-            return CoreInternalOutcome(Error("response `ContainerInstance.Containers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.Containers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Containers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["RestartPolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.RestartPolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.RestartPolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_restartPolicy = string(value["RestartPolicy"].GetString());
         m_restartPolicyHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["VpcCidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.VpcCidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.VpcCidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCidr = string(value["VpcCidr"].GetString());
         m_vpcCidrHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetName = string(value["SubnetName"].GetString());
         m_subnetNameHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetCidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.SubnetCidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.SubnetCidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetCidr = string(value["SubnetCidr"].GetString());
         m_subnetCidrHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome ContainerInstance::Deserialize(const rapidjson::Value &value
     {
         if (!value["LanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainerInstance.LanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainerInstance.LanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lanIp = string(value["LanIp"].GetString());
         m_lanIpHasBeenSet = true;

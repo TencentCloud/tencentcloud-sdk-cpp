@@ -35,7 +35,7 @@ CoreInternalOutcome RuleTagInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CaseSensitive"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RuleTagInfo.CaseSensitive` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleTagInfo.CaseSensitive` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_caseSensitive = value["CaseSensitive"].GetBool();
         m_caseSensitiveHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome RuleTagInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KeyValues") && !value["KeyValues"].IsNull())
     {
         if (!value["KeyValues"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleTagInfo.KeyValues` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleTagInfo.KeyValues` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeyValues"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

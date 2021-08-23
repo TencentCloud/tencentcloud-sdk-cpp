@@ -50,7 +50,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverIp = string(value["ServerIp"].GetString());
         m_serverIpHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoFps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.VideoFps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.VideoFps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoFps = value["VideoFps"].GetUint64();
         m_videoFpsHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoSpeed"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.VideoSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.VideoSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoSpeed = value["VideoSpeed"].GetUint64();
         m_videoSpeedHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioFps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.AudioFps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.AudioFps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioFps = value["AudioFps"].GetUint64();
         m_audioFpsHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioSpeed"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.AudioSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.AudioSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioSpeed = value["AudioSpeed"].GetUint64();
         m_audioSpeedHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PushDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushDomain = string(value["PushDomain"].GetString());
         m_pushDomainHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginPushTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.BeginPushTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.BeginPushTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginPushTime = string(value["BeginPushTime"].GetString());
         m_beginPushTimeHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Acodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.Acodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.Acodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_acodec = string(value["Acodec"].GetString());
         m_acodecHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vcodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.Vcodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.Vcodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vcodec = string(value["Vcodec"].GetString());
         m_vcodecHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(value["Resolution"].GetString());
         m_resolutionHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AsampleRate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.AsampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.AsampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_asampleRate = value["AsampleRate"].GetUint64();
         m_asampleRateHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaAudioSpeed"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.MetaAudioSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.MetaAudioSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_metaAudioSpeed = value["MetaAudioSpeed"].GetUint64();
         m_metaAudioSpeedHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaVideoSpeed"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.MetaVideoSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.MetaVideoSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_metaVideoSpeed = value["MetaVideoSpeed"].GetUint64();
         m_metaVideoSpeedHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaFps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PushDataInfo.MetaFps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushDataInfo.MetaFps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_metaFps = value["MetaFps"].GetUint64();
         m_metaFpsHasBeenSet = true;

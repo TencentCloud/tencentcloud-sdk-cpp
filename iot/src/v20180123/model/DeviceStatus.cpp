@@ -38,7 +38,7 @@ CoreInternalOutcome DeviceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatus.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatus.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DeviceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DeviceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstOnline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatus.FirstOnline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatus.FirstOnline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstOnline = string(value["FirstOnline"].GetString());
         m_firstOnlineHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DeviceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastOnline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatus.LastOnline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatus.LastOnline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastOnline = string(value["LastOnline"].GetString());
         m_lastOnlineHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DeviceStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OnlineTimes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatus.OnlineTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatus.OnlineTimes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_onlineTimes = value["OnlineTimes"].GetUint64();
         m_onlineTimesHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome RepoInfoResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RepoInfoResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RepoInfoResp.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RepoInfoResp::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RepoInfo") && !value["RepoInfo"].IsNull())
     {
         if (!value["RepoInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `RepoInfoResp.RepoInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RepoInfoResp.RepoInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RepoInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome RepoInfoResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RepoInfoResp.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RepoInfoResp.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;

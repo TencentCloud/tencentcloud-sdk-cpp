@@ -38,7 +38,7 @@ CoreInternalOutcome RecordControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RecordControl.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordControl.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RecordControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisableRecord"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RecordControl.DisableRecord` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordControl.DisableRecord` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disableRecord = value["DisableRecord"].GetBool();
         m_disableRecordHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RecordControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisableAudio"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RecordControl.DisableAudio` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordControl.DisableAudio` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disableAudio = value["DisableAudio"].GetBool();
         m_disableAudioHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RecordControl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PullSmallVideo"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RecordControl.PullSmallVideo` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordControl.PullSmallVideo` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_pullSmallVideo = value["PullSmallVideo"].GetBool();
         m_pullSmallVideoHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome RecordControl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StreamControls") && !value["StreamControls"].IsNull())
     {
         if (!value["StreamControls"].IsArray())
-            return CoreInternalOutcome(Error("response `RecordControl.StreamControls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RecordControl.StreamControls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StreamControls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome HttpCodeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HttpCodeInfo.HttpCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HttpCodeInfo.HttpCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCode = string(value["HttpCode"].GetString());
         m_httpCodeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome HttpCodeInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ValueList") && !value["ValueList"].IsNull())
     {
         if (!value["ValueList"].IsArray())
-            return CoreInternalOutcome(Error("response `HttpCodeInfo.ValueList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HttpCodeInfo.ValueList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ValueList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

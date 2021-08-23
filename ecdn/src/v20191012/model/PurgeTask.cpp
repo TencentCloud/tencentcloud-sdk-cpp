@@ -39,7 +39,7 @@ CoreInternalOutcome PurgeTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PurgeTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PurgeTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PurgeTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PurgeTask.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PurgeTask.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PurgeTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PurgeTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PurgeTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PurgeTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PurgeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PurgeTask.PurgeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PurgeTask.PurgeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_purgeType = string(value["PurgeType"].GetString());
         m_purgeTypeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PurgeTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlushType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PurgeTask.FlushType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PurgeTask.FlushType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flushType = string(value["FlushType"].GetString());
         m_flushTypeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PurgeTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PurgeTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PurgeTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

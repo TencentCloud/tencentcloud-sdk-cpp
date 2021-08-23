@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,18 +57,18 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("Addresses") && !rsp["Addresses"].IsNull())
     {
         if (!rsp["Addresses"].IsArray())
-            return CoreInternalOutcome(Error("response `Addresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Addresses` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Addresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
     {
         if (!rsp["Credential"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Credential` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Credential` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_credential.Deserialize(rsp["Credential"]);
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
     {
         if (!rsp["PublicLB"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PublicLB` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicLB` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_publicLB.Deserialize(rsp["PublicLB"]);
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
     {
         if (!rsp["InternalLB"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InternalLB` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternalLB` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_internalLB.Deserialize(rsp["InternalLB"]);

@@ -36,7 +36,7 @@ CoreInternalOutcome ConditionsTemp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionsTemp.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionsTemp.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ConditionsTemp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Condition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConditionsTemp.Condition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionsTemp.Condition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_condition.Deserialize(value["Condition"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome ConditionsTemp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventCondition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConditionsTemp.EventCondition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionsTemp.EventCondition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eventCondition.Deserialize(value["EventCondition"]);

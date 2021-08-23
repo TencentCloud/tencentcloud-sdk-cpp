@@ -53,28 +53,28 @@ namespace TencentCloud
                 ApeClient(const Credential &credential, const std::string &region);
                 ApeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::BatchDescribeOrderCertificateResponse> BatchDescribeOrderCertificateOutcome;
+                typedef Outcome<Core::Error, Model::BatchDescribeOrderCertificateResponse> BatchDescribeOrderCertificateOutcome;
                 typedef std::future<BatchDescribeOrderCertificateOutcome> BatchDescribeOrderCertificateOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::BatchDescribeOrderCertificateRequest&, BatchDescribeOrderCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeOrderCertificateAsyncHandler;
-                typedef Outcome<Error, Model::BatchDescribeOrderImageResponse> BatchDescribeOrderImageOutcome;
+                typedef Outcome<Core::Error, Model::BatchDescribeOrderImageResponse> BatchDescribeOrderImageOutcome;
                 typedef std::future<BatchDescribeOrderImageOutcome> BatchDescribeOrderImageOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::BatchDescribeOrderImageRequest&, BatchDescribeOrderImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeOrderImageAsyncHandler;
-                typedef Outcome<Error, Model::CreateOrderAndDownloadsResponse> CreateOrderAndDownloadsOutcome;
+                typedef Outcome<Core::Error, Model::CreateOrderAndDownloadsResponse> CreateOrderAndDownloadsOutcome;
                 typedef std::future<CreateOrderAndDownloadsOutcome> CreateOrderAndDownloadsOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::CreateOrderAndDownloadsRequest&, CreateOrderAndDownloadsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAndDownloadsAsyncHandler;
-                typedef Outcome<Error, Model::CreateOrderAndPayResponse> CreateOrderAndPayOutcome;
+                typedef Outcome<Core::Error, Model::CreateOrderAndPayResponse> CreateOrderAndPayOutcome;
                 typedef std::future<CreateOrderAndPayOutcome> CreateOrderAndPayOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::CreateOrderAndPayRequest&, CreateOrderAndPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAndPayAsyncHandler;
-                typedef Outcome<Error, Model::DescribeAuthUsersResponse> DescribeAuthUsersOutcome;
+                typedef Outcome<Core::Error, Model::DescribeAuthUsersResponse> DescribeAuthUsersOutcome;
                 typedef std::future<DescribeAuthUsersOutcome> DescribeAuthUsersOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::DescribeAuthUsersRequest&, DescribeAuthUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthUsersAsyncHandler;
-                typedef Outcome<Error, Model::DescribeDownloadInfosResponse> DescribeDownloadInfosOutcome;
+                typedef Outcome<Core::Error, Model::DescribeDownloadInfosResponse> DescribeDownloadInfosOutcome;
                 typedef std::future<DescribeDownloadInfosOutcome> DescribeDownloadInfosOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::DescribeDownloadInfosRequest&, DescribeDownloadInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadInfosAsyncHandler;
-                typedef Outcome<Error, Model::DescribeImageResponse> DescribeImageOutcome;
+                typedef Outcome<Core::Error, Model::DescribeImageResponse> DescribeImageOutcome;
                 typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::DescribeImageRequest&, DescribeImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
-                typedef Outcome<Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
+                typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const ApeClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
 

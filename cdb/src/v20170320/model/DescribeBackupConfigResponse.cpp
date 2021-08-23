@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     {
         if (!rsp["StartTimeMin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StartTimeMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTimeMin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeMin = rsp["StartTimeMin"].GetInt64();
         m_startTimeMinHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     {
         if (!rsp["StartTimeMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StartTimeMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StartTimeMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeMax = rsp["StartTimeMax"].GetInt64();
         m_startTimeMaxHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     {
         if (!rsp["BackupExpireDays"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupExpireDays` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupExpireDays` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_backupExpireDays = rsp["BackupExpireDays"].GetInt64();
         m_backupExpireDaysHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     {
         if (!rsp["BackupMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupMethod = string(rsp["BackupMethod"].GetString());
         m_backupMethodHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     {
         if (!rsp["BinlogExpireDays"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BinlogExpireDays` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BinlogExpireDays` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_binlogExpireDays = rsp["BinlogExpireDays"].GetInt64();
         m_binlogExpireDaysHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     {
         if (!rsp["BackupTimeWindow"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BackupTimeWindow` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupTimeWindow` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_backupTimeWindow.Deserialize(rsp["BackupTimeWindow"]);

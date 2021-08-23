@@ -37,7 +37,7 @@ CoreInternalOutcome ScoreDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IssueType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScoreDetail.IssueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreDetail.IssueType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueType = string(value["IssueType"].GetString());
         m_issueTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ScoreDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreLost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScoreDetail.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreDetail.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scoreLost = value["ScoreLost"].GetInt64();
         m_scoreLostHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ScoreDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreLostMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScoreDetail.ScoreLostMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScoreDetail.ScoreLostMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scoreLostMax = value["ScoreLostMax"].GetInt64();
         m_scoreLostMaxHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ScoreDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Items") && !value["Items"].IsNull())
     {
         if (!value["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `ScoreDetail.Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScoreDetail.Items` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome TeacherOutScreenResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Class"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeacherOutScreenResult.Class` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeacherOutScreenResult.Class` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_class = string(value["Class"].GetString());
         m_classHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TeacherOutScreenResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TeacherOutScreenResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeacherOutScreenResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TeacherOutScreenResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TeacherOutScreenResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeacherOutScreenResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TeacherOutScreenResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Top"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TeacherOutScreenResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeacherOutScreenResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_top = value["Top"].GetInt64();
         m_topHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TeacherOutScreenResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TeacherOutScreenResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeacherOutScreenResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

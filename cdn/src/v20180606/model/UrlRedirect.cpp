@@ -35,7 +35,7 @@ CoreInternalOutcome UrlRedirect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRedirect.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRedirect.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome UrlRedirect::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PathRules") && !value["PathRules"].IsNull())
     {
         if (!value["PathRules"].IsArray())
-            return CoreInternalOutcome(Error("response `UrlRedirect.PathRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UrlRedirect.PathRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PathRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

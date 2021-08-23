@@ -39,7 +39,7 @@ CoreInternalOutcome AudioMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioMaterial.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioMaterial.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome AudioMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaterialUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioMaterial.MaterialUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioMaterial.MaterialUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialUrl = string(value["MaterialUrl"].GetString());
         m_materialUrlHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AudioMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioMaterial.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioMaterial.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome AudioMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaterialStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioMaterial.MaterialStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioMaterial.MaterialStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_materialStatus.Deserialize(value["MaterialStatus"]);
@@ -93,7 +93,7 @@ CoreInternalOutcome AudioMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioMaterial.OriginalUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioMaterial.OriginalUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originalUrl = string(value["OriginalUrl"].GetString());
         m_originalUrlHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome AudioMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VodFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioMaterial.VodFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vodFileId = string(value["VodFileId"].GetString());
         m_vodFileIdHasBeenSet = true;

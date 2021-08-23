@@ -39,7 +39,7 @@ CoreInternalOutcome BodyAttributeInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Age"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyAttributeInfo.Age` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyAttributeInfo.Age` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_age.Deserialize(value["Age"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome BodyAttributeInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Bag"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyAttributeInfo.Bag` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyAttributeInfo.Bag` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bag.Deserialize(value["Bag"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome BodyAttributeInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Gender"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyAttributeInfo.Gender` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyAttributeInfo.Gender` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gender.Deserialize(value["Gender"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome BodyAttributeInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Orientation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyAttributeInfo.Orientation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyAttributeInfo.Orientation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_orientation.Deserialize(value["Orientation"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome BodyAttributeInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpperBodyCloth"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyAttributeInfo.UpperBodyCloth` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyAttributeInfo.UpperBodyCloth` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_upperBodyCloth.Deserialize(value["UpperBodyCloth"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome BodyAttributeInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["LowerBodyCloth"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyAttributeInfo.LowerBodyCloth` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyAttributeInfo.LowerBodyCloth` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_lowerBodyCloth.Deserialize(value["LowerBodyCloth"]);

@@ -38,7 +38,7 @@ CoreInternalOutcome PriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tld"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PriceInfo.Tld` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceInfo.Tld` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tld = string(value["Tld"].GetString());
         m_tldHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Year"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PriceInfo.Year` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceInfo.Year` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_year = value["Year"].GetUint64();
         m_yearHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PriceInfo.Price` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceInfo.Price` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetUint64();
         m_priceHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome PriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealPrice"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PriceInfo.RealPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceInfo.RealPrice` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realPrice = value["RealPrice"].GetUint64();
         m_realPriceHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome PriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PriceInfo.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PriceInfo.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;

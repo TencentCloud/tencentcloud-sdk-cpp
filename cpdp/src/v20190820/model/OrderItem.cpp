@@ -42,7 +42,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AmountHasTax"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.AmountHasTax` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.AmountHasTax` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_amountHasTax = value["AmountHasTax"].GetDouble();
         m_amountHasTaxHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Discount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Models"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Models` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Models` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_models = string(value["Models"].GetString());
         m_modelsHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.Price` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.Price` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetDouble();
         m_priceHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome OrderItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaxCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderItem.TaxCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderItem.TaxCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxCode = string(value["TaxCode"].GetString());
         m_taxCodeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome InstanceDataDiskMountSetting::Deserialize(const rapidjson::V
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceDataDiskMountSetting.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceDataDiskMountSetting.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceDataDiskMountSetting::Deserialize(const rapidjson::V
     if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
     {
         if (!value["DataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceDataDiskMountSetting.DataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceDataDiskMountSetting.DataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome InstanceDataDiskMountSetting::Deserialize(const rapidjson::V
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceDataDiskMountSetting.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceDataDiskMountSetting.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

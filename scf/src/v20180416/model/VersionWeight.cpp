@@ -35,7 +35,7 @@ CoreInternalOutcome VersionWeight::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VersionWeight.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionWeight.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VersionWeight::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VersionWeight.Weight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VersionWeight.Weight` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetDouble();
         m_weightHasBeenSet = true;

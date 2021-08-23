@@ -43,7 +43,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_materialId = string(value["MaterialId"].GetString());
         m_materialIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaterialStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.MaterialStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.MaterialStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_materialStatus = value["MaterialStatus"].GetInt64();
         m_materialStatusHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["BlendParamPtu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.BlendParamPtu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.BlendParamPtu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blendParamPtu = value["BlendParamPtu"].GetInt64();
         m_blendParamPtuHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["PositionParamPtu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.PositionParamPtu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.PositionParamPtu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_positionParamPtu = value["PositionParamPtu"].GetInt64();
         m_positionParamPtuHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["BlendParamYoutu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.BlendParamYoutu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.BlendParamYoutu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_blendParamYoutu = value["BlendParamYoutu"].GetInt64();
         m_blendParamYoutuHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["PositionParamYoutu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.PositionParamYoutu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.PositionParamYoutu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_positionParamYoutu = value["PositionParamYoutu"].GetInt64();
         m_positionParamYoutuHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
     if (value.HasMember("MaterialFaceList") && !value["MaterialFaceList"].IsNull())
     {
         if (!value["MaterialFaceList"].IsArray())
-            return CoreInternalOutcome(Error("response `PublicMaterialInfos.MaterialFaceList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.MaterialFaceList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MaterialFaceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

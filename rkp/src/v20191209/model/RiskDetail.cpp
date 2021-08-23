@@ -35,7 +35,7 @@ CoreInternalOutcome RiskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RiskDetail.RiskCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDetail.RiskCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_riskCode = value["RiskCode"].GetInt64();
         m_riskCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RiskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskCodeValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RiskDetail.RiskCodeValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDetail.RiskCodeValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_riskCodeValue = string(value["RiskCodeValue"].GetString());
         m_riskCodeValueHasBeenSet = true;

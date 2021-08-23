@@ -37,7 +37,7 @@ CoreInternalOutcome MigrationStep::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StepNo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrationStep.StepNo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationStep.StepNo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepNo = value["StepNo"].GetInt64();
         m_stepNoHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MigrationStep::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StepName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrationStep.StepName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationStep.StepName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepName = string(value["StepName"].GetString());
         m_stepNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MigrationStep::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StepId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MigrationStep.StepId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationStep.StepId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stepId = string(value["StepId"].GetString());
         m_stepIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome MigrationStep::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrationStep.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationStep.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome InputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputDataConfig.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputDataConfig.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelName = string(value["ChannelName"].GetString());
         m_channelNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataSource"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputDataConfig.DataSource` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputDataConfig.DataSource` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_dataSource.Deserialize(value["DataSource"]);
@@ -64,7 +64,7 @@ CoreInternalOutcome InputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputDataConfig.InputMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputDataConfig.InputMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputMode = string(value["InputMode"].GetString());
         m_inputModeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome InputDataConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputDataConfig.ContentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputDataConfig.ContentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contentType = string(value["ContentType"].GetString());
         m_contentTypeHasBeenSet = true;

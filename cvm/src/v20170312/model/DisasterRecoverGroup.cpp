@@ -40,7 +40,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["DisasterRecoverGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.DisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.DisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_disasterRecoverGroupId = string(value["DisasterRecoverGroupId"].GetString());
         m_disasterRecoverGroupIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["CvmQuotaTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.CvmQuotaTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.CvmQuotaTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cvmQuotaTotal = value["CvmQuotaTotal"].GetInt64();
         m_cvmQuotaTotalHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["CurrentNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentNum = value["CurrentNum"].GetInt64();
         m_currentNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     if (value.HasMember("InstanceIds") && !value["InstanceIds"].IsNull())
     {
         if (!value["InstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.InstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.InstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

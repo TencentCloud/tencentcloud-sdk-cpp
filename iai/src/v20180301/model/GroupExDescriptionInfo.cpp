@@ -35,7 +35,7 @@ CoreInternalOutcome GroupExDescriptionInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["GroupExDescriptionIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupExDescriptionInfo.GroupExDescriptionIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupExDescriptionInfo.GroupExDescriptionIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupExDescriptionIndex = value["GroupExDescriptionIndex"].GetUint64();
         m_groupExDescriptionIndexHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GroupExDescriptionInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["GroupExDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupExDescriptionInfo.GroupExDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupExDescriptionInfo.GroupExDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupExDescription = string(value["GroupExDescription"].GetString());
         m_groupExDescriptionHasBeenSet = true;

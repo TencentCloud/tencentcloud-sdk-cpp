@@ -41,7 +41,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.ID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.ID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iD = string(value["ID"].GetString());
         m_iDHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DB"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.DB` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.DB` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dB = string(value["DB"].GetString());
         m_dBHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Command"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.Command` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.Command` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_command = string(value["Command"].GetString());
         m_commandHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Info"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MySqlProcess.Info` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.Info` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_info = string(value["Info"].GetString());
         m_infoHasBeenSet = true;

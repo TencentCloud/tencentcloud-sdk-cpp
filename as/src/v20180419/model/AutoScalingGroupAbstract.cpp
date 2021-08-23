@@ -35,7 +35,7 @@ CoreInternalOutcome AutoScalingGroupAbstract::Deserialize(const rapidjson::Value
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoScalingGroupAbstract.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroupAbstract.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AutoScalingGroupAbstract::Deserialize(const rapidjson::Value
     {
         if (!value["AutoScalingGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutoScalingGroupAbstract.AutoScalingGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroupAbstract.AutoScalingGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupName = string(value["AutoScalingGroupName"].GetString());
         m_autoScalingGroupNameHasBeenSet = true;

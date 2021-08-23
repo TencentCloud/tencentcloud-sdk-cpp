@@ -42,7 +42,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["SubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subDomain = string(value["SubDomain"].GetString());
         m_subDomainHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["RecordType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.RecordType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.RecordType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordType = string(value["RecordType"].GetString());
         m_recordTypeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["RecordLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordLine = string(value["RecordLine"].GetString());
         m_recordLineHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome CreateDomainBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateDomainBatchRecord.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateDomainBatchRecord.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;

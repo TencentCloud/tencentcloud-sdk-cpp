@@ -37,7 +37,7 @@ CoreInternalOutcome NumberFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InitialValue"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NumberFormat.InitialValue` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NumberFormat.InitialValue` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_initialValue = value["InitialValue"].GetUint64();
         m_initialValueHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome NumberFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Increment"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NumberFormat.Increment` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NumberFormat.Increment` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_increment = value["Increment"].GetUint64();
         m_incrementHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome NumberFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinLength"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NumberFormat.MinLength` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NumberFormat.MinLength` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minLength = value["MinLength"].GetUint64();
         m_minLengthHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NumberFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlaceHolder"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NumberFormat.PlaceHolder` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NumberFormat.PlaceHolder` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_placeHolder = string(value["PlaceHolder"].GetString());
         m_placeHolderHasBeenSet = true;

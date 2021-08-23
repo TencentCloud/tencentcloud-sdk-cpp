@@ -35,7 +35,7 @@ CoreInternalOutcome QueryExchangerateResult::Deserialize(const rapidjson::Value 
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryExchangerateResult.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateResult.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome QueryExchangerateResult::Deserialize(const rapidjson::Value 
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `QueryExchangerateResult.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QueryExchangerateResult.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

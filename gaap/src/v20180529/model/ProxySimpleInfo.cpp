@@ -36,7 +36,7 @@ CoreInternalOutcome ProxySimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxySimpleInfo.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxySimpleInfo.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyId = string(value["ProxyId"].GetString());
         m_proxyIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ProxySimpleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxySimpleInfo.ProxyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxySimpleInfo.ProxyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyName = string(value["ProxyName"].GetString());
         m_proxyNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ProxySimpleInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ListenerList") && !value["ListenerList"].IsNull())
     {
         if (!value["ListenerList"].IsArray())
-            return CoreInternalOutcome(Error("response `ProxySimpleInfo.ListenerList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProxySimpleInfo.ListenerList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ListenerList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

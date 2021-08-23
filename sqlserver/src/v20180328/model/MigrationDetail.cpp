@@ -37,7 +37,7 @@ CoreInternalOutcome MigrationDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StepAll"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrationDetail.StepAll` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationDetail.StepAll` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepAll = value["StepAll"].GetInt64();
         m_stepAllHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MigrationDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StepNow"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrationDetail.StepNow` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationDetail.StepNow` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepNow = value["StepNow"].GetInt64();
         m_stepNowHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MigrationDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MigrationDetail.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MigrationDetail.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome MigrationDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StepInfo") && !value["StepInfo"].IsNull())
     {
         if (!value["StepInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `MigrationDetail.StepInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MigrationDetail.StepInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StepInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

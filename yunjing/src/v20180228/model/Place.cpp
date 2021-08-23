@@ -36,7 +36,7 @@ CoreInternalOutcome Place::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CityId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Place.CityId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Place.CityId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cityId = value["CityId"].GetUint64();
         m_cityIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Place::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Place.ProvinceId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Place.ProvinceId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_provinceId = value["ProvinceId"].GetUint64();
         m_provinceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Place::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CountryId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Place.CountryId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Place.CountryId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_countryId = value["CountryId"].GetUint64();
         m_countryIdHasBeenSet = true;

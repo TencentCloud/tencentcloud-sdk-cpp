@@ -33,7 +33,7 @@ CoreInternalOutcome InputKolBspData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataList") && !value["DataList"].IsNull())
     {
         if (!value["DataList"].IsArray())
-            return CoreInternalOutcome(Error("response `InputKolBspData.DataList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InputKolBspData.DataList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome BlueprintPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalBlueprintPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BlueprintPrice.OriginalBlueprintPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintPrice.OriginalBlueprintPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalBlueprintPrice = value["OriginalBlueprintPrice"].GetDouble();
         m_originalBlueprintPriceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BlueprintPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginalPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BlueprintPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintPrice.OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalPrice = value["OriginalPrice"].GetDouble();
         m_originalPriceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BlueprintPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Discount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BlueprintPrice.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintPrice.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_discount = value["Discount"].GetInt64();
         m_discountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BlueprintPrice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiscountPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BlueprintPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintPrice.DiscountPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountPrice = value["DiscountPrice"].GetDouble();
         m_discountPriceHasBeenSet = true;

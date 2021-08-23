@@ -51,25 +51,25 @@ namespace TencentCloud
                 MgobeClient(const Credential &credential, const std::string &region);
                 MgobeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ChangeRoomPlayerProfileResponse> ChangeRoomPlayerProfileOutcome;
+                typedef Outcome<Core::Error, Model::ChangeRoomPlayerProfileResponse> ChangeRoomPlayerProfileOutcome;
                 typedef std::future<ChangeRoomPlayerProfileOutcome> ChangeRoomPlayerProfileOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::ChangeRoomPlayerProfileRequest&, ChangeRoomPlayerProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeRoomPlayerProfileAsyncHandler;
-                typedef Outcome<Error, Model::ChangeRoomPlayerStatusResponse> ChangeRoomPlayerStatusOutcome;
+                typedef Outcome<Core::Error, Model::ChangeRoomPlayerStatusResponse> ChangeRoomPlayerStatusOutcome;
                 typedef std::future<ChangeRoomPlayerStatusOutcome> ChangeRoomPlayerStatusOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::ChangeRoomPlayerStatusRequest&, ChangeRoomPlayerStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeRoomPlayerStatusAsyncHandler;
-                typedef Outcome<Error, Model::DescribePlayerResponse> DescribePlayerOutcome;
+                typedef Outcome<Core::Error, Model::DescribePlayerResponse> DescribePlayerOutcome;
                 typedef std::future<DescribePlayerOutcome> DescribePlayerOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::DescribePlayerRequest&, DescribePlayerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayerAsyncHandler;
-                typedef Outcome<Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
+                typedef Outcome<Core::Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
                 typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
-                typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
+                typedef Outcome<Core::Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
-                typedef Outcome<Error, Model::ModifyRoomResponse> ModifyRoomOutcome;
+                typedef Outcome<Core::Error, Model::ModifyRoomResponse> ModifyRoomOutcome;
                 typedef std::future<ModifyRoomOutcome> ModifyRoomOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::ModifyRoomRequest&, ModifyRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomAsyncHandler;
-                typedef Outcome<Error, Model::RemoveRoomPlayerResponse> RemoveRoomPlayerOutcome;
+                typedef Outcome<Core::Error, Model::RemoveRoomPlayerResponse> RemoveRoomPlayerOutcome;
                 typedef std::future<RemoveRoomPlayerOutcome> RemoveRoomPlayerOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::RemoveRoomPlayerRequest&, RemoveRoomPlayerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveRoomPlayerAsyncHandler;
 

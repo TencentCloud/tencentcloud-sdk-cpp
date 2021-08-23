@@ -36,7 +36,7 @@ CoreInternalOutcome FilterRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FilterRuleInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FilterRuleInfo.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FilterRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Regex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FilterRuleInfo.Regex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FilterRuleInfo.Regex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regex = string(value["Regex"].GetString());
         m_regexHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FilterRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FilterRuleInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FilterRuleInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

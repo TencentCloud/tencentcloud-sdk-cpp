@@ -35,7 +35,7 @@ CoreInternalOutcome DetectedWords::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DetectedWords.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectedWords.Confidence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetInt64();
         m_confidenceHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DetectedWords::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Character"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectedWords.Character` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectedWords.Character` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_character = string(value["Character"].GetString());
         m_characterHasBeenSet = true;

@@ -33,7 +33,7 @@ CoreInternalOutcome LogoDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AppLogoDetail") && !value["AppLogoDetail"].IsNull())
     {
         if (!value["AppLogoDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `LogoDetail.AppLogoDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LogoDetail.AppLogoDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AppLogoDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

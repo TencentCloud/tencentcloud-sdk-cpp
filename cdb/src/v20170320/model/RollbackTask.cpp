@@ -39,7 +39,7 @@ CoreInternalOutcome RollbackTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Info"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTask.Info` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTask.Info` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_info = string(value["Info"].GetString());
         m_infoHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RollbackTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RollbackTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RollbackTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RollbackTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTask.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RollbackTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTask.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome RollbackTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Detail") && !value["Detail"].IsNull())
     {
         if (!value["Detail"].IsArray())
-            return CoreInternalOutcome(Error("response `RollbackTask.Detail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RollbackTask.Detail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Detail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

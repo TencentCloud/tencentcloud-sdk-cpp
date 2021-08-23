@@ -37,7 +37,7 @@ CoreInternalOutcome TasksInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TasksInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TasksInfo.TaskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskType = string(value["TaskType"].GetString());
         m_taskTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TasksInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailureTolerance"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TasksInfo.FailureTolerance` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TasksInfo.FailureTolerance` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failureTolerance = string(value["FailureTolerance"].GetString());
         m_failureToleranceHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TasksInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SQL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TasksInfo.SQL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TasksInfo.SQL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sQL = string(value["SQL"].GetString());
         m_sQLHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome TasksInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Config") && !value["Config"].IsNull())
     {
         if (!value["Config"].IsArray())
-            return CoreInternalOutcome(Error("response `TasksInfo.Config` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TasksInfo.Config` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Config"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

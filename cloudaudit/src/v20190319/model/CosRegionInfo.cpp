@@ -35,7 +35,7 @@ CoreInternalOutcome CosRegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosRegionInfo.CosRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosRegionInfo.CosRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosRegion = string(value["CosRegion"].GetString());
         m_cosRegionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CosRegionInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosRegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosRegionInfo.CosRegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosRegionInfo.CosRegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosRegionName = string(value["CosRegionName"].GetString());
         m_cosRegionNameHasBeenSet = true;

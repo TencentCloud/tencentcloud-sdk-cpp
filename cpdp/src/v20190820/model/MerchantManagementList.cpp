@@ -37,7 +37,7 @@ CoreInternalOutcome MerchantManagementList::Deserialize(const rapidjson::Value &
     {
         if (!value["TaxpayerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantManagementList.TaxpayerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantManagementList.TaxpayerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxpayerName = string(value["TaxpayerName"].GetString());
         m_taxpayerNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MerchantManagementList::Deserialize(const rapidjson::Value &
     {
         if (!value["TaxpayerNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantManagementList.TaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantManagementList.TaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxpayerNum = string(value["TaxpayerNum"].GetString());
         m_taxpayerNumHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MerchantManagementList::Deserialize(const rapidjson::Value &
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MerchantManagementList.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantManagementList.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome MerchantManagementList::Deserialize(const rapidjson::Value &
     {
         if (!value["InvoicePlatformId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MerchantManagementList.InvoicePlatformId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MerchantManagementList.InvoicePlatformId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_invoicePlatformId = value["InvoicePlatformId"].GetInt64();
         m_invoicePlatformIdHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome TextEduPaper::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Item"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextEduPaper.Item` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextEduPaper.Item` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_item = string(value["Item"].GetString());
         m_itemHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TextEduPaper::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectedText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextEduPaper.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextEduPaper.DetectedText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detectedText = string(value["DetectedText"].GetString());
         m_detectedTextHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TextEduPaper::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Itemcoord"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextEduPaper.Itemcoord` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextEduPaper.Itemcoord` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_itemcoord.Deserialize(value["Itemcoord"]);

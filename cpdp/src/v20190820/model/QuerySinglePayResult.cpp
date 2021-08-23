@@ -37,7 +37,7 @@ CoreInternalOutcome QuerySinglePayResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["HandleStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayResult.HandleStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayResult.HandleStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_handleStatus = string(value["HandleStatus"].GetString());
         m_handleStatusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QuerySinglePayResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["HandleMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayResult.HandleMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayResult.HandleMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_handleMsg = string(value["HandleMsg"].GetString());
         m_handleMsgHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QuerySinglePayResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuerySinglePayResult.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayResult.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome QuerySinglePayResult::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Items") && !value["Items"].IsNull())
     {
         if (!value["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `QuerySinglePayResult.Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QuerySinglePayResult.Items` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

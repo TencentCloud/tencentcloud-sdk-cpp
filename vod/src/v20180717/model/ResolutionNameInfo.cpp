@@ -35,7 +35,7 @@ CoreInternalOutcome ResolutionNameInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MinEdgeLength"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResolutionNameInfo.MinEdgeLength` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResolutionNameInfo.MinEdgeLength` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minEdgeLength = value["MinEdgeLength"].GetUint64();
         m_minEdgeLengthHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResolutionNameInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResolutionNameInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResolutionNameInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

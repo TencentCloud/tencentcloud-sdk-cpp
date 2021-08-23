@@ -39,7 +39,7 @@ CoreInternalOutcome StackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StackId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackInfo.StackId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackInfo.StackId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stackId = string(value["StackId"].GetString());
         m_stackIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome StackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StackName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackInfo.StackName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackInfo.StackName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stackName = string(value["StackName"].GetString());
         m_stackNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome StackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome StackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome StackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome StackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StackInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StackInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

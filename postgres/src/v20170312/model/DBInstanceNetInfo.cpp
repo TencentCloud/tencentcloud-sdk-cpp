@@ -38,7 +38,7 @@ CoreInternalOutcome DBInstanceNetInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstanceNetInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstanceNetInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DBInstanceNetInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstanceNetInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstanceNetInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DBInstanceNetInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DBInstanceNetInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstanceNetInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DBInstanceNetInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["NetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstanceNetInfo.NetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstanceNetInfo.NetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_netType = string(value["NetType"].GetString());
         m_netTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DBInstanceNetInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBInstanceNetInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBInstanceNetInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

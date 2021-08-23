@@ -38,7 +38,7 @@ CoreInternalOutcome DDoSAttackSourceRecord::Deserialize(const rapidjson::Value &
     {
         if (!value["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSAttackSourceRecord.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSAttackSourceRecord.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(value["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DDoSAttackSourceRecord::Deserialize(const rapidjson::Value &
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSAttackSourceRecord.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSAttackSourceRecord.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DDoSAttackSourceRecord::Deserialize(const rapidjson::Value &
     {
         if (!value["Nation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSAttackSourceRecord.Nation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSAttackSourceRecord.Nation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nation = string(value["Nation"].GetString());
         m_nationHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DDoSAttackSourceRecord::Deserialize(const rapidjson::Value &
     {
         if (!value["PacketSum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSAttackSourceRecord.PacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSAttackSourceRecord.PacketSum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packetSum = value["PacketSum"].GetUint64();
         m_packetSumHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DDoSAttackSourceRecord::Deserialize(const rapidjson::Value &
     {
         if (!value["PacketLen"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSAttackSourceRecord.PacketLen` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSAttackSourceRecord.PacketLen` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_packetLen = value["PacketLen"].GetUint64();
         m_packetLenHasBeenSet = true;

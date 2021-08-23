@@ -41,7 +41,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSamplePerson.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSamplePerson.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSamplePerson.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FaceInfoSet") && !value["FaceInfoSet"].IsNull())
     {
         if (!value["FaceInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSamplePerson.FaceInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.FaceInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -90,7 +90,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSamplePerson.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UsageSet") && !value["UsageSet"].IsNull())
     {
         if (!value["UsageSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSamplePerson.UsageSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.UsageSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UsageSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -117,7 +117,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSamplePerson.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome AiSamplePerson::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSamplePerson.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSamplePerson.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome FailedTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailedTaskInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailedTaskInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FailedTaskInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailedTaskInfo.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailedTaskInfo.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMsg = string(value["ErrorMsg"].GetString());
         m_errorMsgHasBeenSet = true;

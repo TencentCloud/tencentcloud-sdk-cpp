@@ -43,7 +43,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PsaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.PsaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.PsaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_psaId = string(value["PsaId"].GetString());
         m_psaIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PsaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.PsaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.PsaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_psaName = string(value["PsaName"].GetString());
         m_psaNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.TagCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.TagCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tagCount = value["TagCount"].GetUint64();
         m_tagCountHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepairCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.RepairCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.RepairCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_repairCount = value["RepairCount"].GetUint64();
         m_repairCountHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepairLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.RepairLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.RepairLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_repairLimit = value["RepairLimit"].GetUint64();
         m_repairLimitHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PsaDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PsaRegulation.PsaDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.PsaDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_psaDescription = string(value["PsaDescription"].GetString());
         m_psaDescriptionHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `PsaRegulation.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -142,7 +142,7 @@ CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TaskTypeIds") && !value["TaskTypeIds"].IsNull())
     {
         if (!value["TaskTypeIds"].IsArray())
-            return CoreInternalOutcome(Error("response `PsaRegulation.TaskTypeIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PsaRegulation.TaskTypeIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TaskTypeIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

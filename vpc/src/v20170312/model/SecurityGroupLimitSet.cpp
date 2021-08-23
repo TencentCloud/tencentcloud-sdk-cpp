@@ -38,7 +38,7 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["SecurityGroupLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupLimitSet.SecurityGroupLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.SecurityGroupLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupLimit = value["SecurityGroupLimit"].GetUint64();
         m_securityGroupLimitHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["SecurityGroupPolicyLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupLimitSet.SecurityGroupPolicyLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.SecurityGroupPolicyLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupPolicyLimit = value["SecurityGroupPolicyLimit"].GetUint64();
         m_securityGroupPolicyLimitHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["ReferedSecurityGroupLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupLimitSet.ReferedSecurityGroupLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.ReferedSecurityGroupLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_referedSecurityGroupLimit = value["ReferedSecurityGroupLimit"].GetUint64();
         m_referedSecurityGroupLimitHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["SecurityGroupInstanceLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupLimitSet.SecurityGroupInstanceLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.SecurityGroupInstanceLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_securityGroupInstanceLimit = value["SecurityGroupInstanceLimit"].GetUint64();
         m_securityGroupInstanceLimitHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceSecurityGroupLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupLimitSet.InstanceSecurityGroupLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.InstanceSecurityGroupLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceSecurityGroupLimit = value["InstanceSecurityGroupLimit"].GetUint64();
         m_instanceSecurityGroupLimitHasBeenSet = true;

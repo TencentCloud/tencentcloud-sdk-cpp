@@ -34,7 +34,7 @@ CoreInternalOutcome EsAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BlackIpList") && !value["BlackIpList"].IsNull())
     {
         if (!value["BlackIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `EsAcl.BlackIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EsAcl.BlackIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BlackIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome EsAcl::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WhiteIpList") && !value["WhiteIpList"].IsNull())
     {
         if (!value["WhiteIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `EsAcl.WhiteIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EsAcl.WhiteIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WhiteIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

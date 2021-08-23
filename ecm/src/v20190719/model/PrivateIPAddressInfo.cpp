@@ -34,7 +34,7 @@ CoreInternalOutcome PrivateIPAddressInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["PrivateIPAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateIPAddressInfo.PrivateIPAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateIPAddressInfo.PrivateIPAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIPAddress = string(value["PrivateIPAddress"].GetString());
         m_privateIPAddressHasBeenSet = true;

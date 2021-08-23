@@ -37,7 +37,7 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanResultInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScanInfo.ScanResultInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanResultInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_scanResultInfo.Deserialize(value["ScanResultInfo"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScanInfo.ScanStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scanStatus = value["ScanStatus"].GetInt64();
         m_scanStatusHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanPercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ScanInfo.ScanPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_scanPercent = value["ScanPercent"].GetDouble();
         m_scanPercentHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScanTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanInfo.ScanTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scanTime = string(value["ScanTime"].GetString());
         m_scanTimeHasBeenSet = true;

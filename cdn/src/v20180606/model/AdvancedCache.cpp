@@ -35,7 +35,7 @@ CoreInternalOutcome AdvancedCache::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CacheRules") && !value["CacheRules"].IsNull())
     {
         if (!value["CacheRules"].IsArray())
-            return CoreInternalOutcome(Error("response `AdvancedCache.CacheRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AdvancedCache.CacheRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CacheRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome AdvancedCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreCacheControl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedCache.IgnoreCacheControl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedCache.IgnoreCacheControl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreCacheControl = string(value["IgnoreCacheControl"].GetString());
         m_ignoreCacheControlHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AdvancedCache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IgnoreSetCookie"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdvancedCache.IgnoreSetCookie` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdvancedCache.IgnoreSetCookie` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ignoreSetCookie = string(value["IgnoreSetCookie"].GetString());
         m_ignoreSetCookieHasBeenSet = true;

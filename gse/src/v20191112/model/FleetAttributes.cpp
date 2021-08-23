@@ -54,7 +54,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.AssetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.AssetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_assetId = string(value["AssetId"].GetString());
         m_assetIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetArn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.FleetArn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.FleetArn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetArn = string(value["FleetArn"].GetString());
         m_fleetArnHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.FleetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.FleetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetType = string(value["FleetType"].GetString());
         m_fleetTypeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewGameServerSessionProtectionPolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.NewGameServerSessionProtectionPolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.NewGameServerSessionProtectionPolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newGameServerSessionProtectionPolicy = string(value["NewGameServerSessionProtectionPolicy"].GetString());
         m_newGameServerSessionProtectionPolicyHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperatingSystem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.OperatingSystem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.OperatingSystem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operatingSystem = string(value["OperatingSystem"].GetString());
         m_operatingSystemHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceCreationLimitPolicy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.ResourceCreationLimitPolicy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.ResourceCreationLimitPolicy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resourceCreationLimitPolicy.Deserialize(value["ResourceCreationLimitPolicy"]);
@@ -171,7 +171,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("StoppedActions") && !value["StoppedActions"].IsNull())
     {
         if (!value["StoppedActions"].IsArray())
-            return CoreInternalOutcome(Error("response `FleetAttributes.StoppedActions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.StoppedActions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["StoppedActions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -194,7 +194,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TerminationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.TerminationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.TerminationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_terminationTime = string(value["TerminationTime"].GetString());
         m_terminationTimeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GameServerSessionProtectionTimeLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.GameServerSessionProtectionTimeLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.GameServerSessionProtectionTimeLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gameServerSessionProtectionTimeLimit = value["GameServerSessionProtectionTimeLimit"].GetUint64();
         m_gameServerSessionProtectionTimeLimitHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BillingStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.BillingStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.BillingStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billingStatus = string(value["BillingStatus"].GetString());
         m_billingStatusHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `FleetAttributes.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -243,7 +243,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DataDiskInfo") && !value["DataDiskInfo"].IsNull())
     {
         if (!value["DataDiskInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `FleetAttributes.DataDiskInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.DataDiskInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataDiskInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -264,7 +264,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SystemDiskInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.SystemDiskInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.SystemDiskInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_systemDiskInfo.Deserialize(value["SystemDiskInfo"]);
@@ -280,7 +280,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RelatedCcnInfos") && !value["RelatedCcnInfos"].IsNull())
     {
         if (!value["RelatedCcnInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `FleetAttributes.RelatedCcnInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.RelatedCcnInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RelatedCcnInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -301,7 +301,7 @@ CoreInternalOutcome FleetAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetMaxBandwidthOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FleetAttributes.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetAttributes.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetInt64();
         m_internetMaxBandwidthOutHasBeenSet = true;

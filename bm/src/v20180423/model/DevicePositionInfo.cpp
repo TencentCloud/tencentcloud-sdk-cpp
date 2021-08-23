@@ -44,7 +44,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.LanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.LanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lanIp = string(value["LanIp"].GetString());
         m_lanIpHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RckName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.RckName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.RckName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rckName = string(value["RckName"].GetString());
         m_rckNameHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PosCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.PosCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.PosCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_posCode = value["PosCode"].GetUint64();
         m_posCodeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SwitchName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.SwitchName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.SwitchName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switchName = string(value["SwitchName"].GetString());
         m_switchNameHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeliverTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.DeliverTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.DeliverTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deliverTime = string(value["DeliverTime"].GetString());
         m_deliverTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome DevicePositionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Deadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePositionInfo.Deadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePositionInfo.Deadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadline = string(value["Deadline"].GetString());
         m_deadlineHasBeenSet = true;

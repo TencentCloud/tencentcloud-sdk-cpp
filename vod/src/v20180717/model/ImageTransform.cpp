@@ -36,7 +36,7 @@ CoreInternalOutcome ImageTransform::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageTransform.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTransform.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ImageTransform::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RotateAngle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ImageTransform.RotateAngle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTransform.RotateAngle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotateAngle = value["RotateAngle"].GetDouble();
         m_rotateAngleHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ImageTransform::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Flip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageTransform.Flip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageTransform.Flip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flip = string(value["Flip"].GetString());
         m_flipHasBeenSet = true;

@@ -48,7 +48,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["Account"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.Account` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.Account` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_account.Deserialize(value["Account"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["UserIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.UserIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userIp = string(value["UserIp"].GetString());
         m_userIpHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["PostTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.PostTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postTime = value["PostTime"].GetUint64();
         m_postTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["Sponsor"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.Sponsor` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.Sponsor` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sponsor.Deserialize(value["Sponsor"]);
@@ -102,7 +102,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["OnlineScam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.OnlineScam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.OnlineScam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_onlineScam.Deserialize(value["OnlineScam"]);
@@ -119,7 +119,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["BusinessId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.BusinessId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.BusinessId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_businessId = value["BusinessId"].GetUint64();
         m_businessIdHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["Nickname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.Nickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.Nickname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickname = string(value["Nickname"].GetString());
         m_nicknameHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["EmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emailAddress = string(value["EmailAddress"].GetString());
         m_emailAddressHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["CheckDevice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.CheckDevice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.CheckDevice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_checkDevice = value["CheckDevice"].GetInt64();
         m_checkDeviceHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["CookieHash"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.CookieHash` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.CookieHash` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cookieHash = string(value["CookieHash"].GetString());
         m_cookieHashHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["Referer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.Referer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.Referer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_referer = string(value["Referer"].GetString());
         m_refererHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["UserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAgent = string(value["UserAgent"].GetString());
         m_userAgentHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["XForwardedFor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.XForwardedFor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.XForwardedFor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xForwardedFor = string(value["XForwardedFor"].GetString());
         m_xForwardedForHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["MacAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.MacAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.MacAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_macAddress = string(value["MacAddress"].GetString());
         m_macAddressHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome InputActivityAntiRushAdvanced::Deserialize(const rapidjson::
     {
         if (!value["VendorId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputActivityAntiRushAdvanced.VendorId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputActivityAntiRushAdvanced.VendorId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vendorId = string(value["VendorId"].GetString());
         m_vendorIdHasBeenSet = true;

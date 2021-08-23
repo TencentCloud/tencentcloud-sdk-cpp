@@ -36,7 +36,7 @@ CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopDayTrafficInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopDayTrafficInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DayTrafficTotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShopDayTrafficInfo.DayTrafficTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopDayTrafficInfo.DayTrafficTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dayTrafficTotalCount = value["DayTrafficTotalCount"].GetUint64();
         m_dayTrafficTotalCountHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("GenderAgeTrafficDetailSet") && !value["GenderAgeTrafficDetailSet"].IsNull())
     {
         if (!value["GenderAgeTrafficDetailSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ShopDayTrafficInfo.GenderAgeTrafficDetailSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ShopDayTrafficInfo.GenderAgeTrafficDetailSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GenderAgeTrafficDetailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

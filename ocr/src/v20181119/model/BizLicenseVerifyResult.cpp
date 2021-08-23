@@ -36,7 +36,7 @@ CoreInternalOutcome BizLicenseVerifyResult::Deserialize(const rapidjson::Value &
     {
         if (!value["RegNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BizLicenseVerifyResult.RegNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizLicenseVerifyResult.RegNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regNum = string(value["RegNum"].GetString());
         m_regNumHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BizLicenseVerifyResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BizLicenseVerifyResult.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizLicenseVerifyResult.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BizLicenseVerifyResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BizLicenseVerifyResult.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizLicenseVerifyResult.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;

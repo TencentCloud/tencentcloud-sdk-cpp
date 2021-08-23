@@ -39,7 +39,7 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TidKeysInfo.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TidKeysInfo.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TidKeysInfo.PublicKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TidKeysInfo.PublicKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicKey = string(value["PublicKey"].GetString());
         m_publicKeyHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TidKeysInfo.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TidKeysInfo.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateKey = string(value["PrivateKey"].GetString());
         m_privateKeyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Psk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TidKeysInfo.Psk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TidKeysInfo.Psk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_psk = string(value["Psk"].GetString());
         m_pskHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TidKeysInfo.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TidKeysInfo.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadUrl = string(value["DownloadUrl"].GetString());
         m_downloadUrlHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TidKeysInfo.DeviceCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TidKeysInfo.DeviceCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceCode = string(value["DeviceCode"].GetString());
         m_deviceCodeHasBeenSet = true;

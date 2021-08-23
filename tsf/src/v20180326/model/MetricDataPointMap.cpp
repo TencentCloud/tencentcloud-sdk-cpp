@@ -35,7 +35,7 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("SumReqAmount") && !value["SumReqAmount"].IsNull())
     {
         if (!value["SumReqAmount"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricDataPointMap.SumReqAmount` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricDataPointMap.SumReqAmount` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SumReqAmount"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AvgFailureRate") && !value["AvgFailureRate"].IsNull())
     {
         if (!value["AvgFailureRate"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricDataPointMap.AvgFailureRate` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricDataPointMap.AvgFailureRate` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AvgFailureRate"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("AvgTimeCost") && !value["AvgTimeCost"].IsNull())
     {
         if (!value["AvgTimeCost"].IsArray())
-            return CoreInternalOutcome(Error("response `MetricDataPointMap.AvgTimeCost` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MetricDataPointMap.AvgTimeCost` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AvgTimeCost"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

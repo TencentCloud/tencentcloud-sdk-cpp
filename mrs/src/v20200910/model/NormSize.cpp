@@ -35,7 +35,7 @@ CoreInternalOutcome NormSize::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Number") && !value["Number"].IsNull())
     {
         if (!value["Number"].IsArray())
-            return CoreInternalOutcome(Error("response `NormSize.Number` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NormSize.Number` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Number"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome NormSize::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormSize.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormSize.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome NormSize::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormSize.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormSize.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;

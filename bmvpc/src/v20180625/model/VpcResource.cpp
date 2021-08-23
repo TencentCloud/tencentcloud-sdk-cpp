@@ -57,7 +57,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.SubnetNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.SubnetNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_subnetNum = value["SubnetNum"].GetUint64();
         m_subnetNumHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.NatNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.NatNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_natNum = value["NatNum"].GetUint64();
         m_natNumHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.MonitorFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.MonitorFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_monitorFlag = value["MonitorFlag"].GetBool();
         m_monitorFlagHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpmNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.CpmNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.CpmNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpmNum = value["CpmNum"].GetUint64();
         m_cpmNumHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LeaveIpNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.LeaveIpNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.LeaveIpNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_leaveIpNum = value["LeaveIpNum"].GetUint64();
         m_leaveIpNumHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LbNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.LbNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.LbNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lbNum = value["LbNum"].GetUint64();
         m_lbNumHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficMirrorNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.TrafficMirrorNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.TrafficMirrorNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficMirrorNum = value["TrafficMirrorNum"].GetUint64();
         m_trafficMirrorNumHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.EipNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.EipNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eipNum = value["EipNum"].GetUint64();
         m_eipNumHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlgwNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.PlgwNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.PlgwNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_plgwNum = value["PlgwNum"].GetUint64();
         m_plgwNumHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlvpNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.PlvpNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.PlvpNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_plvpNum = value["PlvpNum"].GetUint64();
         m_plvpNumHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SslVpnGwNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.SslVpnGwNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.SslVpnGwNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sslVpnGwNum = value["SslVpnGwNum"].GetUint64();
         m_sslVpnGwNumHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcPeerNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.VpcPeerNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.VpcPeerNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcPeerNum = value["VpcPeerNum"].GetUint64();
         m_vpcPeerNumHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpsecVpnGwNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.IpsecVpnGwNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.IpsecVpnGwNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ipsecVpnGwNum = value["IpsecVpnGwNum"].GetUint64();
         m_ipsecVpnGwNumHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsOld"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.IsOld` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.IsOld` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isOld = value["IsOld"].GetBool();
         m_isOldHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CcnServiceNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.CcnServiceNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.CcnServiceNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ccnServiceNum = value["CcnServiceNum"].GetUint64();
         m_ccnServiceNumHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcPeerLimitToAllRegion"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.VpcPeerLimitToAllRegion` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.VpcPeerLimitToAllRegion` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcPeerLimitToAllRegion = value["VpcPeerLimitToAllRegion"].GetUint64();
         m_vpcPeerLimitToAllRegionHasBeenSet = true;
@@ -277,7 +277,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcPeerLimitToSameRegion"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.VpcPeerLimitToSameRegion` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.VpcPeerLimitToSameRegion` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpcPeerLimitToSameRegion = value["VpcPeerLimitToSameRegion"].GetUint64();
         m_vpcPeerLimitToSameRegionHasBeenSet = true;
@@ -287,7 +287,7 @@ CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntVpcId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcResource.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcResource.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_intVpcId = value["IntVpcId"].GetUint64();
         m_intVpcIdHasBeenSet = true;

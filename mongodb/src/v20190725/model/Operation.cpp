@@ -36,7 +36,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicaSetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Operation.ReplicaSetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.ReplicaSetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetName = string(value["ReplicaSetName"].GetString());
         m_replicaSetNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Operation.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.NodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeName = string(value["NodeName"].GetString());
         m_nodeNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Operation.OpId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.OpId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_opId = value["OpId"].GetInt64();
         m_opIdHasBeenSet = true;

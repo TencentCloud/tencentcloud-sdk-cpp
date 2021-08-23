@@ -36,7 +36,7 @@ CoreInternalOutcome DetailSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailSet.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DetailSet::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DetailPoints") && !value["DetailPoints"].IsNull())
     {
         if (!value["DetailPoints"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailSet.DetailPoints` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DetailSet.DetailPoints` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DetailPoints"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome DetailSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetailSet.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetailSet.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceID = string(value["InstanceID"].GetString());
         m_instanceIDHasBeenSet = true;

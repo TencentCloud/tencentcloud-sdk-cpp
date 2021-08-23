@@ -39,7 +39,7 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FileInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FileInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FileInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VideoInfoResult") && !value["VideoInfoResult"].IsNull())
     {
         if (!value["VideoInfoResult"].IsArray())
-            return CoreInternalOutcome(Error("response `FileInfo.VideoInfoResult` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FileInfo.VideoInfoResult` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VideoInfoResult"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AudioInfoResult") && !value["AudioInfoResult"].IsNull())
     {
         if (!value["AudioInfoResult"].IsArray())
-            return CoreInternalOutcome(Error("response `FileInfo.AudioInfoResult` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FileInfo.AudioInfoResult` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AudioInfoResult"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -37,7 +37,7 @@ CoreInternalOutcome FaceIdentifyResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyResult.FaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyResult.FaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = string(value["FaceId"].GetString());
         m_faceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FaceIdentifyResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LibraryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyResult.LibraryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyResult.LibraryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libraryId = string(value["LibraryId"].GetString());
         m_libraryIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FaceIdentifyResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyResult.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyResult.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FaceIdentifyResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceIdentifyResult.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceIdentifyResult.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = value["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;

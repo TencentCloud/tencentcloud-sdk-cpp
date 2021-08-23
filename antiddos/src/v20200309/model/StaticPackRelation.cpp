@@ -38,7 +38,7 @@ CoreInternalOutcome StaticPackRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ProtectBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StaticPackRelation.ProtectBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticPackRelation.ProtectBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_protectBandwidth = value["ProtectBandwidth"].GetUint64();
         m_protectBandwidthHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome StaticPackRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["NormalBandwidth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StaticPackRelation.NormalBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticPackRelation.NormalBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_normalBandwidth = value["NormalBandwidth"].GetUint64();
         m_normalBandwidthHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome StaticPackRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ForwardRulesLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StaticPackRelation.ForwardRulesLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticPackRelation.ForwardRulesLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_forwardRulesLimit = value["ForwardRulesLimit"].GetUint64();
         m_forwardRulesLimitHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome StaticPackRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AutoRenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StaticPackRelation.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticPackRelation.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
         m_autoRenewFlagHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome StaticPackRelation::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CurDeadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaticPackRelation.CurDeadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaticPackRelation.CurDeadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_curDeadline = string(value["CurDeadline"].GetString());
         m_curDeadlineHasBeenSet = true;

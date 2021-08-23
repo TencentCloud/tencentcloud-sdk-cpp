@@ -35,7 +35,7 @@ CoreInternalOutcome OtaPubHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtaVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OtaPubHistory.OtaVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtaPubHistory.OtaVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_otaVersion = string(value["OtaVersion"].GetString());
         m_otaVersionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OtaPubHistory::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OtaPubHistory.PublishTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtaPubHistory.PublishTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_publishTime = value["PublishTime"].GetUint64();
         m_publishTimeHasBeenSet = true;

@@ -55,7 +55,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SportStart"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.SportStart` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.SportStart` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sportStart = value["SportStart"].GetInt64();
         m_sportStartHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SportEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.SportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.SportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sportEnd = value["SportEnd"].GetInt64();
         m_sportEndHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DportStart"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.DportStart` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.DportStart` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dportStart = value["DportStart"].GetInt64();
         m_dportStartHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DportEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.DportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.DportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dportEnd = value["DportEnd"].GetInt64();
         m_dportEndHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PktlenMin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.PktlenMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.PktlenMin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pktlenMin = value["PktlenMin"].GetInt64();
         m_pktlenMinHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PktlenMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.PktlenMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.PktlenMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pktlenMax = value["PktlenMax"].GetInt64();
         m_pktlenMaxHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MatchBegin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.MatchBegin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.MatchBegin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchBegin = string(value["MatchBegin"].GetString());
         m_matchBeginHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MatchType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.MatchType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.MatchType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchType = string(value["MatchType"].GetString());
         m_matchTypeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Str"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Str` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Str` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_str = string(value["Str"].GetString());
         m_strHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Depth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Depth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Depth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_depth = value["Depth"].GetInt64();
         m_depthHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsNot"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.IsNot` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.IsNot` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isNot = value["IsNot"].GetInt64();
         m_isNotHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MatchLogic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.MatchLogic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.MatchLogic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchLogic = string(value["MatchLogic"].GetString());
         m_matchLogicHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MatchBegin2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.MatchBegin2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.MatchBegin2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchBegin2 = string(value["MatchBegin2"].GetString());
         m_matchBegin2HasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MatchType2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.MatchType2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.MatchType2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchType2 = string(value["MatchType2"].GetString());
         m_matchType2HasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Str2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Str2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Str2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_str2 = string(value["Str2"].GetString());
         m_str2HasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Depth2"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Depth2` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Depth2` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_depth2 = value["Depth2"].GetInt64();
         m_depth2HasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Offset2"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Offset2` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Offset2` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset2 = value["Offset2"].GetInt64();
         m_offset2HasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsNot2"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.IsNot2` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.IsNot2` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isNot2 = value["IsNot2"].GetInt64();
         m_isNot2HasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterConfig.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

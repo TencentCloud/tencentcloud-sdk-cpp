@@ -40,7 +40,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SubmittedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.SubmittedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.SubmittedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_submittedCount = value["SubmittedCount"].GetUint64();
         m_submittedCountHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreatingCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.CreatingCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.CreatingCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_creatingCount = value["CreatingCount"].GetUint64();
         m_creatingCountHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreationFailedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.CreationFailedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.CreationFailedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_creationFailedCount = value["CreationFailedCount"].GetUint64();
         m_creationFailedCountHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreatedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.CreatedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.CreatedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createdCount = value["CreatedCount"].GetUint64();
         m_createdCountHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RunningCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.RunningCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.RunningCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_runningCount = value["RunningCount"].GetUint64();
         m_runningCountHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeletingCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.DeletingCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.DeletingCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deletingCount = value["DeletingCount"].GetUint64();
         m_deletingCountHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AbnormalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComputeNodeMetrics.AbnormalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComputeNodeMetrics.AbnormalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_abnormalCount = value["AbnormalCount"].GetUint64();
         m_abnormalCountHasBeenSet = true;

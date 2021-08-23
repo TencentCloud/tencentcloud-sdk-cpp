@@ -37,7 +37,7 @@ CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostedDeviceOutBandInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostedDeviceOutBandInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["OutBandIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostedDeviceOutBandInfo.OutBandIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostedDeviceOutBandInfo.OutBandIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outBandIp = string(value["OutBandIp"].GetString());
         m_outBandIpHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["VpnIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostedDeviceOutBandInfo.VpnIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostedDeviceOutBandInfo.VpnIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpnIp = string(value["VpnIp"].GetString());
         m_vpnIpHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["VpnPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HostedDeviceOutBandInfo.VpnPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostedDeviceOutBandInfo.VpnPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vpnPort = value["VpnPort"].GetUint64();
         m_vpnPortHasBeenSet = true;

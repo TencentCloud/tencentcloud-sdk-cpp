@@ -37,7 +37,7 @@ CoreInternalOutcome VpcAndDomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcAndDomainInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcAndDomainInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome VpcAndDomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcAndDomainInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcAndDomainInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VpcAndDomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EniLBIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcAndDomainInfo.EniLBIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcAndDomainInfo.EniLBIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eniLBIp = string(value["EniLBIp"].GetString());
         m_eniLBIpHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VpcAndDomainInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsePublicDomain"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `VpcAndDomainInfo.UsePublicDomain` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcAndDomainInfo.UsePublicDomain` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_usePublicDomain = value["UsePublicDomain"].GetBool();
         m_usePublicDomainHasBeenSet = true;

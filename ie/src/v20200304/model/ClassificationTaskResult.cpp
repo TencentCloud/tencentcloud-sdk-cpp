@@ -37,7 +37,7 @@ CoreInternalOutcome ClassificationTaskResult::Deserialize(const rapidjson::Value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassificationTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationTaskResult.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ClassificationTaskResult::Deserialize(const rapidjson::Value
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClassificationTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ClassificationTaskResult::Deserialize(const rapidjson::Value
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome ClassificationTaskResult::Deserialize(const rapidjson::Value
     if (value.HasMember("ItemSet") && !value["ItemSet"].IsNull())
     {
         if (!value["ItemSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ClassificationTaskResult.ItemSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClassificationTaskResult.ItemSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ItemSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

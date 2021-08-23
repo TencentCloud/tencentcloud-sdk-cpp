@@ -34,7 +34,7 @@ CoreInternalOutcome VodPullInputInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InputUrls") && !value["InputUrls"].IsNull())
     {
         if (!value["InputUrls"].IsArray())
-            return CoreInternalOutcome(Error("response `VodPullInputInfo.InputUrls` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VodPullInputInfo.InputUrls` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InputUrls"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -48,7 +48,7 @@ CoreInternalOutcome VodPullInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoopTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodPullInputInfo.LoopTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodPullInputInfo.LoopTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_loopTimes = value["LoopTimes"].GetInt64();
         m_loopTimesHasBeenSet = true;

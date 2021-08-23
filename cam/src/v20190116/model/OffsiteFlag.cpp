@@ -38,7 +38,7 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VerifyFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OffsiteFlag.VerifyFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OffsiteFlag.VerifyFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_verifyFlag = value["VerifyFlag"].GetUint64();
         m_verifyFlagHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyPhone"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OffsiteFlag.NotifyPhone` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OffsiteFlag.NotifyPhone` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_notifyPhone = value["NotifyPhone"].GetUint64();
         m_notifyPhoneHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyEmail"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OffsiteFlag.NotifyEmail` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OffsiteFlag.NotifyEmail` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_notifyEmail = value["NotifyEmail"].GetInt64();
         m_notifyEmailHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NotifyWechat"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OffsiteFlag.NotifyWechat` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OffsiteFlag.NotifyWechat` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_notifyWechat = value["NotifyWechat"].GetUint64();
         m_notifyWechatHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tips"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OffsiteFlag.Tips` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OffsiteFlag.Tips` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tips = value["Tips"].GetUint64();
         m_tipsHasBeenSet = true;

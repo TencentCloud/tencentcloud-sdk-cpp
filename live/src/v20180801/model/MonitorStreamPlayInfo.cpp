@@ -40,7 +40,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["PlayDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.PlayDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.PlayDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playDomain = string(value["PlayDomain"].GetString());
         m_playDomainHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Rate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Rate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.Rate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_rate = value["Rate"].GetUint64();
         m_rateHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Bandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetDouble();
         m_bandwidthHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Online"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_online = value["Online"].GetUint64();
         m_onlineHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Request"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MonitorStreamPlayInfo.Request` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonitorStreamPlayInfo.Request` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_request = value["Request"].GetUint64();
         m_requestHasBeenSet = true;

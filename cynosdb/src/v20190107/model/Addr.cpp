@@ -35,7 +35,7 @@ CoreInternalOutcome Addr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Addr.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Addr.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Addr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Addr.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Addr.Port` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;

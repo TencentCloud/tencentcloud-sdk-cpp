@@ -49,7 +49,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaData"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.MetaData` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.MetaData` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
@@ -135,7 +135,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MediaProcessResultSet") && !value["MediaProcessResultSet"].IsNull())
     {
         if (!value["MediaProcessResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ProcedureTask.MediaProcessResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.MediaProcessResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MediaProcessResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -155,7 +155,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AiContentReviewResultSet") && !value["AiContentReviewResultSet"].IsNull())
     {
         if (!value["AiContentReviewResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ProcedureTask.AiContentReviewResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.AiContentReviewResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AiContentReviewResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -175,7 +175,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AiAnalysisResultSet") && !value["AiAnalysisResultSet"].IsNull())
     {
         if (!value["AiAnalysisResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ProcedureTask.AiAnalysisResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.AiAnalysisResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AiAnalysisResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -195,7 +195,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AiRecognitionResultSet") && !value["AiRecognitionResultSet"].IsNull())
     {
         if (!value["AiRecognitionResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ProcedureTask.AiRecognitionResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.AiRecognitionResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AiRecognitionResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -216,7 +216,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TasksPriority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.TasksPriority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.TasksPriority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tasksPriority = value["TasksPriority"].GetInt64();
         m_tasksPriorityHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TasksNotifyMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.TasksNotifyMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.TasksNotifyMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tasksNotifyMode = string(value["TasksNotifyMode"].GetString());
         m_tasksNotifyModeHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionContext = string(value["SessionContext"].GetString());
         m_sessionContextHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcedureTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(value["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;

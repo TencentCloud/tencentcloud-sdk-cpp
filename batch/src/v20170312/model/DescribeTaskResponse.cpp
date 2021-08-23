@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(rsp["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(rsp["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["TaskState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskState = string(rsp["TaskState"].GetString());
         m_taskStateHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(rsp["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["TaskInstanceTotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_taskInstanceTotalCount = rsp["TaskInstanceTotalCount"].GetInt64();
         m_taskInstanceTotalCountHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     if (rsp.HasMember("TaskInstanceSet") && !rsp["TaskInstanceSet"].IsNull())
     {
         if (!rsp["TaskInstanceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskInstanceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TaskInstanceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -153,7 +153,7 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
     {
         if (!rsp["TaskInstanceMetrics"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TaskInstanceMetrics` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskInstanceMetrics` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_taskInstanceMetrics.Deserialize(rsp["TaskInstanceMetrics"]);

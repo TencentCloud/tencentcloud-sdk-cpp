@@ -35,7 +35,7 @@ CoreInternalOutcome Credentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Secret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Credentials.Secret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Credentials.Secret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secret = string(value["Secret"].GetString());
         m_secretHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Credentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Credentials.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Credentials.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;

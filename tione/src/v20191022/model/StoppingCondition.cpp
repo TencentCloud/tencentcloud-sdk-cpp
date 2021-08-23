@@ -35,7 +35,7 @@ CoreInternalOutcome StoppingCondition::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaxRuntimeInSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StoppingCondition.MaxRuntimeInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StoppingCondition.MaxRuntimeInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRuntimeInSeconds = value["MaxRuntimeInSeconds"].GetUint64();
         m_maxRuntimeInSecondsHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StoppingCondition::Deserialize(const rapidjson::Value &value
     {
         if (!value["MaxWaitTimeInSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StoppingCondition.MaxWaitTimeInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StoppingCondition.MaxWaitTimeInSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxWaitTimeInSeconds = value["MaxWaitTimeInSeconds"].GetUint64();
         m_maxWaitTimeInSecondsHasBeenSet = true;

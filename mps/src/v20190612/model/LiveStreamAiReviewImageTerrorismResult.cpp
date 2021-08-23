@@ -40,7 +40,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["StartPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.StartPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startPtsTime = value["StartPtsTime"].GetDouble();
         m_startPtsTimeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["EndPtsTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.EndPtsTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endPtsTime = value["EndPtsTime"].GetDouble();
         m_endPtsTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome LiveStreamAiReviewImageTerrorismResult::Deserialize(const ra
     {
         if (!value["PicUrlExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamAiReviewImageTerrorismResult.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiReviewImageTerrorismResult.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
         m_picUrlExpireTimeHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome LabelValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Proportion"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LabelValue.Proportion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelValue.Proportion` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_proportion = value["Proportion"].GetDouble();
         m_proportionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome LabelValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Market"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LabelValue.Market` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelValue.Market` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_market = value["Market"].GetDouble();
         m_marketHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome LabelValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tgi"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LabelValue.Tgi` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LabelValue.Tgi` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_tgi = value["Tgi"].GetDouble();
         m_tgiHasBeenSet = true;

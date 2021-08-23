@@ -41,7 +41,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatus = string(value["InstanceStatus"].GetString());
         m_instanceStatusHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceStatusDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStatusDesc = string(value["InstanceStatusDesc"].GetString());
         m_instanceStatusDescHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceCpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceCpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceCpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCpu = value["InstanceCpu"].GetInt64();
         m_instanceCpuHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceMemory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceMemory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceMemory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceMemory = value["InstanceMemory"].GetInt64();
         m_instanceMemoryHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
     {
         if (!value["InstanceStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInstanceDetail.InstanceStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceStorage = value["InstanceStorage"].GetInt64();
         m_instanceStorageHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicy.PolicyIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.PolicyIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_policyIndex = value["PolicyIndex"].GetInt64();
         m_policyIndexHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicy.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicy.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityPolicy.PolicyVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.PolicyVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyVersion = string(value["PolicyVersion"].GetString());
         m_policyVersionHasBeenSet = true;

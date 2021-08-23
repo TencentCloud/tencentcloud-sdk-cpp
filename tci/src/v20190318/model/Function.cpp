@@ -38,7 +38,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableAllText"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Function.EnableAllText` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.EnableAllText` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableAllText = value["EnableAllText"].GetBool();
         m_enableAllTextHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableKeyword"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Function.EnableKeyword` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.EnableKeyword` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableKeyword = value["EnableKeyword"].GetBool();
         m_enableKeywordHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableMuteDetect"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Function.EnableMuteDetect` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.EnableMuteDetect` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableMuteDetect = value["EnableMuteDetect"].GetBool();
         m_enableMuteDetectHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableVadInfo"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Function.EnableVadInfo` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.EnableVadInfo` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableVadInfo = value["EnableVadInfo"].GetBool();
         m_enableVadInfoHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableVolume"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Function.EnableVolume` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Function.EnableVolume` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableVolume = value["EnableVolume"].GetBool();
         m_enableVolumeHasBeenSet = true;

@@ -52,7 +52,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ComponentCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.ComponentCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ComponentCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_componentCodeName = string(value["ComponentCodeName"].GetString());
         m_componentCodeNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ItemCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.ItemCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ItemCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemCodeName = string(value["ItemCodeName"].GetString());
         m_itemCodeNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["SinglePrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.SinglePrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.SinglePrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_singlePrice = string(value["SinglePrice"].GetString());
         m_singlePriceHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["SpecifiedPrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.SpecifiedPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.SpecifiedPrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specifiedPrice = string(value["SpecifiedPrice"].GetString());
         m_specifiedPriceHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["PriceUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.PriceUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.PriceUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_priceUnit = string(value["PriceUnit"].GetString());
         m_priceUnitHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["UsedAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.UsedAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.UsedAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usedAmount = string(value["UsedAmount"].GetString());
         m_usedAmountHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["UsedAmountUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.UsedAmountUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.UsedAmountUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usedAmountUnit = string(value["UsedAmountUnit"].GetString());
         m_usedAmountUnitHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["TimeSpan"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.TimeSpan` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.TimeSpan` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = string(value["TimeSpan"].GetString());
         m_timeSpanHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["TimeUnitName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.TimeUnitName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.TimeUnitName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeUnitName = string(value["TimeUnitName"].GetString());
         m_timeUnitNameHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["Cost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.Cost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.Cost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cost = string(value["Cost"].GetString());
         m_costHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["Discount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.Discount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.Discount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_discount = string(value["Discount"].GetString());
         m_discountHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ReduceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.ReduceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ReduceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reduceType = string(value["ReduceType"].GetString());
         m_reduceTypeHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["RealCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.RealCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.RealCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realCost = string(value["RealCost"].GetString());
         m_realCostHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["VoucherPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
         m_voucherPayAmountHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["CashPayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cashPayAmount = string(value["CashPayAmount"].GetString());
         m_cashPayAmountHasBeenSet = true;
@@ -202,7 +202,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["IncentivePayAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
@@ -212,7 +212,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ItemCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.ItemCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ItemCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemCode = string(value["ItemCode"].GetString());
         m_itemCodeHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ComponentCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.ComponentCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ComponentCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_componentCode = string(value["ComponentCode"].GetString());
         m_componentCodeHasBeenSet = true;
@@ -232,7 +232,7 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
     {
         if (!value["ContractPrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillDetailComponent.ContractPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.ContractPrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractPrice = string(value["ContractPrice"].GetString());
         m_contractPriceHasBeenSet = true;

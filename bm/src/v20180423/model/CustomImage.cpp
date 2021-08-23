@@ -45,7 +45,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.ImageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.ImageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageName = string(value["ImageName"].GetString());
         m_imageNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.ImageStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.ImageStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageStatus = value["ImageStatus"].GetUint64();
         m_imageStatusHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsClass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.OsClass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.OsClass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osClass = string(value["OsClass"].GetString());
         m_osClassHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.OsVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.OsVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osVersion = string(value["OsVersion"].GetString());
         m_osVersionHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsBit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.OsBit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.OsBit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_osBit = value["OsBit"].GetUint64();
         m_osBitHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.ImageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.ImageSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageSize = value["ImageSize"].GetUint64();
         m_imageSizeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PartitionInfoSet") && !value["PartitionInfoSet"].IsNull())
     {
         if (!value["PartitionInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `CustomImage.PartitionInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.PartitionInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PartitionInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -145,7 +145,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceClassCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceClassCode = string(value["DeviceClassCode"].GetString());
         m_deviceClassCodeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.ImageDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.ImageDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageDescription = string(value["ImageDescription"].GetString());
         m_imageDescriptionHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome CustomImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsTypeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CustomImage.OsTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomImage.OsTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_osTypeId = value["OsTypeId"].GetUint64();
         m_osTypeIdHasBeenSet = true;

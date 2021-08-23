@@ -41,7 +41,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Volume.SendDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.SendDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sendDate = string(value["SendDate"].GetString());
         m_sendDateHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.RequestCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.RequestCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_requestCount = value["RequestCount"].GetUint64();
         m_requestCountHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcceptedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.AcceptedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.AcceptedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_acceptedCount = value["AcceptedCount"].GetUint64();
         m_acceptedCountHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeliveredCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.DeliveredCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.DeliveredCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deliveredCount = value["DeliveredCount"].GetUint64();
         m_deliveredCountHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.OpenedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.OpenedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_openedCount = value["OpenedCount"].GetUint64();
         m_openedCountHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClickedCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.ClickedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.ClickedCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_clickedCount = value["ClickedCount"].GetUint64();
         m_clickedCountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BounceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.BounceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.BounceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bounceCount = value["BounceCount"].GetUint64();
         m_bounceCountHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnsubscribeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Volume.UnsubscribeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Volume.UnsubscribeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_unsubscribeCount = value["UnsubscribeCount"].GetUint64();
         m_unsubscribeCountHasBeenSet = true;

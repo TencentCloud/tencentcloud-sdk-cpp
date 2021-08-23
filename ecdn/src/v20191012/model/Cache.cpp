@@ -34,7 +34,7 @@ CoreInternalOutcome Cache::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CacheRules") && !value["CacheRules"].IsNull())
     {
         if (!value["CacheRules"].IsArray())
-            return CoreInternalOutcome(Error("response `Cache.CacheRules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Cache.CacheRules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CacheRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome Cache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FollowOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cache.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cache.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_followOrigin = string(value["FollowOrigin"].GetString());
         m_followOriginHasBeenSet = true;

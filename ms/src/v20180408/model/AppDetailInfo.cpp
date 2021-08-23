@@ -40,7 +40,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppPkgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.AppPkgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.AppPkgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appPkgName = string(value["AppPkgName"].GetString());
         m_appPkgNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.AppVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.AppVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appVersion = string(value["AppVersion"].GetString());
         m_appVersionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.AppSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.AppSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appSize = value["AppSize"].GetUint64();
         m_appSizeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.AppMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.AppMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appMd5 = string(value["AppMd5"].GetString());
         m_appMd5HasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppIconUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.AppIconUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.AppIconUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appIconUrl = string(value["AppIconUrl"].GetString());
         m_appIconUrlHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome AppDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppDetailInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppDetailInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome ApiEnvironmentStrategy::Deserialize(const rapidjson::Value &
     {
         if (!value["ApiId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiEnvironmentStrategy.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategy.ApiId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiId = string(value["ApiId"].GetString());
         m_apiIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ApiEnvironmentStrategy::Deserialize(const rapidjson::Value &
     {
         if (!value["ApiName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiEnvironmentStrategy.ApiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategy.ApiName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiName = string(value["ApiName"].GetString());
         m_apiNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ApiEnvironmentStrategy::Deserialize(const rapidjson::Value &
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiEnvironmentStrategy.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategy.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ApiEnvironmentStrategy::Deserialize(const rapidjson::Value &
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiEnvironmentStrategy.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategy.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ApiEnvironmentStrategy::Deserialize(const rapidjson::Value &
     if (value.HasMember("EnvironmentStrategySet") && !value["EnvironmentStrategySet"].IsNull())
     {
         if (!value["EnvironmentStrategySet"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiEnvironmentStrategy.EnvironmentStrategySet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategy.EnvironmentStrategySet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnvironmentStrategySet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

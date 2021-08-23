@@ -45,7 +45,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MessageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.MessageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.MessageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_messageId = string(value["MessageId"].GetString());
         m_messageIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ToEmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.ToEmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.ToEmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_toEmailAddress = string(value["ToEmailAddress"].GetString());
         m_toEmailAddressHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FromEmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.FromEmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.FromEmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fromEmailAddress = string(value["FromEmailAddress"].GetString());
         m_fromEmailAddressHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.SendStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.SendStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sendStatus = value["SendStatus"].GetInt64();
         m_sendStatusHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeliverStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.DeliverStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.DeliverStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deliverStatus = value["DeliverStatus"].GetInt64();
         m_deliverStatusHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeliverMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.DeliverMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.DeliverMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deliverMessage = string(value["DeliverMessage"].GetString());
         m_deliverMessageHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.RequestTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.RequestTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_requestTime = value["RequestTime"].GetInt64();
         m_requestTimeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeliverTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.DeliverTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.DeliverTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deliverTime = value["DeliverTime"].GetInt64();
         m_deliverTimeHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserOpened"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.UserOpened` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.UserOpened` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_userOpened = value["UserOpened"].GetBool();
         m_userOpenedHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserClicked"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.UserClicked` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.UserClicked` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_userClicked = value["UserClicked"].GetBool();
         m_userClickedHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserUnsubscribed"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.UserUnsubscribed` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.UserUnsubscribed` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_userUnsubscribed = value["UserUnsubscribed"].GetBool();
         m_userUnsubscribedHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserComplainted"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SendEmailStatus.UserComplainted` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendEmailStatus.UserComplainted` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_userComplainted = value["UserComplainted"].GetBool();
         m_userComplaintedHasBeenSet = true;

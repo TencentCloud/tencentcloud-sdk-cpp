@@ -36,7 +36,7 @@ CoreInternalOutcome StorageConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageVolName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageConf.StorageVolName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageConf.StorageVolName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageVolName = string(value["StorageVolName"].GetString());
         m_storageVolNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome StorageConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageVolPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageConf.StorageVolPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageConf.StorageVolPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageVolPath = string(value["StorageVolPath"].GetString());
         m_storageVolPathHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome StorageConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageVolIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StorageConf.StorageVolIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageConf.StorageVolIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageVolIp = string(value["StorageVolIp"].GetString());
         m_storageVolIpHasBeenSet = true;

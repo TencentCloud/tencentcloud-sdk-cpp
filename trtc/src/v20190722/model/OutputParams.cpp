@@ -37,7 +37,7 @@ CoreInternalOutcome OutputParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputParams.StreamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputParams.StreamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamId = string(value["StreamId"].GetString());
         m_streamIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OutputParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PureAudioStream"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OutputParams.PureAudioStream` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputParams.PureAudioStream` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pureAudioStream = value["PureAudioStream"].GetUint64();
         m_pureAudioStreamHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OutputParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputParams.RecordId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputParams.RecordId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordId = string(value["RecordId"].GetString());
         m_recordIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OutputParams::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordAudioOnly"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OutputParams.RecordAudioOnly` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputParams.RecordAudioOnly` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_recordAudioOnly = value["RecordAudioOnly"].GetUint64();
         m_recordAudioOnlyHasBeenSet = true;

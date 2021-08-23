@@ -37,7 +37,7 @@ CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Batch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Quota.Batch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quota.Batch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_batch = value["Batch"].GetInt64();
         m_batchHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Quota.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quota.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Available"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Quota.Available` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quota.Available` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_available = value["Available"].GetInt64();
         m_availableHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Quota.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quota.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(value["Area"].GetString());
         m_areaHasBeenSet = true;

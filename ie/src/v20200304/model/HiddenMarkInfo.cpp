@@ -37,7 +37,7 @@ CoreInternalOutcome HiddenMarkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HiddenMarkInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HiddenMarkInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome HiddenMarkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Frequency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HiddenMarkInfo.Frequency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HiddenMarkInfo.Frequency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frequency = value["Frequency"].GetInt64();
         m_frequencyHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome HiddenMarkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Strength"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HiddenMarkInfo.Strength` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HiddenMarkInfo.Strength` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_strength = value["Strength"].GetInt64();
         m_strengthHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome HiddenMarkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CosInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `HiddenMarkInfo.CosInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HiddenMarkInfo.CosInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosInfo.Deserialize(value["CosInfo"]);

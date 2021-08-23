@@ -42,7 +42,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Spec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.Spec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.Spec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_spec = string(value["Spec"].GetString());
         m_specHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.SpecName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.SpecName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specName = string(value["SpecName"].GetString());
         m_specNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageType = value["StorageType"].GetInt64();
         m_storageTypeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RootSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.RootSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.RootSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rootSize = value["RootSize"].GetInt64();
         m_rootSizeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memSize = value["MemSize"].GetInt64();
         m_memSizeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetInt64();
         m_diskSizeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutterResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutterResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;

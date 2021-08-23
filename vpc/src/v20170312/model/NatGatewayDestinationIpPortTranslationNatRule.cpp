@@ -42,7 +42,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["PublicIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAddress = string(value["PublicIpAddress"].GetString());
         m_publicIpAddressHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["PublicPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.PublicPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.PublicPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_publicPort = value["PublicPort"].GetUint64();
         m_publicPortHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["PrivatePort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.PrivatePort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.PrivatePort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_privatePort = value["PrivatePort"].GetUint64();
         m_privatePortHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["NatGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayId = string(value["NatGatewayId"].GetString());
         m_natGatewayIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome NatGatewayDestinationIpPortTranslationNatRule::Deserialize(c
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatGatewayDestinationIpPortTranslationNatRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatGatewayDestinationIpPortTranslationNatRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

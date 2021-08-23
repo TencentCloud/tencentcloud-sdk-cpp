@@ -43,7 +43,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["AutoBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.AutoBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.AutoBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoBackupCount = value["AutoBackupCount"].GetInt64();
         m_autoBackupCountHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["AutoBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.AutoBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.AutoBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_autoBackupVolume = value["AutoBackupVolume"].GetInt64();
         m_autoBackupVolumeHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["ManualBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.ManualBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.ManualBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_manualBackupCount = value["ManualBackupCount"].GetInt64();
         m_manualBackupCountHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["ManualBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.ManualBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.ManualBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_manualBackupVolume = value["ManualBackupVolume"].GetInt64();
         m_manualBackupVolumeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["DataBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.DataBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.DataBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataBackupCount = value["DataBackupCount"].GetInt64();
         m_dataBackupCountHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["DataBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.DataBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.DataBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataBackupVolume = value["DataBackupVolume"].GetInt64();
         m_dataBackupVolumeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["BinlogBackupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.BinlogBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.BinlogBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_binlogBackupCount = value["BinlogBackupCount"].GetInt64();
         m_binlogBackupCountHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["BinlogBackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.BinlogBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.BinlogBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_binlogBackupVolume = value["BinlogBackupVolume"].GetInt64();
         m_binlogBackupVolumeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["BackupVolume"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupSummaryItem.BackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupSummaryItem.BackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_backupVolume = value["BackupVolume"].GetInt64();
         m_backupVolumeHasBeenSet = true;

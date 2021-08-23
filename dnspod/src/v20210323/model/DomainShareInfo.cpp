@@ -36,7 +36,7 @@ CoreInternalOutcome DomainShareInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShareTo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainShareInfo.ShareTo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainShareInfo.ShareTo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shareTo = string(value["ShareTo"].GetString());
         m_shareToHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DomainShareInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainShareInfo.Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainShareInfo.Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(value["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DomainShareInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainShareInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainShareInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -50,7 +50,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceClassCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceClassCode = string(value["DeviceClassCode"].GetString());
         m_deviceClassCodeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsElastic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.IsElastic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.IsElastic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isElastic = value["IsElastic"].GetUint64();
         m_isElasticHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpmPayMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.CpmPayMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.CpmPayMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpmPayMode = value["CpmPayMode"].GetUint64();
         m_cpmPayModeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.CpuDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.CpuDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuDescription = string(value["CpuDescription"].GetString());
         m_cpuDescriptionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.MemDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.MemDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memDescription = string(value["MemDescription"].GetString());
         m_memDescriptionHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.DiskDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.DiskDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskDescription = string(value["DiskDescription"].GetString());
         m_diskDescriptionHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NicDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.NicDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.NicDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nicDescription = string(value["NicDescription"].GetString());
         m_nicDescriptionHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GpuDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.GpuDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.GpuDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gpuDescription = string(value["GpuDescription"].GetString());
         m_gpuDescriptionHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RaidDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.RaidDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.RaidDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_raidDescription = string(value["RaidDescription"].GetString());
         m_raidDescriptionHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.Price` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.Price` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_price = value["Price"].GetUint64();
         m_priceHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NormalPrice"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.NormalPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.NormalPrice` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_normalPrice = value["NormalPrice"].GetUint64();
         m_normalPriceHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCost"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.TotalCost` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.TotalCost` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCost = value["TotalCost"].GetUint64();
         m_totalCostHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealTotalCost"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.RealTotalCost` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.RealTotalCost` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = value["RealTotalCost"].GetUint64();
         m_realTotalCostHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeSpan"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.TimeSpan` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.TimeSpan` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = value["TimeSpan"].GetUint64();
         m_timeSpanHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeUnit = string(value["TimeUnit"].GetString());
         m_timeUnitHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GoodsCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DevicePriceInfo.GoodsCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePriceInfo.GoodsCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_goodsCount = value["GoodsCount"].GetUint64();
         m_goodsCountHasBeenSet = true;

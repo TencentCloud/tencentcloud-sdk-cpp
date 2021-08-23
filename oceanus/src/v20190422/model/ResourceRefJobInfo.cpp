@@ -36,7 +36,7 @@ CoreInternalOutcome ResourceRefJobInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefJobInfo.JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefJobInfo.JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(value["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ResourceRefJobInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["JobConfigVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefJobInfo.JobConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefJobInfo.JobConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_jobConfigVersion = value["JobConfigVersion"].GetInt64();
         m_jobConfigVersionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ResourceRefJobInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ResourceVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceRefJobInfo.ResourceVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceRefJobInfo.ResourceVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceVersion = value["ResourceVersion"].GetInt64();
         m_resourceVersionHasBeenSet = true;

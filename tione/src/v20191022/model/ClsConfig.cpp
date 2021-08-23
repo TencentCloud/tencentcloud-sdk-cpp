@@ -36,7 +36,7 @@ CoreInternalOutcome ClsConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ClsConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsConfig.LogSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsConfig.LogSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logSetId = string(value["LogSetId"].GetString());
         m_logSetIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ClsConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClsConfig.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClsConfig.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;

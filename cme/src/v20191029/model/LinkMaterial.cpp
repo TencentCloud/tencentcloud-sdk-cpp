@@ -37,7 +37,7 @@ CoreInternalOutcome LinkMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LinkType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterial.LinkType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterial.LinkType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_linkType = string(value["LinkType"].GetString());
         m_linkTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LinkMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LinkStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterial.LinkStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterial.LinkStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_linkStatus = string(value["LinkStatus"].GetString());
         m_linkStatusHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LinkMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LinkMaterialInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterial.LinkMaterialInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterial.LinkMaterialInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_linkMaterialInfo.Deserialize(value["LinkMaterialInfo"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome LinkMaterial::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LinkClassInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LinkMaterial.LinkClassInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LinkMaterial.LinkClassInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_linkClassInfo.Deserialize(value["LinkClassInfo"]);

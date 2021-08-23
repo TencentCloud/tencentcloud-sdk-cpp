@@ -40,7 +40,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Monday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Monday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Monday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_monday = string(value["Monday"].GetString());
         m_mondayHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tuesday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Tuesday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Tuesday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tuesday = string(value["Tuesday"].GetString());
         m_tuesdayHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Wednesday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Wednesday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Wednesday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wednesday = string(value["Wednesday"].GetString());
         m_wednesdayHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Thursday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Thursday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Thursday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thursday = string(value["Thursday"].GetString());
         m_thursdayHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Friday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Friday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Friday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_friday = string(value["Friday"].GetString());
         m_fridayHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Saturday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Saturday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Saturday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_saturday = string(value["Saturday"].GetString());
         m_saturdayHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sunday"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonTimeWindow.Sunday` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Sunday` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sunday = string(value["Sunday"].GetString());
         m_sundayHasBeenSet = true;

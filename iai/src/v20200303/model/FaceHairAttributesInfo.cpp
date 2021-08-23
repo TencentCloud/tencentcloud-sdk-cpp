@@ -36,7 +36,7 @@ CoreInternalOutcome FaceHairAttributesInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Length"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceHairAttributesInfo.Length` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceHairAttributesInfo.Length` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_length = value["Length"].GetInt64();
         m_lengthHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FaceHairAttributesInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Bang"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceHairAttributesInfo.Bang` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceHairAttributesInfo.Bang` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bang = value["Bang"].GetInt64();
         m_bangHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FaceHairAttributesInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Color"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceHairAttributesInfo.Color` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceHairAttributesInfo.Color` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_color = value["Color"].GetInt64();
         m_colorHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome PodParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodParameter.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodParameter.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PodParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Config"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodParameter.Config` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodParameter.Config` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_config = string(value["Config"].GetString());
         m_configHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PodParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Parameter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodParameter.Parameter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodParameter.Parameter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parameter = string(value["Parameter"].GetString());
         m_parameterHasBeenSet = true;

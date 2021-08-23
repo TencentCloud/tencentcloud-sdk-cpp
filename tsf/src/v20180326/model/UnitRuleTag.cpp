@@ -39,7 +39,7 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleTag.TagType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleTag.TagType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagType = string(value["TagType"].GetString());
         m_tagTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagField"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleTag.TagField` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleTag.TagField` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagField = string(value["TagField"].GetString());
         m_tagFieldHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagOperator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleTag.TagOperator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleTag.TagOperator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagOperator = string(value["TagOperator"].GetString());
         m_tagOperatorHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleTag.TagValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleTag.TagValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValue = string(value["TagValue"].GetString());
         m_tagValueHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitRuleItemId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleTag.UnitRuleItemId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleTag.UnitRuleItemId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unitRuleItemId = string(value["UnitRuleItemId"].GetString());
         m_unitRuleItemIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UnitRuleTag.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnitRuleTag.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

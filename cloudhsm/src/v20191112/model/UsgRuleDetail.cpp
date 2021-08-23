@@ -39,7 +39,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InBound") && !value["InBound"].IsNull())
     {
         if (!value["InBound"].IsArray())
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.InBound` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.InBound` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InBound"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OutBound") && !value["OutBound"].IsNull())
     {
         if (!value["OutBound"].IsArray())
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.OutBound` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.OutBound` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutBound"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -80,7 +80,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.SgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.SgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sgId = string(value["SgId"].GetString());
         m_sgIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.SgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.SgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sgName = string(value["SgName"].GetString());
         m_sgNameHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SgRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.SgRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.SgRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sgRemark = string(value["SgRemark"].GetString());
         m_sgRemarkHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome UsgRuleDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsgRuleDetail.Version` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsgRuleDetail.Version` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_version = value["Version"].GetInt64();
         m_versionHasBeenSet = true;

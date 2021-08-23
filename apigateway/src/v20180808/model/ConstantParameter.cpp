@@ -37,7 +37,7 @@ CoreInternalOutcome ConstantParameter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConstantParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConstantParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ConstantParameter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Desc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConstantParameter.Desc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConstantParameter.Desc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desc = string(value["Desc"].GetString());
         m_descHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ConstantParameter::Deserialize(const rapidjson::Value &value
     {
         if (!value["Position"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConstantParameter.Position` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConstantParameter.Position` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_position = string(value["Position"].GetString());
         m_positionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ConstantParameter::Deserialize(const rapidjson::Value &value
     {
         if (!value["DefaultValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConstantParameter.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConstantParameter.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultValue = string(value["DefaultValue"].GetString());
         m_defaultValueHasBeenSet = true;

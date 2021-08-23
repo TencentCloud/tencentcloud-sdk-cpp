@@ -35,7 +35,7 @@ CoreInternalOutcome FrameTagRec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrameTagRec.TagType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagRec.TagType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagType = string(value["TagType"].GetString());
         m_tagTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FrameTagRec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GameExtendType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrameTagRec.GameExtendType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagRec.GameExtendType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gameExtendType = string(value["GameExtendType"].GetString());
         m_gameExtendTypeHasBeenSet = true;

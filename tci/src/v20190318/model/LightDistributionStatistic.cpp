@@ -35,7 +35,7 @@ CoreInternalOutcome LightDistributionStatistic::Deserialize(const rapidjson::Val
     {
         if (!value["Time"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LightDistributionStatistic.Time` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightDistributionStatistic.Time` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetInt64();
         m_timeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LightDistributionStatistic::Deserialize(const rapidjson::Val
     {
         if (!value["Value"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LightDistributionStatistic.Value` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LightDistributionStatistic.Value` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_value = value["Value"].GetInt64();
         m_valueHasBeenSet = true;

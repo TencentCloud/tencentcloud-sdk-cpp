@@ -35,7 +35,7 @@ CoreInternalOutcome SlaveConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicationMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlaveConfig.ReplicationMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveConfig.ReplicationMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicationMode = string(value["ReplicationMode"].GetString());
         m_replicationModeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SlaveConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlaveConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlaveConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

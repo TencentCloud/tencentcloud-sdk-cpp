@@ -50,7 +50,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxPlayers"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Room.MaxPlayers` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.MaxPlayers` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxPlayers = value["MaxPlayers"].GetInt64();
         m_maxPlayersHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerOpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.OwnerOpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.OwnerOpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerOpenId = string(value["OwnerOpenId"].GetString());
         m_ownerOpenIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPrivate"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Room.IsPrivate` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.IsPrivate` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPrivate = value["IsPrivate"].GetBool();
         m_isPrivateHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Players") && !value["Players"].IsNull())
     {
         if (!value["Players"].IsArray())
-            return CoreInternalOutcome(Error("response `Room.Players` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Room.Players` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Players"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Teams") && !value["Teams"].IsNull())
     {
         if (!value["Teams"].IsArray())
-            return CoreInternalOutcome(Error("response `Room.Teams` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Room.Teams` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Teams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -130,7 +130,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Room.CreateType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.CreateType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createType = value["CreateType"].GetInt64();
         m_createTypeHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CustomProperties"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.CustomProperties` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.CustomProperties` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_customProperties = string(value["CustomProperties"].GetString());
         m_customPropertiesHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrameSyncState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Room.FrameSyncState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.FrameSyncState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frameSyncState = value["FrameSyncState"].GetInt64();
         m_frameSyncStateHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrameRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Room.FrameRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.FrameRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frameRate = value["FrameRate"].GetInt64();
         m_frameRateHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RouteId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.RouteId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.RouteId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_routeId = string(value["RouteId"].GetString());
         m_routeIdHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Room.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartGameTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Room.StartGameTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.StartGameTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startGameTime = value["StartGameTime"].GetInt64();
         m_startGameTimeHasBeenSet = true;
@@ -220,7 +220,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsForbidJoin"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Room.IsForbidJoin` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.IsForbidJoin` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isForbidJoin = value["IsForbidJoin"].GetBool();
         m_isForbidJoinHasBeenSet = true;
@@ -230,7 +230,7 @@ CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Room.Owner` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Room.Owner` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_owner = string(value["Owner"].GetString());
         m_ownerHasBeenSet = true;

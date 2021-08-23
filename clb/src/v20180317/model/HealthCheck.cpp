@@ -48,7 +48,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthSwitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthSwitch = value["HealthSwitch"].GetInt64();
         m_healthSwitchHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeOut"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.TimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.TimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeOut = value["TimeOut"].GetInt64();
         m_timeOutHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntervalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.IntervalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_intervalTime = value["IntervalTime"].GetInt64();
         m_intervalTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthNum = value["HealthNum"].GetInt64();
         m_healthNumHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnHealthNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.UnHealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.UnHealthNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_unHealthNum = value["UnHealthNum"].GetInt64();
         m_unHealthNumHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HttpCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HttpCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_httpCode = value["HttpCode"].GetInt64();
         m_httpCodeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCheckPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HttpCheckPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckPath = string(value["HttpCheckPath"].GetString());
         m_httpCheckPathHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCheckDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HttpCheckDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HttpCheckDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckDomain = string(value["HttpCheckDomain"].GetString());
         m_httpCheckDomainHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCheckMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HttpCheckMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HttpCheckMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCheckMethod = string(value["HttpCheckMethod"].GetString());
         m_httpCheckMethodHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.CheckPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.CheckPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_checkPort = value["CheckPort"].GetInt64();
         m_checkPortHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContextType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.ContextType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.ContextType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contextType = string(value["ContextType"].GetString());
         m_contextTypeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.SendContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.SendContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sendContext = string(value["SendContext"].GetString());
         m_sendContextHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecvContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.RecvContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.RecvContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recvContext = string(value["RecvContext"].GetString());
         m_recvContextHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.CheckType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.CheckType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checkType = string(value["CheckType"].GetString());
         m_checkTypeHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheck.HttpVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheck.HttpVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpVersion = string(value["HttpVersion"].GetString());
         m_httpVersionHasBeenSet = true;

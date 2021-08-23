@@ -41,7 +41,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_certId = value["CertId"].GetInt64();
         m_certIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certName = string(value["CertName"].GetString());
         m_certNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpsCrt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.HttpsCrt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.HttpsCrt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpsCrt = string(value["HttpsCrt"].GetString());
         m_httpsCrtHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_certType = value["CertType"].GetInt64();
         m_certTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertInfo.CertExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.CertExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certExpireTime = string(value["CertExpireTime"].GetString());
         m_certExpireTimeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DomainList") && !value["DomainList"].IsNull())
     {
         if (!value["DomainList"].IsArray())
-            return CoreInternalOutcome(Error("response `CertInfo.DomainList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CertInfo.DomainList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DomainList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

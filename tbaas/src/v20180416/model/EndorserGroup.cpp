@@ -35,7 +35,7 @@ CoreInternalOutcome EndorserGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndorserGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EndorserGroup.EndorserGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EndorserGroup.EndorserGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endorserGroupName = string(value["EndorserGroupName"].GetString());
         m_endorserGroupNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome EndorserGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EndorserPeerList") && !value["EndorserPeerList"].IsNull())
     {
         if (!value["EndorserPeerList"].IsArray())
-            return CoreInternalOutcome(Error("response `EndorserGroup.EndorserPeerList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EndorserGroup.EndorserPeerList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EndorserPeerList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

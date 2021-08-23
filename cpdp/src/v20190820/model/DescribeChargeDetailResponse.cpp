@@ -46,16 +46,16 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderStatus = string(rsp["OrderStatus"].GetString());
         m_orderStatusHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderAmount = string(rsp["OrderAmount"].GetString());
         m_orderAmountHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["CommissionAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommissionAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommissionAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commissionAmount = string(rsp["CommissionAmount"].GetString());
         m_commissionAmountHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(rsp["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderDate = string(rsp["OrderDate"].GetString());
         m_orderDateHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderTime = string(rsp["OrderTime"].GetString());
         m_orderTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderActualInSubAccountName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderActualInSubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderActualInSubAccountName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderActualInSubAccountName = string(rsp["OrderActualInSubAccountName"].GetString());
         m_orderActualInSubAccountNameHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderActualInSubAccountNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderActualInSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderActualInSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderActualInSubAccountNumber = string(rsp["OrderActualInSubAccountNumber"].GetString());
         m_orderActualInSubAccountNumberHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderInSubAccountName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInSubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInSubAccountName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderInSubAccountName = string(rsp["OrderInSubAccountName"].GetString());
         m_orderInSubAccountNameHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["OrderInSubAccountNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderInSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderInSubAccountNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderInSubAccountNumber = string(rsp["OrderInSubAccountNumber"].GetString());
         m_orderInSubAccountNumberHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["FrontSequenceNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrontSequenceNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrontSequenceNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frontSequenceNumber = string(rsp["FrontSequenceNumber"].GetString());
         m_frontSequenceNumberHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["FailMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FailMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FailMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failMessage = string(rsp["FailMessage"].GetString());
         m_failMessageHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeChargeDetailResponse::Deserialize(const string &payl
     {
         if (!rsp["RequestType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_requestType = string(rsp["RequestType"].GetString());
         m_requestTypeHasBeenSet = true;

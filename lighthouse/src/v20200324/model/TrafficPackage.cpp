@@ -42,7 +42,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficPackageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.TrafficPackageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrafficPackageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trafficPackageId = string(value["TrafficPackageId"].GetString());
         m_trafficPackageIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficUsed"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.TrafficUsed` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrafficUsed` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficUsed = value["TrafficUsed"].GetInt64();
         m_trafficUsedHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficPackageTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.TrafficPackageTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrafficPackageTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficPackageTotal = value["TrafficPackageTotal"].GetInt64();
         m_trafficPackageTotalHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficPackageRemaining"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.TrafficPackageRemaining` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrafficPackageRemaining` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficPackageRemaining = value["TrafficPackageRemaining"].GetInt64();
         m_trafficPackageRemainingHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficOverflow"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.TrafficOverflow` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.TrafficOverflow` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_trafficOverflow = value["TrafficOverflow"].GetInt64();
         m_trafficOverflowHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Deadline"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Deadline` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Deadline` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadline = string(value["Deadline"].GetString());
         m_deadlineHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficPackage.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficPackage.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome RunSecurityServiceEnabled::Deserialize(const rapidjson::Valu
     {
         if (!value["Enabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RunSecurityServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunSecurityServiceEnabled.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enabled = value["Enabled"].GetBool();
         m_enabledHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RunSecurityServiceEnabled::Deserialize(const rapidjson::Valu
     {
         if (!value["Version"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RunSecurityServiceEnabled.Version` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunSecurityServiceEnabled.Version` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_version = value["Version"].GetInt64();
         m_versionHasBeenSet = true;

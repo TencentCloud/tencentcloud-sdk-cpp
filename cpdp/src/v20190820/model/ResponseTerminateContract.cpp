@@ -36,7 +36,7 @@ CoreInternalOutcome ResponseTerminateContract::Deserialize(const rapidjson::Valu
     {
         if (!value["ExternalReturnCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseTerminateContract.ExternalReturnCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseTerminateContract.ExternalReturnCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnCode = string(value["ExternalReturnCode"].GetString());
         m_externalReturnCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ResponseTerminateContract::Deserialize(const rapidjson::Valu
     {
         if (!value["ExternalReturnMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseTerminateContract.ExternalReturnMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseTerminateContract.ExternalReturnMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnMessage = string(value["ExternalReturnMessage"].GetString());
         m_externalReturnMessageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ResponseTerminateContract::Deserialize(const rapidjson::Valu
     {
         if (!value["ExternalReturnData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResponseTerminateContract.ExternalReturnData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResponseTerminateContract.ExternalReturnData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalReturnData = string(value["ExternalReturnData"].GetString());
         m_externalReturnDataHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["OrderSn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.OrderSn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.OrderSn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderSn = string(value["OrderSn"].GetString());
         m_orderSnHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["TicketDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.TicketDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.TicketDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ticketDate = string(value["TicketDate"].GetString());
         m_ticketDateHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["TicketSn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.TicketSn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.TicketSn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ticketSn = string(value["TicketSn"].GetString());
         m_ticketSnHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["TicketCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.TicketCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.TicketCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ticketCode = string(value["TicketCode"].GetString());
         m_ticketCodeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["CheckCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.CheckCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.CheckCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checkCode = string(value["CheckCode"].GetString());
         m_checkCodeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["AmountWithTax"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.AmountWithTax` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.AmountWithTax` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_amountWithTax = string(value["AmountWithTax"].GetString());
         m_amountWithTaxHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["AmountWithoutTax"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.AmountWithoutTax` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.AmountWithoutTax` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_amountWithoutTax = string(value["AmountWithoutTax"].GetString());
         m_amountWithoutTaxHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["TaxAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.TaxAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.TaxAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxAmount = string(value["TaxAmount"].GetString());
         m_taxAmountHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["IsRedWashed"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.IsRedWashed` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.IsRedWashed` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isRedWashed = value["IsRedWashed"].GetInt64();
         m_isRedWashedHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &
     {
         if (!value["PdfUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryInvoiceResultData.PdfUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryInvoiceResultData.PdfUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pdfUrl = string(value["PdfUrl"].GetString());
         m_pdfUrlHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome InternetBandwidthConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetBandwidthConfig.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetBandwidthConfig.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InternetBandwidthConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetBandwidthConfig.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetBandwidthConfig.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome InternetBandwidthConfig::Deserialize(const rapidjson::Value 
     {
         if (!value["InternetAccessible"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `InternetBandwidthConfig.InternetAccessible` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetBandwidthConfig.InternetAccessible` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_internetAccessible.Deserialize(value["InternetAccessible"]);

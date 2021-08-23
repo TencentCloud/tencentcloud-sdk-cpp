@@ -33,7 +33,7 @@ CoreInternalOutcome FileDeleteTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FileIdSet") && !value["FileIdSet"].IsNull())
     {
         if (!value["FileIdSet"].IsArray())
-            return CoreInternalOutcome(Error("response `FileDeleteTask.FileIdSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FileDeleteTask.FileIdSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

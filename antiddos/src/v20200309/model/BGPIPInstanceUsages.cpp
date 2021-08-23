@@ -36,7 +36,7 @@ CoreInternalOutcome BGPIPInstanceUsages::Deserialize(const rapidjson::Value &val
     {
         if (!value["PortRulesUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceUsages.PortRulesUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceUsages.PortRulesUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_portRulesUsage = value["PortRulesUsage"].GetUint64();
         m_portRulesUsageHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BGPIPInstanceUsages::Deserialize(const rapidjson::Value &val
     {
         if (!value["DomainRulesUsage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceUsages.DomainRulesUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceUsages.DomainRulesUsage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainRulesUsage = value["DomainRulesUsage"].GetUint64();
         m_domainRulesUsageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BGPIPInstanceUsages::Deserialize(const rapidjson::Value &val
     {
         if (!value["Last7DayAttackCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BGPIPInstanceUsages.Last7DayAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstanceUsages.Last7DayAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_last7DayAttackCount = value["Last7DayAttackCount"].GetUint64();
         m_last7DayAttackCountHasBeenSet = true;

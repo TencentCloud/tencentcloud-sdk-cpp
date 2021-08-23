@@ -47,7 +47,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.ResourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.ResourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = value["ResourceType"].GetUint64();
         m_resourceTypeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceLoc"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.ResourceLoc` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.ResourceLoc` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_resourceLoc.Deserialize(value["ResourceLoc"]);
@@ -94,7 +94,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = string(value["OwnerUin"].GetString());
         m_ownerUinHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatorUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.CreatorUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.CreatorUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creatorUin = string(value["CreatorUin"].GetString());
         m_creatorUinHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestResourceConfigVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.LatestResourceConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.LatestResourceConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_latestResourceConfigVersion = value["LatestResourceConfigVersion"].GetInt64();
         m_latestResourceConfigVersionHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.VersionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.VersionCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_versionCount = value["VersionCount"].GetInt64();
         m_versionCountHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefJobCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResourceItem.RefJobCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.RefJobCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_refJobCount = value["RefJobCount"].GetInt64();
         m_refJobCountHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome Cache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SimpleCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Cache.SimpleCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cache.SimpleCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_simpleCache.Deserialize(value["SimpleCache"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome Cache::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdvancedCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Cache.AdvancedCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cache.AdvancedCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_advancedCache.Deserialize(value["AdvancedCache"]);
@@ -69,7 +69,7 @@ CoreInternalOutcome Cache::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleCache") && !value["RuleCache"].IsNull())
     {
         if (!value["RuleCache"].IsArray())
-            return CoreInternalOutcome(Error("response `Cache.RuleCache` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Cache.RuleCache` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleCache"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

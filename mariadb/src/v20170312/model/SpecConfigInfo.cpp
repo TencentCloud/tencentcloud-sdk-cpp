@@ -42,7 +42,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Machine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.Machine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.Machine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machine = string(value["Machine"].GetString());
         m_machineHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetInt64();
         m_memoryHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.MinStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.MinStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minStorage = value["MinStorage"].GetInt64();
         m_minStorageHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.MaxStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.MaxStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStorage = value["MaxStorage"].GetInt64();
         m_maxStorageHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SuitInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.SuitInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.SuitInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suitInfo = string(value["SuitInfo"].GetString());
         m_suitInfoHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.Qps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetInt64();
         m_qpsHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetInt64();
         m_pidHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.NodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.NodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeCount = value["NodeCount"].GetInt64();
         m_nodeCountHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SpecConfigInfo.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecConfigInfo.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;

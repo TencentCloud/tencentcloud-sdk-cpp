@@ -33,7 +33,7 @@ CoreInternalOutcome AiRecognitionTaskOcrWordsResultOutput::Deserialize(const rap
     if (value.HasMember("ResultSet") && !value["ResultSet"].IsNull())
     {
         if (!value["ResultSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrWordsResultOutput.ResultSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrWordsResultOutput.ResultSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

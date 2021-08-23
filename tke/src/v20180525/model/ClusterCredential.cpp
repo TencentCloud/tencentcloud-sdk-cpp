@@ -35,7 +35,7 @@ CoreInternalOutcome ClusterCredential::Deserialize(const rapidjson::Value &value
     {
         if (!value["CACert"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterCredential.CACert` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCredential.CACert` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cACert = string(value["CACert"].GetString());
         m_cACertHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ClusterCredential::Deserialize(const rapidjson::Value &value
     {
         if (!value["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterCredential.Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterCredential.Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(value["Token"].GetString());
         m_tokenHasBeenSet = true;

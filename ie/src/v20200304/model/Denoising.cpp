@@ -36,7 +36,7 @@ CoreInternalOutcome Denoising::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Denoising.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Denoising.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Denoising::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplStrength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Denoising.TemplStrength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Denoising.TemplStrength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_templStrength = value["TemplStrength"].GetDouble();
         m_templStrengthHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Denoising::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpatialStrength"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Denoising.SpatialStrength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Denoising.SpatialStrength` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_spatialStrength = value["SpatialStrength"].GetDouble();
         m_spatialStrengthHasBeenSet = true;

@@ -42,7 +42,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["CptId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.CptId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.CptId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cptId = value["CptId"].GetUint64();
         m_cptIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["Issuer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.Issuer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.Issuer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuer = string(value["Issuer"].GetString());
         m_issuerHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["ExpirationDate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.ExpirationDate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.ExpirationDate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expirationDate = value["ExpirationDate"].GetInt64();
         m_expirationDateHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["ClaimJson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.ClaimJson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.ClaimJson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_claimJson = string(value["ClaimJson"].GetString());
         m_claimJsonHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["IssuanceDate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.IssuanceDate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.IssuanceDate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_issuanceDate = value["IssuanceDate"].GetInt64();
         m_issuanceDateHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["Context"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.Context` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.Context` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_context = string(value["Context"].GetString());
         m_contextHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     {
         if (!value["Proof"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.Proof` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.Proof` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_proof.Deserialize(value["Proof"]);
@@ -128,7 +128,7 @@ CoreInternalOutcome VerifyFunctionArg::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Type") && !value["Type"].IsNull())
     {
         if (!value["Type"].IsArray())
-            return CoreInternalOutcome(Error("response `VerifyFunctionArg.Type` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VerifyFunctionArg.Type` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Type"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

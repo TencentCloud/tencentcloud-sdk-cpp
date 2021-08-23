@@ -49,7 +49,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApkSizeOpt"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.ApkSizeOpt` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.ApkSizeOpt` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_apkSizeOpt = value["ApkSizeOpt"].GetUint64();
         m_apkSizeOptHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.Dex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.Dex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dex = value["Dex"].GetUint64();
         m_dexHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["So"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.So` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.So` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_so = value["So"].GetUint64();
         m_soHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bugly"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.Bugly` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.Bugly` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bugly = value["Bugly"].GetUint64();
         m_buglyHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiRepack"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiRepack` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiRepack` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiRepack = value["AntiRepack"].GetUint64();
         m_antiRepackHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SeperateDex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.SeperateDex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.SeperateDex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_seperateDex = value["SeperateDex"].GetUint64();
         m_seperateDexHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Db"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.Db` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.Db` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_db = value["Db"].GetUint64();
         m_dbHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DexSig"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.DexSig` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.DexSig` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dexSig = value["DexSig"].GetUint64();
         m_dexSigHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SoInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.SoInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.SoInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_soInfo.Deserialize(value["SoInfo"]);
@@ -146,7 +146,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiVMP"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiVMP` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiVMP` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiVMP = value["AntiVMP"].GetUint64();
         m_antiVMPHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SoType") && !value["SoType"].IsNull())
     {
         if (!value["SoType"].IsArray())
-            return CoreInternalOutcome(Error("response `PlanInfo.SoType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.SoType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SoType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -169,7 +169,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiLogLeak"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiLogLeak` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiLogLeak` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiLogLeak = value["AntiLogLeak"].GetUint64();
         m_antiLogLeakHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiQemuRoot"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiQemuRoot` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiQemuRoot` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiQemuRoot = value["AntiQemuRoot"].GetUint64();
         m_antiQemuRootHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiAssets"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiAssets` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiAssets` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiAssets = value["AntiAssets"].GetUint64();
         m_antiAssetsHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiScreenshot"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiScreenshot` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiScreenshot` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiScreenshot = value["AntiScreenshot"].GetUint64();
         m_antiScreenshotHasBeenSet = true;
@@ -209,7 +209,7 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AntiSSL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlanInfo.AntiSSL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.AntiSSL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_antiSSL = value["AntiSSL"].GetUint64();
         m_antiSSLHasBeenSet = true;

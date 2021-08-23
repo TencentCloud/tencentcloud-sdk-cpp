@@ -37,7 +37,7 @@ CoreInternalOutcome DynamicRetentionTime::Deserialize(const rapidjson::Value &va
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DynamicRetentionTime.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicRetentionTime.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DynamicRetentionTime::Deserialize(const rapidjson::Value &va
     {
         if (!value["DiskQuotaPercentage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DynamicRetentionTime.DiskQuotaPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicRetentionTime.DiskQuotaPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskQuotaPercentage = value["DiskQuotaPercentage"].GetInt64();
         m_diskQuotaPercentageHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DynamicRetentionTime::Deserialize(const rapidjson::Value &va
     {
         if (!value["StepForwardPercentage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DynamicRetentionTime.StepForwardPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicRetentionTime.StepForwardPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stepForwardPercentage = value["StepForwardPercentage"].GetInt64();
         m_stepForwardPercentageHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DynamicRetentionTime::Deserialize(const rapidjson::Value &va
     {
         if (!value["BottomRetention"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DynamicRetentionTime.BottomRetention` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DynamicRetentionTime.BottomRetention` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bottomRetention = value["BottomRetention"].GetInt64();
         m_bottomRetentionHasBeenSet = true;

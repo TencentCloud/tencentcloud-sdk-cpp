@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     {
         if (!rsp["EipNumQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EipNumQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipNumQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eipNumQuota = rsp["EipNumQuota"].GetInt64();
         m_eipNumQuotaHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     {
         if (!rsp["CurrentEipNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentEipNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentEipNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentEipNum = rsp["CurrentEipNum"].GetInt64();
         m_currentEipNumHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     {
         if (!rsp["DailyApplyCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DailyApplyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyApplyCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dailyApplyCount = rsp["DailyApplyCount"].GetInt64();
         m_dailyApplyCountHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     {
         if (!rsp["DailyApplyQuota"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DailyApplyQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyApplyQuota` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dailyApplyQuota = rsp["DailyApplyQuota"].GetInt64();
         m_dailyApplyQuotaHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     {
         if (!rsp["BatchApplyMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BatchApplyMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchApplyMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_batchApplyMax = rsp["BatchApplyMax"].GetInt64();
         m_batchApplyMaxHasBeenSet = true;

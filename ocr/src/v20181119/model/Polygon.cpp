@@ -37,7 +37,7 @@ CoreInternalOutcome Polygon::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LeftTop"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Polygon.LeftTop` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Polygon.LeftTop` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_leftTop.Deserialize(value["LeftTop"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome Polygon::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RightTop"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Polygon.RightTop` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Polygon.RightTop` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rightTop.Deserialize(value["RightTop"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome Polygon::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RightBottom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Polygon.RightBottom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Polygon.RightBottom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rightBottom.Deserialize(value["RightBottom"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome Polygon::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LeftBottom"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Polygon.LeftBottom` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Polygon.LeftBottom` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_leftBottom.Deserialize(value["LeftBottom"]);

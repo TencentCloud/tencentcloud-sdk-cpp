@@ -36,7 +36,7 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const rapidjson::Value &v
     {
         if (!value["AspectRatio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditProjectInput.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectInput.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aspectRatio = string(value["AspectRatio"].GetString());
         m_aspectRatioHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const rapidjson::Value &v
     {
         if (!value["VideoEditTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VideoEditProjectInput.VideoEditTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectInput.VideoEditTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoEditTemplateId = string(value["VideoEditTemplateId"].GetString());
         m_videoEditTemplateIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const rapidjson::Value &v
     if (value.HasMember("InitTracks") && !value["InitTracks"].IsNull())
     {
         if (!value["InitTracks"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoEditProjectInput.InitTracks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectInput.InitTracks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InitTracks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

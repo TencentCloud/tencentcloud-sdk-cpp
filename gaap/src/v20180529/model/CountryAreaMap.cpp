@@ -39,7 +39,7 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NationCountryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CountryAreaMap.NationCountryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CountryAreaMap.NationCountryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationCountryName = string(value["NationCountryName"].GetString());
         m_nationCountryNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NationCountryInnerCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CountryAreaMap.NationCountryInnerCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CountryAreaMap.NationCountryInnerCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationCountryInnerCode = string(value["NationCountryInnerCode"].GetString());
         m_nationCountryInnerCodeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GeographicalZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CountryAreaMap.GeographicalZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CountryAreaMap.GeographicalZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_geographicalZoneName = string(value["GeographicalZoneName"].GetString());
         m_geographicalZoneNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GeographicalZoneInnerCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CountryAreaMap.GeographicalZoneInnerCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CountryAreaMap.GeographicalZoneInnerCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_geographicalZoneInnerCode = string(value["GeographicalZoneInnerCode"].GetString());
         m_geographicalZoneInnerCodeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContinentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CountryAreaMap.ContinentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CountryAreaMap.ContinentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_continentName = string(value["ContinentName"].GetString());
         m_continentNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContinentInnerCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CountryAreaMap.ContinentInnerCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CountryAreaMap.ContinentInnerCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_continentInnerCode = string(value["ContinentInnerCode"].GetString());
         m_continentInnerCodeHasBeenSet = true;

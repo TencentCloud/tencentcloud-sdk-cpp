@@ -35,7 +35,7 @@ CoreInternalOutcome TriggerInvokeCondition::Deserialize(const rapidjson::Value &
     {
         if (!value["InvokeMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokeCondition.InvokeMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokeCondition.InvokeMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokeMethod = string(value["InvokeMethod"].GetString());
         m_invokeMethodHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TriggerInvokeCondition::Deserialize(const rapidjson::Value &
     {
         if (!value["InvokeExpr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerInvokeCondition.InvokeExpr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerInvokeCondition.InvokeExpr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokeExpr = string(value["InvokeExpr"].GetString());
         m_invokeExprHasBeenSet = true;

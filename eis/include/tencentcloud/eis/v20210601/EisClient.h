@@ -47,19 +47,19 @@ namespace TencentCloud
                 EisClient(const Credential &credential, const std::string &region);
                 EisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::GetRuntimeMCResponse> GetRuntimeMCOutcome;
+                typedef Outcome<Core::Error, Model::GetRuntimeMCResponse> GetRuntimeMCOutcome;
                 typedef std::future<GetRuntimeMCOutcome> GetRuntimeMCOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::GetRuntimeMCRequest&, GetRuntimeMCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRuntimeMCAsyncHandler;
-                typedef Outcome<Error, Model::GetRuntimeResourceMonitorMetricMCResponse> GetRuntimeResourceMonitorMetricMCOutcome;
+                typedef Outcome<Core::Error, Model::GetRuntimeResourceMonitorMetricMCResponse> GetRuntimeResourceMonitorMetricMCOutcome;
                 typedef std::future<GetRuntimeResourceMonitorMetricMCOutcome> GetRuntimeResourceMonitorMetricMCOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::GetRuntimeResourceMonitorMetricMCRequest&, GetRuntimeResourceMonitorMetricMCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRuntimeResourceMonitorMetricMCAsyncHandler;
-                typedef Outcome<Error, Model::ListDeployableRuntimesMCResponse> ListDeployableRuntimesMCOutcome;
+                typedef Outcome<Core::Error, Model::ListDeployableRuntimesMCResponse> ListDeployableRuntimesMCOutcome;
                 typedef std::future<ListDeployableRuntimesMCOutcome> ListDeployableRuntimesMCOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::ListDeployableRuntimesMCRequest&, ListDeployableRuntimesMCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDeployableRuntimesMCAsyncHandler;
-                typedef Outcome<Error, Model::ListRuntimeDeployedInstancesMCResponse> ListRuntimeDeployedInstancesMCOutcome;
+                typedef Outcome<Core::Error, Model::ListRuntimeDeployedInstancesMCResponse> ListRuntimeDeployedInstancesMCOutcome;
                 typedef std::future<ListRuntimeDeployedInstancesMCOutcome> ListRuntimeDeployedInstancesMCOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::ListRuntimeDeployedInstancesMCRequest&, ListRuntimeDeployedInstancesMCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRuntimeDeployedInstancesMCAsyncHandler;
-                typedef Outcome<Error, Model::ListRuntimesMCResponse> ListRuntimesMCOutcome;
+                typedef Outcome<Core::Error, Model::ListRuntimesMCResponse> ListRuntimesMCOutcome;
                 typedef std::future<ListRuntimesMCOutcome> ListRuntimesMCOutcomeCallable;
                 typedef std::function<void(const EisClient*, const Model::ListRuntimesMCRequest&, ListRuntimesMCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRuntimesMCAsyncHandler;
 

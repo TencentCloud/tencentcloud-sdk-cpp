@@ -36,7 +36,7 @@ CoreInternalOutcome ForwardListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrontendPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ForwardListener.FrontendPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardListener.FrontendPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frontendPort = value["FrontendPort"].GetInt64();
         m_frontendPortHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ForwardListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ForwardListener.ForwardProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardListener.ForwardProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardProtocol = string(value["ForwardProtocol"].GetString());
         m_forwardProtocolHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ForwardListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrontendPortEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ForwardListener.FrontendPortEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ForwardListener.FrontendPortEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frontendPortEnd = value["FrontendPortEnd"].GetInt64();
         m_frontendPortEndHasBeenSet = true;

@@ -43,16 +43,16 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -63,11 +63,11 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -75,7 +75,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["Birth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Birth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Birth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birth = string(rsp["Birth"].GetString());
         m_birthHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["IdCardNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdCardNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdCardNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idCardNo = string(rsp["IdCardNo"].GetString());
         m_idCardNoHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["CardType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CardType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CardType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cardType = rsp["CardType"].GetInt64();
         m_cardTypeHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["ValidDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ValidDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ValidDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validDate = string(rsp["ValidDate"].GetString());
         m_validDateHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["Authority"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Authority` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Authority` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authority = string(rsp["Authority"].GetString());
         m_authorityHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["VisaNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VisaNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VisaNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_visaNum = string(rsp["VisaNum"].GetString());
         m_visaNumHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
     {
         if (!rsp["PassNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PassNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PassNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_passNo = string(rsp["PassNo"].GetString());
         m_passNoHasBeenSet = true;

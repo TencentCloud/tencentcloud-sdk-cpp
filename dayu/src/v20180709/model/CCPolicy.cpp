@@ -45,7 +45,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Smode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.Smode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.Smode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_smode = string(value["Smode"].GetString());
         m_smodeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.SetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.SetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_setId = string(value["SetId"].GetString());
         m_setIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Frequency"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.Frequency` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.Frequency` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_frequency = value["Frequency"].GetUint64();
         m_frequencyHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExeMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.ExeMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.ExeMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exeMode = string(value["ExeMode"].GetString());
         m_exeModeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.Switch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.Switch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_switch = value["Switch"].GetUint64();
         m_switchHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleList") && !value["RuleList"].IsNull())
     {
         if (!value["RuleList"].IsArray())
-            return CoreInternalOutcome(Error("response `CCPolicy.RuleList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.RuleList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IpList") && !value["IpList"].IsNull())
     {
         if (!value["IpList"].IsArray())
-            return CoreInternalOutcome(Error("response `CCPolicy.IpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.IpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -148,7 +148,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCPolicy.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCPolicy.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;

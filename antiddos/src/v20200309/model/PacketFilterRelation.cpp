@@ -35,7 +35,7 @@ CoreInternalOutcome PacketFilterRelation::Deserialize(const rapidjson::Value &va
     {
         if (!value["PacketFilterConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PacketFilterRelation.PacketFilterConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterRelation.PacketFilterConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_packetFilterConfig.Deserialize(value["PacketFilterConfig"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome PacketFilterRelation::Deserialize(const rapidjson::Value &va
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `PacketFilterRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PacketFilterRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

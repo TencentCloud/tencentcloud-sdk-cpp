@@ -37,7 +37,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTask2017::Deserialize(const rapidjson::V
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTask2017.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTask2017::Deserialize(const rapidjson::V
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTask2017.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTask2017::Deserialize(const rapidjson::V
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask2017.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTask2017.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SnapshotByTimeOffsetTask2017::Deserialize(const rapidjson::V
     if (value.HasMember("SnapshotInfoSet") && !value["SnapshotInfoSet"].IsNull())
     {
         if (!value["SnapshotInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTask2017.SnapshotInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffsetTask2017.SnapshotInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SnapshotInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

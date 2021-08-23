@@ -36,7 +36,7 @@ CoreInternalOutcome Eyebrow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyebrowDensity"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eyebrow.EyebrowDensity` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eyebrow.EyebrowDensity` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyebrowDensity.Deserialize(value["EyebrowDensity"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome Eyebrow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyebrowCurve"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eyebrow.EyebrowCurve` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eyebrow.EyebrowCurve` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyebrowCurve.Deserialize(value["EyebrowCurve"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome Eyebrow::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyebrowLength"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eyebrow.EyebrowLength` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eyebrow.EyebrowLength` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyebrowLength.Deserialize(value["EyebrowLength"]);

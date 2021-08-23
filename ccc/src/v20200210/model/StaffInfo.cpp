@@ -40,7 +40,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffInfo.Mail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.Mail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nick"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nick = string(value["Nick"].GetString());
         m_nickHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffNumber = string(value["StaffNumber"].GetString());
         m_staffNumberHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SkillGroupList") && !value["SkillGroupList"].IsNull())
     {
         if (!value["SkillGroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `StaffInfo.SkillGroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.SkillGroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SkillGroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifyTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffInfo.LastModifyTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.LastModifyTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifyTimestamp = value["LastModifyTimestamp"].GetInt64();
         m_lastModifyTimestampHasBeenSet = true;

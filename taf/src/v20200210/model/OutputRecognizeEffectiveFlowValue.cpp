@@ -35,7 +35,7 @@ CoreInternalOutcome OutputRecognizeEffectiveFlowValue::Deserialize(const rapidjs
     {
         if (!value["Lable"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputRecognizeEffectiveFlowValue.Lable` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeEffectiveFlowValue.Lable` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lable = string(value["Lable"].GetString());
         m_lableHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OutputRecognizeEffectiveFlowValue::Deserialize(const rapidjs
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OutputRecognizeEffectiveFlowValue.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeEffectiveFlowValue.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;

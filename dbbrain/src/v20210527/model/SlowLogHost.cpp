@@ -36,7 +36,7 @@ CoreInternalOutcome SlowLogHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserHost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogHost.UserHost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogHost.UserHost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userHost = string(value["UserHost"].GetString());
         m_userHostHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SlowLogHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ratio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowLogHost.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogHost.Ratio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = value["Ratio"].GetDouble();
         m_ratioHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SlowLogHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogHost.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogHost.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

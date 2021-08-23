@@ -37,7 +37,7 @@ CoreInternalOutcome SkillGroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkillGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupItem.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupItem.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupId = value["SkillGroupId"].GetInt64();
         m_skillGroupIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SkillGroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkillGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupItem.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupItem.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupName = string(value["SkillGroupName"].GetString());
         m_skillGroupNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SkillGroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Priority"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupItem.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupItem.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SkillGroupItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SkillGroupItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SkillGroupItem.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

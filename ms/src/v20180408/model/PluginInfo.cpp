@@ -36,7 +36,7 @@ CoreInternalOutcome PluginInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PluginInfo.PluginType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PluginInfo.PluginType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pluginType = value["PluginType"].GetUint64();
         m_pluginTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PluginInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PluginInfo.PluginName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PluginInfo.PluginName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginName = string(value["PluginName"].GetString());
         m_pluginNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PluginInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PluginDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PluginInfo.PluginDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PluginInfo.PluginDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pluginDesc = string(value["PluginDesc"].GetString());
         m_pluginDescHasBeenSet = true;

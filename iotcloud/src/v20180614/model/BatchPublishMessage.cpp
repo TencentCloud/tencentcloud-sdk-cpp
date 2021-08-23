@@ -35,7 +35,7 @@ CoreInternalOutcome BatchPublishMessage::Deserialize(const rapidjson::Value &val
     {
         if (!value["Topic"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchPublishMessage.Topic` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchPublishMessage.Topic` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topic = string(value["Topic"].GetString());
         m_topicHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BatchPublishMessage::Deserialize(const rapidjson::Value &val
     {
         if (!value["Payload"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchPublishMessage.Payload` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchPublishMessage.Payload` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payload = string(value["Payload"].GetString());
         m_payloadHasBeenSet = true;

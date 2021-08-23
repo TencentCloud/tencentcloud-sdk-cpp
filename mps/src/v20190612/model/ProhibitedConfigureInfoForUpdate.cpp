@@ -35,7 +35,7 @@ CoreInternalOutcome ProhibitedConfigureInfoForUpdate::Deserialize(const rapidjso
     {
         if (!value["AsrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProhibitedConfigureInfoForUpdate.AsrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProhibitedConfigureInfoForUpdate.AsrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_asrReviewInfo.Deserialize(value["AsrReviewInfo"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ProhibitedConfigureInfoForUpdate::Deserialize(const rapidjso
     {
         if (!value["OcrReviewInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProhibitedConfigureInfoForUpdate.OcrReviewInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProhibitedConfigureInfoForUpdate.OcrReviewInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ocrReviewInfo.Deserialize(value["OcrReviewInfo"]);

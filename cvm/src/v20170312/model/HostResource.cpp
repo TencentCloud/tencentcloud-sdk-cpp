@@ -40,7 +40,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HostResource.CpuTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.CpuTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuTotal = value["CpuTotal"].GetUint64();
         m_cpuTotalHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuAvailable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HostResource.CpuAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.CpuAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuAvailable = value["CpuAvailable"].GetUint64();
         m_cpuAvailableHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemTotal"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HostResource.MemTotal` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.MemTotal` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memTotal = value["MemTotal"].GetDouble();
         m_memTotalHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemAvailable"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HostResource.MemAvailable` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.MemAvailable` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memAvailable = value["MemAvailable"].GetDouble();
         m_memAvailableHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HostResource.DiskTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.DiskTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskTotal = value["DiskTotal"].GetUint64();
         m_diskTotalHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskAvailable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HostResource.DiskAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.DiskAvailable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskAvailable = value["DiskAvailable"].GetUint64();
         m_diskAvailableHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HostResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskType = string(value["DiskType"].GetString());
         m_diskTypeHasBeenSet = true;

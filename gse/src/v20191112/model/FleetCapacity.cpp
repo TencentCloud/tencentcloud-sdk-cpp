@@ -37,7 +37,7 @@ CoreInternalOutcome FleetCapacity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetCapacity.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetCapacity.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FleetCapacity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetCapacity.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetCapacity.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FleetCapacity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCounts"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FleetCapacity.InstanceCounts` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetCapacity.InstanceCounts` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceCounts.Deserialize(value["InstanceCounts"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome FleetCapacity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScalingInterval"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FleetCapacity.ScalingInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetCapacity.ScalingInterval` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scalingInterval = value["ScalingInterval"].GetUint64();
         m_scalingIntervalHasBeenSet = true;

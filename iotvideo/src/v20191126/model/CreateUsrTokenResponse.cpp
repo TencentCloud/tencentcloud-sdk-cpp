@@ -37,16 +37,16 @@ CoreInternalOutcome CreateUsrTokenResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome CreateUsrTokenResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome CreateUsrTokenResponse::Deserialize(const string &payload)
     {
         if (!rsp["AccessId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessId = string(rsp["AccessId"].GetString());
         m_accessIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CreateUsrTokenResponse::Deserialize(const string &payload)
     {
         if (!rsp["AccessToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessToken = string(rsp["AccessToken"].GetString());
         m_accessTokenHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CreateUsrTokenResponse::Deserialize(const string &payload)
     {
         if (!rsp["ExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = rsp["ExpireTime"].GetUint64();
         m_expireTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome CreateUsrTokenResponse::Deserialize(const string &payload)
     {
         if (!rsp["TerminalId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TerminalId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TerminalId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_terminalId = string(rsp["TerminalId"].GetString());
         m_terminalIdHasBeenSet = true;

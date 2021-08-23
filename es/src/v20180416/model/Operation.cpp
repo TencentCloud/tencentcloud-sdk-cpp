@@ -40,7 +40,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Operation.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Operation.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Operation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Detail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Operation.Detail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.Detail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_detail.Deserialize(value["Detail"]);
@@ -87,7 +87,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Operation.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tasks") && !value["Tasks"].IsNull())
     {
         if (!value["Tasks"].IsArray())
-            return CoreInternalOutcome(Error("response `Operation.Tasks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Operation.Tasks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tasks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -117,7 +117,7 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Progress"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Operation.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Operation.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetDouble();
         m_progressHasBeenSet = true;

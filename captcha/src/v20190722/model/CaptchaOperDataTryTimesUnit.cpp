@@ -36,7 +36,7 @@ CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const rapidjson::Va
     {
         if (!value["DateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataTryTimesUnit.DateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dateKey = string(value["DateKey"].GetString());
         m_dateKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const rapidjson::Va
     if (value.HasMember("CntPerPass") && !value["CntPerPass"].IsNull())
     {
         if (!value["CntPerPass"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesUnit.CntPerPass` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataTryTimesUnit.CntPerPass` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CntPerPass"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const rapidjson::Va
     {
         if (!value["MarketCntPerPass"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesUnit.MarketCntPerPass` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataTryTimesUnit.MarketCntPerPass` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_marketCntPerPass = value["MarketCntPerPass"].GetDouble();
         m_marketCntPerPassHasBeenSet = true;

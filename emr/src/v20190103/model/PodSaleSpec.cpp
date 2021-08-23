@@ -37,7 +37,7 @@ CoreInternalOutcome PodSaleSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PodSaleSpec.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSaleSpec.NodeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeType = string(value["NodeType"].GetString());
         m_nodeTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PodSaleSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PodSaleSpec.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSaleSpec.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PodSaleSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PodSaleSpec.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSaleSpec.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PodSaleSpec::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Number"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PodSaleSpec.Number` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PodSaleSpec.Number` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_number = value["Number"].GetUint64();
         m_numberHasBeenSet = true;

@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(rsp["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["RoomId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoomId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = rsp["RoomId"].GetInt64();
         m_roomIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(rsp["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = rsp["Progress"].GetInt64();
         m_progressHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["TotalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TotalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalTime = rsp["TotalTime"].GetInt64();
         m_totalTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     {
         if (!rsp["VideoInfos"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VideoInfos` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VideoInfos` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoInfos.Deserialize(rsp["VideoInfos"]);
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeVideoGenerationTaskResponse::Deserialize(const strin
     if (rsp.HasMember("VideoInfoList") && !rsp["VideoInfoList"].IsNull())
     {
         if (!rsp["VideoInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["VideoInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

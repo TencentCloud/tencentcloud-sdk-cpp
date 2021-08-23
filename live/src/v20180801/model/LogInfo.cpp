@@ -37,7 +37,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.LogName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.LogName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logName = string(value["LogName"].GetString());
         m_logNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.LogUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.LogUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logUrl = string(value["LogUrl"].GetString());
         m_logUrlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.LogTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.LogTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logTime = string(value["LogTime"].GetString());
         m_logTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LogInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LogInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;

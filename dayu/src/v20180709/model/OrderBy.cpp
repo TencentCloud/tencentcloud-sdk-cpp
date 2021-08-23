@@ -35,7 +35,7 @@ CoreInternalOutcome OrderBy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Field"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderBy.Field` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderBy.Field` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_field = string(value["Field"].GetString());
         m_fieldHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OrderBy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Order"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OrderBy.Order` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderBy.Order` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_order = string(value["Order"].GetString());
         m_orderHasBeenSet = true;

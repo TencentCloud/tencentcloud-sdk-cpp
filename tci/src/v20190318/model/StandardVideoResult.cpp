@@ -35,7 +35,7 @@ CoreInternalOutcome StandardVideoResult::Deserialize(const rapidjson::Value &val
     if (value.HasMember("HighlightsInfo") && !value["HighlightsInfo"].IsNull())
     {
         if (!value["HighlightsInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `StandardVideoResult.HighlightsInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StandardVideoResult.HighlightsInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HighlightsInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome StandardVideoResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandardVideoResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardVideoResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome StandardVideoResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandardVideoResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandardVideoResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

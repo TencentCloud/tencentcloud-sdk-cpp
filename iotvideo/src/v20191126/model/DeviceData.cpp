@@ -45,7 +45,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActiveTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.ActiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.ActiveTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_activeTime = value["ActiveTime"].GetUint64();
         m_activeTimeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Disabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.Disabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.Disabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disabled = value["Disabled"].GetBool();
         m_disabledHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OtaVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.OtaVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.OtaVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_otaVersion = string(value["OtaVersion"].GetString());
         m_otaVersionHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Online"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.Online` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.Online` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_online = value["Online"].GetUint64();
         m_onlineHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastOnlineTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.LastOnlineTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.LastOnlineTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lastOnlineTime = value["LastOnlineTime"].GetUint64();
         m_lastOnlineTimeHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IotModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.IotModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.IotModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iotModel = string(value["IotModel"].GetString());
         m_iotModelHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Certificate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.Certificate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.Certificate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificate = string(value["Certificate"].GetString());
         m_certificateHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WhiteBoxSoUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.WhiteBoxSoUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.WhiteBoxSoUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_whiteBoxSoUrl = string(value["WhiteBoxSoUrl"].GetString());
         m_whiteBoxSoUrlHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamStatus"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DeviceData.StreamStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceData.StreamStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_streamStatus = value["StreamStatus"].GetBool();
         m_streamStatusHasBeenSet = true;

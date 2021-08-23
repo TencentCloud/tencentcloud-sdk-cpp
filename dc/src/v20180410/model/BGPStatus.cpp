@@ -35,7 +35,7 @@ CoreInternalOutcome BGPStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TencentAddressBgpState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPStatus.TencentAddressBgpState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPStatus.TencentAddressBgpState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tencentAddressBgpState = string(value["TencentAddressBgpState"].GetString());
         m_tencentAddressBgpStateHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BGPStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TencentBackupAddressBgpState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BGPStatus.TencentBackupAddressBgpState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BGPStatus.TencentBackupAddressBgpState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tencentBackupAddressBgpState = string(value["TencentBackupAddressBgpState"].GetString());
         m_tencentBackupAddressBgpStateHasBeenSet = true;

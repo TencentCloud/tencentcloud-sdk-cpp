@@ -39,7 +39,7 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BodyMovementResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyMovementResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BodyMovementResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyMovementResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BodyMovementResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyMovementResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Movements"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BodyMovementResult.Movements` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyMovementResult.Movements` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_movements = string(value["Movements"].GetString());
         m_movementsHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Top"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BodyMovementResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyMovementResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_top = value["Top"].GetInt64();
         m_topHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BodyMovementResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyMovementResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

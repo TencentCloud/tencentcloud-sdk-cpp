@@ -43,7 +43,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.SMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.SMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sMode = value["SMode"].GetUint64();
         m_sModeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsGlobal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.IsGlobal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.IsGlobal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isGlobal = value["IsGlobal"].GetUint64();
         m_isGlobalHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome PrivilegeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hostip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRule.Hostip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRule.Hostip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostip = string(value["Hostip"].GetString());
         m_hostipHasBeenSet = true;

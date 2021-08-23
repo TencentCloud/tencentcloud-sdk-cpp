@@ -37,7 +37,7 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Video"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveStreamTemplate.Video` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.Video` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_video.Deserialize(value["Video"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["Audio"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveStreamTemplate.Audio` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.Audio` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audio.Deserialize(value["Audio"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["RemoveAudio"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveStreamTemplate.RemoveAudio` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.RemoveAudio` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_removeAudio = value["RemoveAudio"].GetUint64();
         m_removeAudioHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
     {
         if (!value["RemoveVideo"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveStreamTemplate.RemoveVideo` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.RemoveVideo` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_removeVideo = value["RemoveVideo"].GetUint64();
         m_removeVideoHasBeenSet = true;

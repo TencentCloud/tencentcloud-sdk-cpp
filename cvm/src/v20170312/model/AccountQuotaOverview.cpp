@@ -35,7 +35,7 @@ CoreInternalOutcome AccountQuotaOverview::Deserialize(const rapidjson::Value &va
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountQuotaOverview.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountQuotaOverview.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AccountQuotaOverview::Deserialize(const rapidjson::Value &va
     {
         if (!value["AccountQuota"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AccountQuotaOverview.AccountQuota` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountQuotaOverview.AccountQuota` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_accountQuota.Deserialize(value["AccountQuota"]);

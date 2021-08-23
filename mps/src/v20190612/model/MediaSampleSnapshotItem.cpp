@@ -39,7 +39,7 @@ CoreInternalOutcome MediaSampleSnapshotItem::Deserialize(const rapidjson::Value 
     {
         if (!value["Definition"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotItem.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetInt64();
         m_definitionHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MediaSampleSnapshotItem::Deserialize(const rapidjson::Value 
     {
         if (!value["SampleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotItem.SampleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotItem.SampleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sampleType = string(value["SampleType"].GetString());
         m_sampleTypeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MediaSampleSnapshotItem::Deserialize(const rapidjson::Value 
     {
         if (!value["Interval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotItem.Interval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotItem.Interval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_interval = value["Interval"].GetInt64();
         m_intervalHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MediaSampleSnapshotItem::Deserialize(const rapidjson::Value 
     {
         if (!value["Storage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotItem.Storage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotItem.Storage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_storage.Deserialize(value["Storage"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome MediaSampleSnapshotItem::Deserialize(const rapidjson::Value 
     if (value.HasMember("ImagePathSet") && !value["ImagePathSet"].IsNull())
     {
         if (!value["ImagePathSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotItem.ImagePathSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotItem.ImagePathSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImagePathSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome MediaSampleSnapshotItem::Deserialize(const rapidjson::Value 
     if (value.HasMember("WaterMarkDefinition") && !value["WaterMarkDefinition"].IsNull())
     {
         if (!value["WaterMarkDefinition"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaSampleSnapshotItem.WaterMarkDefinition` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaSampleSnapshotItem.WaterMarkDefinition` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WaterMarkDefinition"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

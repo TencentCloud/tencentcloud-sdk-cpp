@@ -39,7 +39,7 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisBackupSet.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisBackupSet.BackupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.BackupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupId = string(value["BackupId"].GetString());
         m_backupIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackupType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisBackupSet.BackupType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.BackupType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupType = string(value["BackupType"].GetString());
         m_backupTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisBackupSet.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisBackupSet.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Locked"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisBackupSet.Locked` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.Locked` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_locked = value["Locked"].GetInt64();
         m_lockedHasBeenSet = true;

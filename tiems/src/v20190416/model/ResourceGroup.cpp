@@ -53,7 +53,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cluster"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Cluster` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Cluster` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cluster = string(value["Cluster"].GetString());
         m_clusterHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Created"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Created` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Created` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_created = string(value["Created"].GetString());
         m_createdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Updated"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Updated` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Updated` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updated = string(value["Updated"].GetString());
         m_updatedHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetUint64();
         m_instanceCountHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.ServiceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.ServiceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_serviceCount = value["ServiceCount"].GetUint64();
         m_serviceCountHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.JobCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.JobCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_jobCount = value["JobCount"].GetUint64();
         m_jobCountHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Public"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Public` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Public` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_public = value["Public"].GetBool();
         m_publicHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Gpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Gpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gpu = value["Gpu"].GetUint64();
         m_gpuHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -222,7 +222,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GpuType") && !value["GpuType"].IsNull())
     {
         if (!value["GpuType"].IsArray())
-            return CoreInternalOutcome(Error("response `ResourceGroup.GpuType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.GpuType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GpuType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -236,7 +236,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HasPrepaid"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.HasPrepaid` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.HasPrepaid` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_hasPrepaid = value["HasPrepaid"].GetBool();
         m_hasPrepaidHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome ResourceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceGroup.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceGroup.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;

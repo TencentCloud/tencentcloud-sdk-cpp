@@ -36,7 +36,7 @@ CoreInternalOutcome BindInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppIconUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindInfo.AppIconUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindInfo.AppIconUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appIconUrl = string(value["AppIconUrl"].GetString());
         m_appIconUrlHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BindInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BindInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppPkgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BindInfo.AppPkgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BindInfo.AppPkgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appPkgName = string(value["AppPkgName"].GetString());
         m_appPkgNameHasBeenSet = true;

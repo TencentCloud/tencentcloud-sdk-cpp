@@ -40,7 +40,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.SubAcctType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.SubAcctType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctType = string(value["SubAcctType"].GetString());
         m_subAcctTypeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReconcileStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.ReconcileStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.ReconcileStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reconcileStatus = string(value["ReconcileStatus"].GetString());
         m_reconcileStatusHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReconcileReturnMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.ReconcileReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.ReconcileReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reconcileReturnMsg = string(value["ReconcileReturnMsg"].GetString());
         m_reconcileReturnMsgHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClearingStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.ClearingStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.ClearingStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clearingStatus = string(value["ClearingStatus"].GetString());
         m_clearingStatusHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClearingReturnMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.ClearingReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.ClearingReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clearingReturnMsg = string(value["ClearingReturnMsg"].GetString());
         m_clearingReturnMsgHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClearItem.TotalAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClearItem.TotalAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalAmt = string(value["TotalAmt"].GetString());
         m_totalAmtHasBeenSet = true;

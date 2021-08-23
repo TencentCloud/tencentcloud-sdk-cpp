@@ -35,7 +35,7 @@ CoreInternalOutcome SQLTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SQL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SQLTask.SQL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SQLTask.SQL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sQL = string(value["SQL"].GetString());
         m_sQLHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SQLTask::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Config") && !value["Config"].IsNull())
     {
         if (!value["Config"].IsArray())
-            return CoreInternalOutcome(Error("response `SQLTask.Config` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SQLTask.Config` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Config"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

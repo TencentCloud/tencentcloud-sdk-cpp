@@ -37,7 +37,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InternetChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.InternetChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetChargeType = string(value["InternetChargeType"].GetString());
         m_internetChargeTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InternetMaxBandwidthOut"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.InternetMaxBandwidthOut` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetUint64();
         m_internetMaxBandwidthOutHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PublicIpAssigned"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.PublicIpAssigned` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.PublicIpAssigned` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAssigned = value["PublicIpAssigned"].GetBool();
         m_publicIpAssignedHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BandwidthPackageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InternetAccessible.BandwidthPackageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.BandwidthPackageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthPackageId = string(value["BandwidthPackageId"].GetString());
         m_bandwidthPackageIdHasBeenSet = true;

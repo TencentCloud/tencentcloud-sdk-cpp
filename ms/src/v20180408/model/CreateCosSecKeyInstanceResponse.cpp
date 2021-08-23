@@ -41,16 +41,16 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosAppid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CosAppid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosAppid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cosAppid = rsp["CosAppid"].GetUint64();
         m_cosAppidHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosBucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosBucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosBucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosBucket = string(rsp["CosBucket"].GetString());
         m_cosBucketHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosRegion = string(rsp["CosRegion"].GetString());
         m_cosRegionHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["ExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = rsp["ExpireTime"].GetUint64();
         m_expireTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosId = string(rsp["CosId"].GetString());
         m_cosIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosKey = string(rsp["CosKey"].GetString());
         m_cosKeyHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosTocken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosTocken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosTocken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosTocken = string(rsp["CosTocken"].GetString());
         m_cosTockenHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome CreateCosSecKeyInstanceResponse::Deserialize(const string &p
     {
         if (!rsp["CosPrefix"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosPrefix` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosPrefix` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cosPrefix = string(rsp["CosPrefix"].GetString());
         m_cosPrefixHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const rapidjson::Value &
     if (value.HasMember("BandwidthRange") && !value["BandwidthRange"].IsNull())
     {
         if (!value["BandwidthRange"].IsArray())
-            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.BandwidthRange` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPriceGradient.BandwidthRange` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BandwidthRange"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -49,7 +49,7 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const rapidjson::Value &
     {
         if (!value["BandwidthUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.BandwidthUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPriceGradient.BandwidthUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthUnitPrice = value["BandwidthUnitPrice"].GetDouble();
         m_bandwidthUnitPriceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const rapidjson::Value &
     {
         if (!value["DiscountBandwidthUnitPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPriceGradient.DiscountBandwidthUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPriceGradient.DiscountBandwidthUnitPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountBandwidthUnitPrice = value["DiscountBandwidthUnitPrice"].GetDouble();
         m_discountBandwidthUnitPriceHasBeenSet = true;

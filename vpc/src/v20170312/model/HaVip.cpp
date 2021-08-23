@@ -44,7 +44,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HaVipId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.HaVipId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.HaVipId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_haVipId = string(value["HaVipId"].GetString());
         m_haVipIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HaVipName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.HaVipName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.HaVipName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_haVipName = string(value["HaVipName"].GetString());
         m_haVipNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkInterfaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceId = string(value["NetworkInterfaceId"].GetString());
         m_networkInterfaceIdHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressIp = string(value["AddressIp"].GetString());
         m_addressIpHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Business"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HaVip.Business` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaVip.Business` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_business = string(value["Business"].GetString());
         m_businessHasBeenSet = true;

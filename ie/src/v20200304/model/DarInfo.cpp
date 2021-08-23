@@ -34,7 +34,7 @@ CoreInternalOutcome DarInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FillMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DarInfo.FillMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DarInfo.FillMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fillMode = value["FillMode"].GetUint64();
         m_fillModeHasBeenSet = true;

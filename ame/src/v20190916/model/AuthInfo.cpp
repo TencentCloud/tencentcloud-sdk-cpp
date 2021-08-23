@@ -41,7 +41,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.SubjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.SubjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subjectName = string(value["SubjectName"].GetString());
         m_subjectNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppScene"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.AppScene` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.AppScene` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appScene = value["AppScene"].GetInt64();
         m_appSceneHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppRegion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.AppRegion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.AppRegion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_appRegion = value["AppRegion"].GetInt64();
         m_appRegionHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthPeriod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.AuthPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.AuthPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_authPeriod = value["AuthPeriod"].GetInt64();
         m_authPeriodHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Commercialization"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Commercialization` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Commercialization` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_commercialization = value["Commercialization"].GetInt64();
         m_commercializationHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Platform"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Platform` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Platform` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_platform = value["Platform"].GetInt64();
         m_platformHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

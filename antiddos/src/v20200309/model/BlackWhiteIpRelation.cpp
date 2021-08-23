@@ -37,7 +37,7 @@ CoreInternalOutcome BlackWhiteIpRelation::Deserialize(const rapidjson::Value &va
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlackWhiteIpRelation.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlackWhiteIpRelation.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BlackWhiteIpRelation::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlackWhiteIpRelation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlackWhiteIpRelation.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BlackWhiteIpRelation::Deserialize(const rapidjson::Value &va
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `BlackWhiteIpRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BlackWhiteIpRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome BlackWhiteIpRelation::Deserialize(const rapidjson::Value &va
     {
         if (!value["Mask"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BlackWhiteIpRelation.Mask` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlackWhiteIpRelation.Mask` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mask = value["Mask"].GetUint64();
         m_maskHasBeenSet = true;

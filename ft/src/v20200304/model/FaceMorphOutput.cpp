@@ -36,7 +36,7 @@ CoreInternalOutcome FaceMorphOutput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MorphUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceMorphOutput.MorphUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceMorphOutput.MorphUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_morphUrl = string(value["MorphUrl"].GetString());
         m_morphUrlHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FaceMorphOutput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MorphMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceMorphOutput.MorphMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceMorphOutput.MorphMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_morphMd5 = string(value["MorphMd5"].GetString());
         m_morphMd5HasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FaceMorphOutput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverImage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceMorphOutput.CoverImage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceMorphOutput.CoverImage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverImage = string(value["CoverImage"].GetString());
         m_coverImageHasBeenSet = true;

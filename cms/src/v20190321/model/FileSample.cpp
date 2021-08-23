@@ -37,7 +37,7 @@ CoreInternalOutcome FileSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileMd5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSample.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSample.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileMd5 = string(value["FileMd5"].GetString());
         m_fileMd5HasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FileSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSample.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSample.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FileSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSample.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSample.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FileSample::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompressFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FileSample.CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileSample.CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_compressFileUrl = string(value["CompressFileUrl"].GetString());
         m_compressFileUrlHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome CommonMixInputParam::Deserialize(const rapidjson::Value &val
     {
         if (!value["InputStreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CommonMixInputParam.InputStreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixInputParam.InputStreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputStreamName = string(value["InputStreamName"].GetString());
         m_inputStreamNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CommonMixInputParam::Deserialize(const rapidjson::Value &val
     {
         if (!value["LayoutParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CommonMixInputParam.LayoutParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixInputParam.LayoutParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_layoutParams.Deserialize(value["LayoutParams"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome CommonMixInputParam::Deserialize(const rapidjson::Value &val
     {
         if (!value["CropParams"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CommonMixInputParam.CropParams` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CommonMixInputParam.CropParams` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cropParams.Deserialize(value["CropParams"]);

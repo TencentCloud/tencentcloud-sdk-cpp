@@ -36,7 +36,7 @@ CoreInternalOutcome ImageOptimization::Deserialize(const rapidjson::Value &value
     {
         if (!value["WebpAdapter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageOptimization.WebpAdapter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageOptimization.WebpAdapter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_webpAdapter.Deserialize(value["WebpAdapter"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome ImageOptimization::Deserialize(const rapidjson::Value &value
     {
         if (!value["TpgAdapter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageOptimization.TpgAdapter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageOptimization.TpgAdapter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tpgAdapter.Deserialize(value["TpgAdapter"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome ImageOptimization::Deserialize(const rapidjson::Value &value
     {
         if (!value["GuetzliAdapter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ImageOptimization.GuetzliAdapter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageOptimization.GuetzliAdapter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_guetzliAdapter.Deserialize(value["GuetzliAdapter"]);

@@ -37,7 +37,7 @@ CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const rapidjson::Va
     {
         if (!value["RegistryServer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageSecretInfo.RegistryServer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageSecretInfo.RegistryServer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryServer = string(value["RegistryServer"].GetString());
         m_registryServerHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const rapidjson::Va
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageSecretInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageSecretInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageSecretInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageSecretInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const rapidjson::Va
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunImageSecretInfo.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunImageSecretInfo.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;

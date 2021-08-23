@@ -36,7 +36,7 @@ CoreInternalOutcome ContentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContentInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentInfo.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_format = string(value["Format"].GetString());
         m_formatHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ContentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Csv"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentInfo.Csv` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentInfo.Csv` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_csv.Deserialize(value["Csv"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome ContentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Json"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContentInfo.Json` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContentInfo.Json` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_json.Deserialize(value["Json"]);

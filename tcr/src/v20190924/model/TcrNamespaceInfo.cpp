@@ -37,7 +37,7 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrNamespaceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrNamespaceInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Public"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `TcrNamespaceInfo.Public` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.Public` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_public = value["Public"].GetBool();
         m_publicHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TcrNamespaceInfo.NamespaceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.NamespaceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = value["NamespaceId"].GetInt64();
         m_namespaceIdHasBeenSet = true;

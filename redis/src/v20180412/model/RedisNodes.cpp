@@ -37,7 +37,7 @@ CoreInternalOutcome RedisNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNodes.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodes.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RedisNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeRole"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNodes.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodes.NodeRole` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeRole = string(value["NodeRole"].GetString());
         m_nodeRoleHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RedisNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisNodes.ClusterId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodes.ClusterId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = value["ClusterId"].GetInt64();
         m_clusterIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RedisNodes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisNodes.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNodes.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;

@@ -44,16 +44,16 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,11 +64,11 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["ModuleNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModuleNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_moduleNum = rsp["ModuleNum"].GetInt64();
         m_moduleNumHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["NodeNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeNum = rsp["NodeNum"].GetInt64();
         m_nodeNumHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["VcpuNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VcpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VcpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vcpuNum = rsp["VcpuNum"].GetInt64();
         m_vcpuNumHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["MemoryNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MemoryNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MemoryNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_memoryNum = rsp["MemoryNum"].GetInt64();
         m_memoryNumHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["StorageNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StorageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StorageNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageNum = rsp["StorageNum"].GetInt64();
         m_storageNumHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["NetworkNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_networkNum = rsp["NetworkNum"].GetInt64();
         m_networkNumHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["InstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceNum = rsp["InstanceNum"].GetInt64();
         m_instanceNumHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["RunningNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RunningNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RunningNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runningNum = rsp["RunningNum"].GetInt64();
         m_runningNumHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["IsolationNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IsolationNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsolationNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isolationNum = rsp["IsolationNum"].GetInt64();
         m_isolationNumHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["ExpiredNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExpiredNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExpiredNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredNum = rsp["ExpiredNum"].GetInt64();
         m_expiredNumHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     {
         if (!rsp["WillExpireNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WillExpireNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WillExpireNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_willExpireNum = rsp["WillExpireNum"].GetInt64();
         m_willExpireNumHasBeenSet = true;

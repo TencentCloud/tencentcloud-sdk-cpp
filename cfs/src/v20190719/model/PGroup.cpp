@@ -35,7 +35,7 @@ CoreInternalOutcome PGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroup.PGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroup.PGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pGroupId = string(value["PGroupId"].GetString());
         m_pGroupIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;

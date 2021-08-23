@@ -35,7 +35,7 @@ CoreInternalOutcome AccountPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountPrivilege.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountPrivilege.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AccountPrivilege::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Privilege"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountPrivilege.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountPrivilege.Privilege` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privilege = string(value["Privilege"].GetString());
         m_privilegeHasBeenSet = true;

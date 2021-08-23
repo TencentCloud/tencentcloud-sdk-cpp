@@ -38,7 +38,7 @@ CoreInternalOutcome DataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataInfo.Duration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataInfo.Duration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_duration = string(value["Duration"].GetString());
         m_durationHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditionBegin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataInfo.AuditionBegin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataInfo.AuditionBegin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_auditionBegin = value["AuditionBegin"].GetUint64();
         m_auditionBeginHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DataInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditionEnd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataInfo.AuditionEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataInfo.AuditionEnd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_auditionEnd = value["AuditionEnd"].GetUint64();
         m_auditionEndHasBeenSet = true;

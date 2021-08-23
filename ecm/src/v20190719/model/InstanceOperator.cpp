@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceOperator::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceOperator.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceOperator.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome InstanceOperator::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DeniedActions") && !value["DeniedActions"].IsNull())
     {
         if (!value["DeniedActions"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceOperator.DeniedActions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceOperator.DeniedActions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DeniedActions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

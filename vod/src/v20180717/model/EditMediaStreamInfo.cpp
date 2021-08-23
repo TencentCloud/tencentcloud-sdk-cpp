@@ -36,7 +36,7 @@ CoreInternalOutcome EditMediaStreamInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["StreamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaStreamInfo.StreamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaStreamInfo.StreamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamId = string(value["StreamId"].GetString());
         m_streamIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EditMediaStreamInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaStreamInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaStreamInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EditMediaStreamInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaStreamInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaStreamInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

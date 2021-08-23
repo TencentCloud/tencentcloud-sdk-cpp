@@ -37,7 +37,7 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvironmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Environment.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Environment.EnvironmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentName = string(value["EnvironmentName"].GetString());
         m_environmentNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Environment.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Environment.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Environment.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Environment.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Environment.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Environment.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;

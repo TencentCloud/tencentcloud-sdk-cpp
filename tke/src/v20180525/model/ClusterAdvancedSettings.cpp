@@ -50,7 +50,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["IPVS"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.IPVS` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.IPVS` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_iPVS = value["IPVS"].GetBool();
         m_iPVSHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["AsEnabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AsEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.AsEnabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_asEnabled = value["AsEnabled"].GetBool();
         m_asEnabledHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["ContainerRuntime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.ContainerRuntime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.ContainerRuntime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerRuntime = string(value["ContainerRuntime"].GetString());
         m_containerRuntimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["NodeNameType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.NodeNameType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.NodeNameType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeNameType = string(value["NodeNameType"].GetString());
         m_nodeNameTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["ExtraArgs"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.ExtraArgs` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.ExtraArgs` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_extraArgs.Deserialize(value["ExtraArgs"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["NetworkType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkType = string(value["NetworkType"].GetString());
         m_networkTypeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["IsNonStaticIpMode"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.IsNonStaticIpMode` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.IsNonStaticIpMode` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isNonStaticIpMode = value["IsNonStaticIpMode"].GetBool();
         m_isNonStaticIpModeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["DeletionProtection"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deletionProtection = value["DeletionProtection"].GetBool();
         m_deletionProtectionHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["KubeProxyMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.KubeProxyMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.KubeProxyMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kubeProxyMode = string(value["KubeProxyMode"].GetString());
         m_kubeProxyModeHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["AuditEnabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AuditEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.AuditEnabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_auditEnabled = value["AuditEnabled"].GetBool();
         m_auditEnabledHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["AuditLogsetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AuditLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.AuditLogsetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditLogsetId = string(value["AuditLogsetId"].GetString());
         m_auditLogsetIdHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["AuditLogTopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.AuditLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.AuditLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auditLogTopicId = string(value["AuditLogTopicId"].GetString());
         m_auditLogTopicIdHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["VpcCniType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.VpcCniType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.VpcCniType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcCniType = string(value["VpcCniType"].GetString());
         m_vpcCniTypeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["RuntimeVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_runtimeVersion = string(value["RuntimeVersion"].GetString());
         m_runtimeVersionHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["EnableCustomizedPodCIDR"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.EnableCustomizedPodCIDR` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.EnableCustomizedPodCIDR` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableCustomizedPodCIDR = value["EnableCustomizedPodCIDR"].GetBool();
         m_enableCustomizedPodCIDRHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["BasePodNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.BasePodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.BasePodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_basePodNumber = value["BasePodNumber"].GetInt64();
         m_basePodNumberHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
     {
         if (!value["CiliumMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.CiliumMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.CiliumMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ciliumMode = string(value["CiliumMode"].GetString());
         m_ciliumModeHasBeenSet = true;

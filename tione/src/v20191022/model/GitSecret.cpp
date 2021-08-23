@@ -35,7 +35,7 @@ CoreInternalOutcome GitSecret::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NoSecret"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `GitSecret.NoSecret` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GitSecret.NoSecret` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_noSecret = value["NoSecret"].GetBool();
         m_noSecretHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GitSecret::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Secret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GitSecret.Secret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GitSecret.Secret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secret = string(value["Secret"].GetString());
         m_secretHasBeenSet = true;

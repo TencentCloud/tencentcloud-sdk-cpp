@@ -46,7 +46,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.SessionID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.SessionID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionID = string(value["SessionID"].GetString());
         m_sessionIDHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoomID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.RoomID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.RoomID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_roomID = string(value["RoomID"].GetString());
         m_roomIDHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Caller"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.Caller` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.Caller` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_caller = string(value["Caller"].GetString());
         m_callerHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Callee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.Callee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.Callee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callee = string(value["Callee"].GetString());
         m_calleeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTimestamp = value["StartTimestamp"].GetInt64();
         m_startTimestampHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RingTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ringTimestamp = value["RingTimestamp"].GetInt64();
         m_ringTimestampHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcceptTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_acceptTimestamp = value["AcceptTimestamp"].GetInt64();
         m_acceptTimestampHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffEmail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.StaffEmail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffEmail = string(value["StaffEmail"].GetString());
         m_staffEmailHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffNumber = string(value["StaffNumber"].GetString());
         m_staffNumberHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.SessionStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.SessionStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionStatus = string(value["SessionStatus"].GetString());
         m_sessionStatusHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direction"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetInt64();
         m_directionHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutBoundCaller"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.OutBoundCaller` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.OutBoundCaller` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outBoundCaller = string(value["OutBoundCaller"].GetString());
         m_outBoundCallerHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome PSTNSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutBoundCallee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PSTNSession.OutBoundCallee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PSTNSession.OutBoundCallee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outBoundCallee = string(value["OutBoundCallee"].GetString());
         m_outBoundCalleeHasBeenSet = true;

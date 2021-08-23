@@ -35,7 +35,7 @@ CoreInternalOutcome ManualReviewData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BatchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewData.BatchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewData.BatchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchId = string(value["BatchId"].GetString());
         m_batchIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ManualReviewData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ManualReviewData.ContentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ManualReviewData.ContentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contentId = string(value["ContentId"].GetString());
         m_contentIdHasBeenSet = true;

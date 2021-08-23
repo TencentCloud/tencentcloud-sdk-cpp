@@ -52,7 +52,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Edition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.Edition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.Edition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_edition = string(value["Edition"].GetString());
         m_editionHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.SpecId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.SpecId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specId = string(value["SpecId"].GetString());
         m_specIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Replica"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.Replica` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.Replica` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_replica = value["Replica"].GetInt64();
         m_replicaHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubnetIds") && !value["SubnetIds"].IsNull())
     {
         if (!value["SubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SREInstance.SubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.SubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -145,7 +145,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableStorage"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.EnableStorage` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EnableStorage` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableStorage = value["EnableStorage"].GetBool();
         m_enableStorageHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.StorageType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.StorageType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_storageType = string(value["StorageType"].GetString());
         m_storageTypeHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageCapacity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.StorageCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.StorageCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_storageCapacity = value["StorageCapacity"].GetInt64();
         m_storageCapacityHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Paymode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.Paymode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.Paymode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paymode = string(value["Paymode"].GetString());
         m_paymodeHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EKSClusterID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.EKSClusterID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EKSClusterID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eKSClusterID = string(value["EKSClusterID"].GetString());
         m_eKSClusterIDHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EnvInfos") && !value["EnvInfos"].IsNull())
     {
         if (!value["EnvInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `SREInstance.EnvInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EnvInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnvInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -225,7 +225,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EngineRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.EngineRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EngineRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_engineRegion = string(value["EngineRegion"].GetString());
         m_engineRegionHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableInternet"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SREInstance.EnableInternet` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EnableInternet` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableInternet = value["EnableInternet"].GetBool();
         m_enableInternetHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VpcInfos") && !value["VpcInfos"].IsNull())
     {
         if (!value["VpcInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `SREInstance.VpcInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SREInstance.VpcInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VpcInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

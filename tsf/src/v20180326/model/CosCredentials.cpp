@@ -39,7 +39,7 @@ CoreInternalOutcome CosCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionToken"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosCredentials.SessionToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosCredentials.SessionToken` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionToken = string(value["SessionToken"].GetString());
         m_sessionTokenHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome CosCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosCredentials.TmpAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosCredentials.TmpAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpAppId = string(value["TmpAppId"].GetString());
         m_tmpAppIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CosCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpSecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosCredentials.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosCredentials.TmpSecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretId = string(value["TmpSecretId"].GetString());
         m_tmpSecretIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CosCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TmpSecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosCredentials.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosCredentials.TmpSecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tmpSecretKey = string(value["TmpSecretKey"].GetString());
         m_tmpSecretKeyHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CosCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpiredTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CosCredentials.ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosCredentials.ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredTime = value["ExpiredTime"].GetInt64();
         m_expiredTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CosCredentials::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosCredentials.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosCredentials.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;

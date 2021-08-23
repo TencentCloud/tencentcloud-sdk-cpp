@@ -39,7 +39,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(value["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Online"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.Online` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_online = value["Online"].GetUint64();
         m_onlineHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoginTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.LoginTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.LoginTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loginTime = value["LoginTime"].GetUint64();
         m_loginTimeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DevicePsk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devicePsk = string(value["DevicePsk"].GetString());
         m_devicePskHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableState"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.EnableState` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.EnableState` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_enableState = value["EnableState"].GetUint64();
         m_enableStateHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetUint64();
         m_expireTimeHasBeenSet = true;

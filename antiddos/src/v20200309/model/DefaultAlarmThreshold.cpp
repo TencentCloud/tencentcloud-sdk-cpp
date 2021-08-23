@@ -35,7 +35,7 @@ CoreInternalOutcome DefaultAlarmThreshold::Deserialize(const rapidjson::Value &v
     {
         if (!value["AlarmType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DefaultAlarmThreshold.AlarmType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefaultAlarmThreshold.AlarmType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmType = value["AlarmType"].GetUint64();
         m_alarmTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DefaultAlarmThreshold::Deserialize(const rapidjson::Value &v
     {
         if (!value["AlarmThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DefaultAlarmThreshold.AlarmThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefaultAlarmThreshold.AlarmThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmThreshold = value["AlarmThreshold"].GetUint64();
         m_alarmThresholdHasBeenSet = true;

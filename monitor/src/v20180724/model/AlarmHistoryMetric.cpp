@@ -38,7 +38,7 @@ CoreInternalOutcome AlarmHistoryMetric::Deserialize(const rapidjson::Value &valu
     {
         if (!value["QceNamespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistoryMetric.QceNamespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistoryMetric.QceNamespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qceNamespace = string(value["QceNamespace"].GetString());
         m_qceNamespaceHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AlarmHistoryMetric::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistoryMetric.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistoryMetric.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AlarmHistoryMetric::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Period"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistoryMetric.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistoryMetric.Period` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetInt64();
         m_periodHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AlarmHistoryMetric::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistoryMetric.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistoryMetric.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AlarmHistoryMetric::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmHistoryMetric.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmHistoryMetric.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

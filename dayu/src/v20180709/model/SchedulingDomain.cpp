@@ -44,7 +44,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomain.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BGPIpList") && !value["BGPIpList"].IsNull())
     {
         if (!value["BGPIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `SchedulingDomain.BGPIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.BGPIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BGPIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CTCCIpList") && !value["CTCCIpList"].IsNull())
     {
         if (!value["CTCCIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `SchedulingDomain.CTCCIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.CTCCIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CTCCIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CUCCIpList") && !value["CUCCIpList"].IsNull())
     {
         if (!value["CUCCIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `SchedulingDomain.CUCCIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.CUCCIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CUCCIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CMCCIpList") && !value["CMCCIpList"].IsNull())
     {
         if (!value["CMCCIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `SchedulingDomain.CMCCIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.CMCCIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CMCCIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -105,7 +105,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OverseaIpList") && !value["OverseaIpList"].IsNull())
     {
         if (!value["OverseaIpList"].IsArray())
-            return CoreInternalOutcome(Error("response `SchedulingDomain.OverseaIpList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.OverseaIpList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OverseaIpList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -119,7 +119,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Method"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomain.Method` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.Method` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomain.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomain.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomain.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome SchedulingDomain::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchedulingDomain.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchedulingDomain.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

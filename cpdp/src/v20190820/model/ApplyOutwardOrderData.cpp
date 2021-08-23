@@ -36,7 +36,7 @@ CoreInternalOutcome ApplyOutwardOrderData::Deserialize(const rapidjson::Value &v
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyOutwardOrderData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyOutwardOrderData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ApplyOutwardOrderData::Deserialize(const rapidjson::Value &v
     {
         if (!value["TransactionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyOutwardOrderData.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyOutwardOrderData.TransactionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transactionId = string(value["TransactionId"].GetString());
         m_transactionIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ApplyOutwardOrderData::Deserialize(const rapidjson::Value &v
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyOutwardOrderData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyOutwardOrderData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

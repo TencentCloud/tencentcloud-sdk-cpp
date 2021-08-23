@@ -36,7 +36,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["ResourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationResouceEntityInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceId = string(value["ResourceId"].GetString());
         m_resourceIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["ResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationResouceEntityInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = string(value["ResourceType"].GetString());
         m_resourceTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AuthorizationResouceEntityInfo::Deserialize(const rapidjson:
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuthorizationResouceEntityInfo.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationResouceEntityInfo.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;

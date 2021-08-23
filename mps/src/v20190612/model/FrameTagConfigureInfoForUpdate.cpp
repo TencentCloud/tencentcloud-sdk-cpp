@@ -34,7 +34,7 @@ CoreInternalOutcome FrameTagConfigureInfoForUpdate::Deserialize(const rapidjson:
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrameTagConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagConfigureInfoForUpdate.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;

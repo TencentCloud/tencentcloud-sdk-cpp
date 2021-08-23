@@ -42,7 +42,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.PublishInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.PublishInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishInstanceId = string(value["PublishInstanceId"].GetString());
         m_publishInstanceIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishInstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.PublishInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.PublishInstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishInstanceName = string(value["PublishInstanceName"].GetString());
         m_publishInstanceNameHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublishInstanceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.PublishInstanceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.PublishInstanceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishInstanceIp = string(value["PublishInstanceIp"].GetString());
         m_publishInstanceIpHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.SubscribeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.SubscribeInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeInstanceId = string(value["SubscribeInstanceId"].GetString());
         m_subscribeInstanceIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeInstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.SubscribeInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.SubscribeInstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeInstanceName = string(value["SubscribeInstanceName"].GetString());
         m_subscribeInstanceNameHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubscribeInstanceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PublishSubscribe.SubscribeInstanceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.SubscribeInstanceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subscribeInstanceIp = string(value["SubscribeInstanceIp"].GetString());
         m_subscribeInstanceIpHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DatabaseTupleSet") && !value["DatabaseTupleSet"].IsNull())
     {
         if (!value["DatabaseTupleSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PublishSubscribe.DatabaseTupleSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PublishSubscribe.DatabaseTupleSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DatabaseTupleSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome Header::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Header.Key` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Header.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_key = string(value["Key"].GetString());
         m_keyHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome Header::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
         if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Error("response `Header.Values` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Header.Values` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Values"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Placement.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HostIds") && !value["HostIds"].IsNull())
     {
         if (!value["HostIds"].IsArray())
-            return CoreInternalOutcome(Error("response `Placement.HostIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Placement.HostIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HostIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("HostIps") && !value["HostIps"].IsNull())
     {
         if (!value["HostIps"].IsArray())
-            return CoreInternalOutcome(Error("response `Placement.HostIps` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Placement.HostIps` is not array type"));
 
         const rapidjson::Value &tmpValue = value["HostIps"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Placement.HostId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Placement.HostId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostId = string(value["HostId"].GetString());
         m_hostIdHasBeenSet = true;

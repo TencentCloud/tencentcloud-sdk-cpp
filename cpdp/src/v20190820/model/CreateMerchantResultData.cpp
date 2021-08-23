@@ -36,7 +36,7 @@ CoreInternalOutcome CreateMerchantResultData::Deserialize(const rapidjson::Value
     {
         if (!value["TaxpayerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateMerchantResultData.TaxpayerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMerchantResultData.TaxpayerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxpayerName = string(value["TaxpayerName"].GetString());
         m_taxpayerNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CreateMerchantResultData::Deserialize(const rapidjson::Value
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateMerchantResultData.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMerchantResultData.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CreateMerchantResultData::Deserialize(const rapidjson::Value
     {
         if (!value["TaxpayerNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateMerchantResultData.TaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateMerchantResultData.TaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxpayerNum = string(value["TaxpayerNum"].GetString());
         m_taxpayerNumHasBeenSet = true;

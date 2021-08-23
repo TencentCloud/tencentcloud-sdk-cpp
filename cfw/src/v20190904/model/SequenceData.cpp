@@ -36,7 +36,7 @@ CoreInternalOutcome SequenceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SequenceData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SequenceData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SequenceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SequenceData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SequenceData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SequenceData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewOrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SequenceData.NewOrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SequenceData.NewOrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_newOrderIndex = value["NewOrderIndex"].GetUint64();
         m_newOrderIndexHasBeenSet = true;

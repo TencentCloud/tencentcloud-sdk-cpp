@@ -36,7 +36,7 @@ CoreInternalOutcome ReturnContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ContractInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ReturnContractInfo.ContractInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReturnContractInfo.ContractInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_contractInfo.Deserialize(value["ContractInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome ReturnContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ChannelReturnContractInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ReturnContractInfo.ChannelReturnContractInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReturnContractInfo.ChannelReturnContractInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_channelReturnContractInfo.Deserialize(value["ChannelReturnContractInfo"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome ReturnContractInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExternalReturnContractInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ReturnContractInfo.ExternalReturnContractInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReturnContractInfo.ExternalReturnContractInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_externalReturnContractInfo.Deserialize(value["ExternalReturnContractInfo"]);

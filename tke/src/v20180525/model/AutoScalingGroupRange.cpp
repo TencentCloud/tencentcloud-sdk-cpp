@@ -35,7 +35,7 @@ CoreInternalOutcome AutoScalingGroupRange::Deserialize(const rapidjson::Value &v
     {
         if (!value["MinSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoScalingGroupRange.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroupRange.MinSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minSize = value["MinSize"].GetInt64();
         m_minSizeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AutoScalingGroupRange::Deserialize(const rapidjson::Value &v
     {
         if (!value["MaxSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AutoScalingGroupRange.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroupRange.MaxSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxSize = value["MaxSize"].GetInt64();
         m_maxSizeHasBeenSet = true;

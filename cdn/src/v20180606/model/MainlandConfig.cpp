@@ -57,7 +57,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Authentication"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Authentication` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Authentication` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_authentication.Deserialize(value["Authentication"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandwidthAlert"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.BandwidthAlert` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.BandwidthAlert` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bandwidthAlert.Deserialize(value["BandwidthAlert"]);
@@ -91,7 +91,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Cache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Cache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cache.Deserialize(value["Cache"]);
@@ -108,7 +108,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CacheKey"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.CacheKey` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.CacheKey` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cacheKey.Deserialize(value["CacheKey"]);
@@ -125,7 +125,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Compression"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Compression` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Compression` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_compression.Deserialize(value["Compression"]);
@@ -142,7 +142,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownstreamCapping"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.DownstreamCapping` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.DownstreamCapping` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_downstreamCapping.Deserialize(value["DownstreamCapping"]);
@@ -159,7 +159,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorPage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.ErrorPage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.ErrorPage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_errorPage.Deserialize(value["ErrorPage"]);
@@ -176,7 +176,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FollowRedirect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.FollowRedirect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.FollowRedirect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_followRedirect.Deserialize(value["FollowRedirect"]);
@@ -193,7 +193,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForceRedirect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.ForceRedirect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.ForceRedirect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_forceRedirect.Deserialize(value["ForceRedirect"]);
@@ -210,7 +210,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Https"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Https` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Https` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_https.Deserialize(value["Https"]);
@@ -227,7 +227,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpFilter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.IpFilter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.IpFilter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ipFilter.Deserialize(value["IpFilter"]);
@@ -244,7 +244,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpFreqLimit"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.IpFreqLimit` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.IpFreqLimit` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ipFreqLimit.Deserialize(value["IpFreqLimit"]);
@@ -261,7 +261,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAge"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.MaxAge` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.MaxAge` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_maxAge.Deserialize(value["MaxAge"]);
@@ -278,7 +278,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Origin"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Origin` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Origin` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_origin.Deserialize(value["Origin"]);
@@ -295,7 +295,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginPullOptimization"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.OriginPullOptimization` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.OriginPullOptimization` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_originPullOptimization.Deserialize(value["OriginPullOptimization"]);
@@ -312,7 +312,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RangeOriginPull"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.RangeOriginPull` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.RangeOriginPull` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_rangeOriginPull.Deserialize(value["RangeOriginPull"]);
@@ -329,7 +329,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Referer"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Referer` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Referer` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_referer.Deserialize(value["Referer"]);
@@ -346,7 +346,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RequestHeader"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.RequestHeader` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.RequestHeader` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_requestHeader.Deserialize(value["RequestHeader"]);
@@ -363,7 +363,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResponseHeader"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.ResponseHeader` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.ResponseHeader` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_responseHeader.Deserialize(value["ResponseHeader"]);
@@ -380,7 +380,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResponseHeaderCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.ResponseHeaderCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.ResponseHeaderCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_responseHeaderCache.Deserialize(value["ResponseHeaderCache"]);
@@ -397,7 +397,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Seo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.Seo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.Seo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_seo.Deserialize(value["Seo"]);
@@ -414,7 +414,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -424,7 +424,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusCodeCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.StatusCodeCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.StatusCodeCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_statusCodeCache.Deserialize(value["StatusCodeCache"]);
@@ -441,7 +441,7 @@ CoreInternalOutcome MainlandConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoSeek"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MainlandConfig.VideoSeek` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MainlandConfig.VideoSeek` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoSeek.Deserialize(value["VideoSeek"]);

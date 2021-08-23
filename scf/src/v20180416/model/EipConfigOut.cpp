@@ -35,7 +35,7 @@ CoreInternalOutcome EipConfigOut::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EipStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EipConfigOut.EipStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EipConfigOut.EipStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eipStatus = string(value["EipStatus"].GetString());
         m_eipStatusHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome EipConfigOut::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EipAddress") && !value["EipAddress"].IsNull())
     {
         if (!value["EipAddress"].IsArray())
-            return CoreInternalOutcome(Error("response `EipConfigOut.EipAddress` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EipConfigOut.EipAddress` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EipAddress"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

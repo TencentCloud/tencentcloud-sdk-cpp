@@ -42,16 +42,16 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,11 +62,11 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["ImpactSiteNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImpactSiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactSiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_impactSiteNumber = rsp["ImpactSiteNumber"].GetUint64();
         m_impactSiteNumberHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["SiteNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SiteNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_siteNumber = rsp["SiteNumber"].GetUint64();
         m_siteNumberHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["VulsHighNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsHighNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsHighNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsHighNumber = rsp["VulsHighNumber"].GetUint64();
         m_vulsHighNumberHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["VulsMiddleNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsMiddleNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsMiddleNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsMiddleNumber = rsp["VulsMiddleNumber"].GetUint64();
         m_vulsMiddleNumberHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["VulsLowNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsLowNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsLowNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsLowNumber = rsp["VulsLowNumber"].GetUint64();
         m_vulsLowNumberHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["VulsNoticeNumber"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsNoticeNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsNoticeNumber` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsNoticeNumber = rsp["VulsNoticeNumber"].GetUint64();
         m_vulsNoticeNumberHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     {
         if (!rsp["PageCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageCount = rsp["PageCount"].GetUint64();
         m_pageCountHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     if (rsp.HasMember("Sites") && !rsp["Sites"].IsNull())
     {
         if (!rsp["Sites"].IsArray())
-            return CoreInternalOutcome(Error("response `Sites` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Sites` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Sites"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -163,7 +163,7 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     if (rsp.HasMember("ImpactSites") && !rsp["ImpactSites"].IsNull())
     {
         if (!rsp["ImpactSites"].IsArray())
-            return CoreInternalOutcome(Error("response `ImpactSites` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImpactSites` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ImpactSites"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

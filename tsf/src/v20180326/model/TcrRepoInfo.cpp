@@ -38,7 +38,7 @@ CoreInternalOutcome TcrRepoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepoInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepoInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TcrRepoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepoInfo.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepoInfo.RegistryId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryId = string(value["RegistryId"].GetString());
         m_registryIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TcrRepoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegistryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepoInfo.RegistryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepoInfo.RegistryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registryName = string(value["RegistryName"].GetString());
         m_registryNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TcrRepoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepoInfo.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepoInfo.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TcrRepoInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TcrRepoInfo.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TcrRepoInfo.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome SendSmsPaasDataStruct::Deserialize(const rapidjson::Value &v
     {
         if (!value["SerialNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendSmsPaasDataStruct.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendSmsPaasDataStruct.SerialNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serialNo = string(value["SerialNo"].GetString());
         m_serialNoHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SendSmsPaasDataStruct::Deserialize(const rapidjson::Value &v
     {
         if (!value["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendSmsPaasDataStruct.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendSmsPaasDataStruct.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(value["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SendSmsPaasDataStruct::Deserialize(const rapidjson::Value &v
     {
         if (!value["Fee"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendSmsPaasDataStruct.Fee` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendSmsPaasDataStruct.Fee` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fee = value["Fee"].GetUint64();
         m_feeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SendSmsPaasDataStruct::Deserialize(const rapidjson::Value &v
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendSmsPaasDataStruct.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendSmsPaasDataStruct.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SendSmsPaasDataStruct::Deserialize(const rapidjson::Value &v
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SendSmsPaasDataStruct.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SendSmsPaasDataStruct.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;

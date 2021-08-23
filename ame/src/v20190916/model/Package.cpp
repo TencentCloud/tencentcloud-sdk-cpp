@@ -44,7 +44,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Package.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Package.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthorizedArea"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Package.AuthorizedArea` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.AuthorizedArea` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authorizedArea = string(value["AuthorizedArea"].GetString());
         m_authorizedAreaHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthorizedLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Package.AuthorizedLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.AuthorizedLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_authorizedLimit = value["AuthorizedLimit"].GetInt64();
         m_authorizedLimitHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TermOfValidity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Package.TermOfValidity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.TermOfValidity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_termOfValidity = value["TermOfValidity"].GetInt64();
         m_termOfValidityHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Commercial"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Package.Commercial` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.Commercial` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_commercial = value["Commercial"].GetInt64();
         m_commercialHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackagePrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Package.PackagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.PackagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_packagePrice = value["PackagePrice"].GetDouble();
         m_packagePriceHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EffectTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Package.EffectTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.EffectTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_effectTime = string(value["EffectTime"].GetString());
         m_effectTimeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Package.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Package.UsedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Package.UsedCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_usedCount = value["UsedCount"].GetInt64();
         m_usedCountHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UseRanges") && !value["UseRanges"].IsNull())
     {
         if (!value["UseRanges"].IsArray())
-            return CoreInternalOutcome(Error("response `Package.UseRanges` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Package.UseRanges` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UseRanges"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

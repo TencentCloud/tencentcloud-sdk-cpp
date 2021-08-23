@@ -41,10 +41,10 @@ namespace TencentCloud
                 HaboClient(const Credential &credential, const std::string &region);
                 HaboClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeStatusResponse> DescribeStatusOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStatusResponse> DescribeStatusOutcome;
                 typedef std::future<DescribeStatusOutcome> DescribeStatusOutcomeCallable;
                 typedef std::function<void(const HaboClient*, const Model::DescribeStatusRequest&, DescribeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatusAsyncHandler;
-                typedef Outcome<Error, Model::StartAnalyseResponse> StartAnalyseOutcome;
+                typedef Outcome<Core::Error, Model::StartAnalyseResponse> StartAnalyseOutcome;
                 typedef std::future<StartAnalyseOutcome> StartAnalyseOutcomeCallable;
                 typedef std::function<void(const HaboClient*, const Model::StartAnalyseRequest&, StartAnalyseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAnalyseAsyncHandler;
 

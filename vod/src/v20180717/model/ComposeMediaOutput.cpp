@@ -42,7 +42,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ClassId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_classId = value["ClassId"].GetInt64();
         m_classIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["VideoStream"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.VideoStream` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.VideoStream` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_videoStream.Deserialize(value["VideoStream"]);
@@ -109,7 +109,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AudioStream"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.AudioStream` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.AudioStream` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioStream.Deserialize(value["AudioStream"]);
@@ -126,7 +126,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RemoveVideo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.RemoveVideo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.RemoveVideo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_removeVideo = value["RemoveVideo"].GetInt64();
         m_removeVideoHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RemoveAudio"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaOutput.RemoveAudio` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComposeMediaOutput.RemoveAudio` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_removeAudio = value["RemoveAudio"].GetInt64();
         m_removeAudioHasBeenSet = true;

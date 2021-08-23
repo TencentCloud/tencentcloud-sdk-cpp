@@ -36,7 +36,7 @@ CoreInternalOutcome BunkZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BunkZone.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BunkZone.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BunkZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BunkZone.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BunkZone.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BunkZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BunkCodes"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BunkZone.BunkCodes` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BunkZone.BunkCodes` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bunkCodes = string(value["BunkCodes"].GetString());
         m_bunkCodesHasBeenSet = true;

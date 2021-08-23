@@ -39,7 +39,7 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServiceSetting.AccessType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.AccessType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_accessType = value["AccessType"].GetInt64();
         m_accessTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProtocolPorts") && !value["ProtocolPorts"].IsNull())
     {
         if (!value["ProtocolPorts"].IsArray())
-            return CoreInternalOutcome(Error("response `ServiceSetting.ProtocolPorts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ProtocolPorts` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProtocolPorts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -69,7 +69,7 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceSetting.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DisableService"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceSetting.DisableService` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.DisableService` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disableService = value["DisableService"].GetBool();
         m_disableServiceHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HeadlessService"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceSetting.HeadlessService` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.HeadlessService` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_headlessService = value["HeadlessService"].GetBool();
         m_headlessServiceHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AllowDeleteService"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceSetting.AllowDeleteService` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.AllowDeleteService` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_allowDeleteService = value["AllowDeleteService"].GetBool();
         m_allowDeleteServiceHasBeenSet = true;

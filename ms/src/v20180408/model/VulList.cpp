@@ -41,7 +41,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulId = string(value["VulId"].GetString());
         m_vulIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulName = string(value["VulName"].GetString());
         m_vulNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulCode = string(value["VulCode"].GetString());
         m_vulCodeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulDesc = string(value["VulDesc"].GetString());
         m_vulDescHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulSolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulSolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulSolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulSolution = string(value["VulSolution"].GetString());
         m_vulSolutionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulSrcType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulSrcType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulSrcType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vulSrcType = value["VulSrcType"].GetInt64();
         m_vulSrcTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulFilepath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulList.VulFilepath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.VulFilepath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulFilepath = string(value["VulFilepath"].GetString());
         m_vulFilepathHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RiskLevel"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulList.RiskLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulList.RiskLevel` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_riskLevel = value["RiskLevel"].GetUint64();
         m_riskLevelHasBeenSet = true;

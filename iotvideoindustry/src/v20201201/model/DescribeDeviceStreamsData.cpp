@@ -37,7 +37,7 @@ CoreInternalOutcome DescribeDeviceStreamsData::Deserialize(const rapidjson::Valu
     {
         if (!value["RtspAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeDeviceStreamsData.RtspAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceStreamsData.RtspAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rtspAddr = string(value["RtspAddr"].GetString());
         m_rtspAddrHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DescribeDeviceStreamsData::Deserialize(const rapidjson::Valu
     {
         if (!value["RtmpAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeDeviceStreamsData.RtmpAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceStreamsData.RtmpAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rtmpAddr = string(value["RtmpAddr"].GetString());
         m_rtmpAddrHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DescribeDeviceStreamsData::Deserialize(const rapidjson::Valu
     {
         if (!value["HlsAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeDeviceStreamsData.HlsAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceStreamsData.HlsAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hlsAddr = string(value["HlsAddr"].GetString());
         m_hlsAddrHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DescribeDeviceStreamsData::Deserialize(const rapidjson::Valu
     {
         if (!value["FlvAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeDeviceStreamsData.FlvAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceStreamsData.FlvAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_flvAddr = string(value["FlvAddr"].GetString());
         m_flvAddrHasBeenSet = true;

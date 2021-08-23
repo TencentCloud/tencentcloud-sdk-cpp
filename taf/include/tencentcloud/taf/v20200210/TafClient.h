@@ -51,25 +51,25 @@ namespace TencentCloud
                 TafClient(const Credential &credential, const std::string &region);
                 TafClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DetectFraudKOLResponse> DetectFraudKOLOutcome;
+                typedef Outcome<Core::Error, Model::DetectFraudKOLResponse> DetectFraudKOLOutcome;
                 typedef std::future<DetectFraudKOLOutcome> DetectFraudKOLOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::DetectFraudKOLRequest&, DetectFraudKOLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectFraudKOLAsyncHandler;
-                typedef Outcome<Error, Model::EnhanceTaDegreeResponse> EnhanceTaDegreeOutcome;
+                typedef Outcome<Core::Error, Model::EnhanceTaDegreeResponse> EnhanceTaDegreeOutcome;
                 typedef std::future<EnhanceTaDegreeOutcome> EnhanceTaDegreeOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::EnhanceTaDegreeRequest&, EnhanceTaDegreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceTaDegreeAsyncHandler;
-                typedef Outcome<Error, Model::RecognizeCustomizedAudienceResponse> RecognizeCustomizedAudienceOutcome;
+                typedef Outcome<Core::Error, Model::RecognizeCustomizedAudienceResponse> RecognizeCustomizedAudienceOutcome;
                 typedef std::future<RecognizeCustomizedAudienceOutcome> RecognizeCustomizedAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeCustomizedAudienceRequest&, RecognizeCustomizedAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCustomizedAudienceAsyncHandler;
-                typedef Outcome<Error, Model::RecognizeEffectiveFlowResponse> RecognizeEffectiveFlowOutcome;
+                typedef Outcome<Core::Error, Model::RecognizeEffectiveFlowResponse> RecognizeEffectiveFlowOutcome;
                 typedef std::future<RecognizeEffectiveFlowOutcome> RecognizeEffectiveFlowOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeEffectiveFlowRequest&, RecognizeEffectiveFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeEffectiveFlowAsyncHandler;
-                typedef Outcome<Error, Model::RecognizePreciseTargetAudienceResponse> RecognizePreciseTargetAudienceOutcome;
+                typedef Outcome<Core::Error, Model::RecognizePreciseTargetAudienceResponse> RecognizePreciseTargetAudienceOutcome;
                 typedef std::future<RecognizePreciseTargetAudienceOutcome> RecognizePreciseTargetAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizePreciseTargetAudienceRequest&, RecognizePreciseTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePreciseTargetAudienceAsyncHandler;
-                typedef Outcome<Error, Model::RecognizeTargetAudienceResponse> RecognizeTargetAudienceOutcome;
+                typedef Outcome<Core::Error, Model::RecognizeTargetAudienceResponse> RecognizeTargetAudienceOutcome;
                 typedef std::future<RecognizeTargetAudienceOutcome> RecognizeTargetAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeTargetAudienceRequest&, RecognizeTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTargetAudienceAsyncHandler;
-                typedef Outcome<Error, Model::SendTrafficSecuritySmsMessageResponse> SendTrafficSecuritySmsMessageOutcome;
+                typedef Outcome<Core::Error, Model::SendTrafficSecuritySmsMessageResponse> SendTrafficSecuritySmsMessageOutcome;
                 typedef std::future<SendTrafficSecuritySmsMessageOutcome> SendTrafficSecuritySmsMessageOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::SendTrafficSecuritySmsMessageRequest&, SendTrafficSecuritySmsMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendTrafficSecuritySmsMessageAsyncHandler;
 

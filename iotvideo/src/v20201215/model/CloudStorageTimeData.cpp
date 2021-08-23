@@ -34,7 +34,7 @@ CoreInternalOutcome CloudStorageTimeData::Deserialize(const rapidjson::Value &va
     if (value.HasMember("TimeList") && !value["TimeList"].IsNull())
     {
         if (!value["TimeList"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudStorageTimeData.TimeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageTimeData.TimeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TimeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome CloudStorageTimeData::Deserialize(const rapidjson::Value &va
     {
         if (!value["VideoURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudStorageTimeData.VideoURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudStorageTimeData.VideoURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoURL = string(value["VideoURL"].GetString());
         m_videoURLHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjs
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionProjectSummaryDataItem.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionProjectSummaryDataItem.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjs
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionProjectSummaryDataItem.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionProjectSummaryDataItem.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjs
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionProjectSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionProjectSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjs
     {
         if (!value["Trend"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionProjectSummaryDataItem.Trend` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionProjectSummaryDataItem.Trend` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_trend.Deserialize(value["Trend"]);
@@ -84,7 +84,7 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjs
     if (value.HasMember("Business") && !value["Business"].IsNull())
     {
         if (!value["Business"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumptionProjectSummaryDataItem.Business` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionProjectSummaryDataItem.Business` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Business"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

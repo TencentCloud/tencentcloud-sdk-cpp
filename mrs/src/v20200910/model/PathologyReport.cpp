@@ -47,7 +47,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CancerPart"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.CancerPart` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.CancerPart` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cancerPart.Deserialize(value["CancerPart"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CancerSize") && !value["CancerSize"].IsNull())
     {
         if (!value["CancerSize"].IsArray())
-            return CoreInternalOutcome(Error("response `PathologyReport.CancerSize` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.CancerSize` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CancerSize"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -84,7 +84,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DescText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.DescText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.DescText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_descText = string(value["DescText"].GetString());
         m_descTextHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HistologyLevel"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.HistologyLevel` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.HistologyLevel` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_histologyLevel.Deserialize(value["HistologyLevel"]);
@@ -111,7 +111,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HistologyType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.HistologyType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.HistologyType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_histologyType.Deserialize(value["HistologyType"]);
@@ -127,7 +127,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IHC") && !value["IHC"].IsNull())
     {
         if (!value["IHC"].IsArray())
-            return CoreInternalOutcome(Error("response `PathologyReport.IHC` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.IHC` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IHC"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -148,7 +148,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InfiltrationDepth"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.InfiltrationDepth` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.InfiltrationDepth` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_infiltrationDepth.Deserialize(value["InfiltrationDepth"]);
@@ -164,7 +164,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Invasive") && !value["Invasive"].IsNull())
     {
         if (!value["Invasive"].IsArray())
-            return CoreInternalOutcome(Error("response `PathologyReport.Invasive` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.Invasive` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Invasive"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -184,7 +184,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LymphNodes") && !value["LymphNodes"].IsNull())
     {
         if (!value["LymphNodes"].IsArray())
-            return CoreInternalOutcome(Error("response `PathologyReport.LymphNodes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.LymphNodes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LymphNodes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -205,7 +205,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PTNM"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.PTNM` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.PTNM` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pTNM.Deserialize(value["PTNM"]);
@@ -222,7 +222,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PathologicalReportType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.PathologicalReportType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.PathologicalReportType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_pathologicalReportType.Deserialize(value["PathologicalReportType"]);
@@ -239,7 +239,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReportText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.ReportText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.ReportText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reportText = string(value["ReportText"].GetString());
         m_reportTextHasBeenSet = true;
@@ -249,7 +249,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SampleType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.SampleType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.SampleType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sampleType.Deserialize(value["SampleType"]);
@@ -266,7 +266,7 @@ CoreInternalOutcome PathologyReport::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SummaryText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathologyReport.SummaryText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathologyReport.SummaryText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_summaryText = string(value["SummaryText"].GetString());
         m_summaryTextHasBeenSet = true;

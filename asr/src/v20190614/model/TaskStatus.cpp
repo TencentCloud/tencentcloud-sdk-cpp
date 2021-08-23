@@ -39,7 +39,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatusStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.StatusStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.StatusStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statusStr = string(value["StatusStr"].GetString());
         m_statusStrHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskStatus.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMsg = string(value["ErrorMsg"].GetString());
         m_errorMsgHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResultDetail") && !value["ResultDetail"].IsNull())
     {
         if (!value["ResultDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskStatus.ResultDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.ResultDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResultDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

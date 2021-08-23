@@ -38,7 +38,7 @@ CoreInternalOutcome TagsInfoOfTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTable.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTable.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableInstanceId = string(value["TableInstanceId"].GetString());
         m_tableInstanceIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TagsInfoOfTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTable.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTable.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TagsInfoOfTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTable.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTable.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TagsInfoOfTable::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `TagsInfoOfTable.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTable.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome TagsInfoOfTable::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TagsInfoOfTable.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagsInfoOfTable.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);

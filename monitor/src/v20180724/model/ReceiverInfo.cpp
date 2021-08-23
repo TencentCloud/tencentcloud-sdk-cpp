@@ -48,7 +48,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetInt64();
         m_startTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NotifyWay") && !value["NotifyWay"].IsNull())
     {
         if (!value["NotifyWay"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.NotifyWay` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.NotifyWay` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NotifyWay"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReceiverType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_receiverType = string(value["ReceiverType"].GetString());
         m_receiverTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SendFor") && !value["SendFor"].IsNull())
     {
         if (!value["SendFor"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.SendFor` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.SendFor` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SendFor"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -113,7 +113,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UidList") && !value["UidList"].IsNull())
     {
         if (!value["UidList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.UidList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.UidList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UidList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -127,7 +127,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoundNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.RoundNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.RoundNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roundNumber = value["RoundNumber"].GetInt64();
         m_roundNumberHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.PersonInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.PersonInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_personInterval = value["PersonInterval"].GetInt64();
         m_personIntervalHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoundInterval"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.RoundInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.RoundInterval` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roundInterval = value["RoundInterval"].GetInt64();
         m_roundIntervalHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RecoverNotify") && !value["RecoverNotify"].IsNull())
     {
         if (!value["RecoverNotify"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.RecoverNotify` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.RecoverNotify` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RecoverNotify"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -170,7 +170,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedSendNotice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.NeedSendNotice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.NeedSendNotice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_needSendNotice = value["NeedSendNotice"].GetInt64();
         m_needSendNoticeHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReceiverGroupList") && !value["ReceiverGroupList"].IsNull())
     {
         if (!value["ReceiverGroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiverGroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.ReceiverGroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverGroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -192,7 +192,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReceiverUserList") && !value["ReceiverUserList"].IsNull())
     {
         if (!value["ReceiverUserList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiverUserList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.ReceiverUserList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverUserList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -206,7 +206,7 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReceiveLanguage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiveLanguage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReceiverInfo.ReceiveLanguage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_receiveLanguage = string(value["ReceiveLanguage"].GetString());
         m_receiveLanguageHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome NamespacePage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Records") && !value["Records"].IsNull())
     {
         if (!value["Records"].IsArray())
-            return CoreInternalOutcome(Error("response `NamespacePage.Records` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NamespacePage.Records` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Records"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome NamespacePage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespacePage.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespacePage.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome NamespacePage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespacePage.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespacePage.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome NamespacePage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pages"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NamespacePage.Pages` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespacePage.Pages` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pages = value["Pages"].GetInt64();
         m_pagesHasBeenSet = true;

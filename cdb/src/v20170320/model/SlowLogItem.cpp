@@ -44,7 +44,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetUint64();
         m_timestampHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.QueryTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.QueryTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_queryTime = value["QueryTime"].GetDouble();
         m_queryTimeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SqlText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.SqlText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.SqlText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sqlText = string(value["SqlText"].GetString());
         m_sqlTextHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserHost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.UserHost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.UserHost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userHost = string(value["UserHost"].GetString());
         m_userHostHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Database"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.Database` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.Database` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_database = string(value["Database"].GetString());
         m_databaseHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.LockTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.LockTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lockTime = value["LockTime"].GetDouble();
         m_lockTimeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RowsExamined"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.RowsExamined` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.RowsExamined` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rowsExamined = value["RowsExamined"].GetInt64();
         m_rowsExaminedHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RowsSent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.RowsSent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.RowsSent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rowsSent = value["RowsSent"].GetInt64();
         m_rowsSentHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SqlTemplate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.SqlTemplate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.SqlTemplate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sqlTemplate = string(value["SqlTemplate"].GetString());
         m_sqlTemplateHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Md5"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_md5 = string(value["Md5"].GetString());
         m_md5HasBeenSet = true;

@@ -53,7 +53,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(value["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Country"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Country` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Country` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_country = value["Country"].GetUint64();
         m_countryHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.City` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.City` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_city = value["City"].GetUint64();
         m_cityHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Province` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Province` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_province = value["Province"].GetUint64();
         m_provinceHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BanStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.BanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.BanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_banStatus = value["BanStatus"].GetUint64();
         m_banStatusHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.EventType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.EventType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventType = value["EventType"].GetUint64();
         m_eventTypeHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsProVersion"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isProVersion = value["IsProVersion"].GetBool();
         m_isProVersionHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -243,7 +243,7 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BruteAttackInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;

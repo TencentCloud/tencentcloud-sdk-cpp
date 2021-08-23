@@ -35,7 +35,7 @@ CoreInternalOutcome AvailableProtoStatus::Deserialize(const rapidjson::Value &va
     {
         if (!value["SaleStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableProtoStatus.SaleStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableProtoStatus.SaleStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_saleStatus = string(value["SaleStatus"].GetString());
         m_saleStatusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AvailableProtoStatus::Deserialize(const rapidjson::Value &va
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AvailableProtoStatus.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AvailableProtoStatus.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome RegionInstanceCount::Deserialize(const rapidjson::Value &val
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInstanceCount.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInstanceCount.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RegionInstanceCount::Deserialize(const rapidjson::Value &val
     {
         if (!value["RegionV3"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RegionInstanceCount.RegionV3` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInstanceCount.RegionV3` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionV3 = string(value["RegionV3"].GetString());
         m_regionV3HasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RegionInstanceCount::Deserialize(const rapidjson::Value &val
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RegionInstanceCount.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInstanceCount.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;

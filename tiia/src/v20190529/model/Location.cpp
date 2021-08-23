@@ -37,7 +37,7 @@ CoreInternalOutcome Location::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XMin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Location.XMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location.XMin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_xMin = value["XMin"].GetInt64();
         m_xMinHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Location::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YMin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Location.YMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location.YMin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_yMin = value["YMin"].GetInt64();
         m_yMinHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Location::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Location.XMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location.XMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_xMax = value["XMax"].GetInt64();
         m_xMaxHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Location::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Location.YMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location.YMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_yMax = value["YMax"].GetInt64();
         m_yMaxHasBeenSet = true;

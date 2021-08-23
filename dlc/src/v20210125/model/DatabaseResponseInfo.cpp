@@ -38,7 +38,7 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseResponseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseResponseInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
     if (value.HasMember("Properties") && !value["Properties"].IsNull())
     {
         if (!value["Properties"].IsArray())
-            return CoreInternalOutcome(Error("response `DatabaseResponseInfo.Properties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.Properties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseResponseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseResponseInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;

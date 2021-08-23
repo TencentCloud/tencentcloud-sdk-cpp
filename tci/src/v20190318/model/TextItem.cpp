@@ -39,7 +39,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Words") && !value["Words"].IsNull())
     {
         if (!value["Words"].IsArray())
-            return CoreInternalOutcome(Error("response `TextItem.Words` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TextItem.Words` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Words"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TextItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mbtm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextItem.Mbtm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextItem.Mbtm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mbtm = value["Mbtm"].GetInt64();
         m_mbtmHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Metm"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextItem.Metm` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextItem.Metm` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_metm = value["Metm"].GetInt64();
         m_metmHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextItem.Tag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextItem.Tag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tag = value["Tag"].GetInt64();
         m_tagHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Text"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextItem.Text` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_text = string(value["Text"].GetString());
         m_textHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome TextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextItem.TextSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextItem.TextSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_textSize = value["TextSize"].GetInt64();
         m_textSizeHasBeenSet = true;

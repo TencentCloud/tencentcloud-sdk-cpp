@@ -40,7 +40,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoordinateOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.CoordinateOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coordinateOrigin = string(value["CoordinateOrigin"].GetString());
         m_coordinateOriginHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.XPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.XPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_xPos = string(value["XPos"].GetString());
         m_xPosHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YPos"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.YPos` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.YPos` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_yPos = string(value["YPos"].GetString());
         m_yPosHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome MosaicInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MosaicInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MosaicInput.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;

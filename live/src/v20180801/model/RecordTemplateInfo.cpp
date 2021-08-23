@@ -43,7 +43,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TemplateName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.TemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateName = string(value["TemplateName"].GetString());
         m_templateNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FlvParam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.FlvParam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.FlvParam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_flvParam.Deserialize(value["FlvParam"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HlsParam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.HlsParam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.HlsParam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hlsParam.Deserialize(value["HlsParam"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mp4Param"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.Mp4Param` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.Mp4Param` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mp4Param.Deserialize(value["Mp4Param"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AacParam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.AacParam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.AacParam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aacParam.Deserialize(value["AacParam"]);
@@ -141,7 +141,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsDelayLive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.IsDelayLive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.IsDelayLive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDelayLive = value["IsDelayLive"].GetInt64();
         m_isDelayLiveHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HlsSpecialParam"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.HlsSpecialParam` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.HlsSpecialParam` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hlsSpecialParam.Deserialize(value["HlsSpecialParam"]);
@@ -168,7 +168,7 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mp3Param"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RecordTemplateInfo.Mp3Param` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.Mp3Param` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mp3Param.Deserialize(value["Mp3Param"]);

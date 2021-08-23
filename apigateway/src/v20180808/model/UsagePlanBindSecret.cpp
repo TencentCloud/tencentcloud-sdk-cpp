@@ -36,7 +36,7 @@ CoreInternalOutcome UsagePlanBindSecret::Deserialize(const rapidjson::Value &val
     {
         if (!value["AccessKeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanBindSecret.AccessKeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindSecret.AccessKeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessKeyId = string(value["AccessKeyId"].GetString());
         m_accessKeyIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome UsagePlanBindSecret::Deserialize(const rapidjson::Value &val
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanBindSecret.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindSecret.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome UsagePlanBindSecret::Deserialize(const rapidjson::Value &val
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsagePlanBindSecret.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsagePlanBindSecret.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

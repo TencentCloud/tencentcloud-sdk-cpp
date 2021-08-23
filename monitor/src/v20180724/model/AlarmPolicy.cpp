@@ -62,7 +62,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(value["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.PolicyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyName = string(value["PolicyName"].GetString());
         m_policyNameHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonitorType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.MonitorType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.MonitorType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_monitorType = string(value["MonitorType"].GetString());
         m_monitorTypeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enable = value["Enable"].GetInt64();
         m_enableHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UseSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.UseSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.UseSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_useSum = value["UseSum"].GetInt64();
         m_useSumHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConditionTemplateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.ConditionTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.ConditionTemplateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_conditionTemplateId = string(value["ConditionTemplateId"].GetString());
         m_conditionTemplateIdHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Condition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.Condition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Condition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_condition.Deserialize(value["Condition"]);
@@ -179,7 +179,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventCondition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.EventCondition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.EventCondition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eventCondition.Deserialize(value["EventCondition"]);
@@ -195,7 +195,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NoticeIds") && !value["NoticeIds"].IsNull())
     {
         if (!value["NoticeIds"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicy.NoticeIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.NoticeIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NoticeIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -208,7 +208,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Notices") && !value["Notices"].IsNull())
     {
         if (!value["Notices"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicy.Notices` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Notices` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Notices"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -228,7 +228,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TriggerTasks") && !value["TriggerTasks"].IsNull())
     {
         if (!value["TriggerTasks"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicy.TriggerTasks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.TriggerTasks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TriggerTasks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -249,7 +249,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConditionsTemp"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.ConditionsTemp` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.ConditionsTemp` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_conditionsTemp.Deserialize(value["ConditionsTemp"]);
@@ -266,7 +266,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastEditUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.LastEditUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastEditUin = string(value["LastEditUin"].GetString());
         m_lastEditUinHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InsertTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_insertTime = value["InsertTime"].GetInt64();
         m_insertTimeHasBeenSet = true;
@@ -295,7 +295,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Region") && !value["Region"].IsNull())
     {
         if (!value["Region"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicy.Region` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.Region` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Region"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -309,7 +309,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceShowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.NamespaceShowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.NamespaceShowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceShowName = string(value["NamespaceShowName"].GetString());
         m_namespaceShowNameHasBeenSet = true;
@@ -319,7 +319,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.IsDefault` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetInt64();
         m_isDefaultHasBeenSet = true;
@@ -329,7 +329,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CanSetDefault"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.CanSetDefault` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.CanSetDefault` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_canSetDefault = value["CanSetDefault"].GetInt64();
         m_canSetDefaultHasBeenSet = true;
@@ -339,7 +339,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGroupId = value["InstanceGroupId"].GetInt64();
         m_instanceGroupIdHasBeenSet = true;
@@ -349,7 +349,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceSum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.InstanceSum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceSum = value["InstanceSum"].GetInt64();
         m_instanceSumHasBeenSet = true;
@@ -359,7 +359,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.InstanceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.InstanceGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGroupName = string(value["InstanceGroupName"].GetString());
         m_instanceGroupNameHasBeenSet = true;
@@ -369,7 +369,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -379,7 +379,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OriginId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicy.OriginId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.OriginId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_originId = string(value["OriginId"].GetString());
         m_originIdHasBeenSet = true;
@@ -388,7 +388,7 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagInstances") && !value["TagInstances"].IsNull())
     {
         if (!value["TagInstances"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicy.TagInstances` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.TagInstances` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagInstances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

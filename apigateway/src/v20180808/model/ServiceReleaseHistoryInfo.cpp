@@ -36,7 +36,7 @@ CoreInternalOutcome ServiceReleaseHistoryInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceReleaseHistoryInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceReleaseHistoryInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ServiceReleaseHistoryInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["VersionDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceReleaseHistoryInfo.VersionDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceReleaseHistoryInfo.VersionDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionDesc = string(value["VersionDesc"].GetString());
         m_versionDescHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ServiceReleaseHistoryInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["ReleaseTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceReleaseHistoryInfo.ReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceReleaseHistoryInfo.ReleaseTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_releaseTime = string(value["ReleaseTime"].GetString());
         m_releaseTimeHasBeenSet = true;

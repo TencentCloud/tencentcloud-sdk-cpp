@@ -37,7 +37,7 @@ CoreInternalOutcome PeakNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakNetwork.RecordTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakNetwork.RecordTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordTime = string(value["RecordTime"].GetString());
         m_recordTimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PeakNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeakInNetwork"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakNetwork.PeakInNetwork` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakNetwork.PeakInNetwork` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peakInNetwork = string(value["PeakInNetwork"].GetString());
         m_peakInNetworkHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PeakNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeakOutNetwork"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakNetwork.PeakOutNetwork` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakNetwork.PeakOutNetwork` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peakOutNetwork = string(value["PeakOutNetwork"].GetString());
         m_peakOutNetworkHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PeakNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChargeNetwork"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PeakNetwork.ChargeNetwork` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PeakNetwork.ChargeNetwork` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chargeNetwork = string(value["ChargeNetwork"].GetString());
         m_chargeNetworkHasBeenSet = true;

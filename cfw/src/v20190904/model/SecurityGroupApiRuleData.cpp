@@ -42,7 +42,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["SourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.SourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.SourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceId = string(value["SourceId"].GetString());
         m_sourceIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["TargetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.TargetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.TargetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetId = string(value["TargetId"].GetString());
         m_targetIdHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["Strategy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.Strategy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.Strategy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_strategy = string(value["Strategy"].GetString());
         m_strategyHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["Detail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.Detail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.Detail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_detail = string(value["Detail"].GetString());
         m_detailHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["RuleType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.RuleType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.RuleType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = value["RuleType"].GetUint64();
         m_ruleTypeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["OrderIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.OrderIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_orderIndex = value["OrderIndex"].GetUint64();
         m_orderIndexHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome SecurityGroupApiRuleData::Deserialize(const rapidjson::Value
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecurityGroupApiRuleData.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupApiRuleData.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;

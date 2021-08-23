@@ -39,7 +39,7 @@ CoreInternalOutcome AudioInfoResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Stream"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfoResultItem.Stream` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfoResultItem.Stream` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_stream = value["Stream"].GetInt64();
         m_streamHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome AudioInfoResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Sample"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfoResultItem.Sample` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfoResultItem.Sample` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sample = value["Sample"].GetInt64();
         m_sampleHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome AudioInfoResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Channel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfoResultItem.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfoResultItem.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_channel = value["Channel"].GetInt64();
         m_channelHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome AudioInfoResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioInfoResultItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfoResultItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome AudioInfoResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfoResultItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfoResultItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome AudioInfoResultItem::Deserialize(const rapidjson::Value &val
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfoResultItem.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfoResultItem.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome AccessRegionDomainConf::Deserialize(const rapidjson::Value &
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessRegionDomainConf.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDomainConf.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AccessRegionDomainConf::Deserialize(const rapidjson::Value &
     if (value.HasMember("NationCountryInnerList") && !value["NationCountryInnerList"].IsNull())
     {
         if (!value["NationCountryInnerList"].IsArray())
-            return CoreInternalOutcome(Error("response `AccessRegionDomainConf.NationCountryInnerList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccessRegionDomainConf.NationCountryInnerList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NationCountryInnerList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

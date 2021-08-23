@@ -60,7 +60,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["LaunchConfigurationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.LaunchConfigurationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.LaunchConfigurationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_launchConfigurationId = string(value["LaunchConfigurationId"].GetString());
         m_launchConfigurationIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["LaunchConfigurationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.LaunchConfigurationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.LaunchConfigurationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_launchConfigurationName = string(value["LaunchConfigurationName"].GetString());
         m_launchConfigurationNameHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["SystemDisk"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.SystemDisk` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.SystemDisk` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_systemDisk.Deserialize(value["SystemDisk"]);
@@ -116,7 +116,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
     {
         if (!value["DataDisks"].IsArray())
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.DataDisks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.DataDisks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DataDisks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["LoginSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.LoginSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.LoginSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_loginSettings.Deserialize(value["LoginSettings"]);
@@ -154,7 +154,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["InternetAccessible"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InternetAccessible` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InternetAccessible` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_internetAccessible.Deserialize(value["InternetAccessible"]);
@@ -170,7 +170,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
     {
         if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.SecurityGroupIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.SecurityGroupIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -183,7 +183,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     if (value.HasMember("AutoScalingGroupAbstractSet") && !value["AutoScalingGroupAbstractSet"].IsNull())
     {
         if (!value["AutoScalingGroupAbstractSet"].IsArray())
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.AutoScalingGroupAbstractSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.AutoScalingGroupAbstractSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AutoScalingGroupAbstractSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -204,7 +204,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["UserData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.UserData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.UserData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userData = string(value["UserData"].GetString());
         m_userDataHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["EnhancedService"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.EnhancedService` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.EnhancedService` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_enhancedService.Deserialize(value["EnhancedService"]);
@@ -241,7 +241,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -251,7 +251,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["LaunchConfigurationStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.LaunchConfigurationStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.LaunchConfigurationStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_launchConfigurationStatus = string(value["LaunchConfigurationStatus"].GetString());
         m_launchConfigurationStatusHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceChargeType = string(value["InstanceChargeType"].GetString());
         m_instanceChargeTypeHasBeenSet = true;
@@ -271,7 +271,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceMarketOptions"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceMarketOptions` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceMarketOptions` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceMarketOptions.Deserialize(value["InstanceMarketOptions"]);
@@ -287,7 +287,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     if (value.HasMember("InstanceTypes") && !value["InstanceTypes"].IsNull())
     {
         if (!value["InstanceTypes"].IsArray())
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceTypes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceTypes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceTypes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -300,7 +300,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     if (value.HasMember("InstanceTags") && !value["InstanceTags"].IsNull())
     {
         if (!value["InstanceTags"].IsArray())
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceTags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceTags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceTags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -321,7 +321,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["VersionNumber"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.VersionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.VersionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_versionNumber = value["VersionNumber"].GetInt64();
         m_versionNumberHasBeenSet = true;
@@ -331,7 +331,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -341,7 +341,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["CamRoleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.CamRoleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.CamRoleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_camRoleName = string(value["CamRoleName"].GetString());
         m_camRoleNameHasBeenSet = true;
@@ -351,7 +351,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["LastOperationInstanceTypesCheckPolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.LastOperationInstanceTypesCheckPolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.LastOperationInstanceTypesCheckPolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastOperationInstanceTypesCheckPolicy = string(value["LastOperationInstanceTypesCheckPolicy"].GetString());
         m_lastOperationInstanceTypesCheckPolicyHasBeenSet = true;
@@ -361,7 +361,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["HostNameSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.HostNameSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.HostNameSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hostNameSettings.Deserialize(value["HostNameSettings"]);
@@ -378,7 +378,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceNameSettings"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceNameSettings` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceNameSettings` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceNameSettings.Deserialize(value["InstanceNameSettings"]);
@@ -395,7 +395,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceChargePrepaid"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceChargePrepaid` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.InstanceChargePrepaid` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_instanceChargePrepaid.Deserialize(value["InstanceChargePrepaid"]);
@@ -412,7 +412,7 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
     {
         if (!value["DiskTypePolicy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.DiskTypePolicy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.DiskTypePolicy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskTypePolicy = string(value["DiskTypePolicy"].GetString());
         m_diskTypePolicyHasBeenSet = true;

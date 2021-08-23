@@ -40,7 +40,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiAppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.ApiAppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.ApiAppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiAppName = string(value["ApiAppName"].GetString());
         m_apiAppNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.ApiAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.ApiAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiAppId = string(value["ApiAppId"].GetString());
         m_apiAppIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiAppSecret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.ApiAppSecret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.ApiAppSecret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiAppSecret = string(value["ApiAppSecret"].GetString());
         m_apiAppSecretHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiAppDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.ApiAppDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.ApiAppDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiAppDesc = string(value["ApiAppDesc"].GetString());
         m_apiAppDescHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ApiAppInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiAppKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiAppInfo.ApiAppKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiAppInfo.ApiAppKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apiAppKey = string(value["ApiAppKey"].GetString());
         m_apiAppKeyHasBeenSet = true;

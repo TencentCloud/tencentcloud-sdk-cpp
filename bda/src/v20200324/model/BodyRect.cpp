@@ -37,7 +37,7 @@ CoreInternalOutcome BodyRect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["X"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BodyRect.X` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyRect.X` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_x = value["X"].GetUint64();
         m_xHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BodyRect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Y"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BodyRect.Y` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyRect.Y` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_y = value["Y"].GetUint64();
         m_yHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BodyRect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BodyRect.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyRect.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BodyRect::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BodyRect.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyRect.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;

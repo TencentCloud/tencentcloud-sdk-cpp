@@ -37,7 +37,7 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlotInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlotInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultMaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlotInfo.DefaultMaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.DefaultMaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultMaterialId = string(value["DefaultMaterialId"].GetString());
         m_defaultMaterialIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SlotInfo.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;

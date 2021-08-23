@@ -36,7 +36,7 @@ CoreInternalOutcome CaptchaOperDataRes::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("OperDataLoadTimeUnitArray") && !value["OperDataLoadTimeUnitArray"].IsNull())
     {
         if (!value["OperDataLoadTimeUnitArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaOperDataRes.OperDataLoadTimeUnitArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataRes.OperDataLoadTimeUnitArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OperDataLoadTimeUnitArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome CaptchaOperDataRes::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("OperDataInterceptUnitArray") && !value["OperDataInterceptUnitArray"].IsNull())
     {
         if (!value["OperDataInterceptUnitArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaOperDataRes.OperDataInterceptUnitArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataRes.OperDataInterceptUnitArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OperDataInterceptUnitArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -76,7 +76,7 @@ CoreInternalOutcome CaptchaOperDataRes::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("OperDataTryTimesUnitArray") && !value["OperDataTryTimesUnitArray"].IsNull())
     {
         if (!value["OperDataTryTimesUnitArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaOperDataRes.OperDataTryTimesUnitArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataRes.OperDataTryTimesUnitArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OperDataTryTimesUnitArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -96,7 +96,7 @@ CoreInternalOutcome CaptchaOperDataRes::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("OperDataTryTimesDistributeUnitArray") && !value["OperDataTryTimesDistributeUnitArray"].IsNull())
     {
         if (!value["OperDataTryTimesDistributeUnitArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaOperDataRes.OperDataTryTimesDistributeUnitArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaOperDataRes.OperDataTryTimesDistributeUnitArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OperDataTryTimesDistributeUnitArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

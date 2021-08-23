@@ -61,7 +61,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterDesc = string(value["ClusterDesc"].GetString());
         m_clusterDescHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterStatus = string(value["ClusterStatus"].GetString());
         m_clusterStatusHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterCIDR"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterCIDR` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterCIDR` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterCIDR = string(value["ClusterCIDR"].GetString());
         m_clusterCIDRHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterTotalCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterTotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterTotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterTotalCpu = value["ClusterTotalCpu"].GetDouble();
         m_clusterTotalCpuHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterTotalMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterTotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterTotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterTotalMem = value["ClusterTotalMem"].GetDouble();
         m_clusterTotalMemHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterUsedCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterUsedCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterUsedCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterUsedCpu = value["ClusterUsedCpu"].GetDouble();
         m_clusterUsedCpuHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterUsedMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterUsedMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterUsedMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterUsedMem = value["ClusterUsedMem"].GetDouble();
         m_clusterUsedMemHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.InstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceCount = value["InstanceCount"].GetInt64();
         m_instanceCountHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.RunInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.RunInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runInstanceCount = value["RunInstanceCount"].GetInt64();
         m_runInstanceCountHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NormalInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.NormalInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.NormalInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_normalInstanceCount = value["NormalInstanceCount"].GetInt64();
         m_normalInstanceCountHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeleteFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Cluster.DeleteFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.DeleteFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_deleteFlag = value["DeleteFlag"].GetBool();
         m_deleteFlagHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -231,7 +231,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsfRegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.TsfRegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.TsfRegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsfRegionId = string(value["TsfRegionId"].GetString());
         m_tsfRegionIdHasBeenSet = true;
@@ -241,7 +241,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsfRegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.TsfRegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.TsfRegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsfRegionName = string(value["TsfRegionName"].GetString());
         m_tsfRegionNameHasBeenSet = true;
@@ -251,7 +251,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsfZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.TsfZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.TsfZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsfZoneId = string(value["TsfZoneId"].GetString());
         m_tsfZoneIdHasBeenSet = true;
@@ -261,7 +261,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsfZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.TsfZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.TsfZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsfZoneName = string(value["TsfZoneName"].GetString());
         m_tsfZoneNameHasBeenSet = true;
@@ -271,7 +271,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeleteFlagReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.DeleteFlagReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.DeleteFlagReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deleteFlagReason = string(value["DeleteFlagReason"].GetString());
         m_deleteFlagReasonHasBeenSet = true;
@@ -281,7 +281,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterLimitCpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterLimitCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterLimitCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterLimitCpu = value["ClusterLimitCpu"].GetDouble();
         m_clusterLimitCpuHasBeenSet = true;
@@ -291,7 +291,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterLimitMem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterLimitMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterLimitMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_clusterLimitMem = value["ClusterLimitMem"].GetDouble();
         m_clusterLimitMemHasBeenSet = true;
@@ -301,7 +301,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RunServiceInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Cluster.RunServiceInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.RunServiceInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_runServiceInstanceCount = value["RunServiceInstanceCount"].GetInt64();
         m_runServiceInstanceCountHasBeenSet = true;
@@ -311,7 +311,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -321,7 +321,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperationInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Cluster.OperationInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.OperationInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_operationInfo.Deserialize(value["OperationInfo"]);
@@ -338,7 +338,7 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cluster.ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterVersion = string(value["ClusterVersion"].GetString());
         m_clusterVersionHasBeenSet = true;

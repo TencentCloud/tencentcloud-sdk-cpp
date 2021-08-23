@@ -39,7 +39,7 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodOcrTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodOcrTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodOcrTextSegmentItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &v
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodOcrTextSegmentItem.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &v
     if (value.HasMember("KeywordSet") && !value["KeywordSet"].IsNull())
     {
         if (!value["KeywordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.KeywordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VodOcrTextSegmentItem.KeywordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeywordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &v
     if (value.HasMember("AreaCoordSet") && !value["AreaCoordSet"].IsNull())
     {
         if (!value["AreaCoordSet"].IsArray())
-            return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.AreaCoordSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VodOcrTextSegmentItem.AreaCoordSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaCoordSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

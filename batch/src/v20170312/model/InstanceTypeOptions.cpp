@@ -36,7 +36,7 @@ CoreInternalOutcome InstanceTypeOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["CPU"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeOptions.CPU` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeOptions.CPU` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cPU = value["CPU"].GetUint64();
         m_cPUHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InstanceTypeOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeOptions.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeOptions.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome InstanceTypeOptions::Deserialize(const rapidjson::Value &val
     if (value.HasMember("InstanceCategories") && !value["InstanceCategories"].IsNull())
     {
         if (!value["InstanceCategories"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceTypeOptions.InstanceCategories` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeOptions.InstanceCategories` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceCategories"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

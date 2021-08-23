@@ -36,7 +36,7 @@ CoreInternalOutcome AlgorithmSpecification::Deserialize(const rapidjson::Value &
     {
         if (!value["TrainingImageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmSpecification.TrainingImageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmSpecification.TrainingImageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingImageName = string(value["TrainingImageName"].GetString());
         m_trainingImageNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AlgorithmSpecification::Deserialize(const rapidjson::Value &
     {
         if (!value["TrainingInputMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmSpecification.TrainingInputMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmSpecification.TrainingInputMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trainingInputMode = string(value["TrainingInputMode"].GetString());
         m_trainingInputModeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AlgorithmSpecification::Deserialize(const rapidjson::Value &
     {
         if (!value["AlgorithmName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlgorithmSpecification.AlgorithmName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlgorithmSpecification.AlgorithmName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_algorithmName = string(value["AlgorithmName"].GetString());
         m_algorithmNameHasBeenSet = true;

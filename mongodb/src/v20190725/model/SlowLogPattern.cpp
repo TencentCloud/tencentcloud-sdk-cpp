@@ -37,7 +37,7 @@ CoreInternalOutcome SlowLogPattern::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pattern"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogPattern.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogPattern.Pattern` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pattern = string(value["Pattern"].GetString());
         m_patternHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SlowLogPattern::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogPattern.MaxTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogPattern.MaxTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxTime = value["MaxTime"].GetUint64();
         m_maxTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SlowLogPattern::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AverageTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogPattern.AverageTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogPattern.AverageTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_averageTime = value["AverageTime"].GetUint64();
         m_averageTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SlowLogPattern::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogPattern.Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogPattern.Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetUint64();
         m_totalHasBeenSet = true;

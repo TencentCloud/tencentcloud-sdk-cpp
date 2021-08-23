@@ -33,7 +33,7 @@ CoreInternalOutcome CfsConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CfsInsList") && !value["CfsInsList"].IsNull())
     {
         if (!value["CfsInsList"].IsArray())
-            return CoreInternalOutcome(Error("response `CfsConfig.CfsInsList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CfsConfig.CfsInsList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CfsInsList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

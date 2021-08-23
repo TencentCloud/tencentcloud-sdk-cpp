@@ -38,7 +38,7 @@ CoreInternalOutcome RewriteTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RewriteTarget.TargetListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteTarget.TargetListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetListenerId = string(value["TargetListenerId"].GetString());
         m_targetListenerIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RewriteTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetLocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RewriteTarget.TargetLocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteTarget.TargetLocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetLocationId = string(value["TargetLocationId"].GetString());
         m_targetLocationIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RewriteTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RewriteCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RewriteTarget.RewriteCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteTarget.RewriteCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rewriteCode = value["RewriteCode"].GetInt64();
         m_rewriteCodeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RewriteTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TakeUrl"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RewriteTarget.TakeUrl` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteTarget.TakeUrl` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_takeUrl = value["TakeUrl"].GetBool();
         m_takeUrlHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RewriteTarget::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RewriteType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RewriteTarget.RewriteType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteTarget.RewriteType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rewriteType = string(value["RewriteType"].GetString());
         m_rewriteTypeHasBeenSet = true;

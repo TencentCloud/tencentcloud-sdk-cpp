@@ -39,7 +39,7 @@ CoreInternalOutcome UpgradeJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["JobId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeJobInfo.JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeJobInfo.JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_jobId = string(value["JobId"].GetString());
         m_jobIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome UpgradeJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeJobInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeJobInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome UpgradeJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FromFaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeJobInfo.FromFaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeJobInfo.FromFaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fromFaceModelVersion = string(value["FromFaceModelVersion"].GetString());
         m_fromFaceModelVersionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome UpgradeJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ToFaceModelVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UpgradeJobInfo.ToFaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeJobInfo.ToFaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_toFaceModelVersion = string(value["ToFaceModelVersion"].GetString());
         m_toFaceModelVersionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome UpgradeJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UpgradeJobInfo.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeJobInfo.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome UpgradeJobInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `UpgradeJobInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UpgradeJobInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;

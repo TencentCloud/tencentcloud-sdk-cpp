@@ -36,7 +36,7 @@ CoreInternalOutcome QueryMerchantBalanceData::Deserialize(const rapidjson::Value
     {
         if (!value["Currency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryMerchantBalanceData.Currency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryMerchantBalanceData.Currency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currency = string(value["Currency"].GetString());
         m_currencyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome QueryMerchantBalanceData::Deserialize(const rapidjson::Value
     {
         if (!value["Balance"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryMerchantBalanceData.Balance` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryMerchantBalanceData.Balance` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_balance = string(value["Balance"].GetString());
         m_balanceHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome QueryMerchantBalanceData::Deserialize(const rapidjson::Value
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryMerchantBalanceData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryMerchantBalanceData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;

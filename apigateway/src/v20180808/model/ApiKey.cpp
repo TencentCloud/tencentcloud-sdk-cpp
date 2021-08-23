@@ -40,7 +40,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessKeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.AccessKeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.AccessKeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessKeyId = string(value["AccessKeyId"].GetString());
         m_accessKeyIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessKeySecret"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.AccessKeySecret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.AccessKeySecret` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessKeySecret = string(value["AccessKeySecret"].GetString());
         m_accessKeySecretHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessKeyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.AccessKeyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.AccessKeyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessKeyType = string(value["AccessKeyType"].GetString());
         m_accessKeyTypeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiKey.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiKey.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

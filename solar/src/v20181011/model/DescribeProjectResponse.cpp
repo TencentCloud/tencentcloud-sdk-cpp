@@ -41,16 +41,16 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(rsp["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(rsp["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectBudget"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProjectBudget` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectBudget` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_projectBudget = rsp["ProjectBudget"].GetDouble();
         m_projectBudgetHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectOrg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectOrg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectOrg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectOrg = string(rsp["ProjectOrg"].GetString());
         m_projectOrgHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectIntroduction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectIntroduction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectIntroduction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectIntroduction = string(rsp["ProjectIntroduction"].GetString());
         m_projectIntroductionHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     if (rsp.HasMember("SubProjectList") && !rsp["SubProjectList"].IsNull())
     {
         if (!rsp["SubProjectList"].IsArray())
-            return CoreInternalOutcome(Error("response `SubProjectList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubProjectList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SubProjectList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -143,7 +143,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectStatus = string(rsp["ProjectStatus"].GetString());
         m_projectStatusHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome DescribeProjectResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectOrgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectOrgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectOrgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectOrgId = string(rsp["ProjectOrgId"].GetString());
         m_projectOrgIdHasBeenSet = true;

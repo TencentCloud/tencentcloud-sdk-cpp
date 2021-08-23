@@ -41,7 +41,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FindSKU"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.FindSKU` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.FindSKU` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_findSKU = value["FindSKU"].GetInt64();
         m_findSKUHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Location` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.Location` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_location.Deserialize(value["Location"]);
@@ -68,7 +68,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Brand"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Brand` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.Brand` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_brand = string(value["Brand"].GetString());
         m_brandHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Price"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Price` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.Price` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_price = string(value["Price"].GetString());
         m_priceHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductCategory"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.ProductCategory` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.ProductCategory` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productCategory = string(value["ProductCategory"].GetString());
         m_productCategoryHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProductInfo.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProductInfo.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;

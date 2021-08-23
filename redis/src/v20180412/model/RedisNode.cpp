@@ -38,7 +38,7 @@ CoreInternalOutcome RedisNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keys"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RedisNode.Keys` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNode.Keys` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_keys = value["Keys"].GetInt64();
         m_keysHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RedisNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Slot"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNode.Slot` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNode.Slot` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_slot = string(value["Slot"].GetString());
         m_slotHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RedisNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNode.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNode.NodeId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nodeId = string(value["NodeId"].GetString());
         m_nodeIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RedisNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNode.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNode.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RedisNode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Role"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNode.Role` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RedisNode.Role` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_role = string(value["Role"].GetString());
         m_roleHasBeenSet = true;

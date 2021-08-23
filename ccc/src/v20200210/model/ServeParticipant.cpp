@@ -49,7 +49,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.Mail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.Mail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RingTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ringTimestamp = value["RingTimestamp"].GetInt64();
         m_ringTimestampHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcceptTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_acceptTimestamp = value["AcceptTimestamp"].GetInt64();
         m_acceptTimestampHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndedTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.EndedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.EndedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endedTimestamp = value["EndedTimestamp"].GetInt64();
         m_endedTimestampHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.RecordId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.RecordId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordId = string(value["RecordId"].GetString());
         m_recordIdHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransferFrom"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.TransferFrom` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.TransferFrom` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transferFrom = string(value["TransferFrom"].GetString());
         m_transferFromHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransferTo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.TransferTo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.TransferTo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transferTo = string(value["TransferTo"].GetString());
         m_transferToHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransferToType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.TransferToType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.TransferToType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transferToType = string(value["TransferToType"].GetString());
         m_transferToTypeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkillGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupId = value["SkillGroupId"].GetInt64();
         m_skillGroupIdHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndStatusString"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.EndStatusString` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.EndStatusString` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endStatusString = string(value["EndStatusString"].GetString());
         m_endStatusStringHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.RecordURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.RecordURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordURL = string(value["RecordURL"].GetString());
         m_recordURLHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sequence"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.Sequence` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.Sequence` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sequence = value["Sequence"].GetInt64();
         m_sequenceHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTimestamp = value["StartTimestamp"].GetInt64();
         m_startTimestampHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkillGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServeParticipant.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.SkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupName = string(value["SkillGroupName"].GetString());
         m_skillGroupNameHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mem"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Mem` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Mem` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetInt64();
         m_memHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Cpu"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceFamily"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceTypeConfig.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.InstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceFamily = string(value["InstanceFamily"].GetString());
         m_instanceFamilyHasBeenSet = true;

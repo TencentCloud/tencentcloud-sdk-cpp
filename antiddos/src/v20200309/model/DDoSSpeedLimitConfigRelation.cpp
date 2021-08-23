@@ -35,7 +35,7 @@ CoreInternalOutcome DDoSSpeedLimitConfigRelation::Deserialize(const rapidjson::V
     {
         if (!value["SpeedLimitConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfigRelation.SpeedLimitConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfigRelation.SpeedLimitConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_speedLimitConfig.Deserialize(value["SpeedLimitConfig"]);
@@ -51,7 +51,7 @@ CoreInternalOutcome DDoSSpeedLimitConfigRelation::Deserialize(const rapidjson::V
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `DDoSSpeedLimitConfigRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDoSSpeedLimitConfigRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -35,7 +35,7 @@ CoreInternalOutcome ContractUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractUserInfo.UserType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractUserInfo.UserType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userType = string(value["UserType"].GetString());
         m_userTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ContractUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractUserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractUserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;

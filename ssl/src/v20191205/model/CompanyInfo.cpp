@@ -40,7 +40,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyName = string(value["CompanyName"].GetString());
         m_companyNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = value["CompanyId"].GetInt64();
         m_companyIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyCountry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyCountry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyCountry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyCountry = string(value["CompanyCountry"].GetString());
         m_companyCountryHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyProvince"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyProvince` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyProvince` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyProvince = string(value["CompanyProvince"].GetString());
         m_companyProvinceHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyCity"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyCity` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyCity` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyCity = string(value["CompanyCity"].GetString());
         m_companyCityHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyAddress = string(value["CompanyAddress"].GetString());
         m_companyAddressHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyPhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyInfo.CompanyPhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.CompanyPhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyPhone = string(value["CompanyPhone"].GetString());
         m_companyPhoneHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome DataFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextFile"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataFormat.TextFile` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataFormat.TextFile` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_textFile.Deserialize(value["TextFile"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome DataFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CSV"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataFormat.CSV` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataFormat.CSV` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cSV.Deserialize(value["CSV"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome DataFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Json"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataFormat.Json` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataFormat.Json` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_json.Deserialize(value["Json"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome DataFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Parquet"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataFormat.Parquet` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataFormat.Parquet` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_parquet.Deserialize(value["Parquet"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome DataFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ORC"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataFormat.ORC` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataFormat.ORC` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_oRC.Deserialize(value["ORC"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome DataFormat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AVRO"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataFormat.AVRO` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataFormat.AVRO` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_aVRO.Deserialize(value["AVRO"]);

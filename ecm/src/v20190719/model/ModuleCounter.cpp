@@ -37,7 +37,7 @@ CoreInternalOutcome ModuleCounter::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ISPCounterSet") && !value["ISPCounterSet"].IsNull())
     {
         if (!value["ISPCounterSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ModuleCounter.ISPCounterSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ModuleCounter.ISPCounterSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ISPCounterSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome ModuleCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModuleCounter.ProvinceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleCounter.ProvinceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_provinceNum = value["ProvinceNum"].GetInt64();
         m_provinceNumHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ModuleCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CityNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModuleCounter.CityNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleCounter.CityNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cityNum = value["CityNum"].GetInt64();
         m_cityNumHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ModuleCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NodeNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModuleCounter.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleCounter.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_nodeNum = value["NodeNum"].GetInt64();
         m_nodeNumHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ModuleCounter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModuleCounter.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModuleCounter.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceNum = value["InstanceNum"].GetInt64();
         m_instanceNumHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome FirewallRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirewallRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirewallRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome FirewallRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirewallRule.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirewallRule.Port` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_port = string(value["Port"].GetString());
         m_portHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome FirewallRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirewallRule.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirewallRule.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome FirewallRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirewallRule.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirewallRule.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome FirewallRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirewallRuleDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FirewallRule.FirewallRuleDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FirewallRule.FirewallRuleDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firewallRuleDescription = string(value["FirewallRuleDescription"].GetString());
         m_firewallRuleDescriptionHasBeenSet = true;

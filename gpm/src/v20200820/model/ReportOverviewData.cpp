@@ -38,7 +38,7 @@ CoreInternalOutcome ReportOverviewData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TotalTimes"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReportOverviewData.TotalTimes` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportOverviewData.TotalTimes` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalTimes = string(value["TotalTimes"].GetString());
         m_totalTimesHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ReportOverviewData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SuccessPercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportOverviewData.SuccessPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportOverviewData.SuccessPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_successPercent = value["SuccessPercent"].GetDouble();
         m_successPercentHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ReportOverviewData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimeoutPercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportOverviewData.TimeoutPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportOverviewData.TimeoutPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_timeoutPercent = value["TimeoutPercent"].GetDouble();
         m_timeoutPercentHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ReportOverviewData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FailPercent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportOverviewData.FailPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportOverviewData.FailPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_failPercent = value["FailPercent"].GetDouble();
         m_failPercentHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ReportOverviewData::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AverageSec"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReportOverviewData.AverageSec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportOverviewData.AverageSec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_averageSec = value["AverageSec"].GetDouble();
         m_averageSecHasBeenSet = true;

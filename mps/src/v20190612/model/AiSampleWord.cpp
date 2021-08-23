@@ -38,7 +38,7 @@ CoreInternalOutcome AiSampleWord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Keyword"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleWord.Keyword` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWord.Keyword` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyword = string(value["Keyword"].GetString());
         m_keywordHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AiSampleWord::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSampleWord.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWord.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome AiSampleWord::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("UsageSet") && !value["UsageSet"].IsNull())
     {
         if (!value["UsageSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiSampleWord.UsageSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWord.UsageSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UsageSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -74,7 +74,7 @@ CoreInternalOutcome AiSampleWord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleWord.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWord.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome AiSampleWord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AiSampleWord.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiSampleWord.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome ClientConnection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientConnection.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientConnection.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ClientConnection::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ClientConnection.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientConnection.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;

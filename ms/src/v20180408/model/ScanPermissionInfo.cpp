@@ -34,7 +34,7 @@ CoreInternalOutcome ScanPermissionInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Permission"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScanPermissionInfo.Permission` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanPermissionInfo.Permission` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_permission = string(value["Permission"].GetString());
         m_permissionHasBeenSet = true;

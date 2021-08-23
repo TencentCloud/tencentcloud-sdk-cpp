@@ -36,7 +36,7 @@ CoreInternalOutcome CustomMetaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaDataJdbcUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomMetaInfo.MetaDataJdbcUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomMetaInfo.MetaDataJdbcUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metaDataJdbcUrl = string(value["MetaDataJdbcUrl"].GetString());
         m_metaDataJdbcUrlHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CustomMetaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaDataUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomMetaInfo.MetaDataUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomMetaInfo.MetaDataUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metaDataUser = string(value["MetaDataUser"].GetString());
         m_metaDataUserHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CustomMetaInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaDataPass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomMetaInfo.MetaDataPass` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomMetaInfo.MetaDataPass` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metaDataPass = string(value["MetaDataPass"].GetString());
         m_metaDataPassHasBeenSet = true;

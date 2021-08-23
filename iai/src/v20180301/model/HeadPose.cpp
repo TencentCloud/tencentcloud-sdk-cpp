@@ -36,7 +36,7 @@ CoreInternalOutcome HeadPose::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pitch"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HeadPose.Pitch` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadPose.Pitch` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pitch = value["Pitch"].GetInt64();
         m_pitchHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome HeadPose::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Yaw"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HeadPose.Yaw` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadPose.Yaw` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_yaw = value["Yaw"].GetInt64();
         m_yawHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome HeadPose::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Roll"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HeadPose.Roll` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HeadPose.Roll` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roll = value["Roll"].GetInt64();
         m_rollHasBeenSet = true;

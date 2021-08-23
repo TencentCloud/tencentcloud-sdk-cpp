@@ -35,7 +35,7 @@ CoreInternalOutcome RtmpPushInputInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ExpiredSecond"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RtmpPushInputInfo.ExpiredSecond` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RtmpPushInputInfo.ExpiredSecond` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expiredSecond = value["ExpiredSecond"].GetUint64();
         m_expiredSecondHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RtmpPushInputInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["PushUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RtmpPushInputInfo.PushUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RtmpPushInputInfo.PushUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushUrl = string(value["PushUrl"].GetString());
         m_pushUrlHasBeenSet = true;

@@ -33,7 +33,7 @@ CoreInternalOutcome ResRenew::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OrderIds") && !value["OrderIds"].IsNull())
     {
         if (!value["OrderIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ResRenew.OrderIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResRenew.OrderIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OrderIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

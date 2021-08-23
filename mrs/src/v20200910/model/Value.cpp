@@ -36,7 +36,7 @@ CoreInternalOutcome Value::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Grade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Value.Grade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Value.Grade` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_grade = string(value["Grade"].GetString());
         m_gradeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Value::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Percent") && !value["Percent"].IsNull())
     {
         if (!value["Percent"].IsArray())
-            return CoreInternalOutcome(Error("response `Value.Percent` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Value.Percent` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Percent"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome Value::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Positive"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Value.Positive` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Value.Positive` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_positive = string(value["Positive"].GetString());
         m_positiveHasBeenSet = true;

@@ -39,7 +39,7 @@ namespace TencentCloud
                 MgobeClient(const Credential &credential, const std::string &region);
                 MgobeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
+                typedef Outcome<Core::Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const MgobeClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
 

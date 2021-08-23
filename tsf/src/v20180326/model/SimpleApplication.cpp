@@ -44,7 +44,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["MicroserviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.MicroserviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.MicroserviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceType = string(value["MicroserviceType"].GetString());
         m_microserviceTypeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApplicationDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApplicationDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationDesc = string(value["ApplicationDesc"].GetString());
         m_applicationDescHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProgLang"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ProgLang` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ProgLang` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_progLang = string(value["ProgLang"].GetString());
         m_progLangHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApplicationResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApplicationResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationResourceType = string(value["ApplicationResourceType"].GetString());
         m_applicationResourceTypeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApigatewayServiceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApigatewayServiceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApigatewayServiceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_apigatewayServiceId = string(value["ApigatewayServiceId"].GetString());
         m_apigatewayServiceIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
     {
         if (!value["ApplicationRuntimeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationRuntimeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApplicationRuntimeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationRuntimeType = string(value["ApplicationRuntimeType"].GetString());
         m_applicationRuntimeTypeHasBeenSet = true;

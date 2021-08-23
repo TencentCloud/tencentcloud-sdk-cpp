@@ -39,7 +39,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Candidate.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Candidate.FaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.FaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = string(value["FaceId"].GetString());
         m_faceIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Candidate.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Candidate.PersonName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.PersonName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personName = string(value["PersonName"].GetString());
         m_personNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Candidate.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Candidate.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_gender = value["Gender"].GetInt64();
         m_genderHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PersonGroupInfos") && !value["PersonGroupInfos"].IsNull())
     {
         if (!value["PersonGroupInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `Candidate.PersonGroupInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Candidate.PersonGroupInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PersonGroupInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

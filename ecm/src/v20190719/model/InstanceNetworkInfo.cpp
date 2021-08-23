@@ -36,7 +36,7 @@ CoreInternalOutcome InstanceNetworkInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("AddressInfoSet") && !value["AddressInfoSet"].IsNull())
     {
         if (!value["AddressInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceNetworkInfo.AddressInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkInfo.AddressInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AddressInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome InstanceNetworkInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["NetworkInterfaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkInfo.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkInfo.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceId = string(value["NetworkInterfaceId"].GetString());
         m_networkInterfaceIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome InstanceNetworkInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["NetworkInterfaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkInfo.NetworkInterfaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkInfo.NetworkInterfaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceName = string(value["NetworkInterfaceName"].GetString());
         m_networkInterfaceNameHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome InstanceNetworkInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Primary"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `InstanceNetworkInfo.Primary` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceNetworkInfo.Primary` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_primary = value["Primary"].GetBool();
         m_primaryHasBeenSet = true;

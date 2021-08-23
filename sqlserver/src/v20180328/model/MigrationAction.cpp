@@ -34,7 +34,7 @@ CoreInternalOutcome MigrationAction::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AllAction") && !value["AllAction"].IsNull())
     {
         if (!value["AllAction"].IsArray())
-            return CoreInternalOutcome(Error("response `MigrationAction.AllAction` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MigrationAction.AllAction` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AllAction"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome MigrationAction::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AllowedAction") && !value["AllowedAction"].IsNull())
     {
         if (!value["AllowedAction"].IsArray())
-            return CoreInternalOutcome(Error("response `MigrationAction.AllowedAction` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MigrationAction.AllowedAction` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AllowedAction"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

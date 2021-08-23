@@ -35,7 +35,7 @@ CoreInternalOutcome NamespaceIsExistsResp::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsExist"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NamespaceIsExistsResp.IsExist` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceIsExistsResp.IsExist` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isExist = value["IsExist"].GetBool();
         m_isExistHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome NamespaceIsExistsResp::Deserialize(const rapidjson::Value &v
     {
         if (!value["IsPreserved"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `NamespaceIsExistsResp.IsPreserved` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NamespaceIsExistsResp.IsPreserved` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPreserved = value["IsPreserved"].GetBool();
         m_isPreservedHasBeenSet = true;

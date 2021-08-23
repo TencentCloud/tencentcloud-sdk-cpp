@@ -42,7 +42,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineGroupType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.MachineGroupType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.MachineGroupType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_machineGroupType.Deserialize(value["MachineGroupType"]);
@@ -79,7 +79,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoUpdate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.AutoUpdate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.AutoUpdate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoUpdate = string(value["AutoUpdate"].GetString());
         m_autoUpdateHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.UpdateStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.UpdateStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateStartTime = string(value["UpdateStartTime"].GetString());
         m_updateStartTimeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.UpdateEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.UpdateEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateEndTime = string(value["UpdateEndTime"].GetString());
         m_updateEndTimeHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceLogging"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MachineGroupInfo.ServiceLogging` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.ServiceLogging` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_serviceLogging = value["ServiceLogging"].GetBool();
         m_serviceLoggingHasBeenSet = true;

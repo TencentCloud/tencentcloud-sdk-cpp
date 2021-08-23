@@ -39,7 +39,7 @@ CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DealName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DealInfo.DealName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealInfo.DealName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dealName = string(value["DealName"].GetString());
         m_dealNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DealInfo.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealInfo.Count` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DealInfo.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealInfo.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_flowId = value["FlowId"].GetInt64();
         m_flowIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceIdSet") && !value["InstanceIdSet"].IsNull())
     {
         if (!value["InstanceIdSet"].IsArray())
-            return CoreInternalOutcome(Error("response `DealInfo.InstanceIdSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DealInfo.InstanceIdSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceIdSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -82,7 +82,7 @@ CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DealInfo.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealInfo.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = string(value["OwnerUin"].GetString());
         m_ownerUinHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DealInfo.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealInfo.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceChargeType = string(value["InstanceChargeType"].GetString());
         m_instanceChargeTypeHasBeenSet = true;

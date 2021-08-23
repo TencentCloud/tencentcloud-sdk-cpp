@@ -50,7 +50,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadOnlyGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReadOnlyGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReadOnlyGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyGroupId = string(value["ReadOnlyGroupId"].GetString());
         m_readOnlyGroupIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReadOnlyGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReadOnlyGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReadOnlyGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_readOnlyGroupName = string(value["ReadOnlyGroupName"].GetString());
         m_readOnlyGroupNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MasterDBInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.MasterDBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.MasterDBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_masterDBInstanceId = string(value["MasterDBInstanceId"].GetString());
         m_masterDBInstanceIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinDelayEliminateReserve"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.MinDelayEliminateReserve` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.MinDelayEliminateReserve` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_minDelayEliminateReserve = value["MinDelayEliminateReserve"].GetInt64();
         m_minDelayEliminateReserveHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxReplayLatency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.MaxReplayLatency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.MaxReplayLatency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReplayLatency = value["MaxReplayLatency"].GetInt64();
         m_maxReplayLatencyHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplayLatencyEliminate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReplayLatencyEliminate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReplayLatencyEliminate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_replayLatencyEliminate = value["ReplayLatencyEliminate"].GetInt64();
         m_replayLatencyEliminateHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxReplayLag"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.MaxReplayLag` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.MaxReplayLag` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxReplayLag = value["MaxReplayLag"].GetDouble();
         m_maxReplayLagHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplayLagEliminate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReplayLagEliminate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReplayLagEliminate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_replayLagEliminate = value["ReplayLagEliminate"].GetInt64();
         m_replayLagEliminateHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReadOnlyDBInstanceList") && !value["ReadOnlyDBInstanceList"].IsNull())
     {
         if (!value["ReadOnlyDBInstanceList"].IsArray())
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReadOnlyDBInstanceList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReadOnlyDBInstanceList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReadOnlyDBInstanceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -210,7 +210,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rebalance"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.Rebalance` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.Rebalance` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rebalance = value["Rebalance"].GetInt64();
         m_rebalanceHasBeenSet = true;
@@ -219,7 +219,7 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DBInstanceNetInfo") && !value["DBInstanceNetInfo"].IsNull())
     {
         if (!value["DBInstanceNetInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `ReadOnlyGroup.DBInstanceNetInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.DBInstanceNetInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DBInstanceNetInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

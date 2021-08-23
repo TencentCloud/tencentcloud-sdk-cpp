@@ -41,7 +41,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandwidthPackageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.BandwidthPackageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.BandwidthPackageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthPackageId = string(value["BandwidthPackageId"].GetString());
         m_bandwidthPackageIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkType = string(value["NetworkType"].GetString());
         m_networkTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChargeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.ChargeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.ChargeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_chargeType = string(value["ChargeType"].GetString());
         m_chargeTypeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandwidthPackageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.BandwidthPackageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.BandwidthPackageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthPackageName = string(value["BandwidthPackageName"].GetString());
         m_bandwidthPackageNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResourceSet") && !value["ResourceSet"].IsNull())
     {
         if (!value["ResourceSet"].IsArray())
-            return CoreInternalOutcome(Error("response `BandwidthPackage.ResourceSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.ResourceSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResourceSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -121,7 +121,7 @@ CoreInternalOutcome BandwidthPackage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BandwidthPackage.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BandwidthPackage.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;

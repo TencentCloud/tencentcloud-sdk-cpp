@@ -46,16 +46,16 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["Balance"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Balance` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Balance` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_balance = rsp["Balance"].GetInt64();
         m_balanceHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["Uin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Uin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_uin = rsp["Uin"].GetUint64();
         m_uinHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["RealBalance"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RealBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_realBalance = rsp["RealBalance"].GetDouble();
         m_realBalanceHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["CashAccountBalance"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CashAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CashAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cashAccountBalance = rsp["CashAccountBalance"].GetDouble();
         m_cashAccountBalanceHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["IncomeIntoAccountBalance"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `IncomeIntoAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IncomeIntoAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_incomeIntoAccountBalance = rsp["IncomeIntoAccountBalance"].GetDouble();
         m_incomeIntoAccountBalanceHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["PresentAccountBalance"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `PresentAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PresentAccountBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_presentAccountBalance = rsp["PresentAccountBalance"].GetDouble();
         m_presentAccountBalanceHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["FreezeAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FreezeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FreezeAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_freezeAmount = rsp["FreezeAmount"].GetDouble();
         m_freezeAmountHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["OweAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OweAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OweAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_oweAmount = rsp["OweAmount"].GetDouble();
         m_oweAmountHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["IsAllowArrears"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsAllowArrears` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsAllowArrears` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isAllowArrears = rsp["IsAllowArrears"].GetBool();
         m_isAllowArrearsHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["IsCreditLimited"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IsCreditLimited` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IsCreditLimited` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isCreditLimited = rsp["IsCreditLimited"].GetBool();
         m_isCreditLimitedHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["CreditAmount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CreditAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreditAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_creditAmount = rsp["CreditAmount"].GetDouble();
         m_creditAmountHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["CreditBalance"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `CreditBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreditBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_creditBalance = rsp["CreditBalance"].GetDouble();
         m_creditBalanceHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     {
         if (!rsp["RealCreditBalance"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `RealCreditBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealCreditBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_realCreditBalance = rsp["RealCreditBalance"].GetDouble();
         m_realCreditBalanceHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityRecordItem.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ActivityId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityRecordItem.ActivityId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.ActivityId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activityId = value["ActivityId"].GetInt64();
         m_activityIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ActivityRecordItem.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SubStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ActivityRecordItem.SubStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.SubStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subStatus = string(value["SubStatus"].GetString());
         m_subStatusHasBeenSet = true;

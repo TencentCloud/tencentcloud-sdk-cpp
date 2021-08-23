@@ -34,7 +34,7 @@ CoreInternalOutcome CCAlarmThreshold::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CCAlarmThreshold.AlarmThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCAlarmThreshold.AlarmThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmThreshold = value["AlarmThreshold"].GetUint64();
         m_alarmThresholdHasBeenSet = true;

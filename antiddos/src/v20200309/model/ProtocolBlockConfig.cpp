@@ -38,7 +38,7 @@ CoreInternalOutcome ProtocolBlockConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["DropTcp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolBlockConfig.DropTcp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.DropTcp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dropTcp = value["DropTcp"].GetInt64();
         m_dropTcpHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ProtocolBlockConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["DropUdp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolBlockConfig.DropUdp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.DropUdp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dropUdp = value["DropUdp"].GetInt64();
         m_dropUdpHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ProtocolBlockConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["DropIcmp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolBlockConfig.DropIcmp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.DropIcmp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dropIcmp = value["DropIcmp"].GetInt64();
         m_dropIcmpHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ProtocolBlockConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["DropOther"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolBlockConfig.DropOther` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.DropOther` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dropOther = value["DropOther"].GetInt64();
         m_dropOtherHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ProtocolBlockConfig::Deserialize(const rapidjson::Value &val
     {
         if (!value["CheckExceptNullConnect"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProtocolBlockConfig.CheckExceptNullConnect` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.CheckExceptNullConnect` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_checkExceptNullConnect = value["CheckExceptNullConnect"].GetInt64();
         m_checkExceptNullConnectHasBeenSet = true;

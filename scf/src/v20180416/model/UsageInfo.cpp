@@ -38,7 +38,7 @@ CoreInternalOutcome UsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespacesCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsageInfo.NamespacesCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsageInfo.NamespacesCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_namespacesCount = value["NamespacesCount"].GetInt64();
         m_namespacesCountHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome UsageInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
     {
         if (!value["Namespace"].IsArray())
-            return CoreInternalOutcome(Error("response `UsageInfo.Namespace` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UsageInfo.Namespace` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Namespace"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome UsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalConcurrencyMem"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsageInfo.TotalConcurrencyMem` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsageInfo.TotalConcurrencyMem` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalConcurrencyMem = value["TotalConcurrencyMem"].GetInt64();
         m_totalConcurrencyMemHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome UsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalAllocatedConcurrencyMem"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsageInfo.TotalAllocatedConcurrencyMem` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsageInfo.TotalAllocatedConcurrencyMem` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalAllocatedConcurrencyMem = value["TotalAllocatedConcurrencyMem"].GetInt64();
         m_totalAllocatedConcurrencyMemHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome UsageInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserConcurrencyMemLimit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UsageInfo.UserConcurrencyMemLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsageInfo.UserConcurrencyMemLimit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_userConcurrencyMemLimit = value["UserConcurrencyMemLimit"].GetInt64();
         m_userConcurrencyMemLimitHasBeenSet = true;

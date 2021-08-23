@@ -35,7 +35,7 @@ CoreInternalOutcome FleetStatisticFlows::Deserialize(const rapidjson::Value &val
     {
         if (!value["TotalUsedFlowMegaBytes"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticFlows.TotalUsedFlowMegaBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticFlows.TotalUsedFlowMegaBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_totalUsedFlowMegaBytes = value["TotalUsedFlowMegaBytes"].GetDouble();
         m_totalUsedFlowMegaBytesHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome FleetStatisticFlows::Deserialize(const rapidjson::Value &val
     {
         if (!value["BeginTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FleetStatisticFlows.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FleetStatisticFlows.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginTime = string(value["BeginTime"].GetString());
         m_beginTimeHasBeenSet = true;

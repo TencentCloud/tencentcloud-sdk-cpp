@@ -34,7 +34,7 @@ CoreInternalOutcome RatingData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rank"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RatingData.Rank` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RatingData.Rank` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rank = value["Rank"].GetInt64();
         m_rankHasBeenSet = true;

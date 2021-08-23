@@ -34,7 +34,7 @@ CoreInternalOutcome UserResponse::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Users") && !value["Users"].IsNull())
     {
         if (!value["Users"].IsArray())
-            return CoreInternalOutcome(Error("response `UserResponse.Users` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserResponse.Users` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Users"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome UserResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UserResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserResponse.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;

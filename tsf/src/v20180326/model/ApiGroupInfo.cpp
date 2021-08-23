@@ -47,7 +47,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupContext"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.GroupContext` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GroupContext` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupContext = string(value["GroupContext"].GetString());
         m_groupContextHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.AuthType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.AuthType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authType = string(value["AuthType"].GetString());
         m_authTypeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = string(value["UpdatedTime"].GetString());
         m_updatedTimeHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BindedGatewayDeployGroups") && !value["BindedGatewayDeployGroups"].IsNull())
     {
         if (!value["BindedGatewayDeployGroups"].IsArray())
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.BindedGatewayDeployGroups` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.BindedGatewayDeployGroups` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BindedGatewayDeployGroups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApiCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.ApiCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.ApiCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_apiCount = value["ApiCount"].GetInt64();
         m_apiCountHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AclMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.AclMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.AclMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aclMode = string(value["AclMode"].GetString());
         m_aclModeHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GroupType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupType = string(value["GroupType"].GetString());
         m_groupTypeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayInstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.GatewayInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GatewayInstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayInstanceType = string(value["GatewayInstanceType"].GetString());
         m_gatewayInstanceTypeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiGroupInfo.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayInstanceId = string(value["GatewayInstanceId"].GetString());
         m_gatewayInstanceIdHasBeenSet = true;

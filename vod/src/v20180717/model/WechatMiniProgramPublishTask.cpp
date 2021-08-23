@@ -40,7 +40,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["SourceDefinition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.SourceDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.SourceDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceDefinition = value["SourceDefinition"].GetUint64();
         m_sourceDefinitionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome WechatMiniProgramPublishTask::Deserialize(const rapidjson::V
     {
         if (!value["PublishResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask.PublishResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WechatMiniProgramPublishTask.PublishResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publishResult = string(value["PublishResult"].GetString());
         m_publishResultHasBeenSet = true;

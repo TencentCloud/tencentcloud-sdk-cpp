@@ -38,7 +38,7 @@ CoreInternalOutcome ScdnAclGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclGroup.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclGroup.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ScdnAclGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Configure") && !value["Configure"].IsNull())
     {
         if (!value["Configure"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnAclGroup.Configure` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclGroup.Configure` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Configure"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome ScdnAclGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclGroup.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclGroup.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ScdnAclGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ScdnAclGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorPage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScdnAclGroup.ErrorPage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnAclGroup.ErrorPage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_errorPage.Deserialize(value["ErrorPage"]);

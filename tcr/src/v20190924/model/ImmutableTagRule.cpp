@@ -40,7 +40,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepositoryPattern"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.RepositoryPattern` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.RepositoryPattern` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryPattern = string(value["RepositoryPattern"].GetString());
         m_repositoryPatternHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagPattern"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.TagPattern` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.TagPattern` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagPattern = string(value["TagPattern"].GetString());
         m_tagPatternHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepositoryDecoration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.RepositoryDecoration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.RepositoryDecoration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repositoryDecoration = string(value["RepositoryDecoration"].GetString());
         m_repositoryDecorationHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagDecoration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.TagDecoration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.TagDecoration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagDecoration = string(value["TagDecoration"].GetString());
         m_tagDecorationHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Disabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.Disabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.Disabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_disabled = value["Disabled"].GetBool();
         m_disabledHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = value["RuleId"].GetInt64();
         m_ruleIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ImmutableTagRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImmutableTagRule.NsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImmutableTagRule.NsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nsName = string(value["NsName"].GetString());
         m_nsNameHasBeenSet = true;

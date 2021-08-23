@@ -36,7 +36,7 @@ CoreInternalOutcome CallDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CallDetailItem.DataType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallDetailItem.DataType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dataType = value["DataType"].GetUint64();
         m_dataTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CallDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ValidAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CallDetailItem.ValidAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallDetailItem.ValidAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_validAmount = value["ValidAmount"].GetUint64();
         m_validAmountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CallDetailItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallDetailItem.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallDetailItem.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;

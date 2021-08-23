@@ -37,7 +37,7 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAgeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaxAgeRule.MaxAgeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxAgeRule.MaxAgeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_maxAgeType = string(value["MaxAgeType"].GetString());
         m_maxAgeTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MaxAgeContents") && !value["MaxAgeContents"].IsNull())
     {
         if (!value["MaxAgeContents"].IsArray())
-            return CoreInternalOutcome(Error("response `MaxAgeRule.MaxAgeContents` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MaxAgeRule.MaxAgeContents` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MaxAgeContents"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAgeTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MaxAgeRule.MaxAgeTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxAgeRule.MaxAgeTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxAgeTime = value["MaxAgeTime"].GetInt64();
         m_maxAgeTimeHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FollowOrigin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaxAgeRule.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxAgeRule.FollowOrigin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_followOrigin = string(value["FollowOrigin"].GetString());
         m_followOriginHasBeenSet = true;

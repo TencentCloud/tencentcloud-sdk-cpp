@@ -45,16 +45,16 @@ namespace TencentCloud
                 TdidClient(const Credential &credential, const std::string &region);
                 TdidClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateCredentialResponse> CreateCredentialOutcome;
+                typedef Outcome<Core::Error, Model::CreateCredentialResponse> CreateCredentialOutcome;
                 typedef std::future<CreateCredentialOutcome> CreateCredentialOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::CreateCredentialRequest&, CreateCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCredentialAsyncHandler;
-                typedef Outcome<Error, Model::CreateSelectiveCredentialResponse> CreateSelectiveCredentialOutcome;
+                typedef Outcome<Core::Error, Model::CreateSelectiveCredentialResponse> CreateSelectiveCredentialOutcome;
                 typedef std::future<CreateSelectiveCredentialOutcome> CreateSelectiveCredentialOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::CreateSelectiveCredentialRequest&, CreateSelectiveCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSelectiveCredentialAsyncHandler;
-                typedef Outcome<Error, Model::CreateTDidResponse> CreateTDidOutcome;
+                typedef Outcome<Core::Error, Model::CreateTDidResponse> CreateTDidOutcome;
                 typedef std::future<CreateTDidOutcome> CreateTDidOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::CreateTDidRequest&, CreateTDidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDidAsyncHandler;
-                typedef Outcome<Error, Model::VerifyCredentialResponse> VerifyCredentialOutcome;
+                typedef Outcome<Core::Error, Model::VerifyCredentialResponse> VerifyCredentialOutcome;
                 typedef std::future<VerifyCredentialOutcome> VerifyCredentialOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::VerifyCredentialRequest&, VerifyCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyCredentialAsyncHandler;
 

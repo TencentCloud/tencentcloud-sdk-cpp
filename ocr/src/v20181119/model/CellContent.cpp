@@ -35,7 +35,7 @@ CoreInternalOutcome CellContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParagNo"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CellContent.ParagNo` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CellContent.ParagNo` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_paragNo = value["ParagNo"].GetInt64();
         m_paragNoHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CellContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WordSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CellContent.WordSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CellContent.WordSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wordSize = value["WordSize"].GetInt64();
         m_wordSizeHasBeenSet = true;

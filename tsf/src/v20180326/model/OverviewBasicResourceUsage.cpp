@@ -38,7 +38,7 @@ CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const rapidjson::Val
     {
         if (!value["ApplicationCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OverviewBasicResourceUsage.ApplicationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverviewBasicResourceUsage.ApplicationCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_applicationCount = value["ApplicationCount"].GetInt64();
         m_applicationCountHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const rapidjson::Val
     {
         if (!value["NamespaceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OverviewBasicResourceUsage.NamespaceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverviewBasicResourceUsage.NamespaceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceCount = value["NamespaceCount"].GetInt64();
         m_namespaceCountHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const rapidjson::Val
     {
         if (!value["GroupCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OverviewBasicResourceUsage.GroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverviewBasicResourceUsage.GroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_groupCount = value["GroupCount"].GetInt64();
         m_groupCountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const rapidjson::Val
     {
         if (!value["PackageSpaceUsed"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OverviewBasicResourceUsage.PackageSpaceUsed` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverviewBasicResourceUsage.PackageSpaceUsed` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_packageSpaceUsed = value["PackageSpaceUsed"].GetInt64();
         m_packageSpaceUsedHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const rapidjson::Val
     {
         if (!value["ConsulInstanceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OverviewBasicResourceUsage.ConsulInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OverviewBasicResourceUsage.ConsulInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_consulInstanceCount = value["ConsulInstanceCount"].GetInt64();
         m_consulInstanceCountHasBeenSet = true;

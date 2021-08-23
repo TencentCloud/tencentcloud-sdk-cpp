@@ -35,7 +35,7 @@ CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Dimensions") && !value["Dimensions"].IsNull())
     {
         if (!value["Dimensions"].IsArray())
-            return CoreInternalOutcome(Error("response `DataPoint.Dimensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataPoint.Dimensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Dimensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Timestamps") && !value["Timestamps"].IsNull())
     {
         if (!value["Timestamps"].IsArray())
-            return CoreInternalOutcome(Error("response `DataPoint.Timestamps` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataPoint.Timestamps` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Timestamps"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -68,7 +68,7 @@ CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
         if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Error("response `DataPoint.Values` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataPoint.Values` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Values"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

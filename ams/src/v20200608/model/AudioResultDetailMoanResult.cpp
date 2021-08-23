@@ -38,7 +38,7 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const rapidjson::Va
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailMoanResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const rapidjson::Va
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailMoanResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const rapidjson::Va
     {
         if (!value["StartTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailMoanResult.StartTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetDouble();
         m_startTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const rapidjson::Va
     {
         if (!value["EndTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailMoanResult.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetDouble();
         m_endTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const rapidjson::Va
     {
         if (!value["SubLabelCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioResultDetailMoanResult.SubLabelCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailMoanResult.SubLabelCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subLabelCode = string(value["SubLabelCode"].GetString());
         m_subLabelCodeHasBeenSet = true;

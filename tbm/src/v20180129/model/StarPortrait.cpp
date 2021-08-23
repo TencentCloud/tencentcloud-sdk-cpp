@@ -35,7 +35,7 @@ CoreInternalOutcome StarPortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StarPortrait.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StarPortrait.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome StarPortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StarPortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StarPortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetDouble();
         m_percentHasBeenSet = true;

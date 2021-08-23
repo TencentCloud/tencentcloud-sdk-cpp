@@ -38,7 +38,7 @@ CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SecurityLevelPie") && !value["SecurityLevelPie"].IsNull())
     {
         if (!value["SecurityLevelPie"].IsArray())
-            return CoreInternalOutcome(Error("response `DashboardResult.SecurityLevelPie` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DashboardResult.SecurityLevelPie` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SecurityLevelPie"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CertBrandsPie") && !value["CertBrandsPie"].IsNull())
     {
         if (!value["CertBrandsPie"].IsArray())
-            return CoreInternalOutcome(Error("response `DashboardResult.CertBrandsPie` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DashboardResult.CertBrandsPie` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CertBrandsPie"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -78,7 +78,7 @@ CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CertValidTimePie") && !value["CertValidTimePie"].IsNull())
     {
         if (!value["CertValidTimePie"].IsArray())
-            return CoreInternalOutcome(Error("response `DashboardResult.CertValidTimePie` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DashboardResult.CertValidTimePie` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CertValidTimePie"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CertTypePie") && !value["CertTypePie"].IsNull())
     {
         if (!value["CertTypePie"].IsArray())
-            return CoreInternalOutcome(Error("response `DashboardResult.CertTypePie` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DashboardResult.CertTypePie` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CertTypePie"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -118,7 +118,7 @@ CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SSLBugsLoopholeHistogram") && !value["SSLBugsLoopholeHistogram"].IsNull())
     {
         if (!value["SSLBugsLoopholeHistogram"].IsArray())
-            return CoreInternalOutcome(Error("response `DashboardResult.SSLBugsLoopholeHistogram` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DashboardResult.SSLBugsLoopholeHistogram` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SSLBugsLoopholeHistogram"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -138,7 +138,7 @@ CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ComplianceHistogram") && !value["ComplianceHistogram"].IsNull())
     {
         if (!value["ComplianceHistogram"].IsArray())
-            return CoreInternalOutcome(Error("response `DashboardResult.ComplianceHistogram` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DashboardResult.ComplianceHistogram` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ComplianceHistogram"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

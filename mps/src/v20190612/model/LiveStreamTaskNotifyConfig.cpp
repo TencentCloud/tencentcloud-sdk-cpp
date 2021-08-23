@@ -37,7 +37,7 @@ CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const rapidjson::Val
     {
         if (!value["CmqModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamTaskNotifyConfig.CmqModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamTaskNotifyConfig.CmqModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqModel = string(value["CmqModel"].GetString());
         m_cmqModelHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const rapidjson::Val
     {
         if (!value["CmqRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamTaskNotifyConfig.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamTaskNotifyConfig.CmqRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmqRegion = string(value["CmqRegion"].GetString());
         m_cmqRegionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const rapidjson::Val
     {
         if (!value["QueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamTaskNotifyConfig.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamTaskNotifyConfig.QueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queueName = string(value["QueueName"].GetString());
         m_queueNameHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const rapidjson::Val
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveStreamTaskNotifyConfig.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveStreamTaskNotifyConfig.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;

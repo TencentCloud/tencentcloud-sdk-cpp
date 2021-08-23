@@ -42,7 +42,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgSpeed"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.AvgSpeed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.AvgSpeed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgSpeed = value["AvgSpeed"].GetDouble();
         m_avgSpeedHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.AvgVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.AvgVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgVolume = value["AvgVolume"].GetDouble();
         m_avgVolumeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.MaxVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.MaxVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxVolume = value["MaxVolume"].GetDouble();
         m_maxVolumeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.MinVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.MinVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minVolume = value["MinVolume"].GetDouble();
         m_minVolumeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MuteDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.MuteDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.MuteDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_muteDuration = value["MuteDuration"].GetInt64();
         m_muteDurationHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SoundDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.SoundDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.SoundDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_soundDuration = value["SoundDuration"].GetInt64();
         m_soundDurationHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.TotalDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.TotalDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalDuration = value["TotalDuration"].GetInt64();
         m_totalDurationHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VadNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.VadNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.VadNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vadNum = value["VadNum"].GetInt64();
         m_vadNumHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WordNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ASRStat.WordNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ASRStat.WordNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_wordNum = value["WordNum"].GetInt64();
         m_wordNumHasBeenSet = true;

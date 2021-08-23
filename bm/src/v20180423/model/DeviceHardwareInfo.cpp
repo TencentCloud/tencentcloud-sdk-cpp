@@ -50,7 +50,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IsElastic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.IsElastic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.IsElastic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isElastic = value["IsElastic"].GetUint64();
         m_isElasticHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CpmPayMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.CpmPayMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.CpmPayMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpmPayMode = value["CpmPayMode"].GetUint64();
         m_cpmPayModeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CpuId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.CpuId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.CpuId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuId = value["CpuId"].GetUint64();
         m_cpuIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Mem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetUint64();
         m_memHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ContainRaidCard"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.ContainRaidCard` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.ContainRaidCard` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_containRaidCard = value["ContainRaidCard"].GetUint64();
         m_containRaidCardHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SystemDiskTypeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.SystemDiskTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.SystemDiskTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_systemDiskTypeId = value["SystemDiskTypeId"].GetUint64();
         m_systemDiskTypeIdHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SystemDiskCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.SystemDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.SystemDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_systemDiskCount = value["SystemDiskCount"].GetUint64();
         m_systemDiskCountHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DataDiskTypeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.DataDiskTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.DataDiskTypeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dataDiskTypeId = value["DataDiskTypeId"].GetUint64();
         m_dataDiskTypeIdHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DataDiskCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.DataDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.DataDiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dataDiskCount = value["DataDiskCount"].GetUint64();
         m_dataDiskCountHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CpuDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.CpuDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.CpuDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuDescription = string(value["CpuDescription"].GetString());
         m_cpuDescriptionHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["MemDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.MemDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.MemDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memDescription = string(value["MemDescription"].GetString());
         m_memDescriptionHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DiskDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.DiskDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.DiskDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskDescription = string(value["DiskDescription"].GetString());
         m_diskDescriptionHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["NicDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.NicDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.NicDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nicDescription = string(value["NicDescription"].GetString());
         m_nicDescriptionHasBeenSet = true;
@@ -190,7 +190,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RaidDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.RaidDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.RaidDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_raidDescription = string(value["RaidDescription"].GetString());
         m_raidDescriptionHasBeenSet = true;
@@ -200,7 +200,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -210,7 +210,7 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DeviceClassCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceHardwareInfo.DeviceClassCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceClassCode = string(value["DeviceClassCode"].GetString());
         m_deviceClassCodeHasBeenSet = true;

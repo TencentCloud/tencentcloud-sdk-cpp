@@ -35,7 +35,7 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SlotName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlotInfo.SlotName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.SlotName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_slotName = string(value["SlotName"].GetString());
         m_slotNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SlotValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlotInfo.SlotValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlotInfo.SlotValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_slotValue = string(value["SlotValue"].GetString());
         m_slotValueHasBeenSet = true;

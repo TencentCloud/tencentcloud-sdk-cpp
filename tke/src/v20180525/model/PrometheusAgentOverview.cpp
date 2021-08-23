@@ -37,7 +37,7 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAgentOverview.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAgentOverview.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAgentOverview.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAgentOverview.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;

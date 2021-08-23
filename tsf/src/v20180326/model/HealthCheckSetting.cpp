@@ -44,7 +44,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ActionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.ActionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionType = string(value["ActionType"].GetString());
         m_actionTypeHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InitialDelaySeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.InitialDelaySeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.InitialDelaySeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_initialDelaySeconds = value["InitialDelaySeconds"].GetUint64();
         m_initialDelaySecondsHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimeoutSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.TimeoutSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.TimeoutSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeoutSeconds = value["TimeoutSeconds"].GetUint64();
         m_timeoutSecondsHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PeriodSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.PeriodSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.PeriodSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_periodSeconds = value["PeriodSeconds"].GetUint64();
         m_periodSecondsHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SuccessThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.SuccessThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.SuccessThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_successThreshold = value["SuccessThreshold"].GetUint64();
         m_successThresholdHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FailureThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.FailureThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.FailureThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_failureThreshold = value["FailureThreshold"].GetUint64();
         m_failureThresholdHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Scheme"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.Scheme` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.Scheme` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheme = string(value["Scheme"].GetString());
         m_schemeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Command") && !value["Command"].IsNull())
     {
         if (!value["Command"].IsArray())
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.Command` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.Command` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Command"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -147,7 +147,7 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckSetting.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckSetting.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

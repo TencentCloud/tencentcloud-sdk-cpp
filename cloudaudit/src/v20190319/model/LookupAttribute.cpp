@@ -35,7 +35,7 @@ CoreInternalOutcome LookupAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttributeKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LookupAttribute.AttributeKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LookupAttribute.AttributeKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attributeKey = string(value["AttributeKey"].GetString());
         m_attributeKeyHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LookupAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttributeValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LookupAttribute.AttributeValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LookupAttribute.AttributeValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attributeValue = string(value["AttributeValue"].GetString());
         m_attributeValueHasBeenSet = true;

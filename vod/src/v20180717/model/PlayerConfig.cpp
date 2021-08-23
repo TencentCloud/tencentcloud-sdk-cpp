@@ -45,7 +45,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DrmSwitch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.DrmSwitch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.DrmSwitch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_drmSwitch = string(value["DrmSwitch"].GetString());
         m_drmSwitchHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdaptiveDynamicStreamingDefinition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.AdaptiveDynamicStreamingDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.AdaptiveDynamicStreamingDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_adaptiveDynamicStreamingDefinition = value["AdaptiveDynamicStreamingDefinition"].GetUint64();
         m_adaptiveDynamicStreamingDefinitionHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DrmStreamingsInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.DrmStreamingsInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.DrmStreamingsInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_drmStreamingsInfo.Deserialize(value["DrmStreamingsInfo"]);
@@ -102,7 +102,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageSpriteDefinition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.ImageSpriteDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.ImageSpriteDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageSpriteDefinition = value["ImageSpriteDefinition"].GetUint64();
         m_imageSpriteDefinitionHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ResolutionNameSet") && !value["ResolutionNameSet"].IsNull())
     {
         if (!value["ResolutionNameSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PlayerConfig.ResolutionNameSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.ResolutionNameSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ResolutionNameSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -132,7 +132,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheme"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.Scheme` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.Scheme` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheme = string(value["Scheme"].GetString());
         m_schemeHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerConfig.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;

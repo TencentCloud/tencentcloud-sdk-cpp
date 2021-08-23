@@ -46,16 +46,16 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Sim"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Sim` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sim` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sim = rsp["Sim"].GetDouble();
         m_simHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(rsp["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Sex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Sex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sex = string(rsp["Sex"].GetString());
         m_sexHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Nation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Nation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nation = string(rsp["Nation"].GetString());
         m_nationHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Birth"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Birth` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Birth` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_birth = string(rsp["Birth"].GetString());
         m_birthHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(rsp["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["IdNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IdNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IdNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_idNum = string(rsp["IdNum"].GetString());
         m_idNumHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Portrait"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Portrait` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Portrait` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_portrait = string(rsp["Portrait"].GetString());
         m_portraitHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Warnings"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Warnings` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Warnings` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_warnings = string(rsp["Warnings"].GetString());
         m_warningsHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Quality"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_quality = rsp["Quality"].GetDouble();
         m_qualityHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
     {
         if (!rsp["Encryption"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Encryption` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Encryption` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_encryption.Deserialize(rsp["Encryption"]);

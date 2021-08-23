@@ -33,7 +33,7 @@ CoreInternalOutcome RuleHealth::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleHealth.Targets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleHealth.Targets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Targets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

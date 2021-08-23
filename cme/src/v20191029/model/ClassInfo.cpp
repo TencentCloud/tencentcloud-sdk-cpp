@@ -35,7 +35,7 @@ CoreInternalOutcome ClassInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Owner"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ClassInfo.Owner` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassInfo.Owner` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ClassInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_classPath = string(value["ClassPath"].GetString());
         m_classPathHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome PolicyDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserDiscount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PolicyDetail.UserDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail.UserDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_userDiscount = value["UserDiscount"].GetInt64();
         m_userDiscountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome PolicyDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CommonDiscount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PolicyDetail.CommonDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail.CommonDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_commonDiscount = value["CommonDiscount"].GetInt64();
         m_commonDiscountHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome PolicyDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FinalDiscount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PolicyDetail.FinalDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail.FinalDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_finalDiscount = value["FinalDiscount"].GetInt64();
         m_finalDiscountHasBeenSet = true;

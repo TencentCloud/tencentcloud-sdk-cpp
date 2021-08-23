@@ -46,7 +46,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.ZoneInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.ZoneInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_zoneInfo.Deserialize(value["ZoneInfo"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Month"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.Month` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.Month` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_month = string(value["Month"].GetString());
         m_monthHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandwidthPkgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.BandwidthPkgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.BandwidthPkgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthPkgId = string(value["BandwidthPkgId"].GetString());
         m_bandwidthPkgIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Isp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.Isp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.Isp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isp = string(value["Isp"].GetString());
         m_ispHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficMaxIn"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.TrafficMaxIn` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.TrafficMaxIn` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_trafficMaxIn = value["TrafficMaxIn"].GetDouble();
         m_trafficMaxInHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrafficMaxOut"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.TrafficMaxOut` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.TrafficMaxOut` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_trafficMaxOut = value["TrafficMaxOut"].GetDouble();
         m_trafficMaxOutHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FeeTraffic"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.FeeTraffic` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.FeeTraffic` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_feeTraffic = value["FeeTraffic"].GetDouble();
         m_feeTrafficHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EffectiveDays"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.EffectiveDays` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.EffectiveDays` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_effectiveDays = value["EffectiveDays"].GetInt64();
         m_effectiveDaysHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MonthDays"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.MonthDays` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.MonthDays` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_monthDays = value["MonthDays"].GetInt64();
         m_monthDaysHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EffectiveDaysRate"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.EffectiveDaysRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.EffectiveDaysRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_effectiveDaysRate = value["EffectiveDaysRate"].GetDouble();
         m_effectiveDaysRateHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandwidthPkgType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MonthNetwork.BandwidthPkgType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MonthNetwork.BandwidthPkgType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidthPkgType = string(value["BandwidthPkgType"].GetString());
         m_bandwidthPkgTypeHasBeenSet = true;

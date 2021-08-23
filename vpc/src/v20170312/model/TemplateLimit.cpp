@@ -37,7 +37,7 @@ CoreInternalOutcome TemplateLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressTemplateMemberLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TemplateLimit.AddressTemplateMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateLimit.AddressTemplateMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_addressTemplateMemberLimit = value["AddressTemplateMemberLimit"].GetUint64();
         m_addressTemplateMemberLimitHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TemplateLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressTemplateGroupMemberLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TemplateLimit.AddressTemplateGroupMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateLimit.AddressTemplateGroupMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_addressTemplateGroupMemberLimit = value["AddressTemplateGroupMemberLimit"].GetUint64();
         m_addressTemplateGroupMemberLimitHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TemplateLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceTemplateMemberLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TemplateLimit.ServiceTemplateMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateLimit.ServiceTemplateMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateMemberLimit = value["ServiceTemplateMemberLimit"].GetUint64();
         m_serviceTemplateMemberLimitHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TemplateLimit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceTemplateGroupMemberLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TemplateLimit.ServiceTemplateGroupMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateLimit.ServiceTemplateGroupMemberLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_serviceTemplateGroupMemberLimit = value["ServiceTemplateGroupMemberLimit"].GetUint64();
         m_serviceTemplateGroupMemberLimitHasBeenSet = true;

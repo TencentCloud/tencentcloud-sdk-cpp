@@ -44,7 +44,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TargetGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetGroupId = string(value["TargetGroupId"].GetString());
         m_targetGroupIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Weight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("PublicIpAddresses") && !value["PublicIpAddresses"].IsNull())
     {
         if (!value["PublicIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.PublicIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.PublicIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PublicIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -106,7 +106,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
     {
         if (!value["PrivateIpAddresses"].IsArray())
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.PrivateIpAddresses` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.PrivateIpAddresses` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -120,7 +120,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RegisteredTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.RegisteredTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.RegisteredTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registeredTime = string(value["RegisteredTime"].GetString());
         m_registeredTimeHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EniId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.EniId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.EniId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eniId = string(value["EniId"].GetString());
         m_eniIdHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome TargetGroupBackend::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetGroupBackend.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetGroupBackend.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;

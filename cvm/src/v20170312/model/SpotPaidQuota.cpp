@@ -37,7 +37,7 @@ CoreInternalOutcome SpotPaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpotPaidQuota.UsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotPaidQuota.UsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_usedQuota = value["UsedQuota"].GetUint64();
         m_usedQuotaHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SpotPaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemainingQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpotPaidQuota.RemainingQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotPaidQuota.RemainingQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_remainingQuota = value["RemainingQuota"].GetUint64();
         m_remainingQuotaHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SpotPaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpotPaidQuota.TotalQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotPaidQuota.TotalQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalQuota = value["TotalQuota"].GetUint64();
         m_totalQuotaHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SpotPaidQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpotPaidQuota.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpotPaidQuota.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome DescribePolicyConditionListMetric::Deserialize(const rapidjs
     {
         if (!value["ConfigManual"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListMetric.ConfigManual` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListMetric.ConfigManual` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_configManual.Deserialize(value["ConfigManual"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome DescribePolicyConditionListMetric::Deserialize(const rapidjs
     {
         if (!value["MetricId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListMetric.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListMetric.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_metricId = value["MetricId"].GetInt64();
         m_metricIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome DescribePolicyConditionListMetric::Deserialize(const rapidjs
     {
         if (!value["MetricShowName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListMetric.MetricShowName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListMetric.MetricShowName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricShowName = string(value["MetricShowName"].GetString());
         m_metricShowNameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome DescribePolicyConditionListMetric::Deserialize(const rapidjs
     {
         if (!value["MetricUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListMetric.MetricUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListMetric.MetricUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricUnit = string(value["MetricUnit"].GetString());
         m_metricUnitHasBeenSet = true;

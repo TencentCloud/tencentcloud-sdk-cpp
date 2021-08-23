@@ -36,7 +36,7 @@ CoreInternalOutcome VodAudioStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodAudioStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodAudioStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome VodAudioStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SamplingRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodAudioStreamItem.SamplingRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodAudioStreamItem.SamplingRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_samplingRate = value["SamplingRate"].GetInt64();
         m_samplingRateHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome VodAudioStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodAudioStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodAudioStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;

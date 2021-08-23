@@ -37,7 +37,7 @@ CoreInternalOutcome GatewayVo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayDeployGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayVo.GatewayDeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayVo.GatewayDeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayDeployGroupId = string(value["GatewayDeployGroupId"].GetString());
         m_gatewayDeployGroupIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome GatewayVo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayDeployGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GatewayVo.GatewayDeployGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayVo.GatewayDeployGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayDeployGroupName = string(value["GatewayDeployGroupName"].GetString());
         m_gatewayDeployGroupNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GatewayVo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GatewayVo.GroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GatewayVo.GroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_groupNum = value["GroupNum"].GetUint64();
         m_groupNumHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome GatewayVo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Groups") && !value["Groups"].IsNull())
     {
         if (!value["Groups"].IsArray())
-            return CoreInternalOutcome(Error("response `GatewayVo.Groups` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GatewayVo.Groups` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Groups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

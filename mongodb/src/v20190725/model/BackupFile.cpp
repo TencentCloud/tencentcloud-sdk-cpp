@@ -35,7 +35,7 @@ CoreInternalOutcome BackupFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicateSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupFile.ReplicateSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupFile.ReplicateSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicateSetId = string(value["ReplicateSetId"].GetString());
         m_replicateSetIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BackupFile::Deserialize(const rapidjson::Value &value)
     {
         if (!value["File"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupFile.File` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupFile.File` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_file = string(value["File"].GetString());
         m_fileHasBeenSet = true;

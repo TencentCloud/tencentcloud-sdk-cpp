@@ -34,7 +34,7 @@ CoreInternalOutcome ImageOsList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Windows") && !value["Windows"].IsNull())
     {
         if (!value["Windows"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageOsList.Windows` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageOsList.Windows` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Windows"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome ImageOsList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Linux") && !value["Linux"].IsNull())
     {
         if (!value["Linux"].IsArray())
-            return CoreInternalOutcome(Error("response `ImageOsList.Linux` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImageOsList.Linux` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Linux"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

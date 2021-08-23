@@ -37,7 +37,7 @@ CoreInternalOutcome RawImageWatermarkInput::Deserialize(const rapidjson::Value &
     {
         if (!value["ImageContent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RawImageWatermarkInput.ImageContent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawImageWatermarkInput.ImageContent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageContent.Deserialize(value["ImageContent"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome RawImageWatermarkInput::Deserialize(const rapidjson::Value &
     {
         if (!value["Width"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawImageWatermarkInput.Width` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawImageWatermarkInput.Width` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_width = string(value["Width"].GetString());
         m_widthHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome RawImageWatermarkInput::Deserialize(const rapidjson::Value &
     {
         if (!value["Height"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawImageWatermarkInput.Height` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawImageWatermarkInput.Height` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_height = string(value["Height"].GetString());
         m_heightHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome RawImageWatermarkInput::Deserialize(const rapidjson::Value &
     {
         if (!value["RepeatType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RawImageWatermarkInput.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RawImageWatermarkInput.RepeatType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repeatType = string(value["RepeatType"].GetString());
         m_repeatTypeHasBeenSet = true;

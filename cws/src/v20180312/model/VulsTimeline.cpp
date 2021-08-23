@@ -45,7 +45,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Appid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appid = value["Appid"].GetUint64();
         m_appidHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PageCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pageCount = value["PageCount"].GetUint64();
         m_pageCountHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SiteNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.SiteNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.SiteNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_siteNum = value["SiteNum"].GetUint64();
         m_siteNumHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImpactSiteNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.ImpactSiteNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.ImpactSiteNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_impactSiteNum = value["ImpactSiteNum"].GetUint64();
         m_impactSiteNumHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsHighNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.VulsHighNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.VulsHighNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsHighNum = value["VulsHighNum"].GetUint64();
         m_vulsHighNumHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsMiddleNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.VulsMiddleNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.VulsMiddleNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsMiddleNum = value["VulsMiddleNum"].GetUint64();
         m_vulsMiddleNumHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsLowNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.VulsLowNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.VulsLowNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsLowNum = value["VulsLowNum"].GetUint64();
         m_vulsLowNumHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulsNoticeNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.VulsNoticeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.VulsNoticeNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulsNoticeNum = value["VulsNoticeNum"].GetUint64();
         m_vulsNoticeNumHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VulsTimeline.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VulsTimeline.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;

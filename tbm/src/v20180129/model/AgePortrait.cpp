@@ -35,7 +35,7 @@ CoreInternalOutcome AgePortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgeRange"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AgePortrait.AgeRange` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgePortrait.AgeRange` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ageRange = string(value["AgeRange"].GetString());
         m_ageRangeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AgePortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AgePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AgePortrait.Percent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetDouble();
         m_percentHasBeenSet = true;

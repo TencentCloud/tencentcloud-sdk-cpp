@@ -39,7 +39,7 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapid
     {
         if (!value["IpProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DestinationIpPortTranslationNatRule.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationIpPortTranslationNatRule.IpProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipProtocol = string(value["IpProtocol"].GetString());
         m_ipProtocolHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapid
     {
         if (!value["PublicIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DestinationIpPortTranslationNatRule.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationIpPortTranslationNatRule.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIpAddress = string(value["PublicIpAddress"].GetString());
         m_publicIpAddressHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapid
     {
         if (!value["PublicPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DestinationIpPortTranslationNatRule.PublicPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationIpPortTranslationNatRule.PublicPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_publicPort = value["PublicPort"].GetUint64();
         m_publicPortHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapid
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DestinationIpPortTranslationNatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationIpPortTranslationNatRule.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapid
     {
         if (!value["PrivatePort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DestinationIpPortTranslationNatRule.PrivatePort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationIpPortTranslationNatRule.PrivatePort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_privatePort = value["PrivatePort"].GetUint64();
         m_privatePortHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapid
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DestinationIpPortTranslationNatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DestinationIpPortTranslationNatRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

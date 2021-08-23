@@ -36,7 +36,7 @@ CoreInternalOutcome PathBasedOriginRule::Deserialize(const rapidjson::Value &val
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PathBasedOriginRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PathBasedOriginRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PathBasedOriginRule::Deserialize(const rapidjson::Value &val
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `PathBasedOriginRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathBasedOriginRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome PathBasedOriginRule::Deserialize(const rapidjson::Value &val
     if (value.HasMember("Origin") && !value["Origin"].IsNull())
     {
         if (!value["Origin"].IsArray())
-            return CoreInternalOutcome(Error("response `PathBasedOriginRule.Origin` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PathBasedOriginRule.Origin` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Origin"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

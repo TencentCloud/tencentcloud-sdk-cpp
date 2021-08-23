@@ -35,7 +35,7 @@ CoreInternalOutcome ChannelReturnContractInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["ContractStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelReturnContractInfo.ContractStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelReturnContractInfo.ContractStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractStatus = string(value["ContractStatus"].GetString());
         m_contractStatusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ChannelReturnContractInfo::Deserialize(const rapidjson::Valu
     {
         if (!value["ChannelContractInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ChannelReturnContractInfo.ChannelContractInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelReturnContractInfo.ChannelContractInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_channelContractInfo.Deserialize(value["ChannelContractInfo"]);

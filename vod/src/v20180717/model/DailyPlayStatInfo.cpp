@@ -37,7 +37,7 @@ CoreInternalOutcome DailyPlayStatInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DailyPlayStatInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyPlayStatInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DailyPlayStatInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DailyPlayStatInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyPlayStatInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DailyPlayStatInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["PlayTimes"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DailyPlayStatInfo.PlayTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyPlayStatInfo.PlayTimes` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_playTimes = value["PlayTimes"].GetUint64();
         m_playTimesHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DailyPlayStatInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Traffic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DailyPlayStatInfo.Traffic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DailyPlayStatInfo.Traffic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_traffic = value["Traffic"].GetUint64();
         m_trafficHasBeenSet = true;

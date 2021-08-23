@@ -35,7 +35,7 @@ CoreInternalOutcome SystemType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Android") && !value["Android"].IsNull())
     {
         if (!value["Android"].IsArray())
-            return CoreInternalOutcome(Error("response `SystemType.Android` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SystemType.Android` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Android"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome SystemType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Linux") && !value["Linux"].IsNull())
     {
         if (!value["Linux"].IsArray())
-            return CoreInternalOutcome(Error("response `SystemType.Linux` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SystemType.Linux` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Linux"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome SystemType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LiteOs") && !value["LiteOs"].IsNull())
     {
         if (!value["LiteOs"].IsArray())
-            return CoreInternalOutcome(Error("response `SystemType.LiteOs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SystemType.LiteOs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LiteOs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

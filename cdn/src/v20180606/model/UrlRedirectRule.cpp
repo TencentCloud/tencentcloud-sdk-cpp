@@ -37,7 +37,7 @@ CoreInternalOutcome UrlRedirectRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectStatusCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `UrlRedirectRule.RedirectStatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRedirectRule.RedirectStatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_redirectStatusCode = value["RedirectStatusCode"].GetInt64();
         m_redirectStatusCodeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome UrlRedirectRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pattern"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRedirectRule.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRedirectRule.Pattern` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pattern = string(value["Pattern"].GetString());
         m_patternHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome UrlRedirectRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRedirectRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRedirectRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectUrl = string(value["RedirectUrl"].GetString());
         m_redirectUrlHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome UrlRedirectRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectHost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlRedirectRule.RedirectHost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlRedirectRule.RedirectHost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectHost = string(value["RedirectHost"].GetString());
         m_redirectHostHasBeenSet = true;

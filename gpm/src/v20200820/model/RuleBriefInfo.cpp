@@ -37,7 +37,7 @@ CoreInternalOutcome RuleBriefInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleBriefInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleBriefInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome RuleBriefInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MatchCodeList") && !value["MatchCodeList"].IsNull())
     {
         if (!value["MatchCodeList"].IsArray())
-            return CoreInternalOutcome(Error("response `RuleBriefInfo.MatchCodeList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RuleBriefInfo.MatchCodeList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MatchCodeList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome RuleBriefInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleBriefInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleBriefInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome RuleBriefInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleBriefInfo.RuleCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleBriefInfo.RuleCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleCode = string(value["RuleCode"].GetString());
         m_ruleCodeHasBeenSet = true;

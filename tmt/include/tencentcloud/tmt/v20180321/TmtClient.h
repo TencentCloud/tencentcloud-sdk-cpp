@@ -47,19 +47,19 @@ namespace TencentCloud
                 TmtClient(const Credential &credential, const std::string &region);
                 TmtClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ImageTranslateResponse> ImageTranslateOutcome;
+                typedef Outcome<Core::Error, Model::ImageTranslateResponse> ImageTranslateOutcome;
                 typedef std::future<ImageTranslateOutcome> ImageTranslateOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::ImageTranslateRequest&, ImageTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageTranslateAsyncHandler;
-                typedef Outcome<Error, Model::LanguageDetectResponse> LanguageDetectOutcome;
+                typedef Outcome<Core::Error, Model::LanguageDetectResponse> LanguageDetectOutcome;
                 typedef std::future<LanguageDetectOutcome> LanguageDetectOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::LanguageDetectRequest&, LanguageDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LanguageDetectAsyncHandler;
-                typedef Outcome<Error, Model::SpeechTranslateResponse> SpeechTranslateOutcome;
+                typedef Outcome<Core::Error, Model::SpeechTranslateResponse> SpeechTranslateOutcome;
                 typedef std::future<SpeechTranslateOutcome> SpeechTranslateOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::SpeechTranslateRequest&, SpeechTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SpeechTranslateAsyncHandler;
-                typedef Outcome<Error, Model::TextTranslateResponse> TextTranslateOutcome;
+                typedef Outcome<Core::Error, Model::TextTranslateResponse> TextTranslateOutcome;
                 typedef std::future<TextTranslateOutcome> TextTranslateOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::TextTranslateRequest&, TextTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslateAsyncHandler;
-                typedef Outcome<Error, Model::TextTranslateBatchResponse> TextTranslateBatchOutcome;
+                typedef Outcome<Core::Error, Model::TextTranslateBatchResponse> TextTranslateBatchOutcome;
                 typedef std::future<TextTranslateBatchOutcome> TextTranslateBatchOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::TextTranslateBatchRequest&, TextTranslateBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslateBatchAsyncHandler;
 

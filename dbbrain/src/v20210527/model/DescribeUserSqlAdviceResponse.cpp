@@ -40,16 +40,16 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["Advices"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Advices` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Advices` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_advices = string(rsp["Advices"].GetString());
         m_advicesHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["Comments"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Comments` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Comments` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comments = string(rsp["Comments"].GetString());
         m_commentsHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["SqlText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SqlText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sqlText = string(rsp["SqlText"].GetString());
         m_sqlTextHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["Schema"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Schema` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Schema` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_schema = string(rsp["Schema"].GetString());
         m_schemaHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["Tables"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Tables` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Tables` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tables = string(rsp["Tables"].GetString());
         m_tablesHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["SqlPlan"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SqlPlan` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SqlPlan` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sqlPlan = string(rsp["SqlPlan"].GetString());
         m_sqlPlanHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeUserSqlAdviceResponse::Deserialize(const string &pay
     {
         if (!rsp["Cost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Cost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cost = string(rsp["Cost"].GetString());
         m_costHasBeenSet = true;

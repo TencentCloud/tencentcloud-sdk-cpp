@@ -41,10 +41,10 @@ namespace TencentCloud
                 YunsouClient(const Credential &credential, const std::string &region);
                 YunsouClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DataManipulationResponse> DataManipulationOutcome;
+                typedef Outcome<Core::Error, Model::DataManipulationResponse> DataManipulationOutcome;
                 typedef std::future<DataManipulationOutcome> DataManipulationOutcomeCallable;
                 typedef std::function<void(const YunsouClient*, const Model::DataManipulationRequest&, DataManipulationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DataManipulationAsyncHandler;
-                typedef Outcome<Error, Model::DataSearchResponse> DataSearchOutcome;
+                typedef Outcome<Core::Error, Model::DataSearchResponse> DataSearchOutcome;
                 typedef std::future<DataSearchOutcome> DataSearchOutcomeCallable;
                 typedef std::function<void(const YunsouClient*, const Model::DataSearchRequest&, DataSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DataSearchAsyncHandler;
 

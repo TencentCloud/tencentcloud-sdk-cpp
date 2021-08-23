@@ -41,7 +41,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AliasId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.AliasId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.AliasId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aliasId = string(value["AliasId"].GetString());
         m_aliasIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AliasArn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.AliasArn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.AliasArn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_aliasArn = string(value["AliasArn"].GetString());
         m_aliasArnHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoutingStrategy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Alias.RoutingStrategy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.RoutingStrategy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_routingStrategy.Deserialize(value["RoutingStrategy"]);
@@ -98,7 +98,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastUpdatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.LastUpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.LastUpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastUpdatedTime = string(value["LastUpdatedTime"].GetString());
         m_lastUpdatedTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `Alias.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Alias.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

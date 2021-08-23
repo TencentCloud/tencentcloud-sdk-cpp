@@ -38,7 +38,7 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const rapidjson::Va
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunNfsVolumeSource.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const rapidjson::Va
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunNfsVolumeSource.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const rapidjson::Va
     {
         if (!value["ReadOnly"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunNfsVolumeSource.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_readOnly = value["ReadOnly"].GetBool();
         m_readOnlyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const rapidjson::Va
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunNfsVolumeSource.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const rapidjson::Va
     {
         if (!value["EnableEmptyDirVolume"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CloudBaseRunNfsVolumeSource.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunNfsVolumeSource.EnableEmptyDirVolume` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableEmptyDirVolume = value["EnableEmptyDirVolume"].GetBool();
         m_enableEmptyDirVolumeHasBeenSet = true;

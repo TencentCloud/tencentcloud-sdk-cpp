@@ -35,7 +35,7 @@ CoreInternalOutcome ConsumerGroupTopic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumerGroupTopic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupTopic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConsumerGroupTopic::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumerGroupTopic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumerGroupTopic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;

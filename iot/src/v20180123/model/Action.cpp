@@ -36,7 +36,7 @@ CoreInternalOutcome Action::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Topic"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Action.Topic` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Action.Topic` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_topic.Deserialize(value["Topic"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome Action::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Service"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Action.Service` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Action.Service` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_service.Deserialize(value["Service"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome Action::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ckafka"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Action.Ckafka` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Action.Ckafka` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_ckafka.Deserialize(value["Ckafka"]);

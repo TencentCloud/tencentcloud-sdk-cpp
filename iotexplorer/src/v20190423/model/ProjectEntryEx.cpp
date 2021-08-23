@@ -44,7 +44,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.ProjectDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.ProjectDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_projectDesc = string(value["ProjectDesc"].GetString());
         m_projectDescHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.ProductCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.ProductCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_productCount = value["ProductCount"].GetUint64();
         m_productCountHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NativeAppCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.NativeAppCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.NativeAppCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nativeAppCount = value["NativeAppCount"].GetUint64();
         m_nativeAppCountHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WebAppCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.WebAppCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.WebAppCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_webAppCount = value["WebAppCount"].GetUint64();
         m_webAppCountHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.ApplicationCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.ApplicationCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_applicationCount = value["ApplicationCount"].GetUint64();
         m_applicationCountHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntryEx.DeviceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.DeviceCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceCount = value["DeviceCount"].GetUint64();
         m_deviceCountHasBeenSet = true;

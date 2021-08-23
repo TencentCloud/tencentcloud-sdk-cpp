@@ -46,7 +46,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoadBalancerPort"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.LoadBalancerPort` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerPort = value["LoadBalancerPort"].GetInt64();
         m_loadBalancerPortHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SslMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.SslMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.SslMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sslMode = value["SslMode"].GetInt64();
         m_sslModeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certId = string(value["CertId"].GetString());
         m_certIdHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certName = string(value["CertName"].GetString());
         m_certNameHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certContent = string(value["CertContent"].GetString());
         m_certContentHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certKey = string(value["CertKey"].GetString());
         m_certKeyHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertCaId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaId = string(value["CertCaId"].GetString());
         m_certCaIdHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertCaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertCaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaName = string(value["CertCaName"].GetString());
         m_certCaNameHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertCaContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.CertCaContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.CertCaContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certCaContent = string(value["CertCaContent"].GetString());
         m_certCaContentHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardProtocol"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateL7Listener.ForwardProtocol` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateL7Listener.ForwardProtocol` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_forwardProtocol = value["ForwardProtocol"].GetInt64();
         m_forwardProtocolHasBeenSet = true;

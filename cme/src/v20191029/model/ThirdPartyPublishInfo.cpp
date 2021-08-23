@@ -38,7 +38,7 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["ChannelMaterialId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ThirdPartyPublishInfo.ChannelMaterialId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThirdPartyPublishInfo.ChannelMaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelMaterialId = string(value["ChannelMaterialId"].GetString());
         m_channelMaterialIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["PenguinMediaPlatformPublishInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ThirdPartyPublishInfo.PenguinMediaPlatformPublishInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThirdPartyPublishInfo.PenguinMediaPlatformPublishInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_penguinMediaPlatformPublishInfo.Deserialize(value["PenguinMediaPlatformPublishInfo"]);
@@ -65,7 +65,7 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["WeiboPublishInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ThirdPartyPublishInfo.WeiboPublishInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThirdPartyPublishInfo.WeiboPublishInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_weiboPublishInfo.Deserialize(value["WeiboPublishInfo"]);
@@ -82,7 +82,7 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["KuaishouPublishInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ThirdPartyPublishInfo.KuaishouPublishInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThirdPartyPublishInfo.KuaishouPublishInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_kuaishouPublishInfo.Deserialize(value["KuaishouPublishInfo"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["CosPublishInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ThirdPartyPublishInfo.CosPublishInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ThirdPartyPublishInfo.CosPublishInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cosPublishInfo.Deserialize(value["CosPublishInfo"]);

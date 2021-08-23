@@ -34,7 +34,7 @@ CoreInternalOutcome SchemaItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Schema"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SchemaItem.Schema` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SchemaItem.Schema` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_schema = string(value["Schema"].GetString());
         m_schemaHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["FileType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.FileType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.FileType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileType = string(value["FileType"].GetString());
         m_fileTypeHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["MediaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.MediaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.MediaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mediaName = string(value["MediaName"].GetString());
         m_mediaNameHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["ClassId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_classId = value["ClassId"].GetInt64();
         m_classIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;

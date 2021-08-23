@@ -43,7 +43,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["GatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.GatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.GatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayName = string(value["GatewayName"].GetString());
         m_gatewayNameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["CPU"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.CPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.CPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cPU = value["CPU"].GetDouble();
         m_cPUHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["Mem"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mem = value["Mem"].GetUint64();
         m_memHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["PackageVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packageVersion = string(value["PackageVersion"].GetString());
         m_packageVersionHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["GatewayAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.GatewayAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.GatewayAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayAlias = string(value["GatewayAlias"].GetString());
         m_gatewayAliasHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("SubnetIds") && !value["SubnetIds"].IsNull())
     {
         if (!value["SubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.SubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.SubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -116,7 +116,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["GatewayDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.GatewayDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.GatewayDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayDesc = string(value["GatewayDesc"].GetString());
         m_gatewayDescHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["GateWayStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.GateWayStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.GateWayStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gateWayStatus = string(value["GateWayStatus"].GetString());
         m_gateWayStatusHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome StandaloneGatewayInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServiceInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StandaloneGatewayInfo.ServiceInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StandaloneGatewayInfo.ServiceInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_serviceInfo.Deserialize(value["ServiceInfo"]);

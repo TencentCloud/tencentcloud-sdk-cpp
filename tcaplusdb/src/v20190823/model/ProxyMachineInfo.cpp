@@ -35,7 +35,7 @@ CoreInternalOutcome ProxyMachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyUid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyMachineInfo.ProxyUid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyMachineInfo.ProxyUid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyUid = string(value["ProxyUid"].GetString());
         m_proxyUidHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ProxyMachineInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyMachineInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyMachineInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;

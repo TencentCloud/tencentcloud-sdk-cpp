@@ -51,7 +51,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TableIdlType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableIdlType = string(value["TableIdlType"].GetString());
         m_tableIdlTypeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableInstanceId = string(value["TableInstanceId"].GetString());
         m_tableInstanceIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TableType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableType = string(value["TableType"].GetString());
         m_tableTypeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["KeyFields"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.KeyFields` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.KeyFields` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keyFields = string(value["KeyFields"].GetString());
         m_keyFieldsHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OldKeyFields"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.OldKeyFields` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.OldKeyFields` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldKeyFields = string(value["OldKeyFields"].GetString());
         m_oldKeyFieldsHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ValueFields"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.ValueFields` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.ValueFields` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_valueFields = string(value["ValueFields"].GetString());
         m_valueFieldsHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OldValueFields"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.OldValueFields` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.OldValueFields` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldValueFields = string(value["OldValueFields"].GetString());
         m_oldValueFieldsHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SumKeyFieldSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.SumKeyFieldSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.SumKeyFieldSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sumKeyFieldSize = value["SumKeyFieldSize"].GetInt64();
         m_sumKeyFieldSizeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SumValueFieldSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.SumValueFieldSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.SumValueFieldSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sumValueFieldSize = value["SumValueFieldSize"].GetInt64();
         m_sumValueFieldSizeHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["IndexKeySet"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.IndexKeySet` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.IndexKeySet` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_indexKeySet = string(value["IndexKeySet"].GetString());
         m_indexKeySetHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ShardingKeySet"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.ShardingKeySet` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.ShardingKeySet` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shardingKeySet = string(value["ShardingKeySet"].GetString());
         m_shardingKeySetHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TdrVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.TdrVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.TdrVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_tdrVersion = value["TdrVersion"].GetInt64();
         m_tdrVersionHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);
@@ -208,7 +208,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ListElementNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.ListElementNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.ListElementNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_listElementNum = value["ListElementNum"].GetInt64();
         m_listElementNumHasBeenSet = true;
@@ -218,7 +218,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SortFieldNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.SortFieldNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.SortFieldNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sortFieldNum = value["SortFieldNum"].GetInt64();
         m_sortFieldNumHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SortRule"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ParsedTableInfoNew.SortRule` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParsedTableInfoNew.SortRule` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sortRule = value["SortRule"].GetInt64();
         m_sortRuleHasBeenSet = true;

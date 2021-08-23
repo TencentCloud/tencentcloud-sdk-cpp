@@ -36,7 +36,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentItem::Deserialize(const r
     {
         if (!value["StartTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextSegmentItem.StartTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_startTimeOffset = value["StartTimeOffset"].GetDouble();
         m_startTimeOffsetHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentItem::Deserialize(const r
     {
         if (!value["EndTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextSegmentItem.EndTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentItem::Deserialize(const r
     if (value.HasMember("TextSet") && !value["TextSet"].IsNull())
     {
         if (!value["TextSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentItem.TextSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrFullTextSegmentItem.TextSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TextSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

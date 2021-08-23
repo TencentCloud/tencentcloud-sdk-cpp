@@ -34,7 +34,7 @@ CoreInternalOutcome BatchUpdateShadow::Deserialize(const rapidjson::Value &value
     {
         if (!value["Desired"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BatchUpdateShadow.Desired` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BatchUpdateShadow.Desired` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_desired = string(value["Desired"].GetString());
         m_desiredHasBeenSet = true;

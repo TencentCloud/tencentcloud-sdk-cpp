@@ -53,7 +53,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Hostip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.Hostip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.Hostip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostip = string(value["Hostip"].GetString());
         m_hostipHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.DstIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.DstIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstIp = string(value["DstIp"].GetString());
         m_dstIpHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.DstPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.DstPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dstPort = value["DstPort"].GetUint64();
         m_dstPortHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.FullPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.FullPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullPath = string(value["FullPath"].GetString());
         m_fullPathHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CmdLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmdLine = string(value["CmdLine"].GetString());
         m_cmdLineHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserGroup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.UserGroup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.UserGroup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userGroup = string(value["UserGroup"].GetString());
         m_userGroupHasBeenSet = true;
@@ -163,7 +163,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentProcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.ParentProcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.ParentProcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcName = string(value["ParentProcName"].GetString());
         m_parentProcNameHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentProcUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.ParentProcUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.ParentProcUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcUser = string(value["ParentProcUser"].GetString());
         m_parentProcUserHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentProcGroup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.ParentProcGroup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.ParentProcGroup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcGroup = string(value["ParentProcGroup"].GetString());
         m_parentProcGroupHasBeenSet = true;
@@ -193,7 +193,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentProcPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.ParentProcPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.ParentProcPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcPath = string(value["ParentProcPath"].GetString());
         m_parentProcPathHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -223,7 +223,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -233,7 +233,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProcTree"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.ProcTree` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.ProcTree` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procTree = string(value["ProcTree"].GetString());
         m_procTreeHasBeenSet = true;
@@ -243,7 +243,7 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectBy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell.DetectBy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.DetectBy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_detectBy = value["DetectBy"].GetUint64();
         m_detectByHasBeenSet = true;

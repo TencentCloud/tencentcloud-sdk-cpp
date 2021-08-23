@@ -35,7 +35,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
     {
         if (!value["WatermarkSet"].IsArray())
-            return CoreInternalOutcome(Error("response `SampleSnapshotTaskInput.WatermarkSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.WatermarkSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WatermarkSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

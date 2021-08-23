@@ -39,7 +39,7 @@ namespace TencentCloud
                 LpClient(const Credential &credential, const std::string &region);
                 LpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::QueryLoginProtectionResponse> QueryLoginProtectionOutcome;
+                typedef Outcome<Core::Error, Model::QueryLoginProtectionResponse> QueryLoginProtectionOutcome;
                 typedef std::future<QueryLoginProtectionOutcome> QueryLoginProtectionOutcomeCallable;
                 typedef std::function<void(const LpClient*, const Model::QueryLoginProtectionRequest&, QueryLoginProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryLoginProtectionAsyncHandler;
 

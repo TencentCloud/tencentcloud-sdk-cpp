@@ -47,7 +47,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["SportStart"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.SportStart` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.SportStart` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sportStart = value["SportStart"].GetUint64();
         m_sportStartHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["SportEnd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.SportEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.SportEnd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sportEnd = value["SportEnd"].GetUint64();
         m_sportEndHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["DportStart"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.DportStart` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.DportStart` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dportStart = value["DportStart"].GetUint64();
         m_dportStartHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["DportEnd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.DportEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.DportEnd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dportEnd = value["DportEnd"].GetUint64();
         m_dportEndHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["PktlenMin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.PktlenMin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.PktlenMin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pktlenMin = value["PktlenMin"].GetUint64();
         m_pktlenMinHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["PktlenMax"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.PktlenMax` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.PktlenMax` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pktlenMax = value["PktlenMax"].GetUint64();
         m_pktlenMaxHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["MatchBegin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.MatchBegin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.MatchBegin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchBegin = string(value["MatchBegin"].GetString());
         m_matchBeginHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["MatchType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.MatchType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.MatchType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_matchType = string(value["MatchType"].GetString());
         m_matchTypeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["Str"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.Str` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.Str` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_str = string(value["Str"].GetString());
         m_strHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["Depth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.Depth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.Depth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_depth = value["Depth"].GetUint64();
         m_depthHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["Offset"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = value["Offset"].GetUint64();
         m_offsetHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["IsNot"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.IsNot` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.IsNot` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isNot = value["IsNot"].GetUint64();
         m_isNotHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPacketFilter.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPacketFilter.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;

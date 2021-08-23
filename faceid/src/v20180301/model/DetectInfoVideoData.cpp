@@ -34,7 +34,7 @@ CoreInternalOutcome DetectInfoVideoData::Deserialize(const rapidjson::Value &val
     {
         if (!value["LivenessVideo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DetectInfoVideoData.LivenessVideo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DetectInfoVideoData.LivenessVideo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_livenessVideo = string(value["LivenessVideo"].GetString());
         m_livenessVideoHasBeenSet = true;

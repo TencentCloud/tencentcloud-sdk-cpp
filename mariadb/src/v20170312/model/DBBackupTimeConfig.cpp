@@ -36,7 +36,7 @@ CoreInternalOutcome DBBackupTimeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBBackupTimeConfig.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBBackupTimeConfig.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DBBackupTimeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartBackupTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBBackupTimeConfig.StartBackupTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBBackupTimeConfig.StartBackupTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startBackupTime = string(value["StartBackupTime"].GetString());
         m_startBackupTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DBBackupTimeConfig::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndBackupTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DBBackupTimeConfig.EndBackupTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DBBackupTimeConfig.EndBackupTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endBackupTime = string(value["EndBackupTime"].GetString());
         m_endBackupTimeHasBeenSet = true;

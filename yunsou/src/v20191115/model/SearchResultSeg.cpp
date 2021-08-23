@@ -34,7 +34,7 @@ CoreInternalOutcome SearchResultSeg::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SegStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResultSeg.SegStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResultSeg.SegStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segStr = string(value["SegStr"].GetString());
         m_segStrHasBeenSet = true;

@@ -46,7 +46,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerId = string(value["ListenerId"].GetString());
         m_listenerIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_listenerName = string(value["ListenerName"].GetString());
         m_listenerNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ListenerStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.ListenerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.ListenerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_listenerStatus = value["ListenerStatus"].GetUint64();
         m_listenerStatusHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateId = string(value["CertificateId"].GetString());
         m_certificateIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardProtocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.ForwardProtocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.ForwardProtocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardProtocol = string(value["ForwardProtocol"].GetString());
         m_forwardProtocolHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.CertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.CertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_certificateAlias = string(value["CertificateAlias"].GetString());
         m_certificateAliasHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientCertificateId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.ClientCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.ClientCertificateId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientCertificateId = string(value["ClientCertificateId"].GetString());
         m_clientCertificateIdHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuthType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.AuthType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.AuthType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_authType = value["AuthType"].GetInt64();
         m_authTypeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientCertificateAlias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HTTPSListener.ClientCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.ClientCertificateAlias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientCertificateAlias = string(value["ClientCertificateAlias"].GetString());
         m_clientCertificateAliasHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PolyClientCertificateAliasInfo") && !value["PolyClientCertificateAliasInfo"].IsNull())
     {
         if (!value["PolyClientCertificateAliasInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `HTTPSListener.PolyClientCertificateAliasInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.PolyClientCertificateAliasInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolyClientCertificateAliasInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

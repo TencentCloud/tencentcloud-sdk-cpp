@@ -45,7 +45,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BookingFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.BookingFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bookingFlag = string(value["BookingFlag"].GetString());
         m_bookingFlagHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.TranStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.TranStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranStatus = string(value["TranStatus"].GetString());
         m_tranStatusHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BookingMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.BookingMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.BookingMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bookingMsg = string(value["BookingMsg"].GetString());
         m_bookingMsgHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranNetMemberCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.TranNetMemberCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranNetMemberCode = string(value["TranNetMemberCode"].GetString());
         m_tranNetMemberCodeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.SubAcctNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctNo = string(value["SubAcctNo"].GetString());
         m_subAcctNoHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubAcctName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.SubAcctName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.SubAcctName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subAcctName = string(value["SubAcctName"].GetString());
         m_subAcctNameHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranAmt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.TranAmt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.TranAmt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranAmt = string(value["TranAmt"].GetString());
         m_tranAmtHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Commission"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.Commission` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.Commission` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_commission = string(value["Commission"].GetString());
         m_commissionHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.TranDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.TranDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranDate = string(value["TranDate"].GetString());
         m_tranDateHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TranTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.TranTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.TranTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tranTime = string(value["TranTime"].GetString());
         m_tranTimeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrontSeqNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frontSeqNo = string(value["FrontSeqNo"].GetString());
         m_frontSeqNoHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome WithdrawItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WithdrawItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WithdrawItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;

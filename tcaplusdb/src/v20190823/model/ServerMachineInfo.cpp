@@ -35,7 +35,7 @@ CoreInternalOutcome ServerMachineInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ServerUid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerMachineInfo.ServerUid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerMachineInfo.ServerUid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverUid = string(value["ServerUid"].GetString());
         m_serverUidHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ServerMachineInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["MachineType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerMachineInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerMachineInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;

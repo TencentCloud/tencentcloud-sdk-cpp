@@ -36,7 +36,7 @@ CoreInternalOutcome BodyDetectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `BodyDetectResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyDetectResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BodyDetectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BodyRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyDetectResult.BodyRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyDetectResult.BodyRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bodyRect.Deserialize(value["BodyRect"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome BodyDetectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BodyAttributeInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BodyDetectResult.BodyAttributeInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BodyDetectResult.BodyAttributeInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bodyAttributeInfo.Deserialize(value["BodyAttributeInfo"]);

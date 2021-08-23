@@ -57,7 +57,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Caller"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.Caller` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.Caller` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_caller = string(value["Caller"].GetString());
         m_callerHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Callee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.Callee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.Callee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callee = string(value["Callee"].GetString());
         m_calleeHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.Time` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.Time` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_time = value["Time"].GetInt64();
         m_timeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direction"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.Direction` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_direction = value["Direction"].GetInt64();
         m_directionHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordURL"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.RecordURL` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.RecordURL` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordURL = string(value["RecordURL"].GetString());
         m_recordURLHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SeatUser"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.SeatUser` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.SeatUser` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_seatUser.Deserialize(value["SeatUser"]);
@@ -134,7 +134,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.EndStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.EndStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endStatus = value["EndStatus"].GetInt64();
         m_endStatusHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkillGroup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.SkillGroup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.SkillGroup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroup = string(value["SkillGroup"].GetString());
         m_skillGroupHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CallerLocation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.CallerLocation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.CallerLocation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callerLocation = string(value["CallerLocation"].GetString());
         m_callerLocationHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IVRDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.IVRDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.IVRDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_iVRDuration = value["IVRDuration"].GetInt64();
         m_iVRDurationHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RingTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.RingTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ringTimestamp = value["RingTimestamp"].GetInt64();
         m_ringTimestampHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcceptTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.AcceptTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_acceptTimestamp = value["AcceptTimestamp"].GetInt64();
         m_acceptTimestampHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndedTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.EndedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.EndedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endedTimestamp = value["EndedTimestamp"].GetInt64();
         m_endedTimestampHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("IVRKeyPressed") && !value["IVRKeyPressed"].IsNull())
     {
         if (!value["IVRKeyPressed"].IsArray())
-            return CoreInternalOutcome(Error("response `TelCdrInfo.IVRKeyPressed` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.IVRKeyPressed` is not array type"));
 
         const rapidjson::Value &tmpValue = value["IVRKeyPressed"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -217,7 +217,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HungUpSide"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.HungUpSide` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.HungUpSide` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hungUpSide = string(value["HungUpSide"].GetString());
         m_hungUpSideHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ServeParticipants") && !value["ServeParticipants"].IsNull())
     {
         if (!value["ServeParticipants"].IsArray())
-            return CoreInternalOutcome(Error("response `TelCdrInfo.ServeParticipants` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.ServeParticipants` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServeParticipants"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -247,7 +247,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SkillGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.SkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_skillGroupId = value["SkillGroupId"].GetInt64();
         m_skillGroupIdHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndStatusString"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.EndStatusString` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.EndStatusString` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endStatusString = string(value["EndStatusString"].GetString());
         m_endStatusStringHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.StartTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_startTimestamp = value["StartTimestamp"].GetInt64();
         m_startTimestampHasBeenSet = true;
@@ -277,7 +277,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueuedTimestamp"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.QueuedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.QueuedTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_queuedTimestamp = value["QueuedTimestamp"].GetInt64();
         m_queuedTimestampHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PostIVRKeyPressed") && !value["PostIVRKeyPressed"].IsNull())
     {
         if (!value["PostIVRKeyPressed"].IsArray())
-            return CoreInternalOutcome(Error("response `TelCdrInfo.PostIVRKeyPressed` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.PostIVRKeyPressed` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PostIVRKeyPressed"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -307,7 +307,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueuedSkillGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.QueuedSkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.QueuedSkillGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_queuedSkillGroupId = value["QueuedSkillGroupId"].GetInt64();
         m_queuedSkillGroupIdHasBeenSet = true;
@@ -317,7 +317,7 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TelCdrInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sessionId = string(value["SessionId"].GetString());
         m_sessionIdHasBeenSet = true;

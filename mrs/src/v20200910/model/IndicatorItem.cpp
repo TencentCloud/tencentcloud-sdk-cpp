@@ -43,7 +43,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Scode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Scode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scode = string(value["Scode"].GetString());
         m_scodeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sname"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Sname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Sname` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sname = string(value["Sname"].GetString());
         m_snameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Result` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_result = string(value["Result"].GetString());
         m_resultHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Range"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Range` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Range` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_range = string(value["Range"].GetString());
         m_rangeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Arrow"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Arrow` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Arrow` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_arrow = string(value["Arrow"].GetString());
         m_arrowHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Normal"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.Normal` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Normal` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_normal = value["Normal"].GetBool();
         m_normalHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ItemString"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IndicatorItem.ItemString` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.ItemString` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_itemString = string(value["ItemString"].GetString());
         m_itemStringHasBeenSet = true;

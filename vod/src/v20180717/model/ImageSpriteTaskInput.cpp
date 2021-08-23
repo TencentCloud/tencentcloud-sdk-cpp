@@ -34,7 +34,7 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
     {
         if (!value["Definition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageSpriteTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;

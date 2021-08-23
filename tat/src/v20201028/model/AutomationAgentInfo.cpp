@@ -38,7 +38,7 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutomationAgentInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutomationAgentInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutomationAgentInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutomationAgentInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["LastHeartbeatTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutomationAgentInfo.LastHeartbeatTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutomationAgentInfo.LastHeartbeatTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastHeartbeatTime = string(value["LastHeartbeatTime"].GetString());
         m_lastHeartbeatTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["AgentStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutomationAgentInfo.AgentStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutomationAgentInfo.AgentStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_agentStatus = string(value["AgentStatus"].GetString());
         m_agentStatusHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Environment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AutomationAgentInfo.Environment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AutomationAgentInfo.Environment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environment = string(value["Environment"].GetString());
         m_environmentHasBeenSet = true;

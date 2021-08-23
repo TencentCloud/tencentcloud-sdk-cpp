@@ -36,7 +36,7 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdentityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EmailIdentity.IdentityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.IdentityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_identityName = string(value["IdentityName"].GetString());
         m_identityNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IdentityType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EmailIdentity.IdentityType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.IdentityType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_identityType = string(value["IdentityType"].GetString());
         m_identityTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendingEnabled"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EmailIdentity.SendingEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.SendingEnabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_sendingEnabled = value["SendingEnabled"].GetBool();
         m_sendingEnabledHasBeenSet = true;

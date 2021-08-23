@@ -38,7 +38,7 @@ CoreInternalOutcome QQAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QQOpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QQAccountInfo.QQOpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QQAccountInfo.QQOpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_qQOpenId = string(value["QQOpenId"].GetString());
         m_qQOpenIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome QQAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppIdUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QQAccountInfo.AppIdUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QQAccountInfo.AppIdUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appIdUser = string(value["AppIdUser"].GetString());
         m_appIdUserHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome QQAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AssociateAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QQAccountInfo.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QQAccountInfo.AssociateAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_associateAccount = string(value["AssociateAccount"].GetString());
         m_associateAccountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome QQAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MobilePhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QQAccountInfo.MobilePhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QQAccountInfo.MobilePhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobilePhone = string(value["MobilePhone"].GetString());
         m_mobilePhoneHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome QQAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QQAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QQAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Notes"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.Notes` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.Notes` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notes = string(value["Notes"].GetString());
         m_notesHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyPasswordTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.ModifyPasswordTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.ModifyPasswordTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyPasswordTime = string(value["ModifyPasswordTime"].GetString());
         m_modifyPasswordTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxUserConnections"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AccountInfo.MaxUserConnections` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.MaxUserConnections` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxUserConnections = value["MaxUserConnections"].GetInt64();
         m_maxUserConnectionsHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["DDoSLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.DDoSLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.DDoSLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dDoSLevel = string(value["DDoSLevel"].GetString());
         m_dDoSLevelHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["DDoSThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.DDoSThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.DDoSThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dDoSThreshold = value["DDoSThreshold"].GetUint64();
         m_dDoSThresholdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["DDoSAI"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.DDoSAI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.DDoSAI` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dDoSAI = string(value["DDoSAI"].GetString());
         m_dDoSAIHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["CCEnable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.CCEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.CCEnable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cCEnable = value["CCEnable"].GetUint64();
         m_cCEnableHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     {
         if (!value["CCThreshold"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.CCThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.CCThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cCThreshold = value["CCThreshold"].GetUint64();
         m_cCThresholdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     if (value.HasMember("InstanceDetailList") && !value["InstanceDetailList"].IsNull())
     {
         if (!value["InstanceDetailList"].IsArray())
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.InstanceDetailList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.InstanceDetailList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetailList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome ProtectThresholdRelation::Deserialize(const rapidjson::Value
     if (value.HasMember("ListenerCcThresholdList") && !value["ListenerCcThresholdList"].IsNull())
     {
         if (!value["ListenerCcThresholdList"].IsArray())
-            return CoreInternalOutcome(Error("response `ProtectThresholdRelation.ListenerCcThresholdList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProtectThresholdRelation.ListenerCcThresholdList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ListenerCcThresholdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

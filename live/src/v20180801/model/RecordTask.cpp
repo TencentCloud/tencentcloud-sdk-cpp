@@ -41,7 +41,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = value["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.EndTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = value["EndTime"].GetUint64();
         m_endTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.TemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetUint64();
         m_templateIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome RecordTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Stopped"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecordTask.Stopped` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordTask.Stopped` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_stopped = value["Stopped"].GetUint64();
         m_stoppedHasBeenSet = true;

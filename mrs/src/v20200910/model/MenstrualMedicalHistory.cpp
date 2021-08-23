@@ -39,7 +39,7 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value 
     {
         if (!value["LastMenstrualPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MenstrualMedicalHistory.LastMenstrualPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MenstrualMedicalHistory.LastMenstrualPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastMenstrualPeriod = string(value["LastMenstrualPeriod"].GetString());
         m_lastMenstrualPeriodHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value 
     {
         if (!value["MenstrualFlow"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MenstrualMedicalHistory.MenstrualFlow` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MenstrualMedicalHistory.MenstrualFlow` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_menstrualFlow = string(value["MenstrualFlow"].GetString());
         m_menstrualFlowHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value 
     {
         if (!value["MenarcheAge"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MenstrualMedicalHistory.MenarcheAge` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MenstrualMedicalHistory.MenarcheAge` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_menarcheAge = string(value["MenarcheAge"].GetString());
         m_menarcheAgeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value 
     {
         if (!value["MenstruationOrNot"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MenstrualMedicalHistory.MenstruationOrNot` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MenstrualMedicalHistory.MenstruationOrNot` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_menstruationOrNot = string(value["MenstruationOrNot"].GetString());
         m_menstruationOrNotHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value 
     {
         if (!value["MenstrualCycles"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MenstrualMedicalHistory.MenstrualCycles` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MenstrualMedicalHistory.MenstrualCycles` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_menstrualCycles = string(value["MenstrualCycles"].GetString());
         m_menstrualCyclesHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value 
     {
         if (!value["MenstrualPeriod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MenstrualMedicalHistory.MenstrualPeriod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MenstrualMedicalHistory.MenstrualPeriod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_menstrualPeriod = string(value["MenstrualPeriod"].GetString());
         m_menstrualPeriodHasBeenSet = true;

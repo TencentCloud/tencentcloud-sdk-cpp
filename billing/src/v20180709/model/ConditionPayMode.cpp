@@ -35,7 +35,7 @@ CoreInternalOutcome ConditionPayMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionPayMode.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionPayMode.PayMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ConditionPayMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayModeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConditionPayMode.PayModeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConditionPayMode.PayModeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payModeName = string(value["PayModeName"].GetString());
         m_payModeNameHasBeenSet = true;

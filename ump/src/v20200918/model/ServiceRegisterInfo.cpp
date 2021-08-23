@@ -35,7 +35,7 @@ CoreInternalOutcome ServiceRegisterInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CgiUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceRegisterInfo.CgiUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceRegisterInfo.CgiUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cgiUrl = string(value["CgiUrl"].GetString());
         m_cgiUrlHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ServiceRegisterInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ServiceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServiceRegisterInfo.ServiceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceRegisterInfo.ServiceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = value["ServiceType"].GetUint64();
         m_serviceTypeHasBeenSet = true;

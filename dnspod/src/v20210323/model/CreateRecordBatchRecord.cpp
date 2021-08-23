@@ -43,7 +43,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["SubDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subDomain = string(value["SubDomain"].GetString());
         m_subDomainHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["RecordType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.RecordType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.RecordType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordType = string(value["RecordType"].GetString());
         m_recordTypeHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["RecordLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordLine = string(value["RecordLine"].GetString());
         m_recordLineHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["TTL"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CreateRecordBatchRecord::Deserialize(const rapidjson::Value 
     {
         if (!value["MX"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateRecordBatchRecord.MX` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateRecordBatchRecord.MX` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_mX = value["MX"].GetUint64();
         m_mXHasBeenSet = true;

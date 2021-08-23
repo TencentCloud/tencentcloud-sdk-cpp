@@ -38,7 +38,7 @@ CoreInternalOutcome ApplyResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyResult.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyResult.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ApplyResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplyResult.ApplicationType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyResult.ApplicationType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = value["ApplicationType"].GetInt64();
         m_applicationTypeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ApplyResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ApplyResult.ApplicationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyResult.ApplicationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_applicationStatus = value["ApplicationStatus"].GetInt64();
         m_applicationStatusHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ApplyResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ApplyResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ApplyResult.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyResult.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);

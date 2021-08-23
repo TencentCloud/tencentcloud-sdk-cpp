@@ -37,7 +37,7 @@ CoreInternalOutcome DataTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Number"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataTemplate.Number` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataTemplate.Number` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_number.Deserialize(value["Number"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome DataTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["String"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataTemplate.String` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataTemplate.String` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_string.Deserialize(value["String"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome DataTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Enum"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataTemplate.Enum` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataTemplate.Enum` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_enum.Deserialize(value["Enum"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome DataTemplate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bool"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DataTemplate.Bool` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataTemplate.Bool` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bool.Deserialize(value["Bool"]);

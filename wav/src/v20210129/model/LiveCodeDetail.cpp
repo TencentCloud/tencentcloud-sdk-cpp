@@ -43,7 +43,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveCodeId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.LiveCodeId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.LiveCodeId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_liveCodeId = value["LiveCodeId"].GetUint64();
         m_liveCodeIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.LiveCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.LiveCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_liveCodeName = string(value["LiveCodeName"].GetString());
         m_liveCodeNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShortChainAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.ShortChainAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.ShortChainAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shortChainAddress = string(value["ShortChainAddress"].GetString());
         m_shortChainAddressHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveCodePreview"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.LiveCodePreview` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.LiveCodePreview` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_liveCodePreview = string(value["LiveCodePreview"].GetString());
         m_liveCodePreviewHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.ActivityId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.ActivityId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_activityId = value["ActivityId"].GetInt64();
         m_activityIdHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActivityName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.ActivityName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.ActivityName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_activityName = string(value["ActivityName"].GetString());
         m_activityNameHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveCodeState"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.LiveCodeState` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.LiveCodeState` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_liveCodeState = value["LiveCodeState"].GetInt64();
         m_liveCodeStateHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LiveCodeData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.LiveCodeData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.LiveCodeData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_liveCodeData = string(value["LiveCodeData"].GetString());
         m_liveCodeDataHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LiveCodeDetail.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveCodeDetail.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;

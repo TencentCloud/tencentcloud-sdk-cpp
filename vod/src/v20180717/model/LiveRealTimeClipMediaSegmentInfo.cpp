@@ -35,7 +35,7 @@ CoreInternalOutcome LiveRealTimeClipMediaSegmentInfo::Deserialize(const rapidjso
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveRealTimeClipMediaSegmentInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveRealTimeClipMediaSegmentInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LiveRealTimeClipMediaSegmentInfo::Deserialize(const rapidjso
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LiveRealTimeClipMediaSegmentInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LiveRealTimeClipMediaSegmentInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Music.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Music.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Music.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Music.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetUint64();
         m_fileSizeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileExtension"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Music.FileExtension` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Music.FileExtension` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileExtension = string(value["FileExtension"].GetString());
         m_fileExtensionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditionBegin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Music.AuditionBegin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Music.AuditionBegin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_auditionBegin = value["AuditionBegin"].GetUint64();
         m_auditionBeginHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AuditionEnd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Music.AuditionEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Music.AuditionEnd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_auditionEnd = value["AuditionEnd"].GetUint64();
         m_auditionEndHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FullUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Music.FullUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Music.FullUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullUrl = string(value["FullUrl"].GetString());
         m_fullUrlHasBeenSet = true;

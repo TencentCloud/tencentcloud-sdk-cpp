@@ -41,7 +41,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Metric.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Metric.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Metric.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Min"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Metric.Min` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.Min` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_min = value["Min"].GetDouble();
         m_minHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Max"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Metric.Max` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.Max` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_max = value["Max"].GetDouble();
         m_maxHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Dimensions") && !value["Dimensions"].IsNull())
     {
         if (!value["Dimensions"].IsArray())
-            return CoreInternalOutcome(Error("response `Metric.Dimensions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Metric.Dimensions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Dimensions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -104,7 +104,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Metric.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Metric.MetricConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Metric.MetricConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metricConfig.Deserialize(value["MetricConfig"]);

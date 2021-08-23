@@ -35,7 +35,7 @@ CoreInternalOutcome GenderPortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gender"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GenderPortrait.Gender` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderPortrait.Gender` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gender = string(value["Gender"].GetString());
         m_genderHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome GenderPortrait::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GenderPortrait.Percent` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GenderPortrait.Percent` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetUint64();
         m_percentHasBeenSet = true;

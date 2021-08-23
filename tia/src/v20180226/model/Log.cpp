@@ -39,7 +39,7 @@ CoreInternalOutcome Log::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContainerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Log.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Log.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerName = string(value["ContainerName"].GetString());
         m_containerNameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Log::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Log"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Log.Log` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Log.Log` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_log = string(value["Log"].GetString());
         m_logHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Log::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Namespace"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Log.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Log.Namespace` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Log::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PodId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Log.PodId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Log.PodId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podId = string(value["PodId"].GetString());
         m_podIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Log::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PodName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Log.PodName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Log.PodName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_podName = string(value["PodName"].GetString());
         m_podNameHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Log::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Time"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Log.Time` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Log.Time` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_time = string(value["Time"].GetString());
         m_timeHasBeenSet = true;

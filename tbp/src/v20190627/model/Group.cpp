@@ -36,7 +36,7 @@ CoreInternalOutcome Group::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Group.ContentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Group.ContentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contentType = string(value["ContentType"].GetString());
         m_contentTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Group::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Group.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Group.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Group::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Group.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Group.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;

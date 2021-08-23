@@ -37,7 +37,7 @@ CoreInternalOutcome SgUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SgId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SgUnit.SgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SgUnit.SgId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sgId = string(value["SgId"].GetString());
         m_sgIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome SgUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SgName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SgUnit.SgName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SgUnit.SgName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sgName = string(value["SgName"].GetString());
         m_sgNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome SgUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SgRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SgUnit.SgRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SgUnit.SgRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sgRemark = string(value["SgRemark"].GetString());
         m_sgRemarkHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome SgUnit::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SgUnit.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SgUnit.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

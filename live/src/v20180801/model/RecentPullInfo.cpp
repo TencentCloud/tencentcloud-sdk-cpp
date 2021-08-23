@@ -37,7 +37,7 @@ CoreInternalOutcome RecentPullInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecentPullInfo.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecentPullInfo.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileUrl = string(value["FileUrl"].GetString());
         m_fileUrlHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome RecentPullInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RecentPullInfo.OffsetTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecentPullInfo.OffsetTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_offsetTime = value["OffsetTime"].GetUint64();
         m_offsetTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome RecentPullInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReportTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecentPullInfo.ReportTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecentPullInfo.ReportTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reportTime = string(value["ReportTime"].GetString());
         m_reportTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome RecentPullInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoopedTimes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecentPullInfo.LoopedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecentPullInfo.LoopedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_loopedTimes = value["LoopedTimes"].GetInt64();
         m_loopedTimesHasBeenSet = true;

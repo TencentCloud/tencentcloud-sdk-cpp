@@ -38,7 +38,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = string(value["ErrorCode"].GetString());
         m_errorCodeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMsg = string(value["ErrorMsg"].GetString());
         m_errorMsgHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.FaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.FaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = string(value["FaceId"].GetString());
         m_faceIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.FaceUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.FaceUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_faceUrl = string(value["FaceUrl"].GetString());
         m_faceUrlHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome FaceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceInfo.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;

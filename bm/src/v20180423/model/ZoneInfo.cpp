@@ -36,7 +36,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetUint64();
         m_zoneIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInfo.ZoneDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneDescription = string(value["ZoneDescription"].GetString());
         m_zoneDescriptionHasBeenSet = true;

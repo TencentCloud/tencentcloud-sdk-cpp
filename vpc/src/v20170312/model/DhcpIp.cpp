@@ -43,7 +43,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DhcpIpId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.DhcpIpId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.DhcpIpId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dhcpIpId = string(value["DhcpIpId"].GetString());
         m_dhcpIpIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DhcpIpName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.DhcpIpName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.DhcpIpName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dhcpIpName = string(value["DhcpIpName"].GetString());
         m_dhcpIpNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateIpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
         m_privateIpAddressHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddressIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.AddressIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addressIp = string(value["AddressIp"].GetString());
         m_addressIpHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkInterfaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.NetworkInterfaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInterfaceId = string(value["NetworkInterfaceId"].GetString());
         m_networkInterfaceIdHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DhcpIp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DhcpIp.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DhcpIp.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

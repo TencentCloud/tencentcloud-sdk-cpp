@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceUpgradeClusterStatus::Deserialize(const rapidjson::V
     {
         if (!value["PodTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeClusterStatus.PodTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeClusterStatus.PodTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_podTotal = value["PodTotal"].GetInt64();
         m_podTotalHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceUpgradeClusterStatus::Deserialize(const rapidjson::V
     {
         if (!value["NotReadyPod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceUpgradeClusterStatus.NotReadyPod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceUpgradeClusterStatus.NotReadyPod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_notReadyPod = value["NotReadyPod"].GetInt64();
         m_notReadyPodHasBeenSet = true;

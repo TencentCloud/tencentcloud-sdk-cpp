@@ -38,7 +38,7 @@ CoreInternalOutcome DevGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevGroupInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevGroupInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DevGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevGroupInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DevGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevGroupInfo.GroupPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevGroupInfo.GroupPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupPath = string(value["GroupPath"].GetString());
         m_groupPathHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DevGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevGroupInfo.ParentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevGroupInfo.ParentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentId = string(value["ParentId"].GetString());
         m_parentIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DevGroupInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Error"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevGroupInfo.Error` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevGroupInfo.Error` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_error = string(value["Error"].GetString());
         m_errorHasBeenSet = true;

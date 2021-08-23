@@ -47,16 +47,16 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,11 +67,11 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["FinishReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FinishReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FinishReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishReason = string(rsp["FinishReason"].GetString());
         m_finishReasonHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(rsp["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["RoomId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoomId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = rsp["RoomId"].GetInt64();
         m_roomIdHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(rsp["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["RecordUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RecordUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recordUserId = string(rsp["RecordUserId"].GetString());
         m_recordUserIdHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["RecordStartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recordStartTime = rsp["RecordStartTime"].GetInt64();
         m_recordStartTimeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["RecordStopTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RecordStopTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordStopTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recordStopTime = rsp["RecordStopTime"].GetInt64();
         m_recordStopTimeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["TotalTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TotalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalTime = rsp["TotalTime"].GetInt64();
         m_totalTimeHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["ExceptionCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExceptionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExceptionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exceptionCnt = rsp["ExceptionCnt"].GetInt64();
         m_exceptionCntHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     if (rsp.HasMember("OmittedDurations") && !rsp["OmittedDurations"].IsNull())
     {
         if (!rsp["OmittedDurations"].IsArray())
-            return CoreInternalOutcome(Error("response `OmittedDurations` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OmittedDurations` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["OmittedDurations"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     if (rsp.HasMember("VideoInfos") && !rsp["VideoInfos"].IsNull())
     {
         if (!rsp["VideoInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `VideoInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VideoInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["VideoInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -219,7 +219,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         if (!rsp["ReplayUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReplayUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReplayUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replayUrl = string(rsp["ReplayUrl"].GetString());
         m_replayUrlHasBeenSet = true;
@@ -228,7 +228,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     if (rsp.HasMember("Interrupts") && !rsp["Interrupts"].IsNull())
     {
         if (!rsp["Interrupts"].IsArray())
-            return CoreInternalOutcome(Error("response `Interrupts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Interrupts` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Interrupts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

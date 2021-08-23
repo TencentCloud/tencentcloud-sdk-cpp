@@ -44,7 +44,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotId = string(value["SnapshotId"].GetString());
         m_snapshotIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskUsage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.DiskUsage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.DiskUsage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskUsage = string(value["DiskUsage"].GetString());
         m_diskUsageHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.DiskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.DiskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskId = string(value["DiskId"].GetString());
         m_diskIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetInt64();
         m_diskSizeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.SnapshotName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.SnapshotName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotName = string(value["SnapshotName"].GetString());
         m_snapshotNameHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.SnapshotState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.SnapshotState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotState = string(value["SnapshotState"].GetString());
         m_snapshotStateHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Percent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetInt64();
         m_percentHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestOperation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.LatestOperation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.LatestOperation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestOperation = string(value["LatestOperation"].GetString());
         m_latestOperationHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestOperationState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.LatestOperationState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.LatestOperationState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestOperationState = string(value["LatestOperationState"].GetString());
         m_latestOperationStateHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LatestOperationRequestId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.LatestOperationRequestId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.LatestOperationRequestId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_latestOperationRequestId = string(value["LatestOperationRequestId"].GetString());
         m_latestOperationRequestIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Snapshot.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Snapshot.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

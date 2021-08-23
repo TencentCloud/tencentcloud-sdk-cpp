@@ -37,7 +37,7 @@ CoreInternalOutcome Eye::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Glass"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eye.Glass` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eye.Glass` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_glass.Deserialize(value["Glass"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome Eye::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyeOpen"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eye.EyeOpen` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eye.EyeOpen` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyeOpen.Deserialize(value["EyeOpen"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome Eye::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyelidType"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eye.EyelidType` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eye.EyelidType` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyelidType.Deserialize(value["EyelidType"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome Eye::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EyeSize"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Eye.EyeSize` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Eye.EyeSize` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_eyeSize.Deserialize(value["EyeSize"]);

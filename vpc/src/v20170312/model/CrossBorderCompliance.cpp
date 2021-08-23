@@ -55,7 +55,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServiceProvider"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ServiceProvider` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ServiceProvider` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceProvider = string(value["ServiceProvider"].GetString());
         m_serviceProviderHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ComplianceId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ComplianceId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ComplianceId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_complianceId = value["ComplianceId"].GetUint64();
         m_complianceIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["Company"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.Company` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.Company` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_company = string(value["Company"].GetString());
         m_companyHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["UniformSocialCreditCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.UniformSocialCreditCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.UniformSocialCreditCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uniformSocialCreditCode = string(value["UniformSocialCreditCode"].GetString());
         m_uniformSocialCreditCodeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["LegalPerson"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.LegalPerson` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.LegalPerson` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_legalPerson = string(value["LegalPerson"].GetString());
         m_legalPersonHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["IssuingAuthority"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.IssuingAuthority` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.IssuingAuthority` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issuingAuthority = string(value["IssuingAuthority"].GetString());
         m_issuingAuthorityHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["BusinessLicense"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.BusinessLicense` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.BusinessLicense` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessLicense = string(value["BusinessLicense"].GetString());
         m_businessLicenseHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["BusinessAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.BusinessAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.BusinessAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessAddress = string(value["BusinessAddress"].GetString());
         m_businessAddressHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["PostCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.PostCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.PostCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_postCode = value["PostCode"].GetUint64();
         m_postCodeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["Manager"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.Manager` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.Manager` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_manager = string(value["Manager"].GetString());
         m_managerHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ManagerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ManagerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ManagerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerId = string(value["ManagerId"].GetString());
         m_managerIdHasBeenSet = true;
@@ -165,7 +165,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ManagerIdCard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ManagerIdCard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ManagerIdCard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerIdCard = string(value["ManagerIdCard"].GetString());
         m_managerIdCardHasBeenSet = true;
@@ -175,7 +175,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ManagerAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ManagerAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ManagerAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerAddress = string(value["ManagerAddress"].GetString());
         m_managerAddressHasBeenSet = true;
@@ -185,7 +185,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ManagerTelephone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ManagerTelephone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ManagerTelephone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managerTelephone = string(value["ManagerTelephone"].GetString());
         m_managerTelephoneHasBeenSet = true;
@@ -195,7 +195,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -205,7 +205,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServiceHandlingForm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ServiceHandlingForm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ServiceHandlingForm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceHandlingForm = string(value["ServiceHandlingForm"].GetString());
         m_serviceHandlingFormHasBeenSet = true;
@@ -215,7 +215,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["AuthorizationLetter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.AuthorizationLetter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.AuthorizationLetter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_authorizationLetter = string(value["AuthorizationLetter"].GetString());
         m_authorizationLetterHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["SafetyCommitment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.SafetyCommitment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.SafetyCommitment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_safetyCommitment = string(value["SafetyCommitment"].GetString());
         m_safetyCommitmentHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServiceStartDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ServiceStartDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ServiceStartDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceStartDate = string(value["ServiceStartDate"].GetString());
         m_serviceStartDateHasBeenSet = true;
@@ -245,7 +245,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["ServiceEndDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.ServiceEndDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.ServiceEndDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceEndDate = string(value["ServiceEndDate"].GetString());
         m_serviceEndDateHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -265,7 +265,7 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CrossBorderCompliance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

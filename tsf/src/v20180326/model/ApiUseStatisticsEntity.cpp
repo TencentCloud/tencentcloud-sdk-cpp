@@ -36,7 +36,7 @@ CoreInternalOutcome ApiUseStatisticsEntity::Deserialize(const rapidjson::Value &
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUseStatisticsEntity.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUseStatisticsEntity.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ApiUseStatisticsEntity::Deserialize(const rapidjson::Value &
     {
         if (!value["Count"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUseStatisticsEntity.Count` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUseStatisticsEntity.Count` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_count = string(value["Count"].GetString());
         m_countHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ApiUseStatisticsEntity::Deserialize(const rapidjson::Value &
     {
         if (!value["Ratio"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiUseStatisticsEntity.Ratio` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiUseStatisticsEntity.Ratio` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ratio = string(value["Ratio"].GetString());
         m_ratioHasBeenSet = true;

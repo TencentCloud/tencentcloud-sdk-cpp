@@ -35,7 +35,7 @@ CoreInternalOutcome NewRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewRealServer.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewRealServer.RealServerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerId = string(value["RealServerId"].GetString());
         m_realServerIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome NewRealServer::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewRealServer.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewRealServer.RealServerIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerIP = string(value["RealServerIP"].GetString());
         m_realServerIPHasBeenSet = true;

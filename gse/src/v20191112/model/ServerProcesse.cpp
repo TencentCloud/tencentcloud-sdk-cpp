@@ -36,7 +36,7 @@ CoreInternalOutcome ServerProcesse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConcurrentExecutions"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ServerProcesse.ConcurrentExecutions` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerProcesse.ConcurrentExecutions` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_concurrentExecutions = value["ConcurrentExecutions"].GetUint64();
         m_concurrentExecutionsHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ServerProcesse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaunchPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerProcesse.LaunchPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerProcesse.LaunchPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_launchPath = string(value["LaunchPath"].GetString());
         m_launchPathHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ServerProcesse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Parameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServerProcesse.Parameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerProcesse.Parameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parameters = string(value["Parameters"].GetString());
         m_parametersHasBeenSet = true;

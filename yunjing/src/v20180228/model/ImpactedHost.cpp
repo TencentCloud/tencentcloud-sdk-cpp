@@ -42,7 +42,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanTime = string(value["LastScanTime"].GetString());
         m_lastScanTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.VulStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.VulStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulStatus = string(value["VulStatus"].GetString());
         m_vulStatusHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_vulId = value["VulId"].GetUint64();
         m_vulIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ImpactedHost::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsProVersion"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ImpactedHost.IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImpactedHost.IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isProVersion = value["IsProVersion"].GetBool();
         m_isProVersionHasBeenSet = true;

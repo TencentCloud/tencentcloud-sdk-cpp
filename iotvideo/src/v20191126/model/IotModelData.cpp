@@ -35,7 +35,7 @@ CoreInternalOutcome IotModelData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Revision"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IotModelData.Revision` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IotModelData.Revision` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_revision = value["Revision"].GetInt64();
         m_revisionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IotModelData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReleaseTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IotModelData.ReleaseTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IotModelData.ReleaseTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_releaseTime = value["ReleaseTime"].GetInt64();
         m_releaseTimeHasBeenSet = true;

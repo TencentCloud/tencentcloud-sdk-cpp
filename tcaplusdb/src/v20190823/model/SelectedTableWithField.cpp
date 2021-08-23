@@ -40,7 +40,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     {
         if (!value["TableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableInstanceId = string(value["TableInstanceId"].GetString());
         m_tableInstanceIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     {
         if (!value["TableIdlType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableIdlType = string(value["TableIdlType"].GetString());
         m_tableIdlTypeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     {
         if (!value["TableType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.TableType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.TableType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableType = string(value["TableType"].GetString());
         m_tableTypeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     if (value.HasMember("SelectedFields") && !value["SelectedFields"].IsNull())
     {
         if (!value["SelectedFields"].IsArray())
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.SelectedFields` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.SelectedFields` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SelectedFields"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -110,7 +110,7 @@ CoreInternalOutcome SelectedTableWithField::Deserialize(const rapidjson::Value &
     {
         if (!value["ShardNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SelectedTableWithField.ShardNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SelectedTableWithField.ShardNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shardNum = value["ShardNum"].GetUint64();
         m_shardNumHasBeenSet = true;

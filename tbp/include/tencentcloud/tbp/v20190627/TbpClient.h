@@ -41,10 +41,10 @@ namespace TencentCloud
                 TbpClient(const Credential &credential, const std::string &region);
                 TbpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::TextProcessResponse> TextProcessOutcome;
+                typedef Outcome<Core::Error, Model::TextProcessResponse> TextProcessOutcome;
                 typedef std::future<TextProcessOutcome> TextProcessOutcomeCallable;
                 typedef std::function<void(const TbpClient*, const Model::TextProcessRequest&, TextProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextProcessAsyncHandler;
-                typedef Outcome<Error, Model::TextResetResponse> TextResetOutcome;
+                typedef Outcome<Core::Error, Model::TextResetResponse> TextResetOutcome;
                 typedef std::future<TextResetOutcome> TextResetOutcomeCallable;
                 typedef std::function<void(const TbpClient*, const Model::TextResetRequest&, TextResetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextResetAsyncHandler;
 

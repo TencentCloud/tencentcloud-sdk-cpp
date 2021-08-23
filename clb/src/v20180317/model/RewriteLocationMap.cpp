@@ -38,7 +38,7 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SourceLocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RewriteLocationMap.SourceLocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteLocationMap.SourceLocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceLocationId = string(value["SourceLocationId"].GetString());
         m_sourceLocationIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TargetLocationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RewriteLocationMap.TargetLocationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteLocationMap.TargetLocationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetLocationId = string(value["TargetLocationId"].GetString());
         m_targetLocationIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RewriteCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RewriteLocationMap.RewriteCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteLocationMap.RewriteCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rewriteCode = value["RewriteCode"].GetInt64();
         m_rewriteCodeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TakeUrl"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RewriteLocationMap.TakeUrl` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteLocationMap.TakeUrl` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_takeUrl = value["TakeUrl"].GetBool();
         m_takeUrlHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const rapidjson::Value &valu
     {
         if (!value["SourceDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RewriteLocationMap.SourceDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RewriteLocationMap.SourceDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceDomain = string(value["SourceDomain"].GetString());
         m_sourceDomainHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DayOfWeek") && !value["DayOfWeek"].IsNull())
     {
         if (!value["DayOfWeek"].IsArray())
-            return CoreInternalOutcome(Error("response `Policy.DayOfWeek` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Policy.DayOfWeek` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DayOfWeek"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Hour") && !value["Hour"].IsNull())
     {
         if (!value["Hour"].IsArray())
-            return CoreInternalOutcome(Error("response `Policy.Hour` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Policy.Hour` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Hour"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

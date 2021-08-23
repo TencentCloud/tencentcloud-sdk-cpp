@@ -50,16 +50,16 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -70,11 +70,11 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -82,7 +82,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["InvoiceCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceCode = string(rsp["InvoiceCode"].GetString());
         m_invoiceCodeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["InvoiceNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceNumber = string(rsp["InvoiceNumber"].GetString());
         m_invoiceNumberHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["IssueDate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IssueDate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_issueDate = string(rsp["IssueDate"].GetString());
         m_issueDateHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["InvoiceCheckCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceCheckCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceCheckCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceCheckCode = string(rsp["InvoiceCheckCode"].GetString());
         m_invoiceCheckCodeHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["MachineNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MachineNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineNumber = string(rsp["MachineNumber"].GetString());
         m_machineNumberHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["TaxControlCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaxControlCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaxControlCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxControlCode = string(rsp["TaxControlCode"].GetString());
         m_taxControlCodeHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Buyer"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Buyer` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Buyer` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_buyer.Deserialize(rsp["Buyer"]);
@@ -169,7 +169,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Seller"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Seller` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Seller` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_seller.Deserialize(rsp["Seller"]);
@@ -186,7 +186,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["TaxInclusiveTotalAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaxInclusiveTotalAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaxInclusiveTotalAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxInclusiveTotalAmount = string(rsp["TaxInclusiveTotalAmount"].GetString());
         m_taxInclusiveTotalAmountHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["InvoiceClerk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceClerk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceClerk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceClerk = string(rsp["InvoiceClerk"].GetString());
         m_invoiceClerkHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Payee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Payee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Payee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payee = string(rsp["Payee"].GetString());
         m_payeeHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Checker"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Checker` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Checker` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checker = string(rsp["Checker"].GetString());
         m_checkerHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["TaxTotalAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaxTotalAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaxTotalAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxTotalAmount = string(rsp["TaxTotalAmount"].GetString());
         m_taxTotalAmountHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["TaxExclusiveTotalAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaxExclusiveTotalAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaxExclusiveTotalAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxExclusiveTotalAmount = string(rsp["TaxExclusiveTotalAmount"].GetString());
         m_taxExclusiveTotalAmountHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     {
         if (!rsp["Note"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Note` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Note` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_note = string(rsp["Note"].GetString());
         m_noteHasBeenSet = true;
@@ -255,7 +255,7 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
     if (rsp.HasMember("GoodsInfos") && !rsp["GoodsInfos"].IsNull())
     {
         if (!rsp["GoodsInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `GoodsInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `GoodsInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["GoodsInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

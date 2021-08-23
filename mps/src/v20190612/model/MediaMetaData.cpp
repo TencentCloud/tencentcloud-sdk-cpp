@@ -44,7 +44,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Container"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Container` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_container = string(value["Container"].GetString());
         m_containerHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Rotate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rotate = value["Rotate"].GetInt64();
         m_rotateHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VideoStreamSet") && !value["VideoStreamSet"].IsNull())
     {
         if (!value["VideoStreamSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMetaData.VideoStreamSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.VideoStreamSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VideoStreamSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -133,7 +133,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AudioStreamSet") && !value["AudioStreamSet"].IsNull())
     {
         if (!value["AudioStreamSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMetaData.AudioStreamSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.AudioStreamSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AudioStreamSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -154,7 +154,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.VideoDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.VideoDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_videoDuration = value["VideoDuration"].GetDouble();
         m_videoDurationHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioDuration"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMetaData.AudioDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaMetaData.AudioDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_audioDuration = value["AudioDuration"].GetDouble();
         m_audioDurationHasBeenSet = true;

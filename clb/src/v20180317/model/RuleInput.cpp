@@ -46,7 +46,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SessionExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sessionExpireTime = value["SessionExpireTime"].GetInt64();
         m_sessionExpireTimeHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthCheck"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.HealthCheck` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.HealthCheck` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
@@ -93,7 +93,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Certificate"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.Certificate` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Certificate` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
@@ -110,7 +110,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scheduler"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Scheduler` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scheduler = string(value["Scheduler"].GetString());
         m_schedulerHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.ForwardType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.ForwardType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardType = string(value["ForwardType"].GetString());
         m_forwardTypeHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultServer"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.DefaultServer` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.DefaultServer` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_defaultServer = value["DefaultServer"].GetBool();
         m_defaultServerHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Http2"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.Http2` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Http2` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_http2 = value["Http2"].GetBool();
         m_http2HasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.TargetType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_targetType = string(value["TargetType"].GetString());
         m_targetTypeHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrpcCallee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.TrpcCallee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.TrpcCallee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trpcCallee = string(value["TrpcCallee"].GetString());
         m_trpcCalleeHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TrpcFunc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.TrpcFunc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.TrpcFunc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_trpcFunc = string(value["TrpcFunc"].GetString());
         m_trpcFuncHasBeenSet = true;
@@ -180,7 +180,7 @@ CoreInternalOutcome RuleInput::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quic"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RuleInput.Quic` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleInput.Quic` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_quic = value["Quic"].GetBool();
         m_quicHasBeenSet = true;

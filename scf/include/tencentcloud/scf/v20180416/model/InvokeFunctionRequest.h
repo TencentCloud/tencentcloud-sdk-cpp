@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
-                     * 获取运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
-                     * @return Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
+                     * 获取运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
+                     * @return Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
                      */
                     std::string GetEvent() const;
 
                     /**
-                     * 设置运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
-                     * @param Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
+                     * 设置运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
+                     * @param Event 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
                      */
                     void SetEvent(const std::string& _event);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EventHasBeenSet() const;
 
                     /**
-                     * 获取同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
-                     * @return LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * 获取返回值会包含4KB的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * @return LogType 返回值会包含4KB的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
-                     * @param LogType 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * 设置返回值会包含4KB的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * @param LogType 返回值会包含4KB的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取命名空间
-                     * @return Namespace 命名空间
+                     * 获取命名空间，不填默认为 default
+                     * @return Namespace 命名空间，不填默认为 default
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间
-                     * @param Namespace 命名空间
+                     * 设置命名空间，不填默认为 default
+                     * @param Namespace 命名空间，不填默认为 default
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -165,19 +165,19 @@ namespace TencentCloud
                     bool m_qualifierHasBeenSet;
 
                     /**
-                     * 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M
+                     * 运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB
                      */
                     std::string m_event;
                     bool m_eventHasBeenSet;
 
                     /**
-                     * 同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
+                     * 返回值会包含4KB的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 命名空间
+                     * 命名空间，不填默认为 default
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

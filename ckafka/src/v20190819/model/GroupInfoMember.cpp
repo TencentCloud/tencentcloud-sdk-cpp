@@ -37,7 +37,7 @@ CoreInternalOutcome GroupInfoMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoMember.MemberId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoMember.MemberId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memberId = string(value["MemberId"].GetString());
         m_memberIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome GroupInfoMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoMember.ClientId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoMember.ClientId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientId = string(value["ClientId"].GetString());
         m_clientIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome GroupInfoMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientHost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoMember.ClientHost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoMember.ClientHost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientHost = string(value["ClientHost"].GetString());
         m_clientHostHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome GroupInfoMember::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Assignment"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `GroupInfoMember.Assignment` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupInfoMember.Assignment` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_assignment.Deserialize(value["Assignment"]);

@@ -47,7 +47,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.SrcIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcIp = string(value["SrcIp"].GetString());
         m_srcIpHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.SrcPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.SrcPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_srcPort = value["SrcPort"].GetUint64();
         m_srcPortHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.HttpMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.HttpMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpMethod = string(value["HttpMethod"].GetString());
         m_httpMethodHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpCgi"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.HttpCgi` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.HttpCgi` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpCgi = string(value["HttpCgi"].GetString());
         m_httpCgiHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpParam"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.HttpParam` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.HttpParam` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpParam = string(value["HttpParam"].GetString());
         m_httpParamHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.VulType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.VulType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulType = string(value["VulType"].GetString());
         m_vulTypeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.DstIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.DstIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstIp = string(value["DstIp"].GetString());
         m_dstIpHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.DstPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.DstPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dstPort = value["DstPort"].GetUint64();
         m_dstPortHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HttpContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DefendAttackLog.HttpContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DefendAttackLog.HttpContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_httpContent = string(value["HttpContent"].GetString());
         m_httpContentHasBeenSet = true;

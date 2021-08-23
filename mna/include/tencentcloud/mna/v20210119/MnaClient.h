@@ -41,10 +41,10 @@ namespace TencentCloud
                 MnaClient(const Credential &credential, const std::string &region);
                 MnaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateQosResponse> CreateQosOutcome;
+                typedef Outcome<Core::Error, Model::CreateQosResponse> CreateQosOutcome;
                 typedef std::future<CreateQosOutcome> CreateQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::CreateQosRequest&, CreateQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQosAsyncHandler;
-                typedef Outcome<Error, Model::DeleteQosResponse> DeleteQosOutcome;
+                typedef Outcome<Core::Error, Model::DeleteQosResponse> DeleteQosOutcome;
                 typedef std::future<DeleteQosOutcome> DeleteQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteQosRequest&, DeleteQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQosAsyncHandler;
 

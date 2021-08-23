@@ -36,7 +36,7 @@ CoreInternalOutcome CustomResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `CustomResult.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CustomResult.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome CustomResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomResult.LibId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomResult.LibId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libId = string(value["LibId"].GetString());
         m_libIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome CustomResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LibName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomResult.LibName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomResult.LibName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_libName = string(value["LibName"].GetString());
         m_libNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome CustomResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CustomResult.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CustomResult.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

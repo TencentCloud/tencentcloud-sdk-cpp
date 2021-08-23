@@ -35,7 +35,7 @@ CoreInternalOutcome ChannelContractInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["OutContractCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelContractInfo.OutContractCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelContractInfo.OutContractCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outContractCode = string(value["OutContractCode"].GetString());
         m_outContractCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ChannelContractInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ChannelContractCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ChannelContractInfo.ChannelContractCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ChannelContractInfo.ChannelContractCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelContractCode = string(value["ChannelContractCode"].GetString());
         m_channelContractCodeHasBeenSet = true;

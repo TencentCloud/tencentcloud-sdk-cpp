@@ -36,7 +36,7 @@ CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const rapidj
     {
         if (!value["ModelId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OutputRecognizeTargetAudienceValue.ModelId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeTargetAudienceValue.ModelId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_modelId = value["ModelId"].GetUint64();
         m_modelIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const rapidj
     {
         if (!value["IsFound"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputRecognizeTargetAudienceValue.IsFound` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeTargetAudienceValue.IsFound` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isFound = value["IsFound"].GetInt64();
         m_isFoundHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const rapidj
     {
         if (!value["Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OutputRecognizeTargetAudienceValue.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeTargetAudienceValue.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetDouble();
         m_scoreHasBeenSet = true;

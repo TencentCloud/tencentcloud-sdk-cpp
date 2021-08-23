@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
     {
         if (!rsp["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(rsp["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
     if (rsp.HasMember("ApplicationAccounts") && !rsp["ApplicationAccounts"].IsNull())
     {
         if (!rsp["ApplicationAccounts"].IsArray())
-            return CoreInternalOutcome(Error("response `ApplicationAccounts` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ApplicationAccounts` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ApplicationAccounts"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -93,7 +93,7 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
     {
         if (!rsp["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(rsp["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
     {
         if (!rsp["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(rsp["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeUserResourcesAuthorizationResponse::Deserialize(cons
     if (rsp.HasMember("AuthorizationUserResourceList") && !rsp["AuthorizationUserResourceList"].IsNull())
     {
         if (!rsp["AuthorizationUserResourceList"].IsArray())
-            return CoreInternalOutcome(Error("response `AuthorizationUserResourceList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AuthorizationUserResourceList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["AuthorizationUserResourceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

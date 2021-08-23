@@ -36,7 +36,7 @@ CoreInternalOutcome JgwOperateResponse::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReturnCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JgwOperateResponse.ReturnCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JgwOperateResponse.ReturnCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_returnCode = string(value["ReturnCode"].GetString());
         m_returnCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome JgwOperateResponse::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReturnMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `JgwOperateResponse.ReturnMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JgwOperateResponse.ReturnMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_returnMessage = string(value["ReturnMessage"].GetString());
         m_returnMessageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome JgwOperateResponse::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `JgwOperateResponse.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JgwOperateResponse.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);

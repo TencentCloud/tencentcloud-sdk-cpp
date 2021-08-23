@@ -36,7 +36,7 @@ CoreInternalOutcome DeviceModelData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceModelData.Tid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceModelData.Tid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tid = string(value["Tid"].GetString());
         m_tidHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DeviceModelData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Branch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceModelData.Branch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceModelData.Branch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_branch = string(value["Branch"].GetString());
         m_branchHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome DeviceModelData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IotModel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceModelData.IotModel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceModelData.IotModel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iotModel = string(value["IotModel"].GetString());
         m_iotModelHasBeenSet = true;

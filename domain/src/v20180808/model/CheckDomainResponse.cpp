@@ -46,16 +46,16 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -66,11 +66,11 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -78,7 +78,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(rsp["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["Available"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Available` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Available` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_available = rsp["Available"].GetBool();
         m_availableHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(rsp["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["Premium"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Premium` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Premium` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_premium = rsp["Premium"].GetBool();
         m_premiumHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["Price"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Price` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Price` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_price = rsp["Price"].GetUint64();
         m_priceHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["BlackWord"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `BlackWord` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlackWord` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_blackWord = rsp["BlackWord"].GetBool();
         m_blackWordHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["Describe"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Describe` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Describe` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_describe = string(rsp["Describe"].GetString());
         m_describeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["FeeRenew"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FeeRenew` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FeeRenew` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_feeRenew = rsp["FeeRenew"].GetUint64();
         m_feeRenewHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["RealPrice"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RealPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealPrice` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_realPrice = rsp["RealPrice"].GetUint64();
         m_realPriceHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["FeeTransfer"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FeeTransfer` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FeeTransfer` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_feeTransfer = rsp["FeeTransfer"].GetUint64();
         m_feeTransferHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["FeeRestore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FeeRestore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FeeRestore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_feeRestore = rsp["FeeRestore"].GetUint64();
         m_feeRestoreHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = rsp["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     {
         if (!rsp["RecordSupport"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `RecordSupport` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RecordSupport` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_recordSupport = rsp["RecordSupport"].GetBool();
         m_recordSupportHasBeenSet = true;

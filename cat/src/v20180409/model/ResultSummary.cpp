@@ -37,7 +37,7 @@ CoreInternalOutcome ResultSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResultSummary.LogTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultSummary.LogTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logTime = string(value["LogTime"].GetString());
         m_logTimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ResultSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResultSummary.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultSummary.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ResultSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ResultSummary.AvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultSummary.AvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_availRatio = value["AvailRatio"].GetDouble();
         m_availRatioHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ResultSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReponseTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ResultSummary.ReponseTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultSummary.ReponseTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_reponseTime = value["ReponseTime"].GetDouble();
         m_reponseTimeHasBeenSet = true;

@@ -54,7 +54,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AverageMsgSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.AverageMsgSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.AverageMsgSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_averageMsgSize = string(value["AverageMsgSize"].GetString());
         m_averageMsgSizeHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumerCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.ConsumerCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.ConsumerCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumerCount = string(value["ConsumerCount"].GetString());
         m_consumerCountHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastConfirmedEntry"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.LastConfirmedEntry` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.LastConfirmedEntry` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastConfirmedEntry = string(value["LastConfirmedEntry"].GetString());
         m_lastConfirmedEntryHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastLedgerCreatedTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.LastLedgerCreatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.LastLedgerCreatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastLedgerCreatedTimestamp = string(value["LastLedgerCreatedTimestamp"].GetString());
         m_lastLedgerCreatedTimestampHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRateIn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgRateIn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgRateIn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRateIn = string(value["MsgRateIn"].GetString());
         m_msgRateInHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgRateOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgRateOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgRateOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgRateOut = string(value["MsgRateOut"].GetString());
         m_msgRateOutHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgThroughputIn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgThroughputIn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgThroughputIn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgThroughputIn = string(value["MsgThroughputIn"].GetString());
         m_msgThroughputInHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgThroughputOut"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgThroughputOut` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgThroughputOut` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msgThroughputOut = string(value["MsgThroughputOut"].GetString());
         m_msgThroughputOutHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NumberOfEntries"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.NumberOfEntries` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.NumberOfEntries` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_numberOfEntries = string(value["NumberOfEntries"].GetString());
         m_numberOfEntriesHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Partitions"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Topic.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_partitions = value["Partitions"].GetInt64();
         m_partitionsHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProducerCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.ProducerCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.ProducerCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_producerCount = string(value["ProducerCount"].GetString());
         m_producerCountHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.TotalSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TotalSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalSize = string(value["TotalSize"].GetString());
         m_totalSizeHasBeenSet = true;
@@ -173,7 +173,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubTopicSets") && !value["SubTopicSets"].IsNull())
     {
         if (!value["SubTopicSets"].IsArray())
-            return CoreInternalOutcome(Error("response `Topic.SubTopicSets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Topic.SubTopicSets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubTopicSets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -194,7 +194,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Topic.TopicType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TopicType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_topicType = value["TopicType"].GetUint64();
         m_topicTypeHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvironmentId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.EnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_environmentId = string(value["EnvironmentId"].GetString());
         m_environmentIdHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProducerLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.ProducerLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.ProducerLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_producerLimit = string(value["ProducerLimit"].GetString());
         m_producerLimitHasBeenSet = true;
@@ -264,7 +264,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumerLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.ConsumerLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.ConsumerLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_consumerLimit = string(value["ConsumerLimit"].GetString());
         m_consumerLimitHasBeenSet = true;

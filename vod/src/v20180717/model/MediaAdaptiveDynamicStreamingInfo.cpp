@@ -33,7 +33,7 @@ CoreInternalOutcome MediaAdaptiveDynamicStreamingInfo::Deserialize(const rapidjs
     if (value.HasMember("AdaptiveDynamicStreamingSet") && !value["AdaptiveDynamicStreamingSet"].IsNull())
     {
         if (!value["AdaptiveDynamicStreamingSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaAdaptiveDynamicStreamingInfo.AdaptiveDynamicStreamingSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaAdaptiveDynamicStreamingInfo.AdaptiveDynamicStreamingSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AdaptiveDynamicStreamingSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

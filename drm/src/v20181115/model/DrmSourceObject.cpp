@@ -35,7 +35,7 @@ CoreInternalOutcome DrmSourceObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BucketName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrmSourceObject.BucketName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrmSourceObject.BucketName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucketName = string(value["BucketName"].GetString());
         m_bucketNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DrmSourceObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DrmSourceObject.ObjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DrmSourceObject.ObjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objectName = string(value["ObjectName"].GetString());
         m_objectNameHasBeenSet = true;

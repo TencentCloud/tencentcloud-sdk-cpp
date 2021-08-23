@@ -33,7 +33,7 @@ CoreInternalOutcome ResponseMessage::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GroupList") && !value["GroupList"].IsNull())
     {
         if (!value["GroupList"].IsArray())
-            return CoreInternalOutcome(Error("response `ResponseMessage.GroupList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResponseMessage.GroupList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

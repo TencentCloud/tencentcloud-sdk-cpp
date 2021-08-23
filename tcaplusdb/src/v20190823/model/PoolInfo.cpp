@@ -38,7 +38,7 @@ CoreInternalOutcome PoolInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PoolUid"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PoolInfo.PoolUid` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoolInfo.PoolUid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_poolUid = value["PoolUid"].GetInt64();
         m_poolUidHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome PoolInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6Enable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PoolInfo.Ipv6Enable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoolInfo.Ipv6Enable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6Enable = value["Ipv6Enable"].GetInt64();
         m_ipv6EnableHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome PoolInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailableAppCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PoolInfo.AvailableAppCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PoolInfo.AvailableAppCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_availableAppCount = value["AvailableAppCount"].GetInt64();
         m_availableAppCountHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome PoolInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ServerList") && !value["ServerList"].IsNull())
     {
         if (!value["ServerList"].IsArray())
-            return CoreInternalOutcome(Error("response `PoolInfo.ServerList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PoolInfo.ServerList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ServerList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -87,7 +87,7 @@ CoreInternalOutcome PoolInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProxyList") && !value["ProxyList"].IsNull())
     {
         if (!value["ProxyList"].IsArray())
-            return CoreInternalOutcome(Error("response `PoolInfo.ProxyList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PoolInfo.ProxyList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProxyList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

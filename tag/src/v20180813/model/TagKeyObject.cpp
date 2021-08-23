@@ -34,7 +34,7 @@ CoreInternalOutcome TagKeyObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagKeyObject.TagKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagKeyObject.TagKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagKey = string(value["TagKey"].GetString());
         m_tagKeyHasBeenSet = true;

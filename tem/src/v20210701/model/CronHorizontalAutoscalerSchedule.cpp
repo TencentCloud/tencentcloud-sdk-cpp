@@ -35,7 +35,7 @@ CoreInternalOutcome CronHorizontalAutoscalerSchedule::Deserialize(const rapidjso
     {
         if (!value["StartAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscalerSchedule.StartAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscalerSchedule.StartAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startAt = string(value["StartAt"].GetString());
         m_startAtHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CronHorizontalAutoscalerSchedule::Deserialize(const rapidjso
     {
         if (!value["TargetReplicas"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CronHorizontalAutoscalerSchedule.TargetReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CronHorizontalAutoscalerSchedule.TargetReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_targetReplicas = value["TargetReplicas"].GetInt64();
         m_targetReplicasHasBeenSet = true;

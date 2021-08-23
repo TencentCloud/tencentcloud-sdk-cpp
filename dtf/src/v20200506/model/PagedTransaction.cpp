@@ -35,7 +35,7 @@ CoreInternalOutcome PagedTransaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PagedTransaction.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PagedTransaction.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome PagedTransaction::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Content") && !value["Content"].IsNull())
     {
         if (!value["Content"].IsArray())
-            return CoreInternalOutcome(Error("response `PagedTransaction.Content` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PagedTransaction.Content` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Content"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

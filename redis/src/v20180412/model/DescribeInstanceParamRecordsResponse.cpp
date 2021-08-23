@@ -35,16 +35,16 @@ CoreInternalOutcome DescribeInstanceParamRecordsResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -55,11 +55,11 @@ CoreInternalOutcome DescribeInstanceParamRecordsResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -67,7 +67,7 @@ CoreInternalOutcome DescribeInstanceParamRecordsResponse::Deserialize(const stri
     {
         if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = rsp["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeInstanceParamRecordsResponse::Deserialize(const stri
     if (rsp.HasMember("InstanceParamHistory") && !rsp["InstanceParamHistory"].IsNull())
     {
         if (!rsp["InstanceParamHistory"].IsArray())
-            return CoreInternalOutcome(Error("response `InstanceParamHistory` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `InstanceParamHistory` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["InstanceParamHistory"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -39,7 +39,7 @@ CoreInternalOutcome DataForward::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataForward.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataForward.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DataForward::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataForward.ForwardAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataForward.ForwardAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardAddr = string(value["ForwardAddr"].GetString());
         m_forwardAddrHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DataForward::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataForward.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataForward.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DataForward::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataForward.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataForward.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DataForward::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataForward.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataForward.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DataForward::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DataChose"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataForward.DataChose` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataForward.DataChose` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_dataChose = value["DataChose"].GetInt64();
         m_dataChoseHasBeenSet = true;

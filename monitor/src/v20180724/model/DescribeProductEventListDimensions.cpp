@@ -35,7 +35,7 @@ CoreInternalOutcome DescribeProductEventListDimensions::Deserialize(const rapidj
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListDimensions.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListDimensions.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DescribeProductEventListDimensions::Deserialize(const rapidj
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeProductEventListDimensions.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeProductEventListDimensions.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

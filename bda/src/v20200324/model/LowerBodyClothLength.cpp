@@ -35,7 +35,7 @@ CoreInternalOutcome LowerBodyClothLength::Deserialize(const rapidjson::Value &va
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LowerBodyClothLength.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowerBodyClothLength.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LowerBodyClothLength::Deserialize(const rapidjson::Value &va
     {
         if (!value["Probability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LowerBodyClothLength.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LowerBodyClothLength.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_probability = value["Probability"].GetDouble();
         m_probabilityHasBeenSet = true;

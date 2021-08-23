@@ -42,7 +42,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Upload"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Upload` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.Upload` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_upload = value["Upload"].GetDouble();
         m_uploadHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Download"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Download` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.Download` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_download = value["Download"].GetDouble();
         m_downloadHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.MinRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.MinRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minRtt = value["MinRtt"].GetDouble();
         m_minRttHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.AvgRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.AvgRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgRtt = value["AvgRtt"].GetDouble();
         m_avgRttHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.MaxRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.MaxRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxRtt = value["MaxRtt"].GetDouble();
         m_maxRttHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MdevRtt"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.MdevRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.MdevRtt` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_mdevRtt = value["MdevRtt"].GetDouble();
         m_mdevRttHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Loss"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Loss` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.Loss` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_loss = value["Loss"].GetDouble();
         m_lossHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mac"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NetworkInfo.Mac` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NetworkInfo.Mac` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mac = string(value["Mac"].GetString());
         m_macHasBeenSet = true;

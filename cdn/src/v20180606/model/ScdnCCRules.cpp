@@ -42,7 +42,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RuleValue") && !value["RuleValue"].IsNull())
     {
         if (!value["RuleValue"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnCCRules.RuleValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.RuleValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RuleValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -65,7 +65,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DetectionTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.DetectionTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.DetectionTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_detectionTime = value["DetectionTime"].GetUint64();
         m_detectionTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrequencyLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.FrequencyLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.FrequencyLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_frequencyLimit = value["FrequencyLimit"].GetUint64();
         m_frequencyLimitHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PunishmentSwitch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.PunishmentSwitch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.PunishmentSwitch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_punishmentSwitch = string(value["PunishmentSwitch"].GetString());
         m_punishmentSwitchHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PunishmentTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.PunishmentTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.PunishmentTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_punishmentTime = value["PunishmentTime"].GetUint64();
         m_punishmentTimeHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome ScdnCCRules::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnCCRules.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnCCRules.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectUrl = string(value["RedirectUrl"].GetString());
         m_redirectUrlHasBeenSet = true;

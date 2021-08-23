@@ -39,7 +39,7 @@ CoreInternalOutcome LibResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scene"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibResult.Scene` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibResult.Scene` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scene = string(value["Scene"].GetString());
         m_sceneHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome LibResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome LibResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome LibResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LibResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subLabel = string(value["SubLabel"].GetString());
         m_subLabelHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome LibResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LibResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LibResult.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome LibResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Details") && !value["Details"].IsNull())
     {
         if (!value["Details"].IsArray())
-            return CoreInternalOutcome(Error("response `LibResult.Details` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LibResult.Details` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Details"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

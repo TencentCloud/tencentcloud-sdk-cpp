@@ -39,7 +39,7 @@ CoreInternalOutcome WeeklyReportVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MachineIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportVul.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportVul.MachineIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineIp = string(value["MachineIp"].GetString());
         m_machineIpHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome WeeklyReportVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportVul.VulName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportVul.VulName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulName = string(value["VulName"].GetString());
         m_vulNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome WeeklyReportVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportVul.VulType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportVul.VulType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulType = string(value["VulType"].GetString());
         m_vulTypeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome WeeklyReportVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportVul.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportVul.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome WeeklyReportVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VulStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportVul.VulStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportVul.VulStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vulStatus = string(value["VulStatus"].GetString());
         m_vulStatusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome WeeklyReportVul::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastScanTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WeeklyReportVul.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WeeklyReportVul.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastScanTime = string(value["LastScanTime"].GetString());
         m_lastScanTimeHasBeenSet = true;

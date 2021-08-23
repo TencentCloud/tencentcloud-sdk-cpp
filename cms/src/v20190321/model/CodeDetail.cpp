@@ -36,7 +36,7 @@ CoreInternalOutcome CodeDetail::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("CodePosition") && !value["CodePosition"].IsNull())
     {
         if (!value["CodePosition"].IsArray())
-            return CoreInternalOutcome(Error("response `CodeDetail.CodePosition` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CodeDetail.CodePosition` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CodePosition"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome CodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeCharset"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeDetail.CodeCharset` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeDetail.CodeCharset` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeCharset = string(value["CodeCharset"].GetString());
         m_codeCharsetHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeDetail.CodeText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeDetail.CodeText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeText = string(value["CodeText"].GetString());
         m_codeTextHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome CodeDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CodeDetail.CodeType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeDetail.CodeType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_codeType = value["CodeType"].GetInt64();
         m_codeTypeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome TransferDetailRequest::Deserialize(const rapidjson::Value &v
     {
         if (!value["MerchantDetailNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailRequest.MerchantDetailNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailRequest.MerchantDetailNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantDetailNo = string(value["MerchantDetailNo"].GetString());
         m_merchantDetailNoHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TransferDetailRequest::Deserialize(const rapidjson::Value &v
     {
         if (!value["TransferAmount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailRequest.TransferAmount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailRequest.TransferAmount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_transferAmount = value["TransferAmount"].GetUint64();
         m_transferAmountHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TransferDetailRequest::Deserialize(const rapidjson::Value &v
     {
         if (!value["TransferRemark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailRequest.TransferRemark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailRequest.TransferRemark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_transferRemark = string(value["TransferRemark"].GetString());
         m_transferRemarkHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TransferDetailRequest::Deserialize(const rapidjson::Value &v
     {
         if (!value["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailRequest.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailRequest.OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openId = string(value["OpenId"].GetString());
         m_openIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TransferDetailRequest::Deserialize(const rapidjson::Value &v
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TransferDetailRequest.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TransferDetailRequest.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;

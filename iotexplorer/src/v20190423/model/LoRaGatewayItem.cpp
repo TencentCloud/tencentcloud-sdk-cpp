@@ -44,7 +44,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayId = string(value["GatewayId"].GetString());
         m_gatewayIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPublic"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.IsPublic` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.IsPublic` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isPublic = value["IsPublic"].GetBool();
         m_isPublicHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Position"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.Position` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.Position` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_position = string(value["Position"].GetString());
         m_positionHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PositionDetails"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.PositionDetails` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.PositionDetails` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_positionDetails = string(value["PositionDetails"].GetString());
         m_positionDetailsHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Location"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.Location` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.Location` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_location.Deserialize(value["Location"]);
@@ -121,7 +121,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastSeenAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.LastSeenAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.LastSeenAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastSeenAt = string(value["LastSeenAt"].GetString());
         m_lastSeenAtHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrequencyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoRaGatewayItem.FrequencyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoRaGatewayItem.FrequencyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frequencyId = string(value["FrequencyId"].GetString());
         m_frequencyIdHasBeenSet = true;

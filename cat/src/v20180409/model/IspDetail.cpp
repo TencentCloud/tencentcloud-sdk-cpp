@@ -36,7 +36,7 @@ CoreInternalOutcome IspDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IspDetail.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IspDetail.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome IspDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `IspDetail.AvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IspDetail.AvailRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_availRatio = value["AvailRatio"].GetDouble();
         m_availRatioHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome IspDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `IspDetail.AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IspDetail.AvgTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgTime = value["AvgTime"].GetDouble();
         m_avgTimeHasBeenSet = true;

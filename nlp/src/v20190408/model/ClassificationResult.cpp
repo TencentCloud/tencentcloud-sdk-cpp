@@ -43,7 +43,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["FirstClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FirstClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.FirstClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstClassName = string(value["FirstClassName"].GetString());
         m_firstClassNameHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["SecondClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.SecondClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.SecondClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secondClassName = string(value["SecondClassName"].GetString());
         m_secondClassNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["FirstClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FirstClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.FirstClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_firstClassProbability = value["FirstClassProbability"].GetDouble();
         m_firstClassProbabilityHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["SecondClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.SecondClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.SecondClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_secondClassProbability = value["SecondClassProbability"].GetDouble();
         m_secondClassProbabilityHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["ThirdClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.ThirdClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.ThirdClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_thirdClassName = string(value["ThirdClassName"].GetString());
         m_thirdClassNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["ThirdClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.ThirdClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.ThirdClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_thirdClassProbability = value["ThirdClassProbability"].GetDouble();
         m_thirdClassProbabilityHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["FourthClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FourthClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.FourthClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fourthClassName = string(value["FourthClassName"].GetString());
         m_fourthClassNameHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["FourthClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FourthClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.FourthClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fourthClassProbability = value["FourthClassProbability"].GetDouble();
         m_fourthClassProbabilityHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["FifthClassName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FifthClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.FifthClassName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fifthClassName = string(value["FifthClassName"].GetString());
         m_fifthClassNameHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &va
     {
         if (!value["FifthClassProbability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FifthClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClassificationResult.FifthClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fifthClassProbability = value["FifthClassProbability"].GetDouble();
         m_fifthClassProbabilityHasBeenSet = true;

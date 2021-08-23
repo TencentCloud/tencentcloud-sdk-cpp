@@ -41,16 +41,16 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeviceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceName = string(rsp["DeviceName"].GetString());
         m_deviceNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DevicePsk"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePsk` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devicePsk = string(rsp["DevicePsk"].GetString());
         m_devicePskHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DeviceCert"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceCert` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceCert` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceCert = string(rsp["DeviceCert"].GetString());
         m_deviceCertHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["DevicePrivateKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DevicePrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DevicePrivateKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_devicePrivateKey = string(rsp["DevicePrivateKey"].GetString());
         m_devicePrivateKeyHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoraDevEui"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoraDevEui` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoraDevEui` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loraDevEui = string(rsp["LoraDevEui"].GetString());
         m_loraDevEuiHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoraMoteType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LoraMoteType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoraMoteType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_loraMoteType = rsp["LoraMoteType"].GetUint64();
         m_loraMoteTypeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoraAppKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoraAppKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoraAppKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loraAppKey = string(rsp["LoraAppKey"].GetString());
         m_loraAppKeyHasBeenSet = true;
@@ -143,7 +143,7 @@ CoreInternalOutcome CreateDeviceResponse::Deserialize(const string &payload)
     {
         if (!rsp["LoraNwkKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoraNwkKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoraNwkKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loraNwkKey = string(rsp["LoraNwkKey"].GetString());
         m_loraNwkKeyHasBeenSet = true;

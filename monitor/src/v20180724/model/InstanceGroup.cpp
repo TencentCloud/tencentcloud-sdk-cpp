@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceGroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceGroup.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceGroup.InstanceGroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGroupId = value["InstanceGroupId"].GetInt64();
         m_instanceGroupIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceGroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceGroup.InstanceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceGroup.InstanceGroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceGroupName = string(value["InstanceGroupName"].GetString());
         m_instanceGroupNameHasBeenSet = true;

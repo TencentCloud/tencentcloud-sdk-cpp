@@ -41,7 +41,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vocab.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vocab.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vocab.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vocab.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VocabId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vocab.VocabId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vocab.VocabId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vocabId = string(value["VocabId"].GetString());
         m_vocabIdHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("WordWeights") && !value["WordWeights"].IsNull())
     {
         if (!value["WordWeights"].IsArray())
-            return CoreInternalOutcome(Error("response `Vocab.WordWeights` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Vocab.WordWeights` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WordWeights"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vocab.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vocab.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Vocab.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vocab.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     {
         if (!value["State"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Vocab.State` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Vocab.State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome Vocab::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
     {
         if (!value["TagInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `Vocab.TagInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Vocab.TagInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

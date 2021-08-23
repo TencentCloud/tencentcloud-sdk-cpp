@@ -36,7 +36,7 @@ CoreInternalOutcome SnapshotByTimeOffset2017::Deserialize(const rapidjson::Value
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffset2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffset2017.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SnapshotByTimeOffset2017::Deserialize(const rapidjson::Value
     {
         if (!value["TimeOffset"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffset2017.TimeOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffset2017.TimeOffset` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeOffset = value["TimeOffset"].GetUint64();
         m_timeOffsetHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SnapshotByTimeOffset2017::Deserialize(const rapidjson::Value
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotByTimeOffset2017.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotByTimeOffset2017.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

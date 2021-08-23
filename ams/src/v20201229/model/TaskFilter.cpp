@@ -37,7 +37,7 @@ CoreInternalOutcome TaskFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFilter.BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFilter.BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(value["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TaskFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFilter.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TaskFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFilter.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFilter.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TaskFilter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskFilter.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskFilter.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = string(value["TaskStatus"].GetString());
         m_taskStatusHasBeenSet = true;

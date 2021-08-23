@@ -55,7 +55,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Part"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Part` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Part` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_part.Deserialize(value["Part"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Size") && !value["Size"].IsNull())
     {
         if (!value["Size"].IsArray())
-            return CoreInternalOutcome(Error("response `Organ.Size` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Organ.Size` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Size"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Envelope"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Envelope` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Envelope` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_envelope.Deserialize(value["Envelope"]);
@@ -109,7 +109,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Edge"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Edge` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Edge` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_edge.Deserialize(value["Edge"]);
@@ -126,7 +126,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InnerEcho"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.InnerEcho` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.InnerEcho` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_innerEcho.Deserialize(value["InnerEcho"]);
@@ -143,7 +143,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Gland"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Gland` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Gland` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gland.Deserialize(value["Gland"]);
@@ -160,7 +160,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Shape"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Shape` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Shape` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_shape.Deserialize(value["Shape"]);
@@ -177,7 +177,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Thickness"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Thickness` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Thickness` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_thickness.Deserialize(value["Thickness"]);
@@ -194,7 +194,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShapeAttr"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.ShapeAttr` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.ShapeAttr` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_shapeAttr.Deserialize(value["ShapeAttr"]);
@@ -211,7 +211,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CDFI"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.CDFI` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.CDFI` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cDFI.Deserialize(value["CDFI"]);
@@ -228,7 +228,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SymDesc"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.SymDesc` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.SymDesc` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_symDesc.Deserialize(value["SymDesc"]);
@@ -245,7 +245,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SizeStatus"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.SizeStatus` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.SizeStatus` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sizeStatus.Deserialize(value["SizeStatus"]);
@@ -262,7 +262,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Outline"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Outline` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Outline` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outline.Deserialize(value["Outline"]);
@@ -279,7 +279,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Structure"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Structure` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Structure` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_structure.Deserialize(value["Structure"]);
@@ -296,7 +296,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Density"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Density` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Density` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_density.Deserialize(value["Density"]);
@@ -313,7 +313,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vas"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Vas` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Vas` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_vas.Deserialize(value["Vas"]);
@@ -330,7 +330,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cysticwall"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Cysticwall` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Cysticwall` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cysticwall.Deserialize(value["Cysticwall"]);
@@ -347,7 +347,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Capsule"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.Capsule` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Capsule` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_capsule.Deserialize(value["Capsule"]);
@@ -364,7 +364,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsthmusThicknese"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.IsthmusThicknese` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.IsthmusThicknese` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_isthmusThicknese.Deserialize(value["IsthmusThicknese"]);
@@ -381,7 +381,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InnerEchoDistribution"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Organ.InnerEchoDistribution` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.InnerEchoDistribution` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_innerEchoDistribution.Deserialize(value["InnerEchoDistribution"]);
@@ -398,7 +398,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Organ.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Organ.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -407,7 +407,7 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `Organ.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Organ.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

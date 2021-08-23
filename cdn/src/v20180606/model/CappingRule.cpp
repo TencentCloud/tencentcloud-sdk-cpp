@@ -36,7 +36,7 @@ CoreInternalOutcome CappingRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CappingRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CappingRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CappingRule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `CappingRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CappingRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome CappingRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KBpsThreshold"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CappingRule.KBpsThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CappingRule.KBpsThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_kBpsThreshold = value["KBpsThreshold"].GetInt64();
         m_kBpsThresholdHasBeenSet = true;

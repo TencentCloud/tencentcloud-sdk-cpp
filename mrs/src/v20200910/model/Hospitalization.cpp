@@ -41,7 +41,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdmissionTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.AdmissionTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.AdmissionTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_admissionTime = string(value["AdmissionTime"].GetString());
         m_admissionTimeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DischargeTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.DischargeTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.DischargeTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dischargeTime = string(value["DischargeTime"].GetString());
         m_dischargeTimeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdmissionDays"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.AdmissionDays` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.AdmissionDays` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_admissionDays = string(value["AdmissionDays"].GetString());
         m_admissionDaysHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdmissionDignosis"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.AdmissionDignosis` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.AdmissionDignosis` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_admissionDignosis = string(value["AdmissionDignosis"].GetString());
         m_admissionDignosisHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AdmissionCondition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.AdmissionCondition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.AdmissionCondition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_admissionCondition = string(value["AdmissionCondition"].GetString());
         m_admissionConditionHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiagnosisTreatment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.DiagnosisTreatment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.DiagnosisTreatment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diagnosisTreatment = string(value["DiagnosisTreatment"].GetString());
         m_diagnosisTreatmentHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DischargeDiagnosis"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.DischargeDiagnosis` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.DischargeDiagnosis` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dischargeDiagnosis = string(value["DischargeDiagnosis"].GetString());
         m_dischargeDiagnosisHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Hospitalization::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DischargeInstruction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hospitalization.DischargeInstruction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hospitalization.DischargeInstruction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dischargeInstruction = string(value["DischargeInstruction"].GetString());
         m_dischargeInstructionHasBeenSet = true;

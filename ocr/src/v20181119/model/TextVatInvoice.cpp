@@ -36,7 +36,7 @@ CoreInternalOutcome TextVatInvoice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVatInvoice.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVatInvoice.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TextVatInvoice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextVatInvoice.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVatInvoice.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TextVatInvoice::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Polygon"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TextVatInvoice.Polygon` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextVatInvoice.Polygon` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_polygon.Deserialize(value["Polygon"]);

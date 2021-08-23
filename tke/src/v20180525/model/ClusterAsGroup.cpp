@@ -38,7 +38,7 @@ CoreInternalOutcome ClusterAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoScalingGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroup.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroup.AutoScalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_autoScalingGroupId = string(value["AutoScalingGroupId"].GetString());
         m_autoScalingGroupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ClusterAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroup.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ClusterAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsUnschedulable"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroup.IsUnschedulable` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroup.IsUnschedulable` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isUnschedulable = value["IsUnschedulable"].GetBool();
         m_isUnschedulableHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ClusterAsGroup::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
     {
         if (!value["Labels"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterAsGroup.Labels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroup.Labels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Labels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome ClusterAsGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterAsGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterAsGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

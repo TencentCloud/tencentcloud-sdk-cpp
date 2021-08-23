@@ -36,7 +36,7 @@ CoreInternalOutcome TableDetectInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Cells") && !value["Cells"].IsNull())
     {
         if (!value["Cells"].IsArray())
-            return CoreInternalOutcome(Error("response `TableDetectInfo.Cells` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableDetectInfo.Cells` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Cells"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -56,7 +56,7 @@ CoreInternalOutcome TableDetectInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Titles") && !value["Titles"].IsNull())
     {
         if (!value["Titles"].IsArray())
-            return CoreInternalOutcome(Error("response `TableDetectInfo.Titles` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableDetectInfo.Titles` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Titles"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome TableDetectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TableDetectInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableDetectInfo.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome TableDetectInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TableCoordPoint") && !value["TableCoordPoint"].IsNull())
     {
         if (!value["TableCoordPoint"].IsArray())
-            return CoreInternalOutcome(Error("response `TableDetectInfo.TableCoordPoint` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableDetectInfo.TableCoordPoint` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TableCoordPoint"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

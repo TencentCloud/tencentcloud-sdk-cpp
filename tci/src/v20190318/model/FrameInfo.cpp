@@ -36,7 +36,7 @@ CoreInternalOutcome FrameInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Similarity"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FrameInfo.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameInfo.Similarity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_similarity = value["Similarity"].GetDouble();
         m_similarityHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FrameInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrameInfo.SnapshotUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameInfo.SnapshotUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotUrl = string(value["SnapshotUrl"].GetString());
         m_snapshotUrlHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FrameInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ts"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FrameInfo.Ts` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameInfo.Ts` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ts = value["Ts"].GetInt64();
         m_tsHasBeenSet = true;

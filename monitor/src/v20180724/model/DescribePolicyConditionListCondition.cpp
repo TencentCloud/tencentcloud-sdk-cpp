@@ -41,7 +41,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     {
         if (!value["PolicyViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.PolicyViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.PolicyViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyViewName = string(value["PolicyViewName"].GetString());
         m_policyViewNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     if (value.HasMember("EventMetrics") && !value["EventMetrics"].IsNull())
     {
         if (!value["EventMetrics"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.EventMetrics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.EventMetrics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EventMetrics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     {
         if (!value["IsSupportMultiRegion"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.IsSupportMultiRegion` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.IsSupportMultiRegion` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isSupportMultiRegion = value["IsSupportMultiRegion"].GetBool();
         m_isSupportMultiRegionHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     if (value.HasMember("Metrics") && !value["Metrics"].IsNull())
     {
         if (!value["Metrics"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.Metrics` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.Metrics` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Metrics"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     {
         if (!value["SortId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.SortId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.SortId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sortId = value["SortId"].GetInt64();
         m_sortIdHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     {
         if (!value["SupportDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.SupportDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.SupportDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_supportDefault = value["SupportDefault"].GetBool();
         m_supportDefaultHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
     if (value.HasMember("SupportRegions") && !value["SupportRegions"].IsNull())
     {
         if (!value["SupportRegions"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.SupportRegions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.SupportRegions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SupportRegions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

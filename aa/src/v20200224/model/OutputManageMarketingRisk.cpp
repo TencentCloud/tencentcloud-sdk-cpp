@@ -36,7 +36,7 @@ CoreInternalOutcome OutputManageMarketingRisk::Deserialize(const rapidjson::Valu
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRisk.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRisk.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OutputManageMarketingRisk::Deserialize(const rapidjson::Valu
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRisk.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRisk.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OutputManageMarketingRisk::Deserialize(const rapidjson::Valu
     {
         if (!value["Value"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `OutputManageMarketingRisk.Value` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputManageMarketingRisk.Value` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_value.Deserialize(value["Value"]);

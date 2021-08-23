@@ -39,7 +39,7 @@ CoreInternalOutcome VpcSubnetViewInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcSubnetViewInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcSubnetViewInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VpcSubnetViewInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["SubnetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcSubnetViewInfo.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcSubnetViewInfo.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetName = string(value["SubnetName"].GetString());
         m_subnetNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VpcSubnetViewInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcSubnetViewInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcSubnetViewInfo.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VpcSubnetViewInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CpmNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcSubnetViewInfo.CpmNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcSubnetViewInfo.CpmNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpmNum = value["CpmNum"].GetUint64();
         m_cpmNumHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome VpcSubnetViewInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["LbNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VpcSubnetViewInfo.LbNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcSubnetViewInfo.LbNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lbNum = value["LbNum"].GetUint64();
         m_lbNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome VpcSubnetViewInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcSubnetViewInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcSubnetViewInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

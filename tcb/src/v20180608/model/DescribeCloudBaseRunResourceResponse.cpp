@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
     {
         if (!rsp["ClusterStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterStatus = string(rsp["ClusterStatus"].GetString());
         m_clusterStatusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
     {
         if (!rsp["VirtualClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VirtualClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VirtualClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_virtualClusterId = string(rsp["VirtualClusterId"].GetString());
         m_virtualClusterIdHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
     {
         if (!rsp["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(rsp["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
     {
         if (!rsp["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(rsp["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeCloudBaseRunResourceResponse::Deserialize(const stri
     if (rsp.HasMember("SubnetIds") && !rsp["SubnetIds"].IsNull())
     {
         if (!rsp["SubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

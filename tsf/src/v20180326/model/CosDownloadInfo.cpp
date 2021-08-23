@@ -37,7 +37,7 @@ CoreInternalOutcome CosDownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDownloadInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDownloadInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CosDownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDownloadInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDownloadInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CosDownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosDownloadInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDownloadInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CosDownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Credentials"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CosDownloadInfo.Credentials` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosDownloadInfo.Credentials` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_credentials.Deserialize(value["Credentials"]);

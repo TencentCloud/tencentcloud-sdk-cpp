@@ -38,7 +38,7 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjs
     {
         if (!value["TimeKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeKey = string(value["TimeKey"].GetString());
         m_timeKeyHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjs
     {
         if (!value["AudioTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.AudioTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.AudioTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_audioTime = value["AudioTime"].GetUint64();
         m_audioTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjs
     {
         if (!value["VideoTimeSd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.VideoTimeSd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.VideoTimeSd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTimeSd = value["VideoTimeSd"].GetUint64();
         m_videoTimeSdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjs
     {
         if (!value["VideoTimeHd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.VideoTimeHd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.VideoTimeHd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTimeHd = value["VideoTimeHd"].GetUint64();
         m_videoTimeHdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjs
     {
         if (!value["VideoTimeFhd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.VideoTimeFhd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.VideoTimeFhd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_videoTimeFhd = value["VideoTimeFhd"].GetUint64();
         m_videoTimeFhdHasBeenSet = true;

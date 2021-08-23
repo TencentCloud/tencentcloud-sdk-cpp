@@ -45,16 +45,16 @@ namespace TencentCloud
                 MrsClient(const Credential &credential, const std::string &region);
                 MrsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::ImageToClassResponse> ImageToClassOutcome;
+                typedef Outcome<Core::Error, Model::ImageToClassResponse> ImageToClassOutcome;
                 typedef std::future<ImageToClassOutcome> ImageToClassOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageToClassRequest&, ImageToClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToClassAsyncHandler;
-                typedef Outcome<Error, Model::ImageToObjectResponse> ImageToObjectOutcome;
+                typedef Outcome<Core::Error, Model::ImageToObjectResponse> ImageToObjectOutcome;
                 typedef std::future<ImageToObjectOutcome> ImageToObjectOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageToObjectRequest&, ImageToObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToObjectAsyncHandler;
-                typedef Outcome<Error, Model::TextToClassResponse> TextToClassOutcome;
+                typedef Outcome<Core::Error, Model::TextToClassResponse> TextToClassOutcome;
                 typedef std::future<TextToClassOutcome> TextToClassOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::TextToClassRequest&, TextToClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToClassAsyncHandler;
-                typedef Outcome<Error, Model::TextToObjectResponse> TextToObjectOutcome;
+                typedef Outcome<Core::Error, Model::TextToObjectResponse> TextToObjectOutcome;
                 typedef std::future<TextToObjectOutcome> TextToObjectOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::TextToObjectRequest&, TextToObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToObjectAsyncHandler;
 

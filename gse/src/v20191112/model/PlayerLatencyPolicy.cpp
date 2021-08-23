@@ -35,7 +35,7 @@ CoreInternalOutcome PlayerLatencyPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["MaximumIndividualPlayerLatencyMilliseconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayerLatencyPolicy.MaximumIndividualPlayerLatencyMilliseconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerLatencyPolicy.MaximumIndividualPlayerLatencyMilliseconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maximumIndividualPlayerLatencyMilliseconds = value["MaximumIndividualPlayerLatencyMilliseconds"].GetUint64();
         m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PlayerLatencyPolicy::Deserialize(const rapidjson::Value &val
     {
         if (!value["PolicyDurationSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayerLatencyPolicy.PolicyDurationSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerLatencyPolicy.PolicyDurationSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policyDurationSeconds = value["PolicyDurationSeconds"].GetUint64();
         m_policyDurationSecondsHasBeenSet = true;

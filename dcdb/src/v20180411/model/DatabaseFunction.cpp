@@ -34,7 +34,7 @@ CoreInternalOutcome DatabaseFunction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Func"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseFunction.Func` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseFunction.Func` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_func = string(value["Func"].GetString());
         m_funcHasBeenSet = true;

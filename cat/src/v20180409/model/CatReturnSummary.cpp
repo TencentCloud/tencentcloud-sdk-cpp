@@ -36,7 +36,7 @@ CoreInternalOutcome CatReturnSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatReturnSummary.ResultCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnSummary.ResultCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCount = value["ResultCount"].GetUint64();
         m_resultCountHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CatReturnSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatReturnSummary.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnSummary.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCode = value["ResultCode"].GetUint64();
         m_resultCodeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CatReturnSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnSummary.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnSummary.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorReason = string(value["ErrorReason"].GetString());
         m_errorReasonHasBeenSet = true;

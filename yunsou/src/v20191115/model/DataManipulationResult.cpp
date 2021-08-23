@@ -38,7 +38,7 @@ CoreInternalOutcome DataManipulationResult::Deserialize(const rapidjson::Value &
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResult.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResult.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DataManipulationResult::Deserialize(const rapidjson::Value &
     {
         if (!value["Seq"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResult.Seq` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResult.Seq` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_seq = value["Seq"].GetInt64();
         m_seqHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DataManipulationResult::Deserialize(const rapidjson::Value &
     {
         if (!value["TotalResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResult.TotalResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResult.TotalResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_totalResult = string(value["TotalResult"].GetString());
         m_totalResultHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DataManipulationResult::Deserialize(const rapidjson::Value &
     if (value.HasMember("Result") && !value["Result"].IsNull())
     {
         if (!value["Result"].IsArray())
-            return CoreInternalOutcome(Error("response `DataManipulationResult.Result` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResult.Result` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Result"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome DataManipulationResult::Deserialize(const rapidjson::Value &
     {
         if (!value["ErrorResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataManipulationResult.ErrorResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataManipulationResult.ErrorResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorResult = string(value["ErrorResult"].GetString());
         m_errorResultHasBeenSet = true;

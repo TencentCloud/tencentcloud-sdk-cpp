@@ -44,7 +44,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(value["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OwnerUin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.OwnerUin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.OwnerUin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ownerUin = value["OwnerUin"].GetInt64();
         m_ownerUinHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdOn = string(value["CreatedOn"].GetString());
         m_createdOnHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedOn"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedOn = string(value["UpdatedOn"].GetString());
         m_updatedOnHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecordCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.RecordCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.RecordCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recordCount = value["RecordCount"].GetInt64();
         m_recordCountHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VpcSet") && !value["VpcSet"].IsNull())
     {
         if (!value["VpcSet"].IsArray())
-            return CoreInternalOutcome(Error("response `PrivateZone.VpcSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.VpcSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VpcSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DnsForwardStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivateZone.DnsForwardStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.DnsForwardStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dnsForwardStatus = string(value["DnsForwardStatus"].GetString());
         m_dnsForwardStatusHasBeenSet = true;
@@ -153,7 +153,7 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Error("response `PrivateZone.Tags` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.Tags` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tags"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

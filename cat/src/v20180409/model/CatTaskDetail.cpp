@@ -66,7 +66,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.Period` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.Period` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetUint64();
         m_periodHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CatTypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.CatTypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.CatTypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_catTypeName = string(value["CatTypeName"].GetString());
         m_catTypeNameHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CgiUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.CgiUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.CgiUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cgiUrl = string(value["CgiUrl"].GetString());
         m_cgiUrlHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AgentGroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.AgentGroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.AgentGroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_agentGroupId = value["AgentGroupId"].GetUint64();
         m_agentGroupIdHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyGroupId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.PolicyGroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.PolicyGroupId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policyGroupId = value["PolicyGroupId"].GetUint64();
         m_policyGroupIdHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AlarmStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.AlarmStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.AlarmStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_alarmStatus = value["AlarmStatus"].GetUint64();
         m_alarmStatusHasBeenSet = true;
@@ -186,7 +186,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Host"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.Host` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_host = string(value["Host"].GetString());
         m_hostHasBeenSet = true;
@@ -196,7 +196,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -206,7 +206,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckStr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.CheckStr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.CheckStr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checkStr = string(value["CheckStr"].GetString());
         m_checkStrHasBeenSet = true;
@@ -216,7 +216,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.CheckType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.CheckType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_checkType = value["CheckType"].GetUint64();
         m_checkTypeHasBeenSet = true;
@@ -226,7 +226,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserAgent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userAgent = string(value["UserAgent"].GetString());
         m_userAgentHasBeenSet = true;
@@ -236,7 +236,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cookie"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.Cookie` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.Cookie` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cookie = string(value["Cookie"].GetString());
         m_cookieHasBeenSet = true;
@@ -246,7 +246,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PostData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.PostData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.PostData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_postData = string(value["PostData"].GetString());
         m_postDataHasBeenSet = true;
@@ -256,7 +256,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SslVer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.SslVer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.SslVer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sslVer = string(value["SslVer"].GetString());
         m_sslVerHasBeenSet = true;
@@ -266,7 +266,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsHeader"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.IsHeader` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.IsHeader` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_isHeader = value["IsHeader"].GetUint64();
         m_isHeaderHasBeenSet = true;
@@ -276,7 +276,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DnsSvr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.DnsSvr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.DnsSvr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dnsSvr = string(value["DnsSvr"].GetString());
         m_dnsSvrHasBeenSet = true;
@@ -286,7 +286,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DnsCheckIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.DnsCheckIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.DnsCheckIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dnsCheckIp = string(value["DnsCheckIp"].GetString());
         m_dnsCheckIpHasBeenSet = true;
@@ -296,7 +296,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DnsQueryType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.DnsQueryType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.DnsQueryType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dnsQueryType = string(value["DnsQueryType"].GetString());
         m_dnsQueryTypeHasBeenSet = true;
@@ -306,7 +306,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -316,7 +316,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PassWord"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.PassWord` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.PassWord` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_passWord = string(value["PassWord"].GetString());
         m_passWordHasBeenSet = true;
@@ -326,7 +326,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UseSecConn"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.UseSecConn` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.UseSecConn` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_useSecConn = value["UseSecConn"].GetUint64();
         m_useSecConnHasBeenSet = true;
@@ -336,7 +336,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedAuth"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.NeedAuth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.NeedAuth` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_needAuth = value["NeedAuth"].GetUint64();
         m_needAuthHasBeenSet = true;
@@ -346,7 +346,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqDataType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.ReqDataType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.ReqDataType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_reqDataType = value["ReqDataType"].GetUint64();
         m_reqDataTypeHasBeenSet = true;
@@ -356,7 +356,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReqData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.ReqData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.ReqData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reqData = string(value["ReqData"].GetString());
         m_reqDataHasBeenSet = true;
@@ -366,7 +366,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RespDataType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.RespDataType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.RespDataType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_respDataType = value["RespDataType"].GetUint64();
         m_respDataTypeHasBeenSet = true;
@@ -376,7 +376,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RespData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.RespData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.RespData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_respData = string(value["RespData"].GetString());
         m_respDataHasBeenSet = true;
@@ -386,7 +386,7 @@ CoreInternalOutcome CatTaskDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectFollowNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatTaskDetail.RedirectFollowNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatTaskDetail.RedirectFollowNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_redirectFollowNum = value["RedirectFollowNum"].GetUint64();
         m_redirectFollowNumHasBeenSet = true;

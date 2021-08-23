@@ -35,7 +35,7 @@ CoreInternalOutcome AttributeItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AttributeItem.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeItem.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AttributeItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Probability"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AttributeItem.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttributeItem.Probability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_probability = value["Probability"].GetDouble();
         m_probabilityHasBeenSet = true;

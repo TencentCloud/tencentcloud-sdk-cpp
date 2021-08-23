@@ -35,7 +35,7 @@ CoreInternalOutcome DescribeGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Group"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeGroup.Group` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeGroup.Group` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_group = string(value["Group"].GetString());
         m_groupHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DescribeGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeGroup.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeGroup.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;

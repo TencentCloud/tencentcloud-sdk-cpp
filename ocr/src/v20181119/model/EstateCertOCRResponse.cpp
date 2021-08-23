@@ -45,16 +45,16 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Obligee"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Obligee` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Obligee` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_obligee = string(rsp["Obligee"].GetString());
         m_obligeeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Ownership"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ownership` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ownership` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ownership = string(rsp["Ownership"].GetString());
         m_ownershipHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(rsp["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(rsp["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Property"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Property` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Property` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_property = string(rsp["Property"].GetString());
         m_propertyHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Usage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Usage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Usage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_usage = string(rsp["Usage"].GetString());
         m_usageHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Area"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Area` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_area = string(rsp["Area"].GetString());
         m_areaHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Term"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Term` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Term` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_term = string(rsp["Term"].GetString());
         m_termHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Other"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Other` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Other` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_other = string(rsp["Other"].GetString());
         m_otherHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_angle = rsp["Angle"].GetDouble();
         m_angleHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Number"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Number` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Number` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_number = string(rsp["Number"].GetString());
         m_numberHasBeenSet = true;

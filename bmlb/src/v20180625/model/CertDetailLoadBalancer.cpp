@@ -37,7 +37,7 @@ CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const rapidjson::Value &
     {
         if (!value["LoadBalancerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertDetailLoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertDetailLoadBalancer.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerId = string(value["LoadBalancerId"].GetString());
         m_loadBalancerIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const rapidjson::Value &
     {
         if (!value["LoadBalancerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertDetailLoadBalancer.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertDetailLoadBalancer.LoadBalancerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_loadBalancerName = string(value["LoadBalancerName"].GetString());
         m_loadBalancerNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const rapidjson::Value &
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CertDetailLoadBalancer.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertDetailLoadBalancer.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const rapidjson::Value &
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CertDetailLoadBalancer.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CertDetailLoadBalancer.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;

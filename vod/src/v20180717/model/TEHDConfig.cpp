@@ -35,7 +35,7 @@ CoreInternalOutcome TEHDConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TEHDConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TEHDConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TEHDConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxVideoBitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TEHDConfig.MaxVideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TEHDConfig.MaxVideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxVideoBitrate = value["MaxVideoBitrate"].GetUint64();
         m_maxVideoBitrateHasBeenSet = true;

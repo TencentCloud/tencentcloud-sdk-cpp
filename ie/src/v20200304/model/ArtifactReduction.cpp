@@ -35,7 +35,7 @@ CoreInternalOutcome ArtifactReduction::Deserialize(const rapidjson::Value &value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArtifactReduction.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArtifactReduction.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ArtifactReduction::Deserialize(const rapidjson::Value &value
     {
         if (!value["Algorithm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ArtifactReduction.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ArtifactReduction.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_algorithm = string(value["Algorithm"].GetString());
         m_algorithmHasBeenSet = true;

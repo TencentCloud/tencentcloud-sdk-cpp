@@ -44,7 +44,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["TxtName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.TxtName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.TxtName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_txtName = string(value["TxtName"].GetString());
         m_txtNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["TxtText"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.TxtText` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.TxtText` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_txtText = string(value["TxtText"].GetString());
         m_txtTextHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["ValidTo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.ValidTo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.ValidTo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_validTo = string(value["ValidTo"].GetString());
         m_validToHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["VerifyStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.VerifyStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.VerifyStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_verifyStatus = value["VerifyStatus"].GetUint64();
         m_verifyStatusHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdAt = string(value["CreatedAt"].GetString());
         m_createdAtHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["UpdatedAt"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updatedAt = string(value["UpdatedAt"].GetString());
         m_updatedAtHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["Appid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appid = value["Appid"].GetUint64();
         m_appidHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["VerifyUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.VerifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.VerifyUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyUrl = string(value["VerifyUrl"].GetString());
         m_verifyUrlHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value
     {
         if (!value["VerifyFileUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SitesVerification.VerifyFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SitesVerification.VerifyFileUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_verifyFileUrl = string(value["VerifyFileUrl"].GetString());
         m_verifyFileUrlHasBeenSet = true;

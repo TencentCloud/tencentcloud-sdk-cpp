@@ -37,7 +37,7 @@ CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextOutputRes.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputRes.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextOutputRes.ResultCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputRes.ResultCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCode = value["ResultCode"].GetInt64();
         m_resultCodeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextOutputRes.ResultMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputRes.ResultMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultMsg = string(value["ResultMsg"].GetString());
         m_resultMsgHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TextOutputRes.ResultType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextOutputRes.ResultType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_resultType = value["ResultType"].GetInt64();
         m_resultTypeHasBeenSet = true;

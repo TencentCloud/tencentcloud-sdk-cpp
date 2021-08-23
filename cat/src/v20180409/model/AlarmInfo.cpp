@@ -42,7 +42,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.ObjName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.ObjName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objName = string(value["ObjName"].GetString());
         m_objNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstOccurTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.FirstOccurTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.FirstOccurTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_firstOccurTime = string(value["FirstOccurTime"].GetString());
         m_firstOccurTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastOccurTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.LastOccurTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.LastOccurTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastOccurTime = string(value["LastOccurTime"].GetString());
         m_lastOccurTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.MetricValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.MetricValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricValue = string(value["MetricValue"].GetString());
         m_metricValueHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmInfo.ObjId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.ObjId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_objId = string(value["ObjId"].GetString());
         m_objIdHasBeenSet = true;

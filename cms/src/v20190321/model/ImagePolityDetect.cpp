@@ -40,7 +40,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     {
         if (!value["EvilType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     {
         if (!value["HitFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = value["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     if (value.HasMember("PolityLogoDetail") && !value["PolityLogoDetail"].IsNull())
     {
         if (!value["PolityLogoDetail"].IsArray())
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.PolityLogoDetail` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.PolityLogoDetail` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolityLogoDetail"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -79,7 +79,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     if (value.HasMember("FaceNames") && !value["FaceNames"].IsNull())
     {
         if (!value["FaceNames"].IsArray())
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.FaceNames` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.FaceNames` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FaceNames"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.Keywords` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.Keywords` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keywords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -105,7 +105,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     if (value.HasMember("PolityItems") && !value["PolityItems"].IsNull())
     {
         if (!value["PolityItems"].IsArray())
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.PolityItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.PolityItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PolityItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -119,7 +119,7 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
     {
         if (!value["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImagePolityDetect.Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetInt64();
         m_scoreHasBeenSet = true;

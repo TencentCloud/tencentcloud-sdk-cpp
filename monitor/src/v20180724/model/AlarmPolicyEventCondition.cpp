@@ -33,7 +33,7 @@ CoreInternalOutcome AlarmPolicyEventCondition::Deserialize(const rapidjson::Valu
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `AlarmPolicyEventCondition.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyEventCondition.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

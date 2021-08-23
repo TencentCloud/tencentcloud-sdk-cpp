@@ -37,7 +37,7 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const rap
     {
         if (!value["HeadConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.HeadConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskHeadTailResultOutput.HeadConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_headConfidence = value["HeadConfidence"].GetDouble();
         m_headConfidenceHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const rap
     {
         if (!value["HeadTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.HeadTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskHeadTailResultOutput.HeadTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_headTimeOffset = value["HeadTimeOffset"].GetDouble();
         m_headTimeOffsetHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const rap
     {
         if (!value["TailConfidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.TailConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskHeadTailResultOutput.TailConfidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_tailConfidence = value["TailConfidence"].GetDouble();
         m_tailConfidenceHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const rap
     {
         if (!value["TailTimeOffset"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `AiRecognitionTaskHeadTailResultOutput.TailTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskHeadTailResultOutput.TailTimeOffset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_tailTimeOffset = value["TailTimeOffset"].GetDouble();
         m_tailTimeOffsetHasBeenSet = true;

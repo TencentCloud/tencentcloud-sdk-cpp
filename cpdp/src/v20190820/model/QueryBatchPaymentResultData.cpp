@@ -40,7 +40,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     {
         if (!value["BatchId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.BatchId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.BatchId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_batchId = string(value["BatchId"].GetString());
         m_batchIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     {
         if (!value["TotalAmount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.TotalAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.TotalAmount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalAmount = value["TotalAmount"].GetInt64();
         m_totalAmountHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     {
         if (!value["ReqReserved"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.ReqReserved` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.ReqReserved` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reqReserved = string(value["ReqReserved"].GetString());
         m_reqReservedHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     {
         if (!value["TransferType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.TransferType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.TransferType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transferType = value["TransferType"].GetInt64();
         m_transferTypeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome QueryBatchPaymentResultData::Deserialize(const rapidjson::Va
     if (value.HasMember("TransferInfoList") && !value["TransferInfoList"].IsNull())
     {
         if (!value["TransferInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `QueryBatchPaymentResultData.TransferInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QueryBatchPaymentResultData.TransferInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TransferInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

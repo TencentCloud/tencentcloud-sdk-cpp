@@ -36,16 +36,16 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -56,11 +56,11 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -68,7 +68,7 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
     {
         if (!rsp["BlockedIPCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BlockedIPCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockedIPCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_blockedIPCount = rsp["BlockedIPCount"].GetUint64();
         m_blockedIPCountHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
     {
         if (!rsp["ClientIPField"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClientIPField` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientIPField` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIPField = string(rsp["ClientIPField"].GetString());
         m_clientIPFieldHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
     if (rsp.HasMember("BlockedIPList") && !rsp["BlockedIPList"].IsNull())
     {
         if (!rsp["BlockedIPList"].IsArray())
-            return CoreInternalOutcome(Error("response `BlockedIPList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `BlockedIPList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["BlockedIPList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

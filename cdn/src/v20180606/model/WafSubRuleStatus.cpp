@@ -35,7 +35,7 @@ CoreInternalOutcome WafSubRuleStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `WafSubRuleStatus.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WafSubRuleStatus.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome WafSubRuleStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubIds") && !value["SubIds"].IsNull())
     {
         if (!value["SubIds"].IsArray())
-            return CoreInternalOutcome(Error("response `WafSubRuleStatus.SubIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `WafSubRuleStatus.SubIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

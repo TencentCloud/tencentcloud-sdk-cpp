@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeScdnTopDataResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,18 +57,18 @@ CoreInternalOutcome DescribeScdnTopDataResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("TopTypeData") && !rsp["TopTypeData"].IsNull())
     {
         if (!rsp["TopTypeData"].IsArray())
-            return CoreInternalOutcome(Error("response `TopTypeData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopTypeData` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TopTypeData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeScdnTopDataResponse::Deserialize(const string &paylo
     if (rsp.HasMember("TopIpData") && !rsp["TopIpData"].IsNull())
     {
         if (!rsp["TopIpData"].IsArray())
-            return CoreInternalOutcome(Error("response `TopIpData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopIpData` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TopIpData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeScdnTopDataResponse::Deserialize(const string &paylo
     {
         if (!rsp["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(rsp["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome DescribeScdnTopDataResponse::Deserialize(const string &paylo
     if (rsp.HasMember("TopUrlData") && !rsp["TopUrlData"].IsNull())
     {
         if (!rsp["TopUrlData"].IsArray())
-            return CoreInternalOutcome(Error("response `TopUrlData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TopUrlData` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TopUrlData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

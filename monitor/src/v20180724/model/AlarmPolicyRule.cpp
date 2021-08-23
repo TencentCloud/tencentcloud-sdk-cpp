@@ -44,7 +44,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetricName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.MetricName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metricName = string(value["MetricName"].GetString());
         m_metricNameHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.Period` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetInt64();
         m_periodHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContinuePeriod"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.ContinuePeriod` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.ContinuePeriod` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_continuePeriod = value["ContinuePeriod"].GetInt64();
         m_continuePeriodHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NoticeFrequency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.NoticeFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.NoticeFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_noticeFrequency = value["NoticeFrequency"].GetInt64();
         m_noticeFrequencyHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsPowerNotice"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.IsPowerNotice` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.IsPowerNotice` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isPowerNotice = value["IsPowerNotice"].GetInt64();
         m_isPowerNoticeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Filter"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.Filter` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.Filter` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_filter.Deserialize(value["Filter"]);
@@ -131,7 +131,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Unit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.Unit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.Unit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unit = string(value["Unit"].GetString());
         m_unitHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AlarmPolicyRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;

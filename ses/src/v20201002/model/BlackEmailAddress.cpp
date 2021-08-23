@@ -35,7 +35,7 @@ CoreInternalOutcome BlackEmailAddress::Deserialize(const rapidjson::Value &value
     {
         if (!value["BounceTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlackEmailAddress.BounceTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlackEmailAddress.BounceTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bounceTime = string(value["BounceTime"].GetString());
         m_bounceTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome BlackEmailAddress::Deserialize(const rapidjson::Value &value
     {
         if (!value["EmailAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlackEmailAddress.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlackEmailAddress.EmailAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_emailAddress = string(value["EmailAddress"].GetString());
         m_emailAddressHasBeenSet = true;

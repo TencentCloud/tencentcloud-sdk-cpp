@@ -39,7 +39,7 @@ CoreInternalOutcome DiskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperationState"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskOperationLog.OperationState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskOperationLog.OperationState` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationState = string(value["OperationState"].GetString());
         m_operationStateHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DiskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskOperationLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskOperationLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome DiskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskOperationLog.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskOperationLog.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DiskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskOperationLog.Operation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskOperationLog.Operation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operation = string(value["Operation"].GetString());
         m_operationHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DiskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskOperationLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskOperationLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DiskOperationLog::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DiskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DiskOperationLog.DiskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiskOperationLog.DiskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskId = string(value["DiskId"].GetString());
         m_diskIdHasBeenSet = true;

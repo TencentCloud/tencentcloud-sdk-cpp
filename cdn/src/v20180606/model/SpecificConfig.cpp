@@ -35,7 +35,7 @@ CoreInternalOutcome SpecificConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mainland"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SpecificConfig.Mainland` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecificConfig.Mainland` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_mainland.Deserialize(value["Mainland"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome SpecificConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Overseas"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SpecificConfig.Overseas` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecificConfig.Overseas` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_overseas.Deserialize(value["Overseas"]);

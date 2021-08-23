@@ -44,7 +44,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ActionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.ActionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionType = string(value["ActionType"].GetString());
         m_actionTypeHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Amount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.Amount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_amount = value["Amount"].GetInt64();
         m_amountHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Balance"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.Balance` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.Balance` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_balance = value["Balance"].GetInt64();
         m_balanceHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["BillId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.BillId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.BillId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_billId = string(value["BillId"].GetString());
         m_billIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["OperationInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.OperationInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.OperationInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationInfo = string(value["OperationInfo"].GetString());
         m_operationInfoHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["OperationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operationTime = string(value["OperationTime"].GetString());
         m_operationTimeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Cash"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.Cash` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.Cash` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cash = value["Cash"].GetInt64();
         m_cashHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Incentive"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.Incentive` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.Incentive` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_incentive = value["Incentive"].GetInt64();
         m_incentiveHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Freezing"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.Freezing` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.Freezing` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_freezing = value["Freezing"].GetInt64();
         m_freezingHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["PayChannel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.PayChannel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.PayChannel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payChannel = string(value["PayChannel"].GetString());
         m_payChannelHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["DeductMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BillTransactionInfo.DeductMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BillTransactionInfo.DeductMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deductMode = string(value["DeductMode"].GetString());
         m_deductModeHasBeenSet = true;

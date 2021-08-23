@@ -50,7 +50,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["DirectConnectGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.DirectConnectGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.DirectConnectGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_directConnectGatewayId = string(value["DirectConnectGatewayId"].GetString());
         m_directConnectGatewayIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["DirectConnectGatewayName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.DirectConnectGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.DirectConnectGatewayName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_directConnectGatewayName = string(value["DirectConnectGatewayName"].GetString());
         m_directConnectGatewayNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["NetworkType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkType = string(value["NetworkType"].GetString());
         m_networkTypeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["NetworkInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.NetworkInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.NetworkInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkInstanceId = string(value["NetworkInstanceId"].GetString());
         m_networkInstanceIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["GatewayType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.GatewayType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.GatewayType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gatewayType = string(value["GatewayType"].GetString());
         m_gatewayTypeHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["DirectConnectGatewayIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.DirectConnectGatewayIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.DirectConnectGatewayIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_directConnectGatewayIp = string(value["DirectConnectGatewayIp"].GetString());
         m_directConnectGatewayIpHasBeenSet = true;
@@ -130,7 +130,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["CcnId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.CcnId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccnId = string(value["CcnId"].GetString());
         m_ccnIdHasBeenSet = true;
@@ -140,7 +140,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["CcnRouteType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.CcnRouteType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.CcnRouteType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ccnRouteType = string(value["CcnRouteType"].GetString());
         m_ccnRouteTypeHasBeenSet = true;
@@ -150,7 +150,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["EnableBGP"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.EnableBGP` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.EnableBGP` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableBGP = value["EnableBGP"].GetBool();
         m_enableBGPHasBeenSet = true;
@@ -160,7 +160,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["EnableBGPCommunity"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.EnableBGPCommunity` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.EnableBGPCommunity` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableBGPCommunity = value["EnableBGPCommunity"].GetBool();
         m_enableBGPCommunityHasBeenSet = true;
@@ -170,7 +170,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["NatGatewayId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.NatGatewayId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natGatewayId = string(value["NatGatewayId"].GetString());
         m_natGatewayIdHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     if (value.HasMember("VXLANSupport") && !value["VXLANSupport"].IsNull())
     {
         if (!value["VXLANSupport"].IsArray())
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.VXLANSupport` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.VXLANSupport` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VXLANSupport"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -193,7 +193,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["ModeType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.ModeType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.ModeType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modeType = string(value["ModeType"].GetString());
         m_modeTypeHasBeenSet = true;
@@ -203,7 +203,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["LocalZone"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.LocalZone` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.LocalZone` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_localZone = value["LocalZone"].GetBool();
         m_localZoneHasBeenSet = true;
@@ -213,7 +213,7 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DirectConnectGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome TaskContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CameraId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskContent.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskContent.CameraId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraId = value["CameraId"].GetUint64();
         m_cameraIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RTSP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskContent.RTSP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskContent.RTSP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rTSP = string(value["RTSP"].GetString());
         m_rTSPHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TaskContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskContent.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskContent.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

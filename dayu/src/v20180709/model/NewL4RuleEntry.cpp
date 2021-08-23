@@ -48,7 +48,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VirtualPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.VirtualPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_virtualPort = value["VirtualPort"].GetUint64();
         m_virtualPortHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourcePort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.SourcePort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.SourcePort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourcePort = value["SourcePort"].GetUint64();
         m_sourcePortHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.KeepTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.KeepTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_keepTime = value["KeepTime"].GetUint64();
         m_keepTimeHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SourceList") && !value["SourceList"].IsNull())
     {
         if (!value["SourceList"].IsArray())
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.SourceList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.SourceList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SourceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -108,7 +108,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LbType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.LbType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.LbType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_lbType = value["LbType"].GetUint64();
         m_lbTypeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepEnable"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.KeepEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.KeepEnable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_keepEnable = value["KeepEnable"].GetUint64();
         m_keepEnableHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sourceType = value["SourceType"].GetUint64();
         m_sourceTypeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleId = string(value["RuleId"].GetString());
         m_ruleIdHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemoveSwitch"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.RemoveSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.RemoveSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_removeSwitch = value["RemoveSwitch"].GetUint64();
         m_removeSwitchHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.Region` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.Region` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_region = value["Region"].GetUint64();
         m_regionHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -198,7 +198,7 @@ CoreInternalOutcome NewL4RuleEntry::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NewL4RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL4RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Image.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Image.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Image.ImageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Image.ImageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageName = string(value["ImageName"].GetString());
         m_imageNameHasBeenSet = true;

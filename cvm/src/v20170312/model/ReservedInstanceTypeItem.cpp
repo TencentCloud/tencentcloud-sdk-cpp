@@ -47,7 +47,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Gpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Gpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Gpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_gpu = value["Gpu"].GetUint64();
         m_gpuHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Fpga"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Fpga` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Fpga` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fpga = value["Fpga"].GetUint64();
         m_fpgaHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["StorageBlock"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.StorageBlock` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.StorageBlock` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_storageBlock = value["StorageBlock"].GetUint64();
         m_storageBlockHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["NetworkCard"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.NetworkCard` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.NetworkCard` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_networkCard = value["NetworkCard"].GetUint64();
         m_networkCardHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["MaxBandwidth"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.MaxBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.MaxBandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidth = value["MaxBandwidth"].GetDouble();
         m_maxBandwidthHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Frequency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Frequency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Frequency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_frequency = string(value["Frequency"].GetString());
         m_frequencyHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["CpuModelName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.CpuModelName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.CpuModelName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuModelName = string(value["CpuModelName"].GetString());
         m_cpuModelNameHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Pps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Pps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Pps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pps = value["Pps"].GetUint64();
         m_ppsHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Externals"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Externals` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Externals` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_externals.Deserialize(value["Externals"]);
@@ -174,7 +174,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     {
         if (!value["Remark"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_remark = string(value["Remark"].GetString());
         m_remarkHasBeenSet = true;
@@ -183,7 +183,7 @@ CoreInternalOutcome ReservedInstanceTypeItem::Deserialize(const rapidjson::Value
     if (value.HasMember("Prices") && !value["Prices"].IsNull())
     {
         if (!value["Prices"].IsArray())
-            return CoreInternalOutcome(Error("response `ReservedInstanceTypeItem.Prices` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstanceTypeItem.Prices` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Prices"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

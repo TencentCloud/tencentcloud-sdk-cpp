@@ -34,7 +34,7 @@ CoreInternalOutcome EventList::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Content") && !value["Content"].IsNull())
     {
         if (!value["Content"].IsArray())
-            return CoreInternalOutcome(Error("response `EventList.Content` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EventList.Content` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Content"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome EventList::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PeerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventList.PeerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventList.PeerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_peerId = string(value["PeerId"].GetString());
         m_peerIdHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["DPortStart"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.DPortStart` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.DPortStart` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dPortStart = value["DPortStart"].GetUint64();
         m_dPortStartHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["DPortEnd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.DPortEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.DPortEnd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_dPortEnd = value["DPortEnd"].GetUint64();
         m_dPortEndHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["SPortStart"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.SPortStart` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.SPortStart` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sPortStart = value["SPortStart"].GetUint64();
         m_sPortStartHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["SPortEnd"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.SPortEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.SPortEnd` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sPortEnd = value["SPortEnd"].GetUint64();
         m_sPortEndHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DDoSPolicyPortLimit::Deserialize(const rapidjson::Value &val
     {
         if (!value["Kind"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DDoSPolicyPortLimit.Kind` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSPolicyPortLimit.Kind` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_kind = value["Kind"].GetUint64();
         m_kindHasBeenSet = true;

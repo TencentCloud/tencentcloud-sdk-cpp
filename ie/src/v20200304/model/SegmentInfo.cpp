@@ -36,7 +36,7 @@ CoreInternalOutcome SegmentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FragmentTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SegmentInfo.FragmentTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentInfo.FragmentTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fragmentTime = value["FragmentTime"].GetInt64();
         m_fragmentTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SegmentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SegmentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SegmentInfo.SegmentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentInfo.SegmentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_segmentType = string(value["SegmentType"].GetString());
         m_segmentTypeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SegmentInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FragmentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SegmentInfo.FragmentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentInfo.FragmentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fragmentName = string(value["FragmentName"].GetString());
         m_fragmentNameHasBeenSet = true;

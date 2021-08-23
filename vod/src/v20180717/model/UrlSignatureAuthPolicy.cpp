@@ -35,7 +35,7 @@ CoreInternalOutcome UrlSignatureAuthPolicy::Deserialize(const rapidjson::Value &
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlSignatureAuthPolicy.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlSignatureAuthPolicy.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome UrlSignatureAuthPolicy::Deserialize(const rapidjson::Value &
     {
         if (!value["EncryptedKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UrlSignatureAuthPolicy.EncryptedKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UrlSignatureAuthPolicy.EncryptedKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_encryptedKey = string(value["EncryptedKey"].GetString());
         m_encryptedKeyHasBeenSet = true;

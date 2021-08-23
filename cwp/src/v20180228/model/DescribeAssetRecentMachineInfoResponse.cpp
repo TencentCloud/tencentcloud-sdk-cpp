@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeAssetRecentMachineInfoResponse::Deserialize(const st
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,18 +57,18 @@ CoreInternalOutcome DescribeAssetRecentMachineInfoResponse::Deserialize(const st
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("TotalList") && !rsp["TotalList"].IsNull())
     {
         if (!rsp["TotalList"].IsArray())
-            return CoreInternalOutcome(Error("response `TotalList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TotalList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TotalList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome DescribeAssetRecentMachineInfoResponse::Deserialize(const st
     if (rsp.HasMember("LiveList") && !rsp["LiveList"].IsNull())
     {
         if (!rsp["LiveList"].IsArray())
-            return CoreInternalOutcome(Error("response `LiveList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LiveList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["LiveList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -108,7 +108,7 @@ CoreInternalOutcome DescribeAssetRecentMachineInfoResponse::Deserialize(const st
     if (rsp.HasMember("OfflineList") && !rsp["OfflineList"].IsNull())
     {
         if (!rsp["OfflineList"].IsArray())
-            return CoreInternalOutcome(Error("response `OfflineList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OfflineList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["OfflineList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -128,7 +128,7 @@ CoreInternalOutcome DescribeAssetRecentMachineInfoResponse::Deserialize(const st
     if (rsp.HasMember("RiskList") && !rsp["RiskList"].IsNull())
     {
         if (!rsp["RiskList"].IsArray())
-            return CoreInternalOutcome(Error("response `RiskList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RiskList` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["RiskList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -34,7 +34,7 @@ CoreInternalOutcome MonitorMetricSeriesData::Deserialize(const rapidjson::Value 
     if (value.HasMember("Series") && !value["Series"].IsNull())
     {
         if (!value["Series"].IsArray())
-            return CoreInternalOutcome(Error("response `MonitorMetricSeriesData.Series` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MonitorMetricSeriesData.Series` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Series"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -54,7 +54,7 @@ CoreInternalOutcome MonitorMetricSeriesData::Deserialize(const rapidjson::Value 
     if (value.HasMember("Timestamp") && !value["Timestamp"].IsNull())
     {
         if (!value["Timestamp"].IsArray())
-            return CoreInternalOutcome(Error("response `MonitorMetricSeriesData.Timestamp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MonitorMetricSeriesData.Timestamp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Timestamp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

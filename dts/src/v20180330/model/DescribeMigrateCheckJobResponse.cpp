@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
     {
         if (!rsp["ErrorCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errorCode = rsp["ErrorCode"].GetInt64();
         m_errorCodeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
     {
         if (!rsp["ErrorMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorMessage = string(rsp["ErrorMessage"].GetString());
         m_errorMessageHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
     {
         if (!rsp["Progress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Progress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_progress = string(rsp["Progress"].GetString());
         m_progressHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeMigrateCheckJobResponse::Deserialize(const string &p
     {
         if (!rsp["CheckFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CheckFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CheckFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_checkFlag = rsp["CheckFlag"].GetInt64();
         m_checkFlagHasBeenSet = true;

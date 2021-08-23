@@ -41,7 +41,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.UsedVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.UsedVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_usedVolume = value["UsedVolume"].GetDouble();
         m_usedVolumeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicaSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetId = string(value["ReplicaSetId"].GetString());
         m_replicaSetIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplicaSetName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.ReplicaSetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.ReplicaSetName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetName = string(value["ReplicaSetName"].GetString());
         m_replicaSetNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Volume"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.Volume` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.Volume` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_volume = value["Volume"].GetUint64();
         m_volumeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OplogSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.OplogSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.OplogSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_oplogSize = value["OplogSize"].GetUint64();
         m_oplogSizeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecondaryNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.SecondaryNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.SecondaryNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_secondaryNum = value["SecondaryNum"].GetUint64();
         m_secondaryNumHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome ShardInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealReplicaSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShardInfo.RealReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShardInfo.RealReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realReplicaSetId = string(value["RealReplicaSetId"].GetString());
         m_realReplicaSetIdHasBeenSet = true;

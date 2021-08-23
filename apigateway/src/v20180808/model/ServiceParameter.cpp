@@ -40,7 +40,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Position"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.Position` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.Position` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_position = string(value["Position"].GetString());
         m_positionHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RelevantRequestParameterPosition"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.RelevantRequestParameterPosition` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.RelevantRequestParameterPosition` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relevantRequestParameterPosition = string(value["RelevantRequestParameterPosition"].GetString());
         m_relevantRequestParameterPositionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RelevantRequestParameterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.RelevantRequestParameterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.RelevantRequestParameterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relevantRequestParameterName = string(value["RelevantRequestParameterName"].GetString());
         m_relevantRequestParameterNameHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultValue = string(value["DefaultValue"].GetString());
         m_defaultValueHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RelevantRequestParameterDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.RelevantRequestParameterDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.RelevantRequestParameterDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relevantRequestParameterDesc = string(value["RelevantRequestParameterDesc"].GetString());
         m_relevantRequestParameterDescHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RelevantRequestParameterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceParameter.RelevantRequestParameterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceParameter.RelevantRequestParameterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_relevantRequestParameterType = string(value["RelevantRequestParameterType"].GetString());
         m_relevantRequestParameterTypeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome ConsumptionRegionSummaryDataItem::Deserialize(const rapidjso
     {
         if (!value["RegionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionRegionSummaryDataItem.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.RegionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = string(value["RegionId"].GetString());
         m_regionIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ConsumptionRegionSummaryDataItem::Deserialize(const rapidjso
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionRegionSummaryDataItem.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ConsumptionRegionSummaryDataItem::Deserialize(const rapidjso
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionRegionSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ConsumptionRegionSummaryDataItem::Deserialize(const rapidjso
     {
         if (!value["Trend"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionRegionSummaryDataItem.Trend` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.Trend` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_trend.Deserialize(value["Trend"]);
@@ -84,7 +84,7 @@ CoreInternalOutcome ConsumptionRegionSummaryDataItem::Deserialize(const rapidjso
     if (value.HasMember("Business") && !value["Business"].IsNull())
     {
         if (!value["Business"].IsArray())
-            return CoreInternalOutcome(Error("response `ConsumptionRegionSummaryDataItem.Business` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.Business` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Business"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

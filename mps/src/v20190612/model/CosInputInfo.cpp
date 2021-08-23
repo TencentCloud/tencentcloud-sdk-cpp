@@ -36,7 +36,7 @@ CoreInternalOutcome CosInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosInputInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosInputInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CosInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosInputInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosInputInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CosInputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Object"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosInputInfo.Object` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosInputInfo.Object` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_object = string(value["Object"].GetString());
         m_objectHasBeenSet = true;

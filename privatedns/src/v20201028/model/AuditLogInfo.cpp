@@ -36,7 +36,7 @@ CoreInternalOutcome AuditLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLogInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AuditLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OperatorUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLogInfo.OperatorUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogInfo.OperatorUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operatorUin = string(value["OperatorUin"].GetString());
         m_operatorUinHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AuditLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AuditLogInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AuditLogInfo.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome CCRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Skey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCRule.Skey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRule.Skey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_skey = string(value["Skey"].GetString());
         m_skeyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CCRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CCRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CCRule.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCRule.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;

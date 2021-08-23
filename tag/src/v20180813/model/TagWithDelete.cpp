@@ -36,7 +36,7 @@ CoreInternalOutcome TagWithDelete::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagWithDelete.TagKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagWithDelete.TagKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagKey = string(value["TagKey"].GetString());
         m_tagKeyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TagWithDelete::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagWithDelete.TagValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagWithDelete.TagValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagValue = string(value["TagValue"].GetString());
         m_tagValueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TagWithDelete::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CanDelete"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TagWithDelete.CanDelete` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagWithDelete.CanDelete` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_canDelete = value["CanDelete"].GetUint64();
         m_canDeleteHasBeenSet = true;

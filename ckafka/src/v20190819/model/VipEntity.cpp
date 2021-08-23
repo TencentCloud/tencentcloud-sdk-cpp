@@ -35,7 +35,7 @@ CoreInternalOutcome VipEntity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VipEntity.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VipEntity.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome VipEntity::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VipEntity.Vport` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VipEntity.Vport` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vport = string(value["Vport"].GetString());
         m_vportHasBeenSet = true;

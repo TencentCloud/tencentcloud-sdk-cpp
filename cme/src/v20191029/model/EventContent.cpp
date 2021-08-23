@@ -36,7 +36,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EventType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EventContent.EventType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.EventType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eventType = string(value["EventType"].GetString());
         m_eventTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StorageNewFileCreatedEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.StorageNewFileCreatedEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.StorageNewFileCreatedEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_storageNewFileCreatedEvent.Deserialize(value["StorageNewFileCreatedEvent"]);
@@ -63,7 +63,7 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectStreamConnectStatusChangedEvent"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EventContent.ProjectStreamConnectStatusChangedEvent` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventContent.ProjectStreamConnectStatusChangedEvent` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_projectStreamConnectStatusChangedEvent.Deserialize(value["ProjectStreamConnectStatusChangedEvent"]);

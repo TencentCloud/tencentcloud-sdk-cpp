@@ -41,7 +41,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternalAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.InternalAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.InternalAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internalAddr = string(value["InternalAddr"].GetString());
         m_internalAddrHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalAddr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.ExternalAddr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.ExternalAddr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalAddr = string(value["ExternalAddr"].GetString());
         m_externalAddrHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowlogInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowlogInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

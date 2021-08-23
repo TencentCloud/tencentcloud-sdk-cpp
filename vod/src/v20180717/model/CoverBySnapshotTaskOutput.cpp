@@ -34,7 +34,7 @@ CoreInternalOutcome CoverBySnapshotTaskOutput::Deserialize(const rapidjson::Valu
     {
         if (!value["CoverUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CoverBySnapshotTaskOutput.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CoverBySnapshotTaskOutput.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverUrl = string(value["CoverUrl"].GetString());
         m_coverUrlHasBeenSet = true;

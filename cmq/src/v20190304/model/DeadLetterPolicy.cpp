@@ -38,7 +38,7 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeadLetterQueueName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterPolicy.DeadLetterQueueName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.DeadLetterQueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadLetterQueueName = string(value["DeadLetterQueueName"].GetString());
         m_deadLetterQueueNameHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeadLetterQueue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterPolicy.DeadLetterQueue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.DeadLetterQueue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deadLetterQueue = string(value["DeadLetterQueue"].GetString());
         m_deadLetterQueueHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Policy"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterPolicy.Policy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.Policy` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_policy = value["Policy"].GetUint64();
         m_policyHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxTimeToLive"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterPolicy.MaxTimeToLive` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.MaxTimeToLive` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxTimeToLive = value["MaxTimeToLive"].GetUint64();
         m_maxTimeToLiveHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxReceiveCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeadLetterPolicy.MaxReceiveCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.MaxReceiveCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxReceiveCount = value["MaxReceiveCount"].GetUint64();
         m_maxReceiveCountHasBeenSet = true;

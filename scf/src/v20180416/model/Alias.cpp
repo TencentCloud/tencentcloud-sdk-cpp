@@ -39,7 +39,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FunctionVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.FunctionVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.FunctionVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_functionVersion = string(value["FunctionVersion"].GetString());
         m_functionVersionHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RoutingConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Alias.RoutingConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.RoutingConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_routingConfig.Deserialize(value["RoutingConfig"]);
@@ -76,7 +76,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(value["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome Alias::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Alias.ModTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Alias.ModTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modTime = string(value["ModTime"].GetString());
         m_modTimeHasBeenSet = true;

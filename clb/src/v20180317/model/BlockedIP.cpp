@@ -36,7 +36,7 @@ CoreInternalOutcome BlockedIP::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlockedIP.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockedIP.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome BlockedIP::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlockedIP.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockedIP.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome BlockedIP::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BlockedIP.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlockedIP.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;

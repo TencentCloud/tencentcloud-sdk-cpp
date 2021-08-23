@@ -38,7 +38,7 @@ CoreInternalOutcome AccessRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessRuleId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccessRule.AccessRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRule.AccessRuleId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accessRuleId = value["AccessRuleId"].GetUint64();
         m_accessRuleIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome AccessRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessRule.Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRule.Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome AccessRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccessRule.AccessMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRule.AccessMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_accessMode = value["AccessMode"].GetUint64();
         m_accessModeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome AccessRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Priority"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `AccessRule.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRule.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_priority = value["Priority"].GetUint64();
         m_priorityHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome AccessRule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

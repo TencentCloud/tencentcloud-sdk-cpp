@@ -36,7 +36,7 @@ CoreInternalOutcome LockInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `LockInfo.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LockInfo.DomainId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_domainId = value["DomainId"].GetUint64();
         m_domainIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome LockInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LockInfo.LockCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LockInfo.LockCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockCode = string(value["LockCode"].GetString());
         m_lockCodeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome LockInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockEnd"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LockInfo.LockEnd` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LockInfo.LockEnd` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockEnd = string(value["LockEnd"].GetString());
         m_lockEndHasBeenSet = true;

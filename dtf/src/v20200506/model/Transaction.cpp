@@ -48,7 +48,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TransactionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TransactionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transactionId = value["TransactionId"].GetInt64();
         m_transactionIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionBegin"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TransactionBegin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TransactionBegin` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transactionBegin = value["TransactionBegin"].GetInt64();
         m_transactionBeginHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TransactionEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TransactionEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transactionEnd = value["TransactionEnd"].GetInt64();
         m_transactionEndHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionCommit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TransactionCommit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TransactionCommit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transactionCommit = value["TransactionCommit"].GetInt64();
         m_transactionCommitHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionRollback"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TransactionRollback` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TransactionRollback` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transactionRollback = value["TransactionRollback"].GetInt64();
         m_transactionRollbackHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransactionError"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TransactionError` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TransactionError` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transactionError = value["TransactionError"].GetInt64();
         m_transactionErrorHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetInt64();
         m_timeoutHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.EndFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.EndFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_endFlag = value["EndFlag"].GetInt64();
         m_endFlagHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeoutFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.TimeoutFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.TimeoutFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeoutFlag = value["TimeoutFlag"].GetInt64();
         m_timeoutFlagHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Transaction.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Transaction.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Transaction.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BranchQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Transaction.BranchQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.BranchQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_branchQuantity = value["BranchQuantity"].GetInt64();
         m_branchQuantityHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome Transaction::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetryFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Transaction.RetryFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Transaction.RetryFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_retryFlag = value["RetryFlag"].GetBool();
         m_retryFlagHasBeenSet = true;

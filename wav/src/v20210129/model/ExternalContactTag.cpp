@@ -37,7 +37,7 @@ CoreInternalOutcome ExternalContactTag::Deserialize(const rapidjson::Value &valu
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactTag.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactTag.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ExternalContactTag::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactTag.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactTag.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ExternalContactTag::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactTag.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactTag.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ExternalContactTag::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TagId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExternalContactTag.TagId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExternalContactTag.TagId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = string(value["TagId"].GetString());
         m_tagIdHasBeenSet = true;

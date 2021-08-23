@@ -43,7 +43,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SpecCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.SpecCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.SpecCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_specCode = string(value["SpecCode"].GetString());
         m_specCodeHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VersionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.VersionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_versionName = string(value["VersionName"].GetString());
         m_versionNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetUint64();
         m_cpuHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.Memory` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetUint64();
         m_memoryHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.MaxStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.MaxStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxStorage = value["MaxStorage"].GetUint64();
         m_maxStorageHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinStorage"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.MinStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.MinStorage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minStorage = value["MinStorage"].GetUint64();
         m_minStorageHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Qps"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.Qps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qps = value["Qps"].GetUint64();
         m_qpsHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pid"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.Pid` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pid = value["Pid"].GetUint64();
         m_pidHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SpecItemInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

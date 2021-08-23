@@ -36,7 +36,7 @@ CoreInternalOutcome AddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIPAddressInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AddressInfo.PublicIPAddressInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressInfo.PublicIPAddressInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_publicIPAddressInfo.Deserialize(value["PublicIPAddressInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome AddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateIPAddressInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AddressInfo.PrivateIPAddressInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressInfo.PrivateIPAddressInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_privateIPAddressInfo.Deserialize(value["PrivateIPAddressInfo"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome AddressInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIPv6AddressInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AddressInfo.PublicIPv6AddressInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddressInfo.PublicIPv6AddressInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_publicIPv6AddressInfo.Deserialize(value["PublicIPv6AddressInfo"]);

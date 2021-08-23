@@ -37,7 +37,7 @@ CoreInternalOutcome DomainCreateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DomainCreateInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCreateInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DomainCreateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainCreateInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCreateInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DomainCreateInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Punycode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainCreateInfo.Punycode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainCreateInfo.Punycode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_punycode = string(value["Punycode"].GetString());
         m_punycodeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DomainCreateInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("GradeNsList") && !value["GradeNsList"].IsNull())
     {
         if (!value["GradeNsList"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainCreateInfo.GradeNsList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainCreateInfo.GradeNsList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GradeNsList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

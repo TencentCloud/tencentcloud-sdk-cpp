@@ -42,16 +42,16 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -62,18 +62,18 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("CompatibleRuntimes") && !rsp["CompatibleRuntimes"].IsNull())
     {
         if (!rsp["CompatibleRuntimes"].IsArray())
-            return CoreInternalOutcome(Error("response `CompatibleRuntimes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CompatibleRuntimes` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["CompatibleRuntimes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -87,7 +87,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["CodeSha256"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeSha256` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeSha256` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeSha256 = string(rsp["CodeSha256"].GetString());
         m_codeSha256HasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(rsp["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["AddTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_addTime = string(rsp["AddTime"].GetString());
         m_addTimeHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(rsp["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["LicenseInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LicenseInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LicenseInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_licenseInfo = string(rsp["LicenseInfo"].GetString());
         m_licenseInfoHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["LayerVersion"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LayerVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayerVersion` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_layerVersion = rsp["LayerVersion"].GetInt64();
         m_layerVersionHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["LayerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LayerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LayerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_layerName = string(rsp["LayerName"].GetString());
         m_layerNameHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;

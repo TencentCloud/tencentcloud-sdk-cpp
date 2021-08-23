@@ -36,7 +36,7 @@ CoreInternalOutcome SubProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubProjectInfo.SubProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubProjectInfo.SubProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subProjectId = string(value["SubProjectId"].GetString());
         m_subProjectIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SubProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubProjectName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubProjectInfo.SubProjectName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubProjectInfo.SubProjectName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subProjectName = string(value["SubProjectName"].GetString());
         m_subProjectNameHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SubProjectInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubProjectStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubProjectInfo.SubProjectStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubProjectInfo.SubProjectStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subProjectStatus = string(value["SubProjectStatus"].GetString());
         m_subProjectStatusHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.CompanyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.CompanyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = string(value["CompanyId"].GetString());
         m_companyIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShopId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.ShopId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.ShopId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = value["ShopId"].GetUint64();
         m_shopIdHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShopName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.ShopName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.ShopName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shopName = string(value["ShopName"].GetString());
         m_shopNameHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShopCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.ShopCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.ShopCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_shopCode = string(value["ShopCode"].GetString());
         m_shopCodeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(value["City"].GetString());
         m_cityHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome ShopInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CompanyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ShopInfo.CompanyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopInfo.CompanyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyName = string(value["CompanyName"].GetString());
         m_companyNameHasBeenSet = true;

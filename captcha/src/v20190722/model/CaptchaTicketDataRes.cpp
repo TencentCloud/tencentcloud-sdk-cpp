@@ -35,7 +35,7 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const rapidjson::Value &va
     if (value.HasMember("TicketAmountArray") && !value["TicketAmountArray"].IsNull())
     {
         if (!value["TicketAmountArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaTicketDataRes.TicketAmountArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaTicketDataRes.TicketAmountArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TicketAmountArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -55,7 +55,7 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const rapidjson::Value &va
     if (value.HasMember("TicketThroughArray") && !value["TicketThroughArray"].IsNull())
     {
         if (!value["TicketThroughArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaTicketDataRes.TicketThroughArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaTicketDataRes.TicketThroughArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TicketThroughArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const rapidjson::Value &va
     if (value.HasMember("TicketInterceptArray") && !value["TicketInterceptArray"].IsNull())
     {
         if (!value["TicketInterceptArray"].IsArray())
-            return CoreInternalOutcome(Error("response `CaptchaTicketDataRes.TicketInterceptArray` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CaptchaTicketDataRes.TicketInterceptArray` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TicketInterceptArray"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

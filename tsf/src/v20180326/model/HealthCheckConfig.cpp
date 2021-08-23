@@ -34,7 +34,7 @@ CoreInternalOutcome HealthCheckConfig::Deserialize(const rapidjson::Value &value
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthCheckConfig.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthCheckConfig.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;

@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
     {
         if (!rsp["EniQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EniQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EniQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eniQuantity = rsp["EniQuantity"].GetInt64();
         m_eniQuantityHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
     {
         if (!rsp["EniPrivateIpAddressQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EniPrivateIpAddressQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EniPrivateIpAddressQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_eniPrivateIpAddressQuantity = rsp["EniPrivateIpAddressQuantity"].GetInt64();
         m_eniPrivateIpAddressQuantityHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
     {
         if (!rsp["ExtendEniQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExtendEniQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtendEniQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_extendEniQuantity = rsp["ExtendEniQuantity"].GetInt64();
         m_extendEniQuantityHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
     {
         if (!rsp["ExtendEniPrivateIpAddressQuantity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExtendEniPrivateIpAddressQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtendEniPrivateIpAddressQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_extendEniPrivateIpAddressQuantity = rsp["ExtendEniPrivateIpAddressQuantity"].GetInt64();
         m_extendEniPrivateIpAddressQuantityHasBeenSet = true;

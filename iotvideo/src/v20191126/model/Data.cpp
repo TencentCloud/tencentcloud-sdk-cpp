@@ -38,7 +38,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Data.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["URI"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Data.URI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.URI` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uRI = string(value["URI"].GetString());
         m_uRIHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Data.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetInt64();
         m_expireTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VideoCodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Data.VideoCodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.VideoCodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoCodec = string(value["VideoCodec"].GetString());
         m_videoCodecHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioCodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Data.AudioCodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data.AudioCodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_audioCodec = string(value["AudioCodec"].GetString());
         m_audioCodecHasBeenSet = true;

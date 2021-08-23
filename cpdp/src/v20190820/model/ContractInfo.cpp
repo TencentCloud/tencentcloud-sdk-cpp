@@ -43,7 +43,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelContractMerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ChannelContractMerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ChannelContractMerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelContractMerchantId = string(value["ChannelContractMerchantId"].GetString());
         m_channelContractMerchantIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelContractSubMerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ChannelContractSubMerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ChannelContractSubMerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelContractSubMerchantId = string(value["ChannelContractSubMerchantId"].GetString());
         m_channelContractSubMerchantIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelContractAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ChannelContractAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ChannelContractAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelContractAppId = string(value["ChannelContractAppId"].GetString());
         m_channelContractAppIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ChannelContractSubAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ChannelContractSubAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ChannelContractSubAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_channelContractSubAppId = string(value["ChannelContractSubAppId"].GetString());
         m_channelContractSubAppIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutContractCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.OutContractCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.OutContractCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_outContractCode = string(value["OutContractCode"].GetString());
         m_outContractCodeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ExternalContractUserInfoList") && !value["ExternalContractUserInfoList"].IsNull())
     {
         if (!value["ExternalContractUserInfoList"].IsArray())
-            return CoreInternalOutcome(Error("response `ContractInfo.ExternalContractUserInfoList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ExternalContractUserInfoList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ExternalContractUserInfoList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -113,7 +113,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContractMethod"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ContractMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ContractMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractMethod = string(value["ContractMethod"].GetString());
         m_contractMethodHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContractSceneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ContractSceneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ContractSceneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_contractSceneId = string(value["ContractSceneId"].GetString());
         m_contractSceneIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.UserInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.UserInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_userInfo.Deserialize(value["UserInfo"]);
@@ -150,7 +150,7 @@ CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExternalContractData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContractInfo.ExternalContractData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContractInfo.ExternalContractData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_externalContractData = string(value["ExternalContractData"].GetString());
         m_externalContractDataHasBeenSet = true;

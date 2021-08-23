@@ -37,7 +37,7 @@ CoreInternalOutcome QuotaResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QuotaResource.ResourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuotaResource.ResourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceType = value["ResourceType"].GetUint64();
         m_resourceTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome QuotaResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HardLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QuotaResource.HardLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuotaResource.HardLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_hardLimit = value["HardLimit"].GetUint64();
         m_hardLimitHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome QuotaResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Remaining"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QuotaResource.Remaining` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuotaResource.Remaining` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_remaining = value["Remaining"].GetUint64();
         m_remainingHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome QuotaResource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtraInfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QuotaResource.ExtraInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QuotaResource.ExtraInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extraInfo = string(value["ExtraInfo"].GetString());
         m_extraInfoHasBeenSet = true;

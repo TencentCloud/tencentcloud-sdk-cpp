@@ -36,7 +36,7 @@ CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplaceMonitorUnhealthy"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceSettings.ReplaceMonitorUnhealthy` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.ReplaceMonitorUnhealthy` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_replaceMonitorUnhealthy = value["ReplaceMonitorUnhealthy"].GetBool();
         m_replaceMonitorUnhealthyHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScalingMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceSettings.ScalingMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.ScalingMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scalingMode = string(value["ScalingMode"].GetString());
         m_scalingModeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReplaceLoadBalancerUnhealthy"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ServiceSettings.ReplaceLoadBalancerUnhealthy` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.ReplaceLoadBalancerUnhealthy` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_replaceLoadBalancerUnhealthy = value["ReplaceLoadBalancerUnhealthy"].GetBool();
         m_replaceLoadBalancerUnhealthyHasBeenSet = true;

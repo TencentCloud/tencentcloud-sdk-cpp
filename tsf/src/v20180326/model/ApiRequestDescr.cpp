@@ -39,7 +39,7 @@ CoreInternalOutcome ApiRequestDescr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRequestDescr.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRequestDescr.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ApiRequestDescr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRequestDescr.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRequestDescr.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ApiRequestDescr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["In"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRequestDescr.In` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRequestDescr.In` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_in = string(value["In"].GetString());
         m_inHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ApiRequestDescr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRequestDescr.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRequestDescr.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ApiRequestDescr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Required"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ApiRequestDescr.Required` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRequestDescr.Required` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_required = value["Required"].GetBool();
         m_requiredHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ApiRequestDescr::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DefaultValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApiRequestDescr.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiRequestDescr.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_defaultValue = string(value["DefaultValue"].GetString());
         m_defaultValueHasBeenSet = true;

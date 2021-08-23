@@ -44,7 +44,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TableInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TableInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableInstanceId = string(value["TableInstanceId"].GetString());
         m_tableInstanceIdHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TableType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TableType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableType = string(value["TableType"].GetString());
         m_tableTypeHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TableIdlType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TableIdlType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableIdlType = string(value["TableIdlType"].GetString());
         m_tableIdlTypeHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["Error"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.Error` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.Error` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_error.Deserialize(value["Error"]);
@@ -120,7 +120,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     if (value.HasMember("TaskIds") && !value["TaskIds"].IsNull())
     {
         if (!value["TaskIds"].IsArray())
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TaskIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TaskIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TaskIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -134,7 +134,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["SuccKeyNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.SuccKeyNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.SuccKeyNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_succKeyNum = value["SuccKeyNum"].GetUint64();
         m_succKeyNumHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome TableRollbackResultNew::Deserialize(const rapidjson::Value &
     {
         if (!value["TotalKeyNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TableRollbackResultNew.TotalKeyNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableRollbackResultNew.TotalKeyNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalKeyNum = value["TotalKeyNum"].GetUint64();
         m_totalKeyNumHasBeenSet = true;

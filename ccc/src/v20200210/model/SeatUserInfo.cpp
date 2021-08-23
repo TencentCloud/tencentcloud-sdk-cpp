@@ -40,7 +40,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mail"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.Mail` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.Mail` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Phone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.Phone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phone = string(value["Phone"].GetString());
         m_phoneHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Nick"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.Nick` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nick = string(value["Nick"].GetString());
         m_nickHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userId = string(value["UserId"].GetString());
         m_userIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SkillGroupNameList") && !value["SkillGroupNameList"].IsNull())
     {
         if (!value["SkillGroupNameList"].IsArray())
-            return CoreInternalOutcome(Error("response `SeatUserInfo.SkillGroupNameList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.SkillGroupNameList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SkillGroupNameList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -103,7 +103,7 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StaffNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SeatUserInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_staffNumber = string(value["StaffNumber"].GetString());
         m_staffNumberHasBeenSet = true;

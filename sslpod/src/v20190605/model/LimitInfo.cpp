@@ -36,7 +36,7 @@ CoreInternalOutcome LimitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LimitInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LimitInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome LimitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LimitInfo.Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LimitInfo.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome LimitInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Sent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LimitInfo.Sent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LimitInfo.Sent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sent = value["Sent"].GetInt64();
         m_sentHasBeenSet = true;

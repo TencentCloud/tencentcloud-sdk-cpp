@@ -45,16 +45,16 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceNum = string(rsp["InvoiceNum"].GetString());
         m_invoiceNumHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceCode = string(rsp["InvoiceCode"].GetString());
         m_invoiceCodeHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(rsp["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Fare"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Fare` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Fare` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fare = string(rsp["Fare"].GetString());
         m_fareHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["GetOnTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GetOnTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GetOnTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_getOnTime = string(rsp["GetOnTime"].GetString());
         m_getOnTimeHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["GetOffTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GetOffTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GetOffTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_getOffTime = string(rsp["GetOffTime"].GetString());
         m_getOffTimeHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Distance"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Distance` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Distance` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_distance = string(rsp["Distance"].GetString());
         m_distanceHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(rsp["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["PlateNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlateNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlateNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_plateNumber = string(rsp["PlateNumber"].GetString());
         m_plateNumberHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["InvoiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invoiceType = string(rsp["InvoiceType"].GetString());
         m_invoiceTypeHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(rsp["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
     {
         if (!rsp["City"].IsString())
         {
-            return CoreInternalOutcome(Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_city = string(rsp["City"].GetString());
         m_cityHasBeenSet = true;

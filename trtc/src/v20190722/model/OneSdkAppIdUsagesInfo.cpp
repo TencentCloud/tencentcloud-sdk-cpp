@@ -36,7 +36,7 @@ CoreInternalOutcome OneSdkAppIdUsagesInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["TotalNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OneSdkAppIdUsagesInfo.TotalNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OneSdkAppIdUsagesInfo.TotalNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalNum = value["TotalNum"].GetUint64();
         m_totalNumHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OneSdkAppIdUsagesInfo::Deserialize(const rapidjson::Value &v
     if (value.HasMember("SdkAppIdTrtcTimeUsages") && !value["SdkAppIdTrtcTimeUsages"].IsNull())
     {
         if (!value["SdkAppIdTrtcTimeUsages"].IsArray())
-            return CoreInternalOutcome(Error("response `OneSdkAppIdUsagesInfo.SdkAppIdTrtcTimeUsages` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OneSdkAppIdUsagesInfo.SdkAppIdTrtcTimeUsages` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SdkAppIdTrtcTimeUsages"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -66,7 +66,7 @@ CoreInternalOutcome OneSdkAppIdUsagesInfo::Deserialize(const rapidjson::Value &v
     {
         if (!value["SdkAppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OneSdkAppIdUsagesInfo.SdkAppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OneSdkAppIdUsagesInfo.SdkAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sdkAppId = string(value["SdkAppId"].GetString());
         m_sdkAppIdHasBeenSet = true;

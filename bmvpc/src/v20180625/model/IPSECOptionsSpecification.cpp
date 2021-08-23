@@ -40,7 +40,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["PfsDhGroup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.PfsDhGroup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.PfsDhGroup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pfsDhGroup = string(value["PfsDhGroup"].GetString());
         m_pfsDhGroupHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["IPSECSaLifetimeTraffic"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.IPSECSaLifetimeTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.IPSECSaLifetimeTraffic` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iPSECSaLifetimeTraffic = value["IPSECSaLifetimeTraffic"].GetUint64();
         m_iPSECSaLifetimeTrafficHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["EncryptAlgorithm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.EncryptAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.EncryptAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_encryptAlgorithm = string(value["EncryptAlgorithm"].GetString());
         m_encryptAlgorithmHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["IntegrityAlgorith"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.IntegrityAlgorith` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.IntegrityAlgorith` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_integrityAlgorith = string(value["IntegrityAlgorith"].GetString());
         m_integrityAlgorithHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["IPSECSaLifetimeSeconds"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.IPSECSaLifetimeSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.IPSECSaLifetimeSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_iPSECSaLifetimeSeconds = value["IPSECSaLifetimeSeconds"].GetUint64();
         m_iPSECSaLifetimeSecondsHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["SecurityProto"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.SecurityProto` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.SecurityProto` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_securityProto = string(value["SecurityProto"].GetString());
         m_securityProtoHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Valu
     {
         if (!value["EncapMode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.EncapMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPSECOptionsSpecification.EncapMode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_encapMode = string(value["EncapMode"].GetString());
         m_encapModeHasBeenSet = true;

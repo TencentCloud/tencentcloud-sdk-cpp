@@ -36,7 +36,7 @@ CoreInternalOutcome ConflictSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConflictSourceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConflictSource.ConflictSourceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConflictSource.ConflictSourceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_conflictSourceId = string(value["ConflictSourceId"].GetString());
         m_conflictSourceIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ConflictSource::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourceItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConflictSource.SourceItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConflictSource.SourceItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourceItem = string(value["SourceItem"].GetString());
         m_sourceItemHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome ConflictSource::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ConflictItemSet") && !value["ConflictItemSet"].IsNull())
     {
         if (!value["ConflictItemSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ConflictSource.ConflictItemSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ConflictSource.ConflictItemSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ConflictItemSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

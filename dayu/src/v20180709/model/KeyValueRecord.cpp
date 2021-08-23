@@ -33,7 +33,7 @@ CoreInternalOutcome KeyValueRecord::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Record") && !value["Record"].IsNull())
     {
         if (!value["Record"].IsArray())
-            return CoreInternalOutcome(Error("response `KeyValueRecord.Record` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `KeyValueRecord.Record` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Record"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

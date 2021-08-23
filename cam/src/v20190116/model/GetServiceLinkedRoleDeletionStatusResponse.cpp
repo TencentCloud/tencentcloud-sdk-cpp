@@ -37,16 +37,16 @@ CoreInternalOutcome GetServiceLinkedRoleDeletionStatusResponse::Deserialize(cons
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome GetServiceLinkedRoleDeletionStatusResponse::Deserialize(cons
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome GetServiceLinkedRoleDeletionStatusResponse::Deserialize(cons
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome GetServiceLinkedRoleDeletionStatusResponse::Deserialize(cons
     {
         if (!rsp["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(rsp["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome GetServiceLinkedRoleDeletionStatusResponse::Deserialize(cons
     {
         if (!rsp["ServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceType = string(rsp["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome GetServiceLinkedRoleDeletionStatusResponse::Deserialize(cons
     {
         if (!rsp["ServiceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceName = string(rsp["ServiceName"].GetString());
         m_serviceNameHasBeenSet = true;

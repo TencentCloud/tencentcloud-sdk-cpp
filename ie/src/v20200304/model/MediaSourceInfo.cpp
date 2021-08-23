@@ -36,7 +36,7 @@ CoreInternalOutcome MediaSourceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaSourceInfo.DownInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSourceInfo.DownInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_downInfo.Deserialize(value["DownInfo"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome MediaSourceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSourceInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSourceInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome MediaSourceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaSourceInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaSourceInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

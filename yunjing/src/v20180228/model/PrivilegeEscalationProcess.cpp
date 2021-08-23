@@ -51,7 +51,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["Uuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Uuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_quuid = string(value["Quuid"].GetString());
         m_quuidHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["Hostip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.Hostip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Hostip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostip = string(value["Hostip"].GetString());
         m_hostipHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["FullPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.FullPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.FullPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fullPath = string(value["FullPath"].GetString());
         m_fullPathHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["CmdLine"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cmdLine = string(value["CmdLine"].GetString());
         m_cmdLineHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["UserName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.UserName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userName = string(value["UserName"].GetString());
         m_userNameHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["UserGroup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.UserGroup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.UserGroup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_userGroup = string(value["UserGroup"].GetString());
         m_userGroupHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ProcFilePrivilege"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ProcFilePrivilege` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ProcFilePrivilege` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procFilePrivilege = string(value["ProcFilePrivilege"].GetString());
         m_procFilePrivilegeHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ParentProcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ParentProcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ParentProcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcName = string(value["ParentProcName"].GetString());
         m_parentProcNameHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ParentProcUser"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ParentProcUser` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ParentProcUser` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcUser = string(value["ParentProcUser"].GetString());
         m_parentProcUserHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ParentProcGroup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ParentProcGroup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ParentProcGroup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcGroup = string(value["ParentProcGroup"].GetString());
         m_parentProcGroupHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ParentProcPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ParentProcPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ParentProcPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_parentProcPath = string(value["ParentProcPath"].GetString());
         m_parentProcPathHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["ProcTree"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.ProcTree` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.ProcTree` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_procTree = string(value["ProcTree"].GetString());
         m_procTreeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
     {
         if (!value["MachineName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeEscalationProcess.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.MachineName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_machineName = string(value["MachineName"].GetString());
         m_machineNameHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome AccountQuota::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PostPaidQuotaSet") && !value["PostPaidQuotaSet"].IsNull())
     {
         if (!value["PostPaidQuotaSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountQuota.PostPaidQuotaSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountQuota.PostPaidQuotaSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PostPaidQuotaSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -57,7 +57,7 @@ CoreInternalOutcome AccountQuota::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("PrePaidQuotaSet") && !value["PrePaidQuotaSet"].IsNull())
     {
         if (!value["PrePaidQuotaSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountQuota.PrePaidQuotaSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountQuota.PrePaidQuotaSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["PrePaidQuotaSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome AccountQuota::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SpotPaidQuotaSet") && !value["SpotPaidQuotaSet"].IsNull())
     {
         if (!value["SpotPaidQuotaSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountQuota.SpotPaidQuotaSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountQuota.SpotPaidQuotaSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SpotPaidQuotaSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -97,7 +97,7 @@ CoreInternalOutcome AccountQuota::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ImageQuotaSet") && !value["ImageQuotaSet"].IsNull())
     {
         if (!value["ImageQuotaSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountQuota.ImageQuotaSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountQuota.ImageQuotaSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ImageQuotaSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -117,7 +117,7 @@ CoreInternalOutcome AccountQuota::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DisasterRecoverGroupQuotaSet") && !value["DisasterRecoverGroupQuotaSet"].IsNull())
     {
         if (!value["DisasterRecoverGroupQuotaSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountQuota.DisasterRecoverGroupQuotaSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountQuota.DisasterRecoverGroupQuotaSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DisasterRecoverGroupQuotaSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

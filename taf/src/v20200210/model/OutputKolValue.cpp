@@ -37,7 +37,7 @@ CoreInternalOutcome OutputKolValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputKolValue.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputKolValue.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome OutputKolValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsCheck"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputKolValue.IsCheck` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputKolValue.IsCheck` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isCheck = value["IsCheck"].GetInt64();
         m_isCheckHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome OutputKolValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FraudPScore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputKolValue.FraudPScore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputKolValue.FraudPScore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fraudPScore = value["FraudPScore"].GetInt64();
         m_fraudPScoreHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome OutputKolValue::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilPScore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputKolValue.EvilPScore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputKolValue.EvilPScore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_evilPScore = value["EvilPScore"].GetInt64();
         m_evilPScoreHasBeenSet = true;

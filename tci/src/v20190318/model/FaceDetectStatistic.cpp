@@ -41,7 +41,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["FaceSizeRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FaceSizeRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.FaceSizeRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_faceSizeRatio = value["FaceSizeRatio"].GetDouble();
         m_faceSizeRatioHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["FrontalFaceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.FrontalFaceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_frontalFaceCount = value["FrontalFaceCount"].GetInt64();
         m_frontalFaceCountHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["FrontalFaceRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.FrontalFaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_frontalFaceRatio = value["FrontalFaceRatio"].GetDouble();
         m_frontalFaceRatioHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["FrontalFaceRealRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.FrontalFaceRealRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.FrontalFaceRealRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_frontalFaceRealRatio = value["FrontalFaceRealRatio"].GetDouble();
         m_frontalFaceRealRatioHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["PersonId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.PersonId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personId = string(value["PersonId"].GetString());
         m_personIdHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["SideFaceCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.SideFaceCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sideFaceCount = value["SideFaceCount"].GetInt64();
         m_sideFaceCountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["SideFaceRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.SideFaceRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sideFaceRatio = value["SideFaceRatio"].GetDouble();
         m_sideFaceRatioHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &val
     {
         if (!value["SideFaceRealRatio"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FaceDetectStatistic.SideFaceRealRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetectStatistic.SideFaceRealRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_sideFaceRealRatio = value["SideFaceRealRatio"].GetDouble();
         m_sideFaceRealRatioHasBeenSet = true;

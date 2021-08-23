@@ -35,7 +35,7 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Lat"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Coordinate.Lat` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Lat` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lat = value["Lat"].GetDouble();
         m_latHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Lng"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Coordinate.Lng` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Lng` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lng = value["Lng"].GetDouble();
         m_lngHasBeenSet = true;

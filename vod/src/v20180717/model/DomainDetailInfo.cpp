@@ -40,7 +40,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AccelerateAreaInfos") && !value["AccelerateAreaInfos"].IsNull())
     {
         if (!value["AccelerateAreaInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.AccelerateAreaInfos` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.AccelerateAreaInfos` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AccelerateAreaInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -70,7 +70,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeployStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.DeployStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.DeployStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deployStatus = string(value["DeployStatus"].GetString());
         m_deployStatusHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HTTPSConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.HTTPSConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.HTTPSConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hTTPSConfig.Deserialize(value["HTTPSConfig"]);
@@ -97,7 +97,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UrlSignatureAuthPolicy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.UrlSignatureAuthPolicy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.UrlSignatureAuthPolicy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_urlSignatureAuthPolicy.Deserialize(value["UrlSignatureAuthPolicy"]);
@@ -114,7 +114,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RefererAuthPolicy"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.RefererAuthPolicy` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.RefererAuthPolicy` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_refererAuthPolicy.Deserialize(value["RefererAuthPolicy"]);
@@ -131,7 +131,7 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainDetailInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

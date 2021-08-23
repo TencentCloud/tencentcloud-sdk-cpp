@@ -37,7 +37,7 @@ CoreInternalOutcome BackupDownloadInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome BackupDownloadInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FileSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadInfo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadInfo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_fileSize = value["FileSize"].GetUint64();
         m_fileSizeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome BackupDownloadInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadInfo.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadInfo.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadUrl = string(value["DownloadUrl"].GetString());
         m_downloadUrlHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome BackupDownloadInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InnerDownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadInfo.InnerDownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadInfo.InnerDownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_innerDownloadUrl = string(value["InnerDownloadUrl"].GetString());
         m_innerDownloadUrlHasBeenSet = true;

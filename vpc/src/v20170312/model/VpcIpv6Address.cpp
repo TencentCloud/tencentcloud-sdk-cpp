@@ -37,7 +37,7 @@ CoreInternalOutcome VpcIpv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6Address"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcIpv6Address.Ipv6Address` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcIpv6Address.Ipv6Address` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6Address = string(value["Ipv6Address"].GetString());
         m_ipv6AddressHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome VpcIpv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CidrBlock"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcIpv6Address.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcIpv6Address.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome VpcIpv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6AddressType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcIpv6Address.Ipv6AddressType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcIpv6Address.Ipv6AddressType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6AddressType = string(value["Ipv6AddressType"].GetString());
         m_ipv6AddressTypeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome VpcIpv6Address::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcIpv6Address.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcIpv6Address.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

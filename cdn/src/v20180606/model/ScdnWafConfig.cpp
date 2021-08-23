@@ -40,7 +40,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(value["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorPage"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.ErrorPage` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.ErrorPage` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_errorPage.Deserialize(value["ErrorPage"]);
@@ -77,7 +77,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WebShellSwitch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.WebShellSwitch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.WebShellSwitch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_webShellSwitch = string(value["WebShellSwitch"].GetString());
         m_webShellSwitchHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
     {
         if (!value["Rules"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.Rules` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.Rules` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Rules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Level"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.Level` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_level = value["Level"].GetInt64();
         m_levelHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome ScdnWafConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubRuleSwitch") && !value["SubRuleSwitch"].IsNull())
     {
         if (!value["SubRuleSwitch"].IsArray())
-            return CoreInternalOutcome(Error("response `ScdnWafConfig.SubRuleSwitch` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ScdnWafConfig.SubRuleSwitch` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubRuleSwitch"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

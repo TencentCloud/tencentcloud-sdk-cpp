@@ -35,7 +35,7 @@ CoreInternalOutcome AudioSegments::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OffsetTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioSegments.OffsetTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioSegments.OffsetTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offsetTime = string(value["OffsetTime"].GetString());
         m_offsetTimeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome AudioSegments::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Result"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioSegments.Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioSegments.Result` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_result.Deserialize(value["Result"]);

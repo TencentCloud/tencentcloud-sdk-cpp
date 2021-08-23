@@ -36,7 +36,7 @@ CoreInternalOutcome ResourceServiceInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceServiceInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceServiceInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome ResourceServiceInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ExpireTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ResourceServiceInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceServiceInfo.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = value["ExpireTime"].GetUint64();
         m_expireTimeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome ResourceServiceInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceServiceInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceServiceInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;

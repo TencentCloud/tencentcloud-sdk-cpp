@@ -35,7 +35,7 @@ CoreInternalOutcome InstanceConfs::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DailyInspection"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceConfs.DailyInspection` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceConfs.DailyInspection` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dailyInspection = string(value["DailyInspection"].GetString());
         m_dailyInspectionHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome InstanceConfs::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OverviewDisplay"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceConfs.OverviewDisplay` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceConfs.OverviewDisplay` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_overviewDisplay = string(value["OverviewDisplay"].GetString());
         m_overviewDisplayHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome MediaCuttingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingInfo.TimeInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingInfo.TimeInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_timeInfo.Deserialize(value["TimeInfo"]);
@@ -54,7 +54,7 @@ CoreInternalOutcome MediaCuttingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TargetInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingInfo.TargetInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingInfo.TargetInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_targetInfo.Deserialize(value["TargetInfo"]);
@@ -71,7 +71,7 @@ CoreInternalOutcome MediaCuttingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutForm"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingInfo.OutForm` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingInfo.OutForm` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_outForm.Deserialize(value["OutForm"]);
@@ -88,7 +88,7 @@ CoreInternalOutcome MediaCuttingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultListSaveType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaCuttingInfo.ResultListSaveType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingInfo.ResultListSaveType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resultListSaveType = string(value["ResultListSaveType"].GetString());
         m_resultListSaveTypeHasBeenSet = true;

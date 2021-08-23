@@ -38,7 +38,7 @@ CoreInternalOutcome VodVideoStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodVideoStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodVideoStreamItem.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome VodVideoStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodVideoStreamItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodVideoStreamItem.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome VodVideoStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodVideoStreamItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodVideoStreamItem.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome VodVideoStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VodVideoStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodVideoStreamItem.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome VodVideoStreamItem::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VodVideoStreamItem.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VodVideoStreamItem.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;

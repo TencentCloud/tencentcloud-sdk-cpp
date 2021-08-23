@@ -42,7 +42,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.ImageInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.ImageInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_imageInfo.Deserialize(value["ImageInfo"]);
@@ -59,7 +59,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageUrl = string(value["ImageUrl"].GetString());
         m_imageUrlHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageThumbUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.ImageThumbUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.ImageThumbUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageThumbUrl = string(value["ImageThumbUrl"].GetString());
         m_imageThumbUrlHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderId = string(value["OrderId"].GetString());
         m_orderIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OrderCreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.OrderCreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.OrderCreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_orderCreateTime = string(value["OrderCreateTime"].GetString());
         m_orderCreateTimeHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownloadId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.DownloadId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.DownloadId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadId = string(value["DownloadId"].GetString());
         m_downloadIdHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownloadTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.DownloadTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.DownloadTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadTime = string(value["DownloadTime"].GetString());
         m_downloadTimeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ConsumeType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.ConsumeType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.ConsumeType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_consumeType = value["ConsumeType"].GetInt64();
         m_consumeTypeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FirstDownload"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DownloadInfo.FirstDownload` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DownloadInfo.FirstDownload` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_firstDownload = value["FirstDownload"].GetBool();
         m_firstDownloadHasBeenSet = true;

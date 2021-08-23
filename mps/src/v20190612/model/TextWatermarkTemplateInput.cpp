@@ -37,7 +37,7 @@ CoreInternalOutcome TextWatermarkTemplateInput::Deserialize(const rapidjson::Val
     {
         if (!value["FontType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextWatermarkTemplateInput.FontType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWatermarkTemplateInput.FontType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fontType = string(value["FontType"].GetString());
         m_fontTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome TextWatermarkTemplateInput::Deserialize(const rapidjson::Val
     {
         if (!value["FontSize"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextWatermarkTemplateInput.FontSize` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWatermarkTemplateInput.FontSize` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fontSize = string(value["FontSize"].GetString());
         m_fontSizeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome TextWatermarkTemplateInput::Deserialize(const rapidjson::Val
     {
         if (!value["FontColor"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TextWatermarkTemplateInput.FontColor` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWatermarkTemplateInput.FontColor` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fontColor = string(value["FontColor"].GetString());
         m_fontColorHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome TextWatermarkTemplateInput::Deserialize(const rapidjson::Val
     {
         if (!value["FontAlpha"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TextWatermarkTemplateInput.FontAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextWatermarkTemplateInput.FontAlpha` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fontAlpha = value["FontAlpha"].GetDouble();
         m_fontAlphaHasBeenSet = true;

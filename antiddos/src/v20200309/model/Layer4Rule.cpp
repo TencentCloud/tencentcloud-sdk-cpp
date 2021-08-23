@@ -38,7 +38,7 @@ CoreInternalOutcome Layer4Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BackendPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Layer4Rule.BackendPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Layer4Rule.BackendPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_backendPort = value["BackendPort"].GetUint64();
         m_backendPortHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome Layer4Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FrontendPort"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Layer4Rule.FrontendPort` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Layer4Rule.FrontendPort` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_frontendPort = value["FrontendPort"].GetUint64();
         m_frontendPortHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome Layer4Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Layer4Rule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Layer4Rule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Layer4Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RealServers") && !value["RealServers"].IsNull())
     {
         if (!value["RealServers"].IsArray())
-            return CoreInternalOutcome(Error("response `Layer4Rule.RealServers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Layer4Rule.RealServers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RealServers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -87,7 +87,7 @@ CoreInternalOutcome Layer4Rule::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InstanceDetails") && !value["InstanceDetails"].IsNull())
     {
         if (!value["InstanceDetails"].IsArray())
-            return CoreInternalOutcome(Error("response `Layer4Rule.InstanceDetails` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Layer4Rule.InstanceDetails` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InstanceDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

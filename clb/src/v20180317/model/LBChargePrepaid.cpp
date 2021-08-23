@@ -35,7 +35,7 @@ CoreInternalOutcome LBChargePrepaid::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewFlag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LBChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LBChargePrepaid.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = string(value["RenewFlag"].GetString());
         m_renewFlagHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LBChargePrepaid::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LBChargePrepaid.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LBChargePrepaid.Period` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_period = value["Period"].GetInt64();
         m_periodHasBeenSet = true;

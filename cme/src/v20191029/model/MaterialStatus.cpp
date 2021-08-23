@@ -34,7 +34,7 @@ CoreInternalOutcome MaterialStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EditorUsableStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MaterialStatus.EditorUsableStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaterialStatus.EditorUsableStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_editorUsableStatus = string(value["EditorUsableStatus"].GetString());
         m_editorUsableStatusHasBeenSet = true;

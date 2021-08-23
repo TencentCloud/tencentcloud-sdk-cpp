@@ -37,7 +37,7 @@ CoreInternalOutcome DDoSGeoIPBlockConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["RegionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSGeoIPBlockConfig.RegionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIPBlockConfig.RegionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionType = string(value["RegionType"].GetString());
         m_regionTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DDoSGeoIPBlockConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSGeoIPBlockConfig.Action` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIPBlockConfig.Action` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_action = string(value["Action"].GetString());
         m_actionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DDoSGeoIPBlockConfig::Deserialize(const rapidjson::Value &va
     {
         if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DDoSGeoIPBlockConfig.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIPBlockConfig.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome DDoSGeoIPBlockConfig::Deserialize(const rapidjson::Value &va
     if (value.HasMember("AreaList") && !value["AreaList"].IsNull())
     {
         if (!value["AreaList"].IsArray())
-            return CoreInternalOutcome(Error("response `DDoSGeoIPBlockConfig.AreaList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIPBlockConfig.AreaList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AreaList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -36,7 +36,7 @@ CoreInternalOutcome ResultsReturnsByGroup::Deserialize(const rapidjson::Value &v
     {
         if (!value["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ResultsReturnsByGroup.FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultsReturnsByGroup.FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(value["FaceRect"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome ResultsReturnsByGroup::Deserialize(const rapidjson::Value &v
     if (value.HasMember("GroupCandidates") && !value["GroupCandidates"].IsNull())
     {
         if (!value["GroupCandidates"].IsArray())
-            return CoreInternalOutcome(Error("response `ResultsReturnsByGroup.GroupCandidates` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResultsReturnsByGroup.GroupCandidates` is not array type"));
 
         const rapidjson::Value &tmpValue = value["GroupCandidates"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome ResultsReturnsByGroup::Deserialize(const rapidjson::Value &v
     {
         if (!value["RetCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ResultsReturnsByGroup.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultsReturnsByGroup.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retCode = value["RetCode"].GetInt64();
         m_retCodeHasBeenSet = true;

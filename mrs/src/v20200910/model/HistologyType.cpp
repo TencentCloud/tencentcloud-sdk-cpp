@@ -37,7 +37,7 @@ CoreInternalOutcome HistologyType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Infiltration"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistologyType.Infiltration` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistologyType.Infiltration` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_infiltration = string(value["Infiltration"].GetString());
         m_infiltrationHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome HistologyType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
         if (!value["Index"].IsArray())
-            return CoreInternalOutcome(Error("response `HistologyType.Index` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HistologyType.Index` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Index"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -60,7 +60,7 @@ CoreInternalOutcome HistologyType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Src"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistologyType.Src` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistologyType.Src` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_src = string(value["Src"].GetString());
         m_srcHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome HistologyType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HistologyType.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HistologyType.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

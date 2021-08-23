@@ -36,7 +36,7 @@ CoreInternalOutcome MediaOutputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaOutputInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaOutputInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MediaOutputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaOutputInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaOutputInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MediaOutputInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Dir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaOutputInfo.Dir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaOutputInfo.Dir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dir = string(value["Dir"].GetString());
         m_dirHasBeenSet = true;

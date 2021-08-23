@@ -47,16 +47,16 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -67,11 +67,11 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["Malware"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Malware` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Malware` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_malware.Deserialize(rsp["Malware"]);
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["HostLogin"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `HostLogin` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HostLogin` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_hostLogin.Deserialize(rsp["HostLogin"]);
@@ -113,7 +113,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["BruteAttack"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BruteAttack` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BruteAttack` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bruteAttack.Deserialize(rsp["BruteAttack"]);
@@ -130,7 +130,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["RiskDns"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RiskDns` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RiskDns` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_riskDns.Deserialize(rsp["RiskDns"]);
@@ -147,7 +147,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["Bash"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Bash` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Bash` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_bash.Deserialize(rsp["Bash"]);
@@ -164,7 +164,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["PrivilegeRules"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PrivilegeRules` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrivilegeRules` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_privilegeRules.Deserialize(rsp["PrivilegeRules"]);
@@ -181,7 +181,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["ReverseShell"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ReverseShell` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReverseShell` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_reverseShell.Deserialize(rsp["ReverseShell"]);
@@ -198,7 +198,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["SysVul"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `SysVul` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SysVul` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_sysVul.Deserialize(rsp["SysVul"]);
@@ -215,7 +215,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["WebVul"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WebVul` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebVul` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_webVul.Deserialize(rsp["WebVul"]);
@@ -232,7 +232,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["EmergencyVul"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EmergencyVul` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_emergencyVul.Deserialize(rsp["EmergencyVul"]);
@@ -249,7 +249,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["BaseLine"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `BaseLine` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BaseLine` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_baseLine.Deserialize(rsp["BaseLine"]);
@@ -266,7 +266,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["AttackLogs"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AttackLogs` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AttackLogs` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_attackLogs.Deserialize(rsp["AttackLogs"]);
@@ -283,7 +283,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["EffectMachineCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EffectMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EffectMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_effectMachineCount = rsp["EffectMachineCount"].GetUint64();
         m_effectMachineCountHasBeenSet = true;
@@ -293,7 +293,7 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     {
         if (!rsp["EventsCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `EventsCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EventsCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_eventsCount = rsp["EventsCount"].GetUint64();
         m_eventsCountHasBeenSet = true;

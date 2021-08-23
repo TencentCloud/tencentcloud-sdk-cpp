@@ -41,7 +41,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IspName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.IspName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.IspName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Province"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.Province` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.Province` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_province = string(value["Province"].GetString());
         m_provinceHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProvinceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.ProvinceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_provinceName = string(value["ProvinceName"].GetString());
         m_provinceNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MapKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.MapKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.MapKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mapKey = string(value["MapKey"].GetString());
         m_mapKeyHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServerIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serverIp = string(value["ServerIp"].GetString());
         m_serverIpHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.ResultCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.ResultCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCount = value["ResultCount"].GetUint64();
         m_resultCountHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResultCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.ResultCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resultCode = value["ResultCode"].GetUint64();
         m_resultCodeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ErrorReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CatReturnDetail.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CatReturnDetail.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errorReason = string(value["ErrorReason"].GetString());
         m_errorReasonHasBeenSet = true;

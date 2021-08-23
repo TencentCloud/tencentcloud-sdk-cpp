@@ -49,22 +49,22 @@ namespace TencentCloud
                 CiiClient(const Credential &credential, const std::string &region);
                 CiiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CreateStructureTaskResponse> CreateStructureTaskOutcome;
+                typedef Outcome<Core::Error, Model::CreateStructureTaskResponse> CreateStructureTaskOutcome;
                 typedef std::future<CreateStructureTaskOutcome> CreateStructureTaskOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskRequest&, CreateStructureTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskAsyncHandler;
-                typedef Outcome<Error, Model::CreateStructureTaskTestResponse> CreateStructureTaskTestOutcome;
+                typedef Outcome<Core::Error, Model::CreateStructureTaskTestResponse> CreateStructureTaskTestOutcome;
                 typedef std::future<CreateStructureTaskTestOutcome> CreateStructureTaskTestOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskTestRequest&, CreateStructureTaskTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskTestAsyncHandler;
-                typedef Outcome<Error, Model::DescribeStructCompareDataResponse> DescribeStructCompareDataOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStructCompareDataResponse> DescribeStructCompareDataOutcome;
                 typedef std::future<DescribeStructCompareDataOutcome> DescribeStructCompareDataOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructCompareDataRequest&, DescribeStructCompareDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructCompareDataAsyncHandler;
-                typedef Outcome<Error, Model::DescribeStructureResultResponse> DescribeStructureResultOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStructureResultResponse> DescribeStructureResultOutcome;
                 typedef std::future<DescribeStructureResultOutcome> DescribeStructureResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureResultRequest&, DescribeStructureResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureResultAsyncHandler;
-                typedef Outcome<Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
                 typedef std::future<DescribeStructureTaskResultOutcome> DescribeStructureTaskResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultRequest&, DescribeStructureTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultAsyncHandler;
-                typedef Outcome<Error, Model::DescribeStructureTaskResultTestResponse> DescribeStructureTaskResultTestOutcome;
+                typedef Outcome<Core::Error, Model::DescribeStructureTaskResultTestResponse> DescribeStructureTaskResultTestOutcome;
                 typedef std::future<DescribeStructureTaskResultTestOutcome> DescribeStructureTaskResultTestOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultTestRequest&, DescribeStructureTaskResultTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultTestAsyncHandler;
 

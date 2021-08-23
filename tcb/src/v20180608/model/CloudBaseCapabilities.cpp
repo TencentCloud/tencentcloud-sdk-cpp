@@ -34,7 +34,7 @@ CoreInternalOutcome CloudBaseCapabilities::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Add") && !value["Add"].IsNull())
     {
         if (!value["Add"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseCapabilities.Add` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseCapabilities.Add` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Add"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -47,7 +47,7 @@ CoreInternalOutcome CloudBaseCapabilities::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Drop") && !value["Drop"].IsNull())
     {
         if (!value["Drop"].IsArray())
-            return CoreInternalOutcome(Error("response `CloudBaseCapabilities.Drop` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CloudBaseCapabilities.Drop` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Drop"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -38,7 +38,7 @@ CoreInternalOutcome WholeTextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TextItem"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.TextItem` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WholeTextItem.TextItem` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_textItem.Deserialize(value["TextItem"]);
@@ -55,7 +55,7 @@ CoreInternalOutcome WholeTextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.AvgVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WholeTextItem.AvgVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_avgVolume = value["AvgVolume"].GetDouble();
         m_avgVolumeHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome WholeTextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.MaxVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WholeTextItem.MaxVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_maxVolume = value["MaxVolume"].GetDouble();
         m_maxVolumeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome WholeTextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MinVolume"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.MinVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WholeTextItem.MinVolume` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_minVolume = value["MinVolume"].GetDouble();
         m_minVolumeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome WholeTextItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Speed"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `WholeTextItem.Speed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WholeTextItem.Speed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_speed = value["Speed"].GetDouble();
         m_speedHasBeenSet = true;

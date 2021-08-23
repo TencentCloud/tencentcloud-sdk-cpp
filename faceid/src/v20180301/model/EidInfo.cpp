@@ -35,7 +35,7 @@ CoreInternalOutcome EidInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EidCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EidInfo.EidCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EidInfo.EidCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eidCode = string(value["EidCode"].GetString());
         m_eidCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome EidInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EidSign"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EidInfo.EidSign` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EidInfo.EidSign` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_eidSign = string(value["EidSign"].GetString());
         m_eidSignHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome CreateInvoiceResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceResult.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceResult.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome CreateInvoiceResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome CreateInvoiceResult::Deserialize(const rapidjson::Value &val
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CreateInvoiceResult.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateInvoiceResult.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);

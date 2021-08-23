@@ -39,16 +39,16 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     {
         if (!rsp["DisasterRecoverGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_disasterRecoverGroupId = string(rsp["DisasterRecoverGroupId"].GetString());
         m_disasterRecoverGroupIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     {
         if (!rsp["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(rsp["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     {
         if (!rsp["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     {
         if (!rsp["CvmQuotaTotal"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CvmQuotaTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CvmQuotaTotal` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cvmQuotaTotal = rsp["CvmQuotaTotal"].GetInt64();
         m_cvmQuotaTotalHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     {
         if (!rsp["CurrentNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_currentNum = rsp["CurrentNum"].GetInt64();
         m_currentNumHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
     {
         if (!rsp["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(rsp["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

@@ -43,7 +43,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = value["TaskId"].GetUint64();
         m_taskIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.TaskDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.TaskDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskDescription = string(value["TaskDescription"].GetString());
         m_taskDescriptionHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OpUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.OpUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.OpUin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_opUin = string(value["OpUin"].GetString());
         m_opUinHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome DeviceOperationLog::Deserialize(const rapidjson::Value &valu
     {
         if (!value["LogDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceOperationLog.LogDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceOperationLog.LogDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logDescription = string(value["LogDescription"].GetString());
         m_logDescriptionHasBeenSet = true;

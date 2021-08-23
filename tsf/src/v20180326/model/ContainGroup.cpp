@@ -48,7 +48,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Server"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.Server` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.Server` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_server = string(value["Server"].GetString());
         m_serverHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RepoName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.RepoName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_repoName = string(value["RepoName"].GetString());
         m_repoNameHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.TagName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.TagName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagName = string(value["TagName"].GetString());
         m_tagNameHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuRequest"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.CpuRequest` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.CpuRequest` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuRequest = string(value["CpuRequest"].GetString());
         m_cpuRequestHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.CpuLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.CpuLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuLimit = string(value["CpuLimit"].GetString());
         m_cpuLimitHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemRequest"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.MemRequest` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.MemRequest` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memRequest = string(value["MemRequest"].GetString());
         m_memRequestHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemLimit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.MemLimit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.MemLimit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_memLimit = string(value["MemLimit"].GetString());
         m_memLimitHasBeenSet = true;
@@ -188,7 +188,7 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ContainGroup.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;

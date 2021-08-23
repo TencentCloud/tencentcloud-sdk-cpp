@@ -36,7 +36,7 @@ CoreInternalOutcome InputMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SourcePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputMapping.SourcePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputMapping.SourcePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sourcePath = string(value["SourcePath"].GetString());
         m_sourcePathHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome InputMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DestinationPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputMapping.DestinationPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputMapping.DestinationPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_destinationPath = string(value["DestinationPath"].GetString());
         m_destinationPathHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome InputMapping::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MountOptionParameter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InputMapping.MountOptionParameter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InputMapping.MountOptionParameter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mountOptionParameter = string(value["MountOptionParameter"].GetString());
         m_mountOptionParameterHasBeenSet = true;

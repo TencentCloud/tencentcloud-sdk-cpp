@@ -49,7 +49,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.MigrationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.MigrationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_migrationId = string(value["MigrationId"].GetString());
         m_migrationIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MigrationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.MigrationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.MigrationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_migrationName = string(value["MigrationName"].GetString());
         m_migrationNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Migration.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RecoveryType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.RecoveryType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.RecoveryType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_recoveryType = string(value["RecoveryType"].GetString());
         m_recoveryTypeHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UploadType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.UploadType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.UploadType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uploadType = string(value["UploadType"].GetString());
         m_uploadTypeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("BackupFiles") && !value["BackupFiles"].IsNull())
     {
         if (!value["BackupFiles"].IsArray())
-            return CoreInternalOutcome(Error("response `Migration.BackupFiles` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Migration.BackupFiles` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BackupFiles"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -132,7 +132,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Migration.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.Message` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Detail"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Migration.Detail` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.Detail` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_detail.Deserialize(value["Detail"]);
@@ -199,7 +199,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Action"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Migration.Action` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.Action` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_action.Deserialize(value["Action"]);
@@ -216,7 +216,7 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsRecovery"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Migration.IsRecovery` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Migration.IsRecovery` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isRecovery = string(value["IsRecovery"].GetString());
         m_isRecoveryHasBeenSet = true;

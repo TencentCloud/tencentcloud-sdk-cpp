@@ -41,7 +41,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BackupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.BackupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.BackupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backupName = string(value["BackupName"].GetString());
         m_backupNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReplicaSetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.ReplicaSetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replicaSetId = string(value["ReplicaSetId"].GetString());
         m_replicaSetIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BackupSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.BackupSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.BackupSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_backupSize = value["BackupSize"].GetInt64();
         m_backupSizeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Percent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.Percent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_percent = value["Percent"].GetInt64();
         m_percentHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TimeSpend"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.TimeSpend` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.TimeSpend` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpend = value["TimeSpend"].GetInt64();
         m_timeSpendHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BackupDownloadTask.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;

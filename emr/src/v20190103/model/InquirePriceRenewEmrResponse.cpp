@@ -37,16 +37,16 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
     {
         if (!rsp["OriginalCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `OriginalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OriginalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_originalCost = rsp["OriginalCost"].GetDouble();
         m_originalCostHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
     {
         if (!rsp["DiscountCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `DiscountCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DiscountCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_discountCost = rsp["DiscountCost"].GetDouble();
         m_discountCostHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
     {
         if (!rsp["TimeUnit"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeUnit = string(rsp["TimeUnit"].GetString());
         m_timeUnitHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
     {
         if (!rsp["TimeSpan"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TimeSpan` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TimeSpan` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeSpan = rsp["TimeSpan"].GetInt64();
         m_timeSpanHasBeenSet = true;

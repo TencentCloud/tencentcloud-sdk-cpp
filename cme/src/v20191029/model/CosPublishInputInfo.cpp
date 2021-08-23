@@ -37,7 +37,7 @@ CoreInternalOutcome CosPublishInputInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Bucket"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosPublishInputInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosPublishInputInfo.Bucket` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bucket = string(value["Bucket"].GetString());
         m_bucketHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CosPublishInputInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosPublishInputInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosPublishInputInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CosPublishInputInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["VideoKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosPublishInputInfo.VideoKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosPublishInputInfo.VideoKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_videoKey = string(value["VideoKey"].GetString());
         m_videoKeyHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome CosPublishInputInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["CoverKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosPublishInputInfo.CoverKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosPublishInputInfo.CoverKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_coverKey = string(value["CoverKey"].GetString());
         m_coverKeyHasBeenSet = true;

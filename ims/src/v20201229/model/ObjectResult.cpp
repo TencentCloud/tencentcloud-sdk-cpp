@@ -40,7 +40,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scene"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectResult.Scene` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.Scene` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_scene = string(value["Scene"].GetString());
         m_sceneHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectResult.Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(value["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SubLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ObjectResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subLabel = string(value["SubLabel"].GetString());
         m_subLabelHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ObjectResult.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_score = value["Score"].GetUint64();
         m_scoreHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Names") && !value["Names"].IsNull())
     {
         if (!value["Names"].IsArray())
-            return CoreInternalOutcome(Error("response `ObjectResult.Names` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.Names` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Names"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -102,7 +102,7 @@ CoreInternalOutcome ObjectResult::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Details") && !value["Details"].IsNull())
     {
         if (!value["Details"].IsArray())
-            return CoreInternalOutcome(Error("response `ObjectResult.Details` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ObjectResult.Details` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Details"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

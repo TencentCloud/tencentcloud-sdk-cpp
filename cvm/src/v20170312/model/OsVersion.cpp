@@ -36,7 +36,7 @@ CoreInternalOutcome OsVersion::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OsVersion.OsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OsVersion.OsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_osName = string(value["OsName"].GetString());
         m_osNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OsVersion::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OsVersions") && !value["OsVersions"].IsNull())
     {
         if (!value["OsVersions"].IsArray())
-            return CoreInternalOutcome(Error("response `OsVersion.OsVersions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OsVersion.OsVersions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OsVersions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome OsVersion::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Architecture") && !value["Architecture"].IsNull())
     {
         if (!value["Architecture"].IsArray())
-            return CoreInternalOutcome(Error("response `OsVersion.Architecture` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OsVersion.Architecture` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Architecture"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

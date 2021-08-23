@@ -44,7 +44,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DnsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.DnsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.DnsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dnsName = string(value["DnsName"].GetString());
         m_dnsNameHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FleetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.FleetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.FleetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fleetId = string(value["FleetId"].GetString());
         m_fleetIdHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GameServerSessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.GameServerSessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.GameServerSessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_gameServerSessionId = string(value["GameServerSessionId"].GetString());
         m_gameServerSessionIdHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IpAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ipAddress = string(value["IpAddress"].GetString());
         m_ipAddressHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayerData"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.PlayerData` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.PlayerData` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerData = string(value["PlayerData"].GetString());
         m_playerDataHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.PlayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerId = string(value["PlayerId"].GetString());
         m_playerIdHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PlayerSessionId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.PlayerSessionId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.PlayerSessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playerSessionId = string(value["PlayerSessionId"].GetString());
         m_playerSessionIdHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome PlayerSession::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TerminationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PlayerSession.TerminationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PlayerSession.TerminationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_terminationTime = string(value["TerminationTime"].GetString());
         m_terminationTimeHasBeenSet = true;

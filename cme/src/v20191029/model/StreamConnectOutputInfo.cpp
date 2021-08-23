@@ -35,7 +35,7 @@ CoreInternalOutcome StreamConnectOutputInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["StreamConnectOutput"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectOutputInfo.StreamConnectOutput` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectOutputInfo.StreamConnectOutput` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_streamConnectOutput.Deserialize(value["StreamConnectOutput"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome StreamConnectOutputInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["PushSwitch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamConnectOutputInfo.PushSwitch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamConnectOutputInfo.PushSwitch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushSwitch = string(value["PushSwitch"].GetString());
         m_pushSwitchHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome PersonExDescriptionInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["PersonExDescriptionIndex"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PersonExDescriptionInfo.PersonExDescriptionIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonExDescriptionInfo.PersonExDescriptionIndex` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_personExDescriptionIndex = value["PersonExDescriptionIndex"].GetUint64();
         m_personExDescriptionIndexHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome PersonExDescriptionInfo::Deserialize(const rapidjson::Value 
     {
         if (!value["PersonExDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PersonExDescriptionInfo.PersonExDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonExDescriptionInfo.PersonExDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_personExDescription = string(value["PersonExDescription"].GetString());
         m_personExDescriptionHasBeenSet = true;

@@ -36,7 +36,7 @@ CoreInternalOutcome OtherAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccountId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OtherAccountInfo.AccountId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherAccountInfo.AccountId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accountId = string(value["AccountId"].GetString());
         m_accountIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome OtherAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MobilePhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OtherAccountInfo.MobilePhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherAccountInfo.MobilePhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mobilePhone = string(value["MobilePhone"].GetString());
         m_mobilePhoneHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome OtherAccountInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OtherAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OtherAccountInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;

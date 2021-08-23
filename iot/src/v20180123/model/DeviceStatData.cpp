@@ -37,7 +37,7 @@ CoreInternalOutcome DeviceStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Datetime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatData.Datetime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatData.Datetime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_datetime = string(value["Datetime"].GetString());
         m_datetimeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome DeviceStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceOnline"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatData.DeviceOnline` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatData.DeviceOnline` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceOnline = value["DeviceOnline"].GetUint64();
         m_deviceOnlineHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome DeviceStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceActive"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatData.DeviceActive` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatData.DeviceActive` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceActive = value["DeviceActive"].GetUint64();
         m_deviceActiveHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome DeviceStatData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceTotal"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceStatData.DeviceTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceStatData.DeviceTotal` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceTotal = value["DeviceTotal"].GetUint64();
         m_deviceTotalHasBeenSet = true;

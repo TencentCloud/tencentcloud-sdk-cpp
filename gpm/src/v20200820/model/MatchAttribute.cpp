@@ -39,7 +39,7 @@ CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchAttribute.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchAttribute.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MatchAttribute.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchAttribute.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NumberValue"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MatchAttribute.NumberValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchAttribute.NumberValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_numberValue = value["NumberValue"].GetDouble();
         m_numberValueHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StringValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MatchAttribute.StringValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MatchAttribute.StringValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stringValue = string(value["StringValue"].GetString());
         m_stringValueHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ListValue") && !value["ListValue"].IsNull())
     {
         if (!value["ListValue"].IsArray())
-            return CoreInternalOutcome(Error("response `MatchAttribute.ListValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MatchAttribute.ListValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ListValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -91,7 +91,7 @@ CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("MapValue") && !value["MapValue"].IsNull())
     {
         if (!value["MapValue"].IsArray())
-            return CoreInternalOutcome(Error("response `MatchAttribute.MapValue` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MatchAttribute.MapValue` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MapValue"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

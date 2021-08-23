@@ -35,7 +35,7 @@ CoreInternalOutcome TargetAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetAttribute.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetAttribute.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TargetAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Weight"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TargetAttribute.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TargetAttribute.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_weight = value["Weight"].GetUint64();
         m_weightHasBeenSet = true;

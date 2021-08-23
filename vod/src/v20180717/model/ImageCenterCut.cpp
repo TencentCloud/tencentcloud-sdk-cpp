@@ -37,7 +37,7 @@ CoreInternalOutcome ImageCenterCut::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ImageCenterCut.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageCenterCut.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ImageCenterCut::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageCenterCut.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageCenterCut.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ImageCenterCut::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageCenterCut.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageCenterCut.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ImageCenterCut::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Radius"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ImageCenterCut.Radius` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageCenterCut.Radius` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_radius = value["Radius"].GetInt64();
         m_radiusHasBeenSet = true;

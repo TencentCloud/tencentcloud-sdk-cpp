@@ -35,7 +35,7 @@ CoreInternalOutcome ProcessStatistics::Deserialize(const rapidjson::Value &value
     {
         if (!value["ProcessName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProcessStatistics.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcessStatistics.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_processName = string(value["ProcessName"].GetString());
         m_processNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ProcessStatistics::Deserialize(const rapidjson::Value &value
     {
         if (!value["MachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProcessStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProcessStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineNum = value["MachineNum"].GetUint64();
         m_machineNumHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome SponsorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SponsorOpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SponsorInfo.SponsorOpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SponsorInfo.SponsorOpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorOpenId = string(value["SponsorOpenId"].GetString());
         m_sponsorOpenIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SponsorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SponsorDeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SponsorInfo.SponsorDeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SponsorInfo.SponsorDeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorDeviceId = string(value["SponsorDeviceId"].GetString());
         m_sponsorDeviceIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SponsorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SponsorPhone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SponsorInfo.SponsorPhone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SponsorInfo.SponsorPhone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorPhone = string(value["SponsorPhone"].GetString());
         m_sponsorPhoneHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SponsorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SponsorIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SponsorInfo.SponsorIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SponsorInfo.SponsorIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sponsorIp = string(value["SponsorIp"].GetString());
         m_sponsorIpHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SponsorInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CampaignUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SponsorInfo.CampaignUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SponsorInfo.CampaignUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_campaignUrl = string(value["CampaignUrl"].GetString());
         m_campaignUrlHasBeenSet = true;

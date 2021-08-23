@@ -40,7 +40,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TriggerName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.TriggerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.TriggerName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_triggerName = string(value["TriggerName"].GetString());
         m_triggerNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokeSource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.InvokeSource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.InvokeSource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokeSource = string(value["InvokeSource"].GetString());
         m_invokeSourceHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokeAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.InvokeAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.InvokeAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_invokeAction = string(value["InvokeAction"].GetString());
         m_invokeActionHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokeCondition"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.InvokeCondition` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.InvokeCondition` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_invokeCondition.Deserialize(value["InvokeCondition"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InvokePara"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TriggerResp.InvokePara` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TriggerResp.InvokePara` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_invokePara.Deserialize(value["InvokePara"]);

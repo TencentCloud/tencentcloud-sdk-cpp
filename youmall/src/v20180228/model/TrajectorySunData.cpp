@@ -36,7 +36,7 @@ CoreInternalOutcome TrajectorySunData::Deserialize(const rapidjson::Value &value
     {
         if (!value["Zones"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrajectorySunData.Zones` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrajectorySunData.Zones` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zones = string(value["Zones"].GetString());
         m_zonesHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TrajectorySunData::Deserialize(const rapidjson::Value &value
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrajectorySunData.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrajectorySunData.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome TrajectorySunData::Deserialize(const rapidjson::Value &value
     {
         if (!value["AvgStayTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TrajectorySunData.AvgStayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrajectorySunData.AvgStayTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_avgStayTime = value["AvgStayTime"].GetInt64();
         m_avgStayTimeHasBeenSet = true;

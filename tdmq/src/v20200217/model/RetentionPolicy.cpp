@@ -35,7 +35,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeInMinutes"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.TimeInMinutes` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.TimeInMinutes` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_timeInMinutes = value["TimeInMinutes"].GetInt64();
         m_timeInMinutesHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SizeInMB"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionPolicy.SizeInMB` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.SizeInMB` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sizeInMB = value["SizeInMB"].GetInt64();
         m_sizeInMBHasBeenSet = true;

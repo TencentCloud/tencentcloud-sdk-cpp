@@ -37,7 +37,7 @@ CoreInternalOutcome StdoutLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StdoutLogV2.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StdoutLogV2.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome StdoutLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StdoutLogV2.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StdoutLogV2.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome StdoutLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StdoutLogV2.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StdoutLogV2.Timestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = value["Timestamp"].GetUint64();
         m_timestampHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome StdoutLogV2::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StdoutLogV2.InstanceIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StdoutLogV2.InstanceIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceIp = string(value["InstanceIp"].GetString());
         m_instanceIpHasBeenSet = true;

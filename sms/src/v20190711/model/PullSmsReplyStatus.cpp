@@ -40,7 +40,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExtendCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ExtendCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.ExtendCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extendCode = string(value["ExtendCode"].GetString());
         m_extendCodeHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["NationCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.NationCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.NationCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nationCode = string(value["NationCode"].GetString());
         m_nationCodeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["PhoneNumber"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.PhoneNumber` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNumber = string(value["PhoneNumber"].GetString());
         m_phoneNumberHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Sign"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.Sign` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.Sign` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sign = string(value["Sign"].GetString());
         m_signHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReplyContent"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ReplyContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.ReplyContent` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replyContent = string(value["ReplyContent"].GetString());
         m_replyContentHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReplyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ReplyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.ReplyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_replyTime = string(value["ReplyTime"].GetString());
         m_replyTimeHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReplyUnixTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ReplyUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PullSmsReplyStatus.ReplyUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_replyUnixTime = value["ReplyUnixTime"].GetUint64();
         m_replyUnixTimeHasBeenSet = true;

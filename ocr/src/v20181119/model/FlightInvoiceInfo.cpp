@@ -36,7 +36,7 @@ CoreInternalOutcome FlightInvoiceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FlightInvoiceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlightInvoiceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome FlightInvoiceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Value"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FlightInvoiceInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlightInvoiceInfo.Value` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome FlightInvoiceInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Row"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FlightInvoiceInfo.Row` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlightInvoiceInfo.Row` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_row = value["Row"].GetInt64();
         m_rowHasBeenSet = true;

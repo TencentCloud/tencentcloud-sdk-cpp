@@ -39,7 +39,7 @@ CoreInternalOutcome VoiceFilterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BizId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterInfo.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterInfo.BizId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bizId = value["BizId"].GetUint64();
         m_bizIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome VoiceFilterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome VoiceFilterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FileName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterInfo.FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome VoiceFilterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openId = string(value["OpenId"].GetString());
         m_openIdHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome VoiceFilterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterInfo.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterInfo.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timestamp = string(value["Timestamp"].GetString());
         m_timestampHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome VoiceFilterInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Data") && !value["Data"].IsNull())
     {
         if (!value["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `VoiceFilterInfo.Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterInfo.Data` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

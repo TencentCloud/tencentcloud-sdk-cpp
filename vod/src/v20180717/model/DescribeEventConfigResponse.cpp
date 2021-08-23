@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
     {
         if (!rsp["Mode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Mode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_mode = string(rsp["Mode"].GetString());
         m_modeHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
     {
         if (!rsp["NotificationUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NotificationUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotificationUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_notificationUrl = string(rsp["NotificationUrl"].GetString());
         m_notificationUrlHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
     {
         if (!rsp["UploadMediaCompleteEventSwitch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UploadMediaCompleteEventSwitch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UploadMediaCompleteEventSwitch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uploadMediaCompleteEventSwitch = string(rsp["UploadMediaCompleteEventSwitch"].GetString());
         m_uploadMediaCompleteEventSwitchHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
     {
         if (!rsp["DeleteMediaCompleteEventSwitch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeleteMediaCompleteEventSwitch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeleteMediaCompleteEventSwitch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deleteMediaCompleteEventSwitch = string(rsp["DeleteMediaCompleteEventSwitch"].GetString());
         m_deleteMediaCompleteEventSwitchHasBeenSet = true;

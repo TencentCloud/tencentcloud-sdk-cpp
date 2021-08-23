@@ -45,7 +45,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Code"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.Code` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_code = value["Code"].GetInt64();
         m_codeHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(value["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ScanFinishTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.ScanFinishTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.ScanFinishTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanFinishTime = value["ScanFinishTime"].GetUint64();
         m_scanFinishTimeHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["HitFlag"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.HitFlag` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.HitFlag` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = value["HitFlag"].GetBool();
         m_hitFlagHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Live"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.Live` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.Live` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_live = value["Live"].GetBool();
         m_liveHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Msg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_msg = string(value["Msg"].GetString());
         m_msgHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("ScanPiece") && !value["ScanPiece"].IsNull())
     {
         if (!value["ScanPiece"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeScanResult.ScanPiece` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.ScanPiece` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ScanPiece"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -125,7 +125,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ScanStartTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.ScanStartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.ScanStartTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scanStartTime = value["ScanStartTime"].GetUint64();
         m_scanStartTimeHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("Scenes") && !value["Scenes"].IsNull())
     {
         if (!value["Scenes"].IsArray())
-            return CoreInternalOutcome(Error("response `DescribeScanResult.Scenes` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.Scenes` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Scenes"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -148,7 +148,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome DescribeScanResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DescribeScanResult.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeScanResult.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

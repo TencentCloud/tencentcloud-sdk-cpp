@@ -62,7 +62,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.ProxyName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ProxyName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyName = string(value["ProxyName"].GetString());
         m_proxyNameHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.AccessRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.AccessRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_accessRegion = string(value["AccessRegion"].GetString());
         m_accessRegionHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerRegion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.RealServerRegion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.RealServerRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realServerRegion = string(value["RealServerRegion"].GetString());
         m_realServerRegionHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Concurrent"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.Concurrent` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.Concurrent` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_concurrent = value["Concurrent"].GetInt64();
         m_concurrentHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -172,7 +172,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Version"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_version = string(value["Version"].GetString());
         m_versionHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_proxyId = string(value["ProxyId"].GetString());
         m_proxyIdHasBeenSet = true;
@@ -192,7 +192,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Scalarable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.Scalarable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.Scalarable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scalarable = value["Scalarable"].GetInt64();
         m_scalarableHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SupportProtocols") && !value["SupportProtocols"].IsNull())
     {
         if (!value["SupportProtocols"].IsArray())
-            return CoreInternalOutcome(Error("response `ProxyInfo.SupportProtocols` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.SupportProtocols` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SupportProtocols"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -215,7 +215,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -225,7 +225,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PolicyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_policyId = string(value["PolicyId"].GetString());
         m_policyIdHasBeenSet = true;
@@ -235,7 +235,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AccessRegionInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.AccessRegionInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.AccessRegionInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_accessRegionInfo.Deserialize(value["AccessRegionInfo"]);
@@ -252,7 +252,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealServerRegionInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.RealServerRegionInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.RealServerRegionInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_realServerRegionInfo.Deserialize(value["RealServerRegionInfo"]);
@@ -269,7 +269,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ForwardIP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.ForwardIP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ForwardIP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_forwardIP = string(value["ForwardIP"].GetString());
         m_forwardIPHasBeenSet = true;
@@ -278,7 +278,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ProxyInfo.TagSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.TagSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -299,7 +299,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SupportSecurity"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.SupportSecurity` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.SupportSecurity` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_supportSecurity = value["SupportSecurity"].GetInt64();
         m_supportSecurityHasBeenSet = true;
@@ -309,7 +309,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BillingType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.BillingType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.BillingType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_billingType = value["BillingType"].GetInt64();
         m_billingTypeHasBeenSet = true;
@@ -318,7 +318,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("RelatedGlobalDomains") && !value["RelatedGlobalDomains"].IsNull())
     {
         if (!value["RelatedGlobalDomains"].IsArray())
-            return CoreInternalOutcome(Error("response `ProxyInfo.RelatedGlobalDomains` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.RelatedGlobalDomains` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RelatedGlobalDomains"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -332,7 +332,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyConfigTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.ModifyConfigTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ModifyConfigTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_modifyConfigTime = value["ModifyConfigTime"].GetUint64();
         m_modifyConfigTimeHasBeenSet = true;
@@ -342,7 +342,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProxyType"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.ProxyType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ProxyType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_proxyType = value["ProxyType"].GetUint64();
         m_proxyTypeHasBeenSet = true;
@@ -351,7 +351,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ClientIPMethod") && !value["ClientIPMethod"].IsNull())
     {
         if (!value["ClientIPMethod"].IsArray())
-            return CoreInternalOutcome(Error("response `ProxyInfo.ClientIPMethod` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.ClientIPMethod` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClientIPMethod"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -365,7 +365,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IPAddressVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.IPAddressVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.IPAddressVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iPAddressVersion = string(value["IPAddressVersion"].GetString());
         m_iPAddressVersionHasBeenSet = true;
@@ -375,7 +375,7 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NetworkType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProxyInfo.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_networkType = string(value["NetworkType"].GetString());
         m_networkTypeHasBeenSet = true;

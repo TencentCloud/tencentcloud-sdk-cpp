@@ -46,7 +46,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartupParameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startupParameters = string(value["StartupParameters"].GetString());
         m_startupParametersHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupResourceType = string(value["GroupResourceType"].GetString());
         m_groupResourceTypeHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppMicroServiceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SimpleGroup.AppMicroServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.AppMicroServiceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appMicroServiceType = string(value["AppMicroServiceType"].GetString());
         m_appMicroServiceTypeHasBeenSet = true;

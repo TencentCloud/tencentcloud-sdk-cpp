@@ -36,7 +36,7 @@ CoreInternalOutcome SocProductionItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SocProductionItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocProductionItem.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SocProductionItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Index"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SocProductionItem.Index` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocProductionItem.Index` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_index = value["Index"].GetInt64();
         m_indexHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome SocProductionItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SocProductionItem.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SocProductionItem.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

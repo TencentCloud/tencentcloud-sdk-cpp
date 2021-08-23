@@ -35,7 +35,7 @@ CoreInternalOutcome MediaPreprocessOperation::Deserialize(const rapidjson::Value
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaPreprocessOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaPreprocessOperation.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome MediaPreprocessOperation::Deserialize(const rapidjson::Value
     if (value.HasMember("Args") && !value["Args"].IsNull())
     {
         if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaPreprocessOperation.Args` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MediaPreprocessOperation.Args` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Args"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

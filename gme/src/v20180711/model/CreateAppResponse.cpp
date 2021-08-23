@@ -41,16 +41,16 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -61,11 +61,11 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -73,7 +73,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["BizId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `BizId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bizId = rsp["BizId"].GetUint64();
         m_bizIdHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(rsp["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = rsp["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(rsp["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = rsp["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["RealtimeSpeechConf"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RealtimeSpeechConf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RealtimeSpeechConf` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_realtimeSpeechConf.Deserialize(rsp["RealtimeSpeechConf"]);
@@ -140,7 +140,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["VoiceMessageConf"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VoiceMessageConf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceMessageConf` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_voiceMessageConf.Deserialize(rsp["VoiceMessageConf"]);
@@ -157,7 +157,7 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
     {
         if (!rsp["VoiceFilterConf"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterConf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterConf` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_voiceFilterConf.Deserialize(rsp["VoiceFilterConf"]);

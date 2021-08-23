@@ -35,7 +35,7 @@ CoreInternalOutcome OutputVideoStream::Deserialize(const rapidjson::Value &value
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `OutputVideoStream.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputVideoStream.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome OutputVideoStream::Deserialize(const rapidjson::Value &value
     {
         if (!value["Fps"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `OutputVideoStream.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OutputVideoStream.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fps = value["Fps"].GetInt64();
         m_fpsHasBeenSet = true;

@@ -45,7 +45,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Entrance"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.Entrance` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.Entrance` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_entrance = value["Entrance"].GetBool();
         m_entranceHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaneGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.LaneGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.LaneGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_laneGroupId = string(value["LaneGroupId"].GetString());
         m_laneGroupIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LaneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.LaneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.LaneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_laneId = string(value["LaneId"].GetString());
         m_laneIdHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -125,7 +125,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -135,7 +135,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -145,7 +145,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = value["UpdateTime"].GetInt64();
         m_updateTimeHasBeenSet = true;
@@ -155,7 +155,7 @@ CoreInternalOutcome LaneGroup::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LaneGroup.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LaneGroup.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterType = string(value["ClusterType"].GetString());
         m_clusterTypeHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagEditingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingInfo.TagEditingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingInfo.TagEditingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tagEditingInfo.Deserialize(value["TagEditingInfo"]);
@@ -56,7 +56,7 @@ CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClassificationEditingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingInfo.ClassificationEditingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingInfo.ClassificationEditingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_classificationEditingInfo.Deserialize(value["ClassificationEditingInfo"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StripEditingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingInfo.StripEditingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingInfo.StripEditingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_stripEditingInfo.Deserialize(value["StripEditingInfo"]);
@@ -90,7 +90,7 @@ CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HighlightsEditingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingInfo.HighlightsEditingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingInfo.HighlightsEditingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_highlightsEditingInfo.Deserialize(value["HighlightsEditingInfo"]);
@@ -107,7 +107,7 @@ CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CoverEditingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingInfo.CoverEditingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingInfo.CoverEditingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_coverEditingInfo.Deserialize(value["CoverEditingInfo"]);
@@ -124,7 +124,7 @@ CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OpeningEndingEditingInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `EditingInfo.OpeningEndingEditingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EditingInfo.OpeningEndingEditingInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_openingEndingEditingInfo.Deserialize(value["OpeningEndingEditingInfo"]);

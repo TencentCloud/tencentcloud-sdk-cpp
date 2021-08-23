@@ -36,7 +36,7 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Comment"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Properties") && !value["Properties"].IsNull())
     {
         if (!value["Properties"].IsArray())
-            return CoreInternalOutcome(Error("response `DatabaseInfo.Properties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.Properties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

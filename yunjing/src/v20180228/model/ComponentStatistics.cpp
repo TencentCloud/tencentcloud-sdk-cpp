@@ -38,7 +38,7 @@ CoreInternalOutcome ComponentStatistics::Deserialize(const rapidjson::Value &val
     {
         if (!value["Id"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComponentStatistics.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComponentStatistics.Id` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome ComponentStatistics::Deserialize(const rapidjson::Value &val
     {
         if (!value["MachineNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ComponentStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComponentStatistics.MachineNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_machineNum = value["MachineNum"].GetUint64();
         m_machineNumHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome ComponentStatistics::Deserialize(const rapidjson::Value &val
     {
         if (!value["ComponentName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComponentStatistics.ComponentName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComponentStatistics.ComponentName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_componentName = string(value["ComponentName"].GetString());
         m_componentNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome ComponentStatistics::Deserialize(const rapidjson::Value &val
     {
         if (!value["ComponentType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComponentStatistics.ComponentType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComponentStatistics.ComponentType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_componentType = string(value["ComponentType"].GetString());
         m_componentTypeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome ComponentStatistics::Deserialize(const rapidjson::Value &val
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ComponentStatistics.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ComponentStatistics.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;

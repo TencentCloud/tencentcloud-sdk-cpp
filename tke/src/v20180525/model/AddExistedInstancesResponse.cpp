@@ -37,16 +37,16 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,18 +57,18 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("FailedInstanceIds") && !rsp["FailedInstanceIds"].IsNull())
     {
         if (!rsp["FailedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FailedInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["FailedInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -81,7 +81,7 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
     if (rsp.HasMember("SuccInstanceIds") && !rsp["SuccInstanceIds"].IsNull())
     {
         if (!rsp["SuccInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SuccInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SuccInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["SuccInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -94,7 +94,7 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
     if (rsp.HasMember("TimeoutInstanceIds") && !rsp["TimeoutInstanceIds"].IsNull())
     {
         if (!rsp["TimeoutInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `TimeoutInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TimeoutInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["TimeoutInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -107,7 +107,7 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
     if (rsp.HasMember("FailedReasons") && !rsp["FailedReasons"].IsNull())
     {
         if (!rsp["FailedReasons"].IsArray())
-            return CoreInternalOutcome(Error("response `FailedReasons` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FailedReasons` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["FailedReasons"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

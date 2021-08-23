@@ -36,7 +36,7 @@ CoreInternalOutcome TaskDetailData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TaskDetailData.TagId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskDetailData.TagId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_tagId = value["TagId"].GetUint64();
         m_tagIdHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome TaskDetailData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TagDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskDetailData.TagDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskDetailData.TagDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tagDesc = string(value["TagDesc"].GetString());
         m_tagDescHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome TaskDetailData::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("LabelDetailDataList") && !value["LabelDetailDataList"].IsNull())
     {
         if (!value["LabelDetailDataList"].IsArray())
-            return CoreInternalOutcome(Error("response `TaskDetailData.LabelDetailDataList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TaskDetailData.LabelDetailDataList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["LabelDetailDataList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

@@ -42,7 +42,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.AppName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.AppName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appName = string(value["AppName"].GetString());
         m_appNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DomainName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.DomainName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domainName = string(value["DomainName"].GetString());
         m_domainNameHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamStartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.StreamStartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.StreamStartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamStartTime = string(value["StreamStartTime"].GetString());
         m_streamStartTimeHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StreamEndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.StreamEndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.StreamEndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamEndTime = string(value["StreamEndTime"].GetString());
         m_streamEndTimeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StopReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.StopReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.StopReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_stopReason = string(value["StopReason"].GetString());
         m_stopReasonHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `StreamName.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClientIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clientIp = string(value["ClientIp"].GetString());
         m_clientIpHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome StreamName::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StreamName.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StreamName.Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(value["Resolution"].GetString());
         m_resolutionHasBeenSet = true;

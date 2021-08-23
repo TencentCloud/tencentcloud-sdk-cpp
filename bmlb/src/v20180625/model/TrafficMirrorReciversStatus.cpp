@@ -35,7 +35,7 @@ CoreInternalOutcome TrafficMirrorReciversStatus::Deserialize(const rapidjson::Va
     {
         if (!value["LanIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorReciversStatus.LanIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorReciversStatus.LanIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lanIp = string(value["LanIp"].GetString());
         m_lanIpHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome TrafficMirrorReciversStatus::Deserialize(const rapidjson::Va
     if (value.HasMember("ReceiversPortStatusSet") && !value["ReceiversPortStatusSet"].IsNull())
     {
         if (!value["ReceiversPortStatusSet"].IsArray())
-            return CoreInternalOutcome(Error("response `TrafficMirrorReciversStatus.ReceiversPortStatusSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorReciversStatus.ReceiversPortStatusSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiversPortStatusSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

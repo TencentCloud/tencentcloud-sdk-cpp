@@ -37,7 +37,7 @@ CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["BusinessCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionBusinessSummaryDataItem.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionBusinessSummaryDataItem.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCode = string(value["BusinessCode"].GetString());
         m_businessCodeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["BusinessCodeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionBusinessSummaryDataItem.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionBusinessSummaryDataItem.BusinessCodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_businessCodeName = string(value["BusinessCodeName"].GetString());
         m_businessCodeNameHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionBusinessSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionBusinessSummaryDataItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realTotalCost = string(value["RealTotalCost"].GetString());
         m_realTotalCostHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const rapidj
     {
         if (!value["Trend"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ConsumptionBusinessSummaryDataItem.Trend` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumptionBusinessSummaryDataItem.Trend` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_trend.Deserialize(value["Trend"]);

@@ -35,7 +35,7 @@ CoreInternalOutcome ZoneInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ZoneInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneInstanceInfo.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneInstanceInfo.InstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_instanceNum = value["InstanceNum"].GetInt64();
         m_instanceNumHasBeenSet = true;

@@ -49,7 +49,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AppId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.AppId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.AppId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Uin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.Uin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.Uin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RenewFlag"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.RenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.RenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_renewFlag = value["RenewFlag"].GetUint64();
         m_renewFlagHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayMode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.PayMode` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.PayMode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_payMode = value["PayMode"].GetUint64();
         m_payModeHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsolatedTimestamp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.IsolatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.IsolatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_isolatedTimestamp = string(value["IsolatedTimestamp"].GetString());
         m_isolatedTimestampHasBeenSet = true;
@@ -139,7 +139,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -149,7 +149,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpireTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expireTime = string(value["ExpireTime"].GetString());
         m_expireTimeHasBeenSet = true;
@@ -159,7 +159,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PublicIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_publicIp = string(value["PublicIp"].GetString());
         m_publicIpHasBeenSet = true;
@@ -179,7 +179,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PrivateIp"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_privateIp = string(value["PrivateIp"].GetString());
         m_privateIpHasBeenSet = true;
@@ -189,7 +189,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -199,7 +199,7 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pdomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CdsAuditInstance.Pdomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CdsAuditInstance.Pdomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pdomain = string(value["Pdomain"].GetString());
         m_pdomainHasBeenSet = true;

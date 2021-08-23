@@ -35,7 +35,7 @@ CoreInternalOutcome DeviceDiskSizeInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DiskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeviceDiskSizeInfo.DiskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskSizeInfo.DiskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_diskName = string(value["DiskName"].GetString());
         m_diskNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome DeviceDiskSizeInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["DiskSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `DeviceDiskSizeInfo.DiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeviceDiskSizeInfo.DiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_diskSize = value["DiskSize"].GetUint64();
         m_diskSizeHasBeenSet = true;

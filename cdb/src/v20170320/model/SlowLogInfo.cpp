@@ -39,7 +39,7 @@ CoreInternalOutcome SlowLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome SlowLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Size"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SlowLogInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfo.Size` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_size = value["Size"].GetInt64();
         m_sizeHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome SlowLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Date"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfo.Date` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_date = string(value["Date"].GetString());
         m_dateHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome SlowLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IntranetUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogInfo.IntranetUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfo.IntranetUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_intranetUrl = string(value["IntranetUrl"].GetString());
         m_intranetUrlHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome SlowLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InternetUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogInfo.InternetUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfo.InternetUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_internetUrl = string(value["InternetUrl"].GetString());
         m_internetUrlHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome SlowLogInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;

@@ -38,7 +38,7 @@ CoreInternalOutcome RetentionExecution::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ExecutionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionExecution.ExecutionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionExecution.ExecutionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_executionId = value["ExecutionId"].GetInt64();
         m_executionIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome RetentionExecution::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RetentionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RetentionExecution.RetentionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionExecution.RetentionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retentionId = value["RetentionId"].GetInt64();
         m_retentionIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome RetentionExecution::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionExecution.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionExecution.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome RetentionExecution::Deserialize(const rapidjson::Value &valu
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionExecution.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionExecution.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome RetentionExecution::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RetentionExecution.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RetentionExecution.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

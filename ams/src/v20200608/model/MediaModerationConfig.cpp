@@ -39,7 +39,7 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["AudioFrequency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaModerationConfig.AudioFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaModerationConfig.AudioFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_audioFrequency = value["AudioFrequency"].GetInt64();
         m_audioFrequencyHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["ImageFrequency"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MediaModerationConfig.ImageFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaModerationConfig.ImageFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_imageFrequency = value["ImageFrequency"].GetInt64();
         m_imageFrequencyHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["CallbackUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MediaModerationConfig.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaModerationConfig.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_callbackUrl = string(value["CallbackUrl"].GetString());
         m_callbackUrlHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["SegmentOutput"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MediaModerationConfig.SegmentOutput` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaModerationConfig.SegmentOutput` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_segmentOutput.Deserialize(value["SegmentOutput"]);
@@ -86,7 +86,7 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["UseOCR"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MediaModerationConfig.UseOCR` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaModerationConfig.UseOCR` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_useOCR = value["UseOCR"].GetBool();
         m_useOCRHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &v
     {
         if (!value["UseAudio"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `MediaModerationConfig.UseAudio` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaModerationConfig.UseAudio` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_useAudio = value["UseAudio"].GetBool();
         m_useAudioHasBeenSet = true;

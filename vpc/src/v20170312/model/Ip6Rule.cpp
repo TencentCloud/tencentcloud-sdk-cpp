@@ -42,7 +42,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip6RuleId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Ip6RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Ip6RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip6RuleId = string(value["Ip6RuleId"].GetString());
         m_ip6RuleIdHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip6RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Ip6RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Ip6RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip6RuleName = string(value["Ip6RuleName"].GetString());
         m_ip6RuleNameHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip6"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Vip6` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Vip6` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip6 = string(value["Vip6"].GetString());
         m_vip6HasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport6"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Vport6` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Vport6` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport6 = value["Vport6"].GetInt64();
         m_vport6HasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Vip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Vip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vip = string(value["Vip"].GetString());
         m_vipHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Vport"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_vport = value["Vport"].GetInt64();
         m_vportHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RuleStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.RuleStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.RuleStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleStatus = string(value["RuleStatus"].GetString());
         m_ruleStatusHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome Ip6Rule::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Ip6Rule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Ip6Rule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;

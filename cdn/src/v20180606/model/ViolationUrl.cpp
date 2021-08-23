@@ -39,7 +39,7 @@ CoreInternalOutcome ViolationUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ViolationUrl.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViolationUrl.Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_id = value["Id"].GetInt64();
         m_idHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ViolationUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RealUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViolationUrl.RealUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViolationUrl.RealUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_realUrl = string(value["RealUrl"].GetString());
         m_realUrlHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ViolationUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DownloadUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViolationUrl.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViolationUrl.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_downloadUrl = string(value["DownloadUrl"].GetString());
         m_downloadUrlHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ViolationUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UrlStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViolationUrl.UrlStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViolationUrl.UrlStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_urlStatus = string(value["UrlStatus"].GetString());
         m_urlStatusHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ViolationUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViolationUrl.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViolationUrl.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ViolationUrl::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViolationUrl.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViolationUrl.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

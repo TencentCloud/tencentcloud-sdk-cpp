@@ -46,7 +46,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceId = string(value["DeviceId"].GetString());
         m_deviceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.DeviceType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.DeviceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_deviceType = value["DeviceType"].GetInt64();
         m_deviceTypeHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
@@ -76,7 +76,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExtraInformation"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.ExtraInformation` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.ExtraInformation` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extraInformation = string(value["ExtraInformation"].GetString());
         m_extraInformationHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NickName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.NickName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.NickName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_nickName = string(value["NickName"].GetString());
         m_nickNameHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupPath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.GroupPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.GroupPath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupPath = string(value["GroupPath"].GetString());
         m_groupPathHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeviceCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.DeviceCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.DeviceCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deviceCode = string(value["DeviceCode"].GetString());
         m_deviceCodeHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsRecord"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.IsRecord` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.IsRecord` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_isRecord = value["IsRecord"].GetInt64();
         m_isRecordHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Recordable"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.Recordable` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.Recordable` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_recordable = value["Recordable"].GetInt64();
         m_recordableHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AllDeviceInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AllDeviceInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;

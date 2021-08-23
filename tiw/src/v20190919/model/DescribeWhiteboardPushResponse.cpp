@@ -44,16 +44,16 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -64,11 +64,11 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["FinishReason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FinishReason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FinishReason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_finishReason = string(rsp["FinishReason"].GetString());
         m_finishReasonHasBeenSet = true;
@@ -86,7 +86,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(rsp["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -96,7 +96,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -106,7 +106,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["RoomId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `RoomId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RoomId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_roomId = rsp["RoomId"].GetInt64();
         m_roomIdHasBeenSet = true;
@@ -116,7 +116,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(rsp["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["PushUserId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PushUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushUserId = string(rsp["PushUserId"].GetString());
         m_pushUserIdHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["PushStartTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PushStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pushStartTime = rsp["PushStartTime"].GetInt64();
         m_pushStartTimeHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["PushStopTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PushStopTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PushStopTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_pushStopTime = rsp["PushStopTime"].GetInt64();
         m_pushStopTimeHasBeenSet = true;
@@ -156,7 +156,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["ExceptionCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExceptionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExceptionCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_exceptionCnt = rsp["ExceptionCnt"].GetInt64();
         m_exceptionCntHasBeenSet = true;
@@ -166,7 +166,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["IMSyncTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IMSyncTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IMSyncTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_iMSyncTime = rsp["IMSyncTime"].GetInt64();
         m_iMSyncTimeHasBeenSet = true;
@@ -176,7 +176,7 @@ CoreInternalOutcome DescribeWhiteboardPushResponse::Deserialize(const string &pa
     {
         if (!rsp["Backup"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Backup` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Backup` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_backup = string(rsp["Backup"].GetString());
         m_backupHasBeenSet = true;

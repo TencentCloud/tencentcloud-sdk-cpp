@@ -38,7 +38,7 @@ CoreInternalOutcome CodeRepoSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreationTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeRepoSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeRepoSummary.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_creationTime = string(value["CreationTime"].GetString());
         m_creationTimeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CodeRepoSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LastModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeRepoSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeRepoSummary.LastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lastModifiedTime = string(value["LastModifiedTime"].GetString());
         m_lastModifiedTimeHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CodeRepoSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CodeRepositoryName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CodeRepoSummary.CodeRepositoryName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeRepoSummary.CodeRepositoryName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codeRepositoryName = string(value["CodeRepositoryName"].GetString());
         m_codeRepositoryNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CodeRepoSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GitConfig"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `CodeRepoSummary.GitConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeRepoSummary.GitConfig` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_gitConfig.Deserialize(value["GitConfig"]);
@@ -85,7 +85,7 @@ CoreInternalOutcome CodeRepoSummary::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NoSecret"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `CodeRepoSummary.NoSecret` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CodeRepoSummary.NoSecret` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_noSecret = value["NoSecret"].GetBool();
         m_noSecretHasBeenSet = true;

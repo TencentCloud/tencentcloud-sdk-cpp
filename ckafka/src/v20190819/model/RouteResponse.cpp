@@ -33,7 +33,7 @@ CoreInternalOutcome RouteResponse::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Routers") && !value["Routers"].IsNull())
     {
         if (!value["Routers"].IsArray())
-            return CoreInternalOutcome(Error("response `RouteResponse.Routers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `RouteResponse.Routers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Routers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

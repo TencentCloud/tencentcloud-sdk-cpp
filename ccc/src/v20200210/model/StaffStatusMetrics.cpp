@@ -45,7 +45,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Email"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.Email` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.Email` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_email = string(value["Email"].GetString());
         m_emailHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["StatusExtra"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.StatusExtra` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.StatusExtra` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_statusExtra.Deserialize(value["StatusExtra"]);
@@ -82,7 +82,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["OnlineDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.OnlineDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.OnlineDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_onlineDuration = value["OnlineDuration"].GetInt64();
         m_onlineDurationHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["FreeDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.FreeDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.FreeDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_freeDuration = value["FreeDuration"].GetInt64();
         m_freeDurationHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["BusyDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.BusyDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.BusyDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_busyDuration = value["BusyDuration"].GetInt64();
         m_busyDurationHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["NotReadyDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.NotReadyDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.NotReadyDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_notReadyDuration = value["NotReadyDuration"].GetInt64();
         m_notReadyDurationHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["RestDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.RestDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.RestDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_restDuration = value["RestDuration"].GetInt64();
         m_restDurationHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["AfterCallWorkDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.AfterCallWorkDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.AfterCallWorkDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_afterCallWorkDuration = value["AfterCallWorkDuration"].GetInt64();
         m_afterCallWorkDurationHasBeenSet = true;
@@ -142,7 +142,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Reason"].IsString())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.Reason` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.Reason` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reason = string(value["Reason"].GetString());
         m_reasonHasBeenSet = true;
@@ -152,7 +152,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReserveRest"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.ReserveRest` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.ReserveRest` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_reserveRest = value["ReserveRest"].GetBool();
         m_reserveRestHasBeenSet = true;
@@ -162,7 +162,7 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ReserveNotReady"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `StaffStatusMetrics.ReserveNotReady` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.ReserveNotReady` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_reserveNotReady = value["ReserveNotReady"].GetBool();
         m_reserveNotReadyHasBeenSet = true;

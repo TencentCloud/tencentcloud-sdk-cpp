@@ -39,7 +39,7 @@ CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Height"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PictureInfo.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureInfo.Height` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Width"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PictureInfo.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureInfo.Width` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetUint64();
         m_widthHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["XPosition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PictureInfo.XPosition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureInfo.XPosition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_xPosition = value["XPosition"].GetUint64();
         m_xPositionHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["YPosition"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PictureInfo.YPosition` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureInfo.YPosition` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_yPosition = value["YPosition"].GetUint64();
         m_yPositionHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SdkAppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PictureInfo.SdkAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureInfo.SdkAppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_sdkAppId = value["SdkAppId"].GetUint64();
         m_sdkAppIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PictureId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PictureInfo.PictureId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PictureInfo.PictureId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_pictureId = value["PictureId"].GetUint64();
         m_pictureIdHasBeenSet = true;

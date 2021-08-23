@@ -35,7 +35,7 @@ CoreInternalOutcome RollbackTimeRange::Deserialize(const rapidjson::Value &value
     {
         if (!value["Begin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTimeRange.Begin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTimeRange.Begin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_begin = string(value["Begin"].GetString());
         m_beginHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RollbackTimeRange::Deserialize(const rapidjson::Value &value
     {
         if (!value["End"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTimeRange.End` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTimeRange.End` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_end = string(value["End"].GetString());
         m_endHasBeenSet = true;

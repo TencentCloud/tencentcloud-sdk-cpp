@@ -39,16 +39,16 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -59,11 +59,11 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -71,7 +71,7 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     {
         if (!rsp["MusicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicId = string(rsp["MusicId"].GetString());
         m_musicIdHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     {
         if (!rsp["MusicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicName = string(rsp["MusicName"].GetString());
         m_musicNameHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     {
         if (!rsp["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = rsp["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     {
         if (!rsp["MusicUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicUrl = string(rsp["MusicUrl"].GetString());
         m_musicUrlHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     {
         if (!rsp["MusicImageUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MusicImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MusicImageUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_musicImageUrl = string(rsp["MusicImageUrl"].GetString());
         m_musicImageUrlHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeCloudMusicResponse::Deserialize(const string &payloa
     if (rsp.HasMember("Singers") && !rsp["Singers"].IsNull())
     {
         if (!rsp["Singers"].IsArray())
-            return CoreInternalOutcome(Error("response `Singers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Singers` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Singers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

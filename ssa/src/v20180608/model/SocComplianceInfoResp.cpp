@@ -33,7 +33,7 @@ CoreInternalOutcome SocComplianceInfoResp::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Items") && !value["Items"].IsNull())
     {
         if (!value["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `SocComplianceInfoResp.Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SocComplianceInfoResp.Items` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

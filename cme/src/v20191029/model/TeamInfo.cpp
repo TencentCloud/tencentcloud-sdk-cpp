@@ -38,7 +38,7 @@ CoreInternalOutcome TeamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TeamId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamInfo.TeamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamInfo.TeamId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_teamId = string(value["TeamId"].GetString());
         m_teamIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome TeamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome TeamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MemberCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TeamInfo.MemberCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamInfo.MemberCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_memberCount = value["MemberCount"].GetUint64();
         m_memberCountHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome TeamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome TeamInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TeamInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TeamInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

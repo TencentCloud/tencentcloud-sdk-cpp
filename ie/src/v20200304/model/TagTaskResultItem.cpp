@@ -35,7 +35,7 @@ CoreInternalOutcome TagTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Tag"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TagTaskResultItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagTaskResultItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tag = string(value["Tag"].GetString());
         m_tagHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TagTaskResultItem::Deserialize(const rapidjson::Value &value
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `TagTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagTaskResultItem.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;

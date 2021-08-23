@@ -33,7 +33,7 @@ CoreInternalOutcome EditMediaTaskInput::Deserialize(const rapidjson::Value &valu
     if (value.HasMember("FileInfoSet") && !value["FileInfoSet"].IsNull())
     {
         if (!value["FileInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `EditMediaTaskInput.FileInfoSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskInput.FileInfoSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FileInfoSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

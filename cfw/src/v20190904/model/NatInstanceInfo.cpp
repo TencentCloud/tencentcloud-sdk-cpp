@@ -45,7 +45,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatinsId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.NatinsId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.NatinsId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natinsId = string(value["NatinsId"].GetString());
         m_natinsIdHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatinsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.NatinsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.NatinsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natinsName = string(value["NatinsName"].GetString());
         m_natinsNameHasBeenSet = true;
@@ -65,7 +65,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FwMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.FwMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.FwMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fwMode = value["FwMode"].GetInt64();
         m_fwModeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BandWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.BandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.BandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bandWidth = value["BandWidth"].GetInt64();
         m_bandWidthHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InFlowMax"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.InFlowMax` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.InFlowMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_inFlowMax = value["InFlowMax"].GetInt64();
         m_inFlowMaxHasBeenSet = true;
@@ -105,7 +105,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OutFlowMax"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.OutFlowMax` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.OutFlowMax` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_outFlowMax = value["OutFlowMax"].GetUint64();
         m_outFlowMaxHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionZh"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.RegionZh` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.RegionZh` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionZh = string(value["RegionZh"].GetString());
         m_regionZhHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EipAddress") && !value["EipAddress"].IsNull())
     {
         if (!value["EipAddress"].IsArray())
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.EipAddress` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.EipAddress` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EipAddress"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("VpcIp") && !value["VpcIp"].IsNull())
     {
         if (!value["VpcIp"].IsArray())
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.VpcIp` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.VpcIp` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VpcIp"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -150,7 +150,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Subnets") && !value["Subnets"].IsNull())
     {
         if (!value["Subnets"].IsArray())
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.Subnets` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.Subnets` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Subnets"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -164,7 +164,7 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NatInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;

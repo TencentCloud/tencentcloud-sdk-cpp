@@ -38,7 +38,7 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Part"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormPart.Part` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormPart.Part` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_part = string(value["Part"].GetString());
         m_partHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PartDirection"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormPart.PartDirection` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormPart.PartDirection` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_partDirection = string(value["PartDirection"].GetString());
         m_partDirectionHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Tissue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormPart.Tissue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormPart.Tissue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tissue = string(value["Tissue"].GetString());
         m_tissueHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TissueDirection"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormPart.TissueDirection` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormPart.TissueDirection` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tissueDirection = string(value["TissueDirection"].GetString());
         m_tissueDirectionHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Upper"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NormPart.Upper` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NormPart.Upper` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_upper = string(value["Upper"].GetString());
         m_upperHasBeenSet = true;

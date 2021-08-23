@@ -35,7 +35,7 @@ CoreInternalOutcome ImageQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UsedQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageQuota.UsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageQuota.UsedQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_usedQuota = value["UsedQuota"].GetUint64();
         m_usedQuotaHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ImageQuota::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TotalQuota"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `ImageQuota.TotalQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageQuota.TotalQuota` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_totalQuota = value["TotalQuota"].GetUint64();
         m_totalQuotaHasBeenSet = true;

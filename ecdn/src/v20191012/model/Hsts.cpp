@@ -36,7 +36,7 @@ CoreInternalOutcome Hsts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hsts.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hsts.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome Hsts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAge"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Hsts.MaxAge` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hsts.MaxAge` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxAge = value["MaxAge"].GetInt64();
         m_maxAgeHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome Hsts::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IncludeSubDomains"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Hsts.IncludeSubDomains` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Hsts.IncludeSubDomains` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_includeSubDomains = string(value["IncludeSubDomains"].GetString());
         m_includeSubDomainsHasBeenSet = true;

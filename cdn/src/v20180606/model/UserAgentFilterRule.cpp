@@ -37,7 +37,7 @@ CoreInternalOutcome UserAgentFilterRule::Deserialize(const rapidjson::Value &val
     {
         if (!value["RuleType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserAgentFilterRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserAgentFilterRule.RuleType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleType = string(value["RuleType"].GetString());
         m_ruleTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome UserAgentFilterRule::Deserialize(const rapidjson::Value &val
     if (value.HasMember("RulePaths") && !value["RulePaths"].IsNull())
     {
         if (!value["RulePaths"].IsArray())
-            return CoreInternalOutcome(Error("response `UserAgentFilterRule.RulePaths` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserAgentFilterRule.RulePaths` is not array type"));
 
         const rapidjson::Value &tmpValue = value["RulePaths"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome UserAgentFilterRule::Deserialize(const rapidjson::Value &val
     if (value.HasMember("UserAgents") && !value["UserAgents"].IsNull())
     {
         if (!value["UserAgents"].IsArray())
-            return CoreInternalOutcome(Error("response `UserAgentFilterRule.UserAgents` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `UserAgentFilterRule.UserAgents` is not array type"));
 
         const rapidjson::Value &tmpValue = value["UserAgents"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -73,7 +73,7 @@ CoreInternalOutcome UserAgentFilterRule::Deserialize(const rapidjson::Value &val
     {
         if (!value["FilterType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserAgentFilterRule.FilterType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserAgentFilterRule.FilterType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filterType = string(value["FilterType"].GetString());
         m_filterTypeHasBeenSet = true;

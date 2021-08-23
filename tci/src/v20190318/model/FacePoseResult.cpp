@@ -37,7 +37,7 @@ CoreInternalOutcome FacePoseResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Direction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Direction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FacePoseResult.Direction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_direction = string(value["Direction"].GetString());
         m_directionHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FacePoseResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Pitch"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Pitch` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FacePoseResult.Pitch` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_pitch = value["Pitch"].GetDouble();
         m_pitchHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FacePoseResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Roll"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Roll` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FacePoseResult.Roll` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_roll = value["Roll"].GetDouble();
         m_rollHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome FacePoseResult::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Yaw"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `FacePoseResult.Yaw` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FacePoseResult.Yaw` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_yaw = value["Yaw"].GetDouble();
         m_yawHasBeenSet = true;

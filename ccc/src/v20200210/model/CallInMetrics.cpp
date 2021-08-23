@@ -44,7 +44,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IvrCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.IvrCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.IvrCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ivrCount = value["IvrCount"].GetInt64();
         m_ivrCountHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueueCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.QueueCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.QueueCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_queueCount = value["QueueCount"].GetInt64();
         m_queueCountHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RingCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.RingCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.RingCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ringCount = value["RingCount"].GetInt64();
         m_ringCountHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AcceptCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.AcceptCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.AcceptCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_acceptCount = value["AcceptCount"].GetInt64();
         m_acceptCountHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TransferOuterCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.TransferOuterCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.TransferOuterCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_transferOuterCount = value["TransferOuterCount"].GetInt64();
         m_transferOuterCountHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxQueueDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.MaxQueueDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.MaxQueueDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxQueueDuration = value["MaxQueueDuration"].GetInt64();
         m_maxQueueDurationHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgQueueDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.AvgQueueDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.AvgQueueDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_avgQueueDuration = value["AvgQueueDuration"].GetInt64();
         m_avgQueueDurationHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxRingDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.MaxRingDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.MaxRingDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRingDuration = value["MaxRingDuration"].GetInt64();
         m_maxRingDurationHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgRingDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.AvgRingDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.AvgRingDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_avgRingDuration = value["AvgRingDuration"].GetInt64();
         m_avgRingDurationHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxAcceptDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.MaxAcceptDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.MaxAcceptDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxAcceptDuration = value["MaxAcceptDuration"].GetInt64();
         m_maxAcceptDurationHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome CallInMetrics::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvgAcceptDuration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CallInMetrics.AvgAcceptDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CallInMetrics.AvgAcceptDuration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_avgAcceptDuration = value["AvgAcceptDuration"].GetInt64();
         m_avgAcceptDurationHasBeenSet = true;

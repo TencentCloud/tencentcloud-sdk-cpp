@@ -36,7 +36,7 @@ CoreInternalOutcome RuleCacheConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleCacheConfig.Cache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCacheConfig.Cache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_cache.Deserialize(value["Cache"]);
@@ -53,7 +53,7 @@ CoreInternalOutcome RuleCacheConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NoCache"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleCacheConfig.NoCache` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCacheConfig.NoCache` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_noCache.Deserialize(value["NoCache"]);
@@ -70,7 +70,7 @@ CoreInternalOutcome RuleCacheConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FollowOrigin"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `RuleCacheConfig.FollowOrigin` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleCacheConfig.FollowOrigin` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_followOrigin.Deserialize(value["FollowOrigin"]);

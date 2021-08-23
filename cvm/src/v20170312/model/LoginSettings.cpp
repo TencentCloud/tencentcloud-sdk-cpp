@@ -36,7 +36,7 @@ CoreInternalOutcome LoginSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Password"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginSettings.Password` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginSettings.Password` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome LoginSettings::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("KeyIds") && !value["KeyIds"].IsNull())
     {
         if (!value["KeyIds"].IsArray())
-            return CoreInternalOutcome(Error("response `LoginSettings.KeyIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LoginSettings.KeyIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["KeyIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -59,7 +59,7 @@ CoreInternalOutcome LoginSettings::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KeepImageLogin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `LoginSettings.KeepImageLogin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LoginSettings.KeepImageLogin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_keepImageLogin = string(value["KeepImageLogin"].GetString());
         m_keepImageLoginHasBeenSet = true;

@@ -37,7 +37,7 @@ CoreInternalOutcome KTVPlaylistBaseInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["PlaylistId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KTVPlaylistBaseInfo.PlaylistId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVPlaylistBaseInfo.PlaylistId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_playlistId = string(value["PlaylistId"].GetString());
         m_playlistIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome KTVPlaylistBaseInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Title"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KTVPlaylistBaseInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVPlaylistBaseInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_title = string(value["Title"].GetString());
         m_titleHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome KTVPlaylistBaseInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `KTVPlaylistBaseInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVPlaylistBaseInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome KTVPlaylistBaseInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["MusicNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `KTVPlaylistBaseInfo.MusicNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `KTVPlaylistBaseInfo.MusicNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_musicNum = value["MusicNum"].GetInt64();
         m_musicNumHasBeenSet = true;

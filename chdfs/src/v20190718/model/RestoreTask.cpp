@@ -39,7 +39,7 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RestoreTaskId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RestoreTask.RestoreTaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.RestoreTaskId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_restoreTaskId = value["RestoreTaskId"].GetUint64();
         m_restoreTaskIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FilePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RestoreTask.FilePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.FilePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_filePath = string(value["FilePath"].GetString());
         m_filePathHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RestoreTask.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.Type` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetUint64();
         m_typeHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Days"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RestoreTask.Days` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.Days` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_days = value["Days"].GetUint64();
         m_daysHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `RestoreTask.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RestoreTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;

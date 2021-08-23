@@ -35,7 +35,7 @@ CoreInternalOutcome ApplyDeclareResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Code"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareResult.Code` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareResult.Code` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_code = string(value["Code"].GetString());
         m_codeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ApplyDeclareResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ApplyDeclareResult.Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyDeclareResult.Data` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);

@@ -53,7 +53,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["Status"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.Status` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["Progress"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_progress = value["Progress"].GetUint64();
         m_progressHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["UsedTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.UsedTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.UsedTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_usedTime = value["UsedTime"].GetUint64();
         m_usedTimeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["NoAudio"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.NoAudio` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.NoAudio` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_noAudio = value["NoAudio"].GetBool();
         m_noAudioHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["NoVideo"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.NoVideo` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.NoVideo` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_noVideo = value["NoVideo"].GetBool();
         m_noVideoHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["QualityEvaluationScore"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.QualityEvaluationScore` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.QualityEvaluationScore` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_qualityEvaluationScore = value["QualityEvaluationScore"].GetUint64();
         m_qualityEvaluationScoreHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("QualityEvaluationResults") && !value["QualityEvaluationResults"].IsNull())
     {
         if (!value["QualityEvaluationResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.QualityEvaluationResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.QualityEvaluationResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["QualityEvaluationResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -152,7 +152,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("JitterResults") && !value["JitterResults"].IsNull())
     {
         if (!value["JitterResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.JitterResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.JitterResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["JitterResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -172,7 +172,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("BlurResults") && !value["BlurResults"].IsNull())
     {
         if (!value["BlurResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.BlurResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.BlurResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BlurResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -192,7 +192,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("AbnormalLightingResults") && !value["AbnormalLightingResults"].IsNull())
     {
         if (!value["AbnormalLightingResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.AbnormalLightingResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.AbnormalLightingResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AbnormalLightingResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -212,7 +212,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("CrashScreenResults") && !value["CrashScreenResults"].IsNull())
     {
         if (!value["CrashScreenResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.CrashScreenResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.CrashScreenResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["CrashScreenResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -232,7 +232,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("BlackWhiteEdgeResults") && !value["BlackWhiteEdgeResults"].IsNull())
     {
         if (!value["BlackWhiteEdgeResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.BlackWhiteEdgeResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.BlackWhiteEdgeResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BlackWhiteEdgeResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -252,7 +252,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("NoiseResults") && !value["NoiseResults"].IsNull())
     {
         if (!value["NoiseResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.NoiseResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.NoiseResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NoiseResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -272,7 +272,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("MosaicResults") && !value["MosaicResults"].IsNull())
     {
         if (!value["MosaicResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.MosaicResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.MosaicResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["MosaicResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -292,7 +292,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("QRCodeResults") && !value["QRCodeResults"].IsNull())
     {
         if (!value["QRCodeResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.QRCodeResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.QRCodeResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["QRCodeResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -312,7 +312,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     if (value.HasMember("VoiceResults") && !value["VoiceResults"].IsNull())
     {
         if (!value["VoiceResults"].IsArray())
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.VoiceResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.VoiceResults` is not array type"));
 
         const rapidjson::Value &tmpValue = value["VoiceResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -333,7 +333,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["ErrCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
@@ -343,7 +343,7 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::V
     {
         if (!value["ErrMsg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QualityControlInfoTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_errMsg = string(value["ErrMsg"].GetString());
         m_errMsgHasBeenSet = true;

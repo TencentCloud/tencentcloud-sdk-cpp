@@ -35,7 +35,7 @@ CoreInternalOutcome CpmVirtualPrivateCloud::Deserialize(const rapidjson::Value &
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CpmVirtualPrivateCloud.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CpmVirtualPrivateCloud.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CpmVirtualPrivateCloud::Deserialize(const rapidjson::Value &
     {
         if (!value["SubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CpmVirtualPrivateCloud.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CpmVirtualPrivateCloud.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subnetId = string(value["SubnetId"].GetString());
         m_subnetIdHasBeenSet = true;

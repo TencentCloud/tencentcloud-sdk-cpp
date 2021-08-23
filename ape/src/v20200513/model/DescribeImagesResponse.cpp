@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,11 +58,11 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
     {
         if (!rsp["Offset"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Offset` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_offset = rsp["Offset"].GetInt64();
         m_offsetHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
     {
         if (!rsp["Limit"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Limit` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Limit` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_limit = rsp["Limit"].GetInt64();
         m_limitHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
     {
         if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = rsp["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
     {
         if (!rsp["HaveMore"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HaveMore` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HaveMore` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_haveMore = rsp["HaveMore"].GetBool();
         m_haveMoreHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome DescribeImagesResponse::Deserialize(const string &payload)
     if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
     {
         if (!rsp["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `Items` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

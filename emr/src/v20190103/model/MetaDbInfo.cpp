@@ -36,7 +36,7 @@ CoreInternalOutcome MetaDbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetaDbInfo.MetaType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetaDbInfo.MetaType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_metaType = string(value["MetaType"].GetString());
         m_metaTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome MetaDbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnifyMetaInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MetaDbInfo.UnifyMetaInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetaDbInfo.UnifyMetaInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unifyMetaInstanceId = string(value["UnifyMetaInstanceId"].GetString());
         m_unifyMetaInstanceIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome MetaDbInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MetaDBInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MetaDbInfo.MetaDBInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MetaDbInfo.MetaDBInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_metaDBInfo.Deserialize(value["MetaDBInfo"]);

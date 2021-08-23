@@ -41,7 +41,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcName = string(value["VpcName"].GetString());
         m_vpcNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FwMode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.FwMode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.FwMode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_fwMode = value["FwMode"].GetInt64();
         m_fwModeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcIpv4Cidr"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.VpcIpv4Cidr` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.VpcIpv4Cidr` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcIpv4Cidr = string(value["VpcIpv4Cidr"].GetString());
         m_vpcIpv4CidrHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DNSEip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.DNSEip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.DNSEip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dNSEip = string(value["DNSEip"].GetString());
         m_dNSEipHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatInsId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.NatInsId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.NatInsId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natInsId = string(value["NatInsId"].GetString());
         m_natInsIdHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NatInsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.NatInsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.NatInsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_natInsName = string(value["NatInsName"].GetString());
         m_natInsNameHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome VpcDnsInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SwitchStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VpcDnsInfo.SwitchStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcDnsInfo.SwitchStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_switchStatus = value["SwitchStatus"].GetInt64();
         m_switchStatusHasBeenSet = true;

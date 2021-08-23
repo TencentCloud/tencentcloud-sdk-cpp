@@ -36,7 +36,7 @@ CoreInternalOutcome AccessFullTextInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["CaseSensitive"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AccessFullTextInfo.CaseSensitive` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessFullTextInfo.CaseSensitive` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_caseSensitive = value["CaseSensitive"].GetBool();
         m_caseSensitiveHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome AccessFullTextInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Tokenizer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccessFullTextInfo.Tokenizer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessFullTextInfo.Tokenizer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tokenizer = string(value["Tokenizer"].GetString());
         m_tokenizerHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome AccessFullTextInfo::Deserialize(const rapidjson::Value &valu
     {
         if (!value["ContainZH"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `AccessFullTextInfo.ContainZH` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccessFullTextInfo.ContainZH` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_containZH = value["ContainZH"].GetBool();
         m_containZHHasBeenSet = true;

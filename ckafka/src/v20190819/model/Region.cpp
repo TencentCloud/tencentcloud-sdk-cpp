@@ -41,7 +41,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Region.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionId = value["RegionId"].GetInt64();
         m_regionIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AreaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region.AreaName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.AreaName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_areaName = string(value["AreaName"].GetString());
         m_areaNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionCode = string(value["RegionCode"].GetString());
         m_regionCodeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionCodeV3"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region.RegionCodeV3` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.RegionCodeV3` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionCodeV3 = string(value["RegionCodeV3"].GetString());
         m_regionCodeV3HasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Support"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Region.Support` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.Support` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_support = string(value["Support"].GetString());
         m_supportHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ipv6"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Region.Ipv6` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.Ipv6` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ipv6 = value["Ipv6"].GetInt64();
         m_ipv6HasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MultiZone"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Region.MultiZone` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Region.MultiZone` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_multiZone = value["MultiZone"].GetInt64();
         m_multiZoneHasBeenSet = true;

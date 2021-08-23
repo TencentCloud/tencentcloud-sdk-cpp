@@ -41,7 +41,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OcrEngineType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.OcrEngineType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.OcrEngineType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_ocrEngineType = value["OcrEngineType"].GetInt64();
         m_ocrEngineTypeHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsReturnText"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.IsReturnText` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.IsReturnText` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isReturnText = value["IsReturnText"].GetBool();
         m_isReturnTextHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RotateTheAngle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.RotateTheAngle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.RotateTheAngle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_rotateTheAngle = value["RotateTheAngle"].GetDouble();
         m_rotateTheAngleHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoFitDirection"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.AutoFitDirection` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.AutoFitDirection` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoFitDirection = value["AutoFitDirection"].GetBool();
         m_autoFitDirectionHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AutoOptimizeCoordinate"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.AutoOptimizeCoordinate` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.AutoOptimizeCoordinate` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_autoOptimizeCoordinate = value["AutoOptimizeCoordinate"].GetBool();
         m_autoOptimizeCoordinateHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsScale"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.IsScale` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.IsScale` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isScale = value["IsScale"].GetBool();
         m_isScaleHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageOriginalSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.ImageOriginalSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.ImageOriginalSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_imageOriginalSize = value["ImageOriginalSize"].GetUint64();
         m_imageOriginalSizeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScaleTargetSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `HandleParam.ScaleTargetSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandleParam.ScaleTargetSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_scaleTargetSize = value["ScaleTargetSize"].GetUint64();
         m_scaleTargetSizeHasBeenSet = true;

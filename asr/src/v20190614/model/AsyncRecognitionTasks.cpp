@@ -33,7 +33,7 @@ CoreInternalOutcome AsyncRecognitionTasks::Deserialize(const rapidjson::Value &v
     if (value.HasMember("Tasks") && !value["Tasks"].IsNull())
     {
         if (!value["Tasks"].IsArray())
-            return CoreInternalOutcome(Error("response `AsyncRecognitionTasks.Tasks` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AsyncRecognitionTasks.Tasks` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Tasks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

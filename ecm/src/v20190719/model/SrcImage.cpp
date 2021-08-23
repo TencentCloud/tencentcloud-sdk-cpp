@@ -43,7 +43,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.ImageId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageId = string(value["ImageId"].GetString());
         m_imageIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.ImageName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.ImageName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageName = string(value["ImageName"].GetString());
         m_imageNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageOsName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.ImageOsName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.ImageOsName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageOsName = string(value["ImageOsName"].GetString());
         m_imageOsNameHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.ImageDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.ImageDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageDescription = string(value["ImageDescription"].GetString());
         m_imageDescriptionHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Region"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.Region` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.Region` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.RegionID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.RegionID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_regionID = value["RegionID"].GetInt64();
         m_regionIDHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_regionName = string(value["RegionName"].GetString());
         m_regionNameHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceName = string(value["InstanceName"].GetString());
         m_instanceNameHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome SrcImage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ImageType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SrcImage.ImageType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SrcImage.ImageType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_imageType = string(value["ImageType"].GetString());
         m_imageTypeHasBeenSet = true;

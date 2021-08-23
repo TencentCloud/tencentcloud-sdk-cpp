@@ -42,7 +42,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["CurrencyCode"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.CurrencyCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.CurrencyCode` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currencyCode = string(value["CurrencyCode"].GetString());
         m_currencyCodeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["Duration"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetInt64();
         m_durationHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["FixedPrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.FixedPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.FixedPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_fixedPrice = value["FixedPrice"].GetDouble();
         m_fixedPriceHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["InstanceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["OfferingType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.OfferingType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.OfferingType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_offeringType = string(value["OfferingType"].GetString());
         m_offeringTypeHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["ReservedInstancesOfferingId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.ReservedInstancesOfferingId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.ReservedInstancesOfferingId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_reservedInstancesOfferingId = string(value["ReservedInstancesOfferingId"].GetString());
         m_reservedInstancesOfferingIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["ProductDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.ProductDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productDescription = string(value["ProductDescription"].GetString());
         m_productDescriptionHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome ReservedInstancesOffering::Deserialize(const rapidjson::Valu
     {
         if (!value["UsagePrice"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ReservedInstancesOffering.UsagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancesOffering.UsagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_usagePrice = value["UsagePrice"].GetDouble();
         m_usagePriceHasBeenSet = true;

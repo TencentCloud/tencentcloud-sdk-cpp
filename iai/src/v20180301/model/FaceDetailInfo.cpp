@@ -35,7 +35,7 @@ CoreInternalOutcome FaceDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailInfo.FaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailInfo.FaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceRect.Deserialize(value["FaceRect"]);
@@ -52,7 +52,7 @@ CoreInternalOutcome FaceDetailInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FaceDetailAttributesInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `FaceDetailInfo.FaceDetailAttributesInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceDetailInfo.FaceDetailAttributesInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_faceDetailAttributesInfo.Deserialize(value["FaceDetailAttributesInfo"]);

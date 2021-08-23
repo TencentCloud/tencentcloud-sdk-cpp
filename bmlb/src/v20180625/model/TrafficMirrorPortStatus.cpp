@@ -35,7 +35,7 @@ CoreInternalOutcome TrafficMirrorPortStatus::Deserialize(const rapidjson::Value 
     {
         if (!value["Port"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorPortStatus.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorPortStatus.Port` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_port = value["Port"].GetUint64();
         m_portHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome TrafficMirrorPortStatus::Deserialize(const rapidjson::Value 
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TrafficMirrorPortStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrafficMirrorPortStatus.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

@@ -40,7 +40,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PhoneNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_phoneNum = string(value["PhoneNum"].GetString());
         m_phoneNumHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Openid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.Openid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.Openid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_openid = string(value["Openid"].GetString());
         m_openidHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IP"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.IP` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.IP` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WiFiBssid"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.WiFiBssid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.WiFiBssid` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_wiFiBssid = string(value["WiFiBssid"].GetString());
         m_wiFiBssidHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IMEI"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.IMEI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.IMEI` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iMEI = string(value["IMEI"].GetString());
         m_iMEIHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OAID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.OAID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.OAID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oAID = string(value["OAID"].GetString());
         m_oAIDHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome UserInfos::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IDFA"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UserInfos.IDFA` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfos.IDFA` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_iDFA = string(value["IDFA"].GetString());
         m_iDFAHasBeenSet = true;

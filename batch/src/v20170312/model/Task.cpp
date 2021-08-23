@@ -51,7 +51,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Application"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.Application` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.Application` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_application.Deserialize(value["Application"]);
@@ -68,7 +68,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskName = string(value["TaskName"].GetString());
         m_taskNameHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskInstanceNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.TaskInstanceNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.TaskInstanceNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_taskInstanceNum = value["TaskInstanceNum"].GetUint64();
         m_taskInstanceNumHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ComputeEnv"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.ComputeEnv` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.ComputeEnv` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_computeEnv.Deserialize(value["ComputeEnv"]);
@@ -105,7 +105,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnvId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.EnvId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_envId = string(value["EnvId"].GetString());
         m_envIdHasBeenSet = true;
@@ -115,7 +115,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.RedirectInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.RedirectInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_redirectInfo.Deserialize(value["RedirectInfo"]);
@@ -132,7 +132,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectLocalInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Task.RedirectLocalInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.RedirectLocalInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_redirectLocalInfo.Deserialize(value["RedirectLocalInfo"]);
@@ -148,7 +148,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("InputMappings") && !value["InputMappings"].IsNull())
     {
         if (!value["InputMappings"].IsArray())
-            return CoreInternalOutcome(Error("response `Task.InputMappings` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Task.InputMappings` is not array type"));
 
         const rapidjson::Value &tmpValue = value["InputMappings"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -168,7 +168,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OutputMappings") && !value["OutputMappings"].IsNull())
     {
         if (!value["OutputMappings"].IsArray())
-            return CoreInternalOutcome(Error("response `Task.OutputMappings` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Task.OutputMappings` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutputMappings"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -188,7 +188,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("OutputMappingConfigs") && !value["OutputMappingConfigs"].IsNull())
     {
         if (!value["OutputMappingConfigs"].IsArray())
-            return CoreInternalOutcome(Error("response `Task.OutputMappingConfigs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Task.OutputMappingConfigs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["OutputMappingConfigs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -208,7 +208,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EnvVars") && !value["EnvVars"].IsNull())
     {
         if (!value["EnvVars"].IsArray())
-            return CoreInternalOutcome(Error("response `Task.EnvVars` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Task.EnvVars` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnvVars"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -228,7 +228,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Authentications") && !value["Authentications"].IsNull())
     {
         if (!value["Authentications"].IsArray())
-            return CoreInternalOutcome(Error("response `Task.Authentications` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Task.Authentications` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Authentications"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -249,7 +249,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FailedAction"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Task.FailedAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.FailedAction` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_failedAction = string(value["FailedAction"].GetString());
         m_failedActionHasBeenSet = true;
@@ -259,7 +259,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxRetryCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.MaxRetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.MaxRetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxRetryCount = value["MaxRetryCount"].GetUint64();
         m_maxRetryCountHasBeenSet = true;
@@ -269,7 +269,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Timeout"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.Timeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_timeout = value["Timeout"].GetUint64();
         m_timeoutHasBeenSet = true;
@@ -279,7 +279,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxConcurrentNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.MaxConcurrentNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.MaxConcurrentNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxConcurrentNum = value["MaxConcurrentNum"].GetUint64();
         m_maxConcurrentNumHasBeenSet = true;
@@ -289,7 +289,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RestartComputeNode"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `Task.RestartComputeNode` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.RestartComputeNode` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_restartComputeNode = value["RestartComputeNode"].GetBool();
         m_restartComputeNodeHasBeenSet = true;
@@ -299,7 +299,7 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceMaxRetryCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Task.ResourceMaxRetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Task.ResourceMaxRetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_resourceMaxRetryCount = value["ResourceMaxRetryCount"].GetUint64();
         m_resourceMaxRetryCountHasBeenSet = true;

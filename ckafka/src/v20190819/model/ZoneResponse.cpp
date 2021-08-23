@@ -42,7 +42,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ZoneList") && !value["ZoneList"].IsNull())
     {
         if (!value["ZoneList"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneResponse.ZoneList` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.ZoneList` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ZoneList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -63,7 +63,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxBuyInstanceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.MaxBuyInstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.MaxBuyInstanceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBuyInstanceNum = value["MaxBuyInstanceNum"].GetInt64();
         m_maxBuyInstanceNumHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxBandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.MaxBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.MaxBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandwidth = value["MaxBandwidth"].GetInt64();
         m_maxBandwidthHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnitPrice"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.UnitPrice` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.UnitPrice` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_unitPrice.Deserialize(value["UnitPrice"]);
@@ -100,7 +100,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MessagePrice"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.MessagePrice` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.MessagePrice` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_messagePrice.Deserialize(value["MessagePrice"]);
@@ -116,7 +116,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ClusterInfo") && !value["ClusterInfo"].IsNull())
     {
         if (!value["ClusterInfo"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneResponse.ClusterInfo` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.ClusterInfo` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ClusterInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -137,7 +137,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Standard"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.Standard` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Standard` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_standard = string(value["Standard"].GetString());
         m_standardHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StandardS2"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.StandardS2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.StandardS2` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_standardS2 = string(value["StandardS2"].GetString());
         m_standardS2HasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Profession"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.Profession` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Profession` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_profession = string(value["Profession"].GetString());
         m_professionHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Physical"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneResponse.Physical` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Physical` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_physical = string(value["Physical"].GetString());
         m_physicalHasBeenSet = true;

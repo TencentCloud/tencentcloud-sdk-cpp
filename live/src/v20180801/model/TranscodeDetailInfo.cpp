@@ -42,7 +42,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["StreamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_streamName = string(value["StreamName"].GetString());
         m_streamNameHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["ModuleCodec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.ModuleCodec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.ModuleCodec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_moduleCodec = string(value["ModuleCodec"].GetString());
         m_moduleCodecHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Bitrate"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.Bitrate` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetUint64();
         m_bitrateHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["PushDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_pushDomain = string(value["PushDomain"].GetString());
         m_pushDomainHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["Resolution"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resolution = string(value["Resolution"].GetString());
         m_resolutionHasBeenSet = true;

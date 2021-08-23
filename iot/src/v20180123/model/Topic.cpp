@@ -43,7 +43,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.ProductId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productId = string(value["ProductId"].GetString());
         m_productIdHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgLife"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgLife` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgLife` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgLife = value["MsgLife"].GetUint64();
         m_msgLifeHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgSize = value["MsgSize"].GetUint64();
         m_msgSizeHasBeenSet = true;
@@ -93,7 +93,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MsgCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Topic.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_msgCount = value["MsgCount"].GetUint64();
         m_msgCountHasBeenSet = true;
@@ -103,7 +103,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Deleted"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Topic.Deleted` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.Deleted` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deleted = value["Deleted"].GetUint64();
         m_deletedHasBeenSet = true;
@@ -113,7 +113,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Path"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.Path` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.Path` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
@@ -123,7 +123,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -133,7 +133,7 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Topic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Topic.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;

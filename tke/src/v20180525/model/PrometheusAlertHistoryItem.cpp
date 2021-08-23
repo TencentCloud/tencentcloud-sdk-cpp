@@ -40,7 +40,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["Content"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.Content` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.Content` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.State` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
@@ -80,7 +80,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["RuleItem"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.RuleItem` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.RuleItem` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ruleItem = string(value["RuleItem"].GetString());
         m_ruleItemHasBeenSet = true;
@@ -90,7 +90,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["TopicId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.TopicId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicId = string(value["TopicId"].GetString());
         m_topicIdHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome PrometheusAlertHistoryItem::Deserialize(const rapidjson::Val
     {
         if (!value["TopicName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PrometheusAlertHistoryItem.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertHistoryItem.TopicName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;

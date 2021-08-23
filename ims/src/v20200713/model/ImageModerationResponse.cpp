@@ -45,16 +45,16 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -65,11 +65,11 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -77,7 +77,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["HitFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_hitFlag = rsp["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_suggestion = string(rsp["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Label"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_label = string(rsp["Label"].GetString());
         m_labelHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["SubLabel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubLabel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_subLabel = string(rsp["SubLabel"].GetString());
         m_subLabelHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Score"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Score` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Score` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_score = rsp["Score"].GetInt64();
         m_scoreHasBeenSet = true;
@@ -126,7 +126,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("LabelResults") && !rsp["LabelResults"].IsNull())
     {
         if (!rsp["LabelResults"].IsArray())
-            return CoreInternalOutcome(Error("response `LabelResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LabelResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["LabelResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -146,7 +146,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("ObjectResults") && !rsp["ObjectResults"].IsNull())
     {
         if (!rsp["ObjectResults"].IsArray())
-            return CoreInternalOutcome(Error("response `ObjectResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ObjectResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["ObjectResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -166,7 +166,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("OcrResults") && !rsp["OcrResults"].IsNull())
     {
         if (!rsp["OcrResults"].IsArray())
-            return CoreInternalOutcome(Error("response `OcrResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `OcrResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["OcrResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -186,7 +186,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     if (rsp.HasMember("LibResults") && !rsp["LibResults"].IsNull())
     {
         if (!rsp["LibResults"].IsArray())
-            return CoreInternalOutcome(Error("response `LibResults` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `LibResults` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["LibResults"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -207,7 +207,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["DataId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dataId = string(rsp["DataId"].GetString());
         m_dataIdHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["BizType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `BizType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BizType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_bizType = string(rsp["BizType"].GetString());
         m_bizTypeHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         if (!rsp["Extra"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_extra = string(rsp["Extra"].GetString());
         m_extraHasBeenSet = true;

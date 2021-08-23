@@ -35,7 +35,7 @@ CoreInternalOutcome AccountAttribute::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AttributeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AccountAttribute.AttributeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccountAttribute.AttributeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_attributeName = string(value["AttributeName"].GetString());
         m_attributeNameHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome AccountAttribute::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AttributeValues") && !value["AttributeValues"].IsNull())
     {
         if (!value["AttributeValues"].IsArray())
-            return CoreInternalOutcome(Error("response `AccountAttribute.AttributeValues` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `AccountAttribute.AttributeValues` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AttributeValues"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

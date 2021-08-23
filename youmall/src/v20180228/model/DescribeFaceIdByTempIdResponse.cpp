@@ -40,16 +40,16 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -60,11 +60,11 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["CompanyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CompanyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_companyId = string(rsp["CompanyId"].GetString());
         m_companyIdHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["ShopId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ShopId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shopId = rsp["ShopId"].GetInt64();
         m_shopIdHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["CameraId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CameraId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CameraId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cameraId = rsp["CameraId"].GetInt64();
         m_cameraIdHasBeenSet = true;
@@ -102,7 +102,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["PosId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PosId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PosId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_posId = string(rsp["PosId"].GetString());
         m_posIdHasBeenSet = true;
@@ -112,7 +112,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["TempId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TempId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TempId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tempId = string(rsp["TempId"].GetString());
         m_tempIdHasBeenSet = true;
@@ -122,7 +122,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["FaceId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `FaceId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FaceId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_faceId = rsp["FaceId"].GetInt64();
         m_faceIdHasBeenSet = true;
@@ -132,7 +132,7 @@ CoreInternalOutcome DescribeFaceIdByTempIdResponse::Deserialize(const string &pa
     {
         if (!rsp["PersonInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `PersonInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PersonInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_personInfo.Deserialize(rsp["PersonInfo"]);

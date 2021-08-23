@@ -35,7 +35,7 @@ CoreInternalOutcome ResourceBillingData::Deserialize(const rapidjson::Value &val
     {
         if (!value["Resource"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResourceBillingData.Resource` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResourceBillingData.Resource` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome ResourceBillingData::Deserialize(const rapidjson::Value &val
     if (value.HasMember("BillingData") && !value["BillingData"].IsNull())
     {
         if (!value["BillingData"].IsArray())
-            return CoreInternalOutcome(Error("response `ResourceBillingData.BillingData` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ResourceBillingData.BillingData` is not array type"));
 
         const rapidjson::Value &tmpValue = value["BillingData"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

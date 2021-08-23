@@ -38,7 +38,7 @@ CoreInternalOutcome SnapshotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableGroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfo.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfo.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableGroupId = string(value["TableGroupId"].GetString());
         m_tableGroupIdHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SnapshotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfo.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfo.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SnapshotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfo.SnapshotName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfo.SnapshotName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotName = string(value["SnapshotName"].GetString());
         m_snapshotNameHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SnapshotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfo.SnapshotTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfo.SnapshotTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotTime = string(value["SnapshotTime"].GetString());
         m_snapshotTimeHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SnapshotInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SnapshotDeadTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SnapshotInfo.SnapshotDeadTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfo.SnapshotDeadTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_snapshotDeadTime = string(value["SnapshotDeadTime"].GetString());
         m_snapshotDeadTimeHasBeenSet = true;

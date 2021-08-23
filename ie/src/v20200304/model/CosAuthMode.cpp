@@ -38,7 +38,7 @@ CoreInternalOutcome CosAuthMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CosAuthMode.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosAuthMode.Type` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome CosAuthMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HostedId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosAuthMode.HostedId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosAuthMode.HostedId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_hostedId = string(value["HostedId"].GetString());
         m_hostedIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome CosAuthMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosAuthMode.SecretId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosAuthMode.SecretId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretId = string(value["SecretId"].GetString());
         m_secretIdHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome CosAuthMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosAuthMode.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosAuthMode.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretKey = string(value["SecretKey"].GetString());
         m_secretKeyHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome CosAuthMode::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Token"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CosAuthMode.Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CosAuthMode.Token` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_token = string(value["Token"].GetString());
         m_tokenHasBeenSet = true;

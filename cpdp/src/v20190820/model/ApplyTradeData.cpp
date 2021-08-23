@@ -39,7 +39,7 @@ CoreInternalOutcome ApplyTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MerchantId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyTradeData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyTradeData.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_merchantId = string(value["MerchantId"].GetString());
         m_merchantIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ApplyTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeFileId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyTradeData.TradeFileId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyTradeData.TradeFileId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeFileId = string(value["TradeFileId"].GetString());
         m_tradeFileIdHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ApplyTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeCurrency"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyTradeData.TradeCurrency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyTradeData.TradeCurrency` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeCurrency = string(value["TradeCurrency"].GetString());
         m_tradeCurrencyHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ApplyTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TradeAmount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyTradeData.TradeAmount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyTradeData.TradeAmount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tradeAmount = string(value["TradeAmount"].GetString());
         m_tradeAmountHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ApplyTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PayerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyTradeData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyTradeData.PayerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_payerId = string(value["PayerId"].GetString());
         m_payerIdHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ApplyTradeData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ApplyTradeData.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApplyTradeData.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;

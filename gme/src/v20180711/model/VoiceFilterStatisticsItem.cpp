@@ -34,7 +34,7 @@ CoreInternalOutcome VoiceFilterStatisticsItem::Deserialize(const rapidjson::Valu
     {
         if (!value["Duration"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `VoiceFilterStatisticsItem.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterStatisticsItem.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_duration = value["Duration"].GetUint64();
         m_durationHasBeenSet = true;

@@ -42,7 +42,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Bitrate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_bitrate = value["Bitrate"].GetInt64();
         m_bitrateHasBeenSet = true;
@@ -52,7 +52,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Codec"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.Codec` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.Codec` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_codec = string(value["Codec"].GetString());
         m_codecHasBeenSet = true;
@@ -62,7 +62,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Channel"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_channel = value["Channel"].GetInt64();
         m_channelHasBeenSet = true;
@@ -72,7 +72,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SampleRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.SampleRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.SampleRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_sampleRate = value["SampleRate"].GetInt64();
         m_sampleRateHasBeenSet = true;
@@ -82,7 +82,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Denoise"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.Denoise` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.Denoise` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_denoise.Deserialize(value["Denoise"]);
@@ -99,7 +99,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableMuteAudio"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.EnableMuteAudio` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.EnableMuteAudio` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_enableMuteAudio = value["EnableMuteAudio"].GetInt64();
         m_enableMuteAudioHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LoudnessInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.LoudnessInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.LoudnessInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_loudnessInfo.Deserialize(value["LoudnessInfo"]);
@@ -126,7 +126,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AudioEnhance"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.AudioEnhance` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.AudioEnhance` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_audioEnhance.Deserialize(value["AudioEnhance"]);
@@ -143,7 +143,7 @@ CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RemoveReverb"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `AudioInfo.RemoveReverb` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AudioInfo.RemoveReverb` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_removeReverb.Deserialize(value["RemoveReverb"]);

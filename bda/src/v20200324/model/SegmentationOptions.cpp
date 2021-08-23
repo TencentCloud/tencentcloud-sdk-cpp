@@ -54,7 +54,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Background"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Background` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Background` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_background = value["Background"].GetBool();
         m_backgroundHasBeenSet = true;
@@ -64,7 +64,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Hair"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Hair` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Hair` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_hair = value["Hair"].GetBool();
         m_hairHasBeenSet = true;
@@ -74,7 +74,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["LeftEyebrow"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.LeftEyebrow` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.LeftEyebrow` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_leftEyebrow = value["LeftEyebrow"].GetBool();
         m_leftEyebrowHasBeenSet = true;
@@ -84,7 +84,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["RightEyebrow"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.RightEyebrow` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.RightEyebrow` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_rightEyebrow = value["RightEyebrow"].GetBool();
         m_rightEyebrowHasBeenSet = true;
@@ -94,7 +94,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["LeftEye"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.LeftEye` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.LeftEye` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_leftEye = value["LeftEye"].GetBool();
         m_leftEyeHasBeenSet = true;
@@ -104,7 +104,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["RightEye"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.RightEye` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.RightEye` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_rightEye = value["RightEye"].GetBool();
         m_rightEyeHasBeenSet = true;
@@ -114,7 +114,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Nose"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Nose` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Nose` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_nose = value["Nose"].GetBool();
         m_noseHasBeenSet = true;
@@ -124,7 +124,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["UpperLip"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.UpperLip` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.UpperLip` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_upperLip = value["UpperLip"].GetBool();
         m_upperLipHasBeenSet = true;
@@ -134,7 +134,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["LowerLip"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.LowerLip` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.LowerLip` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_lowerLip = value["LowerLip"].GetBool();
         m_lowerLipHasBeenSet = true;
@@ -144,7 +144,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Tooth"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Tooth` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Tooth` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_tooth = value["Tooth"].GetBool();
         m_toothHasBeenSet = true;
@@ -154,7 +154,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Mouth"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Mouth` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Mouth` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_mouth = value["Mouth"].GetBool();
         m_mouthHasBeenSet = true;
@@ -164,7 +164,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["LeftEar"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.LeftEar` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.LeftEar` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_leftEar = value["LeftEar"].GetBool();
         m_leftEarHasBeenSet = true;
@@ -174,7 +174,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["RightEar"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.RightEar` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.RightEar` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_rightEar = value["RightEar"].GetBool();
         m_rightEarHasBeenSet = true;
@@ -184,7 +184,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Face"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Face` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Face` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_face = value["Face"].GetBool();
         m_faceHasBeenSet = true;
@@ -194,7 +194,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Head"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Head` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Head` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_head = value["Head"].GetBool();
         m_headHasBeenSet = true;
@@ -204,7 +204,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Body"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Body` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Body` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_body = value["Body"].GetBool();
         m_bodyHasBeenSet = true;
@@ -214,7 +214,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Hat"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Hat` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Hat` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_hat = value["Hat"].GetBool();
         m_hatHasBeenSet = true;
@@ -224,7 +224,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Headdress"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Headdress` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Headdress` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_headdress = value["Headdress"].GetBool();
         m_headdressHasBeenSet = true;
@@ -234,7 +234,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Earrings"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Earrings` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Earrings` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_earrings = value["Earrings"].GetBool();
         m_earringsHasBeenSet = true;
@@ -244,7 +244,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Necklace"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Necklace` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Necklace` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_necklace = value["Necklace"].GetBool();
         m_necklaceHasBeenSet = true;
@@ -254,7 +254,7 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &val
     {
         if (!value["Belongings"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `SegmentationOptions.Belongings` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SegmentationOptions.Belongings` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_belongings = value["Belongings"].GetBool();
         m_belongingsHasBeenSet = true;

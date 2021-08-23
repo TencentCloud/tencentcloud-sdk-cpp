@@ -37,7 +37,7 @@ CoreInternalOutcome FrameTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartPts"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FrameTagItem.StartPts` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagItem.StartPts` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_startPts = value["StartPts"].GetUint64();
         m_startPtsHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome FrameTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndPts"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `FrameTagItem.EndPts` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagItem.EndPts` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_endPts = value["EndPts"].GetUint64();
         m_endPtsHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome FrameTagItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Period"].IsString())
         {
-            return CoreInternalOutcome(Error("response `FrameTagItem.Period` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FrameTagItem.Period` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_period = string(value["Period"].GetString());
         m_periodHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome FrameTagItem::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagItems") && !value["TagItems"].IsNull())
     {
         if (!value["TagItems"].IsArray())
-            return CoreInternalOutcome(Error("response `FrameTagItem.TagItems` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `FrameTagItem.TagItems` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

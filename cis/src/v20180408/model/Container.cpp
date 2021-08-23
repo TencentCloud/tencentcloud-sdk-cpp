@@ -45,7 +45,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Command"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Container.Command` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.Command` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_command = string(value["Command"].GetString());
         m_commandHasBeenSet = true;
@@ -54,7 +54,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Args") && !value["Args"].IsNull())
     {
         if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Error("response `Container.Args` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Container.Args` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Args"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -67,7 +67,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EnvironmentVars") && !value["EnvironmentVars"].IsNull())
     {
         if (!value["EnvironmentVars"].IsArray())
-            return CoreInternalOutcome(Error("response `Container.EnvironmentVars` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Container.EnvironmentVars` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EnvironmentVars"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -88,7 +88,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Container.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Container.Name` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Cpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Container.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_cpu = value["Cpu"].GetDouble();
         m_cpuHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Memory"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Container.Memory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.Memory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_memory = value["Memory"].GetDouble();
         m_memoryHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RestartCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Container.RestartCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.RestartCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_restartCount = value["RestartCount"].GetUint64();
         m_restartCountHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentState"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Container.CurrentState` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.CurrentState` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_currentState.Deserialize(value["CurrentState"]);
@@ -155,7 +155,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PreviousState"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Container.PreviousState` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.PreviousState` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_previousState.Deserialize(value["PreviousState"]);
@@ -172,7 +172,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["WorkingDir"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Container.WorkingDir` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.WorkingDir` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_workingDir = string(value["WorkingDir"].GetString());
         m_workingDirHasBeenSet = true;
@@ -182,7 +182,7 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ContainerId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Container.ContainerId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.ContainerId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_containerId = string(value["ContainerId"].GetString());
         m_containerIdHasBeenSet = true;

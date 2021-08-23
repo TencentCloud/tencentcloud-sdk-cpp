@@ -39,7 +39,7 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ReceiverType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NoticeReceiver.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_receiverType = string(value["ReceiverType"].GetString());
         m_receiverTypeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReceiverIds") && !value["ReceiverIds"].IsNull())
     {
         if (!value["ReceiverIds"].IsArray())
-            return CoreInternalOutcome(Error("response `NoticeReceiver.ReceiverIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.ReceiverIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -61,7 +61,7 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ReceiverChannels") && !value["ReceiverChannels"].IsNull())
     {
         if (!value["ReceiverChannels"].IsArray())
-            return CoreInternalOutcome(Error("response `NoticeReceiver.ReceiverChannels` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.ReceiverChannels` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ReceiverChannels"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -75,7 +75,7 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NoticeReceiver.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -85,7 +85,7 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NoticeReceiver.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -95,7 +95,7 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Index"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NoticeReceiver.Index` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.Index` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_index = value["Index"].GetInt64();
         m_indexHasBeenSet = true;

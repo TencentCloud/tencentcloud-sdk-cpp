@@ -36,7 +36,7 @@ CoreInternalOutcome SubscribeObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ObjectsType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SubscribeObject.ObjectsType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeObject.ObjectsType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_objectsType = value["ObjectsType"].GetInt64();
         m_objectsTypeHasBeenSet = true;
@@ -46,7 +46,7 @@ CoreInternalOutcome SubscribeObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SubscribeObject.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SubscribeObject.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -55,7 +55,7 @@ CoreInternalOutcome SubscribeObject::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TableNames") && !value["TableNames"].IsNull())
     {
         if (!value["TableNames"].IsArray())
-            return CoreInternalOutcome(Error("response `SubscribeObject.TableNames` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SubscribeObject.TableNames` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TableNames"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

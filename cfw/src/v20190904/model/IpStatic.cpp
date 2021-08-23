@@ -35,7 +35,7 @@ CoreInternalOutcome IpStatic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Num"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `IpStatic.Num` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatic.Num` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_num = value["Num"].GetInt64();
         m_numHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome IpStatic::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StatTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpStatic.StatTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpStatic.StatTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_statTime = string(value["StatTime"].GetString());
         m_statTimeHasBeenSet = true;

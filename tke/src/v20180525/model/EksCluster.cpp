@@ -46,7 +46,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -56,7 +56,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["VpcId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.VpcId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vpcId = string(value["VpcId"].GetString());
         m_vpcIdHasBeenSet = true;
@@ -75,7 +75,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("SubnetIds") && !value["SubnetIds"].IsNull())
     {
         if (!value["SubnetIds"].IsArray())
-            return CoreInternalOutcome(Error("response `EksCluster.SubnetIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.SubnetIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["SubnetIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -89,7 +89,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["K8SVersion"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.K8SVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.K8SVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_k8SVersion = string(value["K8SVersion"].GetString());
         m_k8SVersionHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -109,7 +109,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.ClusterDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.ClusterDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterDesc = string(value["ClusterDesc"].GetString());
         m_clusterDescHasBeenSet = true;
@@ -119,7 +119,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreatedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
@@ -129,7 +129,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ServiceSubnetId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.ServiceSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.ServiceSubnetId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_serviceSubnetId = string(value["ServiceSubnetId"].GetString());
         m_serviceSubnetIdHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DnsServers") && !value["DnsServers"].IsNull())
     {
         if (!value["DnsServers"].IsArray())
-            return CoreInternalOutcome(Error("response `EksCluster.DnsServers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.DnsServers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DnsServers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -159,7 +159,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NeedDeleteCbs"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.NeedDeleteCbs` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.NeedDeleteCbs` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_needDeleteCbs = value["NeedDeleteCbs"].GetBool();
         m_needDeleteCbsHasBeenSet = true;
@@ -169,7 +169,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EnableVpcCoreDNS"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `EksCluster.EnableVpcCoreDNS` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.EnableVpcCoreDNS` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_enableVpcCoreDNS = value["EnableVpcCoreDNS"].GetBool();
         m_enableVpcCoreDNSHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome EksCluster::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
     {
         if (!value["TagSpecification"].IsArray())
-            return CoreInternalOutcome(Error("response `EksCluster.TagSpecification` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `EksCluster.TagSpecification` is not array type"));
 
         const rapidjson::Value &tmpValue = value["TagSpecification"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

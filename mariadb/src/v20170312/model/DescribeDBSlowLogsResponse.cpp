@@ -38,16 +38,16 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -58,18 +58,18 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Error("response `Data` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
 
         const rapidjson::Value &tmpValue = rsp["Data"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -90,7 +90,7 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
     {
         if (!rsp["LockTimeSum"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `LockTimeSum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LockTimeSum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_lockTimeSum = rsp["LockTimeSum"].GetDouble();
         m_lockTimeSumHasBeenSet = true;
@@ -100,7 +100,7 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
     {
         if (!rsp["QueryCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `QueryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_queryCount = rsp["QueryCount"].GetInt64();
         m_queryCountHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
     {
         if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_total = rsp["Total"].GetInt64();
         m_totalHasBeenSet = true;
@@ -120,7 +120,7 @@ CoreInternalOutcome DescribeDBSlowLogsResponse::Deserialize(const string &payloa
     {
         if (!rsp["QueryTimeSum"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `QueryTimeSum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QueryTimeSum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_queryTimeSum = rsp["QueryTimeSum"].GetDouble();
         m_queryTimeSumHasBeenSet = true;

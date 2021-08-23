@@ -37,16 +37,16 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
-        return CoreInternalOutcome(Error("response not json format"));
+        return CoreInternalOutcome(Core::Error("response not json format"));
     }
     if (!d.HasMember("Response") || !d["Response"].IsObject())
     {
-        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
     }
     rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
-        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
     }
     string requestId(rsp["RequestId"].GetString());
     SetRequestId(requestId);
@@ -57,11 +57,11 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
             !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
             !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
         }
         string errorCode(rsp["Error"]["Code"].GetString());
         string errorMsg(rsp["Error"]["Message"].GetString());
-        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
 
@@ -69,7 +69,7 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
     {
         if (!rsp["MaxTaskNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MaxTaskNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxTaskNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxTaskNum = rsp["MaxTaskNum"].GetUint64();
         m_maxTaskNumHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
     {
         if (!rsp["MaxAgentNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MaxAgentNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxAgentNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxAgentNum = rsp["MaxAgentNum"].GetUint64();
         m_maxAgentNumHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
     {
         if (!rsp["MaxGroupNum"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MaxGroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxGroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_maxGroupNum = rsp["MaxGroupNum"].GetUint64();
         m_maxGroupNumHasBeenSet = true;
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
     {
         if (!rsp["MinPeriod"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `MinPeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MinPeriod` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_minPeriod = rsp["MinPeriod"].GetUint64();
         m_minPeriodHasBeenSet = true;

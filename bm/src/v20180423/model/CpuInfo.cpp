@@ -37,7 +37,7 @@ CoreInternalOutcome CpuInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CpuInfo.CpuId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CpuInfo.CpuId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_cpuId = value["CpuId"].GetUint64();
         m_cpuIdHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome CpuInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CpuDescription"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CpuInfo.CpuDescription` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CpuInfo.CpuDescription` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_cpuDescription = string(value["CpuDescription"].GetString());
         m_cpuDescriptionHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome CpuInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Series"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `CpuInfo.Series` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CpuInfo.Series` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_series = value["Series"].GetUint64();
         m_seriesHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome CpuInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ContainRaidCard") && !value["ContainRaidCard"].IsNull())
     {
         if (!value["ContainRaidCard"].IsArray())
-            return CoreInternalOutcome(Error("response `CpuInfo.ContainRaidCard` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `CpuInfo.ContainRaidCard` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ContainRaidCard"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

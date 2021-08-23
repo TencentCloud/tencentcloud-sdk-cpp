@@ -35,7 +35,7 @@ CoreInternalOutcome ScdnErrorPage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScdnErrorPage.RedirectCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnErrorPage.RedirectCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_redirectCode = value["RedirectCode"].GetInt64();
         m_redirectCodeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ScdnErrorPage::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RedirectUrl"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ScdnErrorPage.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScdnErrorPage.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_redirectUrl = string(value["RedirectUrl"].GetString());
         m_redirectUrlHasBeenSet = true;

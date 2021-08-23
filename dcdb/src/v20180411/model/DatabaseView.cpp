@@ -34,7 +34,7 @@ CoreInternalOutcome DatabaseView::Deserialize(const rapidjson::Value &value)
     {
         if (!value["View"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DatabaseView.View` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DatabaseView.View` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_view = string(value["View"].GetString());
         m_viewHasBeenSet = true;

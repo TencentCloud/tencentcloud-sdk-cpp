@@ -57,7 +57,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["TaxBureau"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.TaxBureau` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.TaxBureau` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taxBureau = string(value["TaxBureau"].GetString());
         m_taxBureauHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Buyer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.Buyer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.Buyer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyer = string(value["Buyer"].GetString());
         m_buyerHasBeenSet = true;
@@ -77,7 +77,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["BuyerNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.BuyerNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.BuyerNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyerNo = string(value["BuyerNo"].GetString());
         m_buyerNoHasBeenSet = true;
@@ -87,7 +87,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["BuyerAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.BuyerAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.BuyerAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyerAddress = string(value["BuyerAddress"].GetString());
         m_buyerAddressHasBeenSet = true;
@@ -97,7 +97,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["BuyerTel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.BuyerTel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.BuyerTel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_buyerTel = string(value["BuyerTel"].GetString());
         m_buyerTelHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Seller"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.Seller` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.Seller` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_seller = string(value["Seller"].GetString());
         m_sellerHasBeenSet = true;
@@ -117,7 +117,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["SellerNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.SellerNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.SellerNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sellerNo = string(value["SellerNo"].GetString());
         m_sellerNoHasBeenSet = true;
@@ -127,7 +127,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["SellerAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.SellerAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.SellerAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sellerAddress = string(value["SellerAddress"].GetString());
         m_sellerAddressHasBeenSet = true;
@@ -137,7 +137,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["SellerTel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.SellerTel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.SellerTel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sellerTel = string(value["SellerTel"].GetString());
         m_sellerTelHasBeenSet = true;
@@ -147,7 +147,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["VehicleLicenseNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.VehicleLicenseNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.VehicleLicenseNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vehicleLicenseNo = string(value["VehicleLicenseNo"].GetString());
         m_vehicleLicenseNoHasBeenSet = true;
@@ -157,7 +157,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["RegisterNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.RegisterNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.RegisterNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_registerNo = string(value["RegisterNo"].GetString());
         m_registerNoHasBeenSet = true;
@@ -167,7 +167,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["VehicleIdentifyNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.VehicleIdentifyNo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.VehicleIdentifyNo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vehicleIdentifyNo = string(value["VehicleIdentifyNo"].GetString());
         m_vehicleIdentifyNoHasBeenSet = true;
@@ -177,7 +177,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["ManagementOffice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.ManagementOffice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.ManagementOffice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_managementOffice = string(value["ManagementOffice"].GetString());
         m_managementOfficeHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["VehicleTotalPrice"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.VehicleTotalPrice` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.VehicleTotalPrice` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_vehicleTotalPrice = string(value["VehicleTotalPrice"].GetString());
         m_vehicleTotalPriceHasBeenSet = true;
@@ -197,7 +197,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Auctioneer"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.Auctioneer` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.Auctioneer` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auctioneer = string(value["Auctioneer"].GetString());
         m_auctioneerHasBeenSet = true;
@@ -207,7 +207,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["AuctioneerAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.AuctioneerAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.AuctioneerAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auctioneerAddress = string(value["AuctioneerAddress"].GetString());
         m_auctioneerAddressHasBeenSet = true;
@@ -217,7 +217,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["AuctioneerTaxpayerNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.AuctioneerTaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.AuctioneerTaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auctioneerTaxpayerNum = string(value["AuctioneerTaxpayerNum"].GetString());
         m_auctioneerTaxpayerNumHasBeenSet = true;
@@ -227,7 +227,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["AuctioneerBankAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.AuctioneerBankAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.AuctioneerBankAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auctioneerBankAccount = string(value["AuctioneerBankAccount"].GetString());
         m_auctioneerBankAccountHasBeenSet = true;
@@ -237,7 +237,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["AuctioneerTel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.AuctioneerTel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.AuctioneerTel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_auctioneerTel = string(value["AuctioneerTel"].GetString());
         m_auctioneerTelHasBeenSet = true;
@@ -247,7 +247,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["Market"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.Market` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.Market` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_market = string(value["Market"].GetString());
         m_marketHasBeenSet = true;
@@ -257,7 +257,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["MarketTaxpayerNum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.MarketTaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.MarketTaxpayerNum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marketTaxpayerNum = string(value["MarketTaxpayerNum"].GetString());
         m_marketTaxpayerNumHasBeenSet = true;
@@ -267,7 +267,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["MarketAddress"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.MarketAddress` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.MarketAddress` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marketAddress = string(value["MarketAddress"].GetString());
         m_marketAddressHasBeenSet = true;
@@ -277,7 +277,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["MarketBankAccount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.MarketBankAccount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.MarketBankAccount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marketBankAccount = string(value["MarketBankAccount"].GetString());
         m_marketBankAccountHasBeenSet = true;
@@ -287,7 +287,7 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
     {
         if (!value["MarketTel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo.MarketTel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.MarketTel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_marketTel = string(value["MarketTel"].GetString());
         m_marketTelHasBeenSet = true;

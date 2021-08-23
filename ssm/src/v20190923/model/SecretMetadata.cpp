@@ -48,7 +48,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.SecretName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_secretName = string(value["SecretName"].GetString());
         m_secretNameHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KmsKeyId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kmsKeyId = string(value["KmsKeyId"].GetString());
         m_kmsKeyIdHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateUin"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.CreateUin` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createUin = value["CreateUin"].GetUint64();
         m_createUinHasBeenSet = true;
@@ -88,7 +88,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
@@ -98,7 +98,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeleteTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.DeleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.DeleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_deleteTime = value["DeleteTime"].GetUint64();
         m_deleteTimeHasBeenSet = true;
@@ -108,7 +108,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = value["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
@@ -118,7 +118,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["KmsKeyType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.KmsKeyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.KmsKeyType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_kmsKeyType = string(value["KmsKeyType"].GetString());
         m_kmsKeyTypeHasBeenSet = true;
@@ -128,7 +128,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RotationStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.RotationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.RotationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_rotationStatus = value["RotationStatus"].GetInt64();
         m_rotationStatusHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NextRotationTime"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.NextRotationTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.NextRotationTime` IsUint64=false incorrectly").SetRequestId(requestId));
         }
         m_nextRotationTime = value["NextRotationTime"].GetUint64();
         m_nextRotationTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SecretType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.SecretType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.SecretType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_secretType = value["SecretType"].GetInt64();
         m_secretTypeHasBeenSet = true;
@@ -158,7 +158,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProductName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.ProductName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_productName = string(value["ProductName"].GetString());
         m_productNameHasBeenSet = true;
@@ -168,7 +168,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_resourceName = string(value["ResourceName"].GetString());
         m_resourceNameHasBeenSet = true;
@@ -178,7 +178,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ProjectID"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SecretMetadata.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_projectID = value["ProjectID"].GetInt64();
         m_projectIDHasBeenSet = true;
@@ -187,7 +187,7 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("AssociatedInstanceIDs") && !value["AssociatedInstanceIDs"].IsNull())
     {
         if (!value["AssociatedInstanceIDs"].IsArray())
-            return CoreInternalOutcome(Error("response `SecretMetadata.AssociatedInstanceIDs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.AssociatedInstanceIDs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["AssociatedInstanceIDs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

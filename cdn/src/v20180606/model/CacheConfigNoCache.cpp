@@ -35,7 +35,7 @@ CoreInternalOutcome CacheConfigNoCache::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Switch"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigNoCache.Switch` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigNoCache.Switch` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome CacheConfigNoCache::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Revalidate"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CacheConfigNoCache.Revalidate` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CacheConfigNoCache.Revalidate` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_revalidate = string(value["Revalidate"].GetString());
         m_revalidateHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome ModifySmsTemplateDataStruct::Deserialize(const rapidjson::Va
     {
         if (!value["TemplateId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ModifySmsTemplateDataStruct.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ModifySmsTemplateDataStruct.TemplateId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_templateId = value["TemplateId"].GetInt64();
         m_templateIdHasBeenSet = true;

@@ -35,7 +35,7 @@ CoreInternalOutcome DnsServerConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Domain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DnsServerConf.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DnsServerConf.Domain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
@@ -44,7 +44,7 @@ CoreInternalOutcome DnsServerConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("DnsServers") && !value["DnsServers"].IsNull())
     {
         if (!value["DnsServers"].IsArray())
-            return CoreInternalOutcome(Error("response `DnsServerConf.DnsServers` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `DnsServerConf.DnsServers` is not array type"));
 
         const rapidjson::Value &tmpValue = value["DnsServers"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

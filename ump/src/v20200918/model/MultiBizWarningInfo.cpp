@@ -37,7 +37,7 @@ CoreInternalOutcome MultiBizWarningInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["WarningType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `MultiBizWarningInfo.WarningType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarningInfo.WarningType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_warningType = value["WarningType"].GetInt64();
         m_warningTypeHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MultiBizWarningInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["WarningAreaSize"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `MultiBizWarningInfo.WarningAreaSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarningInfo.WarningAreaSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_warningAreaSize = value["WarningAreaSize"].GetDouble();
         m_warningAreaSizeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MultiBizWarningInfo::Deserialize(const rapidjson::Value &val
     {
         if (!value["WarningLocation"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MultiBizWarningInfo.WarningLocation` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarningInfo.WarningLocation` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_warningLocation.Deserialize(value["WarningLocation"]);
@@ -73,7 +73,7 @@ CoreInternalOutcome MultiBizWarningInfo::Deserialize(const rapidjson::Value &val
     if (value.HasMember("WarningAreaContour") && !value["WarningAreaContour"].IsNull())
     {
         if (!value["WarningAreaContour"].IsArray())
-            return CoreInternalOutcome(Error("response `MultiBizWarningInfo.WarningAreaContour` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `MultiBizWarningInfo.WarningAreaContour` is not array type"));
 
         const rapidjson::Value &tmpValue = value["WarningAreaContour"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

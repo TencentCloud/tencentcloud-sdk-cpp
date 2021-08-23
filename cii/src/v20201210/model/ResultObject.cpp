@@ -35,7 +35,7 @@ CoreInternalOutcome ResultObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Quality"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `ResultObject.Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultObject.Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_quality = value["Quality"].GetDouble();
         m_qualityHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ResultObject::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StructureResult"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ResultObject.StructureResult` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ResultObject.StructureResult` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_structureResult = string(value["StructureResult"].GetString());
         m_structureResultHasBeenSet = true;

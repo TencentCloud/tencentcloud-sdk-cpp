@@ -41,7 +41,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["TableBaseInfo"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `TableResponseInfo.TableBaseInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.TableBaseInfo` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_tableBaseInfo.Deserialize(value["TableBaseInfo"]);
@@ -57,7 +57,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Columns") && !value["Columns"].IsNull())
     {
         if (!value["Columns"].IsArray())
-            return CoreInternalOutcome(Error("response `TableResponseInfo.Columns` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.Columns` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Columns"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -77,7 +77,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Partitions") && !value["Partitions"].IsNull())
     {
         if (!value["Partitions"].IsArray())
-            return CoreInternalOutcome(Error("response `TableResponseInfo.Partitions` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.Partitions` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Partitions"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -98,7 +98,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["Location"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableResponseInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_location = string(value["Location"].GetString());
         m_locationHasBeenSet = true;
@@ -107,7 +107,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     if (value.HasMember("Properties") && !value["Properties"].IsNull())
     {
         if (!value["Properties"].IsArray())
-            return CoreInternalOutcome(Error("response `TableResponseInfo.Properties` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.Properties` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -128,7 +128,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["ModifiedTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableResponseInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.ModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifiedTime = string(value["ModifiedTime"].GetString());
         m_modifiedTimeHasBeenSet = true;
@@ -138,7 +138,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableResponseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -148,7 +148,7 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
     {
         if (!value["InputFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TableResponseInfo.InputFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.InputFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_inputFormat = string(value["InputFormat"].GetString());
         m_inputFormatHasBeenSet = true;

@@ -41,7 +41,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.ClusterId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.ClusterId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = value["ClusterId"].GetInt64();
         m_clusterIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.MaxDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.MaxDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxDiskSize = value["MaxDiskSize"].GetInt64();
         m_maxDiskSizeHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MaxBandWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.MaxBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.MaxBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_maxBandWidth = value["MaxBandWidth"].GetInt64();
         m_maxBandWidthHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailableDiskSize"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.AvailableDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.AvailableDiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_availableDiskSize = value["AvailableDiskSize"].GetInt64();
         m_availableDiskSizeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["AvailableBandWidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.AvailableBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.AvailableBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_availableBandWidth = value["AvailableBandWidth"].GetInt64();
         m_availableBandWidthHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ClusterInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = value["ZoneId"].GetInt64();
         m_zoneIdHasBeenSet = true;
@@ -110,7 +110,7 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
     {
         if (!value["ZoneIds"].IsArray())
-            return CoreInternalOutcome(Error("response `ClusterInfo.ZoneIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.ZoneIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ZoneIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

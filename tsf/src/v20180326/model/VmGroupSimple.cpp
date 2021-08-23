@@ -51,7 +51,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.GroupId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.GroupName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupName = string(value["GroupName"].GetString());
         m_groupNameHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationType = string(value["ApplicationType"].GetString());
         m_applicationTypeHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.GroupDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.GroupDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupDesc = string(value["GroupDesc"].GetString());
         m_groupDescHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartupParameters"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startupParameters = string(value["StartupParameters"].GetString());
         m_startupParametersHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceId = string(value["NamespaceId"].GetString());
         m_namespaceIdHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ClusterName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ApplicationName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_applicationName = string(value["ApplicationName"].GetString());
         m_applicationNameHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NamespaceName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_namespaceName = string(value["NamespaceName"].GetString());
         m_namespaceNameHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["MicroserviceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.MicroserviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.MicroserviceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_microserviceType = string(value["MicroserviceType"].GetString());
         m_microserviceTypeHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["GroupResourceType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_groupResourceType = string(value["GroupResourceType"].GetString());
         m_groupResourceTypeHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UpdatedTime"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.UpdatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.UpdatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_updatedTime = value["UpdatedTime"].GetInt64();
         m_updatedTimeHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeployDesc"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.DeployDesc` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.DeployDesc` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deployDesc = string(value["DeployDesc"].GetString());
         m_deployDescHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Alias"].IsString())
         {
-            return CoreInternalOutcome(Error("response `VmGroupSimple.Alias` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VmGroupSimple.Alias` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_alias = string(value["Alias"].GetString());
         m_aliasHasBeenSet = true;

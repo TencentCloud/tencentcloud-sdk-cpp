@@ -39,7 +39,7 @@ namespace TencentCloud
                 TmsClient(const Credential &credential, const std::string &region);
                 TmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::TextModerationResponse> TextModerationOutcome;
+                typedef Outcome<Core::Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 

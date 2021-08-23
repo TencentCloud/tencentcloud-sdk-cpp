@@ -35,7 +35,7 @@ CoreInternalOutcome ViewBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DatabaseName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewBaseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewBaseInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_databaseName = string(value["DatabaseName"].GetString());
         m_databaseNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome ViewBaseInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ViewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ViewBaseInfo.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ViewBaseInfo.ViewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_viewName = string(value["ViewName"].GetString());
         m_viewNameHasBeenSet = true;

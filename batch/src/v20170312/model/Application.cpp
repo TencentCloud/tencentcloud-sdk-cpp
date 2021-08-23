@@ -37,7 +37,7 @@ CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Command"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Application.Command` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Application.Command` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_command = string(value["Command"].GetString());
         m_commandHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DeliveryForm"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Application.DeliveryForm` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Application.DeliveryForm` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_deliveryForm = string(value["DeliveryForm"].GetString());
         m_deliveryFormHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
     {
         if (!value["PackagePath"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Application.PackagePath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Application.PackagePath` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_packagePath = string(value["PackagePath"].GetString());
         m_packagePathHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Docker"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Application.Docker` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Application.Docker` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_docker.Deserialize(value["Docker"]);

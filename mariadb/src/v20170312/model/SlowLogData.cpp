@@ -51,7 +51,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CheckSum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.CheckSum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.CheckSum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_checkSum = string(value["CheckSum"].GetString());
         m_checkSumHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Db"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.Db` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.Db` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_db = string(value["Db"].GetString());
         m_dbHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["FingerPrint"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.FingerPrint` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.FingerPrint` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_fingerPrint = string(value["FingerPrint"].GetString());
         m_fingerPrintHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTimeAvg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.LockTimeAvg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.LockTimeAvg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockTimeAvg = string(value["LockTimeAvg"].GetString());
         m_lockTimeAvgHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTimeMax"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.LockTimeMax` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.LockTimeMax` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockTimeMax = string(value["LockTimeMax"].GetString());
         m_lockTimeMaxHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTimeMin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.LockTimeMin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.LockTimeMin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockTimeMin = string(value["LockTimeMin"].GetString());
         m_lockTimeMinHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LockTimeSum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.LockTimeSum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.LockTimeSum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_lockTimeSum = string(value["LockTimeSum"].GetString());
         m_lockTimeSumHasBeenSet = true;
@@ -121,7 +121,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryCount"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.QueryCount` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.QueryCount` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queryCount = string(value["QueryCount"].GetString());
         m_queryCountHasBeenSet = true;
@@ -131,7 +131,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryTimeAvg"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.QueryTimeAvg` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.QueryTimeAvg` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queryTimeAvg = string(value["QueryTimeAvg"].GetString());
         m_queryTimeAvgHasBeenSet = true;
@@ -141,7 +141,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryTimeMax"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.QueryTimeMax` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.QueryTimeMax` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queryTimeMax = string(value["QueryTimeMax"].GetString());
         m_queryTimeMaxHasBeenSet = true;
@@ -151,7 +151,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryTimeMin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.QueryTimeMin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.QueryTimeMin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queryTimeMin = string(value["QueryTimeMin"].GetString());
         m_queryTimeMinHasBeenSet = true;
@@ -161,7 +161,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["QueryTimeSum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.QueryTimeSum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.QueryTimeSum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_queryTimeSum = string(value["QueryTimeSum"].GetString());
         m_queryTimeSumHasBeenSet = true;
@@ -171,7 +171,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RowsExaminedSum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.RowsExaminedSum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.RowsExaminedSum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rowsExaminedSum = string(value["RowsExaminedSum"].GetString());
         m_rowsExaminedSumHasBeenSet = true;
@@ -181,7 +181,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RowsSentSum"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.RowsSentSum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.RowsSentSum` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rowsSentSum = string(value["RowsSentSum"].GetString());
         m_rowsSentSumHasBeenSet = true;
@@ -191,7 +191,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsMax"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.TsMax` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.TsMax` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsMax = string(value["TsMax"].GetString());
         m_tsMaxHasBeenSet = true;
@@ -201,7 +201,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TsMin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.TsMin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.TsMin` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tsMin = string(value["TsMin"].GetString());
         m_tsMinHasBeenSet = true;
@@ -211,7 +211,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["User"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.User` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.User` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_user = string(value["User"].GetString());
         m_userHasBeenSet = true;
@@ -221,7 +221,7 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExampleSql"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SlowLogData.ExampleSql` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.ExampleSql` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_exampleSql = string(value["ExampleSql"].GetString());
         m_exampleSqlHasBeenSet = true;

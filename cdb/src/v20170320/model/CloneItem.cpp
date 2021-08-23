@@ -41,7 +41,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SrcInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.SrcInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.SrcInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_srcInstanceId = string(value["SrcInstanceId"].GetString());
         m_srcInstanceIdHasBeenSet = true;
@@ -51,7 +51,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DstInstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.DstInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.DstInstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_dstInstanceId = string(value["DstInstanceId"].GetString());
         m_dstInstanceIdHasBeenSet = true;
@@ -61,7 +61,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CloneJobId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.CloneJobId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.CloneJobId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_cloneJobId = value["CloneJobId"].GetInt64();
         m_cloneJobIdHasBeenSet = true;
@@ -71,7 +71,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RollbackStrategy"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.RollbackStrategy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.RollbackStrategy` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rollbackStrategy = string(value["RollbackStrategy"].GetString());
         m_rollbackStrategyHasBeenSet = true;
@@ -81,7 +81,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RollbackTargetTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.RollbackTargetTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.RollbackTargetTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_rollbackTargetTime = string(value["RollbackTargetTime"].GetString());
         m_rollbackTargetTimeHasBeenSet = true;
@@ -91,7 +91,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["StartTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.StartTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
@@ -101,7 +101,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EndTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.EndTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_endTime = string(value["EndTime"].GetString());
         m_endTimeHasBeenSet = true;
@@ -111,7 +111,7 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TaskStatus"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CloneItem.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CloneItem.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_taskStatus = string(value["TaskStatus"].GetString());
         m_taskStatusHasBeenSet = true;

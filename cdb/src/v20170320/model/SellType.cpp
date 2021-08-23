@@ -36,7 +36,7 @@ CoreInternalOutcome SellType::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TypeName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SellType.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SellType.TypeName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_typeName = string(value["TypeName"].GetString());
         m_typeNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome SellType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("EngineVersion") && !value["EngineVersion"].IsNull())
     {
         if (!value["EngineVersion"].IsArray())
-            return CoreInternalOutcome(Error("response `SellType.EngineVersion` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SellType.EngineVersion` is not array type"));
 
         const rapidjson::Value &tmpValue = value["EngineVersion"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -58,7 +58,7 @@ CoreInternalOutcome SellType::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Configs") && !value["Configs"].IsNull())
     {
         if (!value["Configs"].IsArray())
-            return CoreInternalOutcome(Error("response `SellType.Configs` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SellType.Configs` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Configs"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

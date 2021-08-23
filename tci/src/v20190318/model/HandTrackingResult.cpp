@@ -39,7 +39,7 @@ CoreInternalOutcome HandTrackingResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Class"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HandTrackingResult.Class` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandTrackingResult.Class` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_class = string(value["Class"].GetString());
         m_classHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome HandTrackingResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `HandTrackingResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandTrackingResult.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome HandTrackingResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Height"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HandTrackingResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandTrackingResult.Height` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_height = value["Height"].GetInt64();
         m_heightHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome HandTrackingResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Left"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HandTrackingResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandTrackingResult.Left` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_left = value["Left"].GetInt64();
         m_leftHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome HandTrackingResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Top"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HandTrackingResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandTrackingResult.Top` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_top = value["Top"].GetInt64();
         m_topHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome HandTrackingResult::Deserialize(const rapidjson::Value &valu
     {
         if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HandTrackingResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HandTrackingResult.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_width = value["Width"].GetInt64();
         m_widthHasBeenSet = true;

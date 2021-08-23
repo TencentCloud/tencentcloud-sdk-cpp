@@ -35,7 +35,7 @@ CoreInternalOutcome RenameRestoreDatabase::Deserialize(const rapidjson::Value &v
     {
         if (!value["OldName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenameRestoreDatabase.OldName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenameRestoreDatabase.OldName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldName = string(value["OldName"].GetString());
         m_oldNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RenameRestoreDatabase::Deserialize(const rapidjson::Value &v
     {
         if (!value["NewName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RenameRestoreDatabase.NewName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RenameRestoreDatabase.NewName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newName = string(value["NewName"].GetString());
         m_newNameHasBeenSet = true;

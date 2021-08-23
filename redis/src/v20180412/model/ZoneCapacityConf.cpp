@@ -40,7 +40,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneId = string(value["ZoneId"].GetString());
         m_zoneIdHasBeenSet = true;
@@ -50,7 +50,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsSaleout"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.IsSaleout` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.IsSaleout` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isSaleout = value["IsSaleout"].GetBool();
         m_isSaleoutHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isDefault = value["IsDefault"].GetBool();
         m_isDefaultHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("NetWorkType") && !value["NetWorkType"].IsNull())
     {
         if (!value["NetWorkType"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.NetWorkType` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.NetWorkType` is not array type"));
 
         const rapidjson::Value &tmpValue = value["NetWorkType"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -92,7 +92,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ProductSet") && !value["ProductSet"].IsNull())
     {
         if (!value["ProductSet"].IsArray())
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.ProductSet` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.ProductSet` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ProductSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -113,7 +113,7 @@ CoreInternalOutcome ZoneCapacityConf::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OldZoneId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ZoneCapacityConf.OldZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneCapacityConf.OldZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_oldZoneId = value["OldZoneId"].GetInt64();
         m_oldZoneIdHasBeenSet = true;

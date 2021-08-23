@@ -37,7 +37,7 @@ CoreInternalOutcome MergeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Image"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MergeInfo.Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeInfo.Image` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_image = string(value["Image"].GetString());
         m_imageHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome MergeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MergeInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome MergeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InputImageFaceRect"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `MergeInfo.InputImageFaceRect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeInfo.InputImageFaceRect` is not object type").SetRequestId(requestId));
         }
 
         CoreInternalOutcome outcome = m_inputImageFaceRect.Deserialize(value["InputImageFaceRect"]);
@@ -74,7 +74,7 @@ CoreInternalOutcome MergeInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TemplateFaceID"].IsString())
         {
-            return CoreInternalOutcome(Error("response `MergeInfo.TemplateFaceID` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MergeInfo.TemplateFaceID` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_templateFaceID = string(value["TemplateFaceID"].GetString());
         m_templateFaceIDHasBeenSet = true;

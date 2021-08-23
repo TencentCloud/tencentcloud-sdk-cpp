@@ -38,7 +38,7 @@ CoreInternalOutcome DNSAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DNSAttributes.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DNSAttributes.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome DNSAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SendDomain"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DNSAttributes.SendDomain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DNSAttributes.SendDomain` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_sendDomain = string(value["SendDomain"].GetString());
         m_sendDomainHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome DNSAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ExpectedValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DNSAttributes.ExpectedValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DNSAttributes.ExpectedValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_expectedValue = string(value["ExpectedValue"].GetString());
         m_expectedValueHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome DNSAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["CurrentValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DNSAttributes.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DNSAttributes.CurrentValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_currentValue = string(value["CurrentValue"].GetString());
         m_currentValueHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome DNSAttributes::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Status"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `DNSAttributes.Status` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DNSAttributes.Status` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_status = value["Status"].GetBool();
         m_statusHasBeenSet = true;

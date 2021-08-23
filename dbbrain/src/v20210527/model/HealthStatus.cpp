@@ -37,7 +37,7 @@ CoreInternalOutcome HealthStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthScore"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthStatus.HealthScore` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthStatus.HealthScore` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_healthScore = value["HealthScore"].GetInt64();
         m_healthScoreHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome HealthStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["HealthLevel"].IsString())
         {
-            return CoreInternalOutcome(Error("response `HealthStatus.HealthLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthStatus.HealthLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_healthLevel = string(value["HealthLevel"].GetString());
         m_healthLevelHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome HealthStatus::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ScoreLost"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `HealthStatus.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HealthStatus.ScoreLost` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_scoreLost = value["ScoreLost"].GetInt64();
         m_scoreLostHasBeenSet = true;
@@ -66,7 +66,7 @@ CoreInternalOutcome HealthStatus::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ScoreDetails") && !value["ScoreDetails"].IsNull())
     {
         if (!value["ScoreDetails"].IsArray())
-            return CoreInternalOutcome(Error("response `HealthStatus.ScoreDetails` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `HealthStatus.ScoreDetails` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ScoreDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)

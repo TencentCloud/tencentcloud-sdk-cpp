@@ -38,7 +38,7 @@ CoreInternalOutcome SearchResultItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DocAbs"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResultItem.DocAbs` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResultItem.DocAbs` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_docAbs = string(value["DocAbs"].GetString());
         m_docAbsHasBeenSet = true;
@@ -48,7 +48,7 @@ CoreInternalOutcome SearchResultItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DocId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResultItem.DocId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResultItem.DocId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_docId = string(value["DocId"].GetString());
         m_docIdHasBeenSet = true;
@@ -58,7 +58,7 @@ CoreInternalOutcome SearchResultItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["DocMeta"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResultItem.DocMeta` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResultItem.DocMeta` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_docMeta = string(value["DocMeta"].GetString());
         m_docMetaHasBeenSet = true;
@@ -68,7 +68,7 @@ CoreInternalOutcome SearchResultItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["L2Score"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `SearchResultItem.L2Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResultItem.L2Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
         m_l2Score = value["L2Score"].GetDouble();
         m_l2ScoreHasBeenSet = true;
@@ -78,7 +78,7 @@ CoreInternalOutcome SearchResultItem::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SearchDebuginfo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SearchResultItem.SearchDebuginfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResultItem.SearchDebuginfo` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_searchDebuginfo = string(value["SearchDebuginfo"].GetString());
         m_searchDebuginfoHasBeenSet = true;

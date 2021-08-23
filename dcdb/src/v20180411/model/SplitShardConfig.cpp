@@ -36,7 +36,7 @@ CoreInternalOutcome SplitShardConfig::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("ShardInstanceIds") && !value["ShardInstanceIds"].IsNull())
     {
         if (!value["ShardInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SplitShardConfig.ShardInstanceIds` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `SplitShardConfig.ShardInstanceIds` is not array type"));
 
         const rapidjson::Value &tmpValue = value["ShardInstanceIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -50,7 +50,7 @@ CoreInternalOutcome SplitShardConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["SplitRate"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SplitShardConfig.SplitRate` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitShardConfig.SplitRate` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_splitRate = value["SplitRate"].GetInt64();
         m_splitRateHasBeenSet = true;
@@ -60,7 +60,7 @@ CoreInternalOutcome SplitShardConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardMemory"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SplitShardConfig.ShardMemory` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitShardConfig.ShardMemory` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shardMemory = value["ShardMemory"].GetInt64();
         m_shardMemoryHasBeenSet = true;
@@ -70,7 +70,7 @@ CoreInternalOutcome SplitShardConfig::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ShardStorage"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `SplitShardConfig.ShardStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SplitShardConfig.ShardStorage` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_shardStorage = value["ShardStorage"].GetInt64();
         m_shardStorageHasBeenSet = true;

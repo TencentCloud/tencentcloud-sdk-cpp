@@ -37,7 +37,7 @@ CoreInternalOutcome IpUnBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpUnBlockData.Ip` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpUnBlockData.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_ip = string(value["Ip"].GetString());
         m_ipHasBeenSet = true;
@@ -47,7 +47,7 @@ CoreInternalOutcome IpUnBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BlockTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpUnBlockData.BlockTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpUnBlockData.BlockTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_blockTime = string(value["BlockTime"].GetString());
         m_blockTimeHasBeenSet = true;
@@ -57,7 +57,7 @@ CoreInternalOutcome IpUnBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnBlockTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpUnBlockData.UnBlockTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpUnBlockData.UnBlockTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unBlockTime = string(value["UnBlockTime"].GetString());
         m_unBlockTimeHasBeenSet = true;
@@ -67,7 +67,7 @@ CoreInternalOutcome IpUnBlockData::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ActionType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `IpUnBlockData.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpUnBlockData.ActionType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_actionType = string(value["ActionType"].GetString());
         m_actionTypeHasBeenSet = true;

@@ -39,7 +39,7 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamRecord.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
@@ -49,7 +49,7 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ParamName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamRecord.ParamName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.ParamName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_paramName = string(value["ParamName"].GetString());
         m_paramNameHasBeenSet = true;
@@ -59,7 +59,7 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["OldValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamRecord.OldValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.OldValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_oldValue = string(value["OldValue"].GetString());
         m_oldValueHasBeenSet = true;
@@ -69,7 +69,7 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["NewValue"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamRecord.NewValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.NewValue` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newValue = string(value["NewValue"].GetString());
         m_newValueHasBeenSet = true;
@@ -79,7 +79,7 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["IsSucess"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ParamRecord.IsSucess` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.IsSucess` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_isSucess = value["IsSucess"].GetBool();
         m_isSucessHasBeenSet = true;
@@ -89,7 +89,7 @@ CoreInternalOutcome ParamRecord::Deserialize(const rapidjson::Value &value)
     {
         if (!value["ModifyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ParamRecord.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ParamRecord.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;

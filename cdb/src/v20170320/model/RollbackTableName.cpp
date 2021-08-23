@@ -35,7 +35,7 @@ CoreInternalOutcome RollbackTableName::Deserialize(const rapidjson::Value &value
     {
         if (!value["TableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTableName.TableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTableName.TableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome RollbackTableName::Deserialize(const rapidjson::Value &value
     {
         if (!value["NewTableName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RollbackTableName.NewTableName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RollbackTableName.NewTableName` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_newTableName = string(value["NewTableName"].GetString());
         m_newTableNameHasBeenSet = true;

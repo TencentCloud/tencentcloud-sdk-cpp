@@ -35,7 +35,7 @@ CoreInternalOutcome EvilCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["EvilType"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EvilCount.EvilType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EvilCount.EvilType` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_evilType = string(value["EvilType"].GetString());
         m_evilTypeHasBeenSet = true;
@@ -45,7 +45,7 @@ CoreInternalOutcome EvilCount::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Count"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EvilCount.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EvilCount.Count` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_count = value["Count"].GetInt64();
         m_countHasBeenSet = true;

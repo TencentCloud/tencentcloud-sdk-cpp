@@ -43,7 +43,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.TimeKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeKey = string(value["TimeKey"].GetString());
         m_timeKeyHasBeenSet = true;
@@ -53,7 +53,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["TimeFormat"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_timeFormat = string(value["TimeFormat"].GetString());
         m_timeFormatHasBeenSet = true;
@@ -63,7 +63,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Delimiter"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.Delimiter` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.Delimiter` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_delimiter = string(value["Delimiter"].GetString());
         m_delimiterHasBeenSet = true;
@@ -73,7 +73,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["LogRegex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.LogRegex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.LogRegex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_logRegex = string(value["LogRegex"].GetString());
         m_logRegexHasBeenSet = true;
@@ -83,7 +83,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["BeginRegex"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.BeginRegex` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.BeginRegex` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_beginRegex = string(value["BeginRegex"].GetString());
         m_beginRegexHasBeenSet = true;
@@ -92,7 +92,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("Keys") && !value["Keys"].IsNull())
     {
         if (!value["Keys"].IsArray())
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.Keys` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.Keys` is not array type"));
 
         const rapidjson::Value &tmpValue = value["Keys"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -105,7 +105,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     if (value.HasMember("FilterKeyRegex") && !value["FilterKeyRegex"].IsNull())
     {
         if (!value["FilterKeyRegex"].IsArray())
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.FilterKeyRegex` is not array type"));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.FilterKeyRegex` is not array type"));
 
         const rapidjson::Value &tmpValue = value["FilterKeyRegex"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
@@ -126,7 +126,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnMatchUpLoadSwitch"].IsBool())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.UnMatchUpLoadSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.UnMatchUpLoadSwitch` IsBool=false incorrectly").SetRequestId(requestId));
         }
         m_unMatchUpLoadSwitch = value["UnMatchUpLoadSwitch"].GetBool();
         m_unMatchUpLoadSwitchHasBeenSet = true;
@@ -136,7 +136,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["UnMatchLogKey"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.UnMatchLogKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.UnMatchLogKey` IsString=false incorrectly").SetRequestId(requestId));
         }
         m_unMatchLogKey = string(value["UnMatchLogKey"].GetString());
         m_unMatchLogKeyHasBeenSet = true;
@@ -146,7 +146,7 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
     {
         if (!value["Backtracking"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ExtractRuleInfo.Backtracking` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.Backtracking` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_backtracking = value["Backtracking"].GetInt64();
         m_backtrackingHasBeenSet = true;

@@ -34,7 +34,7 @@ CoreInternalOutcome EPAResponse::Deserialize(const rapidjson::Value &value)
     {
         if (!value["RetCode"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `EPAResponse.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EPAResponse.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_retCode = value["RetCode"].GetInt64();
         m_retCodeHasBeenSet = true;
